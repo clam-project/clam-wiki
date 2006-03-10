@@ -1,2 +1,38 @@
 
 = This Wiki is ready for hosting the new documentation =
+
+- Proposal for initial index -- xamat -
+
+# Introduction
+# Deploying CLAM in your system
+# Using CLAM sample Applications
+## SMSTools
+## Network Editor
+## Annotator
+## Voice to MIDI
+## Others?
+# CLAM build system
+## Compiling CLAM and included apps
+## Compiling your own code
+# CLAM tutorials and walk-throughs
+# Principles and infrastructure
+## Processing classes and objects
+### Ports
+### Controls
+### Configurations
+## Networks
+## Processing Data
+## More on Dynamic Types
+# Tools
+## XML
+## Audio I/O
+## Audio File I/O
+## MIDI I/O
+## Visualization
+## System utilities
+# Repository (probably just links to the appropiate Doxygen)
+## Processing
+## Processing Data
+# Additional Info
+## Historical Background
+## Recommended Reading
