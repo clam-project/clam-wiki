@@ -13,8 +13,9 @@ Image:Annotator-SongLevel.png|Songs level descriptors and the list of songs
 Image:Annotator-Extractor.png|Executing an extractor from the Annotator
 Image:Annotator-MarksEdition.png|Editing marks
 Image:Annotator-SizedSegments.png|Editing sized segments
-Image:Annotator-Tonnetz.png|The "tonnetz" instant view visualising chords extraction
-Image:Annotator-Tonnetz-Keyspace.png|The keyspace and tonnetz views to visualize the automatic chord extraction
+Image:Annotator-Tonnetz.png|The "tonnetz" instant view: tones arranged so that tones in common chords are closer.
+Image:Annotator-Keyspace.png|The "keyspace" instant view: the probability of major and minor chords to be the one sounding, arranged by harmonicity.
+Image:Annotator-Tonnetz-Keyspace.png|Visualizing both the keyspace and tonnetz views to monitor the automatic chord extraction results
 Image:Annotator-BocaPendingAnnotations.png|Checking pending annotations on the BOCA website
 Image:Annotator-AccessingSimacServices.png|Taking the files related to a BOCA task and uploading them back using the Simac Services
 
