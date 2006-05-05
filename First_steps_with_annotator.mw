@@ -1,0 +1,7 @@
+
+# Execute Annotator (from Windows menu)
+# Open '''Chords.pro''' project (get one level up and open '''Samples''' dir)
+# Select a song. Debasers Wooden Hose, for example and select the '''intra-song descriptors''' tab. Click the Play button and you should see the animated key-space view.
+# You can click follow-play button.
+# To analyze your own mp3 or wav files: Go to the '''song descriptors''' tab and do: '''Project, Add Song to Project'''.  Select the new song and click '''Song, Compute Descriptors'''
+# Click '''Song, Reload Descriptors'''
