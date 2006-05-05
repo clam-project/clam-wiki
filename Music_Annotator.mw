@@ -25,6 +25,7 @@ Other key features are:
 ** Enumeration
 ** Bounded float
 ** Bounded integer
+** Float array
 ** Frame Division (Equidistant division)
 ** Segmentations (Sizeless, Gapless, Overlapless or Free)
 ** ... more to come
