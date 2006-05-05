@@ -12,10 +12,10 @@ Image:Annotator-ProjectProperties.png|Editing the project properties
 Image:Annotator-SchemaBrowser.png|Schema browser
 Image:Annotator-SongLevel.png|Songs level descriptors and the list of songs
 Image:Annotator-Extractor.png|Executing an extractor from the Annotator
-Image:Annotator-Tonnetz.png|The "tonnetz" instant view visualising chords extraction
-Image:Annotator-Tonnetz-Keyspace.png|The keyspace and tonnetz views to visualize the automatic chord extraction
 Image:Annotator-MarksEdition.png|Editing marks
 Image:Annotator-SizedSegments.png|Editing sized segments
+Image:Annotator-Tonnetz.png|The "tonnetz" instant view visualising chords extraction
+Image:Annotator-Tonnetz-Keyspace.png|The keyspace and tonnetz views to visualize the automatic chord extraction
 Image:Annotator-BocaPendingAnnotations.png|Checking pending annotations on the BOCA website
 Image:Annotator-AccessingSimacServices.png|Taking the files related to a BOCA task and uploading them back using the Simac Services
 
