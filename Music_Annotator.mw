@@ -8,9 +8,9 @@ segmentation, chords, structure... The tool is intended to be useful for
 the music information retrieval research whenever you need to:
 
 * Supervise and correct the results of automated audio feature
-  extraction algorithms.
+extraction algorithms.
 * Generate manually edited annotations of audio as training examples or
-  ground truth for those algorithms.
+ground truth for those algorithms.
 
 == Features ==
 
@@ -37,6 +37,6 @@ Other key features are:
 
 == Screenshots ==
 
-[[Annotator Screenshots]]
+[[Annotator screenshots]]
 
 == Download ==
