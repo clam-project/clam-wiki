@@ -33,6 +33,39 @@ Other key features are:
 * Auralization for the segmentations (click on the beggining)
 * Auralization for the low-level descriptor (magnitude to freq)
 
+== Included Extractors ==
+
+=== ClamExtractorExample ===
+
+The ClamExtractorExample is a dummy example of extractor.
+It generates three kind of descriptors:
+
+* Low level spectral descriptors using CLAM
+* ID3 descriptors
+* Random segments (yes, they are random, just to test the Music Annotator)
+
+=== ChordExtractor ===
+
+The chord extractor extracts segments labeled with chords.
+It uses Christopher Harte (Queen Mary University of London) algorithm
+with some minor variations.
+
+ TODO: Reference to the paper and links
+
+== BOCA Client ==
+
+BOCA is the Barebone Of Collective Annotations. 
+It's a web application that centralizes collective annotation campaigns.
+Hand annotation is a hard task for researchers, but, by sharing them,
+as for software, you'll get more than you give.
+
+BocaClient takes the task files BOCA generates and builds a Music Annotator
+project by doing queries to the Simac Web Services.
+After saving the project, the BocaClient uploads the changes back.
+
+ TODO: Add links
+
+
 == Screenshots ==
 
 [[Annotator screenshots]]
