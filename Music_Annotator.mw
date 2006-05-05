@@ -37,6 +37,16 @@ Other key features are:
 ** Key Space view for mayor and minor chords correlation
 ** ... more to come
 
+== Screenshots and videos ==
+
+[[Annotator screenshots]]
+
+== Download ==
+
+Check out the [http://clam.iua.upf.edu/download.html CLAM download page].
+
+
+
 == Included Extractors ==
 
 CLAM Music Annotator architecture is open to add extractors and data sources.
@@ -75,9 +85,3 @@ project by doing queries to the Simac Web Services.
 After saving the project, the BocaClient uploads the changes back.
 
  TODO: Add links
-
-== Screenshots and videos ==
-
-[[Annotator screenshots]]
-
-== Download ==
