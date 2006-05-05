@@ -52,19 +52,18 @@ with some minor variations.
 
  TODO: Reference to the paper and links
 
-== BOCA Client ==
+== Collective Annotation, the BOCA client ==
 
 BOCA is the Barebone Of Collective Annotations. 
 It's a web application that centralizes collective annotation campaigns.
 Hand annotation is a hard task for researchers, but, by sharing them,
 as for software, you'll get more than you give.
 
-BocaClient takes the task files BOCA generates and builds a Music Annotator
+BocaClient is a program that takes the task files BOCA generates and builds a Music Annotator
 project by doing queries to the Simac Web Services.
 After saving the project, the BocaClient uploads the changes back.
 
  TODO: Add links
-
 
 == Screenshots ==
 
