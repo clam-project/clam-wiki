@@ -14,8 +14,8 @@ the music information retrieval research whenever you need to:
 
 The CLAM Annotator is not tied to a fixed description scheme (the set of
 attributes). You can define the working attribute set by providing an XML
-description schema definition. A sample description scheme and an extractor
-program are provided with the Annotator but you could implement your own
+description schema definition. Sample description schemes and an extraction
+programs are provided with the Annotator but you could implement your own
 one with different algorithms and attributes. Also tools are provided to
 select and join attributes from the output of several description sources.
 
@@ -28,10 +28,11 @@ Other key features are:
 ** Frame Division (Equidistant division)
 ** Segmentations (Sizeless, Gapless, Overlapless or Free)
 ** ... more to come
-* Several time segmentations can be defined at once
-* Each segment can have its own attributes
+* Several time segmentations and frame divisions can be defined at once (notes, structural parts, bars, beats, different frame sizes...).
+* Each segmentation or frame division have its own set of attributes to attach to their childs.
 * Auralization for the segmentations (click on the beggining)
 * Auralization for the low-level descriptor (magnitude to freq)
+* Instant views: currently Tonnetz view for PCP like (tones correlation) display and Key Space for mayor and minor chords correlation.
 
 == Included Extractors ==
 
