@@ -91,8 +91,6 @@ The chord extractor extracts segments labeled with chords.
 It uses Christopher Harte algorithm with some minor variations.
 It has been developed as a collaboration between the [http://www.elec.qmul.ac.uk Queen Mary University of London] and the [http://www.iua.upf.edu Universitat Pompeu Fabra]
 
- TODO: Reference to the paper
-
 == Collective Annotation, the BOCA client ==
 
 [[Image:Annotator-BocaPendingAnnotations.png|thumb|Checking pending annotations on the BOCA website]]
