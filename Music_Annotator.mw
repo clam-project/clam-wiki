@@ -7,10 +7,8 @@ modify music information extracted from audio: low level features, note
 segmentation, chords, structure... The tool is intended to be useful for
 the music information retrieval research whenever you need to:
 
-* Supervise and correct the results of automated audio feature
-extraction algorithms.
-* Generate manually edited annotations of audio as training examples or
-ground truth for those algorithms.
+* Supervise and correct the results of automated audio feature extraction algorithms.
+* Generate manually edited annotations of audio as training examples or ground truth for those algorithms.
 
 == Features ==
 
