@@ -35,6 +35,13 @@ Other key features are:
 
 == Included Extractors ==
 
+CLAM Music Annotator architecture is open to add extractors and data sources.
+Just by providing an executable following the proper command line and output conventions.
+Following command line and output conventions is not a major issue, 
+we have successfully used python to wrap existing extractors that didn't conform.
+
+CLAM Music Annotator comes with several extractors and data sources:
+
 === ClamExtractorExample ===
 
 The ClamExtractorExample is a dummy example of extractor.
