@@ -1,5 +1,8 @@
 = CLAM Music Annotator ver 0.3.1 =
 
+[[Image:Annotator-SplashScreen.png|thumb|Splash screen]]
+
+
 == Purpose ==
 
 The CLAM Music Annotator is a tool that can be used to visualize, check and
@@ -12,12 +15,16 @@ the music information retrieval research whenever you need to:
 
 == Features ==
 
+[[Image:Annotator-Tonnetz-Keyspace.png|thumb|The keyspace and tonnetz views to visualize the automatic chord extraction]]
+
 The CLAM Annotator is not tied to a fixed description scheme (the set of
 attributes). You can define the working attribute set by providing an XML
 description schema definition. Sample description schemes and an extraction
 programs are provided with the Annotator but you could implement your own
 one with different algorithms and attributes. Also tools are provided to
 select and join attributes from the output of several description sources.
+
+[[Image:Annotator-SizedSegments.png|thumb|Editing sized segments]]
 
 Other key features are:
 * Attribute types:
