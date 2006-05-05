@@ -16,6 +16,7 @@ Image:Annotator-SizedSegments.png|Editing sized segments
 Image:Annotator-Tonnetz.png|The "tonnetz" instant view: tones arranged so that tones in common chords are closer.
 Image:Annotator-Keyspace.png|The "keyspace" instant view: Major and minor chords, arranged by harmonicity.
 Image:Annotator-Tonnetz-Keyspace.png|Visualizing both the keyspace and tonnetz views to monitor the automatic chord extraction results
+Image:Annotator-Tonnetz-Vs-Keyspace.png|Visualizing both the keyspace and tonnetz views to monitor the automatic chord extraction results
 Image:Annotator-BocaPendingAnnotations.png|Checking pending annotations on the BOCA website
 Image:Annotator-AccessingSimacServices.png|Taking the files related to a BOCA task and uploading them back using the Simac Services
 
