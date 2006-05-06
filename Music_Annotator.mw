@@ -78,12 +78,13 @@ CLAM Music Annotator comes with several extractors and data sources:
 
 === ClamExtractorExample ===
 
-The ClamExtractorExample is a dummy example of extractor.
+The ClamExtractorExample is a simple example of extractor using CLAM.
 It generates three kind of descriptors:
 
 * Low level spectral descriptors using CLAM
 * ID3 descriptors
 * Random segments (yes, they are random, just to test the Music Annotator)
+* Random high level descriptors (yes, those are also random)
 
 === ChordExtractor ===
 
