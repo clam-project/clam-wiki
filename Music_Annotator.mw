@@ -88,7 +88,7 @@ It generates three kind of descriptors:
 === ChordExtractor ===
 
 The chord extractor extracts segments labeled with chords.
-It uses Christopher Harte algorithm with some minor variations.
+It uses [http://www.aes.org/e-lib/browse.cfm?elib=13128 Christopher Harte algorithm] with some minor variations.
 It has been developed as a collaboration between the [http://www.elec.qmul.ac.uk Queen Mary University of London] and the [http://www.iua.upf.edu Universitat Pompeu Fabra]
 
 == Collective Annotation, the BOCA client ==
