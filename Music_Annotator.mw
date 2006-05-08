@@ -45,20 +45,6 @@ Other key features are:
 ** [http://www.iua.upf.es/mtg/publicacions.php?did=337 Key Space] for mayor and minor chords correlation
 ** ... more to come
 
-== Related Publications ==
-
-* Amatriain, X. Massaguer, J. Garcia, D. Mosquera, I. 2005. ''The CLAM Annotator: A Cross-platform Audio Descriptors Editing Tool''
-: Poster presented at 6th International Conference on Music Information Retrieval; London, UK
-: [http://www.iua.upf.edu/mtg/publicacions.php?did=353 BiBTeX] [http://www.iua.upf.edu/mtg/publications/9317d2-ismir2005-clam-annotator.pdf PDF]
-
-* Herrera, P. Celma, O. Massaguer, J. Cano, P. Gómez, E. Gouyon, F. Koppenberger, M. Garcia, D. G. Mahedero, J. Wack, N. 2005. ''Mucosa: a music content semantic annotator''
-: Proceedings of 6th International Conference on Music Information Retrieval; London, UK
-: [http://www.iua.upf.es/mtg/publicacions.php?did=344 BiBTeX] [http://www.iua.upf.edu/mtg/publications/189652-ISMIR-2005-Herrera.pdf PDF]
-
-* Gómez, E. Bonada, J. 2005. ''Tonality visualization of polyphonic audio'' 
-: Proceedings of International Computer Music Conference 2005; Barcelona
-: [http://www.iua.upf.es/mtg/publicacions.php?did=337 BiBTeX][http://www.iua.upf.edu/mtg/publications/9d0455-ICMC2005-GomezBonada.pdf PDF]
-
 == Screenshots and videos ==
 
 See the [[Annotator screenshots]]  gallery.
@@ -128,3 +114,17 @@ The source code tarball also includes some python scripts to perform usefull tas
 * Merging pools and schemas from several sources
 * Filtering attributes from pools and scopes
 * Mapping attributes and attribute scope names
+
+== Related Publications ==
+
+* Amatriain, X. Massaguer, J. Garcia, D. Mosquera, I. 2005. ''The CLAM Annotator: A Cross-platform Audio Descriptors Editing Tool''
+: Poster presented at 6th International Conference on Music Information Retrieval; London, UK
+: [http://www.iua.upf.edu/mtg/publicacions.php?did=353 BiBTeX] [http://www.iua.upf.edu/mtg/publications/9317d2-ismir2005-clam-annotator.pdf PDF]
+
+* Herrera, P. Celma, O. Massaguer, J. Cano, P. Gómez, E. Gouyon, F. Koppenberger, M. Garcia, D. G. Mahedero, J. Wack, N. 2005. ''Mucosa: a music content semantic annotator''
+: Proceedings of 6th International Conference on Music Information Retrieval; London, UK
+: [http://www.iua.upf.es/mtg/publicacions.php?did=344 BiBTeX] [http://www.iua.upf.edu/mtg/publications/189652-ISMIR-2005-Herrera.pdf PDF]
+
+* Gómez, E. Bonada, J. 2005. ''Tonality visualization of polyphonic audio'' 
+: Proceedings of International Computer Music Conference 2005; Barcelona
+: [http://www.iua.upf.es/mtg/publicacions.php?did=337 BiBTeX][http://www.iua.upf.edu/mtg/publications/9d0455-ICMC2005-GomezBonada.pdf PDF]
