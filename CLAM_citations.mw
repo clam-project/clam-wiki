@@ -8,3 +8,5 @@ Here we will keep a list of interesting papers/works citing or acknowledging CLA
 *George Tzanetakis and his group at Victoria University has cited CLAM in several occasions:
 **[http://ismir2005.ismir.net/proceedings/2125.pdf Distributed audio feature extraction for music], by Stuart Bray and George Tzanetakis, presented at ISMIR 2005
 *Vegard Sandvold used CLAM for his thesis at the University of Oslo: [http://www.musikkteknologen.no/pub/Sandvold-CandScientThesis2004.pdf Percussion Descriptors, a semantic approach to music information retrieval]
+*Marcel Levy at reports the use of CLAM in his Master Thesis at the University of Nevada.[http://www.cse.unr.edu/~fredh/papers/thesis/027-levy/thesis.pdf  Ringermute: An audio data mining toolkit]
+*The people at OFAI (The Austrian Artificial Research Institute) have used CLAM for several projects. See [http://wwwx.ofai.at/cgi-bin/get-tr?paper=oefai-tr-2004-22.pdf An Open Source Tool for Semi-Automatic Rhythmic Annotation] by Gouyon, Wack and Dixon, for instance.
