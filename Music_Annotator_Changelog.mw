@@ -19,7 +19,7 @@
 * Credits and acknoledgements updated on the About dialog.
 
 == 2006-04-30 v0.3.0 ==
-''Final SIMAC meeting release''
+''Final SIMAC review release''
 
 * Using CLAM 0.91 (CVS)
 * Ported to QT4 using the new vmqt widgets
