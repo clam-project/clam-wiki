@@ -15,7 +15,7 @@ the music information retrieval research whenever you need to:
 
 == Features ==
 
-[[''Image:Annotator-Tonnetz-Keyspace.png|thumb|The keyspace and tonnetz views to visualize the automatic chord extraction]]
+[[Image:Annotator-Tonnetz-Keyspace.png|thumb|The keyspace and tonnetz views to visualize the automatic chord extraction]]
 
 The CLAM Annotator is not tied to a fixed description scheme (the set of
 attributes). You can define the working attribute set by providing an XML
