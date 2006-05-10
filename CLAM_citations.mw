@@ -9,4 +9,8 @@ Here we will keep a list of interesting papers/works citing or acknowledging CLA
 **[http://ismir2005.ismir.net/proceedings/2125.pdf Distributed audio feature extraction for music], by Stuart Bray and George Tzanetakis, presented at ISMIR 2005
 *Vegard Sandvold used CLAM for his thesis at the University of Oslo: [http://www.musikkteknologen.no/pub/Sandvold-CandScientThesis2004.pdf Percussion Descriptors, a semantic approach to music information retrieval]
 *Marcel Levy at reports the use of CLAM in his Master Thesis at the University of Nevada.[http://www.cse.unr.edu/~fredh/papers/thesis/027-levy/thesis.pdf  Ringermute: An audio data mining toolkit]
-*The people at OFAI (The Austrian Artificial Research Institute) have used CLAM for several projects. See [http://wwwx.ofai.at/cgi-bin/get-tr?paper=oefai-tr-2004-22.pdf An Open Source Tool for Semi-Automatic Rhythmic Annotation] by Gouyon, Wack and Dixon, for instance.
+*Matija Marolt at the University of Ljjubljana, Slovenia, reports the use of CLAM for finding melodic lines: [http://lgm.fri.uni-lj.si/~matic/clanki/dafx04_marolt.pdf ON FINDING MELODIC LINES IN AUDIO RECORDINGS]
+*The people at OFAI (The Austrian Artificial Research Institute) have used CLAM for several projects. 
+**See [http://wwwx.ofai.at/cgi-bin/get-tr?paper=oefai-tr-2004-22.pdf An Open Source Tool for Semi-Automatic Rhythmic Annotation] by Gouyon, Wack and Dixon, for instance.
+**Tim Pohle also cites CLAM in his Thesis [http://kluedo.ub.uni-kl.de/volltexte/2005/1881/pdf/diplomarbeit.pdf Extraction of Audio and their Evaluation in Music Classification Tasks]
+*A very curious one: ALEXANDER IVANOV SOTIROV talks about CLAM in his thesis [http://cs.ua.edu/research/TechnicalReports/TR-2005-01.pdf AUTOMATIC VULNERABILITY DETECTION USING STATIC SOURCE CODE ANALYSIS]
