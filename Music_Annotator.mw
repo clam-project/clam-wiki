@@ -58,6 +58,8 @@ Check out the [[Music Annotator Changelog | 0.3.1 release ]] at the [http://clam
 You may be interested to read those [[First steps with annotator]]. 
 It explains how to get the chord extraction working.
 
+Read the [[Music Annotator Changelog ]] for changes on the new release.
+
 == Included Extractors ==
 
 CLAM Music Annotator architecture is open to add extractors and data sources.
