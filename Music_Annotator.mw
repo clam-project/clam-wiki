@@ -100,7 +100,7 @@ After saving the project, the BocaClient uploads the changes back.
 
 The source code tarball also includes some python scripts to perform usefull tasks as:
 
-* Converting wavesurver lab files to and from Annotator's descriptors pools
+* Converting [http://www.speech.kth.se/wavesurfer WaveSurfer] lab files to and from Annotator's descriptors pools
 * Merging pools and schemas from several sources
 * Filtering attributes from pools and scopes
 * Mapping attributes and attribute scope names
