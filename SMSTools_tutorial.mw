@@ -1,13 +1,10 @@
-The MTG's flagship applications have been the SMSCommandLine and SMSTools, developed 5 years ago but currently discontinued. As a matter of fact, one of the main goals when starting CLAM was to develop the substitute for those applications.
-
-The example you will find in this first release is a beta version and efforts are being put forward to include a more ambitious tool soon.
-
-The application analyzes, transforms and synthesizes back a given sound. For doing so, it uses the Sinusoidal plus Residual model (usually referred to as SMS). Next picture depicts the analysis algorithm:
+The application analyzes, transforms and synthesizes back a given sound. For doing so, it uses the Sinusoidal plus Residual model (sometimes referred to as SMS but also known as HILN in the context of MPEG4). Next picture depicts the analysis algorithm:
 
 [[Image:http://www.clam.iua.upf.edu/doc/ReleaseDocumentation-html/images/smsanalysis.png]]
 
-If you need more information about the signal processing details involved in the process you may have to navigate through the MTG recommended literature (at http://www.iua.upf.es/mtg) or visit the SMS homepage at http://www.iua.upf.es/~sms.
-107 Introduction
+If you need more information about the signal processing details involved in the process you may want to visit the [[http://www.iua.upf.es/~sms|SMS homepage]].
+
+==Introduction==
 
 The application has three different versions: SMSTools - which has a FLTK graphical user interface-, SMSConsole- which is a command-line based version-, and SMSBatch - which can be used for batch processing a whole directory. All you have to do to compile one or the other is to compile the file SMSTools.cxx (if you want GUI), SMS.cxx (if you want the Command Line versrion) or SMSBatch (if you want to batch process). It is strongly recommended that you start with the graphical SMSTools version and only use the others only if you have more specific requirements. The rest of this document will suppose that you are using the graphical version and only mention some differences with the other versions where strictly necessary.
 
@@ -34,7 +31,7 @@ The following picture illustrates the main blocks of the application:
 
 [[Image:http://www.clam.iua.upf.edu/doc/ReleaseDocumentation-html/images/image044.gif]]
 
-108 Building the application
+==Building the application==
 
 If you got a binary precompiled for your platform you may skip this section. Else, if you are building the application from the CLAM source itself, here you will find the necessary information
 
@@ -54,7 +51,7 @@ this will trigger SMS Tools building. If everything goes smooth, you will obtain
 
 at <clam sources dir>/build/Examples/SMS/Tools folder you will find a Microsoft Visual C++ 6.0 project file (.dsp) already configured for building the application.
 
-109 An SMSTools walkthrough
+==An SMSTools walkthrough==
 
 [i1] Once you have built the Application you may follow the steps below to both get a first
 
@@ -81,7 +78,7 @@ Select any transformation, click on Add Transformation to Score and edit the Par
 
    6.  Finally you can store the results of the synthesis by choosing File->SMS Synthesis->Save...
 
-110 Analysis Output
+== Analysis Output==
 
 So, the output of the analysis is a CLAM::Segment that contains an ordered list of CLAM::Frames. Each of these frames has a bunch of attributes, but the most important are: a CLAM::SpectralPeakArray that models the sinusoidal component (including information about sinusoidal track), a residual spectrum and the result of the pitch estimation (or rather fundamental detection).
 
@@ -135,7 +132,8 @@ The xml format is rather verbose so the process of storing the result of the ana
         </Frame> ... 
 
 If you prefer to have a more compact representation of your analysis you should choose the SDIF format. SDIF (Sound Description Interchange Format) is a non-propietary format used for exchanging analysis data especially between research teams.
-111 Configuration
+
+==Configuration==
 
 In order to make the application work, you first need to load a configuration xml file or edit the default one through the graphical interface. This configuration includes all the different parameters for the analysis/synthesis process. If you load an xml file that includes non-valid parameter values (like a path to a non-existing input sound file), the analysis process will remain disabled. (Note: if you try to load an xml file that does not comply to the Configuration schema, the result is unpredictable and may even produce a program crash).
 
@@ -354,7 +352,7 @@ Here is a complete commented example of how a transformation score looks like:
 
 </SMSTransformationChainConfig>
 
-114 Implementing your own transformation
+== Implementing your own transformation ==
 
 If you want to implement a particular transformation (other from the very simple frequency shift included as a sample) you will have to get into a little coding (don't panic, it is very simple!).
 
@@ -405,7 +403,9 @@ if(type=="SMSDummyTransformation"||type=="SMSFreqShift"||type=="SMSPitchShift"||
    5. Finally, you may want to add a widget to the graphical interface in order to configure your transformation. We recommend you to just follow the example of a pre-existing configurator in /examples/sms/tools/gui. The SMSFreqShiftConfigurator, for instance, will do fine for a simple configuration.
 
 You are now ready to build the program again and used your configuration from the SMS application. If you are the of curious kind you have surely already wandered into the SMSMorph and SMSTimeStretch transformations. These transformations are much more complex because the (1) use a different configuration instead of the default SMSTransformationConfig, (2) override some of the behaviour of the base SMSTransformation class because they have a more complex logic (SMSTimeStretch, for example processes at a non-constant rate), (3) They are based on other existing Processings. We will leave the exercise of implementing such transformation to the advanced reader (remember you may always get support through the CLAM mailing list clam@iua.upf.es).
-115 Internal class structure and program organisation
+
+
+== Internal class structure and program organisation ==
 
 You should only read this section if you are particularly interested in learning 'what's inside' the example or you want to use its structure as a base for another application. Otherwise, if you are using the SMS as an aplication on its own and could not care less about programming details you better skip this part (for your own sake!).
 
@@ -446,7 +446,8 @@ Note that, if we remove the support for the Progress Indicator the resulting met
    5. GetAnalysis().Stop(); }
 
 If you follow a similar approach you can fairly easily understand all the members of out main application class.
-116 SMSSynthesis and SMSAnalysis
+
+== SMSSynthesis and SMSAnalysis ==
 
 We have seen how simple the processing part of our application is: basically a call to the Do method of either SMSAnalysis or SMSSynthesis classes. That is only possible because these Processing Composites hide all the processing complexity.
 
