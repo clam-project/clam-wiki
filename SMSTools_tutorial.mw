@@ -61,6 +61,7 @@ Note that the result of an analysis can be later loaded selecting File->SMS Anal
 </li>
 <li>Finally you can store the results of the synthesis by choosing File->SMS Synthesis->Save...
 </li>
+</ol>
 
 == Analysis Output==
 
