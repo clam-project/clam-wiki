@@ -2,7 +2,7 @@ The application analyzes, transforms and synthesizes back a given sound. For doi
 
 [[Image:http://www.clam.iua.upf.edu/doc/ReleaseDocumentation-html/images/smsanalysis.png]]
 
-If you need more information about the signal processing details involved in the process you may want to visit the [[http://www.iua.upf.es/~sms|SMS homepage]].
+If you need more information about the signal processing details involved in the process you may want to visit the [[http://www.iua.upf.es/~sms| SMS]] webpage.
 
 ==Introduction==
 
@@ -10,22 +10,17 @@ The application has three different versions: SMSTools - which has a FLTK graphi
 
 The application has a number of possible different inputs:
 
-   1. A configuration xml file. This configuration file is used to configure both the analysis and synthesis processes.
-   2. An analysis xml file. This file will be the result of a previously performed and stored analysis. The xml parser (xerces) features include a rather slow parsing/storing of documents. On the other hand, xml is a text-based format and thus you can expect a 1 MB sound file become 10 MB of xml analysis data. For all those reasons the storing/loading of analysis data, although fully working, is not recommended unless you want to have a textual/readable representation of your analysis result, else you will be better off using the SDIF format (see next paragraph).
-
-    OR
-
-    An analysis SDIF file. This file will be the result of a previously performed and stored analysis. This format is as complete as the XML passivation, but it is dramatically more compact (i.e. smaller files), since data is not stored in a "human readable" format . See XII for more details about SDIF file format.
-
-   3. A Transformation score in xml format. This file includes a list of all transformations that might be applied to the result of the analysis and the configuration for each of the transformations.
+# A '''configuration xml file'''. This configuration file is used to configure both the analysis and synthesis processes and may include the path to the '''input sound file''' to be analyzed.
+# An '''analysis xml file'''. This file will be the result of a previously performed and stored analysis. The xml parser (xerces) features include a rather slow parsing/storing of documents. On the other hand, xml is a text-based format and thus you can expect a 1 MB sound file become 10 MB of xml analysis data. For all those reasons the storing/loading of analysis data, although fully working, is not recommended unless you want to have a textual/readable representation of your analysis result, else you will be better off using the SDIF format (see next paragraph). Or An '''analysis SDIF file'''. This file will be the result of a previously performed and stored analysis. This format is as complete as the XML passivation, but it is dramatically more compact (i.e. smaller files), since data is not stored in a "human readable" format . See XII for more details about SDIF file format.
+# A '''Transformation score in xml format'''. This file includes a list of all transformations that might be applied to the result of the analysis and the configuration for each of the transformations.
 
 Note that all of them can be selected and generated on run-time from the user interface if you use the SMSTools version.
 
 From these inputs, the application is able to generate the following outputs:
 
-   1. Analysis data xml or sdif file.
-   2. Melody xml file.
-   3. Output sound: global sound, sinusoidal component, residual component
+# Analysis data xml or sdif file.
+# Melody xml file.
+# Output sound: global sound, sinusoidal component, residual component
 
 The following picture illustrates the main blocks of the application:
 
@@ -33,23 +28,7 @@ The following picture illustrates the main blocks of the application:
 
 ==Building the application==
 
-If you got a binary precompiled for your platform you may skip this section. Else, if you are building the application from the CLAM source itself, here you will find the necessary information
-
-The example requires the following external libraries: Xercesc 1.7.0, for the XML support, FLTK 1.1.4, for the graphical user interface, the fftw v.2.1.3 library, and either Mesa (3.4.2 or higher) library or vendor specific OpenGL binaries, for the flashy graphics. You should have them installed and fully working on your system before trying to build the application from the library sources.
-
-For building the application:
-
-    * On GNU Linuxes
-
-First follow the instructions found in the manual sections "Deploying CLAM in your system" and "CLAM Build System Documentation", to have both deployed the library and set up the build system. Once this is accomplished, get into SMS Tools build folder, <CLAM SOURCE DIR>/build/Examples/SMS/Tools, and issue the following command
-
-$ make CONFIG=release
-
-this will trigger SMS Tools building. If everything goes smooth, you will obtain the SMS Tools application binary in the same folder you issued the make CONFIG=release command called SMSTools.
-
-    * On Microsoft Windows
-
-at <clam sources dir>/build/Examples/SMS/Tools folder you will find a Microsoft Visual C++ 6.0 project file (.dsp) already configured for building the application.
+At this point you might be able to checkout the latest SMSTools binary version from the [[http://www.clam.iua.upf.edu|CLAM webpage]]. Building the application might still be necessary in some cases but that will be handled [[Manual_CompilingApps|elsewhere]].
 
 ==An SMSTools walkthrough==
 
