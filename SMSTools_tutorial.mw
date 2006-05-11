@@ -31,30 +31,36 @@ At this point you might be able to checkout the latest SMSTools binary version f
 
 ==An SMSTools walkthrough==
 
-[i1] Once you have built the Application you may follow the steps below to both get a first
+Once you have built the Application you may follow the steps below to both get a first
 
 impression of the application capabilities and check that everything is right:
 
-   1. First you have to configure the workspace. For doing so you have two options: (1) Load an xml configuration file (like the one located in <clam sources dir>/build/Examples/SMS) or (2) directly edit the default configuration. Let's consider this second option. Go to File->Configuration->Edit. There are many fields you can edit and modify (see Section on Configuration File) but for the sake of simplycity, let us just select an input sound file (.wav, .aiff or .raw) by clicking on the button next to the InputSoundFile field. Your interface should look something like:
+<ol>
 
+<li>
+First you have to configure the workspace. For doing so you have two options: (1) Load an xml configuration file (like the one located in <clam sources dir>/build/Examples/SMS) or (2) directly edit the default configuration. Let's consider this second option. Go to File->Configuration->Edit. There are many fields you can edit and modify (see Section on Configuration File) but for the sake of simplycity, let us just select an input sound file (.wav, .aiff or .raw) by clicking on the button next to the InputSoundFile field. Your interface should look something like:
+</li>
+<li>
 If the sound file name you entered is correct, we are now in the position to continue and analyze the sound. Click on SMSAnalysis->Analyze and wait for the progress bar to finish.
-
-   3.  Once the sound is analyzed, we are ready to look at the analysis results. In the View menu you will see active all the available data: original sound, sinusoidal tracks, fundamental frequency, and frame related data (sinusoidal spectrum and peaks and residual spectrum). When you select a frame related view, you can browse through the different frames by clicking on any of the non-frame views or by using the frame browser at the bottom of the interface. You can also listen to the sound by clicking on the play button on the bottom-right of the wave display. Note that the sliders on any view act like a zoom control when clicking on any of the extremes.
-
-   4.  Apart from displaying, the result of the analysis can be stored for later uses. It can be stored in xml format or sdif format. Xml is a textual tagged format that can be convenient for debugging and studying results of some analysis but it is very verbose and slow (you should expect an xml file 4 times the size of the original audio). On the other hand SDIF is a binary format that for most uses will be much more convenient. For storing the result of the analysis, choose File->SMS Analysis->Store Analysis File. The application will switch from SDIF format to XML depending on the file extension you choose.
-
-      Note that the result of an analysis can be later loaded selecting File->SMS Analysis->Load Analysis Data.
-   5. Before synthesizing, we can transform the sound. For doing so, just as it happened with the configuration, we can load an xml transformation score or edit the default one. We will do the latter. Choose File->SMSTransformation->Edit Score. You will see a list of available transformations. Clicking on any of them will open a brief description of the transformation and its usage:
-
-Select any transformation, click on Add Transformation to Score and edit the Parameters on the right. In the break point function editor, duble click to add a point and click to select a point or draw a selection box. Repeat this step for any number of transformations you want to connect one after the other.
-
-
-
-    Click on Apply Changes to Score. Now we can transform the sound by selecting SMSTransformation->Apply.
-
-   5. We can now synthesize the resulting sound. Select SMSSynthesis->Synthesize. Now visit the View menu again and select the output component you want to display and listen to: Output Sound, Output Sinusoidal and Output Residual.
-
-   6.  Finally you can store the results of the synthesis by choosing File->SMS Synthesis->Save...
+</li>
+<li> Once the sound is analyzed, we are ready to look at the analysis results. In the View menu you will see active all the available data: original sound, sinusoidal tracks, fundamental frequency, and frame related data (sinusoidal spectrum and peaks and residual spectrum). When you select a frame related view, you can browse through the different frames by clicking on any of the non-frame views or by using the frame browser at the bottom of the interface. You can also listen to the sound by clicking on the play button on the bottom-right of the wave display. Note that the sliders on any view act like a zoom control when clicking on any of the extremes.
+</li>
+<li>Apart from displaying, the result of the analysis can be stored for later uses. It can be stored in xml format or sdif format. Xml is a textual tagged format that can be convenient for debugging and studying results of some analysis but it is very verbose and slow (you should expect an xml file 4 times the size of the original audio). On the other hand SDIF is a binary format that for most uses will be much more convenient. For storing the result of the analysis, choose File->SMS Analysis->Store Analysis File. The application will switch from SDIF format to XML depending on the file extension you choose.
+<br>
+Note that the result of an analysis can be later loaded selecting File->SMS Analysis->Load Analysis Data.
+</li>
+<li>Before synthesizing, we can transform the sound. For doing so, just as it happened with the configuration, we can load an xml transformation score or edit the default one. We will do the latter. Choose File->SMSTransformation->Edit Score. You will see a list of available transformations. Clicking on any of them will open a brief description of the transformation and its usage:
+<ol>
+<li>Select any transformation, click on Add Transformation to Score and edit the Parameters on the right. In the break point function editor, duble click to add a point and click to select a point or draw a selection box. Repeat this step for any number of transformations you want to connect one after the other.
+</li>
+<li>Click on Apply Changes to Score. Now we can transform the sound by selecting SMSTransformation->Apply.
+</li>
+</ol>
+</li>
+<li>We can now synthesize the resulting sound. Select SMSSynthesis->Synthesize. Now visit the View menu again and select the output component you want to display and listen to: Output Sound, Output Sinusoidal and Output Residual.
+</li>
+<li>Finally you can store the results of the synthesis by choosing File->SMS Synthesis->Save...
+</li>
 
 == Analysis Output==
 
