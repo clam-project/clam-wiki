@@ -6,42 +6,41 @@
 * [[Annotator screenshots]]
 
 
-= Proposal for initial documentation index -- xamat =
+= [[CLAMUserManual|CLAM Documentation]] =
 
-# Introduction
-# Deploying CLAM in your system
-# Using CLAM sample Applications
-## SMSTools
-## Network Editor
-## Annotator
-## Voice to MIDI
-## Others?
-# CLAM build system
-## Compiling CLAM and included apps
-## Compiling your own code
-# CLAM tutorials and walk-throughs
-# Principles and infrastructure
-## Processing classes and objects
-### Ports
-### Controls
-### Configurations
-## Networks
-## Processing Data
-## More on Dynamic Types
-# Tools
-## XML
-## Audio I/O
-## Audio File I/O
-## MIDI I/O
-## Visualization
-## System utilities
-# Repository (probably just links to the appropiate Doxygen)
-## Processing
-## Processing Data
-# Additional Info
-## Historical Background
-## Recommended Reading
-
+# [[Manual_Intro|Introduction]]
+# [[Manual_Deploy|Deploying CLAM in your system]]
+# [[Manual_Apps|Using CLAM sample Applications]]
+## [[Manual_SMSTools|SMSTools]]
+## [[Manual_NetworkEditor|Network Editor]]
+## [[Manual_Annotator|Annotator]]
+## [[Manual_V2M|Voice to MIDI]]
+## [[Manual_OtherApps|Others]]
+# [[Manual_Build|CLAM build system]]
+## [[Manual_CompilingApps|Compiling CLAM and included apps]]
+## [[Manual_CompilingUserCode|Compiling your own code]]
+# [[Manual_Tutorials|CLAM tutorials and walk-throughs]]
+# [[Manual_Principles|Principles and infrastructure]]
+## [[Manual_Processing|Processing classes and objects]]
+### [[Manual_Ports|Ports]]
+### [[Manual_Controls|Controls]]
+### [[Manual_Configs|Configurations]]
+## [[Manual_Networks|Networks]]
+## [[Manual_Data|Processing Data]]
+## [[Manual_DT|More on Dynamic Types]]
+# [[Manual_Tools|Tools]]
+## [[Manual_XML|XML]]
+## [[Manual_AudioIO|Audio I/O]]
+## [[Manual_AudioFile|Audio File I/O]]
+## [[Manual_MIDI|MIDI I/O]]
+## [[Manual_Visual|Visualization]]
+## [[Manual_System|System utilities]]
+# [[Manual_Repository|Repository (probably just links to the appropiate Doxygen)]]
+## [[Manual_ProcessingRep|Processing]]
+## [[Manual_DataRep|Processing Data]]
+# [[Manual_Annex|Additional Info]]
+## [[Manual_History|Historical Background]]
+## [[Manual_Readings|Recommended Reading]]
 
 = 3rd Party Papers citing CLAM =
 
