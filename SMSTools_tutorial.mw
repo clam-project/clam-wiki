@@ -18,9 +18,8 @@ Note that all of them can be selected and generated on run-time from the user in
 
 From these inputs, the application is able to generate the following outputs:
 
-# Analysis data xml or sdif file.
-# Melody xml file.
-# Output sound: global sound, sinusoidal component, residual component
+# '''Analysis data''' xml or sdif file.
+# Output sound: '''global''' sound, '''sinusoidal''' component, '''residual''' component
 
 The following picture illustrates the main blocks of the application:
 
