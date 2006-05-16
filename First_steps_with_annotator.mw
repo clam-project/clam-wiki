@@ -5,4 +5,4 @@
 # You can click follow-play button to see a more detailed detection of the chord on the segment properties pane, supporting other modes than major and minor.
 # To analyze your own mp3 or wav files: Go to the '''song descriptors''' tab and do: '''Project, Add Song to Project'''.  Select the new song and click '''Song, Compute Descriptors'''
 # Wait until the execution ends and then click '''Song, Reload Descriptors'''
-# '''Use the ''What's this'' button to get additional help about any of the graphical elements.'''
+# '''Use the ''What's this'' button or Shift-F1 to get additional help about any of the graphical elements.'''
