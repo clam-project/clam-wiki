@@ -3,6 +3,6 @@
 # Go to the '''Song descriptors''' tab and select a song. Debasers Wooden Hose, for example.
 # Go to the '''intra-song descriptors''' tab. Click the Play button and you should see the animated key-space and tonnetz views.
 # You can click follow-play button to see a more detailed detection of the chord on the segment properties pane, supporting other modes than major and minor.
-# To analyze your own mp3 or wav files: Go to the '''song descriptors''' tab and do: '''Project, Add Song to Project'''.  Select the new song and click '''Song, Compute Descriptors'''
+# To analyze your own mp3 or wav files: Go to the '''song descriptors''' tab and do: '''Project, Add Song to Project'''.  Select the new song, ignore the error message and click '''Song, Compute Descriptors'''
 # Wait until the execution ends and then click '''Song, Reload Descriptors'''
 # '''Use the ''What's this'' button or Shift-F1 to get additional help on any of the graphical elements.'''
