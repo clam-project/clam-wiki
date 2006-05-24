@@ -6,7 +6,7 @@ We will now show how we can set up a graphical stand-alone program in just some 
 The purpose of this program is to read the audio from the sound card, apply some spectral transformations in real-time, and send the result back to the audio-card.
 The graphical interface will consist in a simple panel with different representations of the spectral analysis, and three sliders to change transformation parameters.
 
-==First step: building the processing network==
+==Building a processing network==
 
 
 In order to create a patch with the NetworkEditor (see Figure~\ref{neteditor}), we first load the desired processings by dragging them from the left panel of the window.
