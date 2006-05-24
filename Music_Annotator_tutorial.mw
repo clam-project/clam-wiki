@@ -50,7 +50,7 @@ Other key features are:
 * Open '''Chords.pro''' project (if your are running on Windows, get one level up and open '''Samples''' dir)
 * Go to the '''Song descriptors''' tab and select a song. Debasers Wooden Hose, for example.
 
-[[Image:Annotator-SongLevel.png|thumb|Songs level descriptors and the list of songs]]
+[[image:Annotator-SongLevel.png|100px|Songs level descriptors and the list of songs]]
 
 * Go to the '''intra-song descriptors''' tab. Click the Play button and you should see the animated key-space and tonnetz views.
 * You can click follow-play button to see a more detailed detection of the chord on the segment properties pane, supporting other modes than major and minor.
