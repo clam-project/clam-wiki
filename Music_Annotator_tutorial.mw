@@ -54,11 +54,9 @@ Other key features are:
 [[image:Annotator-SongLevel.png|400px|Songs level descriptors and the list of songs]]
 
 * Go to the '''intra-song descriptors''' tab. Click the Play [[image:AnnotatorIcon-Play.png]] button and you should see the animated key-space and tonnetz views flashing.
-
 [[image:Annotator-Tonnetz-Keyspace.png|400px|Songs level descriptors and the list of songs]]
-
- * The Tonnetz view is the one with the hexagons. Hexagons represent sounding pitches, they are arranged in such a way that  common chords modes draw identificable shapes, for example the pointing down triangle on the previous screenshot is the figure for a minor chord. Use the context help to see a list of common shapes.
- * The KeySpace view is the one at the bottom. It displays the instant tonality which matches with major and minor chords. Chords sharing pitches are arranged closer so the stronger one can be identified better by contrast. Note that this view only displays major and minor chords.
+** The Tonnetz view is the one with the hexagons. Hexagons represent sounding pitches, they are arranged in such a way that  common chords modes draw identificable shapes, for example the pointing down triangle on the previous screenshot is the figure for a minor chord. Use the context help to see a list of common shapes.
+** The KeySpace view is the one at the bottom. It displays the instant tonality which matches with major and minor chords. Chords sharing pitches are arranged closer so the stronger one can be identified better by contrast. Note that this view only displays major and minor chords.
 * You can click follow-play button [[image:AnnotatorIcon-FollowPlay.png]] to see a more detailed detection of the chord on the segment properties pane, supporting other modes than major and minor.
 * To analyze your own mp3 or wav files: Go to the '''song descriptors''' tab and do: '''Project, Add Song to Project''' [[image:AnnotatorIcon-AddSong.png]].  Select the new song, ignore the error message and click '''Song, Compute Descriptors''' [[image:AnnotatorIcon-ComputeDescription.png]]
 * Wait until the execution ends and then click '''Song, Reload Descriptors'''  [[image:AnnotatorIcon-ReloadDescription.png]]
