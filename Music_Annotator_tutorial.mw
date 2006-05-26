@@ -46,9 +46,9 @@ Other key features are:
 
 ==First Steps with the Annotator==
 
-* Execute Annotator (from Windows menu)
-* Open ([[image:Annotator-IconOpenProject.png]]) '''Chords.pro''' project (if your are running on Windows, get one level up and open '''Samples''' dir)
-* Go to the '''Song descriptors''' tab and select a song. Debasers Wooden Hose, for example.
+* Install and run the CLAM Music Annotator.
+* Open [[image:Annotator-IconOpenProject.png]] the '''Chords.pro''' project from the Music Annotator examples. If your are running on Windows, get one level up and open '''Samples''' dir. 
+* Go to the '''Song descriptors''' tab and select a song. Debaser's Wooden House, for example.
 
 [[image:Annotator-SongLevel.png|400px|Songs level descriptors and the list of songs]]
 
