@@ -47,7 +47,7 @@ Other key features are:
 ==First Steps with the Annotator==
 
 * Execute Annotator (from Windows menu)
-* Open '''Chords.pro''' project (if your are running on Windows, get one level up and open '''Samples''' dir)
+* Open ([[image:Annotator-IconOpenProject.png]])'''Chords.pro''' project (if your are running on Windows, get one level up and open '''Samples''' dir)
 * Go to the '''Song descriptors''' tab and select a song. Debasers Wooden Hose, for example.
 
 [[image:Annotator-SongLevel.png|400px|Songs level descriptors and the list of songs]]
