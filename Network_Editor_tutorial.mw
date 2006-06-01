@@ -87,15 +87,15 @@ This file specifies all the Processings, connections and configurations. Note th
 *Now you need to configure the Processings appropiately. We won't go into the DSP details but you are more than welcome to try with different values (be careful to save the network every step you take because in its current version, a wrong setting will produce a program abortion).
 Here you have a screenshot of the three configurations (SpectralAnalysis, SpectralSynthesis and OverlapAdd).
 
-[[Image:SpectralAnalysisConfig.png|500px|center]]
+[[Image:SpectralAnalysisConfig.png|100px|center]]
 
-[[Image:SpectralSynthesisConfig.png|500px|center]]
+[[Image:SpectralSynthesisConfig.png|100px|center]]
 
-[[Image:OLAConfig.png|500px|center]]
+[[Image:OLAConfig.png|100px|center]]
 
 *In order to finish this section we are going to add a couple of monitors that can give us more useful information. We will add an SpectrumPortMonitor to the output of the SpectralAnalysis and move the AudioPortMonitor to the output of the SpectralSynthesis, just as shown:
 
-[[Image:empty.png|500px|center]]
+[[Image:SpectralAnalysisSynthesisCompletePlots.png|500px|center]]
 
 
 ==Transformations and Controls==
