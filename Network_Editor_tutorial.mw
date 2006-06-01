@@ -96,13 +96,13 @@ This file specifies all the Processings, connections and configurations. Note th
 Here you have a screenshot of the three configurations (SpectralAnalysis, SpectralSynthesis and OverlapAdd).
 
 
-[[Image:SpectralAnalysisConfig.png|100px|center]]
+[[Image:SpectralAnalysisConfig.png|200px|center]]
 
 
-[[Image:SpectralSynthesisConfig.png|100px|center]]
+[[Image:SpectralSynthesisConfig.png|200px|center]]
 
 
-[[Image:OLAConfig.png|100px|center]]
+[[Image:OLAConfig.png|200px|center]]
 
 
 *In order to finish this section we are going to add a couple of monitors that can give us more useful information. We will add an SpectrumPortMonitor to the output of the SpectralAnalysis and move the AudioPortMonitor to the output of the SpectralSynthesis, just as shown:
@@ -125,7 +125,7 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 *Once in the canvas right click to bring up its configuration and set it up as shown below:
 
 
-[[Image:SampleAndHoldControlConfig.png|500px|center]]
+[[Image:SampleHoldControlConfig.png|500px|center]]
 
 
 *Now connect the slider to the input control in the SampleAndHold and resize the control as needed. It should look like:
