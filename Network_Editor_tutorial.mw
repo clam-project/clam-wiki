@@ -64,7 +64,12 @@ This file specifies all the Processings, connections and configurations. Note th
 
 (possible screenshot)
 
-*If you start the network right away chances are that you will get nothing out of it. We won't go into the DSP details but you need to configure SpectralAnalysis and SpectralSynthesis in such a way that they can produce appropiate buffer sizes. Here you have a screenshot of both configurations (be careful to save the network every step you take because in its current version, a wrong setting will produce a program abortion).
+*If you start the network right away chances are that you will get nothing out of it. As a matter of fact, we need another processing first, it is called OverlapAdd and it is used for smoothing out the resulting audio frames. Take it from the Synthesis category and connect it as shown.
+
+(possible screenshot)
+
+*Now you need to configure the Processings appropiately. We won't go into the DSP details but you are more than welcome to try with different values (be careful to save the network every step you take because in its current version, a wrong setting will produce a program abortion).
+Here you have a screenshot of the three configurations (SpectralAnalysis, SpectralSynthesis and OverlapAdd).
 
 (possible screenshot)
 
