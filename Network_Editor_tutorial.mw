@@ -3,13 +3,15 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 == First steps ==
 
 *Execute the Network Editor program. The program should look like this:
-[[Image:empty.png]]
+
+[[Image:empty.png|500px]]
+
 
 *Not very exciting, right? But now go to File->Load. With the file browser navigate to ../build. There you will find a number of examples. 
 
 *Open the freqshift-resamount.xml file. Your NetworkEditor should now look like the following screenshot:
 
-(possible screenshot)
+[[Image:empty.png|500px]]
 
 *Because there is a Processing in red, it means that we cannot start playing around with this network yet. We could try to configure it but first we need to understand a few concepts. So, let's take a few steps back and start over again.
 
@@ -20,29 +22,29 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 *Now we are going to add a number of Processings. A Processing object is the basic building block in CLAM (In this tutorial you will understand the basics but if you want to dive more into its meaning you should look in the other CLAM documentation or articles). Processings are listed on the left hand menu in the NetworkEditor, grouped by categories. Click on the Audio File I/O Category in order to expand the view and see what Processings are available.
 *If you are wondering what the file looks like go ahead and open it with your favourite text editor. Note that it is a regular xml file that is easy to edit and export and should look something like this:
 
-(possible screenshot)
+[[Image:empty.png|500px]]
 
 This file specifies all the Processings, connections and configurations. Note that the graphical positions of the elements are stored in a separate .pos xml file.
 
-(possible screenshot)
+[[Image:empty.png|500px]]
 
 *Click on the MonoAudioFileReader and drag it to the canvas on the right side. It should now look like this:
 
-(possible screenshot)
+[[Image:empty.png|500px]]
 
 *The Processing is "red" because it is not "configured" properly. Configurations in CLAM are those parameters that need to be set before run-time. If a Processing is not configured, the network cannot be started. Right-click on the red Processing. The following pop up screen should appear:
 
-(possible screenshot)
+[[Image:empty.png|500px]]
 
 *This is indeed the graphical representation of a simple configuration. It turns out that the Processing is not correctly configured because it expects a file name to open. Click on the "..." and select a MONO audio file from your hard drive (if you only have stereo, you will have to repeat the steps again but using MultichannelAudioFileReader instead). After clicking ok on the configurator, the Processing should be in Green now.
 
-(possible screenshot)
+[[Image:empty.png|500px]]
 
 *Now you can run this network by simply selecting NetworkActions->StartNetwork. All you can see is that the processing turns a different color. But no sound is produced. That is because we have still not added an Audio Output!
 *Go to the Input/Output category and select and drag the AudioOut processing object. If you start the network again you will still have no output sound.
 *We need to first connect the two processing objects. Those blue outlets that you see at the right of the MonoAudioFileReader and the left of the AudioOut are called "Ports" and they are used to define the main data flow in a network. You can connect two ports as long as they expect the same data type (e.g. you cannot connect an Audio Port to a Spectrum Port). In our case both are Audio Port so we can indeed connect them. Click on one of the ports and move the mouse while holding the mouse button, a straight line will appear. Drive the end of that line to the other port and the ports will be connected with an spline just as in the following screenshot (you can always remove a connection by selecting it and pressing Delete on the keyboard):
 
-(possible screenshot)
+[[Image:empty.png|500px]]
 
 *Now you can start the network and you will hear the playback of the sound file you selected. If you activated the Loop button in the MonoAudioFileReader configurarion the sound will loop.
 
@@ -51,7 +53,7 @@ This file specifies all the Processings, connections and configurations. Note th
 
 *Another interesting thing we can add to our network is a visualization of the audio that is being played. For that purpose we will use the AudioPortMonitor in the PlotsInCanvas category. Monitors are in fact a special kind of sink processing objects but they are used just the same. Connect the input Port in the AudioPortMonitor to the output Port in the MonoAudioFileReader. Start the Network, you should be able to see the being read:
 
-(possible screenshot)
+[[Image:empty.png|500px]]
 
 *We have put too much work into this network just to risk loosing it now! We should save it somehow. Select File->SaveAs and choose the location and name you want (be careful not to do Save directly as you would be probably be overwriting the previously opened network).
 
@@ -62,50 +64,50 @@ This file specifies all the Processings, connections and configurations. Note th
 
 *In order to do more interesting things we will now turn into the spectral domain. Delete the connection between the MonoAudioFileReader and the AudioOut. Select a SpectralAnalysis from the Analysis category and a SpectralSynthesis from the Synthesis category. Connect them as shown:
 
-(possible screenshot)
+[[Image:empty.png|500px]]
 
 *If you start the network right away chances are that you will get nothing out of it. As a matter of fact, we need another processing first, it is called OverlapAdd and it is used for smoothing out the resulting audio frames. Take it from the Synthesis category and connect it as shown.
 
-(possible screenshot)
+[[Image:empty.png|500px]]
 
 *Now you need to configure the Processings appropiately. We won't go into the DSP details but you are more than welcome to try with different values (be careful to save the network every step you take because in its current version, a wrong setting will produce a program abortion).
 Here you have a screenshot of the three configurations (SpectralAnalysis, SpectralSynthesis and OverlapAdd).
 
-(possible screenshot)
+[[Image:empty.png|500px]]
 
-(possible screenshot)
+[[Image:empty.png|500px]]
 
-(possible screenshot)
+[[Image:empty.png|500px]]
 
 *In order to finish this section we are going to add a couple of monitors that can give us more useful information. We will add an SpectrumPortMonitor to the output of the SpectralAnalysis and move the AudioPortMonitor to the output of the SpectralSynthesis, just as shown:
 
-(possible screenshot)
+[[Image:empty.png|500px]]
 
 
 ==Transformations and Controls==
 
 *Now that we know how to get exactly the same audio that we had at the beginning, how about playing around a bit with it? You can in fact select any transformation from the SpectralTransformations category, but in order to start small, we will use the SampleAndHold. Connect it as shown:
 
-(possible screenshot)
+[[Image:empty.png|500px]]
 
 *If you start the Network you will see its very clear effect! But, how can I control the way it behaves? Did you notice a red triangle on the top of the Processing? That is what in CLAM is called a "Control". Controls are used in order to receive and send asynchronous events (such as those coming from a slider,etc...). So all we need to do is to learn how to send values to this input control. Go to the Utils category and select and OutControlSender.
 
 *Once in the canvas right click to bring up its configuration and set it up as shown below:
 
-(possible screenshot)
+[[Image:empty.png|500px]]
 
 *Now connect the slider to the input control in the SampleAndHold and resize the control as needed. It should look like:
 
-(possible screenshot)
+[[Image:empty.png|500px]]
 
 *Now you are ready to start the network and play around with the slider in order to affect the way the effect behaves.
 
 *Finally it is up to you to try out the different Spectral Transformations and see what they are capable of doing. Not that you can even chain different transformations one after the other as shown here:
 
-(possible screenshot)
+[[Image:empty.png|500px]]
 
 ==SMS Transformations==
 
 *Appart from the regular STFFT (Phase Vocoder) implementation, CLAM also has implemented the Sinusoidal plus Residual Model (a.k.a. SMS). Even more interesting transformations can be implemented with that model. Now that you have a working knowledge of the NetworkEditor the best you can do is to start off with an example. In the NetworkEditor build folder you have some of them. Open the freqshift-resamount.xml network and experiment with it, changing the SMS Transformations for others in the same category.
 
-(possible screenshot)
+[[Image:empty.png|500px]]
