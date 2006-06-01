@@ -1,21 +1,12 @@
-CLAM's visual builder is known as the NetworkEditor. It allows to generate an application --or its processing engine-- by graphically connecting objects in a patch. Another application called Prototyper acts as the glue between a graphical GUI designing tool (such as qt Designer) and the processing engine defined with the NetworkEditor. 
+CLAM's visual builder is known as the NetworkEditor. It allows to generate an application --or its processing engine-- by graphically connecting objects in a patch. In the present tutorial we will learn the main funcionalities of the NetworkEditor step by step.
 
-==An example==
+== First steps ==
 
-We will now show how we can set up a graphical stand-alone program in just some simple steps. 
-The purpose of this program is to read the audio from the sound card, apply some spectral transformations in real-time, and send the result back to the audio-card.
-The graphical interface will consist in a simple panel with different representations of the spectral analysis, and three sliders to change transformation parameters.
+*Execute the Network Editor program. Now go to File->Load. With the file browser navigate to ../build. There you will find a number of examples. 
 
-==Building a processing network==
+*Open the freqshift-resamount.xml file. Your NetworkEditor should look like the following screenshot:
 
 
-In order to create a patch with the NetworkEditor (see Figure~\ref{neteditor}), we first load the desired processings by dragging them from the left panel of the window.
-Once in the patching panel, processing objects are represented as little boxes with attached inlets and outlets representing its ports and control. The application allows to select, move, delete, and connect ports and controls.
+*Because there is a Processing in red, it means that we cannot start playing around with this network yet. We could try to configure it but first we need to understand a few concepts. So, let's take a few steps back and start over again.
 
-Since CLAM ports are typed, not all out-ports are compatible with all in-ports. For example in Figure~\ref{neteditor}, the second processing in the chain is called SMSAnalysisCore and receives audio samples and produces: sinusoidal peaks, fundamental frequency, and two spectrums (one corresponding to the original audio and another one corresponding to the residual component resulting of subtracting the sinusoidal to the original).
-
-Connected to SMSAnalysisCore out-ports we have placed two processings to perform transformations: one for controlling the gain of the sinusoidal component, and another to control the gain of the residual component. The resulting stream of sinusoidal and residual components feeds another processing, SMSPitchShift, which modifies both components performing a pitch shift.
-
-After the transformations are applied in the spectral domain, the processing data is fed into the a synthesizer processing object which outputs the resynthesizes audio ready to feed the AudioOut.
-
-Before starting the execution of the network, we can right click upon any processing view to open a dialog with its configuration. Another interesting feature of the NetworkEditor is that it allows loading visual plots widgets for examining the data flowing through any out-port.  Slider widgets can also be connected to the in-control inlets.
+== Creating the simplest Network ==
