@@ -83,6 +83,7 @@ So you want to analyze your own song.
 
 Before creating a new Project let's take a look how the previous project was defined.
 
+* Open the previous project
 * Click the '''Project Properties''' button [[image:Annotator-IconProjectProperties.png]].
 * A dialog will appear with the basic parameters for the project
 * [[Image:Annotator-ProjectProperties.png]]
