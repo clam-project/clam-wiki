@@ -2,11 +2,28 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 
 == First steps ==
 
-*Execute the Network Editor program. Now go to File->Load. With the file browser navigate to ../build. There you will find a number of examples. 
+*Execute the Network Editor program. The program should look like this:
 
-*Open the freqshift-resamount.xml file. Your NetworkEditor should look like the following screenshot:
+(possible screenshot)
 
+*Not very exciting, right? But now go to File->Load. With the file browser navigate to ../build. There you will find a number of examples. 
+
+*Open the freqshift-resamount.xml file. Your NetworkEditor should now look like the following screenshot:
+
+(possible screenshot)
 
 *Because there is a Processing in red, it means that we cannot start playing around with this network yet. We could try to configure it but first we need to understand a few concepts. So, let's take a few steps back and start over again.
 
+
 == Creating the simplest Network ==
+
+*Select File New. You will get a blank canvas again.
+*Now we are going to add a number of Processings. A Processing object is the basic building block in CLAM (In this tutorial you will understand the basics but if you want to dive more into its meaning you should look in the other CLAM documentation or articles). Processings are listed on the left hand menu in the NetworkEditor, grouped by categories. Click on the Audio File I/O Category in order to expand the view and see what Processings are available.
+
+(possible screenshot)
+
+*Click on the MonoAudioFileReader and drag it to the canvas on the right side. It should now look like this:
+
+(possible screenshot)
+
+*The Processing is "red" because it is not "configured" properly. Configurations in CLAM are those parameters that need to be set before run-time. If a Processing is not configured, the network cannot be started.
