@@ -92,8 +92,7 @@ Before creating a new Project let's take a look how the previous project was def
 ** The ''description file extension'' is the suffix that will be appended to the song file name to obtain the description file name. Descriptions will be stored in a file that is on the same folder that the song file it they have a file name resulting of appending such a suffix.
 ** The extractor command is the command used to extract the chords. This project has the <tt>ChordExtractor</tt> command which is one of the extractors that come with the program. 
 *** Remember that every extractor has its own schema.
-*** Given an extractor you can use a command line option to generate a description scheme file conforming their output.
- MyExtractor -s MySchema.sc
+*** Given an extractor you can use a command line option to generate a description scheme file conforming its output such as: <tt>MyExtractor -s MySchema.sc</tt>
 ** You can additionally add some ''project documentation'' in html that will be shown when you open the project. This has use for annotation purposes to write on the annotation criteria.
 
 So, now we know which are the project parameters. Let's define our own one.
