@@ -90,7 +90,8 @@ So you want to analyze your own song.
 ** You can additionally add some project documentation in html that will be shown when the project is open.
 * Once you have defined all that, you can add songs to your project and compute them
 
-(N) Extractors provide a command line option to generate a description scheme file conforming their output.
+If you have an extractor but you don't know which description scheme they generate,
+you can use a command line option to generate a description scheme file conforming their output.
  MyExtractor -s MySchema.sc
 
 === Editing the analysis ===
