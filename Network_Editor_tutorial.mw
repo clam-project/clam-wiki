@@ -50,22 +50,24 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 *Go to the Input/Output category and select and drag the AudioOut processing object. If you start the network again you will still have no output sound.
 *We need to first connect the two processing objects. Those blue outlets that you see at the right of the MonoAudioFileReader and the left of the AudioOut are called "Ports" and they are used to define the main data flow in a network. You can connect two ports as long as they expect the same data type (e.g. you cannot connect an Audio Port to a Spectrum Port). In our case both are Audio Port so we can indeed connect them. Click on one of the ports and move the mouse while holding the mouse button, a straight line will appear. Drive the end of that line to the other port and the ports will be connected with an spline just as in the following screenshot (you can always remove a connection by selecting it and pressing Delete on the keyboard):
 
-[[Image:empty.png|500px|center]]
+
+[[Image:ConnectedProcessings.png|500px|center]]
+
 
 *Now you can start the network and you will hear the playback of the sound file you selected. If you activated the Loop button in the MonoAudioFileReader configurarion the sound will loop.
 
 
 ==Saving, Seeing and Loading==
 
-*Another interesting thing we can add to our network is a visualization of the audio that is being played. For that purpose we will use the AudioPortMonitor in the PlotsInCanvas category. Monitors are in fact a special kind of sink processing objects but they are used just the same. Connect the input Port in the AudioPortMonitor to the output Port in the MonoAudioFileReader. Start the Network, you should be able to see the being read:
+*Another interesting thing we can add to our network is a visualization of the audio that is being played. For that purpose we will use the AudioPortMonitor in the PlotsInCanvas category. Monitors are in fact a special kind of sink processing objects but they are used just the same. Connect the input Port in the AudioPortMonitor to the output Port in the MonoAudioFileReader. Start the Network, you should be able to see the audio being read:
 
-[[Image:empty.png|500px|center]]
+[[Image:AudioMonitor.png|500px|center]]
 
 *We have put too much work into this network just to risk loosing it now! We should save it somehow. Select File->SaveAs and choose the location and name you want (be careful not to do Save directly as you would be probably be overwriting the previously opened network).
 
 *If you are wondering what the file looks like go ahead and open it with your favourite text editor. Note that it is a regular xml file that is easy to edit and export and should look something like this:
 
-[[Image:networkconfig.png|500px|center]]
+[[Image:NetworkConfig.png|500px|center]]
 
 This file specifies all the Processings, connections and configurations. Note that the graphical positions of the elements are stored in a separate .pos xml file.
 
@@ -80,16 +82,16 @@ This file specifies all the Processings, connections and configurations. Note th
 
 *If you start the network right away chances are that you will get nothing out of it. As a matter of fact, we need another processing first, it is called OverlapAdd and it is used for smoothing out the resulting audio frames. Take it from the Synthesis category and connect it as shown.
 
-[[Image:empty.png|500px|center]]
+[[Image:SpectralAnalysisSynthesisComplete.png|500px|center]]
 
 *Now you need to configure the Processings appropiately. We won't go into the DSP details but you are more than welcome to try with different values (be careful to save the network every step you take because in its current version, a wrong setting will produce a program abortion).
 Here you have a screenshot of the three configurations (SpectralAnalysis, SpectralSynthesis and OverlapAdd).
 
-[[Image:empty.png|500px|center]]
+[[Image:SpectralAnalysisConfig.png|500px|center]]
 
-[[Image:empty.png|500px|center]]
+[[Image:SpectralSynthesisConfig.png|500px|center]]
 
-[[Image:empty.png|500px|center]]
+[[Image:OLAConfig.png|500px|center]]
 
 *In order to finish this section we are going to add a couple of monitors that can give us more useful information. We will add an SpectrumPortMonitor to the output of the SpectralAnalysis and move the AudioPortMonitor to the output of the SpectralSynthesis, just as shown:
 
