@@ -26,4 +26,10 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 
 (possible screenshot)
 
-*The Processing is "red" because it is not "configured" properly. Configurations in CLAM are those parameters that need to be set before run-time. If a Processing is not configured, the network cannot be started.
+*The Processing is "red" because it is not "configured" properly. Configurations in CLAM are those parameters that need to be set before run-time. If a Processing is not configured, the network cannot be started. Right-click on the red Processing. The following pop up screen should appear:
+
+(possible screenshot)
+
+*This is indeed the graphical representation of a simple configuration. It turns out that the Processing is not correctly configured because it expects a file name to open. Click on the "..." and select a MONO audio file from your hard drive (if you only have stereo, you will have to repeat the steps again but using MultichannelAudioFileReader instead). After clicking ok on the configurator, the Processing should be in Red.
+
+(possible screenshot)
