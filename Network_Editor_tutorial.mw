@@ -83,7 +83,7 @@ This file specifies all the Processings, connections and configurations. Note th
 *In order to do more interesting things we will now turn into the spectral domain. Delete the connection between the MonoAudioFileReader and the AudioOut. Select a SpectralAnalysis from the Analysis category and a SpectralSynthesis from the Synthesis category. Connect them as shown:
 
 
-[[Image:empty.png|500px|center]]
+[[Image:SpectralAnalysisSynthesis.png|500px|center]]
 
 
 *If you start the network right away chances are that you will get nothing out of it. As a matter of fact, we need another processing first, it is called OverlapAdd and it is used for smoothing out the resulting audio frames. Take it from the Synthesis category and connect it as shown.
