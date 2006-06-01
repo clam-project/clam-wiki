@@ -146,4 +146,5 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 
 *Appart from the regular STFFT (Phase Vocoder) implementation, CLAM also has implemented the Sinusoidal plus Residual Model (a.k.a. SMS). Even more interesting transformations can be implemented with that model. Now that you have a working knowledge of the NetworkEditor the best you can do is to start off with an example. In the NetworkEditor build folder you have some of them. Open the freqshift-resamount.xml network and experiment with it, changing the SMS Transformations for others in the same category.
 
+
 [[Image:SMSTransformations.png|500px|center]]
