@@ -86,7 +86,7 @@ Before creating a new Project let's take a look how the previous project was def
 * Open the previous project
 * Click the '''Project Properties''' button [[image:Annotator-IconProjectProperties.png]].
 * A dialog will appear with the basic parameters for the project
-* [[Image:Annotator-DetailProjectProperties.png]]
+* [[Image:Annotator-DetailProjectProperties.png|400px]]
 * Lets review the parameters
 ** The ''project file'' is the file that contains those parameters, the list of songs and the view configuration.
 ** The ''description schema'' is a file that describes which are the working attributes in your project. You can build it by hand or you can use the extractor to generate it (see below).
