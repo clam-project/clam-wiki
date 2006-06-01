@@ -79,19 +79,28 @@ So you want to analyze your own song.
 * Wait until the execution ends and then click '''Song, Reload Descriptors'''  [[image:AnnotatorIcon-ReloadDescription.png]]
 * Once reloaded, proceed as before.
 
-=== Building your own project from scratch ===
+=== Building a project from scratch ===
+
+Before creating a new Project let's take a look how the previous project was defined.
+
+* Click the '''Project Properties''' button [[image:Annotator-IconProjectProperties.png]].
+* A dialog will appear with the basic parameters for the project
+* [[Image:Annotator-ProjectProperties.png]]
+* Lets review the parameters
+** The ''project file'' is the file that contains those parameters, the list of songs and the view configuration.
+** The ''description schema'' is a file that describes which are the working attributes in your project. You can build it by hand or you can use the extractor to generate it (see below).
+** The ''description file extension'' is the suffix that will be appended to the song file name to obtain the description file name. Descriptions will be stored in a file that is on the same folder that the song file it they have a file name resulting of appending such a suffix.
+** The extractor command is the command used to extract the chords. This project has the <tt>ChordExtractor</tt> command which is one of the extractors that come with the program. 
+*** Remember that every extractor has its own schema.
+*** Given an extractor you can use a command line option to generate a description scheme file conforming their output.
+ MyExtractor -s MySchema.sc
+** You can additionally add some ''project documentation'' in html that will be shown when you open the project. This has use for annotation purposes to write on the annotation criteria.
+
+So, now we know which are the project parameters. Let's define our own one.
 
 * Click the '''New Project''' button [[image:Annotator-IconNewProject.png]].
 * Choose a location and name for the project file
-* A dialog will appear to define the basic parameters for the project
-** Choose the same schema that the Chord project that is named <tt>Chord.sc</tt>
-** Write <tt>.chord</tt> for the extension it will be appended to description files. Descriptions are placed with the same path and name than the original song file but appending that extension.
-** Choose an extractor command. Write <tt>ChordExtractor</tt> which is one of the extractors that are provided with the Music Annotator.
-** You can additionally add some project documentation in html that will be shown when the project is open.
+* Modify all the previous parameters accordingly
 * Once you have defined all that, you can add songs to your project and compute them
-
-If you have an extractor but you don't know which description scheme they generate,
-you can use a command line option to generate a description scheme file conforming their output.
- MyExtractor -s MySchema.sc
 
 === Editing the analysis ===
