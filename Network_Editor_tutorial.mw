@@ -58,6 +58,7 @@ This file specifies all the Processings, connections and configurations. Note th
 
 *If you feel adventurous you can go ahead and edit some of the values and then load the xml from the NetworkEditor.
 
+
 ==The Spectral Domain==
 
 *In order to do more interesting things we will now turn into the spectral domain. Delete the connection between the MonoAudioFileReader and the AudioOut. Select a SpectralAnalysis from the Analysis category and a SpectralSynthesis from the Synthesis category. Connect them as shown:
@@ -72,5 +73,18 @@ This file specifies all the Processings, connections and configurations. Note th
 Here you have a screenshot of the three configurations (SpectralAnalysis, SpectralSynthesis and OverlapAdd).
 
 (possible screenshot)
+
+(possible screenshot)
+
+(possible screenshot)
+
+*In order to finish this section we are going to add a couple of monitors that can give us more useful information. We will add an SpectrumPortMonitor to the output of the SpectralAnalysis and move the AudioPortMonitor to the output of the SpectralSynthesis, just as shown:
+
+(possible screenshot)
+
+
+==Transformations and Controls==
+
+*Now that we know how to get exactly the same audio that we had at the beginning, how about playing around a bit with it? You can in fact select any transformation from the SpectralTransformations category, but in order to start small, we will use the SampleAndHold. Connect it as shown:
 
 (possible screenshot)
