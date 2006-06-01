@@ -81,7 +81,7 @@ So you want to analyze your own song.
 
 === Building your own project from scratch ===
 
-* Click the '''New Project''' button.
+* Click the '''New Project''' button [[image:Annotator-IconNewProject.png]].
 * Choose a location and name for the project file
 * A dialog will appear to define the basic parameters for the project
 ** Choose the same schema that the Chord project that is named <tt>Chord.sc</tt>
