@@ -79,4 +79,18 @@ So you want to analyze your own song.
 * Wait until the execution ends and then click '''Song, Reload Descriptors'''  [[image:AnnotatorIcon-ReloadDescription.png]]
 * Once reloaded, proceed as before.
 
+=== Building your own project from scratch ===
+
+* Click the '''New Project''' button.
+* Choose a location and name for the project file
+* A dialog will appear to define the basic parameters for the project
+** Choose the same schema that the Chord project that is named <tt>Chord.sc</tt>
+** Write <tt>.chord</tt> for the extension it will be appended to description files. Descriptions are placed with the same path and name than the original song file but appending that extension.
+** Choose an extractor command. Write <tt>ChordExtractor</tt> which is one of the extractors that are provided with the Music Annotator.
+** You can additionally add some project documentation in html that will be shown when the project is open.
+* Once you have defined all that, you can add songs to your project and compute them
+
+(N) Extractors provide a command line option to generate a description scheme file conforming their output.
+ MyExtractor -s MySchema.sc
+
 === Editing the analysis ===
