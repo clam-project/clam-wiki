@@ -41,3 +41,12 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 (possible screenshot)
 
 *Now you can start the network and you will hear the playback of the sound file you selected. If you activated the Loop button in the MonoAudioFileReader configurarion the sound will loop.
+
+
+==Saving, Seeing and Loading==
+
+*Another interesting thing we can add to our network is a visualization of the audio that is being played. For that purpose we will use the AudioPortMonitor in the PlotsInCanvas category. Monitors are in fact a special kind of sink processing objects but they are used just the same. Connect the input Port in the AudioPortMonitor to the output Port in the MonoAudioFileReader. Start the Network, you should be able to see the being read:
+
+(possible screenshot)
+
+*We have put too much work into this network just to risk loosing it now! We should save it somehow. Select File->SaveAs and choose the location and name you want (be careful not to do Save directly as you would be probably be overwriting the previously opened network).
