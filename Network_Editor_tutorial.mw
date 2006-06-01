@@ -13,7 +13,7 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 *Open the freqshift-resamount.xml file. Your NetworkEditor should now look like the following screenshot:
 
 
-[[Image:freqshift.png|500px|center]]
+[[Image:freqshift1.png|500px|center]]
 
 *Because there is a Processing in red, it means that we cannot start playing around with this network yet. We could try to configure it but first we need to understand a few concepts. So, let's take a few steps back and start over again.
 
@@ -23,19 +23,19 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 *Select File New. You will get a blank canvas again.
 *Now we are going to add a number of Processings. A Processing object is the basic building block in CLAM (In this tutorial you will understand the basics but if you want to dive more into its meaning you should look in the other CLAM documentation or articles). Processings are listed on the left hand menu in the NetworkEditor, grouped by categories. Click on the Audio File I/O Category in order to expand the view and see what Processings are available.
 
-[[Image:empty.png|500px|center]]
+[[Image:audiofileIO.png|500px|center]]
 
 *Click on the MonoAudioFileReader and drag it to the canvas on the right side. It should now look like this:
 
-[[Image:empty.png|500px|center]]
+[[Image:monoaudiofilereader.png|500px|center]]
 
 *The Processing is "red" because it is not "configured" properly. Configurations in CLAM are those parameters that need to be set before run-time. If a Processing is not configured, the network cannot be started. Right-click on the red Processing. The following pop up screen should appear:
 
-[[Image:empty.png|500px|center]]
+[[Image:audiofileconfig.png|500px|center]]
 
 *This is indeed the graphical representation of a simple configuration. It turns out that the Processing is not correctly configured because it expects a file name to open. Click on the "..." and select a MONO audio file from your hard drive (if you only have stereo, you will have to repeat the steps again but using MultichannelAudioFileReader instead). After clicking ok on the configurator, the Processing should be in Green now.
 
-[[Image:empty.png|500px|center]]
+[[Image:monoaudiofilereaderconfigured.png|500px|center]]
 
 *Now you can run this network by simply selecting NetworkActions->StartNetwork. All you can see is that the processing turns a different color. But no sound is produced. That is because we have still not added an Audio Output!
 *Go to the Input/Output category and select and drag the AudioOut processing object. If you start the network again you will still have no output sound.
