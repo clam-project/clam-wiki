@@ -100,3 +100,13 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 (possible screenshot)
 
 *Now you are ready to start the network and play around with the slider in order to affect the way the effect behaves.
+
+*Finally it is up to you to try out the different Spectral Transformations and see what they are capable of doing. Not that you can even chain different transformations one after the other as shown here:
+
+(possible screenshot)
+
+==SMS Transformations==
+
+*Appart from the regular STFFT (Phase Vocoder) implementation, CLAM also has implemented the Sinusoidal plus Residual Model (a.k.a. SMS). Even more interesting transformations can be implemented with that model. Now that you have a working knowledge of the NetworkEditor the best you can do is to start off with an example. In the NetworkEditor build folder you have some of them. Open the freqshift-resamount.xml network and experiment with it, changing the SMS Transformations for others in the same category.
+
+(possible screenshot)
