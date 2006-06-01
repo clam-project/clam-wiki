@@ -4,6 +4,7 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 
 *Execute the Network Editor program. The program should look like this:
 
+
 [[Image:empty.png|500px|center]]
 
 
@@ -11,7 +12,8 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 
 *Open the freqshift-resamount.xml file. Your NetworkEditor should now look like the following screenshot:
 
-[[Image:empty.png|500px|center]]
+
+[[Image:freqshift.png|500px|center]]
 
 *Because there is a Processing in red, it means that we cannot start playing around with this network yet. We could try to configure it but first we need to understand a few concepts. So, let's take a few steps back and start over again.
 
@@ -20,11 +22,6 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 
 *Select File New. You will get a blank canvas again.
 *Now we are going to add a number of Processings. A Processing object is the basic building block in CLAM (In this tutorial you will understand the basics but if you want to dive more into its meaning you should look in the other CLAM documentation or articles). Processings are listed on the left hand menu in the NetworkEditor, grouped by categories. Click on the Audio File I/O Category in order to expand the view and see what Processings are available.
-*If you are wondering what the file looks like go ahead and open it with your favourite text editor. Note that it is a regular xml file that is easy to edit and export and should look something like this:
-
-[[Image:empty.png|500px|center]]
-
-This file specifies all the Processings, connections and configurations. Note that the graphical positions of the elements are stored in a separate .pos xml file.
 
 [[Image:empty.png|500px|center]]
 
@@ -56,6 +53,12 @@ This file specifies all the Processings, connections and configurations. Note th
 [[Image:empty.png|500px|center]]
 
 *We have put too much work into this network just to risk loosing it now! We should save it somehow. Select File->SaveAs and choose the location and name you want (be careful not to do Save directly as you would be probably be overwriting the previously opened network).
+
+*If you are wondering what the file looks like go ahead and open it with your favourite text editor. Note that it is a regular xml file that is easy to edit and export and should look something like this:
+
+[[Image:networkconfig.png|500px|center]]
+
+This file specifies all the Processings, connections and configurations. Note that the graphical positions of the elements are stored in a separate .pos xml file.
 
 *If you feel adventurous you can go ahead and edit some of the values and then load the xml from the NetworkEditor.
 
