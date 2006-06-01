@@ -3,7 +3,7 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 == First steps ==
 
 *Execute the Network Editor program. The program should look like this:
-[[Image:empty.jpg]]
+[[Image:empty.png]]
 
 *Not very exciting, right? But now go to File->Load. With the file browser navigate to ../build. There you will find a number of examples. 
 
