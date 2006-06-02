@@ -2,11 +2,15 @@ What you read here is a short and practical introduction to the SMSTools, for mo
 
 The application analyzes, transforms and synthesizes back a given sound. For doing so, it uses the Sinusoidal plus Residual model (sometimes referred to as SMS but also known as HILN in the context of MPEG4). Next picture depicts the analysis algorithm:
 
-[[Image:smsanalysis.png|400px|center]]
+
+[[Image:smsanalysis.png|500px|center]]
+
 
 If you need more information about the signal processing details involved in the process you may want to visit the [[http://www.iua.upf.es/~sms| SMS]] webpage.
 
+
 ==Introduction==
+
 Although the application has four different versions: qtSMSTools  - with a qt based gui- , SMSTools - which has a FLTK graphical user interface-, SMSConsole- which is a command-line based version-, and SMSBatch - which can be used for batch processing a whole directory this tutorial will focus on the former. The FLTK version is fairly similar and the others are only intended for more advanced users.
 
 ==An SMSTools walkthrough==
