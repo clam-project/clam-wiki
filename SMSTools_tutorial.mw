@@ -60,6 +60,12 @@ impression of the application capabilities and check that everything is right:
 
 *The spectral Tracks are showing the temporal evolution of the different peaks as arranged in tracks. The vertical axis is frequency an the horizontal is time. The amplitude is mapped to colors. This view can give you an idea of how the sound can be recreated using additive synthesis with a bank of time-varying oscillators.
 
+*You may want to change the color scheme to colour over white if you want to use a screenshot as a Figure for a publication. You can do that by visiting View->Scheme. This is how the previous screen looks with a white background:
+
+
+[[Image:SMSTools_WhiteBackground.png|500px|center]]
+
+
 *At any time you can remove particular views from the current workspace by simply selecting an active view from the View menu. This is how our example looks if we concentrate on only the Sinusoidal Tracks and we zoom in:
 
 
@@ -88,24 +94,41 @@ impression of the application capabilities and check that everything is right:
 *You can also store the results of the synthesis as a wave file by choosing File->SMS Synthesis->Save...
 
 
-<li>Before synthesizing, we can transform the sound. For doing so, just as it happened with the configuration, we can load an xml transformation score or edit the default one. We will do the latter. Choose File->SMSTransformation->Edit Score. You will see a list of available transformations. Clicking on any of them will open a brief description of the transformation and its usage:
-<ol>
-<li>Select any transformation, click on Add Transformation to Score and edit the Parameters on the right. In the break point function editor, duble click to add a point and click to select a point or draw a selection box. Repeat this step for any number of transformations you want to connect one after the other.
-</li>
-<li>Click on Apply Changes to Score. Now we can transform the sound by selecting SMSTransformation->Apply.
-</li>
-</ol>
-</li>
+==Transformations==
 
+The interest of synthesizing the different components of your sound without any change is relatively low. But SMSTools has many built-in transformations for you to play with.
+
+*To transform your sound you first have to load an xml transformation score or use the graphical transformation editor available in SMSTools. It is strongly recommended that you use the graphical interface in order to generate the transformation chain you want to apply to your sound. Click on File->SMS Transformation->New Score. A new dialog like the one depicted in the next figure will pop-up.
+
+
+[[Image:SMSTools_TransformationScore.png|200px|center]] 
+
+
+*On the left you have a list of available SMS transformations. By clicking on any of them you will get a brief description on the right panel. This description is just intended to give you a very concise explanation on how the transformation works. (If you should need a more detailed explanation the recommended source is the book DAFX - Digital Audio Effects, edited by Udo Zoelzer and published by Wiley and Sons Ltd.) 
+
+*Once you have decided what transformation you want to use you have click on the "Add Transformation to Score" button. The transformation will be added to the central panel, where the list of used transformations is located. Also the "Parameters" tab for that particular transformation will become visible on the right-hand panel. See the following screenshot:
+
+
+[[Image:SMSTools_EditingTranformation.png|200px|center]] 
+
+
+*Although some transformations have simpler controls, most of them are configured using a break-point-function (or envelope-like) control like the one shown in the previous picture. Note that this break point funtion may represent an evolution over time or an spectral envelope, depending on the type of transformation. 
+
+*On the bpf grid, click to select and move and Insert+click to add a point. Note that you can select a black background if that is more convenient for you.
+
+*Once you have edited a transformation, you can repeat the previous steps to add a new transformations. You may add as many transformations as you need (even more than one instance of the same transformation). Note though that the way the transformations are sorted affects the output (i.e. it is not the same to apply a pitch shift and then a spectral shape shift than doing it the other way around).
+
+*When you are finished with the process click on OK, save the new transformation score for later use and click on SMSTransformation->Apply. Before you can actually hear the result you have to now synthesize by clicking on SMSSynthesis->Synthesize.
+
+*Have fun with the transformations and the nice thing is that adding a new transformation to the CLAM framework wiht your own code is not so difficult. But we will deal with that in another tutorial.
 
 ==Configuration==
 
-In order to make the application work, you first need to load a configuration xml file or edit the default one through the graphical interface. This configuration includes all the different parameters for the analysis/synthesis process. If you load an xml file that includes non-valid parameter values (like a path to a non-existing input sound file), the analysis process will remain disabled. (Note: if you try to load an xml file that does not comply to the Configuration schema, the result is unpredictable and may even produce a program crash).
+In order to get the best results out of a particular sound you might have to load a new xml configuration or edit the default one through the graphical interface. This configuration includes all the different parameters for the analysis/synthesis process. If you load an xml file that includes non-valid parameter values (like a path to a non-existing input sound file), the analysis process will remain disabled. (Note: if you try to load an xml file that does not comply to the Configuration schema, the result is unpredictable and may even produce a program crash).
 
 Here is an example of a valid xml configuration:
 
 <SMSAnalysisSynthesisConfig>
-
     <Name />
     <InputSoundFile>c:/1_brief.wav</InputSoundFile>
     <OutputSoundFile>c:/1_out.wav</OutputSoundFile>
@@ -130,11 +153,10 @@ Here is an example of a valid xml configuration:
     <SynthesisWindowType>Triangular</SynthesisWindowType>
     <SynthesisHopSize>-1</SynthesisHopSize>
     <SynthesisZeroPaddingFactor>0</SynthesisZeroPaddingFactor>
-
 </SMSAnalysisSynthesisConfig>
 
 
-Let us comment the different parameters involved:
+Let us comment the different parameters involved both in the xml file and in the graphical interface:
 
 ===Global Parameters:===
 
@@ -191,19 +213,3 @@ Let us comment the different parameters involved:
 Morph Parameters
 
 <MorphSoundFile>: Optional name of the second file to do a morph on. Only necessary if you want to do a morphing transformation afterwards. Note that the file to morph will be analyzed with the same parameters as the input sound file and that it must have the same sampling rate.
-
-==Synthesis==
-
-Apart from storing the result of your analysis, you can do more interesting things. The first thing you may like to do is synthesize it back, separating each component: residual, sinusoidal, and the sum of both. The following picture illustrates the SMS synthesis algorithm:
-
-For invoking the synthesis procedure you just have to call the 'synthesize' option (either from the GUI or the menu) and then look or store each of the components.
-
-==Transformation==
-
-To transform your sound you first have to load an xml transformation score or use the graphical transformation editor available in SMSTools. It is strongly recommended that you use the graphical interface in order to generate the transformation chain you want to apply to your sound. Click on File->Transformation Score->Edit Score. A new dialog like the one depicted in the next figure will pop-up.
-
-On the left you have a list of available SMS transformations. By clicking on any of them you will get a brief description on the right panel. This description is just intended to give you a very concise explanation on how the transformation works. If you should need a more detailed explanation the recommended source is the book DAFX - Digital Audio Effects, edited by Udo Zoelzer and published by Wiley and Sons Ltd. Once you have decided what transformation you want to use you have click on the "Add to Score" button. The transformation will be added to the central panel, where the list of used transformations is located. Now you are ready to set the parameters for the transformations. Select the "Parameters" tab on the right-hand panel.
-
-Once you have edited a transformation, you can repeat the previous steps to add a new transformations. You may add as many transformations as you need (even more than one instance of the same transformation). Note though that the way the transformations are sorted affects the output (i.e. it is not the same to apply a pitch shift and then a spectral shape shift than doing it the other way around).
-
-Although some transformations have simpler controls, most of them are configured using a break-point-function (or envelope-like) control like the one shown in the previous picture. Note that this break point funtion may represent an evolution over time or an spectral envelope, depending on the type of transformation. On the bpf grid, click to select and move and double click to add a point. You can select a point or a set of points by drawing a selection box. Then you can delete them pressing Ctrl X, you can move them with the mouse or the cursor keys, you can mirror them with the '*' key or increase or decrease the difference to the mean value with '+' and '-' keys.
