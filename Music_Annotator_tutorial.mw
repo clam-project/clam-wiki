@@ -132,7 +132,7 @@ Click on some attributes of those types and check, on the right parameters, whic
 
 * '''Segmentation''' attributes are used to define arbitrary time segments or time marks: Note onsets, notes, break points, chord regions, song structural parts... The segmentation attribute defines the boundaries and the child scope defines the other attributes for the region.
 
-* '''FrameDivision''' attributes define equidistant points in time starting and ending at some positions. This is used mainly to store instant related attributes, such the energy, the spectrum... Instants can not be infinitessimal some granularity is needed.
+* '''FrameDivision''' attributes define equidistant points in time. Child scopes for that attribute are used mainly to store values that happen for every instant in the song, such the energy, the spectrum...
 
 === Adding views to the project ===
 
