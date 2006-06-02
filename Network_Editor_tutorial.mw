@@ -184,11 +184,18 @@ The CLAM Plots toolbox contains widgets that display CLAM objects such as
 audio, spectrums, spectral peaks...
 
 
+In order the Prototyper utility to know which widgets must to be connected to the network
+you must name the widgets like the examples above:
+
+For the port monitors <tt>OutPort__<em>ProcessingName</em>__<em>PortName</em></tt>.
+Be carefull, elements are separated with <b>double</b> underlines here!
+
+
 [[Image:Prototyper-BindingPortMonitor.png|500px|center|Binding a port monitor to an output port]]
 
+Similar names goes to knobs and sliders: <tt>InControl__<em>ProcessingName</em>__<em>ControlName</em></tt>
 
 [[Image:Prototyper-BindingInputControl.png|500px|center|Binding a slider to an input control in the network]]
-
 
 
 If you drag the SMSmess.xml file to the prototyper you will see that:
