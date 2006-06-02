@@ -149,3 +149,18 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 
 
 [[Image:SMSFreqShiftGainsPlots.png|500px|center]]
+
+
+== Building Interfaces with the Prototyper ==
+
+
+The Prototyper is an application that will allow you to build GUI applications
+wrapping a network you built.
+
+To see its potential let's start opening with a example network named SMSmess.xml.
+
+[[Image:Prototyper-DesigningTheNetwork.png|500px|center]]
+
+What it does is mainly an SMS transfomation called PitchShift which shifts the Sinusoidal
+component of the sound and keeps the Residual component. 
+Independent gains are applied to both components.
