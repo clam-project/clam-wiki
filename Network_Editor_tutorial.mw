@@ -8,15 +8,15 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 [[Image:empty.png|500px|center]]
 
 
-*Not very exciting, right? But now go to File->Load. With the file browser navigate to ../build. There you will find a number of examples. 
+*Not very exciting, right? But now go to File->Load. With the file browser navigate to NetworkEditor's example-data folder. There you will find a number of examples. 
 
-*Open the freqshift-resamount.xml file. Your NetworkEditor should now look like the following screenshot:
-
-
-[[Image:freqshift1.png|500px|center]]
+*Open the freqshift-gains-plots.xml file. Your NetworkEditor should now look like the following screenshot:
 
 
-*Because there is a Processing in red, it means that we cannot start playing around with this network yet. We could try to configure it but first we need to understand a few concepts. So, let's take a few steps back and start over again.
+[[Image:SMSFreqShiftGainsPlots.png|500px|center]]
+
+
+*We could try to configure and run this network (and you are welcome to try it if you feel adventurous) but first we need to understand a few concepts. So, let's take a few steps back and start over again.
 
 
 == Creating the simplest Network ==
@@ -64,6 +64,7 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 
 [[Image:AudioMonitor.png|500px|center]]
 
+*Note that you can zoom onto any plot by left-clicking and selecting an area of the plot. You undo the plot by right-clicking on the same plot.
 
 *We have put too much work into this network just to risk loosing it now! We should save it somehow. Select File->SaveAs and choose the location and name you want (be careful not to do Save directly as you would be probably be overwriting the previously opened network).
 
