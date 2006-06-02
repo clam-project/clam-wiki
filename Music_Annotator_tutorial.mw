@@ -119,19 +119,20 @@ The description scheme defines two kinds of entities:
 ''Attributes'' [[Image:Annotator-IconAttribute.png]] 
 and ''scopes'' [[Image:Annotator-IconScope.png|22px]].
 Attributes are the actual value holders, and its validity is limited to a given scope.
-For example, the pitch is an attribute with a value which is valid within a note, which is its scope.
+For instance, the pitch may be an attribute and the note, its scope.
 
-Each attributes has a type (String, Enumeration, Float...) and some meaningfull parameters for the type.
+Each attribute has a type (String, Enumeration, Float...) and some meaningfull parameters for the type.
 For example, a Float (real number) may have units, upper and lower bounds, a default value...
 You can see all those parameters on the right pannel when you click an attribute on the left.
-Some attributes may have a description.
+Some attributes also provide some description of their meaning.
 
-Some kinds attribute deserve a deeper explanation: <tt>FrameDivision</tt> and <tt>Segmentation</tt>.
-The are used to connect a parent scope with a child scope using an special type parameter named ''child scope''.
+Two kinds attribute deserve a deeper explanation: <tt>Segmentation</tt> and <tt>FrameDivision</tt>.
+They are used to connect a parent scope with a child scope.
+Click on some attributes of those types and check, on the right parameters, which child scopes are relating.
 
-* <tt>Segmentation</tt> attributes are used to define arbitrary time segments or time marks: Note onsets, notes, break points, chord regions, song structural parts... The segmentation attribute defines the boundaries and the child scope defines the other attributes for the region.
+* '''Segmentation''' attributes are used to define arbitrary time segments or time marks: Note onsets, notes, break points, chord regions, song structural parts... The segmentation attribute defines the boundaries and the child scope defines the other attributes for the region.
 
-* <tt>FrameDivision</tt> attributes define equidistant points in time starting and ending at some positions. This is used mainly to store instant related attributes, such the energy, the spectrum... Instants can not be infinitessimal some granularity is needed.
+* '''FrameDivision''' attributes define equidistant points in time starting and ending at some positions. This is used mainly to store instant related attributes, such the energy, the spectrum... Instants can not be infinitessimal some granularity is needed.
 
 === Adding views to the project ===
 
