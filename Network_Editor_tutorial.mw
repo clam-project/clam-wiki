@@ -159,7 +159,9 @@ wrapping a network you built.
 
 To see its potential let's start opening with a example network named SMSmess.xml.
 
+
 [[Image:Prototyper-DesigningTheNetwork.png|500px|center]]
+
 
 What it does is mainly an SMS transfomation called PitchShift which shifts the Sinusoidal
 component of the sound and keeps the Residual component. 
@@ -167,6 +169,7 @@ Independent gains are applied to both components.
 
 
 [[Image:Prototyper-BindingInputControl.png|500px|center|Binding a slider to an input control in the network]]
+
 
 [[Image:Prototyper-BindingPortMonitor.png|500px|center|Binding a port monitor to an output port]]
 
