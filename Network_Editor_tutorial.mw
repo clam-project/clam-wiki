@@ -177,4 +177,6 @@ Independent gains are applied to both components.
 [[Image:Prototyper-BindingPortMonitor.png|500px|center|Binding a port monitor to an output port]]
 
 
+If you drag the SMSmess.xml file to the prototyper you will see that:
+
 [[Image:Prototyper-Running.png|500px|center|Running the application]]
