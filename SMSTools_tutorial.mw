@@ -30,7 +30,7 @@ impression of the application capabilities and check that everything is right:
 [[Image:SMSTools_NewConfiguration.png|200px|center]]
 
 
-*There are many fields you can edit and modify (see Section on Configuration File) but for the sake of simplicity, let us just select an input sound file (.wav, .ogg) by clicking on the button next to the InputSoundFile field. Note that SMSTools only acknowledges MONO sound files. Click on OK and select a place to store this new configuration when prompted. For future sessions you will be able to load the configuration instead of editing it from scratch.
+*There are many fields you can edit and modify (see Section on Configuration File) but for the sake of simplicity, let us just select an input sound file (.wav, .ogg) by clicking on the button next to the InputSoundFile field. For your convenience we have added some sample wave files that you will find in the working folder in Windows and in  /usr/share/smstools/example-data in Linux. You can also choose any other sound file you have at hand as long as it is mono (and it should be monophonic and harmonic for best results also). Click on OK and select a place to store this new configuration when prompted. For future sessions you will be able to load the configuration instead of editing it from scratch.
 
 *Now you will see the input audio and your interface should look like:
 
