@@ -34,6 +34,10 @@ impression of the application capabilities and check that everything is right:
 [[Image:SMSTools_OriginalAudio.png|500px|center]]
 
 
+*You can zoom in and out using the lenses on both the horizontal and vertical axis and use the scroll bars to center the view.
+
+*You can also listen to the audio by clicking the play button on the bottom of the screen.
+
 *If the sound file name you entered is correct, we are now in the position to continue and analyze the sound. Click on SMSAnalysis->Analyze and wait for the progress bar to finish.
 
 *Once the sound is analyzed, we are ready to look at the analysis results. In the View menu you will see all the available data: original sound, sinusoidal tracks, fundamental frequency, sonogram, and frame related data (sinusoidal spectrum and peaks and residual spectrum). 
@@ -44,7 +48,7 @@ impression of the application capabilities and check that everything is right:
 [[Image:SMSTools_SpectrumAndPeaks.png|500px|center]]
 
 
-*Note that when you select a frame related view, you can browse through the different frames by clicking on any of the non-frame views or by using the frame browser at the bottom of the interface. You can also listen to the sound by clicking on the play button on the bottom-right of the wave display. Note that the sliders on any view act like a zoom control when clicking on any of the extremes.
+*Note that when you select a frame related view, you can browse through the different frames by clicking on any of the non-frame views (e.g. the audio) or by using the frame browser at the bottom of the interface. 
 
 
 <li>Apart from displaying, the result of the analysis can be stored for later uses. It can be stored in xml format or sdif format. Xml is a textual tagged format that can be convenient for debugging and studying results of some analysis but it is very verbose and slow (you should expect an xml file 4 times the size of the original audio). On the other hand SDIF is a binary format that for most uses will be much more convenient. For storing the result of the analysis, choose File->SMS Analysis->Store Analysis File. The application will switch from SDIF format to XML depending on the file extension you choose.
