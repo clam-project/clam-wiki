@@ -129,7 +129,7 @@ Some attributes may have a description.
 Some kinds attribute deserve a deeper explanation: <tt>FrameDivision</tt> and <tt>Segmentation</tt>.
 The are used to connect a parent scope with a child scope using an special type parameter named ''child scope''.
 
-* <tt>Segmentation</tt> attributes are used to define arbitrary time segments or time marks: Note onsets, notes, break points, chord regions, song structural parts...
+* <tt>Segmentation</tt> attributes are used to define arbitrary time segments or time marks: Note onsets, notes, break points, chord regions, song structural parts... The segmentation attribute defines the boundaries and the child scope defines the other attributes for the region.
 
 * <tt>FrameDivision</tt> attributes define equidistant points in time starting and ending at some positions. This is used mainly to store instant related attributes, such the energy, the spectrum... Instants can not be infinitessimal some granularity is needed.
 
