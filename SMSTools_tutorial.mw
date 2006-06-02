@@ -118,7 +118,7 @@ The interest of synthesizing the different components of your sound without any 
 
 *Although some transformations have simpler controls, most of them are configured using a break-point-function (or envelope-like) control like the one shown in the previous picture. Note that this break point funtion may represent an evolution over time or an spectral envelope, depending on the type of transformation. 
 
-*On the bpf grid, click to select and move and Insert+click to add a point. Note that you can select a black background if that is more convenient for you.
+*On the bpf grid, click to select and move and Insert+click to add a point. In order to delete a pre-existing point press the Delete key, wait for a cross to appear on the mouse pointer and then left-click the point to delete. You can also move points by simply selecting them with the mouse and dragging them. Note that you can select a black background if that is more convenient for you.
 
 *Once you have edited a transformation, you can repeat the previous steps to add a new transformations. You may add as many transformations as you need (even more than one instance of the same transformation). Note though that the way the transformations are sorted affects the output (i.e. it is not the same to apply a pitch shift and then a spectral shape shift than doing it the other way around).
 
