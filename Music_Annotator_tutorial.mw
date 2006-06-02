@@ -107,7 +107,7 @@ So, now that we know which are the project parameters, let's define our own one.
 * Change the extractor to be <tt>ChordExtractor</tt> and the description file suffix <tt>.chords</tt>.
 * Once you have defined all that, you can add songs to your project and compute them
 
-=== Adding views to the project ===
+== Adding views to the project ==
 
 But, in contrast to the example project,
 the project we built from scratch has no Tonnetz neither KeySpace views.
@@ -117,6 +117,9 @@ you should choose an attribute in the schema to apply it to.
 Only attributes that support this kind of view will appear.
 * Apply the Tonnetz view to the Frame::HartePCP
 * Apply the KeySpace view to the Frame::HarteChordCorrelation
+
+
+== Editing the description ==
 
 === Using a different extractor ===
 
