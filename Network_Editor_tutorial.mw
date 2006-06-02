@@ -170,6 +170,15 @@ What it does is mainly an SMS transfomation called PitchShift which shifts the S
 component of the sound and keeps the Residual component. 
 Independent gains are applied to both components.
 
+There is also a prepared interface for this example network. 
+It is named SMSmess.ui and it is placed on the examples folder.
+Open it with the Qt Designer.
+
+
+[[Image:Prototyper-Designer.png|500px|center|Qt Designer opening the example interface]]
+
+
+
 
 [[Image:Prototyper-BindingInputControl.png|500px|center|Binding a slider to an input control in the network]]
 
