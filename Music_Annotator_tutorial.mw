@@ -121,6 +121,27 @@ Only attributes that support this kind of view will appear.
 
 == Editing the description ==
 
+If you don't like the result of the extraction, some descriptors can be edited.
+
+You can edit song and segment attributes.
+When you click on the value it enters into edition mode.
+Depending on the kind of attribute the way of editing it may change.
+
+
+You can also edit segmentations, not just segment attributes.
+* Move and resize segments by dragging its limits.
+* Insert a new segment by pressing the insert key and clicking at the desired begining position.
+* Delete segments by selecting them and pressing the delete key.
+
+Depending on the kind of segmentation some helpfull restrictions apply on edition:
+* Overlaping: You may create segments with no restriction
+* Discontinuous: Segments don't overlap, so you cannot move a limit further than another one's limits.
+* Continuous: There can be not gap. So the beginning of the segment and the ending of the previous one move together.
+* Sizeless: the begining and the ending of the segments move together.
+
+
+And finally, you can edit low level descriptors by dragging the values of the plot.
+
 == Using a different extractor ==
 
 * Choose a different extractor, for example the provided one: <tt>ClamExtractorExample</tt>
