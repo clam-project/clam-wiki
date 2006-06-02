@@ -205,7 +205,7 @@ The prototyper will use them to control the network playback.
 Once you are done with the interface you can save it with the same base name 
 and in the same location than the network editor.
 Of course, this is the case of the example.
-Then you can drag the SMSmess.xml file to the prototyper you will see 
-the application working:
+Then, you can drag the SMSmess.xml file to the prototyper icon 
+and you will see the application working:
 
 [[Image:Prototyper-Running.png|500px|center|Running the application]]
