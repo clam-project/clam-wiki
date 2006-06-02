@@ -57,12 +57,22 @@ impression of the application capabilities and check that everything is right:
 
 [[Image:SMSTools_SpectrumPeaksTracks.png|500px|center]]
 
+
 *The spectral Tracks are showing the temporal evolution of the different peaks as arranged in tracks. The vertical axis is frequency an the horizontal is time. The amplitude is mapped to colors. This view can give you an idea of how the sound can be recreated using additive synthesis with a bank of time-varying oscillators.
 
 *At any time you can remove particular views from the current workspace by simply selecting an active view from the View menu. This is how our example looks if we concentrate on only the Sinusoidal Tracks and we zoom in:
 
 
 [[Image:SMSTools_Tracks.png|500px|center]]
+
+
+*Other interesting analysis views are the Fundamental Frequency view and the Sonogram (see below):
+
+
+[[Image:SMSTools_FundFreq.png|500px|center]]
+
+
+[[Image:SMSTools_Sonogram.png|500px|center]] 
 
 
 <li>Apart from displaying, the result of the analysis can be stored for later uses. It can be stored in xml format or sdif format. Xml is a textual tagged format that can be convenient for debugging and studying results of some analysis but it is very verbose and slow (you should expect an xml file 4 times the size of the original audio). On the other hand SDIF is a binary format that for most uses will be much more convenient. For storing the result of the analysis, choose File->SMS Analysis->Store Analysis File. The application will switch from SDIF format to XML depending on the file extension you choose.
