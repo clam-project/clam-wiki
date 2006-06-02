@@ -52,7 +52,7 @@ or Shift-F1 to get additional help for any element on the user interface.'''
 
 == Using the provided Chord example ==
 
-* Open [[image:Annotator-IconOpenProject.png]] the '''Chords.pro''' project from the Music Annotator examples. If your are running on Windows, get one level up and open '''Samples''' dir. 
+* Open [[image:Annotator-IconOpenProject.png]] the '''Chords.pro''' project from the Music Annotator examples. If your are running on Windows, your browser should be pointing to the right folder, in Linux please drive to /usr/share/annotator/example-data. 
 * Go to the '''Song descriptors''' tab and select a song. Debaser's Wooden House, for example.
 
 [[image:Annotator-SongLevel.png|400px|Songs level descriptors and the list of songs]]
