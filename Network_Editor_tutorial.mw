@@ -177,13 +177,18 @@ Open it with the Qt Designer.
 
 [[Image:Prototyper-Designer.png|500px|center|Qt Designer opening the example interface]]
 
+Notice that there is a '''CLAM Plots''' tab on the widget toolbox on the left.
+If you don't see that tab or if you don't se the black squares on the dialog, 
+you are having problems with the CLAM qt plugins.
+The CLAM Plots toolbox contains widgets that display CLAM objects such as
+audio, spectrums, spectral peaks...
 
+
+[[Image:Prototyper-BindingPortMonitor.png|500px|center|Binding a port monitor to an output port]]
 
 
 [[Image:Prototyper-BindingInputControl.png|500px|center|Binding a slider to an input control in the network]]
 
-
-[[Image:Prototyper-BindingPortMonitor.png|500px|center|Binding a port monitor to an output port]]
 
 
 If you drag the SMSmess.xml file to the prototyper you will see that:
