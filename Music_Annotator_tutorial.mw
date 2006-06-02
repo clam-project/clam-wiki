@@ -129,6 +129,19 @@ Only attributes that support this kind of view will appear.
 ** Randomly generated song level descriptors (just for testing)
 ** Randomly generated segmentations and related attributes (just for testing)
 
+=== Building your own extractor ===
+
+Of course, you may use a third party extractor or your own one,
+just by using the commandline conventions defined by extractors,
+and writting the output on the specified format.
+Authors have used successfully shell and Python scripts 
+to just adapt third party extractor programs to those requirements.
+
+Commandline requirements are the following ones:
+ MyExtractor [<em>-s <schema.sc>] [-f.suffix] [<song1.wav> [<song2.mp3> ...]]
+
+* <tt>-s <schema.sc></tt>: should write a description scheme to <tt>schema.sc</tt>
+* <tt>-f <.suffix></tt>: should use <tt>.suffix</tt> as suffix for the description files. The default should be <tt>.pool</tt>
 
 === Understanding the description schema ===
 
