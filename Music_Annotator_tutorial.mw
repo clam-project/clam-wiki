@@ -107,6 +107,17 @@ So, now that we know which are the project parameters, let's define our own one.
 * Change the extractor to be <tt>ChordExtractor</tt> and the description file suffix <tt>.chords</tt>.
 * Once you have defined all that, you can add songs to your project and compute them
 
+=== Adding views to the project ===
+
+But, in contrast to the example project,
+the project we built from scratch has no Tonnetz neither KeySpace views.
+To add them we should use the '''View/Add Instant View''' menu.
+After selecting a kind of view, 
+you should choose an attribute in the schema to apply it to.
+Only attributes that support this kind of view will appear.
+* Apply the Tonnetz view to the Frame::HartePCP
+* Apply the KeySpace view to the Frame::HarteChordCorrelation
+
 === Understanding the description schema ===
 
 Let's take a closer look to what the description scheme defines.
@@ -133,15 +144,6 @@ Click on some attributes of those types and check, on the right parameters, whic
 * '''Segmentation''' attributes are used to define arbitrary time segments or time marks: Note onsets, notes, break points, chord regions, song structural parts... The segmentation attribute defines the boundaries and the child scope defines the other attributes for the region.
 
 * '''FrameDivision''' attributes define equidistant points in time. Child scopes for that attribute are used mainly to store values that happen for every instant in the song, such the energy, the spectrum...
-
-=== Adding views to the project ===
-
-But, in contrast to the example project,
-the project we built from scratch has no Tonnetz neither KeySpace views.
-To add them we should use the '''View/Add Instant View''' menu.
-After selecting a kind of view, 
-you should choose an attribute in the schema to apply it to.
-Only attributes that support this kind of view appear.
 
 
 === Using a different extractor ===
