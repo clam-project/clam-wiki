@@ -75,10 +75,19 @@ impression of the application capabilities and check that everything is right:
 [[Image:SMSTools_Sonogram.png|500px|center]] 
 
 
-<li>Apart from displaying, the result of the analysis can be stored for later uses. It can be stored in xml format or sdif format. Xml is a textual tagged format that can be convenient for debugging and studying results of some analysis but it is very verbose and slow (you should expect an xml file 4 times the size of the original audio). On the other hand SDIF is a binary format that for most uses will be much more convenient. For storing the result of the analysis, choose File->SMS Analysis->Store Analysis File. The application will switch from SDIF format to XML depending on the file extension you choose.
-<br>
-Note that the result of an analysis can be later loaded selecting File->SMS Analysis->Load Analysis Data.
-</li>
+*Apart from displaying, the result of the analysis can be stored for later uses. It can be stored in xml format or sdif format. Xml is a textual tagged format that can be convenient for debugging and studying results of some analysis but it is very verbose and slow (you should expect an xml file 4 times the size of the original audio). On the other hand SDIF is a binary format that for most uses will be much more convenient. For storing the result of the analysis, choose File->SMS Analysis->Store Analysis File. The application will switch from SDIF format to XML depending on the file extension you choose.
+
+(Note that the result of an analysis can be later loaded selecting File->SMS Analysis->Load Analysis Data)
+
+*We can now synthesize the resulting sound. Select SMSSynthesis->Synthesize. Now visit the View menu again and select the output component you want to display and listen to: Output Sound, Output Sinusoidal and Output Residual. In the following screenshot you see all the possible sounds active.
+
+
+[[Image:SMSTools_SynthesizedAudios.png|500px|center]] 
+
+
+*You can also store the results of the synthesis as a wave file by choosing File->SMS Synthesis->Save...
+
+
 <li>Before synthesizing, we can transform the sound. For doing so, just as it happened with the configuration, we can load an xml transformation score or edit the default one. We will do the latter. Choose File->SMSTransformation->Edit Score. You will see a list of available transformations. Clicking on any of them will open a brief description of the transformation and its usage:
 <ol>
 <li>Select any transformation, click on Add Transformation to Score and edit the Parameters on the right. In the break point function editor, duble click to add a point and click to select a point or draw a selection box. Repeat this step for any number of transformations you want to connect one after the other.
@@ -87,11 +96,7 @@ Note that the result of an analysis can be later loaded selecting File->SMS Anal
 </li>
 </ol>
 </li>
-<li>We can now synthesize the resulting sound. Select SMSSynthesis->Synthesize. Now visit the View menu again and select the output component you want to display and listen to: Output Sound, Output Sinusoidal and Output Residual.
-</li>
-<li>Finally you can store the results of the synthesis by choosing File->SMS Synthesis->Save...
-</li>
-</ol>
+
 
 ==Configuration==
 
