@@ -156,6 +156,14 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 
 The Prototyper is an application that will allow you to build GUI applications
 wrapping a network you built.
+Interfaces can be designed with a nice tool, the Designer, 
+which comes with the QT library by Trolltech,
+
+
+
+
+
+
 
 To see its potential let's start opening with a example network named SMSmess.xml.
 
