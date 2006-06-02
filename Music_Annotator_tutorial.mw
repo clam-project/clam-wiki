@@ -138,7 +138,7 @@ Authors have used successfully shell and Python scripts
 to just adapt third party extractor programs to those requirements.
 
 Commandline requirements are the following ones:
- MyExtractor [<em>-s <schema.sc></em>] [-f.suffix] [<song1.wav> [<song2.mp3> ...]]
+ MyExtractor [-s <''schema.sc''>] [-f''.suffix''] [<''song1.wav''> [<''song2.mp3''> ...]]
 
 * <tt>-s <schema.sc></tt>: should write a description scheme to <tt>schema.sc</tt>
 * <tt>-f <.suffix></tt>: should use <tt>.suffix</tt> as suffix for the description files. The default should be <tt>.pool</tt>
