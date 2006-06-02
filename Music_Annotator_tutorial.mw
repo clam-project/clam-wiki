@@ -115,6 +115,13 @@ or by clicking the '''Browse Schema''' button [[Image:Annotator-IconBrowseSchema
 
 [[Image:Annotator-SchemaBrowser.png|400px]]
 
+
+The description scheme defines two kinds of entities:
+''Attributes'' [[Image:Annotator-IconAttribute.png]] 
+and ''scopes'' [[Image::Annotator-IconScope.png]].
+Attributes are the actual value holders, and its validity is limited to a given scope.
+For example, the pitch is an attribute which is valid within a note.
+
 === Adding views to the project ===
 
 But, in contrast to the example project,
