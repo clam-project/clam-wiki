@@ -154,19 +154,14 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 == Building Interfaces with the Prototyper ==
 
 
-The Prototyper is an utility that allows wrap a network you built
-on an interface as a stand alone application.
+The Prototyper is a utility that allows wrap a network you built
+with the NetworkEditor on an interface as a stand alone application.
 Interfaces can be designed with a nice tool, the Designer, 
 which comes with the QT library by Trolltech,
-
-
-
-
-
-
+With the Designer you can lay out the graphical elements (widgets)
+including some widgets that CLAM provides to visualize sound related data.
 
 To see its potential let's start opening with a example network named SMSmess.xml.
-
 
 [[Image:Prototyper-DesigningTheNetwork.png|500px|center]]
 
