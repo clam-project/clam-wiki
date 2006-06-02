@@ -10,10 +10,10 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 
 *Not very exciting, right? But now go to File->Load. With the file browser navigate to NetworkEditor's example-data folder. There you will find a number of examples. 
 
-*Open the freqshift-gains-plots.xml file. Your NetworkEditor should now look like the following screenshot:
+*Open the spectralNetwork.xml file (in windows this file should be in your working directory and in Linux you should point your browser to /usr/share/networkeditor/example-data). Your NetworkEditor should now look like the following screenshot:
 
 
-[[Image:SMSFreqShiftGainsPlots.png|500px|center]]
+[[Image:SerialSpectralTransformations.png|500px|center]]
 
 
 *We could try to configure and run this network (and you are welcome to try it if you feel adventurous) but first we need to understand a few concepts. So, let's take a few steps back and start over again.
@@ -145,7 +145,7 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 
 ==SMS Transformations==
 
-*Appart from the regular STFFT (Phase Vocoder) implementation, CLAM also has implemented the Sinusoidal plus Residual Model (a.k.a. SMS). Even more interesting transformations can be implemented with that model. Now that you have a working knowledge of the NetworkEditor the best you can do is to start off with an example. In the NetworkEditor build folder you have some of them. Open the freqshift-resamount.xml network and experiment with it, changing the SMS Transformations for others in the same category.
+*Appart from the regular STFFT (Phase Vocoder) implementation, CLAM also has implemented the Sinusoidal plus Residual Model (a.k.a. SMS). Even more interesting transformations can be implemented with that model. Now that you have a working knowledge of the NetworkEditor the best you can do is to start off with an example. Open the freqshift-gains-plots.xml file (in windows this file should be in your working directory and in Linux you should point your browser to /usr/share/networkeditor/example-data) network and experiment with it, changing the SMS Transformations for others in the same category.
 
 
-[[Image:SMSTransformations.png|500px|center]]
+[[Image:SMSFreqShiftGainsPlots.png|500px|center]]
