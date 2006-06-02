@@ -104,7 +104,7 @@ So, now that we know which are the project parameters, let's define our own one.
 * Click the '''New Project''' button [[image:Annotator-IconNewProject.png]].
 * Choose a proper location and name for the project file. 
 * After that, the previous dialog will appear with the default values.
-* Change the extractor to be <tt>ChordExtractor<tt> and the description file suffix <tt>.chords</tt>.
+* Change the extractor to be <tt>ChordExtractor</tt> and the description file suffix <tt>.chords</tt>.
 * Once you have defined all that, you can add songs to your project and compute them
 
 === Understanding the description schema ===
