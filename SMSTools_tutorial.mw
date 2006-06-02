@@ -89,7 +89,7 @@ impression of the application capabilities and check that everything is right:
 
 (Note that the result of an analysis can be later loaded selecting File->SMS Analysis->Load Analysis Data)
 
-*We can now synthesize the resulting sound. Select SMSSynthesis->Synthesize. Now visit the View menu again and select the output component you want to display and listen to: Output Sound, Output Sinusoidal and Output Residual. In the following screenshot you see all the possible sounds active.
+*We can now synthesize the resulting sound. Select SMSSynthesis->Synthesize. Now visit the View menu again and select the output component you want to display and listen to: Output Sound, Output Sinusoidal and Output Residual. Note that when you listen to any of the components the original sound is also panned on the right channel of the stereo. In the following screenshot you see all the possible sounds active.
 
 
 [[Image:SMSTools_SynthesizedAudios.png|500px|center]] 
