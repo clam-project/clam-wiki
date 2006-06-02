@@ -113,7 +113,7 @@ The interest of synthesizing the different components of your sound without any 
 *Once you have decided what transformation you want to use you have click on the "Add Transformation to Score" button. The transformation will be added to the central panel, where the list of used transformations is located. Also the "Parameters" tab for that particular transformation will become visible on the right-hand panel. See the following screenshot:
 
 
-[[Image:SMSTools_EditingTransformation.png|200px|center]] 
+[[Image:SMSTools_EditingTransformation.png|400px|center]] 
 
 
 *Although some transformations have simpler controls, most of them are configured using a break-point-function (or envelope-like) control like the one shown in the previous picture. Note that this break point funtion may represent an evolution over time or an spectral envelope, depending on the type of transformation. 
