@@ -11,13 +11,31 @@ Although the application has four different versions: qtSMSTools  - with a qt ba
 
 ==An SMSTools walkthrough==
 
-Once you have built the Application you may follow the steps below to both get a first
+Once you have installed the Application you may follow the steps below to both get a first
 impression of the application capabilities and check that everything is right:
 
-<ol>
+*Once you open the application, you will encounter a blank screen just like the following one:
 
-<li>
-First you have to configure the workspace. For doing so you have two options: (1) Load an xml configuration file (like the one located in <clam sources dir>/build/Examples/SMS) or (2) directly edit the default configuration. Let's consider this second option. Go to File->Configuration->Edit. There are many fields you can edit and modify (see Section on Configuration File) but for the sake of simplycity, let us just select an input sound file (.wav, .aiff or .raw) by clicking on the button next to the InputSoundFile field. Your interface should look something like:
+
+[[Image:SMSTools_Blank.png|500px|center]]
+
+
+*First you need to configure the workspace. Go to File->Configuration->New. A new window like the following will pop up:
+
+
+[[Image:SMSTools_NewConfiguration.png|200px|center]]
+
+
+*There are many fields you can edit and modify (see Section on Configuration File) but for the sake of simplicity, let us just select an input sound file (.wav, .ogg) by clicking on the button next to the InputSoundFile field. Note that SMSTools only acknowledges MONO sound files. Click on OK and select a place to store this new configuration when prompted. For future sessions you will be able to load the configuration instead of editing it from scratch.
+
+*Now you will see the input audio and your interface should look like:
+
+
+[[Image:SMSTools_OriginalAudio.png|500px|center]]
+
+
+
+
 </li>
 <li>
 If the sound file name you entered is correct, we are now in the position to continue and analyze the sound. Click on SMSAnalysis->Analyze and wait for the progress bar to finish.
