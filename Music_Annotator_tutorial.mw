@@ -109,6 +109,11 @@ So, now that we know which are the project parameters, let's define our own one.
 
 === Understanding the description schema ===
 
+Let's take a closer look to what the description scheme defines.
+You can acces the Schema Browser by selecting the Schema Browser tab, 
+or by clicking the '''Browse Schema''' button [[Image:Annotator-IconBrowseSchema.png]].
+
+[[Image:Annotator-SchemaBrowser.png|400px]]
 
 === Adding views to the project ===
 
