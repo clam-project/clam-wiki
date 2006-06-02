@@ -44,13 +44,13 @@ Other key features are:
 ** [http://www.iua.upf.es/mtg/publicacions.php?did=337 Key Space] for major and minor chords correlation
 ** ... more to come
 
-==First Steps with the Annotator==
+= Music Annotator tutorial =
 
 This tutorial guides your first steps with the CLAM Music Annotator.
 '''Use the ''What's this'' button [[image:AnnotatorIcon-WhatsThis.png]] 
 or Shift-F1 to get additional help for any element on the user interface.'''
 
-=== Using the provided Chord example ===
+== Using the provided Chord example ==
 
 * Open [[image:Annotator-IconOpenProject.png]] the '''Chords.pro''' project from the Music Annotator examples. If your are running on Windows, get one level up and open '''Samples''' dir. 
 * Go to the '''Song descriptors''' tab and select a song. Debaser's Wooden House, for example.
@@ -69,7 +69,7 @@ or Shift-F1 to get additional help for any element on the user interface.'''
 ** The KeySpace view is the one at the bottom. It displays the instant tonality which matches with major and minor chords. Chords sharing pitches are arranged closer so the stronger one can be identified better by contrast. Note that this view only displays major and minor chords.
 **[[image:Annotator-KeySpaceDetail.png]]
 
-=== Analyzing the chords for our own songs ===
+== Analyzing the chords for our own songs ==
 
 So you want to analyze your own song.
 
@@ -79,7 +79,7 @@ So you want to analyze your own song.
 * Wait until the execution ends and then click '''Song, Reload Descriptors'''  [[image:AnnotatorIcon-ReloadDescription.png]]
 * Once reloaded, proceed as before.
 
-=== Building a project from scratch ===
+== Building a project from scratch ==
 
 Before creating a new Project let's take a look how the previous project was defined.
 
