@@ -197,7 +197,14 @@ Similar names goes to knobs and sliders: <tt>InControl__<em>ProcessingName</em>_
 
 [[Image:Prototyper-BindingInputControl.png|500px|center|Binding a slider to an input control in the network]]
 
+You should name a button <tt>PlayButton</tt> 
+and you may name other button <tt>StopButton</tt>.
+The prototyper will use them to control the network playback.
 
-If you drag the SMSmess.xml file to the prototyper you will see that:
+Once you are done with the interface you can save it with the same base name 
+and in the same location than the network editor.
+Of course, this is the case of the example.
+Then you can drag the SMSmess.xml file to the prototyper you will see 
+the application working:
 
 [[Image:Prototyper-Running.png|500px|center|Running the application]]
