@@ -64,7 +64,7 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 
 [[Image:AudioMonitor.png|500px|center]]
 
-*Note that you can zoom onto any plot by left-clicking and selecting an area of the plot. You undo the zoom by right-clicking on the same plot.
+*Note that you can zoom onto any plot by left-clicking and selecting an area of the plot. You can also undo the zoom by right-clicking on the plot.
 
 *We have put too much work into this network just to risk loosing it now! We should save it somehow. Select File->SaveAs and choose the location and name you want (be careful not to do Save directly as you would be probably be overwriting the previously opened network).
 
