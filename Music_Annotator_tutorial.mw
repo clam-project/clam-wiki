@@ -142,7 +142,7 @@ Depending on the kind of segmentation some helpfull restrictions apply on editio
 
 And finally, you can edit low level descriptors by dragging the values of the plot.
 
-== Using a the CLAM extractor example ==
+== Using the CLAM extractor example ==
 
 Now we will use the other extractor provided with the program:  <tt>ClamExtractorExample</tt>
 * Create a new project with the extractor command being <tt>ClamExtractorExample</tt>
