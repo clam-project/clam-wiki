@@ -2,6 +2,13 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 == Network editor port to Qt4 ==
 
+We are working hard on having a first Qt4 port of the Network Editor.
+We are considering the following roadmap
+* Having the gui working without a real network '''[Done]'''
+* Integrating it with a real network
+* Integrating Port Monitors and Controllers (the hard part)
+* Make the Prototyper work for Qt4 (maybe the hardest part)
+
 <gallery>
 
 Image:NetEditQt4-EmptyCanvas.png|Menu options available from a handy tool bar. The print option is very useful for generating pdf's for your papers.
