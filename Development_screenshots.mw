@@ -4,10 +4,10 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 We are working hard on having a first '''Qt4''' port of the Network Editor doing some extra effort on '''usability'''.
 We are considering the following roadmap:
-* Having the GUI mostly working with a simulated network '''[done]'''
-* Integrating the interface with a real CLAM network
-* Integrating Port Monitors and Controllers
-* Make the Prototyper work with Qt4
+# Having the GUI mostly working with a simulated network '''[done]'''
+# Integrating the interface with a real CLAM network
+# Integrating Port Monitors and Controllers
+# Make the Prototyper work with Qt4
 
 Here you have some preview screenshots on the stage 1:
 
