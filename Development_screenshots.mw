@@ -22,7 +22,7 @@ Image:NetEditQt4-ExploringConnectors.png|Explore connectors by hovering them.
 Image:NetEditQt4-WireTargetTooltip.png|Tooltip and highlight helps you to figure out where are you going to drop the wire.
 Image:NetEditQt4-PortAndControlWires.png|Some controls and ports wires.
 Image:NetEditQt4-ProcessingsContextActions.png|Context menu for processings allows you to configure or remove them.
-Image:NetEditQt4-ConnectorsContextActions.png|Context menu for connectors allows you to disconnect them. You can also copy a name to be used for the Prototyper widget. (see the [[Network Editor tutorial]])
+Image:NetEditQt4-ConnectorsContextActions.png|Context menu for connectors allows you to disconnect them. You can also copy a widget name to be used in the Prototyper. (see the [[Network Editor tutorial]])
 Image:NetEditQt4-CanvasContextActions.png|Context menu for canvas gives another interface to create processings.
 Image:NetEditQt4-Transparencies.png|With semitransparencies you can see that something is under that big processing.
 Image:NetEditQt4-PdfExport.png|The print option is very useful for generating pdf's for your papers.
