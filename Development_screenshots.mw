@@ -15,7 +15,7 @@ Some screenshots of the progress ahead:
 
 Image:NetEditQt4-EmptyCanvas.png|Menu options available from a handy tool bar. The print option is very useful for generating pdf's for your papers.
 Image:NetEditQt4-CanvasWhatsThis.png|Are you lost? Use the "What's this" button, Luke.
-Image:NetEditQt4-ToolBoxDragNDrop.png|When dragging processings from the toolbox a cute processing image is shown
+Image:NetEditQt4-ToolBoxDragNDrop.png|When dragging processings from the toolbox a cute processing image is shown.
 Image:NetEditQt4-ProcessingBox.png|Processings in the new version will look something like this.
 Image:NetEditQt4-ProcessingWhatsThis.png|Lost again?
 Image:NetEditQt4-ExploringConnectors.png|Explore connectors by hovering them.
@@ -23,5 +23,7 @@ Image:NetEditQt4-WireTargetTooltip.png|Tooltip and highlight helps you to figure
 Image:NetEditQt4-PortAndControlWires.png|Some controls and ports wires.
 Image:NetEditQt4-ProcessingsContextActions.png|Context menu for processings allows you to configure them or remove them.
 Image:NetEditQt4-ConnectorsContextActions.png|Context menu for connectors allows you to disconnect and to copy the name to use it on the Prototyper widget.
+Image:NetEditQt4-Transparencies.png|Transparencies allows to see that something is under a big processing.
+
 
 </gallery>
