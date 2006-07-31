@@ -23,6 +23,7 @@ Image:NetEditQt4-WireTargetTooltip.png|Tooltip and highlight helps you to figure
 Image:NetEditQt4-PortAndControlWires.png|Some controls and ports wires.
 Image:NetEditQt4-ProcessingsContextActions.png|Context menu for processings allows you to configure them or remove them.
 Image:NetEditQt4-ConnectorsContextActions.png|Context menu for connectors allows you to disconnect and to copy the name to use it on the Prototyper widget.
+Image:NetEditQt4-CanvasContextActions.png|Context menu for canvas gives another interface to create processings.
 Image:NetEditQt4-Transparencies.png|Transparencies allows to see that something is under a big processing.
 
 
