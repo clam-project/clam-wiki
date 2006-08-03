@@ -26,6 +26,5 @@ Image:NetEditQt4-ConnectorsContextActions.png|Context menu for connectors allows
 Image:NetEditQt4-CanvasContextActions.png|Context menu for canvas gives another interface to create processings.
 Image:NetEditQt4-Transparencies.png|With semitransparencies you can see that something is under that big processing.
 Image:NetEditQt4-PdfExport.png|The print option is very useful for generating pdf's for your papers.
-
-
+Image:NetEditQt4-SMSMess.png|Loading and saving networks is working: SMSMess.clamnetwork loaded into the Qt4 interface.
 </gallery>
