@@ -9,7 +9,7 @@ We are considering the following roadmap:
 # Integrating Port Monitors and Controllers
 # Make the Prototyper work with Qt4
 
-Here you have some preview screenshots on stage 1:
+Here you have some preview screenshots on stage 1 and some of stage 2:
 
 <gallery>
 
@@ -27,4 +27,8 @@ Image:NetEditQt4-CanvasContextActions.png|Context menu for canvas gives another 
 Image:NetEditQt4-Transparencies.png|With semitransparencies you can see that something is under that big processing.
 Image:NetEditQt4-PdfExport.png|The print option is very useful for generating pdf's for your papers.
 Image:NetEditQt4-SMSMess.png|Loading and saving networks is working: SMSMess loaded into the Qt4 interface.
+Image:NetEditQt4-SMSMessPortTooltip.png|Taking the port names from the network.
+Image:NetEditQt4-XMLError.png|No more crashing with bad xml format.
+Image:NetEditQt4-XMLFactoryError.png|No more crashing with unsuported processing types on the network file.
+Image:NetEditQt4-FactoryError.png|No more crashing when dropping unsuported processing types from the toolbox.
 </gallery>
