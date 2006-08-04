@@ -36,5 +36,5 @@ Image:NetEditQt4-ZoomOut.png|Zoom out.
 Image:NetEditQt4-Unconfigured.png|Woops, this processing is not properly configured.
 Image:NetEditQt4-UnconfiguredMessage.png|Let's pass by it with the mouse and see what's happening. Well, the message is still not that user friendly.
 Image:NetEditQt4-ForbidenDrop.png|You cannot drop the wire here.
-Image:NetEditQt4-AllowedDrop.png|You cannot drop the wire here.
+Image:NetEditQt4-AllowedDrop.png|But you can drop it here.
 </gallery>
