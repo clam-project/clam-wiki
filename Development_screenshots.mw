@@ -28,9 +28,9 @@ Image:NetEditQt4-Transparencies.png|With semitransparencies you can see that som
 Image:NetEditQt4-PdfExport.png|The print option is very useful for generating pdf's for your papers.
 Image:NetEditQt4-SMSMess.png|Loading and saving networks is working: SMSMess loaded into the Qt4 interface.
 Image:NetEditQt4-SMSMessPortTooltip.png|Taking the port names from the network.
-Image:NetEditQt4-XMLError.png|No more crashing with bad xml format.
-Image:NetEditQt4-XMLFactoryError.png|No more crashing with unsuported processing types on the network file.
-Image:NetEditQt4-FactoryError.png|No more crashing when dropping unsuported processing types from the toolbox.
+Image:NetEditQt4-XMLError.png|Error instead crash with bad xml format.
+Image:NetEditQt4-XMLFactoryError.png|Error instead crash with unsuported processing types on the network file.
+Image:NetEditQt4-FactoryError.png|Error instead crash when dropping unsuported processing types from the toolbox.
 Image:NetEditQt4-ZoomIn.png|Zoom in.
 Image:NetEditQt4-ZoomOut.png|Zoom out.
 Image:NetEditQt4-Unconfigured.png|Woops, this processing is not properly configured.
