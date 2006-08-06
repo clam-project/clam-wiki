@@ -3,12 +3,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 == Network editor port to Qt4 ==
 
 We are working hard on having a first '''Qt4''' port of the Network Editor doing some extra effort on '''usability'''.
-We are considering the following roadmap:
-# Having the GUI mostly working with a simulated network '''[done]'''
-# Integrating the interface with a real CLAM network '''[done]'''
-# Integrating Port Monitors and Controllers
-# Make the Prototyper work with Qt4
-
+Take a look to the [http://iua-share.upf.es/wikis/clam_draft/Network_Editor_Qt4_Port|Port progress page]. 
 Here you have some preview screenshots on stage 1 and some of stage 2:
 
 <gallery>
