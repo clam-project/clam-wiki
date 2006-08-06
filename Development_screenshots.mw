@@ -30,8 +30,8 @@ Image:NetEditQt4-ZoomIn.png|Zoom in.
 Image:NetEditQt4-ZoomOut.png|Zoom out.
 Image:NetEditQt4-Unconfigured.png|Woops, this processing is not properly configured.
 Image:NetEditQt4-UnconfiguredMessage.png|Pass over the processing to see what's the problem.
-Image:NetEditQt4-ForbidenDrop.png|You cannot drop the wire here.
-Image:NetEditQt4-AllowedDrop.png|But you can drop it here.
+Image:NetEditQt4-ForbidenDrop.png|Red highlight: You cannot drop the wire here.
+Image:NetEditQt4-AllowedDrop.png|Green highlight: But you can drop it here.
 Image:NetEditQt4-DummyConfig.png|In dummy mode (no CLAM network, just drawing), configuration allows to choose any number of ports and controls.
 Image:NetEditQt4-SubConfigs.png|Real config dialog and some subdialogs for the SMSAnnalysis.
 </gallery>
