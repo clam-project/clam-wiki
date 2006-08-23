@@ -35,6 +35,7 @@ Image:NetEditQt4-AllowedDrop.png|Green highlight: But you can drop it here. Type
 Image:NetEditQt4-DummyConfig.png|In dummy mode (no CLAM network, just drawing), configuration allows to choose any number of ports and controls.
 Image:NetEditQt4-SubConfigs.png|Real config dialog and some subdialogs for the SMSAnnalysis.
 Image:NetEditQt4-ScrollBars.png|Scrollbars appear when the networks goes beyond the viewport.
-Image:NetEditQt4-EmbededSlider.png|Processing boxes may have a widget embeded on the body. Still some overlap artifacts but they are working even with zoom factors.
 Image:NetEditQt4-TutorialButton.png|One click access to the online tutorial.
+Image:NetEditQt4-EmbededSlider.png|Processing boxes may have a widget embeded on the body. Still some overlap artifacts but they are working even with zoom factors.
+Image:NetEditQt4-SpectralNetworkWithControlSenders.png|The Spectral Network example with working control senders.
 </gallery>
