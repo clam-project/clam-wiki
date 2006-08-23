@@ -34,4 +34,5 @@ Image:NetEditQt4-ForbidenDrop.png|Red highlight: You cannot drop the wire here. 
 Image:NetEditQt4-AllowedDrop.png|Green highlight: But you can drop it here. Types matches. Audio -> Audio.
 Image:NetEditQt4-DummyConfig.png|In dummy mode (no CLAM network, just drawing), configuration allows to choose any number of ports and controls.
 Image:NetEditQt4-SubConfigs.png|Real config dialog and some subdialogs for the SMSAnnalysis.
+Image:NetEditQt4-ScrollBars.png|Scrollbars appear when the networks goes beyond the viewport.
 </gallery>
