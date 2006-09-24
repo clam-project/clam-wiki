@@ -42,5 +42,5 @@ Image:NetEditQt4-BackendAlsaStopped.png|Backend indicator: Alsa. Activity indica
 Image:NetEditQt4-BackendJackPlaying.png|Backend indicator: Jack. Activity indicator: Playing. Now is selected by default if available else falling back to Alsa.
 Image:NetEditQt4-MultiJack.png|Multiple Jack outputs.
 Image:NetEditQt4-PlayProtection.png|Fixed: System hangs on realtime kernels. Hang conditions are detected and gracefully handled.
-Image:NetEditQt4-Proto-prototyper.png|First Qt4 based prototyper. Still no plots, but unified binary.
+Image:NetEditQt4-Proto-prototyper.png|First Qt4 based prototyper. Still no plots, but unified binary for Jack and Alsa/DirectX.
 </gallery>
