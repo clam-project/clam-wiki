@@ -38,4 +38,7 @@ Image:NetEditQt4-ScrollBars.png|Scrollbars appear when the networks goes beyond 
 Image:NetEditQt4-TutorialButton.png|One click access to the online tutorial.
 Image:NetEditQt4-EmbededSlider.png|Processing boxes may have a widget embeded on the body. Still some overlap artifacts but they are working even with zoom factors.
 Image:NetEditQt4-SpectralNetworkWithControlSenders.png|The Spectral Network example with working control senders.
+Image:NetEditQt4-BackendAlsaStopped.png|Backend indicator: Alsa. Activity indicator: Stopped. Provisionally using AudioIn/Out.
+Image:NetEditQt4-BackendJackPlaying.png|Backend indicator: Jack. Activity indicator: Playing. Now is selected by default if available else falling back to Alsa.
+Image:NetEditQt4-MultiJack.png|Multiple Jack outputs.
 </gallery>
