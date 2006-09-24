@@ -41,4 +41,6 @@ Image:NetEditQt4-SpectralNetworkWithControlSenders.png|The Spectral Network exam
 Image:NetEditQt4-BackendAlsaStopped.png|Backend indicator: Alsa. Activity indicator: Stopped. Provisionally using AudioIn/Out.
 Image:NetEditQt4-BackendJackPlaying.png|Backend indicator: Jack. Activity indicator: Playing. Now is selected by default if available else falling back to Alsa.
 Image:NetEditQt4-MultiJack.png|Multiple Jack outputs.
+Image:NetEditQt4-PlayProtection.png|Fix: Play system hangs on realtime kernels avoided. Now hang conditions are detected and gracefully handled.
+Image:NetEditQt4-Proto-prototyper.png|First Qt4 based prototyper. Still no plots, but unified binary.
 </gallery>
