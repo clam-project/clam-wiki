@@ -38,10 +38,10 @@ Image:NetEditQt4-ScrollBars.png|Scrollbars appear when the networks goes beyond 
 Image:NetEditQt4-TutorialButton.png|One click access to the online tutorial.
 Image:NetEditQt4-EmbededSlider.png|Processing boxes may have a widget embeded on the body. Still some overlap artifacts but they are working even with zoom factors.
 Image:NetEditQt4-SpectralNetworkWithControlSenders.png|The Spectral Network example with working control senders.
+Image:NetEditQt4-PlayProtection.png|Fixed: System hanged on realtime kernels. Now, hang conditions are detected and gracefully handled.
+Image:NetEditQt4-MultiJack.png|JACK is back. Multiple Jack outputs.
 Image:NetEditQt4-BackendAlsaStopped.png|Indicators: Alsa backend. Stopped.
 Image:NetEditQt4-BackendJackPlaying.png|Indicators: Jack backend. Playing. Jack is choosen when available, else falling back to Alsa.
-Image:NetEditQt4-MultiJack.png|Multiple Jack outputs.
-Image:NetEditQt4-PlayProtection.png|Fixed: System hangs on realtime kernels. Hang conditions are detected and gracefully handled.
 Image:NetEditQt4-Proto-prototyper.png|First Qt4 based prototyper. Still no plots, but unified binary for Jack and Alsa/DirectX.
 Image:NetEditQt4-DefaultPrototyperInterace.png|No interface? Prototyper will provide you a default one.
 Image:NetEditQt4-DummyIndicator.png|The 'dummy' mode indicator.
