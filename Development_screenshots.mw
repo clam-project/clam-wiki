@@ -46,4 +46,5 @@ Image:NetEditQt4-Proto-prototyper.png|First Qt4 based prototyper. Still no plots
 Image:NetEditQt4-DefaultPrototyperInterace.png|No interface? Prototyper will provide you a default one.
 Image:NetEditQt4-DummyIndicator.png|The 'dummy' mode indicator.
 Image:NetEditQt4-PrototyperIndicators.png|Defining labels as indicators for a prototyper interface (already added to the default interface)
+Image:NetEditQt4-PrototyperQJackCtl.png|Prototyper playing with qjackctl
 </gallery>
