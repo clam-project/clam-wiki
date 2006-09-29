@@ -48,4 +48,5 @@ Image:NetEditQt4-DummyIndicator.png|The 'dummy' mode indicator.
 Image:NetEditQt4-PrototyperIndicators.png|Defining labels as indicators for a prototyper interface (already added to the default interface)
 Image:NetEditQt4-PrototyperQJackCtl.png|Prototyper playing with qjackctl
 Image:NetEditQt4-PortMonitor-ProofOfConcept.png|A very simple vumeter. Just a PortMonitor proof of concept
+Image:NetEditQt4-PortMonitor-Oscilloscope.png|An oscilloscope.
 </gallery>
