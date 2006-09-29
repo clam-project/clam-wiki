@@ -49,4 +49,5 @@ Image:NetEditQt4-PrototyperIndicators.png|Defining labels as indicators for a pr
 Image:NetEditQt4-PrototyperQJackCtl.png|Prototyper playing with qjackctl
 Image:NetEditQt4-PortMonitor-ProofOfConcept.png|A very simple vumeter. Just a PortMonitor proof of concept
 Image:NetEditQt4-PortMonitor-Oscilloscope.png|An oscilloscope.
+Image:NetEditQt4-PortMonitor-OscilloscopeSpectrumVumeter.png|Oscilloscope, spectrums and vumeters, all working.
 </gallery>
