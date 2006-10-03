@@ -51,5 +51,5 @@ Image:NetEditQt4-PortMonitor-ProofOfConcept.png|A very simple vumeter. Just a Po
 Image:NetEditQt4-PortMonitor-Oscilloscope.png|An oscilloscope.
 Image:NetEditQt4-PortMonitor-OscilloscopeSpectrumVumeter.png|Oscilloscope, spectrums and vumeters, all working.
 Image:NetEditQt4-PortMonitor-SpectralPeaks.png|A monitor for spectral peaks is also working.
-Image:NetEditQt4-PortMonitor-DummyChordViews.png|Dummy embeding (no data) chord views from the Annotator on processing boxes.
+Image:NetEditQt4-PortMonitor-DummyChordViews.png|Chord views from the Annotator on processing boxes. Still using dummy data.
 </gallery>
