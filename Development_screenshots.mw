@@ -52,5 +52,5 @@ Image:NetEditQt4-PortMonitor-Oscilloscope.png|An oscilloscope.
 Image:NetEditQt4-PortMonitor-OscilloscopeSpectrumVumeter.png|Oscilloscope, spectrums and vumeters, all working.
 Image:NetEditQt4-PortMonitor-SpectralPeaks.png|A monitor for spectral peaks is also working.
 Image:NetEditQt4-PortMonitor-DummyChordViews.png|Chord views from the Annotator nicely embeded on processing boxes. Still using dummy data.
-Image:NetEditQt4-PortMonitor-RandomGenerated.png|This time the data is being read from the port. Still random generated.
+Image:NetEditQt4-PortMonitor-RandomGenerated.png|This time the data is being read from the port. Still random but now other processing generates it.
 </gallery>
