@@ -54,4 +54,7 @@ Image:NetEditQt4-PortMonitor-SpectralPeaks.png|A monitor for spectral peaks is a
 Image:NetEditQt4-PortMonitor-DummyChordViews.png|Chord views from the Annotator nicely embeded on processing boxes. Still using dummy data.
 Image:NetEditQt4-PortMonitor-RandomGenerated.png|This time the data is being read from the port. Still random but now other processing generates it.
 Image:NetEditQt4-PortMonitor-RealTimeChords.png|At last, real time chord extraction with Tonnetz and KeySpace.
+Image:NetEditQt4-Designer-Oscillator.png|Oscillators as Qt Designer plugin. It shows dummy data.
+Image:NetEditQt4-Prototyper-OscillatorDummy.png|Oscillators loaded by the prototyper. Still no connection.
+Image:NetEditQt4-Prototyper-Oscillator.png|Oscillator connected to the underlying network!
 </gallery>
