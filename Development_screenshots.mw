@@ -59,5 +59,6 @@ Image:NetEditQt4-Prototyper-OscillatorDummy.png|Oscilloscope loaded by the proto
 Image:NetEditQt4-Prototyper-Oscillator.png|Oscilloscope run-time connected to the underlying network!
 Image:NetEditQt4-LedVumeter.png|Nicer vumeter with leds.
 Image:NetEditQt4-Designer-OscilloscopeLineColor.png|Oscilloscope line color can be changed on the Designer properties.
-Image:NetEditQt4-Prototyper-KeySpace.png|The key space is also working on the Prototyper.
+Image:NetEditQt4-Prototyper-Tonnetz.png|Tonnetz on the prototyper.
+Image:NetEditQt4-Prototyper-KeySpace.png|KeySpace on the Prototyper.
 </gallery>
