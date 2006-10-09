@@ -61,5 +61,6 @@ Image:NetEditQt4-LedVumeter.png|Nicer vumeter with leds.
 Image:NetEditQt4-Prototyper-Tonnetz.png|Tonnetz on the prototyper. Oscilloscope line color was changed as a Designer property.
 Image:NetEditQt4-Prototyper-KeySpace.png|KeySpace on the Prototyper.
 Image:NetEditQt4-Prototyper-EditedColors.png|After some color editions (just on the designer).
+Image:NetEditQt4-Designer-EditColorProperties.png|Changing the color properties on the Qt Designer.
 Image:NetEditQt4-Prototyper-TonalWithIndicators.png|Adding the playback/backend indicators.
 </gallery>
