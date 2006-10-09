@@ -58,7 +58,6 @@ Image:NetEditQt4-Designer-Oscillator.png|Oscilloscope as Qt Designer plugin. It 
 Image:NetEditQt4-Prototyper-OscillatorDummy.png|Oscilloscope loaded by the prototyper. Still no connection.
 Image:NetEditQt4-Prototyper-Oscillator.png|Oscilloscope run-time connected to the underlying network!
 Image:NetEditQt4-LedVumeter.png|Nicer vumeter with leds.
-Image:NetEditQt4-Designer-OscilloscopeLineColor.png|Oscilloscope line color can be changed on the Designer properties.
-Image:NetEditQt4-Prototyper-Tonnetz.png|Tonnetz on the prototyper.
+Image:NetEditQt4-Prototyper-Tonnetz.png|Tonnetz on the prototyper. Oscilloscope line color was changed as a Designer property.
 Image:NetEditQt4-Prototyper-KeySpace.png|KeySpace on the Prototyper.
 </gallery>
