@@ -67,4 +67,6 @@ Image:NetEditQt4-Prototyper-Spectrums.png|Back to the SMSMess: Adding SpectrumVi
 Image:NetEditQt4-Prototyper-Peaks.png|...and the Spectral Peaks.
 Image:NetEditQt4-PolarChromaPeaks.png|Polar Chroma Peaks: See the peaks on an octave circle.
 Image:NetEditQt4-Prototyper-PolarChromaPeaks.png|Polar Chroma Peaks on the prototyper.
+Image:NetEditQt4-Monitors-ChordRanking.png|Seeing other kind of chords (7th, Dom7, Aug, Dim...) with the Chord Ranking view.
+Image:NetEditQt4-MultipleJackInstances.png|Now Jack mode allows to have several non-conflicting instances of NetEditor and Prototyper.
 </gallery>
