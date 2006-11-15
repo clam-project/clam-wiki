@@ -72,4 +72,5 @@ Image:NetEditQt4-MultipleJackInstances.png|Now Jack mode allows to have several 
 Image:NetEditQt4-Piping.png|Shifting and detecting chords in pipeline.
 Image:Netwin.JPG|The NetworkEditor working in Windows, even with the monitors!
 Image:NetwEditQt4-WinSimpleOscillator.png|Windows port: A fully working version (with icons)
+Image:NetwEditQt4-WinPrototyperFirstTry.png|Windows port: A first try with prototyper (Qt4.1.1)
 </gallery>
