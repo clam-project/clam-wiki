@@ -1,0 +1,8 @@
+= Version Migration Guide =
+
+This manual chapter gives hints on how to migrate existing code from one version of CLAM to another hihglighting code level incompatibilities and new ways of doing things.
+
+== 0.91.0 to 0.92.0 ==
+
+The classes <tt>MonoAudioFileReader</tt> and <tt>MultiChannelFileReader</tt> take at the configuration an <tt>AudioFileSource</tt> instead of an <tt>AudioFile</tt>.
+Also <tt>MonoAudioFileWriter</tt> and <tt>MultiChannelFileWriter</tt> take <tt> AudioFileTarget</tt>. This has been changed for the automatically generated interface to treat them differently.
