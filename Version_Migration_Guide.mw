@@ -1,4 +1,3 @@
-= Version Migration Guide =
 
 This manual chapter gives hints on how to migrate existing code from one version of CLAM to another hihglighting code level incompatibilities and new ways of doing things.
 
