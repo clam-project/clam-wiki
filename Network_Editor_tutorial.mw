@@ -94,6 +94,9 @@ This file specifies all the Processings, connections and configurations. Note th
 
 *If you feel adventurous you can go ahead and edit some of the values and then load the xml from the NetworkEditor.
 
+= We are still updating this tutorial to the 0.4.0 version =
+
+
 ==The Spectral Domain==
 
 *In order to do more interesting things we will now turn into the spectral domain. Delete the connection between the MonoAudioFileReader and the AudioSink. Select a SpectralAnalysis from the Analysis category and a SpectralSynthesis from the Synthesis category. Connect them as shown:
