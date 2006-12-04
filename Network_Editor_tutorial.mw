@@ -146,13 +146,16 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 
 ==Transformations and Controls==
 
-*Now that we know how to get exactly the same audio that we had at the beginning, how about playing around a bit with it? You can in fact select any transformation from the SpectralTransformations category, but in order to start small, we will use the SampleAndHold. Connect it as shown:
+* Now that we know how to get exactly the same audio that we had at the beginning, how about playing around a bit with it? You can in fact select any transformation from the SpectralTransformations category, but in order to start small, we will use the SampleAndHold. Connect it as shown on the figure and add an SpectrumView to the output of the effect:
 
 
 [[Image:NetTutorial-SampleAndHold.png|500px|center]]
 
+* If you start the Network you will see its very clear effect! The spectrum is frozen on fixed intervals so you get a rhythmic artificial sound.
 
-*If you start the Network you will see its very clear effect! But, how can I control the way it behaves? Did you notice a red triangle on the top of the Processing? That is what in CLAM is called a "Control". Controls are used in order to receive and send asynchronous events (such as those coming from a slider,etc...). So all we need to do is to learn how to send values to this input control. Go to the Utils category and select and OutControlSender.
+* But, how can I control the way the transformation behaves? Did you notice a red square on the top of the Processing? That is what in CLAM is called a "Control". Controls are used in order to receive and send asynchronous events (such as those coming from a slider,etc...). So all we need to do is to learn how to send values to this input control. Go to the Utils category and drag an OutControlSender.
+
+[[Image:NetTutorial-ControlSender.png|200px|center]]
 
 *Once in the canvas right click to bring up its configuration and set it up as shown below:
 
