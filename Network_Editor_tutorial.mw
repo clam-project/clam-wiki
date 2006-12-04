@@ -137,10 +137,12 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 [[Image:OLAConfig.png|200px|center]]
 
 
-* In order to finish this section we are going to add a couple of monitors that can give us more useful information. We will add an SpectrumView to the output of the SpectralAnalysis and move the Oscilloscope to the output of the OverlapAdd, just as shown:
+* In order to finish this section we are going to add a couple of monitors that can give us more useful information. We will add an SpectrumView to the output of the SpectralAnalysis and reconnect the Oscilloscope to the output of the OverlapAdd, just as shown:
 
 
 [[Image:NetTutorial-SpectralView.png|500px|center]]
+
+* Note that you cannot connect the SpectrumView to any audio port.
 
 ==Transformations and Controls==
 
