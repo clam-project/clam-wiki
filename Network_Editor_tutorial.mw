@@ -1,5 +1,3 @@
-'''This tutorial still refers to the 0.3.X versions of the Network Editor. It is expected to be updated in short to the 0.4.X series. Although the interface has changes, you could still follow it as concepts are the same.'''
-
 
 CLAM's visual builder is known as the NetworkEditor. It allows to generate an application --or its processing engine-- by graphically connecting objects in a patch. In the present tutorial we will learn the main funcionalities of the NetworkEditor step by step.
 
@@ -94,7 +92,9 @@ This file specifies all the Processings, connections and configurations. Note th
 
 *If you feel adventurous you can go ahead and edit some of the values and then load the xml from the NetworkEditor.
 
-= We are still updating this tutorial to the 0.4.0 version =
+== We are still updating this tutorial to the 0.4.0 version ==
+
+'''The rest of this tutorial still refers to the 0.3.X versions of the Network Editor. It is expected to be updated in short to the 0.4.X series. Although the interface has changes, you could still follow it as concepts are the same.'''
 
 
 ==The Spectral Domain==
