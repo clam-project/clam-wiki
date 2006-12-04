@@ -61,14 +61,14 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 
 * Now you can run this network by simply selecting Network->Play. All you can see is that the Playback status down on the right says ''Playing'' but no sound is produced. That is because we have still not added an audio output!
 * Go to the ''Audio Input/Output'' category and drag an AudioSink processing object.
-* To connect both processing just drag the round connectors (ports) from one to another.
-* You can connect two ports as long as they expect the same data type (e.g. you cannot connect an Audio Port to a Spectrum Port). In our case both are Audio Port so we can indeed connect them.
+* To connect both processing just drag a wire from one round connector (port) to the other.
 
 [[Image:NetTutorial-ConnectedProcessings.png|500px|center]]
 
-* Not allways a connection is feasible. Ports communicate data of several types of data. If the ports don't share such a type the target port highlight is red instead of green.
+* Port connection is not allways feasible. Ports communicate data of several types of data. If the ports don't share such a type the target port highlight is red instead of green wire drop has no effect.
 
-[[Image:NetEditQt4-ForbidenDrop.png|100px|center]][[Image:NetEditQt4-AllowedDrop.png|100px|center]]
+[[Image:NetEditQt4-ForbidenDrop.png|200px|center]]
+[[Image:NetEditQt4-AllowedDrop.png|200px|center]]
 
 * To disconnect them use the context menu for the connector (right click the port).
 Drive the end of that line to the other port and the ports will be connected with an spline just as in the following screenshot (you can always remove a connection by selecting it and pressing Delete on the keyboard):
