@@ -35,13 +35,17 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 [[Image:Tutorial-AudioFileProcessingTree.png|200px|center]]
 
 
-*Click on the MonoAudioFileReader and drag it to the canvas on the right side. It should now look like this:
+* Click on the MonoAudioFileReader and drag it to the canvas on the right side. It should now look like this:
 
 
 [[Image:MonoAudioFileReader.png|500px|center]]
 
 
-*The Processing is "red" because it is not "configured" properly. Configurations in CLAM are those parameters that need to be set before run-time. If a Processing is not configured, the network cannot be started. Right-click on the red Processing. The following pop up screen should appear:
+* The Processing is "red" because it is not "configured" properly. Configurations in CLAM are those parameters that need to be set before run-time. If a Processing is not configured, the network cannot be started. Passing over the processing a tooltip will show the reason the processing is not properly configured. In this case, we did not selected a file to read.
+* To configure the processing, right-click on the red Processing. A popup menu will be shown.
+
+[[Image:NetTutorial-ProcessingPopupMenu.png|400px|center]]
+
 
 
 [[Image:AudioFileConfig.png|500px|center]]
