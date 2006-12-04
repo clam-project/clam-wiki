@@ -86,7 +86,7 @@ In the present tutorial we will learn the main features of the NetworkEditor ste
 
 ==Saving, Seeing and Loading==
 
-* Another interesting thing we can add to our network is a visualization of the audio that is being played. For that purpose we will use the Oscilloscope in the 'Graphiclal Monitors' category. Graphical monitors are an special kind of processing that display incoming data.
+* Another interesting thing we can add to our network is a visualization of the audio that is being played. For that purpose we will use the Oscilloscope in the 'Graphiclal Monitors' category. Graphical monitors are an special kind of processing that displays incoming data.
 * Data is displayed in the box. As it is too small you need to resize it by dragging the lower right yellow corner. You can also move the processing by dragging the name caption.
 * Connect the input Port of the Oscilloscope to the output Port of the MonoAudioFileReader. Start the Network, you should be able to see the audio being read:
 
