@@ -157,7 +157,7 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 *Once in the canvas right click to bring up its configuration and set it up as shown below:
 
 
-[[Image:SampleHoldControlConfig.png|200px|center]]
+[[Image:SampleHoldControlConfig.png|400px|center]]
 
 
 *Now connect the slider to the input control in the SampleAndHold and resize the control as needed. It should look like:
