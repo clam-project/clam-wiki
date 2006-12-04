@@ -52,10 +52,11 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 [[Image:NetTutorial-AudioFileConfig.png|500px|center]]
 
 
-*This is indeed the graphical representation of a simple configuration. It turns out that the Processing is not correctly configured because it expects a file name to open. Click on the "..." and select a MONO audio file from your hard drive (if you only have stereo, you will have to repeat the steps again but using MultichannelAudioFileReader instead). After clicking ok on the configurator, the Processing should be in Green now.
+* Click on the "..." button and select an audio file from your hard drive.
+* Assure you have the 'Loop' option also selected.
+* After clicking ok on the configurator, the Processing should be in Green now.
 
-
-[[Image:MonoAudioFileReaderConfigured.png|500px|center]]
+[[Image:NetTutorial-MonoAudioFileReaderConfigured.png|500px|center]]
 
 
 *Now you can run this network by simply selecting NetworkActions->StartNetwork. All you can see is that the processing turns a different color. But no sound is produced. That is because we have still not added an Audio Output!
