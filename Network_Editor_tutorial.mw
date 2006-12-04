@@ -137,10 +137,10 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 [[Image:OLAConfig.png|200px|center]]
 
 
-*In order to finish this section we are going to add a couple of monitors that can give us more useful information. We will add an SpectrumPortMonitor to the output of the SpectralAnalysis and move the AudioPortMonitor to the output of the SpectralSynthesis, just as shown:
+* In order to finish this section we are going to add a couple of monitors that can give us more useful information. We will add an SpectrumView to the output of the SpectralAnalysis and move the Oscilloscope to the output of the SpectralSynthesis, just as shown:
 
 
-[[Image:SpectralAnalysisSynthesisCompletePlots.png|500px|center]]
+[[Image:NetTutorial-SpectralView.png|500px|center]]
 
 ==Transformations and Controls==
 
