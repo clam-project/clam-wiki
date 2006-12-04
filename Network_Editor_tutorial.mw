@@ -96,7 +96,7 @@ This file specifies all the Processings, connections and configurations. Note th
 
 ==The Spectral Domain==
 
-*In order to do more interesting things we will now turn into the spectral domain. Delete the connection between the MonoAudioFileReader and the AudioOut. Select a SpectralAnalysis from the Analysis category and a SpectralSynthesis from the Synthesis category. Connect them as shown:
+*In order to do more interesting things we will now turn into the spectral domain. Delete the connection between the MonoAudioFileReader and the AudioSink. Select a SpectralAnalysis from the Analysis category and a SpectralSynthesis from the Synthesis category. Connect them as shown:
 
 
 [[Image:SpectralAnalysisSynthesis.png|500px|center]]
@@ -125,8 +125,6 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 
 
 [[Image:SpectralAnalysisSynthesisCompletePlots.png|500px|center]]
-
-
 
 ==Transformations and Controls==
 
