@@ -19,7 +19,7 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 *Open the spectralNetwork.xml file (in windows this file should be in your working directory and in Linux you should point your browser to /usr/share/networkeditor/example-data). Your NetworkEditor should now look like the following screenshot:
 
 
-[[Image:Tutorial-SpectralTransformation.png|500px|center]]
+[[Image:NetTutorial-SpectralTransformation.png|500px|center]]
 
 *We could try to configure and run this network (and you are welcome to try it if you feel adventurous) but first we need to understand a few concepts. So, let's take a few steps back and start over again.
 
