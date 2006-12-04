@@ -1,8 +1,9 @@
 CLAM's visual builder is known as the NetworkEditor.
-By using NetworkEditor, you can patch a processing network by graphically connecting objects.
+It is a tool to build ''networks'' of processing units by connecting them graphically.
 You can use such networks as the processing core of you application.
 Besides that, you can build, with Qt Designer, graphical interfaces that nicely interact with such processing core.
 So, by combining both, Qt Designer and CLAM NetworkEditor, you can fully build standalone applications and plugins without writting any code at all.
+Or you can use the interface and the processing core as a part of a bigger application.
 
 In the present tutorial we will learn the main features of the NetworkEditor step by step.
 
