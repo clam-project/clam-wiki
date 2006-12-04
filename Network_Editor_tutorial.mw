@@ -24,7 +24,7 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 
 [[Image:NetTutorial-SpectralTransformationPlaying.png|500px|center]]
 
-* Now, let's build a network from scratch.
+* Some basic concepts are needed to understand what's happening here. So, now, let's build a network from scratch.
 
 == Creating the simplest Network ==
 
