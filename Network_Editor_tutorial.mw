@@ -3,24 +3,25 @@
 
 CLAM's visual builder is known as the NetworkEditor. It allows to generate an application --or its processing engine-- by graphically connecting objects in a patch. In the present tutorial we will learn the main funcionalities of the NetworkEditor step by step.
 
+== Setup ==
+
+* Linux: the recommended audio backend is JACK. It is automatically selected if the JACK server is running. Use qjackctl to start it and use the 'Connect' tool to connect inputs and outputs as desired.
+* Windows: we recommend the PortAudio backend which is selected by default. You should select with the Windows Multimedia Mixer the input to fed to the NetworkEditor: 'microphone' or 'mixed stereo' when you want to process the audio output of other program such a multimedia player. '''To prevent annoying feedback noise, do not use the 'mixed stereo' when the network has also output.'''
+
 == First steps ==
 
-*Execute the Network Editor program. The program should look like this:
+* Execute the Network Editor program. The program should look like this:
 
+[[Image:NetTutorial-Initial.png|500px|center]]
 
-[[Image:empty.png|500px|center]]
-
-
-*Not very exciting, right? But now go to File->Load. With the file browser navigate to NetworkEditor's example-data folder. There you will find a number of examples. 
+*Not very exciting, right? But now go to ''File->Open example''. There you will find a number of examples.
 
 *Open the spectralNetwork.xml file (in windows this file should be in your working directory and in Linux you should point your browser to /usr/share/networkeditor/example-data). Your NetworkEditor should now look like the following screenshot:
 
 
-[[Image:SerialSpectralTransformations.png|500px|center]]
-
+[[Image:Tutorial-SpectralTransformation.png|500px|center]]
 
 *We could try to configure and run this network (and you are welcome to try it if you feel adventurous) but first we need to understand a few concepts. So, let's take a few steps back and start over again.
-
 
 == Creating the simplest Network ==
 
