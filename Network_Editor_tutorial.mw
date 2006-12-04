@@ -46,8 +46,10 @@ In the present tutorial we will learn the main features of the NetworkEditor ste
 [[Image:MonoAudioFileReader.png|500px|center]]
 
 
-* The Processing is "red" because it is not "configured" properly. If any Processing in the network is not properly configured, the network cannot be started.
-* Let's fix that. Pass over the processing with the mouse and a tooltip will show the configuration error message. In this case, we did not selected a file to read.
+* The Processing is "red" because it is not "configured" properly. If any Processing in the network is not properly configured, the network cannot be started. Let's fix that. Pass over the processing with the mouse and a tooltip will show the configuration error message. In this case, we did not selected a file to read.
+
+[[Image:NetTutorial-ErrorTooltip.png|200px|center]]
+
 * To configure the processing, right-click on the red Processing. A popup menu will be shown.
 
 [[Image:NetTutorial-ProcessingPopupMenu.png|300px|center]]
