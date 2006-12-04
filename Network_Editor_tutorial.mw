@@ -26,7 +26,7 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 
 == Creating the simplest Network ==
 
-*Select File New. You will get a blank canvas again.
+*Select File->New. You will get a blank canvas again.
 *Now we are going to add a number of Processings. A Processing object is the basic building block in CLAM (In this tutorial you will understand the basics but if you want to dive more into its meaning you should look in the other CLAM documentation or articles). Processings are listed on the left hand menu in the NetworkEditor, grouped by categories. Click on the Audio File I/O Category in order to expand the view and see what Processings are available.
 
 
@@ -60,7 +60,6 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 
 
 *Now you can start the network and you will hear the playback of the sound file you selected. If you activated the Loop button in the MonoAudioFileReader configurarion the sound will loop.
-
 
 ==Saving, Seeing and Loading==
 
