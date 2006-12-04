@@ -46,13 +46,13 @@ In the present tutorial we will learn the main features of the NetworkEditor ste
 [[Image:MonoAudioFileReader.png|500px|center]]
 
 
-* The Processing is "red" because it is not "configured" properly. Configurations in CLAM are those parameters that need to be set before run-time. If a Processing is not configured, the network cannot be started. Passing over the processing a tooltip will show the reason the processing is not properly configured. In this case, we did not selected a file to read.
+* The Processing is "red" because it is not "configured" properly. If any Processing in the network is not properly configured, the network cannot be started.
+* Let's fix that. Pass over the processing with the mouse and a tooltip will show the configuration error message. In this case, we did not selected a file to read.
 * To configure the processing, right-click on the red Processing. A popup menu will be shown.
 
 [[Image:NetTutorial-ProcessingPopupMenu.png|300px|center]]
 
-* Choose 'Configure' and a configuration window will pop-up
-
+* Choose 'Configure' and it will open a configuration dialog.
 
 [[Image:NetTutorial-AudioFileConfig.png|500px|center]]
 
