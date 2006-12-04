@@ -85,17 +85,12 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 
 [[Image:NetTutorial-AudioMonitor.png|500px|center]]
 
-*Note that you can zoom onto any plot by left-clicking and selecting the desired area. You can undo the zoom by right-clicking on the plot.
-
-*We have put too much work into this network just to risk loosing it now! We should save it somehow. Select File->SaveAs and choose the location and name you want (be careful not to do Save directly as you would be probably be overwriting the previously opened network).
-
+* We have put too much work into this network just to risk loosing it now! We should save it somehow. Select File->Save and choose the location and name you want. Don't forget the '.clamnetwork' extension.
 *If you are wondering what the file looks like go ahead and open it with your favourite text editor. Note that it is a regular xml file that is easy to edit and export and should look something like this:
-
 
 [[Image:NetworkConfig.png|500px|center]]
 
-
-This file specifies all the Processings, connections and configurations. Note that the graphical positions of the elements are stored in a separate .pos xml file.
+This file specifies all the Processings, connections and configurations. Note that the graphical positions of the elements are stored in a separate .pos file.
 
 *If you feel adventurous you can go ahead and edit some of the values and then load the xml from the NetworkEditor.
 
