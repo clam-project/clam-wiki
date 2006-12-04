@@ -112,17 +112,14 @@ This file specifies all the Processings, connections and configurations. Note th
 
 ==The Spectral Domain==
 
-*In order to do more interesting things we will now turn into the spectral domain. Delete the connection between the MonoAudioFileReader and the AudioSink. Select a SpectralAnalysis from the Analysis category and a SpectralSynthesis from the Synthesis category. Connect them as shown:
+* In order to do more interesting things we will now turn into the spectral domain. We can analyze the audio signal to obtain an spectrum, a frequency domain representation of the signal. The spectrum can be modified in a wiser way than time domain audio signal and then resynthesized back.
 
-
-[[Image:SpectralAnalysisSynthesis.png|500px|center]]
-
-
-*If you start the network right away chances are that you will get nothing out of it. As a matter of fact, we need another processing first, it is called OverlapAdd and it is used for smoothing out the resulting audio frames. Take it from the Synthesis category and connect it as shown.
+* So, delete the connection between MonoAudioFileReader and AudioSink. Drag a SpectralAnalysis from the Analysis category and a SpectralSynthesis and a OverlapAdd from the Synthesis category. Connect them as shown:
 
 
 [[Image:NetTutorial-SpectralAnalysisSynthesisComplete.png|500px|center]]
 
+* OverlapAdd is used for smoothing out the resulting audio frames.
 
 * Now you need to configure the Processings appropiately. We won't go into the DSP details but you are more than welcome to try with different values (be careful to save the network every step you take because in its current version, a wrong setting will produce a program abortion).
 Here you have a screenshot of the three configurations (SpectralAnalysis, SpectralSynthesis and OverlapAdd).
