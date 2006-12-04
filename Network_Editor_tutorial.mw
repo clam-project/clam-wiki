@@ -65,14 +65,14 @@ CLAM's visual builder is known as the NetworkEditor. It allows to generate an ap
 
 [[Image:NetTutorial-ConnectedProcessings.png|500px|center]]
 
-* Port connection is not allways feasible. Ports communicate data of several types of data. If the ports don't share such a type the target port highlight is red instead of green wire drop has no effect.
+* Port connection is not allways feasible. Ports communicate data of several types of data. You can not connect ports which do not share its data type. While dragging a wire, ports that are not compatible are highlighted in red instead of green.
 
 [[Image:NetEditQt4-ForbidenDrop.png|200px|center]]
 [[Image:NetEditQt4-AllowedDrop.png|200px|center]]
 
-* To disconnect them use the context menu for the connector (right click the port).
+* To disconnect a port, use the context menu for the connector (right click the port).
 
-[[Image:ConnectedProcessings.png|500px|center]]
+[[Image:NetTutorial-PortPopupMenu.png|300px|center]]
 
 
 *Now you can start the network and you will hear the playback of the sound file you selected. If you activated the Loop button in the MonoAudioFileReader configurarion the sound will loop.
