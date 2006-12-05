@@ -40,7 +40,7 @@ We need an interface, we can build it using the Qt Designer.
 * Assure that the CLAM Widgets group is available at the end of the widget toolbox.
 [[Image:NetwEditQt4-PluginWidgetsIcons.png|200px|center]]
 * Load the file <tt>SMSTransposition.ui</tt>
-[[Image:NetTutorial-SMSTranspositionInterface.png|200px|center]]
+[[Image:NetTutorial-SMSTranspositionInterface.png|500px|center]]
 
 == First steps ==
 
