@@ -49,12 +49,12 @@ We'll take an already done interface but let's see how does it looks like with Q
 Now that we have an interface, let's run it with the Prototyper.
 The Prototyper is an application that loads both, the CLAM network and the Qt interface and run its as it were an standalone application.
 
-* Windows: you will need to close the NetworkEditor if you didn't before.
-* Run the Prototyper from the menu.
-* It will ask you to choose a network to run, so choose <tt>SMSTransposition.clamnetwork</tt>.
-* Linux: you will need to connect properly the outputs after the application starts.
+* Windows: you may need to close the NetworkEditor, if you didn't before, to free the devices.
+* Run the Prototyper from the Start menu.
+* You will be asked to choose a network to run, so choose <tt>SMSTransposition.clamnetwork</tt>.
 * After some initialization this application will appear:
 [[Image:NetTutorial-SMSTranspositionPrototyper.png|500px|center]]
+* Linux: after the application starts, you will need to connect properly the inputs and outputs as you did with the NetworkEditor.
 
 == First steps ==
 
