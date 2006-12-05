@@ -37,8 +37,10 @@ We need an interface, we can build it using the Qt Designer.
 * Run Qt Designer
 ** Windows: There is an icon on the same Start menu folder where the Networkeditor is.
 ** Linux: Run the command <tt>designer-qt4</tt>.
-* Check that the CLAM Widgets group is available at the end of the widget toolbox
-[[Image:NetwEditQt4-PluginWidgetsIcons.png]]
+* Assure that the CLAM Widgets group is available at the end of the widget toolbox.
+[[Image:NetwEditQt4-PluginWidgetsIcons.png|200px|center]]
+* Load the file <tt>SMSTransposition.ui</tt>
+[[Image:NetTutorial-SMSTranspositionInterface.png|200px|center]]
 
 == First steps ==
 
