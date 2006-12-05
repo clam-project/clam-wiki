@@ -31,6 +31,15 @@ and following the normal workflow.
 [[Image:NetTutorial-SMSTranspositionPlaying.png|500px|center]]
 * After playing a little, stop it by pressing the Esc key or the Stop [[Image:Icon-Stop.png]] button to stop the effect
 
+That network will be the core of our application.
+We need an interface, we can build it using the Qt Designer.
+
+* Run Qt Designer
+** Windows: There is an icon on the same Start menu folder where the Networkeditor is.
+** Linux: Run the command <tt>designer-qt4</tt>.
+* Check that the CLAM Widgets group is available at the end of the widget toolbox
+[[Image:NetwEditQt4-PluginWidgetsIcons.png]]
+
 == First steps ==
 
 * Execute the Network Editor program. The program should look like this:
