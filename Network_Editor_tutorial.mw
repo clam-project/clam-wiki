@@ -33,20 +33,28 @@ and following the normal workflow.
 
 That network will be the core of our application.
 We need an interface, we can build it using the Qt Designer.
-We'll take one already done but let's see how does it looks like.
+The Qt Designer is a free software tool that is part of the Qt development framework from Trolltech. You can graphically build user interfaces. CLAM provides a plugin that enables some CLAM related plugins to be used in such interfaces.
+We'll take an already done interface but let's see how does it looks like with Qt Designer.
 
 * Run Qt Designer
 ** Windows: There is an icon on the same Start menu folder where the Networkeditor is.
 ** Linux: Run the command <tt>designer-qt4</tt>.
 [[Image:NetTutorial-DesignerInterface.png|500px|center]]
-* The Qt Designer is a free software tool that is part of the Qt development framework from Trolltech. You can graphically build user interfaces. CLAM provides a plugin that enables some CLAM related plugins to be used in such interfaces.
 * Assure that the CLAM Widgets group is available at the end of the Widget Box on the left. This group contains CLAM provided widgets that can be linked to the network processings.
 [[Image:NetwEditQt4-PluginWidgetsIcons.png|200px|center]]
 * Load the file <tt>SMSTransposition.ui</tt> from the NetworkEditor examples folder.
 [[Image:NetTutorial-SMSTranspositionInterface.png|500px|center]]
-* Check on the 'Object Inspector' that some of the widgets names are related to the processings names on the former network. This is needed to do the binding among them. We'll learn later how you should name widgets to achieve this.
+* Check on the 'Object Inspector' that some of the widgets names are related to the processings names on the former network. This is what we use to bind the interface elements to the processing elements. We'll learn later how you should name widgets to achieve this.
 
-Now that we have
+Now that we have an interface, let's run it with the Prototyper.
+The Prototyper is an application that loads both, the CLAM network and the Qt interface and run its as it were an standalone application.
+
+* Windows: you will need to close the NetworkEditor if you didn't before.
+* Run the Prototyper from the menu.
+* It will ask you to choose a network to run, so choose <tt>SMSTransposition.clamnetwork</tt>.
+* Linux: you will need to connect properly the outputs after the application starts.
+* After some initialization this application will appear:
+[[Image:NetTutorial-SMSTranspositionPrototyper.png|500px|center]]
 
 == First steps ==
 
