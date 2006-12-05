@@ -56,23 +56,6 @@ The Prototyper is an application that loads both, the CLAM network and the Qt in
 [[Image:NetEditQt4-Prototyper-Peaks.png|500px|center]]
 * Linux: after the application starts, you will need to connect properly the inputs and outputs as you did with the NetworkEditor.
 
-== First steps ==
-
-* Execute the Network Editor program. The program should look like this:
-
-[[Image:NetTutorial-Initial.png|500px|center]]
-
-* Not very exciting, right? But now go to ''File->Open example''. There you will find a number of examples.
-* Chose the <tt>spectralNetwork.clamnetwork</tt> example.
-* Resize the window and use the zoom buttons [[Image:NetTutorial-ZoomOut.png]] or the mouse wheel to make the network fit:
-
-[[Image:NetTutorial-SpectralTransformation.png|500px|center]]
-
-* You can feed the output of a multimedia player, press the play button [[Image:Icon-Play.png]] and move with the sliders to obtain some cool effects.
-
-[[Image:NetTutorial-SpectralTransformationPlaying.png|500px|center]]
-
-* Some basic concepts are needed to understand what's happening here. So, now, let's build a network from scratch.
 
 == Creating the simplest Network ==
 
@@ -148,10 +131,6 @@ This file specifies all the Processings, connections and configurations. Note th
 
 *If you feel adventurous you can go ahead and edit some of the values and then load the xml from the NetworkEditor.
 
-== We are still updating this tutorial to the 0.4.0 version ==
-
-'''The rest of this tutorial still refers to the 0.3.X versions of the Network Editor. It is expected to be updated in short to the 0.4.X series. Although the interface has changes, you could still follow it as concepts are the same.'''
-
 
 ==The Spectral Domain==
 
@@ -211,9 +190,14 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 * Now you are ready to start the network and play around with the slider in order to affect the way the effect behaves.
 
 * Finally it is up to you to try out the different Spectral Transformations and see what they are capable of doing. Not that you can even chain different transformations one after the other.
-* The spectralTransformation.clamnetwork is an effect chain consisting on: a three band filter, a robotization effect and a OscillatingSpectralNotch which amplifies an oscillating band of frequencies.
+* The spectralTransformation.clamnetwork example is an effect chain consisting on: a three band filter, a robotization effect and a OscillatingSpectralNotch which amplifies an oscillating band of frequencies.
 
 [[Image:NetTutorial-SpectralTransformation.png|500px|center]]
+
+
+== We are still updating this tutorial to the 0.4.0 version ==
+
+'''The rest of this tutorial still refers to the 0.3.X versions of the Network Editor. It is expected to be updated in short to the 0.4.X series. Although the interface has changes, you could still follow it as concepts are the same.'''
 
 
 ==SMS Transformations==
