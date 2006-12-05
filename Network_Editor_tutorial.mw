@@ -166,12 +166,9 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 [[Image:ConnectingControl.png|500px|center]]
 
 
-*Now you are ready to start the network and play around with the slider in order to affect the way the effect behaves.
+* Now you are ready to start the network and play around with the slider in order to affect the way the effect behaves.
 
-*Finally it is up to you to try out the different Spectral Transformations and see what they are capable of doing. Not that you can even chain different transformations one after the other as shown here (this network is available if you open the spectralNetwork.xml file in your example-data folder):
-
-
-[[Image:SerialSpectralTransformations.png|500px|center]]
+* Finally it is up to you to try out the different Spectral Transformations and see what they are capable of doing. Not that you can even chain different transformations one after the other as shown in the first example.
 
 ==SMS Transformations==
 
