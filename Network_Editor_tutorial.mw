@@ -53,7 +53,7 @@ The Prototyper is an application that loads both, the CLAM network and the Qt in
 * Run the Prototyper from the Start menu.
 * You will be asked to choose a network to run, so choose <tt>SMSTransposition.clamnetwork</tt>.
 * After some initialization this application will appear:
-[[Image:NetTutorial-SMSTranspositionPrototyper.png|500px|center]]
+[[Image:NetEditQt4-Prototyper-Peaks.png|500px|center]]
 * Linux: after the application starts, you will need to connect properly the inputs and outputs as you did with the NetworkEditor.
 
 == First steps ==
