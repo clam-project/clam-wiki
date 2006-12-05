@@ -22,7 +22,12 @@ and following the normal workflow.
 [[Image:NetTutorial-Initial.png|500px|center]]
 * Check that you can see the icon of the recommended audio backend for your platform at the lower right corner.
 * Choose the menu option ''File->Open example''
-* Select the network file named <tt>SMSTransposition.clamnetwork</tt>. You will see that:
+* Select the network file named <tt>SMSTransposition.clamnetwork</tt>.
+* Resize the window and use the zoom buttons [[Image:NetTutorial-ZoomOut.png]] or the mouse wheel to make the network fit:
+[[Image:NetTutorial-SMSTransposition.png|500px|center]]
+
+
+
 
 == First steps ==
 
