@@ -13,6 +13,14 @@ In the present tutorial we will learn the main features of the NetworkEditor ste
 * Linux: the recommended audio backend is JACK. It is automatically selected if the JACK server is running. Use qjackctl to start it and use the 'Connect' tool to connect inputs and outputs as desired.
 * Windows: we recommend the PortAudio backend which is selected by default. You should select with the Windows Multimedia Mixer the input to fed to the NetworkEditor: 'microphone' or 'mixed stereo' when you want to process the audio output of other program such a multimedia player. '''To prevent annoying feedback noise, do not use the 'mixed stereo' when the network has also output.'''
 
+== A quick example of the flow ==
+
+To see the power of the CLAM Network Editor let's start by taking a look at one of the provided example.
+
+* Start the NetworkEditor. You will see an empty canvas like this:
+[[Image:NetTutorial-Empty.png|500px|center]
+* Check that on the lower right corner you can see the icon of the recommended audio backend on your platform.
+
 == First steps ==
 
 * Execute the Network Editor program. The program should look like this:
