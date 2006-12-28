@@ -75,4 +75,5 @@ Image:NetwEditQt4-WinSimpleOscillator.png|Windows port: A fully working version 
 Image:NetwEditQt4-WinPrototyperFirstTry.png|Windows port: A first try with prototyper (Qt4.1.1)
 Image:NetwEditQt4-PluginWidgetsIcons.png|Some cute icons for the designer plugins.
 Image:NetEditQt4-TonalAndSMSAnalysis.png|Tonal and SMS analysis at the same time.
+Image:NetEditQt4-OpenRecentFiles.png|By pressing longer the 'open' icon you get a popup menu with the recent networks.
 </gallery>
