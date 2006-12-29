@@ -78,5 +78,5 @@ Image:NetEditQt4-TonalAndSMSAnalysis.png|Tonal and SMS analysis at the same time
 Image:NetEditQt4-OpenRecentFiles.png|By pressing longer the 'open' icon you get a popup menu with the recent networks.
 Image:NetEditQt4-MacOSX-tonal.png|The first time NetworkEditor 0.4 have shown up its face in MacOSX!.
 Image:NetEditQt4-MacOSX-smstransposition.png|Another MacOSX screenshot, now with SMSTransposition (bug: red points do not appear).
-
+Image:Annotator-MacOSX-firsttry.png|The first compilation of Annotator with Qt4.2. It have some layout problems.
 </gallery>
