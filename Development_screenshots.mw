@@ -3,13 +3,16 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 == Back to Mac ==
 
+Today we have again almost all the applications compiling. 
+Incluiding the new NetworkEditor 0.4 and the tonal analysis processings.
+Some work is still needed as you can see on the following screenshots.
+
 <gallery>
 Image:NetEditQt4-MacOSX-tonal.png|The first time NetworkEditor 0.4 have shown up its face in MacOSX!.
 Image:NetEditQt4-MacOSX-smstransposition.png|Another MacOSX screenshot, now with SMSTransposition (bug: red points do not appear).
 Image:Annotator-MacOSX-firsttry.png|The first compilation of Annotator with Qt4.2 in MacOSX It have some layout problems.
 Image:Prototyper-MacOSX.png|Prototyper in MacOSX, doesn't show plugins. Still some work to do for have working plugins.
 </gallery>
-
 
 == Network editor port to Qt4 ==
 
