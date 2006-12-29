@@ -3,9 +3,10 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 == Back to Mac ==
 
-Today we have again almost all the applications compiling. 
-Incluiding the new NetworkEditor 0.4 and the tonal analysis processings.
+Today we have again almost all the applications compiling on MacOSX. 
+Including the new NetworkEditor 0.4 and the tonal analysis processing.
 Some work is still needed as you can see on the following screenshots.
+Still nothing done to have binary packages working again, but at least it compiles.
 
 <gallery>
 Image:NetEditQt4-MacOSX-tonal.png|The first time NetworkEditor 0.4 have shown up its face in MacOSX!.
