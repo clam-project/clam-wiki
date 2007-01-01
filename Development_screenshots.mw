@@ -11,8 +11,8 @@ Still nothing done to have binary packages working again, but at least it compil
 <gallery>
 Image:NetEditQt4-MacOSX-tonal.png|The first time NetworkEditor 0.4 have shown up its face in MacOSX!.
 Image:NetEditQt4-MacOSX-smstransposition.png|Another MacOSX screenshot, now with SMSTransposition (bug: red points do not appear).
-Image:Annotator-MacOSX-firsttry.png|The first compilation of Annotator with Qt4.2 in MacOSX It have some layout problems.
-Image:Prototyper-MacOSX.png|Prototyper in MacOSX, doesn't show plugins. Still some work to do for have working plugins.
+Image:Annotator-MacOSX-firsttry.png|The first compilation of Annotator with Qt4.2 in MacOSX It has some layout problems.
+Image:Prototyper-MacOSX.png|Prototyper in MacOSX, doesn't show plugins. Still some work to do to have working qt plugins.
 Image:Prototyper-PluginsWorking-MacOSX.png|And now with the work done!
 </gallery>
 
