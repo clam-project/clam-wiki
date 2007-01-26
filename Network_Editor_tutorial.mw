@@ -57,6 +57,10 @@ The Prototyper is an application that loads both, the CLAM network and the Qt in
 [[Image:NetEditQt4-Prototyper-Peaks.png|500px|center]]
 * Linux: after the application starts, you will need to connect properly the inputs and outputs as you did with the NetworkEditor.
 
+Feel free to try other provided examples both with the Prototyper and the NetworkEditor. There is no problem running networks without interface because Prototyper will provide a default one.
+
+[[Image:NetEditQt4-PrototyperIndicators.png|center]]
+
 == Creating the simplest Network ==
 
 * Select File->New. You will get a blank canvas again.
