@@ -63,7 +63,9 @@ Feel free to try other provided examples both with the Prototyper and the Networ
 
 == Creating the simplest Network ==
 
-* Select File->New. You will get a blank canvas again.
+Now we know the workflow, but we are cheating because we took already done networks. So let's build a network from scratch, the simplest one.
+
+* Select File->New on the NetworkEditor. You will get a blank canvas again.
 * Now we are going to add a number of Processings. A Processing object is the basic building block in CLAM. Processings are listed on the left hand menu in the NetworkEditor, grouped by categories. Click on the Audio File I/O Category in order to expand the view and see what Processings are available.
 
 
