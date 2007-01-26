@@ -44,7 +44,8 @@ We'll take an already done interface but let's see how does it looks like with Q
 [[Image:NetwEditQt4-PluginWidgetsIcons.png|200px|center]]
 * Load the file <tt>SMSTransposition.ui</tt> from the NetworkEditor examples folder.
 [[Image:NetTutorial-SMSTranspositionInterface.png|500px|center]]
-* Check on the 'Object Inspector' that some of the widgets names are related to the processings names on the former network. This is what we use to bind the interface elements to the processing elements. We'll learn later how you should name widgets to achieve this.
+* Check on the 'Object Inspector' that some of the widgets names are related to the processings names on the former network. This is what we use to bind the interface elements to the processing elements. You can obtain such name by using the 'Copy connection name' option on the connectors context menu.
+[[Image:NetEditQt4-ConnectorsContextActions.png]]
 
 Now that we have an interface, let's run it with the Prototyper.
 The Prototyper is an application that loads both, the CLAM network and the Qt interface and run its as it were an standalone application.
@@ -55,7 +56,6 @@ The Prototyper is an application that loads both, the CLAM network and the Qt in
 * After some initialization this application will appear:
 [[Image:NetEditQt4-Prototyper-Peaks.png|500px|center]]
 * Linux: after the application starts, you will need to connect properly the inputs and outputs as you did with the NetworkEditor.
-
 
 == Creating the simplest Network ==
 
