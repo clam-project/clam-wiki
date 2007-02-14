@@ -1,14 +1,22 @@
 This page hosts screenshots galleries of the ongoing development of CLAM and its applications.
 
-== Desktop integration ==
+== 0.99 ==
+
+<gallery>
+Image:FilePlayerWithOscilloscope.png|The file player has now an oscilloscope
+Image:FFTW3.png| FFTW-3 on parallel with a FFTW-2 (to be deprecated)
+</gallery>
+
+
+= 0.98 =
+
+
+== Back to Mac ==
 
 <gallery>
 Image:Konqueror-networkicons.png|KDE integration using legacy mime system. KDE is not freedesktop compliant yet. so .
 </gallery>
 
-
-
-== Back to Mac ==
 
 Today we have again almost all the applications compiling on MacOSX. 
 Including the new NetworkEditor 0.4 and the tonal analysis processing.
@@ -22,6 +30,8 @@ Image:Annotator-MacOSX-firsttry.png|The first compilation of Annotator with Qt4.
 Image:Prototyper-MacOSX.png|Prototyper in MacOSX, doesn't show plugins. Still some work to do to have working qt plugins.
 Image:Prototyper-PluginsWorking-MacOSX.png|And now with the work done!
 </gallery>
+
+= 0.95 =
 
 == Network editor port to Qt4 ==
 
