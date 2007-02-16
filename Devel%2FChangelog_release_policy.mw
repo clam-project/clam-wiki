@@ -1,0 +1,35 @@
+This document explains how to modify the CHANGES file on a release.
+
+The versioning in CLAM and applications is fully controlled by the CHANGES files. This file is used to generate version info in credits, and packaging names. The resulting version is 
+
+
+
+== Just before the release ==
+
+* CHANGE files for CLAM should look like that
+ 00-00-2007 CLAM 1.0 SVN $Revision: 09999 $
+ 'The release i want to release'
+  * Change 1
+  * Change 2
+ 
+ 00-00-2006 CLAM 0.99.99
+ 'The past released release'
+ * Revision 08888
+ * Change 3
+
+* And for applications:
+ 00-00-2007 NetworkEditor 0.4.6 SVN $Revision: 09999 $
+ 'The release i want to release'
+  * Using CLAM 1.0
+  * Change 1
+  * Change 2
+ 
+ 00-00-2006 NetworkEditor 0.99.99
+ 'The past released release'
+ * Revision 08888
+ * Using CLAM 0.99.99
+ * Change 3
+
+
+* Update the CHANGES entries with the release changes
+* Move '$REVISION$' to as a change entry
