@@ -1,8 +1,6 @@
 This document explains how to modify the CHANGES file on a release.
 
-The versioning in CLAM and applications is fully controlled by the CHANGES files. This file is used to generate version info in credits, and packaging names. The resulting version is 
-
-
+The versioning in CLAM and applications is fully controlled by the CHANGES files. This file is used to generate version info in credits, and packaging names.
 
 == In between releases ==
 
@@ -31,7 +29,7 @@ The versioning in CLAM and applications is fully controlled by the CHANGES files
  * Change 3
 
 * This way the long version will be 1.0~svn09999
-* ''The svn number is the revision of the last CHANGE not the overall repository revision, so modify the CHANGES files to get it updated.''
+* '''The svn number is the revision of the last CHANGE not the overall repository revision, so modify the CHANGES files to get it updated.'''
 
 == About to release ==
 
@@ -50,7 +48,7 @@ The versioning in CLAM and applications is fully controlled by the CHANGES files
   * Change 2
 * This will generate a short and log version '1.0'
 * Generate all the packaging
-* ''If you do changes while packaging do also a commit on CHANGES to update the revision''
+* '''If you do changes while packaging do also a commit on CHANGES to update the revision'''
 
 == After release ==
 
