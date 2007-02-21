@@ -29,6 +29,7 @@ Image:NetEditQt4-MacOSX-smstransposition.png|Another MacOSX screenshot, now with
 Image:Annotator-MacOSX-firsttry.png|The first compilation of Annotator with Qt4.2 in MacOSX It has some layout problems.
 Image:Prototyper-MacOSX.png|Prototyper in MacOSX, doesn't show plugins. Still some work to do to have working qt plugins.
 Image:Prototyper-PluginsWorking-MacOSX.png|And now with the work done!
+Image:SMSTools-macosx.png|SMSTools showing sinusoidal tracks and spectrum in the Mac OSX platform.
 </gallery>
 
 = 0.95 =
