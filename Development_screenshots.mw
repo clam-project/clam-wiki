@@ -5,6 +5,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 <gallery>
 Image:FilePlayerWithOscilloscope.png|The file player network example has now an oscilloscope
 Image:FFTW3.png|FFTW-3 on parallel with a FFTW-2 (to be deprecated)
+Image:IFFTAndNames.png|Testing differences using spectrum substract and inverse FFT's.
 </gallery>
 
 = 0.98 =
