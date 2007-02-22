@@ -5,6 +5,8 @@ This manual chapter gives hints on how to migrate existing code from one version
 The processing state 'Disabled' has been removed.
 Now a processing can be either Running, Ready or Unconfigured.
 
+If you used any subclass of FFT_base and IFFT_base, you should consider moving to 'FFT' and 'IFFT' which renders to the better implementation available according to the with_X configure options. That's, by preference fftw3 (disabled by default until the next release), fftw2 and ooura.
+
 == 0.95.0 to 0.96.0 ==
 
 OutControl::AddLink and OutControl::RemoveLink receive references instead of pointer as parameter.
