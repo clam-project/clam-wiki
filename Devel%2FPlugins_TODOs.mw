@@ -1,29 +1,41 @@
+== improve clam general infrastructure ==
+
+* enhance network flow-control (we are currently working on it). flow-control is a plugable entity in charge of scheduling processing execution. not an obvious thing to do since clam processing allow any port (buffer) size.
+
+* dynamically load processings (like as if they where just typical plugins) 
+
+== improve clam plugins-host infrastructure ==
+
+* better organization (using meta-data) of NetworkEditor processing-tree. the processing-tree includes all the loadable plugins [work in progress: andreas]
+
+* extend current factory in order to have '''homogeneous plugin instantiation interface''' [work in progress: andreas]
+
+=== new plugins-hosts ===
+
+* host ladspa in mac (we should be ready for that)
+* host ladspa in windows (see if someone have already compiled ladspas as dlls) 
+* host lv2 [andreas]
+
+== improve plugins creation infrastructure ==
+
+* refactor network-player-back-ends (such as jack, portaudio, ladpsa) classes to avoid code repetition. now we have a subclass for each back-end. 
+** david thinks the could would be cleaner and more usable having a single network-player class with plugable back-ends.
+** the refactoring include better class naming and move sources at an appropriate dir.
+
+* better SConstruct for compiling network-players into plugins  (.dll, .so)
+** improve the way to specify and install the clamnetwork file
+
+=== new plugins architectures ===
+
+* vst (license issue)
+* generate vsts with clam-prototyped gui [work in progress: pol]
+* vst for mac 
+* dssi with clam-prototyped gui
+* others?
 
 
-= improve clam plugins host and general infrastructure =
+= DONE =
 
- * enhance network flow-control (we are currently working on it). flow-control is a plugable entity in charge of scheduling processing execution. not an obvious thing to do since clam processing allow any port (buffer) size.
-
- * refactor network-player-back-ends (such as jack, portaudio, ladpsa) classes to avoid code repetition
-now we have a subclass for each back-end. david thinks the coulde would be cleaner and more usable having a single network-player class with plugable back-ends.
-the refactoring include better class naming and move sources at an appropriate dir.
-
- * better infrastructure to allow compile network-players into plugins. address:
-  - how to specify and install the clamnetwork file
-  - better SConstructs
-
- * plugins instantiation through factories---
-
- * better organization of NetworkEditor processing tree (using more meta-data). the processing tree
-
- * host other plugins architectures: VST (license issue), DSSI, others?
- 
-
-= generate better plugins =
-
- * vst specific: clam-prototyped qt gui, working in mac.
- * mac vst
- * ladspa for windows
- * incorporate LV2 (andreas)
- 
- * dssi: clam-prototyped-qt-qui
+* experimental ladspa host in linux
+* generation of ladspa plugins under linux (needs some refactor)
+* generation of non-gui vst under windows (needs some refactor)
