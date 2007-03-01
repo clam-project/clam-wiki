@@ -1,4 +1,5 @@
-* Change the devel tab to point to the Devel space on the wiki
+* <strike>Change the devel tab to point to the Devel space on the wiki</strike>
+* Fix: Devel Wiki open in a frame redirects the full page. Make it a direct link.
 * Add a link on the Doc tab to the wiki
 * Merge links to external dependencies (on 'Links') as an entry on the faq
 * Merge links to similar projects (on 'Links') as an entry on the faq
