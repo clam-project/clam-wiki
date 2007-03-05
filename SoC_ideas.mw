@@ -60,10 +60,9 @@ more here: [[Plugins TODOs]]
 
 == Vowel synthesizer ==
 
-Build a educative program that would consist on synthesizing
-different vowels by placing a point within the [http://en.wikipedia.org/wiki/Vowel_triangle Vowel triangle],
-and the reverse, given an input vowel from the microphon a dot is placed on the triangle, 
-so the students can check their pronunciation.
+Build a educative program that would consist on:
+* synthesizing different vowels by placing a point within the [http://en.wikipedia.org/wiki/Vowel_triangle Vowel triangle],
+* and, the reverse, given an input vowel from the microphone place a dot on the triangle, so the students can check their pronunciation.
 This could be enhanced by:
 * displaying the mouth position for the vowel,
 * visualizing the spectral peaks so they can identify the effect,
