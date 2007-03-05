@@ -1,1 +1,59 @@
-empty
+= This is Totally Draft =
+
+But come back soon. We will have a list of clam SoC ideas by the end of this week (March 10th)
+
+== Plugin system for a dynamically extensible framework ==
+more here: [[Plugins TODOs]]
+
+* clam plugins-hosts
+** Multi-platform dynamic loading of factories. 
+** Hierarchical organization
+** Documentation and plugin metadata (ports meta-data, etc)
+* plugin creation from a clam network
+** NetworkEditor as ladspa host
+** NetworkEditor as vst host
+** Load CLAM processings/networks as ladspa plugins
+
+
+== Network Scalability (aka Subnetworks) ==
+* Infrastructure to control the flow of recursive networks
+* Integrate user-defined networks in the component library.
+* Make it usable in NetworkEditor application.
+* ...
+
+== CLAM in Python ==
+
+* use a clam network with python
+* use clam processings and processing-data with python. use it to visualize data, etc.
+* write clam processings with python
+
+== Improve usability of SMSTools workflow ==
+(PAU: this seems quite old. I don't understand some of this items)
+* Separate configurations and processing objects
+* Configurations as a presets 
+* Keep intermediate (analysis) objects
+* Enable the user to explicitly work with those intermediate objects.
+
+== Convergence of SMSTools and CLAM widgets infrastructure ==
+* Transformation parameter automation using time-lines (ala ardour automation)
+* Metadata based widgets
+* Widgets interaction (zoom)
+* Network based transformations. The user should be able to define the transformation chain using NetworkEditor.
+
+== Real-time synthesizer using SMS models ==
+* a new revamped but very simple salto synthesizer.
+* a db of sms samples
+* processings 
+** to choose samples
+** interpolate
+** create stream flow
+** etc.
+
+== Integrate Faust with CLAM. And spectral transformations with Faust ==
+probably a little out-of scope
+
+== Enhancing chord detection algorithm for real-time use ==
+that was a david idea
+
+== Integracio d'interficies Qt al framework de plugins d'audio VST ==
+( Currently taken (Pol) )
