@@ -30,7 +30,7 @@ more here: [[Plugins TODOs]]
 == CLAM Swig interface ==
 
 * write a CLAM swig interface that allows to use CLAM from any 
-scriptring language.
+: scriptring language.
 
 == Improve usability of SMSTools workflow ==
 
