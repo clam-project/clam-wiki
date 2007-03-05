@@ -33,11 +33,16 @@ more here: [[Plugins TODOs]]
 scriptring language.
 
 == Improve usability of SMSTools workflow ==
+
 (PAU: this seems quite old. I don't understand some of this items)
-* Separate configurations and processing objects
-* Configurations as a presets 
-* Keep intermediate (analysis) objects
+
+(David: Not that old. But maybe the rephrase can help)
+
+* Separate configurations and files to process
+* Configurations as a presets not as data (you open an audio file and analyze it using a given preset)
+* Keep intermediate (analysis) objects (not a single statefull object as now)
 * Enable the user to explicitly work with those intermediate objects.
+* Minimize the provided data by using object information (sampling rate on analysis, and most of the analysis parameters for synthesis)
 
 == Convergence of SMSTools and CLAM widgets infrastructure ==
 * Transformation parameter automation using time-lines (ala ardour automation)
