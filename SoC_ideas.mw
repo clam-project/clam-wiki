@@ -27,6 +27,11 @@ more here: [[Plugins TODOs]]
 * use clam processings and processing-data with python. use it to visualize data, etc.
 * write clam processings with python
 
+== CLAM Swig interface ==
+
+* write a CLAM swig interface that allows to use CLAM from any 
+scriptring language.
+
 == Improve usability of SMSTools workflow ==
 (PAU: this seems quite old. I don't understand some of this items)
 * Separate configurations and processing objects
@@ -54,6 +59,29 @@ probably a little out-of scope
 
 == Enhancing chord detection algorithm for real-time use ==
 that was a david idea
+
+== Integration of aubio ==
+
+* Integrate the aubio tempo library into CLAM and the CLAM Annotator
+
+== Dynamic Network Sequencing ==
+
+* Implement a simple interface that would allow a user to sequence
+(in time) changes to a CLAM::Network. These changes would be mainly
+connections between Processing objects but maybe also new configurations...
+* Related to this, create a temporal control generator that generates
+controls every t seconds.
+
+== CLAM for video spike ==
+
+* Integrate video processing/playback capabilities to CLAM
+* Maybe through the use of Gstreamer?
+
+== Processing class generator App/Widget ==
+
+* Allow users to create a new Processing class by just specifying ports
+and behavior of Do() in a graphical widget
+* Maybe to integrate into NetworkEditor
 
 == Integracio d'interficies Qt al framework de plugins d'audio VST ==
 ( Currently taken (Pol) )
