@@ -61,10 +61,17 @@ more here: [[Plugins TODOs]]
 == Vowel synthesizer ==
 
 Build a educative program that would consist on synthesizing
-different vowels by placing a point within the [http://en.wikipedia.org/wiki/Vowel_triangle Vowel triangle].
-And also the reverse, given a vowel it places it in the triangle.
-This could be enhanced by visualizing the effects on the peaks,
-changing the synthesized gender or extracting user's track characteristics for synthesis.
+different vowels by placing a point within the [http://en.wikipedia.org/wiki/Vowel_triangle Vowel triangle],
+and the reverse, given an input vowel from the microphon a dot is placed on the triangle, 
+so the students can check their pronunciation.
+This could be enhanced by:
+* visualizing the spectral peaks so they can check the effect,
+* changing the synthesized gender,
+* extracting user's vocal track characteristics for synthesized sound.
+
+A teacher could limit the set of vowels to the ones used for 
+a particular language such as Catalan or English
+so that the students just see the relevant ones for the exercise.
 
 == Integrate Faust with CLAM. And spectral transformations with Faust ==
 probably a little out-of scope
