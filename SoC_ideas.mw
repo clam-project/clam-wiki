@@ -79,6 +79,8 @@ probably a little out-of scope
 
 == Enhancing chord detection algorithm for real-time use ==
 
+TODO: Adapt scope to SoC requirements
+
 Due to the extend it could be split a subset of the proposals.
 It consist on enhancing existing 
 tonal analysis algorithms so that they can work reliably on realtime
