@@ -3,7 +3,7 @@
 But come back soon. We will have a list of clam SoC ideas by the end of this week (March 10th)
 
 == Plugin system for a dynamically extensible framework ==
-more here: [[Plugins TODOs]]
+more here: [[Devel/Plugins TODOs]]
 
 * clam plugins-hosts
 ** Multi-platform dynamic loading of factories. 
@@ -13,7 +13,6 @@ more here: [[Plugins TODOs]]
 ** NetworkEditor as ladspa host
 ** NetworkEditor as vst host
 ** Load CLAM processings/networks as ladspa plugins
-
 
 == Network Scalability (aka Subnetworks) ==
 * Infrastructure to control the flow of recursive networks
