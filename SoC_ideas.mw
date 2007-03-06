@@ -197,7 +197,9 @@ TODO: Adapt scope to SoC requirements
 
 == Flexible auralization on Annotator ==
 
-Currently the auralization is limited to some kinds of auralizations.
+Currently the auralization is limited to some kinds of descriptors auralization.
+Currently just playing a tick on segment onset and 
+float value frame level descriptors controlling the pitch of a tone.
 By adding a general way to convert descriptors to control signals
 they can be used to control an arbitrary synthesizer set by the user
 (CLAM network? OSC/MIDI controlled synth?)
