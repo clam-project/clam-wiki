@@ -168,3 +168,17 @@ It would be nice to integrate into the annotator a tool to graphically configure
 how to perform such a merge to run it locally.
 The idea is that a project could have, instead of a single extractor,
 a combination of descriptors sources.
+
+
+== Enhancing Annotator Widgets ==
+
+* Frame level float editor
+* Multibin frame parameters (spectrums, pcp's)
+* Enhancing the usability of the segment editor
+** Selection
+** Over
+* Multiple segmentation panes
+* Macro commands (Join
+
+
+== Song level annotation utilities ==
