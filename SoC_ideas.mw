@@ -181,6 +181,8 @@ Some use cases:
 
 == Enhancing Annotator Widgets ==
 
+TODO: Adapt scope to SoC requirements
+
 * Views for multibin frame parameters (spectrums, pcp's)
 * Frame level float editor
 * Multiple segmentation panes
@@ -189,5 +191,3 @@ Some use cases:
 ** Overlapping segments
 ** Displaying segment attributes as height
 ** Displaying segment attributes as color
-
-TODO: Adapt scope to SoC requirements
