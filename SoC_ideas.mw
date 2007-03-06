@@ -169,6 +169,13 @@ how to perform such a merge to run it locally.
 The idea is that a project could have, instead of a single extractor,
 a combination of descriptors sources.
 
+== Macro manipulation of descriptors with python on Annotator ==
+
+Make the annotation data accessible to python scripts
+so that one can automate repetitive descriptors manipulation.
+Some use cases:
+* I want to correct an offset that a given segment annotation adds to all segments.
+* I want to extend a regular beat annotation and just correct when it varies
 
 == Enhancing Annotator Widgets ==
 
