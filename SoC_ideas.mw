@@ -172,13 +172,14 @@ a combination of descriptors sources.
 
 == Enhancing Annotator Widgets ==
 
+* Views for multibin frame parameters (spectrums, pcp's)
 * Frame level float editor
-* Multibin frame parameters (spectrums, pcp's)
-* Enhancing the usability of the segment editor
-** Selection
-** Over
 * Multiple segmentation panes
-* Macro commands (Join
-
+* Enhancing the usability of the segment editor
+** Selection and edit actions (copy, paste..)
+** Overlapping segments
+** Displaying segment attributes as height
+** Displaying segment attributes as color
+* Python macro manipulation of descriptors
 
 == Song level annotation utilities ==
