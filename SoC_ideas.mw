@@ -79,7 +79,8 @@ probably a little out-of scope
 
 == Enhancing chord detection algorithm for real-time use ==
 
-Enhancing existing 
+Due to the extend it could be split a subset of the proposals.
+It consist on enhancing existing 
 tonal analysis algorithms so that they can work reliably on realtime
 in order to be exploded by a realtime visualization that could give a
 the user some insight on what he is listening.
@@ -96,7 +97,8 @@ Several algorithm enhancements are to be considered:
 * Preprocessing
 ** Compute instant tunning by fasor addition on chroma peaks mapped to a semitone (done)
 ** Limit the time scope of the global tunning computation (done but improvements needed)
-	
+* Processing
+** Find faster and more precise algorithms than the current one	
 * Postprocessing
 ** Consider the None chord (all pitches) so that we can detect non chord segments and use it as reference for pitchness. (done)
 ** Symbolical analysis: Instead of correlation, analyze the pcp content using heuristic reasoning (Harte did plain filtering and some )
