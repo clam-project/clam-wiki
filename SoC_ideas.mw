@@ -78,7 +78,51 @@ so that the students just see the relevant ones for the exercise.
 probably a little out-of scope
 
 == Enhancing chord detection algorithm for real-time use ==
-that was a david idea
+
+Enhancing existing 
+tonal analysis algorithms so that they can work reliably on realtime
+in order to be exploded by a realtime visualization that could give a
+the user some insight on what he is listening.
+Although the algorithm may fail to detect the exact chord being played,
+visualization should be able to visualize information so that the user
+could figure out what's going on.
+
+In order to achive this, two concurrent aspects are to be addressed:
+The first one is to modify and enhance existing algorithms
+so that they can achieve better results working on realtime.
+The second one is to find new ways of representing pitch, tonality and chord information in realtime.
+
+Several algorithm enhancements are to be considered:
+* Preprocessing
+** Compute instant tunning by fasor addition on chroma peaks mapped to a semitone (done)
+** Limit the time scope of the global tunning computation (done but improvements needed)
+	
+* Postprocessing
+** Consider the None chord (all pitches) so that we can detect non chord segments and use it as reference for pitchness. (done)
+** Symbolical analysis: Instead of correlation, analyze the pcp content using heuristic reasoning (Harte did plain filtering and some )
+** Double scope for analysis: Too large windows difuminate transitions but small ones fail to detect arpeggios based chords. We could choose depending on the number of high pitches on the PCP.
+** Onset alignment: Use realtime onset detection (aubio?) to 'quantize' the chord segments limits.
+
+Enrich algorithm output so that the user may take profit of non-perfect algorithm or music that is not using recognized cords (fifths, rare chords...)
+* Diffuse guessing: Minimize false positive impact to the user by computing a confidence value for each guess.
+* Keeping several candidates so the user may view that he has more than one option.
+* Rectified guess: Do a first realtime guess and correct it later if needed as the song goes on. 
+
+In parallel to enhance the algorithm to realtime some views must be developed.
+Some views ideas:
+* KeySpace (Emilia and Jordi's) (done)
+* Augmented KeySpace (not just major and minor)
+* Tonnetz (pcp) (done)
+* Tonnetz (pcp + chord figures)
+* Chord torus (map pcp into the tonal torus space)
+* Vectors in chord torus (needed to disambiguate dim chords)
+* Chord ranking: all chords displayed as sorted probability bars (done)
+* Chord candidates: just the ones before the first strong decay
+* Realtime segment construction:
+** Instant chord segment: Display segment based on the best one on each instant.
+** Delayed segment: don't display a segment until we have enough information on the future to make a post processing
+** Guessed segments: Until sure, display the guess
+* Instrument fingering
 
 == Integration of aubio ==
 
