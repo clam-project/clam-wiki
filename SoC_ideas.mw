@@ -181,12 +181,6 @@ a combination of descriptors sources.
 ** Displaying segment attributes as height
 ** Displaying segment attributes as color
 
-== Macro manipulation of descriptors with python on Annotator ==
 
-Make the annotation data accessible to python scripts
-so that one can automate repetitive descriptors manipulation.
-Some use cases:
-* I want to correct an offset that a given segment annotation adds to all segments.
-* I want to extend a regular beat annotation and just correct when it varies
 
 == Song level annotation utilities ==
