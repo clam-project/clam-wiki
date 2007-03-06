@@ -183,11 +183,21 @@ Some use cases:
 
 TODO: Adapt scope to SoC requirements
 
-* Views for multibin frame parameters (spectrums, pcp's)
+* Views for multibin frame parameters (spectrums, pcp's, chord correlation...)
 * Frame level float editor
+* More instant views
+** Spectrum + peaks
+** 
 * Multiple segmentation panes
 * Enhancing the usability of the segment editor
 ** Selection and edit actions (copy, paste..)
 ** Overlapping segments
 ** Displaying segment attributes as height
 ** Displaying segment attributes as color
+
+== Flexible auralization on Annotator ==
+
+Currently the auralization is limited to some kinds of auralizations.
+By adding a general way to convert descriptors to control signals
+they can be used to control an arbitrary synthesizer set by the user
+(CLAM network? OSC/MIDI controlled synth?)
