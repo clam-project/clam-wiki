@@ -6,12 +6,21 @@ Some development pages are still at the [https://iua-share.upf.es/wikis/clam_dra
 
 [[Development screenshots]] show last achievements on CLAM development branch.
 
+== Subversion access ==
+* Open and read-only 
+ $ svn co http://iua-share.upf.edu/svn/clam/trunk clam
+* With write permissions. You an account at iua-share.
+ $ svn co svn+ssh://<usrname>@iua-share.upf.edu/mnt/svn/clam/trunk clam
+
+
+
 == Getting involved ==
 
 To get involved with CLAM development:
 * Subscribe to the [https://llistes.projectes.lafarga.org/cgi-bin/mailman/listinfo/clam-devel clam development mailing list].
 * Contact other CLAM developers at the #clam channel of the FreeNode IRC network.
-* Send a patch ;-)
+* Fill bugs [http://clam.iua.upf.edu/bugreporting.html]
+* Fix bugs and send a patch ;-)
 
 == Tasks ==
 
