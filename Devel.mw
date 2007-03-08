@@ -36,3 +36,20 @@ To get involved with CLAM development:
 == HOWTO's ==
 
 * [[Devel/Changelog release policy]]
+
+== Prepare and apply a patch ==
+
+We only give write access to the repository to developers with experience with clam development. But this not a problem since you can always send a patch to the devel-list, and clam-devs will take care of it (and we use to be quick).
+
+We like receiving patches very much. Please do it even for very small things like improving the INSTALL file, or grammar corrections in the code comments. (So imagine how we like receiving bug-fixes!).
+Luckily, working with patches in subversion is very easy:
+
+* How to create a patch with your local modifications?
+: Change dir to the svn root (under CLAM and NetworkEditor, etc.) and do 
+: <pre>$ svn diff > good-description.patch</pre>
+
+* How to apply a patch (that maybe somebody posted to the list)?
+: Change dir to the svn root and do
+: <pre>$ patch -p0 < the.patch
+
+</pre>
