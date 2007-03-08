@@ -6,6 +6,8 @@ Some development pages are still at the [https://iua-share.upf.es/wikis/clam_dra
 
 [[Development screenshots]] show last achievements on CLAM development branch.
 
+[http://clam.iua.upf.edu/testfarm Testfarm web] shows the last commits and build and tests status in different platforms in real-time.
+
 == Subversion access ==
 Subversion tree contains CLAM libs and applications: NetworkEditor, Annotator, SMSTools and Voice2MIDI
 * Open and read-only 
