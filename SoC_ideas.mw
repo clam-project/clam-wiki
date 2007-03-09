@@ -131,11 +131,7 @@ Some views ideas:
 * Integrate video processing/playback capabilities to CLAM
 * Maybe through the use of Gstreamer?
 
-== Processing class generator App/Widget ==
 
-* Allow users to create a new Processing class by just specifying ports
-and behavior of Do() in a graphical widget
-* Maybe to integrate into NetworkEditor
 
 == Qt based interfaces for CLAM Network based VST plugins ==
 
