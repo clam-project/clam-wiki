@@ -190,6 +190,8 @@ they can be used to control an arbitrary synthesizer set by the user
 
 = Still not included =
 
+Those ideas were discarded to be offered as SoC project but if you are still interested, just ask.
+
 == Integrate Faust with CLAM. And spectral transformations with Faust ==
 
 
