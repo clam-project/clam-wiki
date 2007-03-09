@@ -27,6 +27,9 @@ more here: [[Devel/Plugins TODOs]]
 * this could lead to a NetworkEditor python console with tab-completion
 * use clam processings and processing-data with python. use it to visualize data, etc.
 * write clam processings with python
+** Allow users to create a new Processing class by just specifying ports
+and behavior of Do() in a graphical widget
+** Integrate it in the NetworkEditor
 * several approaches: Adhoc API or API export using SWIG or SIP
 * network score
 ** Implement a simple interface that would allow a user to sequence (in time) changes to a CLAM::Network. These changes would be mainly connections between Processing objects but maybe also new configurations...
