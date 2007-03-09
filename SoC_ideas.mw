@@ -22,20 +22,16 @@ more here: [[Devel/Plugins TODOs]]
 
 == CLAM in Python ==
 
+
 * use a clam network with python
 * use clam processings and processing-data with python. use it to visualize data, etc.
 * write clam processings with python
-
-CLAM Swig interface
-
-* write a CLAM swig interface that allows to use CLAM from any scriptring language.
-
-Dynamic Network Sequencing
-
-* Implement a simple interface that would allow a user to sequence
+* several approach: Adhoc API or API export using SWIG or SIP
+* network score
+** Implement a simple interface that would allow a user to sequence
 (in time) changes to a CLAM::Network. These changes would be mainly
 connections between Processing objects but maybe also new configurations...
-* Related to this, create a temporal control generator that generates
+** Related to this, create a temporal control generator that generates
 controls every t seconds.
 
 == Improve usability of SMSTools workflow ==
