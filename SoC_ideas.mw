@@ -151,9 +151,10 @@ controls every t seconds.
 and behavior of Do() in a graphical widget
 * Maybe to integrate into NetworkEditor
 
-== Integracio d'interficies Qt al framework de plugins d'audio VST ==
-( Currently taken (Pol) )
+== Qt based interfaces for CLAM Network based VST plugins ==
 
+Enabling a Qt interface to control a CLAM Network acting as VST plugins
+the same way CLAM does now for JACK and PortAudio players.
 
 == Annotation Merger ==
 
