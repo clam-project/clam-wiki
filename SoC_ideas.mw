@@ -134,11 +134,6 @@ Some views ideas:
 
 
 
-== CLAM for video spike ==
-
-* Integrate video processing/playback capabilities to CLAM
-* Maybe through the use of Gstreamer?
-
 
 
 == Qt based interfaces for CLAM Network based VST plugins ==
