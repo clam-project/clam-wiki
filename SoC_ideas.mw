@@ -139,8 +139,8 @@ and behavior of Do() in a graphical widget
 
 == Qt based interfaces for CLAM Network based VST plugins ==
 
-Enabling a Qt interface to control a CLAM Network acting as VST plugins
-the same way CLAM does now for JACK and PortAudio players.
+Enabling a Qt Designer interface to control a CLAM Network 
+run as VST plugin the same way CLAM does now for JACK and PortAudio players.
 
 == Annotation Merger ==
 
