@@ -160,8 +160,8 @@ a combination of descriptors sources.
 Make the annotation data accessible to python scripts
 so that one can automate repetitive descriptors manipulation.
 Some use cases:
-* I want to correct an offset that a given segment annotation adds to all segments.
-* I want to extend a regular beat annotation and just correct when it varies
+* "I want to correct an offset that a given segment annotation adds to all segments"
+* "I want to extend a regular beat annotation and just correct when it varies"
 
 == Enhancing Annotator Widgets ==
 
