@@ -71,8 +71,7 @@ A teacher could limit the set of vowels to the ones used for
 a particular language such as Catalan or English,
 so that the students just see the relevant ones for the exercise.
 
-== Integrate Faust with CLAM. And spectral transformations with Faust ==
-probably a little out-of scope
+
 
 == Enhancing chord detection algorithm for real-time use ==
 
