@@ -124,10 +124,6 @@ Some views ideas:
 ** Guessed segments: Until sure, display the guess
 * Instrument fingering
 
-== Integration of aubio ==
-
-* Integrate the aubio tempo library into CLAM and the CLAM Annotator
-
 
 
 == CLAM for video spike ==
