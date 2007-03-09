@@ -194,4 +194,8 @@ they can be used to control an arbitrary synthesizer set by the user
 = Still not included =
 
 == Integrate Faust with CLAM. And spectral transformations with Faust ==
-probably a little out-of scope
+
+
+== Integration of aubio ==
+
+* Integrate the aubio tempo library into CLAM and the CLAM Annotator
