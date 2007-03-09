@@ -198,3 +198,9 @@ they can be used to control an arbitrary synthesizer set by the user
 == Integration of aubio ==
 
 * Integrate the aubio tempo library into CLAM and the CLAM Annotator
+
+
+== CLAM for video spike ==
+
+* Integrate video processing/playback capabilities to CLAM
+* Maybe through the use of Gstreamer?
