@@ -34,15 +34,10 @@ more here: [[Devel/Plugins TODOs]]
 
 == Improve usability of SMSTools workflow ==
 
-(PAU: this seems quite old. I don't understand some of this items)
-
-(David: Not that old. But maybe the rephrase can help)
-
-* Separate configurations and files to process
-* Configurations as a presets not as data (you open an audio file and analyze it using a given preset)
-* Keep intermediate (analysis) objects (not a single statefull object as now)
-* Enable the user to explicitly work with those intermediate objects.
-* Minimize the provided data by using object information (sampling rate on analysis, and most of the analysis parameters for synthesis)
+* Remove the files to process from the configuration and use configuration as presets
+* Data to open are just audio or analysis data
+* Object centric interaction: you apply an action (synthesis, analysis, transform) to an object
+* Minimize the provided data by using object information (sampling rate on analysis, and most of the analysis parameters embedded on the object for resynthesis)
 
 == Convergence of SMSTools and CLAM widgets infrastructure ==
 * Transformation parameter automation using time-lines (ala ardour automation)
