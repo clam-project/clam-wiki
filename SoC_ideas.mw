@@ -194,3 +194,8 @@ float value frame level descriptors controlling the pitch of a tone.
 By adding a general way to convert descriptors to control signals
 they can be used to control an arbitrary synthesizer set by the user
 (CLAM network? OSC/MIDI controlled synth?)
+
+= Still not included =
+
+== Integrate Faust with CLAM. And spectral transformations with Faust ==
+probably a little out-of scope
