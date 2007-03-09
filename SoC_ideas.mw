@@ -20,19 +20,24 @@ more here: [[Devel/Plugins TODOs]]
 * Make it usable in NetworkEditor application.
 * ...
 
+== Processing Editor ==
+
+* Defining a new processing just by defining the ports and the code in the Do method
+* The system will compile it and will add it to the user's plugin library
+* It would be great to have it integrated on the NetworkEditor
+* This project could be related to the Python scripting project but we are considering C++ code here.
+
 == Scripting CLAM in Python ==
 
-
+* several approaches: Adhoc API or API export using SWIG or SIP
 * build and use a clam network with python
 * this could lead to a NetworkEditor python console with tab-completion
 * use clam processings and processing-data with python. use it to visualize data, etc.
 * write clam processings with python
-** Allow users to create a new Processing class by just specifying ports and behavior of Do() in a graphical widget
-** Integrate it in the NetworkEditor
-* several approaches: Adhoc API or API export using SWIG or SIP
-* network score
-** Implement a simple interface that would allow a user to sequence (in time) changes to a CLAM::Network. These changes would be mainly connections between Processing objects but maybe also new configurations...
-** Related to this, create a temporal control generator that generates controls every t seconds.
+** Related to the 'Processing editor' project
+* Network scoring
+** Sequencing changes on a network along the time
+** Configurations, connections, control sending...
 
 == Improve usability of SMSTools workflow ==
 
