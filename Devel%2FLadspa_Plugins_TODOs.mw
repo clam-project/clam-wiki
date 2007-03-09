@@ -1,7 +1,7 @@
 TODO
 * (med) load plugins from LADSPA_PATH plus standard paths
 * (low) add Ladspa tree and order it by cat
-  * (low) check for # of plugins to make a branch in the tree
+ * (low) check for # of plugins to make a branch in the tree
 * (med) check for non-valid directory
 * (med) wrapper any plugin in the three
 * (med) comment out non-necessary functions
@@ -18,5 +18,5 @@ DONE
 * early support for libraries (through map and list)
 * complementary data in the QTreeWidgetItem
 * ID for ladspa tokenized with '|'
-  * could be useful to include the UID that provides Ladspa (instead of the full plugin name)
+ * could be useful to include the UID that provides Ladspa (instead of the full plugin name)
 * first steps to instantiate using NetworkCanvas::addProcessing
