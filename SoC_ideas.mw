@@ -132,13 +132,7 @@ Some views ideas:
 
 * Integrate the aubio tempo library into CLAM and the CLAM Annotator
 
-== Dynamic Network Sequencing ==
 
-* Implement a simple interface that would allow a user to sequence
-(in time) changes to a CLAM::Network. These changes would be mainly
-connections between Processing objects but maybe also new configurations...
-* Related to this, create a temporal control generator that generates
-controls every t seconds.
 
 == CLAM for video spike ==
 
