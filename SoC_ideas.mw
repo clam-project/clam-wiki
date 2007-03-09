@@ -20,12 +20,12 @@ more here: [[Devel/Plugins TODOs]]
 * Make it usable in NetworkEditor application.
 * ...
 
-== CLAM in Python ==
+== Scripting CLAM in Python ==
 
 
-* use a clam network with python
+* build and use a clam network with python
 * use clam processings and processing-data with python. use it to visualize data, etc.
-* write clam processings with python
+* write clam processings with python (Integration in NetworkEditor)
 * several approach: Adhoc API or API export using SWIG or SIP
 * network score
 ** Implement a simple interface that would allow a user to sequence (in time) changes to a CLAM::Network. These changes would be mainly connections between Processing objects but maybe also new configurations...
