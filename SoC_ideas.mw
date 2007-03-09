@@ -28,11 +28,8 @@ more here: [[Devel/Plugins TODOs]]
 * write clam processings with python
 * several approach: Adhoc API or API export using SWIG or SIP
 * network score
-** Implement a simple interface that would allow a user to sequence
-(in time) changes to a CLAM::Network. These changes would be mainly
-connections between Processing objects but maybe also new configurations...
-** Related to this, create a temporal control generator that generates
-controls every t seconds.
+** Implement a simple interface that would allow a user to sequence (in time) changes to a CLAM::Network. These changes would be mainly connections between Processing objects but maybe also new configurations...
+** Related to this, create a temporal control generator that generates controls every t seconds.
 
 == Improve usability of SMSTools workflow ==
 
