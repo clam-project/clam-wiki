@@ -1,4 +1,41 @@
-= Proposed ideas for the SoC 2007 =
+= Introduction =
+
+== Contact ==
+If you have any question about any of the information below please contact clam-info@iua.upf.edu or join the #clam channel at FreeNode IRC.
+
+== About CLAM ==
+CLAM [http://www.clam.iua.upf.edu](C++ Library for Audio and Music) is a project that aims at developing a full-featured application framework for Audio and Music Applications. It offers a conceptual metamodel as well as many different tools for that particular domain. One of its most relevant features is the availability of a visual building dataflow application that allows to develop rapid prototypes without writing code.
+The project started 6 years ago and, after winning the ACM award to the Best Open Source Multimedia Software in 2006 it is now ready to publish its 1.0 release.
+
+CLAM is mostly developed and hosted by the Universitat Pompeu Fabra [http://www.upf.edu] (Barcelona, Spain). Nevertheless, it is currently managed from the University of California Santa Barbara [http://www.ucsb.edu].
+
+== CLAM SoC Participation ==
+Right about to publish our first 1.0 release we are very excited about the possibility of participating in Google's Summer of Code. We intend to draw a larger developer and also user base once our first milestone has been surpassed.
+
+For SoC we are offering three mentors (Xavier Amatriain, Pau Arumi, and David Garcia) that are currently CLAM's main developers and have an extensive background in audio and software development. We hope to offer an enjoyable working atmosphere with a large, growing community and very exciting goals.
+
+Below you will find a list of proposed projects. But don't hesitate to propose one yourself if you feel that you have a good idea that can help improve CLAM.
+
+We look forward for your participation!
+
+== For your SoC Application ==
+
+These are the questions we would like you to address in your application:
+
+# Please summarize your background (education and software development)
+# Rate from 0 to 5 your knowledge of the following tools:
+## C++
+## CVS/Subversion
+## GNU/Linux Programming tools
+## Qt
+## Audio DSP
+# How much time do you expect to invest in the GSoC project?
+# What is your interest in CLAM?
+# What are the main highlights in CLAM and what do you think is missing?
+# What are your biggest strengths/weaknesses?
+# What do you expect to gain from SoC? 
+
+= Proposed ideas for the 2007 SoC =
 
 == Plugin system for a dynamically extensible framework ==
 more here: [[Devel/Plugins TODOs]]
@@ -131,7 +168,11 @@ Some views ideas:
 * Instrument fingering
 
 
+== Visual CLAM ==
 
+* Add video processing/playback capabilities
+* Extend current Port Monitor infrastructure to generative visual algorithms or user-defined mappings between the audio analysis features and the graphics
+* Interface CLAM with GStreamer
 
 
 == Qt based interfaces for CLAM Network based VST plugins ==
@@ -198,9 +239,3 @@ Those ideas were discarded to be offered as SoC project but if you are still int
 == Integration of aubio ==
 
 * Integrate the aubio tempo library into CLAM and the CLAM Annotator
-
-
-== CLAM for video spike ==
-
-* Integrate video processing/playback capabilities to CLAM
-* Maybe through the use of Gstreamer?
