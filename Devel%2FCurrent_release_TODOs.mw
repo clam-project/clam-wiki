@@ -1,0 +1,7 @@
+== 0.99 (aka 1.0 preview) ==
+
+* '''hi:''' windows do not compile. PA errors 'paWASAPI' and 'paAudioScienceHPI' undeclared
+* check debian/ubuntu packages
+* check FC packages
+* check mac osx dmgs.
+* check windows installers
