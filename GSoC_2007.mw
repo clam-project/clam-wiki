@@ -1,2 +1,50 @@
- * [http://clam.iua.upf.edu/download/misc/ Flyers] to promote students applications.
- * Google's SoC's [http://code.google.com/support/bin/topic.py?topic=10442 frequently asked questions]
+* [http://clam.iua.upf.edu/download/misc/ Flyers] to promote students applications.
+* Google's SoC's [http://code.google.com/support/bin/topic.py?topic=10442 frequently asked questions]
+
+== How to apply ==
+
+* Check [http://code.google.com/support/bin/topic.py?topic=10730 Google's Summer of Code eligibility page]. 
+* You must also provide a project proposal in your SoC application. Please see [[Soc ideas]] for potential projects.
+* Direct link to Google's [http://http//groups.google.com/group/google-summer-of-code-announce/web/guide-to-the-gsoc-web-app-for-student-applicants application page]. And the main Google's [http://code.google.com/soc/ SoC page].
+
+== Important Dates ==
+* March 14: List of accepted mentoring organizations published on code.google.com; student application period opens
+* March 24: Student application deadline
+* April 9: List of accepted student applications published on code.google.com
+* May 28: Students begin coding for their GSoC projects; Google begins issuing initial student payments
+
+And see the [http://code.google.com/support/bin/answer.py?answer=60325&topic=10729 SoC timeline]
+
+== Contact ==
+If you have any question about any of the information below please contact clam-info@iua.upf.edu or join the #clam channel at FreeNode IRC.
+
+== About CLAM ==
+CLAM [http://www.clam.iua.upf.edu](C++ Library for Audio and Music) is a project that aims at developing a full-featured application framework for Audio and Music Applications. It offers a conceptual metamodel as well as many different tools for that particular domain. One of its most relevant features is the availability of a visual building dataflow application that allows to develop rapid prototypes without writing code. The project started 6 years ago and, after winning the ACM award to the Best Open Source Multimedia Software in 2006 it is now ready to publish its 1.0 release. CLAM is mostly developed and hosted by the Universitat Pompeu Fabra [http://www.upf.edu] (Barcelona, Spain). Nevertheless, it is currently managed from the University of California Santa Barbara [http://www.ucsb.edu].
+
+== Mentors ==
+Right about to publish our first 1.0 release we are very excited about the possibility of participating in Google's Summer of Code. We intend to draw a larger developer and also user base once our first milestone has been surpassed.
+
+For SoC we are offering three mentors (Xavier Amatriain, Pau Arumi, and David Garcia) that are currently CLAM's main developers and have an extensive background in audio and software development. We hope to offer an enjoyable working atmosphere with a large, growing community and very exciting goals.
+
+We look forward for your participation!
+
+== Potential projects ==
+
+See [[SoC ideas]]
+
+== For your SoC Application ==
+
+These are the questions we would like you to address in your application:
+
+# Please summarize your background (education and software development)
+# Rate from 0 to 5 your knowledge of the following tools:
+## C++
+## CVS/Subversion
+## GNU/Linux Programming tools
+## Qt
+## Audio DSP
+# How much time do you expect to invest in the GSoC project?
+# What is your interest in CLAM?
+# What are the main highlights in CLAM and what do you think is missing?
+# What are your biggest strengths/weaknesses?
+# What do you expect to gain from SoC?
