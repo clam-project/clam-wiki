@@ -127,12 +127,11 @@ Although the algorithm may fail to detect the exact chord being played,
 visualization should be able to visualize information so that the user
 could figure out what's going on.
 
-== Visual CLAM ==
+== CLAM for Video ==
 
 * Add video processing/playback capabilities
 * Extend current Port Monitor infrastructure to generative visual algorithms or user-defined mappings between the audio analysis features and the graphics
 * Interface CLAM with GStreamer
-
 
 == Qt based interfaces for CLAM Network based VST plugins ==
 
