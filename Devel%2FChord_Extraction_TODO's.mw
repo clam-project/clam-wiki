@@ -40,4 +40,8 @@ Some views ideas:
 ** Instant chord segment: Display segment based on the best one on each instant.
 ** Delayed segment: don't display a segment until we have enough information on the future to make a post processing
 ** Guessed segments: Until sure, display the guess
-* Instrument fingering
+* Instrument fingering (playback suggest
+
+== Other ==
+
+* Integrate a tunner
