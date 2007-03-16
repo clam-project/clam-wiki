@@ -116,16 +116,16 @@ so that the students just see the relevant ones for the exercise.
 
 
 
-== Enhancing chord detection algorithm for real-time use ==
+== Enhancing chord detection algorithm for real-time usage ==
 
-Due to the extend it could be split a subset of the proposals.
-It consist on enhancing existing 
-tonal analysis algorithms so that they can work reliably on realtime
-in order to be exploded by a realtime visualization that could give a
-the user some insight on what he is listening.
-Although the algorithm may fail to detect the exact chord being played,
-visualization should be able to visualize information so that the user
-could figure out what's going on.
+Realtime (NetworkEditor) version of the chord extraction does not
+include the post processing Annotator does.
+This project addresses enhancements to the algorithm for realtime
+usage as well as exploiting imprecise data to give some usefull
+visual information, so that the user could figure out what's going on.
+
+Due to the extend it could be split a subset of proposals.
+Check the details on the [[Chord Extraction TODO's]] page.
 
 == CLAM for Video ==
 
