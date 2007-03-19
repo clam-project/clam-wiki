@@ -10,8 +10,7 @@ TODO
 * Network: catch FactoryError
 * (HIGH) update LadspaFactoryTest with "real" classes
 * fix non-string bug in LFactory map
-* ProcessingTree.cxx line 200 remove USE_LADSPA conditinal code. always use
- className = item->text(1)
+* ProcessingTree.cxx line 200 remove USE_LADSPA conditinal code. always use "className = item->text(1)"
 
 DONE
 * load plugins from .so
