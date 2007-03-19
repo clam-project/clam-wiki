@@ -6,9 +6,6 @@ TODO
 * (med) wrapper any plugin in the three
 * (med) comment out non-necessary functions
 * (med) refactor: extract ladspa specific to new files
-* (HIGH) create a new class/structure for volatile LADSPA information
-* (HIGH) LadspaFactory (for easy merging with current Factory)
-* (HIGH) DummyLadspa to Wrapper Object
 
 DONE
 * load plugins from .so
@@ -20,3 +17,8 @@ DONE
 * ID for ladspa tokenized with '|'
 ** could be useful to include the UID that provides Ladspa (instead of the full plugin name)
 * first steps to instantiate using NetworkCanvas::addProcessing
+* created LadspaPluginsExplorer (structure to hold Ladspa information)
+* pass LadspaFactoryTest
+* created LadspaFactory
+* DummyLadspa to LadspaWrapper
+* created LadspaWrapperCreator
