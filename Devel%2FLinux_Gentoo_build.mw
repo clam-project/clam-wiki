@@ -1,4 +1,2 @@
-As dependencies in Gentoo work a little different for any other distribution, we'll put here some advises you should notice before installing it.
-
-Run this command to get all dependencies installed.
-<pre>USE="+ladspa +xerces-c +fftw +jack +mad +id3 +ogg +sndfile +vorbis +fltk +jpeg +png +xext +xft +qt3support +qt4 +portaudio" emerge -aDv ladspa-sdk scons gcc xerces fftw jack-audio-connection-kit libmad libvorbis libsndfile id3lib alsa-lib fltk jpeg libpng libXext libXft qt cppunit portaudio</pre>
+the ProAudio overlay team has made a nice ebuild with some use flags.
+Take a look at [http://proaudio.tuxfamily.org/wiki/index.php?title=Usage ProAudioOverlay]
