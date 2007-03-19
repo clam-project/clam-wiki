@@ -3,6 +3,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 = 0.99 =
 
 <gallery>
+Image:NetworkEditor_twoLadspas.png|Two Ladspa plugins with complicate connections.
 Image:NetworkEditor_manyLadspas.png|Many Ladspa plugins working as CLAM processings.
 Image:AssertHandler.png|Assert messages on a dialog with a link to the bug tracking system.
 Image:Prototyper-JackNames.png|Prototyper takes jack client names from the network files.
