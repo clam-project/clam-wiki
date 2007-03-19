@@ -1,7 +1,4 @@
-
 The INSTALL files provide most of the information on dependencies.
 This page points out just some things not present in such a file.
 
-* Recently we activated the dependency on portaudio 19 in Linux.
-  This adds a new dependency that it is not in official Fedora packages.
-  http://downloads.sourceforge.net/q-lang/portaudio-19-100.src.rpm?modtime=1157396857&big_mirror=0
+Currently no notes are available. An rpm for portaudio 19 is needed.
