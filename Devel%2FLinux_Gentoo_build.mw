@@ -1,1 +1,4 @@
-this page is for gentooer people to contribute!
+As dependencies in Gentoo work a little different for any other distribution, we'll put here some advises you should notice before installing it.
+
+Run this command to get all dependencies installed.
+<pre>USE="+ladspa +xerces-c +fftw +jack +mad +id3 +ogg +sndfile +vorbis +fltk +jpeg +png +xext +xft +qt3support +qt4 +portaudio" emerge -aDv ladspa-sdk scons gcc xerces fftw jack-audio-connection-kit libmad libvorbis libsndfile id3lib alsa-lib fltk jpeg libpng libXext libXft qt cppunit portaudio</pre>
