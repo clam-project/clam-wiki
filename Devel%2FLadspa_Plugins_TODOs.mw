@@ -6,6 +6,12 @@ TODO
 * (med) wrapper any plugin in the three
 * (med) comment out non-necessary functions
 * (med) refactor: extract ladspa specific to new files
+* LadspaFactory cxx and clean commented code
+* Network: catch FactoryError
+* (HIGH) update LadspaFactoryTest with "real" classes
+* fix non-string bug in LFactory map
+* ProcessingTree.cxx line 200 remove USE_LADSPA conditinal code. always use
+ className = item->text(1)
 
 DONE
 * load plugins from .so
