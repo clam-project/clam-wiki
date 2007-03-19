@@ -13,6 +13,10 @@
 * [[Network Editor tutorial|Network Editor tutorial]]
 * [[Manual_Annotator|Annotator tutorial]]
 * [[Version Migration Guide]]
+* Installation notes
+** For general information check the [http://iua-share.upf.edu/svn/clam/trunk/CLAM/INSTALL INSTALL] file.
+** [[Devel/Mac OSX build]]
+** [[Devel/Linux Gentoo build]]
 
 = Development =
 
