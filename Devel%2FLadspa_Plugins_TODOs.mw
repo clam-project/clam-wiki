@@ -6,14 +6,15 @@ TODO
 * (med) wrapper any plugin in the three
 * (med) comment out non-necessary functions
 * (med) refactor: extract ladspa specific to new files
-* (med) LadspaFactory cxx and clean commented code
-* (med) Network: catch FactoryError
+* (med) extract implementation in file LadspaFactory.cxx
+* (med) '''new''' make LadspaFactory.hxx non-coupled with ladspa headers. so uses of LFactory don't need #ifdef USE_LADSPA. use Pimpl C++ idiom in LFactory.
 * (HIGH) update LadspaFactoryTest with "real" classes
 * (med) fix non-string bug in LFactory map
 * (HIGH) don't use config on LWrapper
-* (med) don't use NullConfig in LWrapper
+* (med) don't use a Config in LWrapper. Use NullConfig instead.
 
 DONE
+* (med) Network: catch FactoryError
 * load plugins from .so
 * look out OM for Plugin and PluginLibrary
 * check for empty LADSPA_PATH
