@@ -13,6 +13,11 @@ TODO
 * (HIGH) don't use config on LWrapper
 * (med) don't use a Config in LWrapper. Use NullConfig instead.
 
+high level TODOs to discuss:
+* default values to controls
+* save controls state with network
+* automatic in-control sliders in networkeditor
+
 DONE
 * (med) Network: catch FactoryError
 * load plugins from .so
