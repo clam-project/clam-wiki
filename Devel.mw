@@ -52,7 +52,7 @@ Luckily, working with patches in subversion is very easy:
 : <pre>$ svn diff > good-description.patch</pre>
 
 * How to apply a patch (that maybe somebody posted to the list)?
-: Change dir to the svn root and do
+: Change dir to the '''root of your svn tree''' and do
 : <pre>$ patch -p0 < the.patch
 
 </pre>
