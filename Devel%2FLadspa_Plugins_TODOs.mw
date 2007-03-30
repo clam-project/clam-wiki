@@ -9,8 +9,19 @@
 * (HIGH) update LadspaFactoryTest with "real" classes
 * (med) fix non-string bug in LFactory map
 * (med) don't use a Config in LWrapper. Use NullConfig instead.
+* strings /usr/lib/libasound.so | grep ladspa_descriptor ask lads
+* change NetworkEditor processing loading logic:ç
+** 1. put all info about processings in the factory
+** 2. build QTree from factory data.
+** 3. query list of processings of a given category to the factory.
+* Factory:
+** refactoring: clam creators being objects not functions
+** unify clam and ladspa factory
+** add new columns to the associative data-structure: category, description.
+
 
 === high level TODOs to discuss ===
+
 * default values to controls
 * save controls state with network
 * automatic in-control sliders in networkeditor
