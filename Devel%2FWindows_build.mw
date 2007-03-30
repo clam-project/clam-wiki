@@ -1,4 +1,10 @@
 '''this page is work on progress. maybe some instructions are missleading'''
 
+This is work on progress. Do not use this instructions till its finished.
+
 == build tools ==
-* http://msdn.microsoft.com/vstudio/express/downloads/
+* Download MS Visual Studio 2005 Cpp Express Edition (free as free beer)
+:http://msdn.microsoft.com/vstudio/express/downloads/
+* Download and install cygwin
+:http://www.cygwin.com
+:Install the following packages: From Devel: cvs, subversion, python
