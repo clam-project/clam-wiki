@@ -20,9 +20,11 @@
 ** add new columns to the associative data-structure: category, description.
 
 
+* use the real value (get rid of the fixed-value hack)
+* clamp values outside the range
+
 === high level TODOs to discuss ===
 
-* default values to controls
 * save controls state with network
 * automatic in-control sliders in networkeditor
 
