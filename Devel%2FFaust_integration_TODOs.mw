@@ -1,0 +1,11 @@
+
+== milestone 1 "adding a faust dir to ladspa_path" ==
+
+* user edits faust.dsp with external editor
+* network editor provides a compile-and-load button
+* errors goes to cerr
+* on successful compilation:
+** '''refresh ladspa factory'''
+** refresh QTree
+* svg diagram window in NetworkEditor that reads the current svg file.
+* scons that compiles all .dsp in a dir.
