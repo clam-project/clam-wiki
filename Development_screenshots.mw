@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1 =
 <gallery>
+Image:Voice2Midi-qt4.png|Voice2Midi ported to qt4 using qt3support classes (Zach Welch patch).
 Image:ControlSenderWidgets.png|New control sender widgets. First-try patch from Zach Welch.
 
 </gallery>
