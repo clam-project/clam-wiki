@@ -2,3 +2,6 @@ The INSTALL files provide most of the information on dependencies.
 This page points out just some things not present in such a file.
 
 An FC6 rpm for portaudio 19 is needed in order to activate it. Anyone?
+
+QTDIR=/usr  for Qt4
+QTDIR=/usr/lib/qt-3.3  for Qt3
