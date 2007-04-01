@@ -2,6 +2,10 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1 =
 <gallery>
+Image:smstools-uselesslicensedialog.png|Temptative SMSTools port to qt4: I thought it was broken. No, this dialog is that useless, we already do that on the about.
+Image:smstools-blankviews.png|Temptative SMSTools port to qt4: Some views are not updated (due to signals not reaching the target).
+Image:smstools-submenus.png|Temptative SMSTools port to qt4: The porting tool duplicates submenus.
+Image:smstools-about.png|Temptative SMSTools port to qt4: Images had to be put on a resource file.
 Image:Voice2Midi-qt4.png|Voice2Midi ported to qt4 using qt3support classes (Zach Welch patch).
 Image:ControlSenderWidgets.png|New control sender widgets. First-try patch from Zach Welch.
 
