@@ -6,7 +6,7 @@ Image:smstools-menu-file.png|SMSTools Menu reorganization, File menu: Kept here 
 Image:smstools-menu-view.png|SMSTools Menu reorganization, View menu: no change.
 Image:smstools-menu-transformation.png|SMSTools Menu reorganization, Transformation menu: added here the items to edit and load an score.
 Image:smstools-menu-synthesis.png|SMSTools Menu reorganization, Synthesis menu: moved here items to save synthesis results.
-Image:smstools-menu-analysis.png|SMSTools Menu reorganization, Analysis menu: moved here all the entries to load and save analysis and melody results.
+Image:smstools-menu-analysis.png|SMSTools Menu reorganization, Analysis menu: moved here all the entries to load and save analysis and melody results. Disabled item is 'Save Melody', my weird dark style almost hide it :-(
 Image:smstools-menu-help.png|SMSTools Menu reorganization, Help menu: removed the redundant license item already present in the About dialog. Not shown but the pulldown menu is now 'Help' instead '?'.
 Image:smstools-uselesslicensedialog.png|Temptative SMSTools port to qt4: I thought it was broken. No, this dialog is that useless, we already do that on the about.
 Image:smstools-blankviews.png|Temptative SMSTools port to qt4: Some views are not updated (due to signals not reaching the target).
