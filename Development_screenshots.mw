@@ -2,6 +2,12 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1 =
 <gallery>
+Image:smstools-menu-file.png|SMSTools Menu reorganization, File menu: Kept here just the items to manage configurations and exit. The rest of items have been distributed along other pullmenus.
+Image:smstools-menu-view.png|SMSTools Menu reorganization, View menu: no change.
+Image:smstools-menu-transformation.png|SMSTools Menu reorganization, Transformation menu: added here the items to edit and load an score.
+Image:smstools-menu-synthesis.png|SMSTools Menu reorganization, Synthesis menu: moved here items to save synthesis results.
+Image:smstools-menu-analysis.png|SMSTools Menu reorganization, Analysis menu: moved here all the entries to load and save analysis and melody results.
+Image:smstools-menu-help.png|SMSTools Menu reorganization, Help menu: removed the redundant license item already present in the About dialog. Not shown but the pulldown menu is now 'Help' instead '?'.
 Image:smstools-uselesslicensedialog.png|Temptative SMSTools port to qt4: I thought it was broken. No, this dialog is that useless, we already do that on the about.
 Image:smstools-blankviews.png|Temptative SMSTools port to qt4: Some views are not updated (due to signals not reaching the target).
 Image:smstools-submenus.png|Temptative SMSTools port to qt4: The porting tool duplicates submenus.
