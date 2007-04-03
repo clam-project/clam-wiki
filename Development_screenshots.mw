@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1 =
 <gallery>
+Image:embedded-networks.png|Prototype interface for embedding CLAM networks in a processing component.
 Image:genderchange-interface.png|A quick and dirty interface for GenderChange.
 Image:genderchange.png|GenderChange fully working in realtime.
 Image:smstools-menu-file.png|SMSTools Menu reorganization, File menu: Kept here just the items to manage configurations and exit. The rest of items have been distributed along other pullmenus.
@@ -16,6 +17,7 @@ Image:smstools-submenus.png|Temptative SMSTools port to qt4: The porting tool du
 Image:smstools-about.png|Temptative SMSTools port to qt4: Images had to be put on a resource file.
 Image:Voice2Midi-qt4.png|Voice2Midi ported to qt4 using qt3support classes (Zach Welch patch).
 Image:ControlSenderWidgets.png|New control sender widgets. First-try patch from Zach Welch.
+Image:outcontrolsender.png|New OutControlSender interface options.
 
 </gallery>
 
