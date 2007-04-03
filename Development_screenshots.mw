@@ -2,6 +2,8 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1 =
 <gallery>
+Image:genderchange-interface.png|A first try interface for GenderChange.
+Image:genderchange.png|GenderChange fully working in realtime.
 Image:smstools-menu-file.png|SMSTools Menu reorganization, File menu: Kept here just the items to manage configurations and exit. The rest of items have been distributed along other pullmenus.
 Image:smstools-menu-view.png|SMSTools Menu reorganization, View menu: no change.
 Image:smstools-menu-transformation.png|SMSTools Menu reorganization, Transformation menu: added here the items to edit and load an score.
