@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1 =
 <gallery>
+Image:LPC.png|A network LPC AutoCorrelation analysis in streaming. It also shows the new AudioWindowing processing, the complementary to the AudioOverlapAndAdd.
 Image:embedded-networks.png|Prototype interface for embedding CLAM networks in a processing component.
 Image:genderchange-interface.png|A quick and dirty interface for GenderChange.
 Image:genderchange.png|GenderChange fully working in realtime.
