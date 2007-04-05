@@ -11,9 +11,11 @@ The number of steps is large and we are in the process of reducing it so this is
 ***abstract interface to be used by the visualization to get data
 ** The implementation should implement XXXXAudioSource interface to map DSP data to visualization, and metadata (units, sizes, limits...)
 ** Such implementation should access the data using the PortMonitor thread safe interface.
-** TODO: The policy to remove PortMonitor freeze is not well defined among DataSources.
-*** Copy and release
-*** Explicit release from the widget
+** Be carefull with the freeze and release policy:
+*** Every call do not get data more than once by keep references or copying it
+*** Don't forget to release data before exiting the function.
+*** Don't release if you didn't get it.
+*** Do not use reference after release, copy if you want.
 ** See examples at chordWidgets
 
 * Create a view widget (MyView) attached to the audio source
@@ -37,7 +39,6 @@ The number of steps is large and we are in the process of reducing it so this is
 
     if (className=="MyView")
         return new MyView(canvas, dynamic_cast<MyViewMonitor*>(processing));
-
 
 == Getting the Monitor working on Qt Designer ==
 
