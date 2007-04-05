@@ -42,6 +42,8 @@ The number of steps is large and we are in the process of reducing it so this is
 
 == Getting the Monitor working on Qt Designer ==
 
+Once you have it working on NetworkEditor let's plugin:
+
 * Create a plugin file such the ones in src/clamWidgetsPlugins
 ** Copy an example in src/clamWidgetsPlugins and adapt the class names to the one of the Widget
 ** If the view has a namespace you should use it as part of the name (why?)
@@ -51,7 +53,7 @@ The number of steps is large and we are in the process of reducing it so this is
 * Include the plugin on the aggregated plugin at CLAMWidgets.cxx.
 
 * Add the widget source into the plugin sources on the SConstruct
-	pluginsources.append(os.path.join('src','chordWidgets','MyView.cxx'))
+     pluginsources.append(os.path.join('src','chordWidgets','MyView.cxx'))
 
 == Getting the Monitor working on Prototyper ==
 
