@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1 =
 <gallery>
+Image:ControlSurface.png|Control surface, controling two control parameters by moving a 2D point. Used to control F1 and F2 of the vowel synthesis.
 Image:VumeterReloaded.png|A new bunch of Designer attributes for the VuMeter. The behaviour has been improved: Uses max instead squared sum, log scale and peak memory led.
 Image:SpectrumDummyData.png|Dummy data for the SpectrumView while used on the designer. The scale has been modified to fit unwindowed spectrums.
 Image:LPC-envelope.png|33th order LPC Coefficients, now with base on zero. Left-center: spectral envelope derived from such LPC's. Left-below: FFT spectrum of the same frame.
