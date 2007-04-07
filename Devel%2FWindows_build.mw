@@ -7,11 +7,37 @@ This is work on progress. Do not use this instructions till its finished.
 :http://msdn.microsoft.com/vstudio/express/downloads/
 * Download and install cygwin
 :http://www.cygwin.com
-:Install the following packages: From Devel: cvs, subversion. Do '''not''' install python cygwin package.
+:Install the following packages: From Devel: cvs, subversion, make. Do '''not''' install python cygwin package.
+:recommended: xorg-x11-bin, gvim, wget
 * Download and install python (2.5) and scons (0.96.1) Windows native versions. (I couldn't find a cygwin scons package)
 :These are direct download links for the versions I used, but prefere later versions if available.
 :http://www.python.org/ftp/python/2.5/python-2.5.msi
 :http://belnet.dl.sourceforge.net/sourceforge/scons/scons-0.96.1.win32.exe
+* Update PATH environment var to point to python. Go to properties window of "My Computer" under the "Advanced" tab.
+** In my case I had to add this: <pre>;C:\Python25</pre>
+** from cygwin console use ''scons.bat'' from cmd console, just ''scons''
+
+== Dependent libraris ==
+
+* download this tarball: http://clam.iua.upf.edu/download/win/other/windows-external-libs.tar.gz
+* create a 'dlls' directory where to copy the needed .dlls
+** add this path to the PATH environment var, as done for python.
+* http://sources.redhat.com/pthreads-win32/
+: you can use the one provided by clam tarball. 
+* copy the following dlls into the dll dir (or somewhere else in the PATH)
+**pthreadVCE.dll 
+**xerces_c_2_3_0.dll
+**libsndfile.dll
+** download and install Microsof DirectX SDK
+:: http://msdn2.microsoft.com/en-us/xna/aa937788.aspx (400 MB! why?)
+* install platform sdk
+::http://msdn.microsoft.com/vstudio/express/visualc/usingpsdk/
+== Install ==
+* open a console
+: >"c:\Program files\Microsoft Visual Studio 8\VC\vcvarsall.bat"
+
+== TODO ==
+* option sandbox_path necessary?
 
 == Others ==
 * xchat for windows
