@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1 =
 <gallery>
+Image:pkwidgets-qt4.png|PKWidgets c++ port, rescued from draft and ported to qt4.
 Image:mfcc-lpc.png|Realtime MFCC and LPC analysis integrated in a single interface.
 Image:mfcc.png|Realtime MFCC analysis.
 Image:ControlSurface.png|Control surface, controling two control parameters by moving a 2D point. Used to control F1 and F2 of the vowel synthesis.
