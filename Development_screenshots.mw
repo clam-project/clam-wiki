@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1 =
 <gallery>
+Image:pkwidgets-designer.png|Prototyping interfaces combining PK widgets and CLAM widgets.
 Image:pkwidgets-qt4.png|PKWidgets c++ port, rescued from draft and ported to qt4.
 Image:mfcc-lpc.png|Realtime MFCC and LPC analysis integrated in a single interface.
 Image:mfcc.png|Realtime MFCC analysis.
