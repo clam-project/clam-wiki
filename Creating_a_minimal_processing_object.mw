@@ -110,7 +110,7 @@ gets more sophisticated (when it gets grouping features).
     "SMSTranspose",
     "VowelResonator",
     0,
-    "Spectral Transformations",  // This item after the zero is the group name
+    "Spectral Transformations",  // Group name item after a 0
     "OscillatingSpectralNotch",
     "SpectralDelay",
     "Vocoder",
