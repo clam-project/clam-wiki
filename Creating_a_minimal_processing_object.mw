@@ -94,7 +94,9 @@ Nasty details.
 
 == NetworkEditor/ProcessingTree.cxx ==
 
-This step will eventually disappear.
+In order to see the processing on the NetworkEditor processing list
+you still need to add it to the list of processings at
+ProcessingTree.cxx.
 
-In order to see the processing on the NetworkEditor you need to add it
-to the list of processings at the ProcessingTree.cxx file.
+This step will eventually disappear as the Processing Factory
+gets more sophisticated.
