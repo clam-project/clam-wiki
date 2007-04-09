@@ -12,7 +12,6 @@
 * [[SMSTools tutorial|SMSTools tutorial]]
 * [[Network Editor tutorial|Network Editor tutorial]]
 * [[Manual_Annotator|Annotator tutorial]]
-* [[Version Migration Guide]]
 * Installation notes
 ** For general information check the [http://iua-share.upf.edu/svn/clam/trunk/CLAM/INSTALL INSTALL] file.
 ** [[Devel/Mac OSX build]]
@@ -23,6 +22,7 @@
 * [[Processings with configuration]]
 * [[Processings with controls]]
 * [[Adding Monitors]]
+* [[Version Migration Guide]]
 
 * Old: [[CLAMUserManual|documentation index]] (just an empty index)
 
