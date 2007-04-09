@@ -61,3 +61,8 @@ Once you have it working on NetworkEditor let's plugin:
     ConnectWidgetsWithPorts<CLAM::VM::MyView,MyViewMonitor>
         ("OutPort__.*", "CLAM::VM::MyView");
 * And of course the needed includes
+
+
+== How it is gonna change? ==
+
+See the development notes on the process rewrite: [[Devel/Adding Monitors Simplification]]
