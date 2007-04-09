@@ -78,7 +78,7 @@ Still what needs always be on the cxx file is the factory registration.
  #include "MyProcessing.hxx"
  #include <CLAM/Factory.hxx>
  
- static CLAM::Factory<Processing>::Registrator<MyProcessing>
+ static CLAM::Factory<CLAM::Processing>::Registrator<MyProcessing>
  	myProcessingRegistrator("MyProcessing");
 
 == NetworkEditor/ProcessingTree.cxx ==
