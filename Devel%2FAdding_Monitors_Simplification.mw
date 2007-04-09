@@ -22,6 +22,6 @@ dsp type of the port and the datasource of the widget.
 
 == PortMonitor instantiation on NetworkEditor ==
 
-The NetworkEditor user should be able to attach a visualization to a monitor.
+The NetworkEditor user should be able to attach any view appliable to the data of a port.
 
 Currently se are using the Monitor type name to chose a widget and to embed on monitor's ProcessingBox.
