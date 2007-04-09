@@ -29,7 +29,7 @@ Here is a minimal implementation of a processing object:
  class MyProcessing : public CLAM::Processing
  { 
  	CLAM::InPort<MyInputDataType> mIn;
- 	CLAM::OutPort<MyOutputDataType> mOut1;
+ 	CLAM::OutPort<MyOutputDataType> mOut;
  	typedef NullProcessingConfig Config;
  public:
  	const char* GetClassName() const { return "MyProcessing"; }
