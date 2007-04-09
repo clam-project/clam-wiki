@@ -10,6 +10,8 @@ the data directly to the Do overload which has parameters.
 
 Here is a minimal implementation of a processing object with a single input and a single output:
 
+[[Image:MyProcessing.png]]
+
 
 == MyProcessing.hxx ==
 
