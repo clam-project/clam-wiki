@@ -102,3 +102,24 @@ ProcessingTree.cxx.
 
 This step will eventually disappear as the Processing Factory
 gets more sophisticated (when it gets grouping features).
+
+
+    ....
+    "SMSTranspose",
+    "VowelResonator",
+    0,
+    "Spectral Transformations",  // This item after the zero is the group name
+    "OscillatingSpectralNotch",
+    "SpectralDelay",
+    "Vocoder",
+    "ThreeBandFilter",
+    "Robotization",
+    "SampleAndHold",
+    "ThreeBandCompressor",
+    "Peakalizer",
+    "ThreeBandAM",
+    "MyProcessing",         <- New
+    0,
+    "Utils",                   // This is the next group name
+    "Fundamental2Control",
+    ....
