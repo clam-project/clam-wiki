@@ -3,9 +3,9 @@
 
 * We want to visualize data on the outports
 * Each outport is binded to a single DSP datatype.
- The FFT outport data is an Spectrum
+** The FFT outport data is an Spectrum
 * Each DSP datatype may have different aspect suitable to be visualized.
- We could visualize the log or linear magnitude, the complex values, the phase...
+** We could visualize the log or linear magnitude, the complex values, the phase...
 * PortMonitor input port is also binded to a DSP datatype.
 * A PortMonitor maps an aspect to a visualization datatype.
  
