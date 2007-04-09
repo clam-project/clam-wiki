@@ -28,7 +28,7 @@
  	}
   
  	~MyProcessing() {}
-
+ 
  	// Configuration to the minimal expression
  	bool ConcreteConfigure(const CLAM::ProcessingConfig&)
  	{
@@ -56,17 +56,17 @@
  };
  #endif // MyProcessing_hxx
 
-== MyProcessing.cxx
+== MyProcessing.cxx ==
 
+Normally this file would contain the implementation of most of the method in the hxx but we inlined them all for the example.
+
+Still what needs always be on the cxx file is the factory registration.
 
  #include "MyProcessing.hxx"
  #include <CLAM/Factory.hxx>
  
- // This puts the processing available to the factory by linking this file.
- // This object cannot be ever on the hxx file.
  static CLAM::Factory<Processing>::Registrator<MyProcessing>
  	myProcessingRegistrator("MyProcessing");
- 
 
 == NetworkEditor/ProcessingTree.cxx ==
 
