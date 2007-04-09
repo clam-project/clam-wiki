@@ -7,7 +7,7 @@
  #include <CLAM/OutPort.hxx>
  #include <CLAM/Processing.hxx>
  #include <CLAM/NullProcessingConfig.hxx>
-
+ 
  // Those two configuration types could be the ones you choose.
  // Your own ones or any type already in CLAM.
  #include "MyInputDataType.hxx"
