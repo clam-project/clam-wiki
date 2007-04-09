@@ -73,9 +73,9 @@ Here is a minimal implementation of a processing object with a single input and 
 
 == MyProcessing.cxx ==
 
-Normally this file would contain the implementation of most of the method in the hxx but we inlined them all for the example.
+As the class methods get verbose, it is convenient to move the implementation to the cxx. To keep the example short and easy to follow and copy, we kept all the implementations on the hxx.
 
-Still what needs always be on the cxx file is the factory registration.
+But, still, what needs always be on the cxx file is the factory registration.
 
  #include "MyProcessing.hxx"
  #include <CLAM/Factory.hxx>
