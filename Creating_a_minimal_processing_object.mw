@@ -47,7 +47,7 @@ Here is a minimal implementation of a processing object with a single input and 
  	{
  		return true; // I got proper configuration
  	}
- 	const ProcessingConfig& GetConfig() const
+ 	const CLAM::ProcessingConfig& GetConfig() const
  	{
  		static Config config;
  		return config;
