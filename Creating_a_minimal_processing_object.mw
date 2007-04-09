@@ -96,6 +96,8 @@ Nasty details.
 
 == NetworkEditor/ProcessingTree.cxx ==
 
+[[Image:MyProcessing-ProcessingTree.png|thumb|MyProcessing available at the end of the 'Spectral Transformations' group]]
+
 In order to see the processing on the NetworkEditor processing list
 you still need to add it to the list of processings at
 ProcessingTree.cxx.
