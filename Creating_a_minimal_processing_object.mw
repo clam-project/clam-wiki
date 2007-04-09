@@ -1,0 +1,53 @@
+
+ #ifndef MyProcessing_hxx
+ #define MyProcessing_hxx
+ 
+ #include <CLAM/InPort.hxx>
+ #include <CLAM/OutPort.hxx>
+ #include <CLAM/Processing.hxx>
+ #include <CLAM/MyInputDataType.hxx>
+ #include <CLAM/MyOutputDataType.hxx>
+ #include <CLAM/NullProcessingConfig.hxx>
+ 
+ class MyProcessing : public CLAM::Processing
+ { 
+ 	CLAM::InPort<MyInputDataType> mIn;
+ 	CLAM::OutPort<MyOutputDataType> mOut1;
+ 	typedef NullProcessingConfig Config;
+ public:
+ 	const char* GetClassName() const { return "MyProcessing"; }
+ 	MyProcessing() 
+ 		: mIn("My Input", this)
+ 		, mOut("My Output", this) 
+ 	{
+ 		Configure( Config() );
+ 	}
+ 
+ 	~MyProcessing() {}
+ 
+ 	bool ConcreteConfigure(const CLAM::ProcessingConfig&)
+ 	{
+ 		return true;
+ 	}
+ 	const ProcessingConfig& GetConfig() const
+ 	{
+ 		static Config config;
+ 		return config;
+ 	}
+ 	
+ 	bool Do()
+ 	{
+ 		bool result = Do(mIn.GetData(), mOut.GetData()); 
+ 		mIn.Consume();
+ 		mOut.Produce();
+ 		return result;
+ 	}
+ 
+ 	bool Do(const MyInputDataType& in, MyOutputDataType& out)
+ 	{
+ 		// Here your implementation
+ 	}
+ 
+ 
+ };
+ #endif // MyProcessing_hxx
