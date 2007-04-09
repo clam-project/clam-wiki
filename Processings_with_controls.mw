@@ -1,0 +1,36 @@
+Unlike ports, controls are not bound to the execution of the Do method.
+Controls are sent and received inmediately.
+When a processing Do gets executed it just gets the last received value.
+
+You can define and initialize InControls and OutControls in a similar way you did with In/OutPorts but they are not templated (to the date) since they are always CLAM::TControlData which renders to float or double depending on your compilation flags.
+
+ 	...
+ 	CLAM::InPort<MyInputDataType> mIn;
+ 	CLAM::OutPort<MyOutputDataType> mOut;
+ 	CLAM::InControl mInControl;         // <- New
+ 	CLAM::OutControl mOutControl;       // <- New
+ 	...
+
+And at the initialization of the class:
+
+ 	MyProcessing(const Config & config=Config()) 
+ 		: mIn("My Input", this)
+ 		, mOut("My Output", this) 
+ 		, mInControl("In Control", this)   // <- New
+ 		, mOutControl("Ot Control", this)  // <- New
+ 	{
+ 	....
+
+TODO: Correct place to set default input values: constructor, ConcreteConfigure or ConcreteStart?
+
+Within the Do method, whenever we want to read a input value just do:
+
+ 	....
+ 	CLAM::TControlData controlValue = mInControl.GetLastValue();
+ 	....
+
+And to send a value through a output control:
+
+ 	....
+ 	mOutControl.SendControl(3.1416);
+ 	....
