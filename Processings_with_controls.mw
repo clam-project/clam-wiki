@@ -23,6 +23,11 @@ And at the initialization of the class:
 
 TODO: Correct place to set default input values: constructor, ConcreteConfigure or ConcreteStart?
 
+ 	....
+ 	mInControl.DoControl(3.1416);
+ 	....
+
+
 Within the Do method, whenever we want to read a input value just do:
 
  	....
