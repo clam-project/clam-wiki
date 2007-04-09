@@ -41,3 +41,10 @@ And to send a value through a output control:
  	....
  	mOutControl.SendControl(3.1416);
  	....
+
+When playing with controls there are several processings available on the NetworkEditor:
+* ControlSender: Controls a single output control with a Slider, a Knob or an Spinbox.
+* ControlSurface: Controls two output controls at a time by moving a 2D point.
+* ControlPrinter: Shows the values it gets on its input controls.
+
+TODO: Put here a note on ControlSource and ControlSink as soon as they are working on the Network editor.
