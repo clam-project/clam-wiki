@@ -8,7 +8,7 @@ Although it is not the recommended way,
 you can also use the processing directly as a function passing
 the data directly to the Do overload which has parameters.
 
-Here is a minimal implementation of a processing object:
+Here is a minimal implementation of a processing object with a single input and a single output:
 
 
 == MyProcessing.hxx ==
