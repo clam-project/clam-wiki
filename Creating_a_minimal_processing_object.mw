@@ -1,3 +1,15 @@
+
+A processing is one of the boxes you can connect on the NetworkEditor.
+They perform a process on some input data and writes some output data.
+Sources and sinks for a processing are InPort's and OutPort's.
+Ports can be templated to any copiable data.
+Ports cooperate with the flow control to move the data arround.
+
+Although it is not the recommended way, 
+you can also use the processing directly as a function passing
+the data directly to the Do overload which has parameters.
+
+
 == MyProcessing.hxx ==
 
  #ifndef MyProcessing_hxx
@@ -70,7 +82,7 @@ Still what needs always be on the cxx file is the factory registration.
 
 == NetworkEditor/ProcessingTree.cxx ==
 
-This step is needed now but this may eventually disappear.
+This step will eventually disappear.
 
 In order to see the processing on the NetworkEditor you need to add it
 to the list of processings at the ProcessingTree.cxx file.
