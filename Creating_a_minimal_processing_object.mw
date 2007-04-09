@@ -30,7 +30,7 @@ Here is a minimal implementation of a processing object with a single input and 
  { 
  	CLAM::InPort<MyInputDataType> mIn;
  	CLAM::OutPort<MyOutputDataType> mOut;
- 	typedef NullProcessingConfig Config;
+ 	typedef CLAM::NullProcessingConfig Config;
  public:
  	const char* GetClassName() const { return "MyProcessing"; }
  	MyProcessing(const Config & config=Config()) 
