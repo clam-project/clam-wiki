@@ -22,3 +22,7 @@ It has to figure out which PortMonitor is needed to bind
 the data source to the processing port type.
 
 == PortMonitor instantiation on NetworkEditor ==
+
+The NetworkEditor user should be able to attach a visualization to a monitor.
+
+Currently se are using the Monitor type name to chose a widget and to embed on monitor's ProcessingBox.
