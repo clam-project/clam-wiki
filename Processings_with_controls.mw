@@ -4,6 +4,8 @@ When a processing Do gets executed it just gets the last received value.
 
 You can define and initialize InControls and OutControls in a similar way you did with In/OutPorts but they are not templated (to the date) since they are always CLAM::TControlData which renders to float or double depending on your compilation flags.
 
+[[Image:MyProcessing-withControls.png|thumb|NetworkEditor represents controls as little squares on the top and the bottom of the processing box. Control flow is up-down.]]
+
  	...
  	CLAM::InPort<MyInputDataType> mIn;
  	CLAM::OutPort<MyOutputDataType> mOut;
