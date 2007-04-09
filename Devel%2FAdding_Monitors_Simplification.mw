@@ -16,9 +16,9 @@
 
 == Prototyper Binding ==
 
-The Prototyper has a widget related to a processing port.
-It has to figure out which PortMonitor is needed to bind
-the data source to the processing port type.
+The Prototyper detects a widget related to a processing port.
+It has to find the monitor processing which bridges the
+dsp type of the port and the datasource of the widget.
 
 == PortMonitor instantiation on NetworkEditor ==
 
