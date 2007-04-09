@@ -99,4 +99,4 @@ you still need to add it to the list of processings at
 ProcessingTree.cxx.
 
 This step will eventually disappear as the Processing Factory
-gets more sophisticated.
+gets more sophisticated (when it gets grouping features).
