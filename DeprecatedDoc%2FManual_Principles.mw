@@ -8,7 +8,7 @@ Programmers can keep control over the ProcessingData flow between Processing or 
 
 A set of Processings can be arranged to form a new processing. Thus you can use that new processing to abstract what the full bunch of Processings does and then scale up to a more complex system. Processings can be arranged on compile-time (ProcessingComposites), or dinamically on run-time (Networks).
 
-[[Image:Basic4MPS.png]]
+[[Image:Basic4MPS.png|300 px]]
 
 Figure 1: CLAM Network
 
@@ -31,13 +31,13 @@ When no automated FlowControl is involved, you can also overload the Do() method
 
 The following figure illustrates all the different components of a Processing class.
 
-[[Image:ProcessingObject.png]]
+[[Image:ProcessingObject.png|50 px]]
 
 Figure 2: Processing Object Representation
 
-    * See chapter VII and others.
-    * See also section chapter VIII for information on ProcessingData classes.
-    * Controls are explained in section 40
+    * See chapter XX and others.
+    * See also section chapter XX for information on ProcessingData classes.
+    * Controls are explained in section XX
 
 == Dynamic Types ==
 
