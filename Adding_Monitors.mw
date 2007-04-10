@@ -7,8 +7,8 @@ The number of steps is large and we are in the process of reducing it so this is
 ** PortMonitor templated by the port data, which gives the class:
 *** input ports of the proper class, and
 *** thread safe access to the data from the GUI thread.
-** XXXXAudioSource which gives the class:
-***abstract interface to be used by the visualization to get data
+** XXXXDataSource which gives the class:
+*** abstract interface to be used by the visualization to get data
 ** The implementation should implement XXXXAudioSource interface to map DSP data to visualization, and metadata (units, sizes, limits...)
 ** Such implementation should access the data using the PortMonitor thread safe interface.
 ** Be carefull with the freeze and release policy:
