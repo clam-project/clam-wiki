@@ -8,7 +8,9 @@ The rest of this section will give an overview to the library class hierarchies.
 
 When making a new processing class, it is important to be familiar from the beginning with the Processing and the ProcessingConfig classes hierarchies shown in figure f 5. This figure shows a small collection of the available processing classes, and their related configuration classes.
 
-Figure 5: Processing and Configuration classes hierarchy
+[[image:ProcessingHierarchy.gif|300px]]
+
+Figure: Processing and Configuration classes hierarchy
 
 As you can see in the figure, there is a base Processing class from which all other processing classes must derive. This class provides an abstract interface for processing classes. The class is defined in the following source file:
 
@@ -170,7 +172,9 @@ Processing objects are in a certain execution state at any moment. This is best 
 
 Processing states
 
-Figure 6: Processing Objects execution states.
+[[image:ProcessingStates.png|300px]]
+
+Figure: Processing Objects execution states.
 
 All the methods shown in the state diagram, except the Do() method are implemented in the Processing base class. These are briefly described below. Note that all the state transitions are done via these methods; the state variable is also kept in the base class, so you do not need to worry about execution state management when implementing a new processing class.
 
@@ -199,9 +203,10 @@ There are two different kinds of Do methods:
 
 Both kinds of Do() operations work in the same way: they read a certain number of data objects from each of the inputs, and write a certain number of data objects to each of the outputs. The difference is that the concrete Do() method takes this data objects as arguments (and therefore does not use ports), while the generic Do() operation has no arguments, and accesses the Data through the Ports objects.
 
-figure f 7 shows a sequence diagram for the execution of a processing object with a single input and a single output.
+The following figure shows a sequence diagram for the execution of a processing object with a single input and a single output.
 
-Execution Sequence
+
+[[image:ExecutionSequence.png|300px]]
 
 Figure 7: Execution sequence
 
