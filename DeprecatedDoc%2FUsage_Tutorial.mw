@@ -18,27 +18,24 @@ Finally, a Processing Object is created and configured using a configuration obj
 
 Each processing class (and its configuration class) is defined in a different library header file. To instanciate an FFT processing object, for example, you should do the operations shown below.
 
-// We include the FFT class and associated Processing Data objects
-#include <FFT.hxx>
-#include <Audio.hxx>
-#include <Spectrum.hxx>
+  // We include the FFT class and associated Processing Data objects
+  #include <FFT.hxx>
+  #include <Audio.hxx>
+  #include <Spectrum.hxx>
 
-// And C++ input-output library to write the output message.
-#include <iostream>
+  // And C++ input-output library to write the output message.
+  #include <iostream>
 
-int main(void)
-
-{
-
+  int main(void)
+  {
    // This creates an FFT configuration object
    CLAM::FFTConfig my_fft_config;
-
    // This sets some configuration parameters.
    my_fft_config.SetAudioSize(1024);
    // And this finally creates the FFT object.
    CLAM::FFT my_fft(my_fft_config);
    std::cout << my_fft.GetClassName() << std::endl;
-}
+  }
 
 If you have a look at the declaration of the FFTConfig class in the FFTConfig.hxx file (you will find this header files in the src/Processing/Analysis directory of CLAM sources), you will notice that it is not declared as a standard C++ class. This is because FFTConfig is a so called DynamicType. More information about CLAM dynamic types is provided in the specific chapter in this document, although some useful features will be described below.
 
@@ -51,32 +48,19 @@ Note: Importing a namespace globally as it is done in the previous line though i
 
 Instanciation of processing data objects is usually simpler that the creation of processing objects, as shown below.
 
-#include <Spectrum.hxx>
+  #include <Spectrum.hxx>
+  #include <iostream>
 
-#include <iostream>
-
- 
-
-int main()
-
-{
-
-   // We just need to declare the data object
-
-   CLAM::Spectrum spec;
-
-   // And we can start accessing its attributes
-
-   spec.SetSpectralRange(4000);
-
-   if ( spec.GetScale() != CLAM::EScale::eLinear )
-
-   {
-
-      std::cout << "This can not happen!" << std::endl
-
-                << "Spectrums are linear by default!" << std::endl;
-
+  int main()
+  {
+  // We just need to declare the data object
+  CLAM::Spectrum spec;
+  // And we can start accessing its attributes
+  spec.SetSpectralRange(4000);
+  if ( spec.GetScale() != CLAM::EScale::eLinear )
+  {
+    std::cout << "This can not happen!" << std::endl
+    << "Spectrums are linear by default!" << std::endl;
    }
 
 When working with processing data, you must keep in mind that the data classes are Dynamic Types. This allows you to add or remove data attributes at run time (which means that memory for those attributes is allocated/freed at run time).
@@ -86,41 +70,23 @@ Both SpectralRange and Scale are dynamic attributes in the spectrum class, and a
 Some complex processing data classes, like the Spectrum, provide dynamic attributes for alternative representations of the same data. You can have the spectral samples stored as CLAM::Complex objects (Cartesian coordinates), as CLAM::Polar objects, or as separate magnitude an phase floating point arrays. You can add or remove these dynamic attributes to fit your application.
 
    // This "tags" the "Complex" dynamic attribute for addition.
-
    spec.AddComplexArray();
 
-
-
    // This "tags" the "Polar" dynamic attribute for addition.
-
    spec.AddPolarArray();
 
-
-
    // This "tags" the default Magnitude and phase attributes
-
    // for removal.
-
    spec.RemoveMagBuffer();
-
    spec.RemovePhaseBuffer();
 
-
-
    // This actually performs the previous addition/removal 
-
    // operations.
-
    spec.UpdateData();
 
-
-
    // Finally, we set the size for the spectrum object, so that all
-
    // the added attributes (ComplexArray and PolarArray, in this
-
    // example) get resized.
-
    spec.SetSize(1024);
 
 The AddAttributeName(), RemoveAttributeName() and UpdateData() methods are the general mechanism for adding and removing dynamic attributes to/from dynamic types.
@@ -131,233 +97,119 @@ For example, if you know what dynamic attributes you need when you construct the
 
    // SECOND ALTERNATIVE: creation of the spec2 object using type flags.
 
-
-
    // First we specify the desired attributes.
-
    CLAM::SpecTypeFlags flags;
-
    flags.bComplex=1;
-
    flags.bPolar=1;
-
    flags.bMagPhase=0;
-
-
-
    // Now we build the settings object
-
    CLAM::SpectrumConfig cfg2;
-
    cfg2.SetType(flags);
-
    cfg2.SetSize(1024);
-
    cfg2.SetSpectralRange(4000);
-
-
-
    // spec2 will have the same attributes as spec.
-
    // Note that when using this method the added attributes
-
    // already have the right size.
-
    CLAM::Spectrum spec2(cfg2);
-
-
-
    return 0;
-
-}
+   }
 
 You have two different ways to set or change the value of a dynamic attribute. The easiest one is completely overwriting the previous value. This is illustrated in below. It also introduces a new processing data class (Audio).
 
-#include <Audio.hxx>
+ #include <Audio.hxx>
+ #include <Array.hxx>
+ #include <iostream>
+ #include <cmath>
 
-#include <Array.hxx>
-
-#include <iostream>
-
-#include <cmath>
-
- 
-
-int main()
-
-{
-
+  int main()
+  {
    // We specify this to avoid typing the CLAM:: prefix
-
    using namespace CLAM;
-
-
-
    try {
-
+  
       // We first create and configure the data object.
-
       Audio au;
-
       au.SetSize(1024);
-
       au.SetSampleRate(8000);
-
-
-
+      
       // Now we create a real array
-
       // We reserve a 2048 samples buffer, just in case
-
       Array<TData> array(2048);
-
-
-
+      
       // But for now we set the logical size of the array
-
       // to just 1024 samples
-
       array.SetSize(1024);
-
-
-
+      
       // We initialize it...
-
       int i;
-
       for (i=0; i<1024; i++)
-
          array[i]=sin(2*3.141592*10.5*i/(1024));
 
-
-
       // And we use it to set the real attribute 
-
       // in our Audio data object, by making a copy.
-
       au.SetBuffer(array);
 
-
-
       // Now, if we want, we can modify the data in the Audio object
-
       // (This does not change the original "array" object):
-
       for (i=0; i<1024; i++)
-
          au.GetBuffer()[i]*=1.5;
 
-
-
       // And, of course, we can copy it into a different array.
-
       Array<TData> array2 = au.GetBuffer();
-
    }
-
+   
    catch (std::exception &e)
-
    {
-
       std::cerr << e.what() << std::endl;
-
       return 1;
-
    }
-
    return 0;
-
 }
 
 This example has also introduced the class Array<T>. This is one of the many utility template classes defined in the library. Some of them are similar to some STL classes. Array<T>, for example, is similar in functionality to the std::vector<T> class (the reasons for not actually using the std vector have been thoroughly discussed and are still a matter of controversy between CLAM developers). The attributes which contain sample chunks in both the Spectrum and the Audio classes are Array attributes. Note that the Array<T> class is not a ProcessingData class (i.e., it cannot be fed directly to a processing object).
 
 In the example shown below, we can see the other way to access dynamic attributes: getting a reference to them and modifying it. This is a bit more obscure, but more efficient. Back to the Spectrum class, the example shows how to convert the complex samples among the different representations (which are stored as different dynamic attributes in the Spectrum object).
 
-int main()
-
-{
-
+  int main()
+  {
    using namespace CLAM;
-
-
-
    SpecTypeFlags flags;
-
    flags.bMagPhase=false;
-
    flags.bComplex=true;
-
    SpectrumConfig spec_cfg;
-
    spec_cfg.SetSize(513);
-
    spec_cfg.SetType(flags);
-
-
-
    Spectrum spec(spec_cfg);
 
-
-
    // Instead of creating and initialize our own array, like in
-
    // example 3, we get a reference to the uninitialized complex
-
    // array (which already has the right size)
-
    Array<Complex<TData> > &cplx = spec.GetComplexArray();
 
-
-
    // ... and we initialize it directly. 
-
    for (int i=0; i<513; i++)
-
    {
-
       cplx[i].SetReal(1.0);
-
       cplx[i].SetImag(1.0);
-
    }
 
-
-
    // We now add the Polar array attribute using the dynamic type
-
    // mechanism.
-
    spec.AddPolarArray();
-
    spec.UpdateData();
 
-
-
    // Beware: The following is easy to forget.
-
    // When adding an attribute with the AddXXX() method,
-
    // its size is not initialised. You must do it manually:
-
    spec.SetSize(513);
 
-
-
    // We finally force the spectrum object to set the new attribute
-
    // to the right values. The flags argument has the bComplex member
-
    // set to "true", indicating that the ComplexArray attribute is
-
    // the one from which values will be taken.
-
    spec.SynchronizeTo(flags);
-
-
-
    return 0;
-
-}
+  }
 
 == Usage examples ==
 
@@ -365,154 +217,73 @@ Now that we are familiar with ProcessingData classes, we can start to use Proces
 
 The first one, in shows how to perform the FFT of an Audio object and store it in a Spectrum object. The key parts are the calls to the Start and Do methods of the FFT.
 
-#include"FFT.hxx"
+  #include"FFT.hxx"
+  #include<iostream>
+  #include<cmath>
 
-#include<iostream>
-
-#include<cmath>
-
- 
-
-int main()
-
-{
-
+  int main()
+  {
    int i,Size=1024;
-
    float SampleRate=8000.0;
 
-
-
    // Audio creation
-
    CLAM::Audio myaudio;
-
    myaudio.SetSize(Size);
-
    for (i=0;i<Size;i++)
-
       myaudio.GetBuffer()[i]=
-
          0.625+0.5*sin(2.0*PI*400.0*(((float)i)/SampleRate));
 
-
-
    // Spectrum settings
-
    CLAM::SpectrumConfig ssettings;
-
    ssettings.GetType().bMagPhase=false;
-
    ssettings.GetType().bComplex=true;
-
    ssettings.SetSize(Size/2+1);
 
-
-
    // Spectrum creation
-
    CLAM::Spectrum myspectrum(ssettings);
 
-
-
    // Processing object configuration
-
    CLAM::FFTConfig fconfig;
-
- fconfig.SetAudioSize(Size);
-
-
+   fconfig.SetAudioSize(Size);
 
    // Processing object creation
-
    CLAM::FFT myfft(fconfig);
 
-
-
    // Processing object execution
-
    std::cout << "Running object " << myfft.GetClassName() << std::endl;
 
-
-
    // This puts the object in execution mode.
-
    myfft.Start();
 
-
-
    // And this performs the computation.
-
    myfft.Do(myaudio,myspectrum);
 
-
-
    return 0;
-
-}
+  }
 
 If you are wondering about the strange data sizes used in this examples, you should take in account that the FFT processing class actually performs a real DFT. Because of spectrum symmetry, only the first half of the spectrum is needed, so the second half is not calculated.
 
 The next example illustrates how to use controls in a processing object. A Frequency Domain Filter is created, and the filter characteristics are set using its input controls.
 
-#include <FDFilterGen.hxx>
-
-#include <Spectrum.hxx>
-
- 
-
-int main()
-
-{
-
+  #include <FDFilterGen.hxx>
+  #include <Spectrum.hxx>
+  int main()
+  {
    using namespace CLAM;
-
-
-
    FDFilterGenConfig gconf;
-
-
-
    gconf.SetType(EFDFilterType::eLowPass);
-
    gconf.SetSpectralRange(4000.0);
-
    gconf.SetGain(1.0);
-
    gconf.SetStopBandSlope(12.0);
-
-
-
    FDFilterGen generator(gconf);
-
-
-
    Spectrum filter;
-
    filter.AddMagBPF();
-
    filter.AddPhaseBPF();
-
    filter.RemoveMagBuffer();
-
    filter.RemovePhaseBuffer();
-
    filter.UpdateData();
-
-
-
    generator.Start();
-
-
-
    generator.DoControl(2,1000.0); // Low Cutoff
-
-
-
    generator.Do(filter);
-
-
-
    return 0;
-
-}
+ }
