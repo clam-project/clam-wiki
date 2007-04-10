@@ -31,7 +31,7 @@ When no automated FlowControl is involved, you can also overload the Do() method
 
 The following figure illustrates all the different components of a Processing class.
 
-[[Image:ProcessingObject.png|50 px]]
+[[Image:ProcessingObject.png|300 px]]
 
 Figure 2: Processing Object Representation
 
