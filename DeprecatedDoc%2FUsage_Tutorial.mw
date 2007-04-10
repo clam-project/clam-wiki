@@ -4,8 +4,8 @@ This document provides a first glance to the usage of CLAM as a signal processin
 
 CLAM consists of a set of C++ classes. There are two main kinds of classes in the library:
 
-   1. Processing Classes, which perform the signal processing operations.
-   2. Processing Data Classes, which are placeholders for the data that flows between Processing objects.
+# Processing Classes, which perform the signal processing operations.
+# Processing Data Classes, which are placeholders for the data that flows between Processing objects.
 
 A Processing class has a set of data inputs and a set of data outputs. Each of them will receive Processing Data of an specific type. Several such data types exist (also as C++ classes): Audio, Spectrum, statistical descriptors, etc.
 
