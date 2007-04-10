@@ -239,201 +239,113 @@ Appart from the previous tutorial the CLAM repository also includes some example
     Shows how to create a custom processing class with ports and controls interface, in order to use it with another processings creating an small processing chain.
 
 * Creating and using a CLAM Composite Processing Object
-          o Makefile / Visual C++ project location:
-
-                build/Examples/Simple/POComposite
-
-          o Sources location:
-
-                examples/POCompositeExample.cxx
-
-          o Complexity:
-
-                Medium
-
-          o Keywords:
-
-                Composite, Children
-
-          o Pre-requisites:
-
-                Good knowledge of Processing classes and their whole interface.
-
-          o Description:
-
-                This example illustrates how to create a static composition of Processing objects using the Processing Composite construction available in CLAM. A "big" Processing class is declared by composing with basic Processing classes. Then this class is used to show how it interfaces and behaves.
-
-    * Creating a Basic Audio Application using the CLAM Application classes
-          o Makefile / Visual C++ project location:
-
-                build/Examples/Simple/AudioApplication
-
-          o Sources location:
-
-                examples/AudioApplicationExample.cxx
-
-          o Complexity:
-
-                Low
-
-          o Keywords:
-
-                Audio I/O, Application, Oscillators
-
-          o Pre-requisites:
-
-                Basic knowledge of Processing objects interface and audio IO in CLAM
-
-          o Description:
-
-                Shows how to develop a basic audio application using the CLAM application classes. For doing so a basic Oscillator is used and its output is sent to the soundcard.
-
-    * Converting a MIDI file into an XML Melody
-          o Makefile / Visual C++ project location:
-
-                build/Examples/Simple/MIDI2XML
-
-          o Sources location:
-
-                examples/MIDI2XMLExample.cxx
-
-          o Complexity:
-
-                High
-
-          o Keywords:
-
-                MIDI, XML, Data, Controls
-
-          o Pre-requisites:
-
-                This example may be used as is without not much previous knowledge. But in order to understand its internals a good knowledge on CLAM Processing classes, including controls and ports, is necessary. Prior basic knowledge on the MIDI protocol is also necessary.
-
-          o Description:
-
-                This examples batch processes all the .mid files contained in a given folder (and subfolders recursively) and converts them into xml files. In order to do the input MIDI controls are converted to data and then dumped into XML using CLAM infrastructure. This example was implemented after a question posted to the MIR (Music Information Retrieval) mailing list.
-
-    * Creating a MIDI Synthesizer
-          o Makefile / Visual C++ project location:
-
-                build/Examples/MIDISynthesizer
-
-          o Sources location:
-
-                examples/MIDI_Synthesizer_Example.cxx
-
-          o Complexity:
-
-                High
-
-          o Keywords:
-
-                MIDI, Synthesizer, Instrument, Controls
-
-          o Pre-requisites:
-
-                Previous knowledge on MIDI and additive synthesis may help. Previous knowledge on CLAM Processing classes and Controls is also required.
-
-          o Description:
-
-                This example implements a basic additive synthesizer with ADSR control. The synthesizer is controlled from incoming MIDI messages.
-
-    * Inputing and outputing MIDI messages
-          o Makefile / Visual C++ project location:
-
-                build/Examples/Simple/MIDIIO
-
-          o Sources location:
-
-                examples/MIDIIOExample.cxx
-
-          o Complexity:
-
-                Medium
-
-          o Keywords:
-
-                MIDI, Controls
-
-          o Pre-requisites:
-
-                Previous knowledge on the MIDI protocol may help but is not strictly necessary. Some prior knowledge on CLAM Processing classes and controls is required.
-
-          o Description:
-
-                A basic input MIDI stream is opened and the input events are sent on the output.
-
-    * Implementing a spectral analysis
-          o Makefile / Visual C++ project location:
-
-                build/Examples/Simple/SpectralAnalysis
-
-          o Sources location:
-
-                examples/SpectralAnalysis_example.cxx
-
-          o Complexity:
-
-                High
-
-          o Keywords:
-
-                Spectral Analysis, FFT, spectrum, Composite
-
-          o Pre-requisites:
-
-                Previous knowledge on the basic concepts in the framework (Processing objects, Processing Data objects...) from a user's perspective. Some previous knowledge on signal processing might also help.
-
-          o Description:
-
-                A spectral analysis scheme is implemented. This schem is based on the STFT and includes windowing, overlapping and zero padding.As a matter of fact this example includes much of the functionality in the SMSTools, but it is more isolated and therefore easy to read/understand
-
-    * Implementing a spectral peak detection algorithm
-          o Makefile / Visual C++ project location:
-
-                build/Examples/Simple/SpectralPeakDetect
-
-          o Sources location:
-
-                examples/SpectralPeakDetect_example.cxx
-
-          o Complexity:
-
-                Medium
-
-          o Keywords:
-
-                Spectral Analysis, spectrum, Spectral Peaks, Composite
-
-          o Pre-requisites:
-
-                Previous knowledge on the basic concepts in the framework (Processing objects, Processing Data objects...) from a user's perspective. Some previous knowledge on signal processing might also help. As a matter of fact, before reading this example it is recommended that you first understand the previous Spectral Analysis example.
-
-          o Description:
-
-                Using the output from a previously performed spectral analysis, the peak detection algorithm in the CLAM repository is used in order to find the most prominent peaks in the spectrum.
-
-    * Using the Spectrum class
-          o Makefile / Visual C++ project location:
-
-                build/Examples/Simple/Spectrum
-
-          o Sources location:
-
-                examples/Spectrum_example.cxx
-
-          o Complexity:
-
-                Medium
-
-          o Keywords:
-
-                Spectrum, ProcessingData, Dynamic Types
-
-          o Pre-requisites:
-
-                Previous knowledge and experience with Dynamic Types and basic Processing Data classes is recommended.
-
-          o Description:
-
-                The Spectrum class is the most complex Processing class in CLAM and this example gives a thorough insight on its interface and usage.
+  o Makefile / Visual C++ project location:
+    build/Examples/Simple/POComposite
+  o Sources location:
+    examples/POCompositeExample.cxx
+  o Complexity:
+    Medium
+  o Keywords:
+    Composite, Children
+  o Pre-requisites:
+    Good knowledge of Processing classes and their whole interface.
+  o Description:
+    This example illustrates how to create a static composition of Processing objects using the Processing Composite construction available in CLAM. A "big" Processing class is declared by composing with basic Processing classes. Then this class is used to show how it interfaces and behaves.
+
+* Creating a Basic Audio Application using the CLAM Application classes
+  o Makefile / Visual C++ project location:
+    build/Examples/Simple/AudioApplication
+  o Sources location:
+    examples/AudioApplicationExample.cxx
+  o Complexity:
+    Low
+  o Keywords:
+    Audio I/O, Application, Oscillators
+  o Pre-requisites:
+    Basic knowledge of Processing objects interface and audio IO in CLAM
+  o Description:
+     Shows how to develop a basic audio application using the CLAM application classes. For doing so a basic Oscillator is used and its output is sent to the soundcard.
+
+* Converting a MIDI file into an XML Melody
+  o Makefile / Visual C++ project location:
+    build/Examples/Simple/MIDI2XML
+  o Sources location:
+    examples/MIDI2XMLExample.cxx
+  o Complexity:
+    High
+  o Keywords:
+    MIDI, XML, Data, Controls
+  o Pre-requisites:
+    This example may be used as is without not much previous knowledge. But in order to understand its internals a good knowledge on CLAM Processing classes, including controls and ports, is necessary. Prior basic knowledge on the MIDI protocol is also necessary.
+  o Description:
+    This examples batch processes all the .mid files contained in a given folder (and subfolders recursively) and converts them into xml files. In order to do the input MIDI controls are converted to data and then dumped into XML using CLAM infrastructure. This example was implemented after a question posted to the MIR (Music Information Retrieval) mailing list.
+
+* Creating a MIDI Synthesizer
+  o Makefile / Visual C++ project location:
+    build/Examples/MIDISynthesizer
+  o Sources location:
+    examples/MIDI_Synthesizer_Example.cxx
+  o Complexity:
+    High
+  o Keywords:
+    MIDI, Synthesizer, Instrument, Controls
+  o Pre-requisites:
+    Previous knowledge on MIDI and additive synthesis may help. Previous knowledge on CLAM Processing classes and Controls is also required.
+  o Description:
+    This example implements a basic additive synthesizer with ADSR control. The synthesizer is controlled from incoming MIDI messages.
+
+* Inputing and outputing MIDI messages
+  o Makefile / Visual C++ project location:
+    build/Examples/Simple/MIDIIO
+  o Sources location:
+    examples/MIDIIOExample.cxx
+  o Complexity:
+    Medium
+  o Keywords:
+    MIDI, Controls
+  o Pre-requisites:
+    Previous knowledge on the MIDI protocol may help but is not strictly necessary. Some prior knowledge on CLAM Processing classes and controls is required.
+  o Description:
+    A basic input MIDI stream is opened and the input events are sent on the output.
+
+* Implementing a spectral analysis
+  o Makefile / Visual C++ project location:
+    build/Examples/Simple/SpectralAnalysis
+  o Sources location:
+    examples/SpectralAnalysis_example.cxx
+  o Complexity:
+    High
+  o Keywords:
+    Spectral Analysis, FFT, spectrum, Composite
+  o Pre-requisites:
+    Previous knowledge on the basic concepts in the framework (Processing objects, Processing Data objects...) from a user's perspective. Some previous knowledge on signal processing might also help.
+  o Description:
+    A spectral analysis scheme is implemented. This schem is based on the STFT and includes windowing, overlapping and zero padding.As a matter of fact this example includes much of the functionality in the SMSTools, but it is more isolated and therefore easy to read/understand
+
+* Implementing a spectral peak detection algorithm
+  o Makefile / Visual C++ project location:
+    build/Examples/Simple/SpectralPeakDetect
+  o Sources location:
+    examples/SpectralPeakDetect_example.cxx
+  o Complexity:
+    Medium
+  o Keywords:
+    Spectral Analysis, spectrum, Spectral Peaks, Composite
+  o Pre-requisites:
+    Previous knowledge on the basic concepts in the framework (Processing objects, Processing Data objects...) from a user's perspective. Some previous knowledge on signal processing might also help. As a matter of fact, before reading this example it is recommended that you first understand the previous Spectral Analysis example.
+ o Description:
+   Using the output from a previously performed spectral analysis, the peak detection algorithm in the CLAM repository is used in order to find the most prominent peaks in the spectrum.
+
+* Using the Spectrum class
+  o Makefile / Visual C++ project location:
+    build/Examples/Simple/Spectrum
+  o Sources location:
+    examples/Spectrum_example.cxx
+  o Complexity:
+    Medium
+  o Keywords:
+    Spectrum, ProcessingData, Dynamic Types
+  o Pre-requisites:
+    Previous knowledge and experience with Dynamic Types and basic Processing Data classes is recommended.
+  o Description:
+    The Spectrum class is the most complex Data class in CLAM and this example gives a thorough insight on its interface and usage.
