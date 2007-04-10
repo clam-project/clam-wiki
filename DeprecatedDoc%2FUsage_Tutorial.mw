@@ -12,7 +12,9 @@ A Processing class has a set of data inputs and a set of data outputs. Each of t
 A processing class can also have a set of input and output controls. These are attributes that can be used to change the Processing object behavior once it is ``running'' setting internal run-time execution variables.
 
 Finally, a Processing Object is created and configured using a configuration object, which may define its architecture and its behavior. This configuration may be set at object construction time, or later.
-26 Instanciating Processing objects
+
+
+== Instanciating Processing objects ==
 
 Each processing class (and its configuration class) is defined in a different library header file. To instanciate an FFT processing object, for example, you should do the operations shown below.
 
@@ -44,7 +46,8 @@ This example also shows that all the CLAM related classes are declared in the CL
 
 using namespace CLAM;
 Note: Importing a namespace globally as it is done in the previous line though is not usually a good idea in a less than trivial project.
-27 Processing Data
+
+== Processing Data ==
 
 Instanciation of processing data objects is usually simpler that the creation of processing objects, as shown below.
 
@@ -356,7 +359,7 @@ int main()
 
 }
 
-28 Usage examples
+== Usage examples ==
 
 Now that we are familiar with ProcessingData classes, we can start to use Processing Objects to perform computations on data objects. This is best shown through some examples.
 
