@@ -1,0 +1,64 @@
+The CLAM framework is built on top of some architectural basic elements that are used as building blocks and should therefore be mastered. Most of this document is about them but, just to have a first impression, these are the basic principles used in CLAM:
+
+== Processing architecture ==
+
+A CLAM based system can be viewed as a set of Processing objects deployed as an interconnected network. Each Processing can retrieve ProcessingData tokens and modify them acording to some algorithm.
+
+Programmers can keep control over the ProcessingData flow between Processing or they can delegate this task to one of the many automated FlowControl schedulers.
+
+A set of Processings can be arranged to form a new processing. Thus you can use that new processing to abstract what the full bunch of Processings does and then scale up to a more complex system. Processings can be arranged on compile-time (ProcessingComposites), or dinamically on run-time (Networks).
+
+Figure 1: CLAM Network
+
+Networks allow to build a CLAM system without no C++ knowledge, using only the graphical interface. They can be also used to build up rapid prototypes of a later optimized system. The prototyping environment is still some how limited.
+
+== Processing classes ==
+
+The Processing classes are the main building blocks of the CLAM framework. All processing in the CLAM must be performed inside a Processing class.
+
+Interaction between Processings follows a very bounded but flexible interface. This way, CLAM can manage Processing in a very general way and it boosts the reusability of Processings between different CLAM systems.
+
+All the Processing configuration process is done by giving it a configuration object before the Processing object is on the running state. While the Processing is running, the processing algoritm will be executed every time the Do() method is called at the processing execution rate.
+
+While the Processings is running receive and emits two kinds of output:
+
+    * Continuous data: That will be fed from and by the Ports every time a Do method is called. Basically they consist on ProcessingData.
+    * Asyncronous data: Fed from and by the Controls whenever an event happens. They usually changes the internal state/mode of the algorithm
+
+When no automated FlowControl is involved, you can also overload the Do() method to pass as parameters the ProcessingData that would be otherwise accessible from the ports. This way of implementing Processing is now deprecated but still used.
+
+The following figure illustrates all the different components of a Processing class.
+
+Figure 2: Processing Object Representation
+
+    * See chapter VII and others.
+    * See also section chapter VIII for information on ProcessingData classes.
+    * Controls are explained in section 40
+
+== Dynamic Types ==
+
+Both, Configurations and ProcessingData, are implemented as DynamicTypes (often DT for short). DynamicTypes are an abstraction that allows to have objects with not all attributes instantiated. DynamicType are implemented using preprocessor macros that will expand each attribute declaration in accessors and instanciation interface among other useful methods.
+
+One of the most used features in dynamic types is that they provide some kind of introspection, and thus CLAM can provide some useful functionalities in a general way on every new DynamicType you will define. Examples of those free functionalities that you get by defining some class as DT are XML serialization, generic atribute visit, automatic interface generation...
+
+You can see XX for more information on DynamicTypes use.
+
+
+== Visualization Module ==
+
+The CLAM Visualization Module fullfills two different developers needs. The first one is to inspect graphically CLAM objects as a debugging aid. The other one is to build a complete GUI based application that can be used in interaction with the Processing part of a CLAM system.
+
+CLAM-VM has been designed in a very decoupled way so that it can be fully removed harmlessly from a CLAM system. It provides some general services that are toolkit independent such as thread safe data caching, model-view comunication and sincronization...
+
+That CLAM-VM infrastructure can be used with any toolkit such as Qt, Fltk... In fact, it provides already done widgets, the toolkit dependant part. They are mostly implemented using FLTK and OpenGL but next releases will provide more support on Qt.
+
+
+== System utilities ==
+
+CLAM provides integrated and platform independent support for system dependant tasks. For example:
+
+    * Threading
+    * Midi devices access
+    * Audio devices access
+    * Audio files I/O
+    * SDIF I/O
