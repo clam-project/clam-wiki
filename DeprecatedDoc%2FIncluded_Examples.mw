@@ -71,336 +71,174 @@ Appart from the previous tutorial the CLAM repository also includes some example
     A Descriptor is a special data Container that holds the result of applying statistical computations to an existing Processing Data. In this example the basic functionality of descriptors and statistics is  shown. Descriptors are finally dumped into XML.
 
 * Processing Life Cycle example
-          o Makefile / Visual C++ project location:
-
-                build/Examples/Simple/ProcessingLifeCycle
-
-          o Sources location:
-
-                examples/ProcessingLifeCycle_example.cxx
-
-          o Complexity:
-
-                Medium
-
-          o Keywords:
-
-                Extending Processing abstract class, Processing life cycle.
-
-          o Pre-requisites:
-
-                Knows about CLAM Dynamic Types.
-
-          o Description:
-
-                Shows how write a new CLAM::Processing. Tries to give some insight into Processing life cycle - start, Configure(), Start(), Stop(), -etc.
-
-    *
-
-
-    * Object persistence through Dynamic Types
-          o Makefile / Visual C++ project location:
-
-                build/Examples/Simple/PersistenceThroughDTs
-
-          o Sources location:
-
-                examples/PersistenceThroughDTs_example.cxx
-
-          o Complexity:
-
-                Medium
-
-          o Keywords:
-
-                Object persistence, XML processing, XML Schema, Dynamic Types.
-
-          o Pre-requisites:
-
-                Knowledge of DynamicType's API, Knowledge of XML and XML Schema standards.
-
-          o Description:
-
-                This example shows how to obtain a persistent copy of an object, encoded as a well-formed, valid, XML document.
-
-    *
-
-
-    * Visualization Module Plots: single function plot
-          o Makefile / Visual C++ project location:
-
-                build/Examples/Simple/SinglePlot_1
-
-          o Sources location:
-
-                examples/SinglePlot_example.cxx
-
-          o Complexity:
-
-                Low
-
-          o Keywords:
-
-                CLAM GUI services, simple data visualization.
-
-          o Pre-requisites:
-
-                Familiarity with CLAM::Array and CLAM::BPF.
-
-          o Description:
-
-                This example shows how to plot on the screen some data object part of a simple DSP application.
-
-    *
-
-
-    * Visualization Module Plots: multiple function plot
-          o Makefile / Visual C++ project location:
-
-                build/Examples/Simples/MultiPlot
-
-          o Sources location:
-
-                examples/MultiPlot_example.cxx
-
-          o Complexity:
-
-                Low
-
-          o Keywords:
-
-                CLAM GUI services, simple data visualization.
-
-          o Pre-requisites:
-
-                Familiarity with CLAM::Array and CLAM::BPF. It is recommended to take a look first on the single function plotting example.
-
-          o Description:
-
-                This example shows how to plot on the screen some data object part of a CLAM-based DSP application, as well as combining several functions in the same plot window.
-
-    *
-
-
-    * LPC usage example
-          o Makefile / Visual C++ project location:
-
-                build/Examples/LPC
-
-          o Sources location:
-
-                examples/LPCAnalysis_example.cxx
-
-          o Complexity:
-
-                Medium
-
-          o Keywords:
-
-                Linear Prediction Coding, Fourier Transform, multiple function plotting.
-
-          o Pre-requisites:
-
-                Notions of DSP analysis techniques.
-
-          o Description:
-
-                This example shows how to analyze a given audio signal using the LPC and associated ProcessingData's. Also shows to compare the approximation achieved by the LPC algorithm, and the one achieved by Fourier Transform.
-
-    *
-
-
-    * A simple threaded speech analysis application
-          o Makefile / Visual C++ project location:
-
-                build/Examples/Simple/ThreadedProcessing
-
-          o Sources location:
-
-                example/ThreadedProcessing_example.cxx
-
-          o Complexity:
-
-                Medium
-
-          o Keywords:
-
-                Concurrent programming, threads, GUI
-
-          o Pre-requisites:
-
-                Notions about concurrent programming issues, some background in signal processing, some familiarity with most usual CLAM objects ( Processings, etc.)
-
-          o Description:
-
-                Unfinished example - growing overly complex.
-
-    *
-
-
-    * Playing a WAVE file
-          o Makefile / Visual C++ project location:
-
-                build/Examples/Simple/FilePlayback
-
-          o Sources location:
-
-                examples/FilePlayback_example.cxx
-
-          o Complexity:
-
-                Low
-
-          o Keywords:
-
-                Audio device I/O
-
-          o Pre-requisites:
-
-                Minimum familiarity with CLAM objects such as Processing and ProcessingData.
-
-          o Description:
-
-                This examples shows how to load a WAVE file and play it with your soundcard.
-
-    *
-
-
-    * SDIF I/O, Segments and plots
-          o Makefile / Visual C++ project location:
-
-                build/Examples/Simple/SDIF_And_Segment
-
-          o Sources location:
-
-                examples/SDIF_And_Segment_example.cxx
-
-          o Complexity:
-
-                Medium
-
-          o Keywords:
-
-                DIF, CLAM Segment, SMS Synthesis process, Audio Device I/O.
-
-          o Pre-requisites:
-
-                Basic knowledge of Processing objects interface, basic knowledge of SMS Analysis algorithm byproducts.
-
-          o Description:
-
-                Shows how to restore a CLAM::Segment object stored into a SDIF file, and inspect visually its contents.
-
-    *
-
-
-    * Using CLAM Networks
-          o Makefile / Visual C++ project location:
-
-                build/Examples/Simple/NetworkUsage
-
-          o Sources location:
-
-                examples/NetworkUsage_example.cxx
-
-          o Complexity:
-
-                Low
-
-          o Keywords:
-
-                CLAM Network, Flow Control, Supervised Mode.
-
-          o Pre-requisites:
-
-                Knowledge of Processing objects interface.
-
-          o Description:
-
-                Shows how to use the CLAM Network Processing interface to create and connect easily CLAM Processings.
-
-    *
-
-
-    * Storing and loading CLAM Networks
-          o Makefile / Visual C++ project location:
-
-                build/Examples/Simple/NetworkPersistence
-
-          o Sources location:
-
-                examples/NetworkPersistence_example.cxx
-
-          o Complexity:
-
-                Medium
-
-          o Keywords:
-
-                CLAM Network, Flow Control, Supervised Mode, Serialization, Audio File I/O, Audio Device I/O
-
-          o Pre-requisites:
-
-                Basic knowledge of Processing objects interface, basic knowledge of serialization module, knowledge about using CLAM Processing Networks.
-
-          o Description:
-
-                Shows how to store a CLAM::Network to a xml file, restoring its definition to another network. It show how to load and store audio files and play them, too.
-
-    *
-
-
-    * How to create and use a Processing with Controls
-          o Makefile / Visual C++ project location:
-
-                build/Examples/Simple/Controls
-
-          o Sources location:
-
-                examples/ProcessingObject_controls_example.cxx
-
-          o Complexity:
-
-                Medium
-
-          o Keywords:
-
-                Processing, Controls
-
-          o Pre-requisites:
-
-                Knowledge of Processing objects interface and some previous reading on what CLAM controls are and how they are supposed to behave.
-
-          o Description:
-
-                A Processing class with different kinds of input and output controls is declared. Then it is used by illustrating how controls are connected, modified and read.
-
-    * How to create a Processing with Ports and Controls and use it
-          o Makefile / Visual C++ project location:
-
-                build/Examples/Simple/PortsAndControlUsage
-
-          o Sources location:
-
-                examples/PortsAndControlUsageExample/
-
-          o Complexity:
-
-                High
-
-          o Keywords:
-
-                Flow Control, Audio Device I/O, Extending Processing abstract class, Processing life cycle, Ports, Controls, Nodes
-
-          o Pre-requisites:
-
-                Advanced knowledge of Processing objects interface, knowledge of flow control and nodes system.
-
-          o Description:
-
-                Shows how to create a custom processing class with ports and controls interface, in order to use it with another processings creating an small processing chain.
-
-    * Creating and using a CLAM Composite Processing Object
+  o Makefile / Visual C++ project location:
+    build/Examples/Simple/ProcessingLifeCycle
+  o Sources location:
+    examples/ProcessingLifeCycle_example.cxx
+  o Complexity:
+    Medium
+  o Keywords:
+    Extending Processing abstract class, Processing life cycle.
+  o Pre-requisites:
+    Knows about CLAM Dynamic Types.
+  o Description:
+    Shows how write a new CLAM::Processing. Tries to give some insight into Processing life cycle - start, Configure(), Start(), Stop(), -etc.
+
+* Object persistence through Dynamic Types
+  o Makefile / Visual C++ project location:
+    build/Examples/Simple/PersistenceThroughDTs
+  o Sources location:
+    examples/PersistenceThroughDTs_example.cxx
+  o Complexity:
+    Medium
+  o Keywords:
+    Object persistence, XML processing, XML Schema, Dynamic Types.
+  o Pre-requisites:
+    Knowledge of DynamicType's API, Knowledge of XML and XML Schema standards.
+  o Description:
+    This example shows how to obtain a persistent copy of an object, encoded as a well-formed, valid, XML document.
+
+* Visualization Module Plots: single function plot
+  o Makefile / Visual C++ project location:
+    build/Examples/Simple/SinglePlot_1
+  o Sources location:
+    examples/SinglePlot_example.cxx
+  o Complexity:
+    Low
+  o Keywords:
+    CLAM GUI services, simple data visualization.
+  o Pre-requisites:
+    Familiarity with CLAM::Array and CLAM::BPF.
+  o Description:
+    This example shows how to plot on the screen some data object part of a simple DSP application.
+
+* Visualization Module Plots: multiple function plot
+  o Makefile / Visual C++ project location:
+    build/Examples/Simples/MultiPlot
+  o Sources location:
+    examples/MultiPlot_example.cxx
+  o Complexity:
+    Low
+  o Keywords:
+    CLAM GUI services, simple data visualization.
+  o Pre-requisites:
+    Familiarity with CLAM::Array and CLAM::BPF. It is recommended to take a look first on the single function plotting example.
+  o Description:
+    This example shows how to plot on the screen some data object part of a CLAM-based DSP application, as well as combining several functions in the same plot 
+
+* LPC usage example
+  o Makefile / Visual C++ project location:
+    build/Examples/LPC
+  o Sources location:
+    examples/LPCAnalysis_example.cxx
+  o Complexity:
+    Medium
+  o Keywords:
+    Linear Prediction Coding, Fourier Transform, multiple function plotting.
+  o Pre-requisites:
+    Notions of DSP analysis techniques.
+  o Description:
+    This example shows how to analyze a given audio signal using the LPC and associated ProcessingData's. Also shows to compare the approximation achieved by the LPC algorithm, and the one achieved by Fourier Transform.
+
+* A simple threaded speech analysis application
+  o Makefile / Visual C++ project location:
+    build/Examples/Simple/ThreadedProcessing
+  o Sources location:
+    example/ThreadedProcessing_example.cxx
+  o Complexity:
+    Medium
+  o Keywords:
+    Concurrent programming, threads, GUI
+  o Pre-requisites:
+    Notions about concurrent programming issues, some background in signal processing, some familiarity with most usual CLAM objects ( Processings, etc.)
+  o Description:
+    Unfinished example - growing overly complex.
+
+* Playing a WAVE file
+  o Makefile / Visual C++ project location:
+    build/Examples/Simple/FilePlayback
+  o Sources location:
+    examples/FilePlayback_example.cxx
+  o Complexity:
+    Low
+  o Keywords:
+    Audio device I/O
+  o Pre-requisites:
+    Minimum familiarity with CLAM objects such as Processing and ProcessingData.
+  o Description:
+    This examples shows how to load a WAVE file and play it with your soundcard.
+
+* SDIF I/O, Segments and plots
+  o Makefile / Visual C++ project location:
+    build/Examples/Simple/SDIF_And_Segment
+  o Sources location:
+    examples/SDIF_And_Segment_example.cxx
+  o Complexity:
+    Medium
+  o Keywords:
+    SDIF, CLAM Segment, SMS Synthesis process, Audio Device I/O.
+  o Pre-requisites:
+    Basic knowledge of Processing objects interface, basic knowledge of SMS Analysis algorithm byproducts.
+  o Description:
+    Shows how to restore a CLAM::Segment object stored into a SDIF file, and inspect visually its contents.
+
+* Using CLAM Networks
+  o Makefile / Visual C++ project location:
+    build/Examples/Simple/NetworkUsage
+  o Sources location:
+    examples/NetworkUsage_example.cxx
+  o Complexity:
+    Low
+  o Keywords:
+    CLAM Network, Flow Control, Supervised Mode.
+  o Pre-requisites:
+    Knowledge of Processing objects interface.
+  o Description:
+    Shows how to use the CLAM Network Processing interface to create and connect easily CLAM Processings.
+
+* Storing and loading CLAM Networks
+  o Makefile / Visual C++ project location:
+    build/Examples/Simple/NetworkPersistence
+  o Sources location:
+    examples/NetworkPersistence_example.cxx
+  o Complexity:
+    Medium
+  o Keywords:
+    CLAM Network, Flow Control, Supervised Mode, Serialization, Audio File I/O, Audio Device I/O
+  o Pre-requisites:
+    Basic knowledge of Processing objects interface, basic knowledge of serialization module, knowledge about using CLAM Processing Networks.
+  o Description:
+     Shows how to store a CLAM::Network to a xml file, restoring its definition to another network. It show how to load and store audio files and play them, too.
+
+* How to create and use a Processing with Controls
+  o Makefile / Visual C++ project location:
+    build/Examples/Simple/Controls
+  o Sources location:
+    examples/ProcessingObject_controls_example.cxx
+  o Complexity:
+    Medium
+  o Keywords:
+    Processing, Controls
+  o Pre-requisites:
+    Knowledge of Processing objects interface and some previous reading on what CLAM controls are and how they are supposed to behave.
+  o Description:
+    A Processing class with different kinds of input and output controls is declared. Then it is used by illustrating how controls are connected, modified and read.
+
+* How to create a Processing with Ports and Controls and use it
+  o Makefile / Visual C++ project location:
+    build/Examples/Simple/PortsAndControlUsage
+  o Sources location:
+    examples/PortsAndControlUsageExample/
+  o Complexity:
+    High
+  o Keywords:
+    Flow Control, Audio Device I/O, Extending Processing abstract class, Processing life cycle, Ports, Controls, Nodes
+  o Pre-requisites:
+    Advanced knowledge of Processing objects interface, knowledge of flow control and nodes system.
+  o Description:
+    Shows how to create a custom processing class with ports and controls interface, in order to use it with another processings creating an small processing chain.
+
+* Creating and using a CLAM Composite Processing Object
           o Makefile / Visual C++ project location:
 
                 build/Examples/Simple/POComposite
