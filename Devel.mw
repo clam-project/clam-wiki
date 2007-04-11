@@ -46,7 +46,7 @@ Things that core developers are eager to address but still not being refined in 
 : Maybe based on an recursive analysis (starting pulling from sinks)
 * Ease Processing writing: not make a config attribute mandatory.
 * Unify Do() return semantics. One solution is do it void Do()
-*
+* ...
 
 == HOWTO's ==
 
