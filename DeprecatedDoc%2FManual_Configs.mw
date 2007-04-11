@@ -1,0 +1,81 @@
+The most important item related to object construction and configuration are the processing configuration classes, which will be described in section XX Section XX will describe how to write the Processing constructors, and section XX will describe how Processing objects can be reconfigured, and what needs to be implemented in the concrete classes to support this mechanism.
+
+== Processing configuration classes ==
+
+As figure f 5 suggested, each processing class requires a related configuration class.
+
+=== The role of processing configuration classes ===
+
+The role of the configuration class is to store all the necessary information to configure an object of the related Processing class. In fact, configuration classes may be described as a place-holder for parameters which would otherwise be specified as individual arguments in the processing class constructors.
+
+Processing classes must provide both a constructor and a ConcreteConfigure method taking an object of this configuration class as argument (more about this latter, in section 38.2 and section 38.3.
+
+Configuration classes are implemented as dynamic types that store collections of configuration attributes (implemented as dynamic attributes).
+
+When writing a configuration class, you will usually include configuration attributes such as:
+
+    * Number of inputs or outputs.
+    * Values for parameters of the processing algorithm that the user may want to specify, and which will be fixed during the execution.
+    * Initial values for input control parameters (whenever they are needed, see section 40).
+
+It is important to keep in mind that the configuration mechanism can not be used to change parameters of a processing object during processing execution, only during an initial configuration stage (see section 
+for more details on this). Your processing class should provide input controls (section 40) for run-time parameter changes (a configuration attribute can be used to set an initial value for those controls, though).
+
+=== Configuration class implementation ===
+
+Processing configuration classes must derive from the base ProcessingConfig class, defined in the file
+
+src/Processing/Processing.hxx
+
+The name of the configuration class should be the same as the name of the processing object, adding the Config suffix.
+
+In some cases several processing classes may share the same configuration class. The FFT is a clear example of this. For example, figure f 5 shows that several FFT classes exist for different algorithm implementations, but they all derive from a common FFT_base class, and they share a common configuration class: FFTConfig.
+
+In other words: you will have to write a Configuration class for your processing class, unless the latter is a different implementation of an existent processing class, and may share its existent configuration class.
+
+You will typically place the declaration of both classes (configuration and processing) in the same header file. This file should have the same name as the processing class.
+
+Once you have written your configuration class, you can write the declaration of your processing class constructors and configuration methods.
+
+== Processing constructors ==
+
+Processing classes must provide two constructors: a default constructor and a constructor with the configuration class as its argument type. In most classes they will look just like this (explicit member constructor calls are omitted):
+
+ SpectrumProduct::SpectrumProduct() 
+ {
+   Configure(SpecProductConfig());
+ }
+
+ SpectrumProduct::SpectrumProduct(const SpecProductConfig &c)
+ {
+   Configure(c);
+ }
+
+The Configure method called inside the constructors is implemented in the base class, and is described in section 38.3.
+
+You will usually need to include some member constructor calls from your constructors. If you are using controls, for example, you should call the constructors of the control attributes, as described in section XX
+
+You may need to perform more tasks in the constructor, but most of them will probably be better implemented in your ConcreteConfigure method (see below), which will be automatically called from Configure.
+
+You should not try to provide a copy constructor for a processing object. It will not work well3.
+
+== Configuration methods ==
+
+Once a processing object is instantiated, it can be (re)configured using the Configure method, implemented in the Processing base class4. This method will check that the object can be actually reconfigured (i.e., that the object is not ``running'') and will call the concrete configuration method (which you have to write), ConcreteConfigure(), in the concrete processing class.
+
+These two methods (The Configure method and the concrete configuration method) are declared in the base class as follows:
+
+  protected:
+    virtual bool ConcreteConfigure(const ProcessingConfig&) = 0;
+  public:
+    bool Configure(const ProcessingConfig&) throw(ErrProcessingObj);
+
+So you only have to implement a protected or private ConcreteConfigure method in your new processing class, and you may forget about the Configure method (although it is useful to call it from the constructors, as described above).
+
+Additionally, you need to provide a configuration accessor:
+
+ const ProcessingConfig &GetConfig()const;
+
+This method must return a reference to a configuration object holding the current object configuration. The easiest way to do this is to store a copy of the object passed to the ConcreteConfigure method, so GetConfig only has to return it.
+
+You should keep in mind while writing other processing class parts that the configuration attribute (if you keep it) must store only initial state of the object. The object should not change configuration parameters itself. This means that the object returned by the GetConfig method must show the latest values passed either to the constructor or to the Configure method.
