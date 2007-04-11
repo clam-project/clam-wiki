@@ -36,7 +36,7 @@
 
 * qt4.2 mac-free (not x11)
    $ wget http://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/qt-mac-opensource-src-4.2.2.tar.gz
-: and do the typical dance (macport devs devels informed us that a macport for qt4 is on the way)
+: and do the typical dance (macport devs devels informed us that a macport for qt4 is on the way). Note: qt is needed in order to build the applications, but you might not need it if all you want to do is build the lib. Since qt takes a long time to build and install it's worth skipping if you don't need it ;)
 
 == CLAM build ==
 
