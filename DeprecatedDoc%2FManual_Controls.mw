@@ -1,0 +1,95 @@
+= Controls =
+
+Some processing classes need to allow external entities to change the behavior of the objects asynchronously during their execution. Input controls are the mechanism to perform this kind of run time changes.
+
+Also, a processing class may be used to detect some kind of event. Output controls are the way to make notifications on asynchronous events.
+
+An application can connect output controls from some processing objects to the input control of others.
+
+When we use the ``asynchronous'' word here, we mean that control values do not flow with a given rate, as data does.
+
+In CLAM, control values are floating point numbers.
+
+== Input Controls ==
+
+There are two different mechanism to implement input controls. Controls using the first mechanism simply store a value, and allow an externally connected output control to change this value. These controls are described in section 40.1.1.
+
+For the second mechanism, you have to write a special method in your class, a call-back method which will be called whenever a new value is sent to the input control. This mechanism is described in section 40.1.2
+
+=== Regular input controls ===
+
+To use a regular input control, you need to
+
+   1.
+
+      Declare an InControl attribute in your class with a descriptive name. For example, if you have a couple of input controls with pitch and amplitude values, you should declare them like:
+
+         InControl mInPitch;
+         InControl mInAmplitude;
+
+   2.
+
+      Call the InControl constructors from your processing class constructors. They take two arguments: the control textual name, and a pointer to the processing object containing the control. For example, the constructor of a processing class called MyClass containing two input controls would look something like:
+
+         MyClass(const MyClassConfig &c)
+            : mInPitch("Pitch", this),
+              mInAmplitude("Amplitude", this)
+         {
+            Configure(c);
+
+         }
+
+   3.
+
+      Give an initial value to the control. You should do this in the ConcreteStart() method of your class. Input controls provide a DoControl(value) method to change the value.
+
+=== Input controls with call-back method ===
+
+In some cases you may want to have a call-back method executed each time an input control changes its value. Some reasons for this might be:
+
+    * You may want to send some output controls in some situations when an input controls arrives.
+    * You may want to keep track of multiple changes in a control value between two consecutive calls to your Do() method.
+    * If you have many controls, you may want to avoid checking all of them for changes each time the Do() method is called.
+
+In order to use this call-back mechanism, you have to:
+
+   1.
+
+      Declare your control attributes to be of type InControlTmpl<MyClass> (where MyClass is the name of your processing class). Following the example in previous section, you would have:
+
+         InControlTmpl<MyProcObj> mInPitch;
+
+         InControlTmpl<MyProcObj> mInAmplitude;
+
+   2.
+
+      Define the call-back method(s) in your class, which must take a single argument of type TControlData. For example
+
+         int InPitchControlCB(TControlData val);
+
+         int InAmplitudeControlCB(TControlData val);
+
+   3.
+
+      Call the InControlTmpl constructors from your processing class constructors. They take three arguments: the control textual name, a pointer to the processing object containing the control, and the address of the call-back method. Following the example:
+
+      MyClass(const MyClassConfig &c)
+      : mInPitch("Pitch", this, &MyClass::InPitchControlCB),
+        mInAmplitude("Amplitude",                
+            &MyClass::InAmplitudeControlCB))
+      {
+        Configure(c);
+      }
+
+== Output Controls ==
+
+You add output controls to your class in the same way you add regular input controls, but taking into account that the name of the control class is now OutControl. So, you need to:
+
+   1. Declare the OutControl attributes in your class.
+   2. Call their constructor in the initializer lists of yours.
+
+Now you can send values through the output control. You will usually do it from time to time in your Do() method, using the SendControl(TControlData val) method of the OutControl class.
+
+== Controls initialization ==
+
+Input controls must be initialized in the ConcreteStart() method. If the initial value of a control should be chosen by the user, a configuration attribute can be provided in the configuration class for this task.
