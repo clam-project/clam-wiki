@@ -15,7 +15,7 @@ This is a proposal of index for he manual.
 ## [[Usage Tutorial]]
 ## [[Included Examples]]
 # [[Manual_Principles|Principles and infrastructure]]
-## [[Depracated/Manual_Processing|Processing classes and objects]]
+## [[DepracatedDoc/Manual_Processing|Processing classes and objects]]
 ### [[Manual_Ports|Ports]]
 ### [[Manual_Controls|Controls]]
 ### [[Manual_Configs|Configurations]]
