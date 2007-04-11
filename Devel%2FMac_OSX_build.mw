@@ -19,7 +19,7 @@
   $ sudo port install wget
 
 * Install CLAM dependencies available in darwinports. This command will compile each packages from upstream (the original project site) and will automatically pull its dependencies:
-   $ sudo port install xercesc pkgconfig libsndfile libogg libmad libvorbis fftw-single fftw cppunit qt3-mac id3lib
+   $ sudo port install xercesc pkgconfig libsndfile libogg libmad libvorbis fftw-single fftw cppunit id3lib
 
 * python and scons are also in macports. They are needed as build tools. CLAM builds both with scons/python in darwinports and with the native packages.
   $ sudo port install scons
@@ -45,17 +45,9 @@
    $ svn co http://iua-share.upf.edu/svn/clam/trunk
 
 :Read the CLAM/INSTALL file if you're not familiar with the clam scons   build sequence:
-  $ scons configure with_ladspa_support=0
+  $ scons configure with_ladspa=0
   $ scons
   $ sudo scons install
-
-* One of the clam libs (libclam_vmqt) depends on qt3, so in order to use the macport version of qt3, make sure that QTDIR is undefined when configuring and compiling clam libs. (export QTDIR= )
-* On the other hand, you'll need to export QTDIR to qt4 when compiling networkeditor and annotator. So:
-** before doing clam "scons configure" and "scons" make sure that QTDIR is not set.
-** before compiling SMSTools make sure that QTDIR is not set
-** before compiling Annotator (and its inner /vmqt lib) make QTDIR point to qt4 (in my case export QTDIR=/usr/local/Trolltech/Qt-4.2.2/)
-** before compiling NetworkEditor make QTDIR point to qt4
-
  
 * Remember that before building Annotator you must build Annotator/vmqt
 
@@ -78,10 +70,6 @@
    /opt/local/bin/uic
    If you have non macport versions, change the PATH variable so that it starts with /opt/local/bin
 
-* If you have problems related with qt3 configure or compilation check this
-   $ pkg-config qt-mt --libs -framework Carbon -framework QuickTime -framework OpenGL -framework AGL -L/opt/local/lib -lqt-mt -lz  
-:If you see X11 libs you probably have a wrong (x11) qt3 version and  should install "qt3-mac" (macport name)
-
 * If some library fails to configure inform the clam-devel list but you can try with a subset. For example I first compiled clam with this clam.conf :
 
  prefix = '/Users/parumi/clamSandboxes/local'
@@ -90,9 +78,9 @@
  sandbox = 1
  checks = 1
  release_asserts = 0
- with_ladspa_support = 1
- with_osc_support = 0
- with_jack_support = 1
+ with_ladspa = 1
+ with_osc = 0
+ with_jack = 1
  with_fftw = 1
  with_nr_fft = 1
  with_sndfile = 1
