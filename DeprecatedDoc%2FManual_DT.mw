@@ -1,7 +1,8 @@
 Scope
 
 This section is addressed to the users that want to learn the basics aspects and usage of Dynamic Types (DTs for short). You may also find a section devoted to Dynamic Types in the "Developers" part of this document. This latter is aimed to explain how to create new classes that derive from the base DT, and goes into some details regarding their functionality.
-30 Why Dynamic Types ?
+
+= Why Dynamic Types ? =
 
 Though it might be a quite controversial issue, there are three main reasons for the decision of implementing and using DTs in CLAM.
 
@@ -9,36 +10,25 @@ Though it might be a quite controversial issue, there are three main reasons for
    2. We want support for working with hierarchic or tree structures. That means not only composition of DTs but also aggregates of them (lists, vectors, etc. of DTs). With such compositions of DTs, we can use assignation, and two clone member functions: ShallowCopy () and DeepCopy(), the good thing is that they come free; we don't need to write these members in none of the DT concrete classes.
    3. We obtain introspection of each DT object. That is the ability to know the name and type of each dynamic attribute, to iterate through theses attributes, of having some type specific handlers for each. One clear application of introspection is storage support for loading from, and storing to a file, of a tree of DTs. Of course all this is implemented generically, so appears transparent to the user. At this point we have XML support implemented. Other profits we take from introspection in DT are debugging aids.
 
-31 Where can DT be found within the CLAM library?
+= Where can DT be found within the CLAM library? =
 
 All classes deriving from ProcessingData base class are DT. The concrete ProcessingConfig classes as well as the ProcessingDataConfig classes are also DT.
-32 Declaring a DT
+
+= Declaring a DT =
 
 When we say that dynamic attributes can be instantiated at run time, we mean that we can do so with the previously declared dynamic attributes. Let's see an example. Imagine we want to model a musical note with a DT. We declare it like this:
 
-class Note : public DynamicType
-
-{
-
-public:
-
+  class Note : public DynamicType
+  {
+  public:
    DYNAMIC_TYPE     (Note, 5)
-
-
-
    DYN_ATTRIBUTE    (0, public,  float,   Pitch)
-
    DYN_ATTRIBUTE    (1, public,  unsigned,    NSines)
-
    DYN_ATTRIBUTE    (2, public,  ADSR,        Envolvent)
-
    DYN_CONTAINER_ATTRIBUTE (3, public, std::list<Sine>, Sines,                  
-
                              harmonic)
-
    DYN_ATTRIBUTE    (4, private,     Audio,   Wave) 
-
-};
+  };
 
 This is a macro-based declaration, right now there are three different macros: DYNAMIC_TYPE for expanding the concrete DT constructors, DYN_ATTRIBUTE for declaring each dynamic attribute and DYN_CONTAINER_ATTRIBUTE for declaring any STL interface compliant container.
 
@@ -54,11 +44,9 @@ The forth and last parameter is the attribute name, it is important to begin in 
 
 Returning to the example above, each DYN_ATTRIBUTE macro will expand a set of usable methods:
 
-float& GetPitch(), void SetPitch(const float&),
-
-void AddPitch(), void RemovePitch(), bool HasPitch()
-
-void StorePitch(Storage&) const, bool LoadPitch(Storage&) 
+ float& GetPitch(), void SetPitch(const float&),
+ void AddPitch(), void RemovePitch(), bool HasPitch()
+ void StorePitch(Storage&) const, bool LoadPitch(Storage&) 
 
 Of course GetPitch and SetPitch are the usual accessors to the data. AddPitch and RemovePitch, combined with UpdateData that will be explained latter on, will instantiate and de-instantiate the attribute. HasPitch returns whether Pitch is instantiated at this moment. Finally StorePitch and LoadPitch are for storage purposes, and will be explained in section 35
 
@@ -67,44 +55,30 @@ Of course GetPitch and SetPitch are the usual accessors to the data. AddPitch an
 
 Once, the concrete DT Note has been declared, we can use it like this:
 
-Note myNote; // create an instance of the DT Note
-
-Now myNote, have no attribute instanciate. We can activate attributes this way:
-
-myNote.AddPitch(); myNote.AddNSines(); myNote.AddSines();
+ Note myNote; // create an instance of the DT Note
+ Now myNote, have no attribute instanciate. We can activate attributes this way:
+ myNote.AddPitch(); myNote.AddNSines(); myNote.AddSines();
 
 Or in the case that we want all of them, it is better to use AddAll. (This method is not macro generated as AddPitch, but is a DT member available in any concrete DT.
 )
 
-myNote.AddAll();
+  myNote.AddAll();
 
 As this kind of operations require memory management, we want to update the data, with its possible reallocations only once for every modification of the DT shape or structure (which can imply many individual adds and removes). We'll use the DynamicType UpdateData operation for that purpose:
 
-std::cout << myNote.HasPitch() // writes out: 'false'
-
-myNote.UpdateData();
-
-std::cout << myNote.HasPitch() // writes out: 'true'
+  std::cout << myNote.HasPitch() // writes out: 'false'
+  myNote.UpdateData();
+  std::cout << myNote.HasPitch() // writes out: 'true'
 
 And now all the instantiated attributes can be accessed as usual, using the accessors GetXXX and SetXXX. For example:
 
-myNote.SetNSines(10);
-
-myNote.SetPitch(440);
-
- 
-
-// lets use some std::list operations:
-
-myNote.GetSines().push_back(440).push_back(440*2);
-
-myNote.GetSines().push_back(440*3).push_back(440*4); // etc.
-
- 
-
-int i=myNote.GetPitch();   // error! GetPitch() returns float
-
-int j=myNote.GetNSines();  // ok.
+  myNote.SetNSines(10);
+  myNote.SetPitch(440);
+  // lets use some std::list operations:
+  myNote.GetSines().push_back(440).push_back(440*2);
+  myNote.GetSines().push_back(440*3).push_back(440*4); // etc.
+  int i=myNote.GetPitch();   // error! GetPitch() returns float
+  int j=myNote.GetNSines();  // ok.
 
 More about adding, removing and updating attributes:
 
@@ -116,27 +90,18 @@ It is important to learn the exact behaviour of adding and removing DT attribute
 
 • UpdateData() is a safe and efficient operation: with safe what we mean is that it has no effect (and doesn't rise exceptions) in case that the DT needs no memory update, and it is efficient in the sense that the checking for changes in the dynamic shape doesn't involve any traversal of the attributes but only cheking a global flag. Moreover, UpdataData() returns a boolean that says if it has been necessary to update the data. Sometimes it is very useful do things such as :
 
-// here we don't know if Pitch exist.
-
-myNote.AddPitch();
-
-if (myNote.UpdateData()) {
-
+  // here we don't know if Pitch exist.
+  myNote.AddPitch();
+  if (myNote.UpdateData()) {
    // yes, it existed
-
    // ...
-
-} 
-
-else {
-
+  } 
+  else {
    // no, it didn't was there till now.
-
    // ...
+  }
 
-}
-
-34 Prototypes and copy constructors
+= Prototypes and copy constructors =
 
 It's been said that a the dynamic shape of a DT is the set of instantiated attributes. The description of this shape is stored in a table and can be shared between various DTs. Thus this brings us to the idea of prototypes and creating objects by cloning the dynamic shape of others, this is exactly how the default copy constructor works.
 
@@ -144,13 +109,17 @@ Note n1(myNote), n2(myNote), n3(myNote), n4(myNote);
 
 Now n1, n2, n3 and n4 all share both static information of their type and the dynamic shape information, and we say that myNote is their prototype, or that they all share the same prototype. It is important to notice that this happens even if the prototype (myNote) doesn't have its data updated. If we decide to change the shape of one of these objects, i.e. we want to add new attributes to n4, this operation will automatically create a new prototype and so a new dynamic shape as the next figure shows:
 
+[[image:DynTypeNote.png|300px]]
+
 Of course, the copy constructor also copies the data of each instantiated attribute from the source object into the new object. This copy is made using the corresponding copy constructor. This means that the copy constructor makes a so-called "deep copy" (that means recursives copies of its sub-elements) of any composition of DT and aggregates (i.e. using STL containers) of DTs.
 
 More on copy constructors (i.e. with the shareMemory flag) can be learnt directly from the javadoc source documentation.
-35 Storing and Loading DTs
+
+= Storing and Loading DTs =
 
 This section only explores a feature that is particular to the Dynamic Types: debug-time information. If you should need more details about how to store and load DT from and to XML please refer to chapter IX.
-35.1 How to explore a DT at debug time
+
+== How to explore a DT at debug time ==
 
 Since the dynamic data of a DT is not stored as regular C++ attributes, it might be difficult to explore in the usual way from the debugger. Thus we have provided the DT base class with a Debug() method that can be called from the debugger environment and basically does two things:
 
