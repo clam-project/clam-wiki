@@ -1,7 +1,7 @@
 This is a proposal of index for he manual.
 
 # [[Manual_Intro|Introduction]]
-# [[Manual_Deploy|Deploying CLAM in your system]]
+# [[DepracatedDoc/Manual_Deploy|Deploying CLAM in your system]]
 # [[Manual_Apps|Using CLAM sample Applications]]
 ## [[Manual_SMSTools|SMSTools]]
 ## [[Manual_NetworkEditor|Network Editor]]
