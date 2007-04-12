@@ -1,3 +1,7 @@
+This simple program just plays a file specified by command line to the audio output.
+To achieve this we created a Network 
+
+
  #include <CLAM/Network.hxx>
  #include <CLAM/PANetworkPlayer.hxx>
  #include <CLAM/MonoAudioFileReaderConfig.hxx>
@@ -5,31 +9,34 @@
  
  int error(const std::string & msg)
  {
-	std::cerr << msg << std::endl;
-	return -1;
+ 	std::cerr << msg << std::endl;
+ 	return -1;
  }
  
  int main(int argc, char ** argv)
  {
-	if (argc!=2) return error ("needs a filename.");
+ 	if (argc!=2) return error ("needs a filename.");
  
-	CLAM::Network network;
+ 	CLAM::Network network;
+  
+ 	std::string reader = network.AddProcessing("MonoAudioFileReader");
+  
+ 	// Configure the reader
+ 	CLAM::MonoAudioFileReaderConfig cfg;
+ 	cfg.AddAll();
+ 	cfg.UpdateData();
+ 	cfg.GetSourceFile().OpenExisting(argv[1]);
+ 	if (!cfg.GetSourceFile().IsReadable())
+ 		 return error("Could not open the file");
+ 	network.ConfigureProcessing(reader, cfg);
  
-	std::string reader = network.AddProcessing("MonoAudioFileReader");
+  	// Add an audio sink and connect its input to the reader's output
+ 	std::string sink = network.AddProcessing("AudioSink");
+ 	network.ConnectPorts(reader+".Samples Read", sink+".AudioIn");
  
-	CLAM::MonoAudioFileReaderConfig cfg;
-	cfg.AddAll();
-	cfg.UpdateData();
-	cfg.GetSourceFile().OpenExisting(argv[1]);
-	if (!cfg.GetSourceFile().IsReadable())
-		 return error("Could not open the file");
-	network.ConfigureProcessing(reader, CLAM::MonoAudioFileReaderConfig(cfg));
- 	
-	std::string sink = network.AddProcessing("AudioSink");
-	network.ConnectPorts(reader+".Samples Read", sink+".AudioIn");
- 
-	network.SetPlayer(new CLAM::PANetworkPlayer);
-	network.Start();
-	sleep(4);
-	network.Stop();
+ 	// Set the audio backend to PortAudio
+ 	network.SetPlayer(new CLAM::PANetworkPlayer);
+ 	network.Start();
+ 	sleep(4); // Play just during 4s
+ 	network.Stop();
  }
