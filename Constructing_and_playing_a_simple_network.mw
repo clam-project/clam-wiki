@@ -1,0 +1,35 @@
+ #include <CLAM/Network.hxx>
+ #include <CLAM/PANetworkPlayer.hxx>
+ #include <CLAM/MonoAudioFileReaderConfig.hxx>
+ #include <CLAM/XMLStorage.hxx>
+ 
+ int error(const std::string & msg)
+ {
+	std::cerr << msg << std::endl;
+	return -1;
+ }
+ 
+ int main(int argc, char ** argv)
+ {
+	if (argc!=2) return error ("needs a filename.");
+ 
+	CLAM::Network network;
+ 
+	std::string reader = network.AddProcessing("MonoAudioFileReader");
+ 
+	CLAM::MonoAudioFileReaderConfig cfg;
+	cfg.AddAll();
+	cfg.UpdateData();
+	cfg.GetSourceFile().OpenExisting(argv[1]);
+	if (!cfg.GetSourceFile().IsReadable())
+		 return error("Could not open the file");
+	network.ConfigureProcessing(reader, CLAM::MonoAudioFileReaderConfig(cfg));
+ 	
+	std::string sink = network.AddProcessing("AudioSink");
+	network.ConnectPorts(reader+".Samples Read", sink+".AudioIn");
+ 
+	network.SetPlayer(new CLAM::PANetworkPlayer);
+	network.Start();
+	sleep(4);
+	network.Stop();
+ }
