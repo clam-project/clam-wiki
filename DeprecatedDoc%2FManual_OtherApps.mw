@@ -22,6 +22,8 @@ SpectralDelay is also known as CLAM's Dummy Test. In this application it is no i
 
 The SpectralDelay implements a delay in the spectral domain. What that basically means is that you can divide your input audio signal in three bands and delay them separately, obtaining interesting or weird effects. Here you can see a block diagram of the process.
 
+[[Image:SpectralBlock.gif|300px]]
+
 As you can see, the basic of the processing is an STFT (Spectral Analysis) that performs the analysis of the input signal and converts it to the spectral domain. This processing composite contains a bunch of other processing (i.e. WindowGenerator or FFT, see AnalysisSynthesis UML diagram). The signal is synthesized using a SpectralSynthesis Processing that implements the inverse process. It is thus transformed, in between these two steps, in the spectral domain.
 
 The output data of the SpectralAnalysis is read by three AudioMultiplier Processings that also take as input the spectral transform function of a pre-defined filter. As a matter of fact we apply three different filters: a low-pass, a band-pass and a high-pass. We then have the signal divided into three different bands. Each of them is delayed with a different delay time. Finally, and before the synthesis, these three bands are summed up again.
