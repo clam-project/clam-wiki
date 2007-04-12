@@ -276,7 +276,7 @@ So what we have done is, in these automatically written constructors, is let the
 
 On the other hand, the macro writes a concrete (not virtual) method MandatoryInit() that contains all the static table initializations. This is the sequence diagram for a normal DT constructor:
 
-[[Image:DTInitSeq.gif|300px]]
+[[Image:DTInitSeq1.gif|300px]]
 
 In the case of the copy constructor, the DefaultInit() won't be called, but the CopyInit() will instead. In some cases we could want the same behavior for both initializators, then we could implement the first and let the second call the first. In the next sequence diagram you can notice also that the MandatoryInit() is not called, that's only an implementation detail: when a copy constructor occurs we are certain that at least one instance exist of the current concrete DT.
 
