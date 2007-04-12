@@ -76,6 +76,8 @@ Programmers can keep control over the ProcessingData flow between Processing or 
 
 A set of Processings can be arranged to form a new processing. Thus you can use that new processing to abstract what the full bunch of Processings does and then scale up to a more complex system. Processings can be arranged on compile-time (ProcessingComposites), or dinamically on run-time (Networks).
 
+[[Image:Basic4MPS.png|300px]]
+
 Figure 1: CLAM Network
 
 Networks allow to build a CLAM system without no C++ knowledge, using only the graphical interface. They can be also used to build up rapid prototypes of a later optimized system. The prototyping environment is still some how limited.
