@@ -38,13 +38,18 @@
    $ wget http://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/qt-mac-opensource-src-4.2.2.tar.gz
 : and do the typical dance (macport devs devels informed us that a macport for qt4 is on the way). Note: qt is needed in order to build the applications, but you might not need it if all you want to do is build the lib. Since qt takes a long time to build and install it's worth skipping if you don't need it ;)
 
-== CLAM build ==
+== CLAM sources ==
 
-* if you want to get CLAM sources using subversion you should install it too
+If you want to get CLAM sources using subversion you should install it too
    $ sudo port install subversion
    $ svn co http://iua-share.upf.edu/svn/clam/trunk
 
-:Read the CLAM/INSTALL file if you're not familiar with the clam scons   build sequence:
+Alternatively download a source release from the website.
+
+== CLAM build ==
+
+Note that you need to disable LADSPA support when building for Mac. Read the CLAM/INSTALL file if you're not familiar with the clam scons build sequence. Basically it's this:
+
   $ scons configure with_ladspa=0
   $ scons
   $ sudo scons install
