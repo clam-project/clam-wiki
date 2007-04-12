@@ -183,3 +183,215 @@ Descriptors are a special kind of ProcessingData that are always bound to anothe
 = Basic XML support =
 
 As all PD classes are concrete Dynamic Type classes have automatically built-in XML support. At this moment XML input/output is fully supported. Please refer to chapter XXX for more details.
+
+
+= Basic structural aspects II =
+
+A data storage class derives publicly from ProcessingData. Thus, it is a concrete Dynamic Type class and must use the DYNAMIC_TYPE_USING_INTERFACE macro.
+
+Ex:
+
+ class SpectralPeak: public ProcessingData
+ {
+ public:
+   DYNAMIC_TYPE_USING_INTERFACE (SpectralPeak, 6, ProcessingData);
+   DYN_ATTRIBUTE (0, public, EScale, Scale);
+   DYN_ATTRIBUTE (1, public, TData, Freq);
+   DYN_ATTRIBUTE (2, public, TData, Mag);
+   DYN_ATTRIBUTE (3, public, TData, BinPos);
+   DYN_ATTRIBUTE (4, public, TData, Phase);
+   DYN_ATTRIBUTE (5, public, int, BinWidth);
+  (.)
+
+Remember that all attributes registered using the DYN_ATTRIBUTE macro are granted associated Getters and Setters.
+
+= Constructors and initializers =
+
+Apart from the default constructor (already available as a result of the Dynamic Types macros), other constructors may be implemented. All these constructors must call the constructor of the Processing Data base class using the member initialisation syntax and passing the number of Dynamic Attributes as parameter.
+
+ Ex:
+ Segment::Segment(const SegmentConfig &newConfig):ProcessingData(6)
+ {
+ (.)
+
+Apart from that, these constructors must call a macro-derived method called MandatoryInit(), which is in charge of initialising concrete Dynamic Type's internal structure.
+
+Another initializer that is often useful is the DefaultInit() method. This method has to be implemented by the developer and is in charge of initializing default attributes and values. This method is automatically called from the Processing Data's default constructor and may also be called from all other constructors.
+
+The most usual non-default constructors that a Processing Data class is bound to have are the Copy constructor and the Configuration constructor. The former is already implemented in the Processing Data base class and this implementation is sufficient as long as all attributes of the concrete class are Dynamic and require no initialisation. If not (for example if the class has a non Dynamic member), the developer may make use of the CopyInit() method. This method has to be implemented by hand, but is automatically called from the macro derived Copy constructor.
+
+ Ex:
+  The Segment PD class has a non-dynamic member called pParent. Thus, the copy initializer is implemented as:
+ void Segment::CopyInit(const Segment& prototype)
+ {
+   pParent=prototype.pParent;
+ }
+
+The configuration constructor is sometimes desirable for constructing a Processing Data out of its associated configuration object or out of some sort of initial value (flags, size.). In this case the constructor must explicitly call the MandatoryInit() method and then call any other necessary configuration methods.
+
+ Ex:
+ Spectrum(const SpectrumConfig &newConfig) : ProcessingData(12)
+ {
+   MandatoryInit();
+   Configure(newConfig);
+ }
+ 
+
+= Private members with public interface =
+
+In many cases, it is desirable to keep some members private and offer an accessory public interface for modifying their value. This is especially so if the member is related to some structural aspect of the processing data and a modification in its value implies a re-structuring of the object itself. Imagine, for example a Size attribute that is related to the size of the buffers in a PD class. If the user modifies this attribute, we want to keep the size of the buffers consistent.
+
+In that case, it is recommended you keep the member as private and declare it adding the prefix ‘pr' before its common name.
+
+ Ex:
+ class Spectrum : public ProcessingData
+ {
+ public:
+   DYNAMIC_TYPE_USING_INTERFACE (Spectrum, 12, ProcessingData);
+   ...
+ private:
+   DYNAMIC_ATTRIBUTE (2, private, int , prSize);
+   ...
+
+Then you need to offer the public interface implementing by hand the appropriate Setter and Getter.
+
+ Ex:
+  In the previous example, that of the spectrum, the public interface is offered through the GetSize() and SetSize() methods, implemented as follows (see how    consistency is always kept between prSize member and size of all existing buffers:
+ int Spectrum::GetSize() const
+ {
+   int size= GetprSize();
+   CLAM_BEGIN_CHECK
+   if(HasMagBuffer() && GetMagBuffer().Size())
+      CLAM_ASSERT(GetMagBuffer().Size() == size,
+         "Spectrum::GetSize(): Mag size and Size mismatch.");
+   if(HasPhaseBuffer() && GetPhaseBuffer().Size())
+      CLAM_ASSERT(GetPhaseBuffer().Size() == size,
+         "Spectrum::GetSize(): Phase size and Size mismatch.");
+   if(HasComplexArray() && GetComplexArray().Size())
+      CLAM_ASSERT(GetComplexArray().Size() == size,
+         "Spectrum::GetSize(): Complex size and Size mismatch.");
+   if(HasPolarArray() && GetPolarArray().Size())
+      CLAM_ASSERT(GetPolarArray().Size() == size,
+         "Spectrum::GetSize(): Polar size and Size mismatch.");
+   if (HasprBPFSize()) {
+      if(HasMagBPF() && GetMagBPF().Size())
+         CLAM_ASSERT(GetMagBPF().Size() == size,
+            "Spectrum::GetSize(): MagBPF size and Size mismatch.");
+      if(HasPhaseBPF() && GetPhaseBPF().Size())
+         CLAM_ASSERT(GetPhaseBPF().Size() == size,
+            "Spectrum::GetSize():PhaseBPF size and Size mismatch.");
+   }
+   CLAM_END_CHECK
+   return size;
+ }
+
+ void Spectrum::SetSize(int newSize)
+ {
+   SetprSize(newSize);
+   if(HasMagBuffer()) {
+      GetMagBuffer().Resize(newSize);
+      GetMagBuffer().SetSize(newSize); }
+   if(HasPhaseBuffer()) {
+      GetPhaseBuffer().Resize(newSize);
+      GetPhaseBuffer().SetSize(newSize); }
+   if (HasPolarArray()) {
+      GetPolarArray().Resize(newSize);
+      GetPolarArray().SetSize(newSize); }
+   if (HasComplexArray()) {
+      GetComplexArray().Resize(newSize);
+      GetComplexArray().SetSize(newSize); }
+   if (!HasprBPFSize()) {
+      if (HasMagBPF()) {
+         GetMagBPF().Resize(newSize);
+         GetMagBPF().SetSize(newSize); }
+      if (HasPhaseBPF()) {
+         GetPhaseBPF().Resize(newSize);
+         GetPhaseBPF().SetSize(newSize); }
+   }
+ }
+
+= Configurations =
+ 
+PD classes may also use associated configuration classes in a similar way to the Processing Objects. As it has been shown up until now, both informative and structural attributes of a PD class can be added as regular attributes. The only need for offering an associated configuration class is if a PD class has too many of these attribute to handle them one by one and it becomes more 'friendly' to use a configuration wrapper. As a rule of thumb, you can say that if more than one non-default constructor needs to be implemented for a PD class you should start thinking of implementing an associated Configuration. Thus, configurations are only seen as initialization shorthands and should therefore never be stored inside a PD class.
+
+Configuration classes derive from the ProcessingDataClass.
+
+ Ex:
+ class SpectrumConfig : public ProcessingDataConfig
+ {
+ public:
+   DYN_CLASS_TABLE_USING_INTERFACE(SpectrumConfig, 5, ProcessingDataConfig);
+   DYN_ATTRIBUTE (0, public, EScale, Scale);
+   DYN_ATTRIBUTE (1, public, TData, SpectralRange);
+   DYN_ATTRIBUTE (2, public, int, Size);
+   DYN_ATTRIBUTE (3, public, SpecTypeFlags, Type);
+   DYN_ATTRIBUTE (4, public, int, BPFSize);
+   protected:
+   void DefaultInit();
+   void DefaultValues();
+ };
+ 
+
+= Customizing XML output =
+ 
+If you want to have a specific XML output that does not exactly match the one automatically derived and mentioned in 43 you have two options:
+
+1) If the class you are dumping is not part of the CLAM core you may override the StoreOn() method and implement it by hand.
+
+2) Otherwise you are suggested to write another PD class that fits your needs and acts as an adapter of the real data you have on the existing PD class and the desired output.
+
+= Specific attributes: flags and enums =
+
+When implementing a PD class it is common that you need to implement an associated enumeration or flag. If you use a standard C++ enum or std::bitset you will get no more than a meaningless integer representation. CLAM::Enum and CLAM::Flags<N> will give you a proper string representation. See, Doxygen documentation for these base classes.
+
+It is far beyond the scope of this document to go into the implementation details of both classes and the developer is suggested to implement his own Enum or Flag class departing from an existing class. For the case of Enums, let's see the EInterpolation class:
+
+ Ex:
+The following code is included in the .hxx file:
+
+ class EInterpolation: public Enum
+ {
+ public:
+   static tEnumValue sEnumValues[];
+   static tValue sDefault;
+   EInterpolation() : Enum(sEnumValues, sDefault) {}
+   EInterpolation(tValue v) : Enum(sEnumValues, v) {};
+   EInterpolation(std::string s) : Enum(sEnumValues, s) {};
+
+   typedef enum {
+      eStep,
+      eRound,
+      eLinear,
+      eSpline,
+      ePolynomial2,
+      ePolynomial3,
+      ePolynomial4,
+      ePolynomial5,
+      ePolynomialn
+   } tEnum;
+
+   virtual Component* Species() const
+   {
+      return (Component*) new EInterpolation;
+   };
+ };
+
+and the following in the .cxx:
+
+ Enum::tEnumValue EInterpolation::sEnumValues[] = {
+   {EInterpolation::eStep,"Step"},
+   {EInterpolation::eRound,"Round"},
+   {EInterpolation::eLinear,"Linear"},
+   {EInterpolation::eSpline,"Spline"},
+   {EInterpolation::ePolynomial2,"2ond_order_Polynomial"},
+   {EInterpolation::ePolynomial3,"3rd_order_Polynomial"},
+   {EInterpolation::ePolynomial4,"4th_order_Polynomial"},
+   {EInterpolation::ePolynomial5,"5th_order_Polynomial"},
+   {EInterpolation::ePolynomialn,"nth_order_Polynomial"},
+   {0,NULL}
+ };
+ Enum::tValue EInterpolation::sDefault = EInterpolation::eLinear;
+
+Deprecated: since the flags application is not available. Meanwhile, see the doxygen documentation for an example.
+
+For the case of flags, the easiest way of writing your own class is making use of the flag generation script available at mtg150.upf.es/flags.
