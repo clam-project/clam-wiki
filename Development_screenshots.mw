@@ -2,7 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1 =
 <gallery>
-
+Image:genderchange-pkwidgets.png|Pixmap widget with gender change. Now buttons with the 'InControlBool__' name prefix can send boolean controls on check.
 Image:pixmapbutton-properties.png|Pixmap button properties to change the base pixmap. Here :/pkwidgets/button_000, :/pkwidgets/button_001..., in the case of buttons, you can choose the triplet (normally different colors)
 Image:pkwidgets-fun2-paubox.png|Impressive widgets! this is how it looks in my box. --pau.
 Image:pkwidgets-fun2.png|Even more fun, pixmap buttons and a wider version of mixer sliders.
