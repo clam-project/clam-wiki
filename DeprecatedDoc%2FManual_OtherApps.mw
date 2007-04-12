@@ -34,6 +34,8 @@ The graphical interface controls the frequency cut-offs and gains of the filters
 
 Rappid is a testing workbench for the CLAM framework in high demanding situations. The first version of Rappid implements a quite simple time-domain amplitude modulation algorithm. Any other CLAM based algorithm, though, can be used in its place. Next picture illustrate the basic diagrams of the application.
 
+[[Image:RapiddBlock.gif|300px]]
+
 The most interesting thing about Rappid is the way that multithreading issues are handled, using a watchdog mechanism. The current implementation works only under GNU/Linux.
 
 Rappid has been tested in a live-concert situation. Gabriel Brinic used Rappid as a essential part of his composition for harp, viola and tape, presented at the Multiphonies 2002 cicle of concerts in Paris.
