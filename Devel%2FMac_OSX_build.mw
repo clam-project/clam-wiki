@@ -1,10 +1,13 @@
-== Install XCode Tools ==
+
+==Install dependencies required by CLAM ==
+
+===  XCode Tools ===
 * (From the macports doc) Do not install an older version from the OS X 10.4 install disk or some ports may fail to install. You can download it from here http://connect.apple.com/
 * Run the binary installer.
 * Click Customize, expand the Applications category and click the checkbox beside X11 SDK to add it to the default items.
 * Click Install to install Xcode Tools and the X11 SDK.
 
-== Install Macports packages ==
+=== Macports packages ===
 
 * First, download and install macports binaries that allow search and install other software (similar to apt-get) 
   http://darwinports.opendarwin.org/
@@ -24,7 +27,7 @@
 * python and scons are also in macports. They are needed as build tools. CLAM builds both with scons/python in darwinports and with the native packages.
   $ sudo port install scons
 
-== Install packages not available in darwinports ==
+=== Packages not available in darwinports ===
 
 * portaudio
    $ wget http://www.portaudio.com/archives/pa_snapshot_v19.tar.gz
