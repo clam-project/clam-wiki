@@ -1,0 +1,13 @@
+= SALTO =
+
+SALTO is an SMS synthesizer that is designed to synthesize high quality Sax and Trumpet sounds. Here you can see a schematic representation of the application:
+
+In order to make it work you need to download the SALTO database from the CLAM [i5] website (www.iua.upf.es/mtg/clam). This database is a set of SDIF files that contain the result of previous SMS analysis. To put it in short, these SDIF files contain spectral analysis samples for the steady part of some notes, the residual and the attack part of the notes. If you want to look at these files you can use the SDIF Display application included with CLAM. If you want to synthesize them one by one and even add some transformations, you can use the Analysis/Synthesis Example application.
+
+Apart from this SDIF input, SALTO has three other inputs: MIDI, an XML Melody, and the GUI. Using MIDI as an input you can use SALTO as a regular MIDI synthesizer on real-time. SALTO is prepared to accept incoming MIDI messages coming from a regular MIDI keyboard or a MIDI breathcontroller.
+
+If you use an XML melody as an input you will be able to synthesize it back. It is the easiest way to try that SALTO is working correctly. You can use the melody included in the CLAM repository, write your own one following the same structure or use the Analysis/Synthesis Example application to generate one from an input sound.
+
+Finally, the GUI is still under development and can be basically used to control the way the synthesis is going to work.
+
+As seen in the previous screenshot, the most important part of the interface is on the lower left: the buttons to select what part of the sound you would like to synthesize. The upper part of the interface is just a graphical display of the output. On the right there are two buttons for loading and playing an xml melody. Finally, the central part is designed to manage the database but is not functional at this moment.
