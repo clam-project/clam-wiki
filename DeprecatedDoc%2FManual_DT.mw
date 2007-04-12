@@ -272,6 +272,8 @@ The DYNAMIC_TYPE macro expands two constructors : the default one (without argum
 
 So what we have done is, in these automatically written constructors, is let them call an initialization function, that will be written by the user. They are DefaultInit() and CopyInit(), and are represented in the next class diagram. Notice that they are virtual and implemented in the base, though they do nothing.
 
+[[Image:DTClass.gif|300px]]
+
 On the other hand, the macro writes a concrete (not virtual) method MandatoryInit() that contains all the static table initializations. This is the sequence diagram for a normal DT constructor:
 
 In the case of the copy constructor, the DefaultInit() won't be called, but the CopyInit() will instead. In some cases we could want the same behavior for both initializators, then we could implement the first and let the second call the first. In the next sequence diagram you can notice also that the MandatoryInit() is not called, that's only an implementation detail: when a copy constructor occurs we are certain that at least one instance exist of the current concrete DT.
