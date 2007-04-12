@@ -18,6 +18,8 @@
 ** [[Devel/Linux Gentoo build]]
 ** [[Devel/Fedora installation notes]]
 ** [[Devel/Windows build]]
+* [[A minimal SConstruct to compile with CLAM and Qt4]]
+* [[Constructing and playing a simple network]]
 * [[Creating a minimal processing object]]
 * [[Processings with controls]]
 * [[Processings with configuration]]
