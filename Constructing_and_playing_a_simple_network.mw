@@ -1,5 +1,6 @@
 This simple program just plays a file specified by command line to the audio output.
-To achieve this we created a Network 
+
+To compile it you can just use this SConstruct.
 
 
  #include <CLAM/Network.hxx>
