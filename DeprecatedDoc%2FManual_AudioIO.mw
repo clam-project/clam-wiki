@@ -1,3 +1,5 @@
+[[DeprecatedDoc/CLAMUserManual|Back to Index]]
+
 = The AudioManager =
 
 The core of CLAM audio input/output is the AudioManager class. The AudioManager takes care of all administrative tasks concerning the creation and initialization of audio input and output streams, using the internal, system dependent AudioDevice class.
