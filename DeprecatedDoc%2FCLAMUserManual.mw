@@ -1,4 +1,3 @@
-
 # [[DeprecatedDoc/Manual_Intro|Introduction]]
 # [[DeprecatedDoc/Manual_Deploy|Deploying CLAM in your system]]
 # [[DeprecatedDoc/Manual_Apps|Using CLAM sample Applications]]
@@ -7,10 +6,10 @@
 ## [[Music_Annotator|Annotator]]
 ## [[DeprecatedDoc/Manual_V2M|Voice to MIDI]]
 ## [[DeprecatedDoc/Manual_OtherApps|Others]]
-# [[Manual_Build|CLAM build system]]
+# [[Deprecated/Manual_Build|CLAM build system]]
 ## [[DeprecatedDoc/Manual_CompilingApps|Compiling CLAM and included apps]]
 ## [[DeprecatedDoc/Manual_CompilingUserCode|Compiling your own code]]
-# [[Manual_Tutorials|CLAM tutorials and examples]]
+# [[Deprecated/Manual_Tutorials|CLAM tutorials and examples]]
 ## [[Usage Tutorial]]
 ## [[Included Examples]]
 # [[Manual_Principles|Principles and infrastructure]]
