@@ -1,4 +1,6 @@
-Scope
+[[DeprecatedDoc/CLAMUserManual|Back to Index]]
+
+= Scope =
 
 This section is addressed to the users that want to learn the basics aspects and usage of Dynamic Types (DTs for short). You may also find a section devoted to Dynamic Types in the "Developers" part of this document. This latter is aimed to explain how to create new classes that derive from the base DT, and goes into some details regarding their functionality.
 
