@@ -1,3 +1,5 @@
+[[DeprecatedDoc/CLAMUserManual|Back to Index]]
+
 The most important item related to object construction and configuration are the processing configuration classes, which will be described in section XX Section XX will describe how to write the Processing constructors, and section XX will describe how Processing objects can be reconfigured, and what needs to be implemented in the concrete classes to support this mechanism.
 
 == Processing configuration classes ==
