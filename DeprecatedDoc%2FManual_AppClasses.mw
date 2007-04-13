@@ -1,0 +1,67 @@
+CLAM provides several Application Classes that provide a basic framework for typical application situations, such as audio, or audio + graphical user interface. When necessary, threads or setup, and several virtual functions are provided, which can be implemented by deriving from the relevant application subclass (AudioApplication or GUIAudioApplication).
+
+= BaseAudioApplication =
+
+This class is the base of all (derived) AudioApplication classes. It sets up a (high priority) audio thread, and specifies several virtual functions:
+
+    * void AudioMain(void), which will be executed inside the audio thread. This is where the derived classes implement the actual audio processing.
+    * void UserMain(void), which will be executed by the main thread. This is where the derived classes implement the actual (graphical) user interface.
+    * void AppCleanup(void), which will be executed when the applications ends. This is where the derived classes implement any extra resource cleanup.
+    * bool Canceled(void), which can be used in the AudioMain, to check if the audio thread has been canceled.
+
+This class should never be used directly. If you want a standard audio application, use AudioApplication instead.
+
+= GUIAudioApplication =
+
+This class is derived from BaseAudioApplication, and additionally provides a standard user-interface, with start/stop functionality. This user interface uses the FLTK library.
+
+The virtual function void GUIAudioApplication::UserMain(void) by default just calls Fl::run(), but a derived class could add a more complex user interface here, before calling Fl::run().
+
+The function void GUIAudioApplication::Run(int argc,char** argv) has to be called to execute the application.
+
+= AudioApplication =
+
+This class behaves different on Linux and Windows.
+
+    * In Windows, DirectX audio can only be used in combination with a window open. Therefore, AudioApplication is derived from GUIAudioApplication, where the GUI is just a basic window with start/stop buttons.
+    * In Linux, it is perfectly possible to have an audio application without a user interface. Therefore, AudioApplication is derived from BaseAudioApplication directly.
+
+Obviously, if you are developing an AudioApplication under Windows, but with a custom user interface, you should use GUIAudioApplication instead, so your application will be cross platform.
+
+The function void AudioApplication::Run(int argc,char** argv) has to be called to execute the application.
+
+= Creating and running an Application =
+
+If you want to write an (GUI)AudioApplication, you have to implement the void AudioMain(void), and optionally the void UserMain(void) and void AppCleanUp(void) methods.
+
+    * The void AudioMain(void) typically creates an AudioManager, instantiates some audio processing objects, and enters a loop, until the audio thread is canceled:
+
+      do
+      {
+         /* processing code here, calling Do(...)'s */
+      } while (!Canceled());
+
+    * The void UserMain(void) typically creates a (graphical) user interface. In a Linux command line AudioApplication this might just be waiting for a keypress. In a GUIAudioApplication (and therefore in a Windows AudioApplication, it typically sets up a FLTK user interface, and finally calls Fl::run().
+
+To execute the derived AudioApplication:
+
+ int main(int argc,char** argv)
+ {
+   try
+   {
+      MyAudioApplication app;
+      app.Run(argc,argv);
+   }
+   catch(Err error)
+   {
+      error.Print();
+      std::cerr << "Abnormal Program Termination" << std::endl;
+      return -1;
+   }
+   catch (std::exception e)
+   {
+      std::cout << e.what() << std::endl;
+      return -1;
+   }
+   return 0;
+ }
