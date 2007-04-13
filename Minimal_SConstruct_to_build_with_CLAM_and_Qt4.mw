@@ -2,7 +2,6 @@ To build your application with clam in most platforms is as simple as using the 
 
 For convenience we provide this minimal SContruct that builds any cxx file in the container directory and subdirectories. To build several binaries or changing the file containing the main or the name of the program, check the mainSources variable value.
 
-
 You can enable or disable Qt4 and CLAM modules by uncommenting lines for the EnableQt4Modules and EnableClamModules calls.
 
 Note: Due to a bug on the qt4 scons tool, If you have a class with the Q_OBJECT macro defined inline on the hxx file, you should create a cxx, even if empty, for the moc compiler to be run. Otherwise you'll get undefined symbols errors.
