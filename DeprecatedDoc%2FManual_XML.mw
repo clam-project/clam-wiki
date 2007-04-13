@@ -254,6 +254,9 @@ See the following example of the XMLArrayAdapter usage:
 
 Previous adapters only adapts XML data with trivial structure. In order to have a more structured data, Components are needed. Although you can adapt a Component with a XML adapter, the XMLStorage only sees that the adapter is not a Component and then it doesn't look for subitems.
 
+[[Image:XML-StoreOnNotes.png||300px]]
+
+
 A XMLComponentAdapter is an adapter that it is itself a Component and adapts a Component. So, when the storage confirms that the Adapter is a Component and executes the StoreOn method, the adapter forward the calling to its adaptee.
 
 XMLComponentAdapter usage is very similar to other adapters usage. You may obtain very variated behaviours:
