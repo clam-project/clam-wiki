@@ -1,0 +1,67 @@
+= What is able to do? =
+
+Currently, CLAM is able to decode the following audio file formats:
+
+    * Ogg/Vorbis
+    * Mpeg Audio Layer I, II, III
+    * Microsoft's WAVE/RIFF
+    * SGI/Apple's AIFF
+    * Sun's AU, SND
+    * Paris Audio File (PAF)
+    * Creative's VOC
+    * and several more
+
+obviously we haven't implemented ourselves the routines for achieving this from scratch. We use several free libraries like:
+
+    * libsndfile ( http://www.mega-nerd.com/libsndfile ) an excellent library by Erik de Castro.
+    * Ogg/Vorbis SDK by http://www.xiph.org
+    * Underbit's libmad http://www.underbit.com/products/mad
+
+With exception of Mpeg Audio, due to IP fuss around Fraunhöfer, all decodable file formats can be encoded with the help of CLAM.
+
+Besides being able to read and write audio data, there is also the possibility of extracting meta-data embedded in Vorbis or Mpeg bitstreams. In the case of Mpeg bitstreams, this implies to deal with ID3, the format for tagging Mpeg audio streams. We handle ID3 through id3lib http://id3lib.sourceforge.net
+
+= Usage examples =
+
+There are available several usage examples of new CLAM Audio file I/O tools:
+
+== Audio File I/O: File information extraction example ==
+Makefile / Visual C++ project location: 	build/Examples/Simple/FileInfo
+Sources location: 	examples/FileInfo_example.cxx
+Complexity: 	Medium
+Keywords: 	Audio file I/O tools, Textual meta-data extraction
+Pre-requisites: 	Familiarity with CLAM::Processing usage
+Description: 	
+
+This example shows how to extract useful information about audio files using the CLAM::AudioFile class.
+
+== AudioFile I/O: Audio file reading example ==
+Makefile / Visual C++ project location: 	build/Examples/Simple/AudioFileReading
+Sources location: 	examples/AudioFileReading_example.cxx
+Complexity: 	Medium
+Keywords: 	Audio file I/O tools, Read operations
+Pre-requisites: 	Familiarity with CLAM::Processing
+Description: 	
+
+This example shows how to access an arbitrary audio file and perform some simple analysis on the data it contains.
+
+== Audio file I/O: Audio file writing example ==
+Makefile / Visual C++ project location: 	build/Examples/Simple/AudioFileWriting
+Sources location: 	examples/AudioFileWriting_example.cxx
+Complexity: 	Medium
+Keywords: 	Audio file I/O tools, Write operations
+Pre-requisites: 	Familiarity with CLAM::Processing
+Description: 	
+
+This example shows how to create an stereo file using CLAM file I/O tools.
+
+== Playing an arbitrary audio file ==
+Makefile / Visual C++ project location: 	build/Examples/Simple/FilePlayback
+Sources location: 	examples/FilePlayback_example.cxx
+Complexity: 	Low
+Keywords: 	Audio device I/O
+Pre-requisites: 	Minimum familiarity with CLAM objects such as Processing and ProcessingData
+Description: 	
+
+This examples shows how to play an arbitrary sound file with your soundcard
+Previous
