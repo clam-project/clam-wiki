@@ -1,3 +1,5 @@
+[[DeprecatedDoc/CLAMUserManual|Back to Index]]
+
 The CLAM framework is built on top of some architectural basic elements that are used as building blocks and should therefore be mastered. Most of this document is about them but, just to have a first impression, these are the basic principles used in CLAM:
 
 == Processing architecture ==
