@@ -117,6 +117,8 @@ Imagine the following scenario:
 
 The process of storing o1 on a Storage could be the one depicted here:
 
+[[Image:XML-OutputCascade.png||300px]]
+
 The load process is the same. You can check the return value for the Storage::Load function in order to know if the object was present or not in the Storage.
 
 = XML Adapters =
