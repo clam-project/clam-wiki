@@ -1,1 +1,10 @@
 Apart from its main or core components, which are the Processing and Processing data classes, CLAM offers many interesting tools.
+
+# [[DeprecatedDoc/Manual_Tools|Tools]]
+## [[DeprecatedDoc/Manual_XML|XML]]
+## [[DeprecatedDoc/Manual_AudioIO|Audio I/O]]
+## [[DeprecatedDoc/Manual_AudioFile|Audio File I/O]]
+## [[DeprecatedDoc/Manual_MIDI|MIDI I/O]]
+## [[DeprecatedDoc/Manual_Visual|Visualization]]
+## [[DeprecatedDoc/Manual_SDIF|SDIF]]
+## [[DeprecatedDoc/Manual_System|System utilities]]
