@@ -20,7 +20,7 @@
 ** [[Devel/Fedora installation notes]]
 ** [[Devel/Windows build]]
 * Programming with CLAM
-** [[A minimal SConstruct to compile with CLAM and Qt4]]
+** [[Minimal SConstruct to build with CLAM and Qt4]]
 ** [[Constructing and playing a simple network]]
 ** [[Creating a minimal processing object]]
 ** [[Processings with controls]]
