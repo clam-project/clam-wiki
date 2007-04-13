@@ -1,3 +1,5 @@
+[[DeprecatedDoc/CLAMUserManual|Back to Index]]
+
 == Introduction ==
 
 This document provides a first glance to the usage of CLAM as a signal processing and sound synthesis framework for C++ applications, following several simple code example. The source code this the examples is included with the source code of the library (in the directory examples/Tutorial.
