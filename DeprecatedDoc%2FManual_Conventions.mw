@@ -9,13 +9,9 @@ These guidelines aims that the code will be always well indented with the indent
 On the following example [tab] represents tabulators and . represents spaces used for alignment.
 
  [tab] [tab] double.a;
-
  [tab] [tab] int....b;
-
  [tab] [tab] if (a<b && b<c) {
-
  [tab] [tab] [tab] std::cout << "a is less than c";
-
  [tab] [tab] [tab] ..........<< std::endl;
 
 Ensure that your editor does not change tabulator by spaces or spaces by tabulators.
