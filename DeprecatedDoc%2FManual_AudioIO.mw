@@ -1,5 +1,4 @@
-XI Audio I/O
-60 The AudioManager
+= The AudioManager =
 
 The core of CLAM audio input/output is the AudioManager class. The AudioManager takes care of all administrative tasks concerning the creation and initialization of audio input and output streams, using the internal, system dependent AudioDevice class.
 
@@ -7,24 +6,26 @@ The first thing you need to do in order to use audio is create an AudioManager o
 
 AudioManager audioManager(44100,1024);
 
-61 The AudioIn and AudioOut classes
+= The AudioIn and AudioOut classes =
 
 The actual audio I/O classes, called AudioIn and AudioOut, can than be uses to create processing endpoints to retrieve audio from, or write audio to. Note that each of these objects is mono (the argument to the Do(..) function is a single Audio object). The AudioIn and AudioOut objects have to be created with an AudioIOConfig object that can be used to specify the device, the channel and the sample rate to use.
-61.1 Specifying the device
+
+== Specifying the device ==
 
 The device is referred to with a string that has the following form:
 
-"ARCHITECTURE:DEVICE"
+ "ARCHITECTURE:DEVICE"
 
 Currently, implemented architectures are alsa, rtaudio, portaudio and directx. The available devices depend on your hardware and system configuration, and which objects you link your application with (in src/Tools/AudioIO/.... You can use the class AudioDeviceList, to obtain a list of available devices for the platform you use:
 
-audioManager.FindList(arch)->AvailableDevices()
+ audioManager.FindList(arch)->AvailableDevices()
 
 This returns a const std::vector<std::string>&
 
 However, if you don't specify the device, or use the string "default:default", the AudioManager will choose the device that seems most adequate for your architecture. Similar, it is possible to obtain a list for the default architecture, passing "default" to the AudioDeviceList::FindList method.
-61.2 Specifying the channel
 
+== Specifying the channel ==
+ 
 In order to have a flexible multi channel system, you can specify the channel you want to use for each AudioIn and AudioOut. The AudioManager will use this information to initialize the internal audio handling. Typically, you may want to use 0 for left and 1 for right.
 
 Example:
