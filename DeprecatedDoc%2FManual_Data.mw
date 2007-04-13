@@ -1,3 +1,5 @@
+[[DeprecatedDoc/CLAMUserManual|Back to Index]]
+
 = Scope =
 
 This section is written having in mind average CLAM users. In the "Developer" part of this document you will also find a chapter on Processing Data that is mainly addressed to developers who want to implement a new Processing Data class.
