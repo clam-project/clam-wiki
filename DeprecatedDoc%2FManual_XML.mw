@@ -1,0 +1,97 @@
+= Scope =
+
+This section is addresed to anyone who wants to get an already implemented CLAM object and passivate it as XML or to activate such a CLAM object from a previous passivated XML document.
+
+If you want to provide XML support to your own classes or you want to customize the default XML output that any DynamicType has, you may also refer to the other XML related sections on the developer's part of this document.
+
+= Brief introduction to XML =
+
+XML is a text based format to represent hierarchical data. XML uses named tags enclosed between angle brackets to mark the begin and the end of the hierarchical organizators, the XML elements. Elements contains other elements, attributes and plain content. Let's see a sample XML document:
+
+<?xml version='1.0' encoding='ISO-8859-15' ?>
+<mainElement>
+        <subelement1 attribute1="atribute Content">
+                plain content here
+                <subsubelement>plain content</subsubelement>
+                plain content here
+        </subelement1>
+        <subelement2 attribute2="atribute Content">
+                <subsubelement>plain content</subsubelement>
+                <subsubelement>plain content</subsubelement>
+                <subsubelement>plain content</subsubelement>
+        </subelement2>
+        <emptyelement attribute="foo" />
+</mainElement>
+
+Both attributes and plain content are simple text data. The main different between them is that an attribute is named and plain content is not. Elements also have a name. Names for attributes must be unique inside its hierarchic context, though this restriction doesn't apply to elements' name.
+
+The power of XML is that you can adapt your own tags (elements) and tag attributes (attributes) in order to describe your own data.
+
+For more information on XML, visit W3 Consortium XML page.
+There is also a MTG report about XML related standards and API's.
+
+= Storing components =
+
+A very fast example on how to store a Component (that means DynamicTypes, ProcessingData, ProcessingConfig... and any other instance of any Component subclass) would be:
+
+MyComponent comp;
+
+// Here you modify your component
+// ...
+
+XMLStorage::Dump(comp, "MyComponent", std::cout);
+
+The first parameter of the Dump method is the object to be stored, the second one the name of the XML document root, and the last one is the std::ostream that you want the XML be written to. You can use std::cout or any other std::ostream like std::ofstream, std::stringstream or any other you specialize.
+
+ std::ofstream out("mycomponent.xml");
+ XMLStorage::Dump(comp, "MyComponent", out);
+
+For short, instead of an open stream you may specify the file name and will also work:
+
+ XMLStorage::Dump(comp, "MyComponent", "mycomponent.xml");
+
+(TODO: Update this piece documentation to the last changes) By default, XMLStorages uses no indentation. That means that all any output is done in one single line without tabulators. If you want to pretty format it you should use the UseIndentation method like this:
+
+ storage.UseIndentation(true);
+
+= Loading components =
+
+The inverse way is nearly the same.
+
+ // An unmodified default constructed object!!!
+ MyComponent comp;
+
+ XMLStorage::Restore(comp, "mycomponent.xml");
+ // or alternatively
+ std::ofstream in("mycomponent.xml");
+ XMLStorage::Restore(comp, in);
+
+Attention: Loading methods suppose that the objects are default constructed and unmodified. If not, weird things can happen.
+
+= Detailed step interface =
+
+The XMLStorage static methods used above provide shortcuts for the widely used funcionalities. But you may want to do something special like:
+
+    * storing optimally the same object it onto two different streams,
+    * updating an existing xml by adding some objects to it,
+    * extracting an object from a part of a document,
+    * writing a document fragment
+    * ...
+
+Static methods are not enough, but you still can instantiate an XMLStorage object and use the non-static methods with it. Non-static methods implements smaller steps than static methods do. and you can combine them in order to obtain some concrete behaviour.
+
+The non-static methods that XMLStorage provides are:
+
+    * Create: Creates an Empty DOM document.
+    * Read: Creates a DOM document from the XML that comps from an istream.
+    * WriteDocument: Writes on a stream the whole document
+    * Select: Changes the selected node (by default the root is selected)
+    * WriteSelection: Writes on a stream the selected target
+    * DumpObject: Dumps the CLAM object on the selected DOM node
+    * RestoreObject: Restores the CLAM object from the selected DOM node
+
+
+
+For example, if you want to update an xml document by adding an object on XPath /Doc/element/subElement, you can use the sequence Read-Select-DumpObject-WriteDocument.
+
+Check the Doxygen documentation for more information on the usage of those methods.
