@@ -1,3 +1,5 @@
+[[DeprecatedDoc/CLAMUserManual|Back to Index]]
+
 = Controls =
 
 Some processing classes need to allow external entities to change the behavior of the objects asynchronously during their execution. Input controls are the mechanism to perform this kind of run time changes.
