@@ -1,9 +1,13 @@
+To build your application with clam in most platforms is as simple as using the pkg-config with the proper clam library modules to get the proper options.
 
-To build your application with clam in most platform is as simple as using the pkg-config with the proper clam library modules.
+For convenience we provide this minimal SContruct that builds any cxx file in the container directory and subdirectories. To build several binaries or changing the file containing the main or the name of the program, check the mainSources variable value.
 
-For convenience we provide this minimal SContruct that 
 
-This is a minimal SConstruct file 
+You can enable or disable Qt4 and CLAM modules by uncommenting lines for the EnableQt4Modules and EnableClamModules calls.
+
+Note: Due to a bug on the qt4 scons tool, If you have a class with the Q_OBJECT macro defined inline on the hxx file, you should create a cxx, even if empty, for the moc compiler to be run. Otherwise you'll get undefined symbols errors.
+
+== SConstruct (for your own project) ==
 
  import os, glob, sys
  
@@ -54,16 +58,11 @@ This is a minimal SConstruct file
  	'clam_audioio',
  	'clam_processing',
  	] , CLAMInstallDir)
- 
- 
+  
  mainSources = {
- 	'MyProgram' :'main.cxx',
+ 	'MyProgram' :'./main.cxx',
  }
- 
- sourcePaths = [
- 	"",
- 	os.path.join('generated'),
- ]
+ sourcePaths = recursiveDirs(".")
  sources = scanFiles('*.cxx', sourcePaths)
  sources = filter( (lambda a : a.rfind( "moc_")==-1 ),  sources )
  sources = filter( (lambda a : a.rfind( "qrc_")==-1 ),  sources )
