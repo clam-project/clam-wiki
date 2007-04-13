@@ -1,3 +1,5 @@
+[[DeprecatedDoc/CLAMUserManual|Back to Index]]
+
 The MIDIIO approach has several similarities with the AudioIO, and it is recommended to read the AudioIO documentation first. Basic knowledge of the MIDI protocol is required.
 
 The following documentation reflects the MIDIIO implementation since CLAM 0.6.1. The main difference with earlier releases is the addition of MIDI output, a simplification of the MIDIInControl (no more ChannelMasks and MessageMasks - you'll have to create a MIDIInControl for each channel (or one for all) / message type)
