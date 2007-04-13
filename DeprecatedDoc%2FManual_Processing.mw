@@ -1,3 +1,5 @@
+[[DeprecatedDoc/CLAMUserManual|Back to Index]]
+
 == Introduction ==
 
 This chapter gives a short introduction to CLAM library development issues to those who intend to write a new processing class. The chapter assumes certain familiarity with the use of the library, so if you are completely new to it, you might want to read the usage tutorial first.
