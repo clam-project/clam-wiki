@@ -1,3 +1,5 @@
+[[DeprecatedDoc/CLAMUserManual|Back to Index]]
+
 We define a set of C preprocessor macros that pollute the global namespace, so we document them here explicitly, for minimizing the possibility of macro names clashes. Some of them are global flags that affect the entire library behaviour, some other are part of the DynamicType API, a few needed for ensuring cross-platformness (especially math constants) and some macros that give support to Defensive programming techniques. Besides, we also rely on some macros to be defined by the compiler or development environment, to select a particular behaviour for a given platform.
 
 = Global flags =
