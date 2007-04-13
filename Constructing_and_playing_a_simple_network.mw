@@ -1,7 +1,10 @@
 This simple program just plays a file specified by command line to the audio output.
 
-To compile it you can just use this SConstruct.
+Check the [[Network Editor tutorial]] to see how to do that with a patching interface.
 
+To compile this example you can use this [[Minimal SConstruct to build with CLAM and Qt4|SConstruct file]]
+
+== main.cxx ==
 
  #include <CLAM/Network.hxx>
  #include <CLAM/PANetworkPlayer.hxx>
