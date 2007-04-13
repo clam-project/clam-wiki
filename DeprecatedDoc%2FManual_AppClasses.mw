@@ -1,3 +1,5 @@
+[[DeprecatedDoc/CLAMUserManual|Back to Index]]
+
 CLAM provides several Application Classes that provide a basic framework for typical application situations, such as audio, or audio + graphical user interface. When necessary, threads or setup, and several virtual functions are provided, which can be implemented by deriving from the relevant application subclass (AudioApplication or GUIAudioApplication).
 
 = BaseAudioApplication =
