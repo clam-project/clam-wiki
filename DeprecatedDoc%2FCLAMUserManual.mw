@@ -29,7 +29,7 @@ This is a proposal of index for he manual.
 ## [[DeprecatedDoc/Manual_MIDI|MIDI I/O]]
 ## [[DeprecatedDoc/Manual_Visual|Visualization]]
 ## [[DeprecatedDoc/Manual_SDIF|SDIF]]
-## [[DeprecatedDoc/Manual_System|System utilities]]
+## [[DeprecatedDoc/Manual_AppClasses|Application Classes]]
 # [[DeprecatedDoc/Manual_Repository|Repository (probably just links to the appropiate Doxygen)]]
 ## [[DeprecatedDoc/Manual_ProcessingRep|Processing]]
 ## [[DeprecatedDoc/Manual_DataRep|Processing Data]]
