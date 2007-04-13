@@ -1,17 +1,9 @@
 CLAM Visualization Module can be described as a set of tools that try to help application developers with the task of providing a Graphical User Interface to their applications. This help comes in the following forms:
 
-    *
-
-      As easy to deploy and simple objects called Plots, that are able to render on the screen common data structures, such as CLAM::Array, or CLAM ProcessingData objects, such as the Spectrum.
-    *
-
-      A set of toolkit-independent and efficient algorithms for generic data display implemented with OpenGL.
-    *
-
-      A set of custom Widgets which are commonly needed when adding GUI features to a CLAM's domain application.
-    *
-
-      A set of abstract classes that model the problem of projecting CLAM objects onto a GUI, allowing users to both visually inspect these objects as well as to interact with them.
+    *As easy to deploy and simple objects called Plots, that are able to render on the screen common data structures, such as CLAM::Array, or CLAM ProcessingData objects, such as the Spectrum.
+    *A set of toolkit-independent and efficient algorithms for generic data display implemented with OpenGL.
+    *A set of custom Widgets which are commonly needed when adding GUI features to a CLAM's domain application.
+    *A set of abstract classes that model the problem of projecting CLAM objects onto a GUI, allowing users to both visually inspect these objects as well as to interact with them.
 
 Note that these different 'tools' might be used alone or combined. It's up to you to decide what do you need of the utilities the Visualization Module offers.
 
@@ -23,12 +15,8 @@ The VM Plots facilities are very similar to the ones offered by MathWorks MATLAB
 
 There are two kinds of VM Plots: the generic plots and the specific plots:
 
-    *
-
-      Generic plots allow to render data contained in generic data objects such as arrays or CLAM::BPFs. Range and meaning of the axis is left to users to define. Generic plots are subdivided into two kinds: the single function plots that are able to render just one function, and the multi function plots that are able to render multiple functions simultaneously.
-    *
-
-      Specific plots allow to render 'special' kinds of data such as audio signals, spectrums and the like. They are 'smarter' than generic plots since some parameters as axis ranges or meaning are implicit on the kind of object, and they might be using rendering algorithms quite specific for them. Also some features that are specific to them ( such as playing back an audio signal ) are accessible from these plots.
+    * Generic plots allow to render data contained in generic data objects such as arrays or CLAM::BPFs. Range and meaning of the axis is left to users to define. Generic plots are subdivided into two kinds: the single function plots that are able to render just one function, and the multi function plots that are able to render multiple functions simultaneously.
+    * Specific plots allow to render 'special' kinds of data such as audio signals, spectrums and the like. They are 'smarter' than generic plots since some parameters as axis ranges or meaning are implicit on the kind of object, and they might be using rendering algorithms quite specific for them. Also some features that are specific to them ( such as playing back an audio signal ) are accessible from these plots.
 
 We provide you with some examples that should help you to become familiar with Plots facilities. Don't be afraid to experiment with these examples - you might discover different ways of using them that we did not foresee!
 
