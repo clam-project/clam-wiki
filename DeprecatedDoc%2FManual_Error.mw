@@ -209,6 +209,7 @@ Developers tend to group in a try statement a very large piece of code when they
 
 What an exception means on a function context may not be the same on a higher context. For example, an AudioIO processing configuration method may receive an exception about an already used selected audio device. If you decide not to handle this error here, you may catch the device exception and throw an exception about the configuration fail that has more sense on the context.
 
+[[Image:ErrorHandling-Contextualization.png||300px]]
 Figure 9: Contextualization example
 
 Although throwing a different exception you may embed the old exception onto the newer one. If the error handling code needs more information it can extract it from the embeded exception.
