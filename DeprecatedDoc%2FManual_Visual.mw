@@ -1,0 +1,83 @@
+CLAM Visualization Module can be described as a set of tools that try to help application developers with the task of providing a Graphical User Interface to their applications. This help comes in the following forms:
+
+    *
+
+      As easy to deploy and simple objects called Plots, that are able to render on the screen common data structures, such as CLAM::Array, or CLAM ProcessingData objects, such as the Spectrum.
+    *
+
+      A set of toolkit-independent and efficient algorithms for generic data display implemented with OpenGL.
+    *
+
+      A set of custom Widgets which are commonly needed when adding GUI features to a CLAM's domain application.
+    *
+
+      A set of abstract classes that model the problem of projecting CLAM objects onto a GUI, allowing users to both visually inspect these objects as well as to interact with them.
+
+Note that these different 'tools' might be used alone or combined. It's up to you to decide what do you need of the utilities the Visualization Module offers.
+
+= Plots =
+
+New!: We have just added new and fancier Plots based on the QT framework. The documentation is currently on a different document .
+
+The VM Plots facilities are very similar to the ones offered by MathWorks MATLAB (c) or GNUplot, where the user is able to render easily a piece of data allowing some level of customization as curve color, axis scales, etc. while details as concrete rendering algorithms or interaction with widget toolkits is transparent to her. As in both MATLAB or GNUplot, VM Plots main purpose is to become a tool for debugging algorithms ( or obtaining nice graphics for an article or lab report), not to be efficient but functional, not flexible but simple. So they are not meant nor recommended to be used in production-level code.
+
+There are two kinds of VM Plots: the generic plots and the specific plots:
+
+    *
+
+      Generic plots allow to render data contained in generic data objects such as arrays or CLAM::BPFs. Range and meaning of the axis is left to users to define. Generic plots are subdivided into two kinds: the single function plots that are able to render just one function, and the multi function plots that are able to render multiple functions simultaneously.
+    *
+
+      Specific plots allow to render 'special' kinds of data such as audio signals, spectrums and the like. They are 'smarter' than generic plots since some parameters as axis ranges or meaning are implicit on the kind of object, and they might be using rendering algorithms quite specific for them. Also some features that are specific to them ( such as playing back an audio signal ) are accessible from these plots.
+
+We provide you with some examples that should help you to become familiar with Plots facilities. Don't be afraid to experiment with these examples - you might discover different ways of using them that we did not foresee!
+
+== Plots examples ==
+
+Currently, in CLAM 0.5.3 there are available the following examples on VM Plots:
+
+== Visualization Module Plots: single function plot ==
+Makefile / Visual C++ project location: 	build/Examples/Simple/SinglePlot_1
+Sources location: 	examples/SinglePlot_example.cxx
+Complexity: 	Low
+Keywords: 	CLAM GUI services, simple data visualization
+Pre-requisites: 	Familiarity with CLAM::Array and CLAM::BPF
+Description: 	
+
+This example shows how to plot on the screen some data object part of a simple DSP application
+
+== Visualization Module Plots: multiple function plot ==
+Makefile / Visual C++ project location: 	build/Examples/Simples/MultiPlot
+Sources location: 	examples/MultiPlot_example.cxx
+Complexity: 	Low
+Keywords: 	CLAM GUI services, simple data visualization
+Pre-requisites: 	Familiarity with CLAM::Array and CLAM::BPF. It is recommended to take a look first on the single function plotting example.
+Description: 	
+
+This example shows how to plot on the screen some data object part of a CLAM-based DSP application, as well as combining several functions in the same plot window.
+
+== SDIF I/O, Segments and plots ==
+Makefile / Visual C++ project location: 	build/Examples/Simple/SDIF_And_Segment
+Sources location: 	examples/SDIF_And_Segment_example.cxx
+Complexity: 	Medium
+Keywords: 	SDIF I/O, CLAM Segment, VM Plots
+Pre-requisites: 	Basic knowledge of Processing objects interface, basic knowledge of SMS Analysis algorithm byproducts.
+Description: 	
+
+Shows how to restore a CLAM::Segment object stored into a SDIF file, and inspect visually its contents.
+
+= Model Adapters and Presentations =
+
+In order to decouple the model elements (mainly CLAM Processing Data such as Audio or Spectrum) a variant of the Model-View-Controller architectural pattern was implemented. In this new version the main actors are the Presentation, the Model Adapter, and the Model Controller.
+
+A Presentation is a graphical metaphor through which some information contained in the model object is shown to the user. A Presentation can be anything from a simple widget to a full application graphical interface, depending on the complexity of the model object to be presented. A Presentation can be activated and deactivated, therefore its existence does not imply its visibility.
+
+The ModelAdapter class defines the interface that is common to all model object adapters in CLAM Visualization Module. It offers the interface required by the Observable actor in the GOF Observer pattern [GOF]. The Adapter concept was chosen in order not to taint the model object interface and to separate effectively the model objects from its representation. The main operation in the ModelAdapter class is the abstract Publish operation that must be implemented in all subclasses in order to publish the updated model object internal state.
+
+The ModelController class is similar to the ModelAdapter except in that, besides from publishing the model object state, it also allows to modify it. For that reason it adds the Update operation to the previously mentioned Publish.
+
+The CLAM Visualization Module also implements a Signal&Slots mechanism similar to that offered by frameworks such as QT [QTProgramming]. The basic rationale behind the Signal&Slot mechanism is the following: Sometimes it is required that an object notifies a change in internal state or the reception of a message to any number of listeners. This situation can be modeled in different ways but most of them suffer from a major drawback: coupling. In this sense, the caller must know to some extent the callee interface. Because of this, reuse capabilities are reduced. The Signal&Slot idiom gives solution to this problem. The Signal models the concept of "event notifying", and signals are connected to Slots that represent "event handlers".
+
+In CLAM the Signal&Slot idiom is implemented through three main classes: the Signal class, the Slot class and the Connection class. The Signal and Slot classes model the obvious concepts previously explained. On the other hand, the Connection class models the knowledge a signal has about who has to be notified whenever a client invokes the Emit() operation on it. Each time a Signal and Slot objects are bound together a Connection object is created, tagged by a Global Unique IDentifierIdentifier (GUID). This particular implementation was loosely derived from R. Hickey's article "Callbacks in C++ using Template Functors" published in C++ Report '95.
+
+Apart from the previous tools, the non-dependency from graphical toolkit implementation is also accomplished through the use of a Widget Toolkit Wrapper. This Creator/Singleton class produces objects that are abstract wrappers for accessing a GUI Toolkit low-level functionality such as triggering the event loop, triggering the execution of a single iteration of the event loop or setting the refresh rate for graphic displays.
