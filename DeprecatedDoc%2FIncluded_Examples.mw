@@ -1,4 +1,6 @@
-Appart from the previous tutorial the CLAM repository also includes some examples in order to show how can you do the basic operations with CLAM: loading audio files, playing sounds, using Processing class... This is the list of related examples, each one of them fully detailed with comments.
+[[DeprecatedDoc/CLAMUserManual|Back to Index]]
+
+Apart from the previous tutorial the CLAM repository also includes some examples in order to show how can you do the basic operations with CLAM: loading audio files, playing sounds, using Processing class... This is the list of related examples, each one of them fully detailed with comments.
 
 * Audio file Reading example
   o Makefile / Visual C++ project location:
