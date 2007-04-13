@@ -125,6 +125,10 @@ The load process is the same. You can check the return value for the Storage::Lo
 
 Both methods, Storage::Load and Storage::Store receive an MTG::Storable as parameter. Moreover, this parameter will be ignored if it doesn't fulfills the concrete Storable interface for the format of the concrete Storage interface. For the MTG::XMLStorage, the Storable interface is MTG::XMLable.
 
+[[Image:XML-StorageHierarchy.png||300px]]
+
+[[Image:XML-StorableHierarchy.png||300px]]
+
 Just in order you don't have to derive every object from that interface, a pool of adapters are available in order to make your objects fullfill the MTG::XMLable interface.
 
 In short, your implementation of StoreOn and LoadFrom methods will consist on selecting the suited XML adapter to wrap each subpart of your Component and call Storage::Store or Storage::Load having it as parameter.
@@ -143,6 +147,9 @@ MyAdapterClass( /* Here goes the adaptee info */ , char * name = NULL, bool beEl
 Important: The adapter only copies the pointer to the the null-terminated string, not a copy of it. So it is dangerous to delete or modify this string until the adapter has been stored on the Storage.
 
 The whole set of adapter classes is shown in the following UML class diagram:
+
+[[Image:XML-AdapterHierarchy.png||300px]]
+
 
 == Simple types adapters ==
 
