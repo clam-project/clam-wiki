@@ -148,7 +148,7 @@ Important: The adapter only copies the pointer to the the null-terminated string
 
 The whole set of adapter classes is shown in the following UML class diagram:
 
-[[Image:XML-AdapterHierarchy.png||300px]]
+[[Image:XML-AdaptersHierarchy.png||300px]]
 
 
 == Simple types adapters ==
