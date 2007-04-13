@@ -1,0 +1,216 @@
+= Use case analysis =
+
+== Actors ==
+
+There is two kinds of actors, humans actors and automated actors.
+
+    * Automated actors: They detect the exceptional conditions, but also can receive exceptional conditions notifications.
+          o The CLAM library: The library we are developing. This also may include users add-ons that match the interface we provide.
+          o Third party libraries: They are libraries that our library uses. For example the Standard C++ Template Library, Fltk, OpenGL, XercesC++... They report the library error conditions to our library.
+          o User application: Source code that uses the library. Parts of CLAM may adopt this role when they use some interface also offered to the outside of the world.
+    * Human actors: They are only notifications receivers. Humans needs a text based interface.
+          o Library programmer: That is a programmer that is developing CLAM library. He receives notifications that are useful for debugging the library.
+          o Library user (application programmer): The programmer of the final application. He receives notifications that are useful for debugging its application.
+          o The final application user: It is the last notification receiver when the application is released.
+
+== Stages ==
+
+Human actors implied are different on the different stages of the library code:
+
+    * Library development
+    * Application development
+    * Application usage
+
+Each development stage has a different main human error notification receiver and different behaviours are expected.
+
+== Mechanisms ==
+
+There are three main error notification mechanisms:
+
+    * A public exception is a documented error condition for a function that callers can manage in some way. An exception object is thrown to let the caller know the error nature and its details in order to recover properly. So, public exceptions are error notifications from one piece of code to other that uses the former one. Receiver: Any automated actor.
+    * An assertion is a check for some precondition for a piece of code. This precondition is suposed not to occur, so failing the check means that a bug is happening and the following code will have unexpected results. Receiver: Programmers, but via the application on release mode.
+    * A user message is a direct text based notification to the user. Because this kind of notification is application dependent, it will not be issued by the library. Receiver: The application user.
+
+= Sanity checks and assertions =
+
+== Expression assertions ==
+
+You can create an assertion of an expression by using the Assert macro like that:
+
+ CLAM_ASSERT(i<mSize, "Accessing past the end of an array");
+ CLAM_ASSERT(mBuffer!=NULL, "Array buffer points to NULL");
+ return mBuffer[i]; 
+
+On development stage, that is, with the DEBUG macro defined, what the programmer wants is to interrupt the program where the assert failed in order to start debugging from this point.
+
+In release mode, that is, when the DEBUG macro is not defined, we have choosed not to ignore asserts, as does the default standard assert macro behaviour, because not fullfiling an assert can lead to unpredictable state. But instead of aborting the program, it will throw an ErrAssertFailed exception that can be catched. So an application catch the exception and, for example, do a backup of the data or open an error reporter window before the application does finally crash.
+
+== Statement based 'assertions' (checks) ==
+
+CLAM_ASSERT macro is only useful for expressions. When you have a check whose code is not only based on a simple expression, but in a complex statement, then you must use the following construct:
+
+ CLAM_BEGIN_CHECK
+   for (int i=0; i<N; i++) {
+      CLAM_ASSERT(array[i].IsValid(),
+         "Invalid Element Found");
+   }
+ CLAM_END_CHECK
+
+== Documenting assertions ==
+
+When you add assertions to a function body about the status derived from caller context, and they are not so obious conditions, you should documentate them as a function preconditions. You can use the @pre doxygen directive for this.
+
+This way you are telling the caller that it may assure to fullfil those preconditions.
+
+== Optimization and assertions ==
+
+WARNING: Please, use this section only when you are very sure about, the needing of disabling one assertions and checks on release mode. Mantaining the assertions on release code will give the final application a chance for doing a 'gracefull crash' by catching at top level the CLAM::ErrAssertionFailed exception.
+
+Because assertions do take time, on critical parts, you may decide that one assertion will not be part of the release code by using the CLAM_DEBUG_ASSERT macro instead of the CLAM_ASSERT macro.
+
+There is also a debug only version for statement based asserts, for example:
+
+ CLAM_BEGIN_DEBUG_CHECK
+   for (int i=0; i<N; i++) {
+      CLAM_DEBUG_ASSERT(array[i].IsValid(),
+         "Invalid Element Found");
+   }
+ CLAM_END_DEBUG_CHECK
+
+Please, use CLAM_ASSERT, CLAM_BEGIN_CHECK and CLAM_END_CHECK instead of CLAM_DEBUG_ASSERT, CLAM_BEGIN_DEBUG_CHECK and CLAM_END_DEBUG_CHECK every where you can.
+
+Another extreme option in order to speed up the library by disabling completely all the checks is to compile defining the CLAM_DISABLE_CHECKS global macro which disables all the asserts and checks.
+
+So, debug-only checks and assertions are used to remove some selected checks on debug mode only, and CLAM_DISABLE_CHECKS is used to remove all of them whatever the mode you are compiling in.
+
+== Managing assertions from the application ==
+
+    * Callback: You can use the SetAssertFailedHandler function in order to change the function that is called when an assert is failed in debug mode.
+    * Catching: In release mode, you can catch the ErrAssertionFailed exception at the top level application in order to do some crash management and backups.
+
+== Debugging the release mode ==
+
+Because there is some parts of the code that changes between the debug mode and the release mode, some bug can happen on the release mode and not on the debug mode. We have left the possibility of simulating asserts as they work on the release mode but being on the debug mode.
+
+If you globally define the macro CLAM_USE_RELEASE_ASSERTS, the asserts will be defined as it will be on the release mode althought the DEBUG macro is also defined. Then you may check whether the bug is on the release assert code or not.
+
+= Exceptions =
+== Previous note ==
+
+Most of the guidelines provided here for exception use, are not still applied to the inner CLAM code. By now only the Assert/Exception use cases have been revised.
+
+Future CLAM releases will match more faithfully this and users must use the library as it would.
+
+== When to use Exceptions ==
+
+Exception handling is a mechanism provided by C++ for recovering from an error situation which solution is unknown in the context where the error condition is given but the solution is known somewhere in a higher level in the call stack.
+
+So, when a function meet an error condition, it must throw an exception only when:
+
+    * The error is recoverable (if not, you might use an assertion instead)
+    * Recovery strategy is not fully known on the error detection context.
+
+In C programmers terms, exceptions usage in CLAM, as suggested by the standard, is like function returned error codes but without interfering the return process and handling the error several function calls thru the call stack.
+
+In short, Exceptions and Assertions differ on the following:
+
+    * Exceptions are error conditions that may be anticipated, and recovered by the caller code.
+    * But failed assertions are error conditions that you can recover from in runtime, they are detected runtime bugs.
+
+== Contract between throwers and catchers ==
+
+Because callers must know which exceptions are thrown by the method in order to catch and handle them, exceptions are part of the called method prototype, say the contract with its client (the caller).
+
+Forming part of this contract, exceptions must be present both on the prototype and the Doxygen documentation.
+
+ /**
+ * Gets a property
+ * @param file The property file
+ * @param value The property name
+ * @returns The value of the property
+ * @throws NotFound when the property is not present
+ * @throws IOError when an error ocurs accesing the file 
+ */
+ std::string getProperty(const std::stream & file, 
+                        const std::string & name) 
+   throw (NotFound, IOError)
+ {
+   ...
+   if (somecondition) throw NotFound(name);
+ }
+
+Exceptions must be documented by using the Doxygen tag @throws. You also may explicitly define the throws clause in the method prototype. Just like the previous listing does. You may want to be less conservative and make the client assure that the key is always present before calling your method. Then you will not throw any exception and you may use an assertion instead. A @pre entry in the Doxygen documentation tells that the function needs to assure that the key exists. Just like the following code.
+
+ /**
+ * Gets a property
+ * @param file The property file
+ * @param value The property name
+ * @returns The value of the property
+ * @pre The property must exists on the file
+ * @throws IOError when an error ocurs accesing the file 
+ */
+ std::string getProperty(const std::stream & file, 
+                        const std::string & name) 
+   throw (IOError)
+ {
+   ...
+   CLAM_ASSERT(!somecondition, "Property not found");
+ }
+
+Notice that the client will not be able to handle this error condition.
+
+Responsability facts:
+
+    * Not assuring the precondition means a bug in the client code.
+    * Throwing an undocumented exception is a bug on the called function.
+    * Not catching a documented exception is a bug on the client code unless published as thrown by the client code.
+
+Exceptions must be documented as part of the interface because the client must handle this error condition. Also, often assertions should be documentated because they require a precondition, that the client must filfull before calling the method.
+
+ std::string getProperty(const std::stream & file, 
+                        const std::string & name) 
+ {
+   try {
+      ...
+      if (somecondition) throw NotFound(name);
+   }
+   catch (IOError) {throw;} // rethrow it
+   catch (NotFound) {throw;} // rethrow it
+   catch (...) { // Any other, call unexpected
+      std::unexpected();
+   }
+ } 
+
+So any unespecified exception will be translated to an unexpected exception and it could not be managed by any client.
+
+== Exception data and exception hierarchy ==
+
+Throwers must provide enough information to the catchers for them to recover the best way. This information must be meaningfull to C++ code because human readable messages are complicated to parse and understand by handling code.
+
+Human readable messages are useful for debugging and bugreporting tasks and asserts covers this functionallity.
+
+The catcher can get this information from several sources:
+
+    * The exception type allows to do a first filter on what has happened and which error handling block you must use.
+    * Error codes can complement this first classification
+    * Realtime information of the error can be attached as attribute members of the exception object. This can help the catcher to improve the recovery.
+
+== Exception handling ==
+
+All CLAM exceptions subclasses from CLAM::Err. CLAM::Err itself, subclasses from std::exception.
+
+As a general rule, you ought not to catch exceptions on a general way. That is caching elipsis (...), std::exception, CLAM::Err... Catching an exception means giving a solution for it. Probably, if you are catching exceptions in a general way you aren not giving a suited solution.
+
+So take a look to the function interface and catch only the documented exceptions providing a solution for them.
+
+Developers tend to group in a try statement a very large piece of code when they refuse to do any handling. This is not what is intended with exceptions in CLAM. This kind of 'handling' is for assertions.
+
+== Contextualization ==
+
+What an exception means on a function context may not be the same on a higher context. For example, an AudioIO processing configuration method may receive an exception about an already used selected audio device. If you decide not to handle this error here, you may catch the device exception and throw an exception about the configuration fail that has more sense on the context.
+
+Figure 9: Contextualization example
+
+Although throwing a different exception you may embed the old exception onto the newer one. If the error handling code needs more information it can extract it from the embeded exception.
+
+CLAM::Err defines the interface that allows to embed and disembed exceptions.
