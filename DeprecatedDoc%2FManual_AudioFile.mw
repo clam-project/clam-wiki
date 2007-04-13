@@ -1,3 +1,5 @@
+[[DeprecatedDoc/CLAMUserManual|Back to Index]]
+
 = What is able to do? =
 
 Currently, CLAM is able to decode the following audio file formats:
@@ -65,3 +67,4 @@ Description:
 
 This examples shows how to play an arbitrary sound file with your soundcard
 Previous
+[[Image:Example.jpg]]
