@@ -1,3 +1,5 @@
+[[DeprecatedDoc/CLAMUserManual|Back to Index]]
+
 CLAM Visualization Module can be described as a set of tools that try to help application developers with the task of providing a Graphical User Interface to their applications. This help comes in the following forms:
 
     *As easy to deploy and simple objects called Plots, that are able to render on the screen common data structures, such as CLAM::Array, or CLAM ProcessingData objects, such as the Spectrum.
