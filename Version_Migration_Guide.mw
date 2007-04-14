@@ -4,6 +4,23 @@ This manual chapter gives hints on how to migrate existing code from one version
 
 clam_vmqt and clam_vmfl were dropped. Annotator/vmqt, based on qt4, contains a set of classes that should provide the same functionality than clam_vmqt but it is not API compatible.
 
+
+Multi/Mono AudioFile Reader/Writer have changed their configuration. For example your code was:
+
+ CLAM::AudioFile file;
+ file.OpenExisting("audio.wav");
+ CLAM::MonoAudioFileReaderConfig config;
+ config.SetSourceFile(file);
+ CLAM::MonoAudioFileReader reader(config);
+
+Now it will be:
+
+ CLAM::MonoAudioFileReaderConfig config;
+ config.SetSourceFile("audio.wav");
+ CLAM::MonoAudioFileReader reader(config);
+
+If you used the CLAM::AudioFile object further you can still get it from the processing using the GetAudioFile() method.
+
 == 0.98.0 to 0.99.0 ==
 
 The processing state 'Disabled' has been removed.
