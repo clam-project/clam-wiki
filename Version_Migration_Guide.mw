@@ -2,8 +2,11 @@ This manual chapter gives hints on how to migrate existing code from one version
 
 == 1.0 to 1.1 ==
 
+=== vmqt and vmfl ===
+
 clam_vmqt and clam_vmfl were dropped. Annotator/vmqt, based on qt4, contains a set of classes that should provide the same functionality than clam_vmqt but it is not API compatible.
 
+=== AudioFile ===
 
 Multi/Mono AudioFile Reader/Writer have changed their configuration. The SourceFile attribute is now a AudioIn/OutFilename instead a AudioFileTarget/Source. For example where your code was:
 
