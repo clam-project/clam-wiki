@@ -1,0 +1,8 @@
+== Audio File IO ==
+
+* Add Encoding and Endianess fields to writer's configs
+* Add TextDescriptors to writer's configs
+* Abstract accessors to reader's Header (or to its fields) and to TextDescriptors and remove AudioFile accessor
+* Simplify AudioFile hierarchy 
+* Simplify writer and reader Processings inner code
+* Do sample rate conversion
