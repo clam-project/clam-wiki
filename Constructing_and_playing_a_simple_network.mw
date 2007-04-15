@@ -27,8 +27,6 @@ To compile this example you can use this [[Minimal SConstruct to build with CLAM
   
  	// Configure the reader
  	CLAM::MonoAudioFileReaderConfig cfg;
- 	cfg.AddAll();
- 	cfg.UpdateData();
  	cfg.GetSourceFile().OpenExisting(argv[1]);
  	if (!cfg.GetSourceFile().IsReadable())
  		 return error("Could not open the file");
