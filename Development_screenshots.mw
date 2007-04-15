@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1 =
 <gallery>
+Image:Qsynth-knobs.png|Cute knobs from QSynth, ported and enhanced. QGradient based, no pixmap cache (made it slower)...
 Image:genderchange-pkwidgets.png|Pixmap button added to the realtime gender change interface. Now buttons with the 'InControlBool__' name prefix can send boolean controls on check.
 Image:pixmapbutton-properties.png|Pixmap button properties to change the base pixmap. By appending 000.png, 001.png... Buttons can also choose the triplet (normally different colors)
 Image:pkwidgets-fun2-paubox.png|Impressive widgets! this is how it looks in my box. --pau.
