@@ -4,9 +4,9 @@
 
 These guidelines aims that the code will be always well indented with the indentation size that each programmer prefers and keeps some parts of the code vertically aligned.
 
-    * Use only tabs to indent the beginning of each line.
-    * Use only spaces to align vertically (For example when writing variables declarations in two aligned columns or splitting a long line)
-    * If the aligned word is the first one in the line, you must keep the same number of tabulators that has the line you want to align with.
+* Use only tabs to indent the beginning of each line.
+* Use only spaces to align vertically (For example when writing variables declarations in two aligned columns or splitting a long line)
+* If the aligned word is the first one in the line, you must keep the same number of tabulators that has the line you want to align with.
 
 On the following example [tab] represents tabulators and . represents spaces used for alignment.
 
