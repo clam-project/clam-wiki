@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1 =
 <gallery>
+Image:Qsynth-knobs-configColors.png|That's what happens when you are able to change colors. Notice the shadowed pointer.
 Image:Qsynth-knobs-default.png|This is how they look on a default kubuntu theme.
 Image:Qsynth-knobs-NetEditor.png|That's how they look the knobs on the NetEditor.
 Image:Qsynth-knobs.png|Cute knobs from QSynth, ported and enhanced. QGradient based, no pixmap cache (made it slower), parametric geometry...
