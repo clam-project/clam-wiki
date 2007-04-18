@@ -1,9 +1,8 @@
-
 TODO: This howto is work-in-progress.
 
 If you have a processing object and you want it to behave differently given some configuration parameters, you should provide it a configuration object containing such parameters and implement the configuration method to respond to parameter setting.
 
-Configuration objects in CLAM must be a special kind of object called DynamicType. DynamicTypes provide, among other things, automatic interface generation to edit their properties on the NetworkEditor and XML serialization to dump store and restore configuration as part of the clamnetwork XML file.
+Configuration objects in CLAM must be a special kind of object called DynamicType. DynamicTypes provide, among other things, '''automatic interface generation''' to edit their properties on the NetworkEditor and '''XML serialization''' to dump store and restore configuration as part of the clamnetwork XML file.
 
 == Defining a configuration object ==
 
