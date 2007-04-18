@@ -82,6 +82,4 @@ On the NetworkEditor source tree add a cxx file containing the following lines:
  
  STANDARD_PROCESSING_CONFIG_REGISTER(MyProcessing::Config);
 
-Feel free also to add those lines to any existing files of registration. The only requirement for them is to be in a cxx file (not a hxx).
-
 == Calling the configurator by hand in your own program ==
