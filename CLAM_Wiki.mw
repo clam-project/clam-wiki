@@ -22,6 +22,7 @@
 * Programming with CLAM
 ** [[Minimal SConstruct to build with CLAM and Qt4]]
 ** [[Constructing and playing a simple network]]
+** [[Loading and playing a simple network]]
 ** [[Creating a minimal processing object]]
 ** [[Processings with controls]]
 ** [[Processings with configuration]]
