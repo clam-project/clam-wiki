@@ -24,11 +24,12 @@ This is an example of configuration object definition:
  	typedef MyProcessingConfig Config;
  	...
  
- protected:
+ public:
  	const CLAM::ProcessingConfig & GetConfig() const
  	{
  		return mConfig;
  	}
+ protected:
  	bool ConcreteConfigure(const CLAM::ProcessingConfig & config)
  	{
  		CopyAsConcreteConfig(mConfig, config);
