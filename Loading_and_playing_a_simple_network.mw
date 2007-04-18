@@ -1,6 +1,10 @@
-You can [[Constructing and playing a simple network|build the network by hand]] but you can also load an XML definition. Such definition could be built from the NetworkEditor or after building one by hand, by doing:
+You can [[Constructing and playing a simple network|build a CLAM network by hand]] but you can also load an XML definition.
+
+The XML definition of a network contains which processings are on the network, their configurations and how are they connected.
+Such definition could be built using the NetworkEditor or building one by hand, by doing:
  	XMLStorage::Dump(network, "mynetwork.clamnetwork", "Network");
 
+NetworkEditor is distributed with some interesting network examples.
 
 == main.cxx ==
 
