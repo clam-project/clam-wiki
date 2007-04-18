@@ -27,9 +27,9 @@ This is an example of configuration object definition:
  
  protected:
  	const CLAM::ProcessingConfig & GetConfig() const
-	{
-		return mConfig;
-	}
+ 	{
+ 		return mConfig;
+ 	}
  	bool ConcreteConfigure(const CLAM::ProcessingConfig & config)
  	{
  		CopyAsConcreteConfig(mConfig, config);
@@ -40,7 +40,6 @@ This is an example of configuration object definition:
  private:
  	Config mConfig;
  };
-
 
 == Reporting configuration errors ==
 
