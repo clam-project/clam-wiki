@@ -1,0 +1,34 @@
+== main.cxx ==
+
+ // Updated to 1.1 (svn)
+ 
+ #include <CLAM/Network.hxx>
+ #include <CLAM/PANetworkPlayer.hxx>
+ #include <CLAM/XMLStorage.hxx>
+ 
+ int error(const std::string & msg)
+ {
+ 	std::cerr << msg << std::endl;
+ 	return -1;
+ }
+ 
+ int main(int argc, char ** argv)
+ {
+ 	if (argc!=2) return error ("needs a network filename.");
+ 
+ 	CLAM::Network network;
+ 	try
+ 	{
+ 		CLAM::XMLStorage::Restore(network, argv[1]);
+ 	}
+ 	catch (CLAM::XmlStorageErr & e)
+ 	{
+ 		return error("Could not open the network file");
+ 	}
+ 
+ 	// Set the audio backend to PortAudio
+ 	network.SetPlayer(new CLAM::PANetworkPlayer);
+ 	network.Start();
+ 	sleep(4); // TODO: until?
+ 	network.Stop();
+ }
