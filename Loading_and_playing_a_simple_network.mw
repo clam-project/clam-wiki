@@ -1,3 +1,7 @@
+You can [[Constructing and playing a simple network|build the network by hand]] but you can also load an XML definition. Such definition could be built from the NetworkEditor or after building one by hand, by doing:
+ 	XMLStorage::Dump(network, "mynetwork.clamnetwork", "Network");
+
+
 == main.cxx ==
 
  // Updated to 1.1 (svn)
