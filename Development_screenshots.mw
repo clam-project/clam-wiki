@@ -2,6 +2,9 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1 =
 <gallery>
+Image:Qsynth-knobs-properties.png|Configuration properties: Three modes of mouse interaction: QDial, Angular and Linear.
+Image:Qsynth-knobs-shadows2.png|Casting shadows on a dark background.
+Image:Qsynth-knobs-shadows1.png|Casting shadows on a clear background.
 Image:openingFaustSvgInEog.png|First attempt to open a faust svg from NE. Eog doesn't permit navigation though.
 Image:Qsynth-knobs-configColors.png|That's what happens when you are able to change colors. Notice the shadowed pointer.
 Image:Qsynth-knobs-default.png|This is how they look on a default kubuntu theme.
