@@ -50,7 +50,11 @@ The configuration object may contain errors. In such case the ConcreteConfigure 
 
 == Useful attribute types ==
 
-* '''CLAM::Text''': Use it instead std::string for string containing spaces.
-* '''CLAM::Enum''': They can be used numerically as C enums but it has string representation on XML and you can query available values so the configuration dialog can retrieve the available values on a combobox.
-* '''CLAM::InFilename/CLAM::OutFilename''': Use it, or its subclasses to contain file names to be read. It renders the proper widget on the configuration and by subclassing it you can specify the extensions.
-* Other configurations objects can be embeded as configuration attributes. XML renders them as inner elements and the configuration provides a button that opens a second configuration dialog.
+* '''CLAM::Text''': They share interface with std::string but XML supports spaces. std::string reading just takes the first word. 'char *' should not be used in any case as attribute type.
+* '''CLAM::Enum''': They can be used numerically as C enums but they have string representation on XML and you can query available text values so the configuration dialog can retrieve the available values on a combobox.
+* '''CLAM::InFilename''' and '''CLAM::OutFilename''': Use them, or its subclasses, for file names to be read (or written). They renders the proper widget on the configuration. Subclasses can specify available extensions for a format.
+* Other dynamic types can be embeded as configuration attributes. XML renders them as inner elements. Configuration dialog provides a button that opens a second configuration dialog.
+
+TODO: Point to Doxygen and examples.
+
+TODO: Screenshots for the Config dialog interface.
