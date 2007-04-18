@@ -1,0 +1,56 @@
+
+TODO: This howto is work-in-progress.
+
+If you have a processing object and you want it to behave differently given some configuration parameters, you should provide it a configuration object containing such parameters and implement the configuration method to respond to parameter setting.
+
+Configuration objects in CLAM must be a special kind of object called DynamicType. DynamicTypes provide, among other things, automatic interface generation to edit their properties on the NetworkEditor and XML serialization to dump store and restore configuration as part of the clamnetwork XML file.
+
+== Defining a configuration object ==
+
+This is an example of configuration object definition:
+
+
+== Using your configuration object in the processing ==
+
+* Define a inner type alias MyProcessing::Config for your configuration
+* Add an 'Config mConfig' attribute to the class
+* Implement the GetConfig method to return such object
+* Implement the ConcreteConfigure method to be called every time it is provided a new configuration.
+* In such a method, firstly use the CopyAsConcreteConfig method to copy the object
+
+ class MyProcessing : CLAM::Processing
+ {
+ 	...
+ public:
+ 	typedef MyProcessingConfig Config;
+ 	...
+ 
+ protected:
+ 	const CLAM::ProcessingConfig & GetConfig() const
+	{
+		return mConfig;
+	}
+ 	bool ConcreteConfigure(const CLAM::ProcessingConfig & config)
+ 	{
+ 		CopyAsConcreteConfig(mConfig, config);
+ 		// Use here the config to setup you object
+ 		return true; // Configuration ok
+ 	}
+ 	...
+ private:
+ 	Config mConfig;
+ };
+
+
+== Reporting configuration errors ==
+
+The configuration object may contain errors. In such case the ConcreteConfigure implementation should take two actions:
+* Explaining the user the error by appending a message with the Processing::AddConfigErrorMessage method
+* Returning false so that CLAM knows the configuration failed.
+
+== Useful attribute types ==
+
+* '''CLAM::Text''': Use it instead std::string for string containing spaces.
+* '''CLAM::Enum''': They can be used numerically as C enums but it has string representation on XML and you can query available values so the configuration dialog can retrieve the available values on a combobox.
+* '''CLAM::InFilename/CLAM::OutFilename''': Use it, or its subclasses to contain file names to be read. It renders the proper widget on the configuration and by subclassing it you can specify the extensions.
+* Other configurations objects can be embeded as configuration attributes. XML renders them as inner elements and the configuration provides a button that opens a second configuration dialog.
