@@ -68,3 +68,25 @@ The configuration object may contain errors. In such case the ConcreteConfigure 
 TODO: Point to Doxygen and examples.
 
 TODO: Screenshots for the Config dialog interface.
+
+== Making the configuration dialogs available to the NetworkEditor ==
+
+: This step is expected to dissappear as CLAM evolves but,
+: meanwhile it is needed in order to make the configuration 
+: dialogs available for the network editor.
+
+On the NetworkEditor source tree add a cxx file containing the following lines:
+
+ #include "MyProcessing.hxx"
+ #include "RegisterConfiguratorLaunchers.hxx"
+ 
+ STANDARD_PROCESSING_CONFIG_REGISTER(MyProcessing::Config);
+
+Feel free to add those lines to any existing files of registration. The only requirement for them is to be in a cxx file.
+
+
+
+
+
+
+== Calling the configurator by hand in your own program ==
