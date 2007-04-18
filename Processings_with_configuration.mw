@@ -8,6 +8,9 @@ Configuration objects in CLAM must be a special kind of object called DynamicTyp
 
 This is an example of configuration object definition:
 
+TODO: Paste a simple example here
+
+TODO: Add the resulting XML and the Configuration dialog
 
 == Using your configuration object in the processing ==
 
