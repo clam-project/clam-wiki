@@ -50,6 +50,14 @@ The configuration object may contain errors. In such case the ConcreteConfigure 
 * Explaining the user the error by appending a message with the Processing::AddConfigErrorMessage method
 * Returning false so that CLAM knows the configuration failed.
 
+ 	...
+ 	if (SomeWeirdConditionHappens)
+ 	{
+ 		AddConfigErrorMessage("Some weird condition");
+ 		return false;
+ 	}
+ 	...
+
 == Useful attribute types for configuration objects ==
 
 * '''CLAM::Text''': They share interface with std::string but XML supports spaces. std::string reading just takes the first word. 'char *' should not be used in any case as attribute type.
