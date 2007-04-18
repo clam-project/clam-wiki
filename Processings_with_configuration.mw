@@ -60,10 +60,10 @@ The configuration object may contain errors. In such case the ConcreteConfigure 
 
 == Useful attribute types for configuration objects ==
 
-* '''CLAM::Text''': They share interface with std::string but XML supports spaces. std::string reading just takes the first word. 'char *' should not be used in any case as attribute type.
-* [[http://clam.iua.upf.edu/doc/CLAM-devel-doxygen/classCLAM_1_1Enum.html|CLAM::Enum]]: Their runtime representation is numerical like C enums but they have string representation on XML and you can query available text values so the configuration dialog can retrieve the available values on a combobox.
-* [[http://clam.iua.upf.edu/doc/CLAM-devel-doxygen/classCLAM_1_1InFilename.html|CLAM::InFilename]] and [[http://clam.iua.upf.edu/doc/CLAM-devel-doxygen/classCLAM_1_1InFilename.html|CLAM::OutFilename]]: Use them, or its subclasses, for file names to be read (or written). They renders the proper widget on the configuration. Subclasses can specify available extensions for a format.
-* '''CLAM::DynamicType''': Other dynamic types can be embeded as configuration attributes. XML renders them as inner elements. Configuration dialog provides a button that opens a second configuration dialog.
+* [http://clam.iua.upf.edu/doc/CLAM-devel-doxygen/classCLAM_1_1Text.html CLAM::Text]: They share interface with std::string but XML supports spaces. std::string reading just takes the first word. 'char *' should not be used in any case as attribute type.
+* [http://clam.iua.upf.edu/doc/CLAM-devel-doxygen/classCLAM_1_1Enum.html CLAM::Enum]: Their runtime representation is numerical like C enums but they have string representation on XML and you can query available text values so the configuration dialog can retrieve the available values on a combobox.
+* [[http://clam.iua.upf.edu/doc/CLAM-devel-doxygen/classCLAM_1_1InFilename.html CLAM::InFilename]] and [[http://clam.iua.upf.edu/doc/CLAM-devel-doxygen/classCLAM_1_1OutFilename.html CLAM::OutFilename]]: Use them, or its subclasses, for file names to be read (or written). They renders the proper widget on the configuration. Subclasses can specify available extensions for a format.
+* [http://clam.iua.upf.edu/doc/CLAM-devel-doxygen/classCLAM_1_1DynamicType.html CLAM::DynamicType]: Other dynamic types can be embeded as configuration attributes. XML renders them as inner elements. Configuration dialog provides a button that opens a second configuration dialog.
 
 TODO: Point to Doxygen and examples.
 
