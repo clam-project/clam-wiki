@@ -13,3 +13,5 @@ Just taking a clam-devel mail as a start. It should evolve into a kind of FAQ.
 * touching a .cxx does '''not''' force recompilation! scons is too smart: it does not use timestamps but the content of the source file to decide  when it has changed. removing compilation files under CLAM/scons/libs/* doesn't help either on forcing reinstall. the only think you can do is clean your installed files.
 
 * more radical things you can do: ''scons -c'' to clean intermediate compilation files or remove your source tree and do a clean checkout.
+
+* If compilation gives you errors while running 'moc', about a missing interface, probably you have the QTDIR missconfigure. Assure you have it defined to point a directory where moc can find things such include/QtCore, plugins/designer, mkspecs, bin/moc... Chech the compilation notes for your platform.
