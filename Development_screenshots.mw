@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1 =
 <gallery>
+Image:Spectral-UI.png|A well tuned user interface for Spectral Transformations network. It uses last widgets both vectorial with shades and pixmap based from pkwidgets. 
 Image:Qsynth-knobs-properties.png|Configuration properties: Three modes of mouse interaction: QDial, Angular and Linear.
 Image:Qsynth-knobs-shadows2.png|Casting shadows on a dark background.
 Image:Qsynth-knobs-shadows1.png|Casting shadows on a clear background.
