@@ -53,7 +53,8 @@ Things that core developers are eager to address but still not being refined in 
 * [[Devel/Changelog release policy]]
 * [[Devel/Mac OSX build]]
 * [[Devel/Linux Gentoo build]]
-* [[Devel/Windows build]]
+* [[Devel/Windows build]] with MS Visual Studio 2005 
+* [[Devel/Windows MinGW build]]
 * [[Devel/Compile and install troubleshooting]]
 
 == Prepare and apply a patch ==
