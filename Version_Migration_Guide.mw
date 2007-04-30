@@ -14,7 +14,7 @@ Multi/Mono AudioFile Reader/Writer have changed their configuration. The SourceF
  file.OpenExisting("audio.wav");
  if (file.IsReadable())
  {
-	// Manage error
+ 	// Manage error
  }
  CLAM::MonoAudioFileReaderConfig config;
  config.SetSourceFile(file);
