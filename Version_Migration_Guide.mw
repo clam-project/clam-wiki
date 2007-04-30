@@ -12,6 +12,10 @@ Multi/Mono AudioFile Reader/Writer have changed their configuration. The SourceF
 
  CLAM::AudioFile file;
  file.OpenExisting("audio.wav");
+ if (file.IsReadable())
+ {
+	// Manage error
+ }
  CLAM::MonoAudioFileReaderConfig config;
  config.SetSourceFile(file);
  CLAM::MonoAudioFileReader reader(config);
@@ -21,8 +25,15 @@ Now it will be:
  CLAM::MonoAudioFileReaderConfig config;
  config.SetSourceFile("audio.wav");
  CLAM::MonoAudioFileReader reader(config);
+ if (reader.GetExecState()==Unconfigured)
+ {
+	std::cerr << reader.GetErrorConfigMessage() << std::endl;
+	// Manage error
+ }
 
 If you used the CLAM::AudioFile object further you can still get it from the processing using the GetAudioFile() method.
+
+Concerning writers, now format parameters, formerly at AudioFile object, are mostly available directly as configuration object attributes. Such attributes are set by default so you can forget about them in most cases.
 
 == 0.98.0 to 0.99.0 ==
 
