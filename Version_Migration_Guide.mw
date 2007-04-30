@@ -31,9 +31,9 @@ Now it will be:
  	// Manage error
  }
 
-If you used the CLAM::AudioFile object further you can still get it from the processing using the GetAudioFile() method.
+If your code used the CLAM::AudioFile object further, you can still get it from the processing using the GetAudioFile() method.
 
-Concerning writers, now format parameters, formerly at AudioFile object, are mostly available directly as configuration object attributes. Such attributes are set by default so you can forget about them in most cases.
+Concerning writers, now format parameters, formerly at AudioFile object, are mostly available directly as configuration object attributes. Such attributes are set by default so you can forget about them in most cases. By default,
 
 == 0.98.0 to 0.99.0 ==
 
