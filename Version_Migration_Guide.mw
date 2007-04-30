@@ -27,8 +27,8 @@ Now it will be:
  CLAM::MonoAudioFileReader reader(config);
  if (reader.GetExecState()==Unconfigured)
  {
-	std::cerr << reader.GetErrorConfigMessage() << std::endl;
-	// Manage error
+ 	std::cerr << reader.GetErrorConfigMessage() << std::endl;
+ 	// Manage error
  }
 
 If you used the CLAM::AudioFile object further you can still get it from the processing using the GetAudioFile() method.
