@@ -3,3 +3,5 @@ Working with Eclipse and CLAM is pretty immediate. If you are used to working wi
 == Installation ==
 
 You should install the core Eclipse development environment either through the [http://www.eclipse.org/ Eclipse Webpage] or through any of the packages you will find for any major distribution. As far as I know Eclipse needs a non-free Java run-time (Sun's or IBM) so if you are not into that, stop reading.
+
+Apart from the main Eclipse package you need to install [http://www.eclipse.org/cdt/ CDT] for C/C++ development. This turns the otherwise java-centered environment into a real front-end for GNU tools like gcc or gdb.
