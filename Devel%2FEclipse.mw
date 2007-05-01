@@ -5,3 +5,15 @@ Working with Eclipse and CLAM is pretty immediate. If you are used to working wi
 You should install the core Eclipse development environment either through the [http://www.eclipse.org/ Eclipse Webpage] or through any of the packages you will find for any major distribution. As far as I know Eclipse needs a non-free Java run-time (Sun's or IBM) so if you are not into that, stop reading.
 
 Apart from the main Eclipse package you need to install [http://www.eclipse.org/cdt/ CDT] for C/C++ development. This turns the otherwise java-centered environment into a real front-end for GNU tools like gcc or gdb.
+
+Finally (and here comes the trick ;) you should install the SCons plugin for Eclipse. You have to install this through the Eclipse Update Manager so the best you can do is follow the instructions at the [http://nic-nac-project.de/~lothar/eclipse/update/SConsBuilderPlugin.html Plugin's web].
+
+== Setting up your workspace ==
+
+If you haven't worked with Eclipse before you might become very annoyed at first as it tends to be very intrusive unless you know how to tell it not to be. For instance, in the "default" mode it will copy all your sources to wherever you set your workspace (i.e. /home/xavier/workspace). To avoid this, in order to create a new project simply go to File->New->Project, select C/C++ category, select Standard Make Project and (VERY IMPORTANT) de-select the "use default location" checkbox and browse for your local CLAM sandbox (i.e. /home/Xavier/Sandbox/trunk/CLAM). Give a name to your project and you are almost set.
+
+== Setting the project to work with SCons and the CLAM build environment ==
+
+First thing you need to do is convert the Standard Make project to Scons by going to File->New->Other and selecting C/C++, and Convert project to Scons.
+
+Once you do that the environment will start compiling on its own as chances are that you have the "Build Automatically" option active. You can change that in the Project menu but I usually find it very handy.
