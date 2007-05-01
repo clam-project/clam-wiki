@@ -1,0 +1,5 @@
+Working with Eclipse and CLAM is pretty immediate. If you are used to working with IDE's (XCode, VisualStudio...) but want something that integrates well with CLAM (through SCons), is cross-platform, and Open Source... Eclipse should be your choice.
+
+== Installation ==
+
+You should install the core Eclipse development environment either through the [[Eclipse Webpage|http://www.eclipse.org/]] or through any of the packages you will find for any major distribution. As far as I know Eclipse needs a non-free Java run-time (Sun's or IBM) so if you are not into that, stop reading.
