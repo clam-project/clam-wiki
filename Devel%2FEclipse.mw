@@ -29,3 +29,5 @@ Note: Do not mess with any of the other SCons settings in this section as they w
 Once you have generated the CLAM libraries you can compile one of the Apps like Network Editor. Simply create a new project following the exact same instructions as before, convert it to SCons project and enter the flags. You should be all set.
 
 If you want to execute/debug the application all you need to to is define the path to the executable in the Run menu option Run...
+
+[[image:EclipseCLAM.png|300px]]
