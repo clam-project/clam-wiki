@@ -30,4 +30,6 @@ Once you have generated the CLAM libraries you can compile one of the Apps like 
 
 If you want to execute/debug the application all you need to to is define the path to the executable in the Run menu option Run...
 
+
+
 [[image:EclipseCLAM.png|300px]]
