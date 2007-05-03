@@ -1,0 +1,24 @@
+== The fast way ==
+
+* install the rpmbuild package
+ yum install rpm-build
+* Create a ~/.rpmmacros with those lines
+ %packager      CLAM Team <clam@iua.upf.edu>
+ %vendor        Universitat Pompeu Fabra
+ %_topdir       /home/testfarm/rpmbuild
+* Create the needed folders
+ mkdir -p ~/rpmbuild/{BUILD,RPMS,RPMS/i386,SOURCES,SPECS,SRPMS}
+* run the clam/CLAM/scripts/doSrcTarball.sh and move the tarballs to ~/rpmbuild/SOURCES
+* Do a symbolic link to the spec file
+ ln -s clam/CLAM/scons/libs/clam.spec ~/rpmbuild/SPECS
+* Execute the script
+ rpmbuild -ba /home/testfarm/rpmbuild/SPECS/clam-0.X.X.spec
+** It will build a source rpm in ~/rpmbuild/SRPMS containing the tarball and the SPEC file 
+** It will decompress the tarball into ~/rpmbuild/BUILD 
+** It will call the build section from ~/rpmbuild/BUILD 
+** It will call the install section with the specified BUILDROOT /var/tmp/CLAM-buildroot 
+** It will build the binary rpm packages into ~/rpmbuild/RPMS
+
+== The proper way ==
+
+Using mock
