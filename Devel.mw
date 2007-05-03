@@ -57,6 +57,7 @@ Things that core developers are eager to address but still not being refined in 
 * [[Devel/Windows MinGW build]]
 * [[Devel/Compile and install troubleshooting]]
 * [[Devel/Eclipse]]
+* [[Devel/Building RPM's]]
 
 == Prepare and apply a patch ==
 
