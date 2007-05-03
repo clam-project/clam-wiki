@@ -12,7 +12,7 @@ This is work on progress. Do not use this instructions till its finished.
 * Download and install python (2.5) and scons (0.96.1) Windows native versions. (I couldn't find a cygwin scons package)
 :These are direct download links for the versions I used, but prefere later versions if available.
 :http://www.python.org/ftp/python/2.5/python-2.5.msi
-:http://belnet.dl.sourceforge.net/sourceforge/scons/scons-0.96.1.win32.exe
+:http://belnet.dl.sourceforge.net/sourceforge/scons/scons-0.96.96.win32.exe
 * Update PATH environment var to point to python. Go to properties window of "My Computer" under the "Advanced" tab.
 ** In my case I had to add this: <pre>;C:\Python25</pre>
 ** from cygwin console use ''scons.bat'' from cmd console, just ''scons''
