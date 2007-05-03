@@ -12,13 +12,6 @@ Do the following:
  sudo mount /sys $FEDORA_ROOT/sys --bind
  df
  sudo chroot $FEDORA_ROOT
- # do whatever
- 
- sudo umount $FEDORA_ROOT/dev
- sudo umount $FEDORA_ROOT/home
- sudo umount $FEDORA_ROOT/proc
- sudo umount $FEDORA_ROOT/sys
-
 * TODO: Install dependencies
 * install the rpmbuild package
  yum install rpm-build
@@ -38,6 +31,13 @@ Do the following:
 ** It will call the build section from ~/rpmbuild/BUILD 
 ** It will call the install section with the specified BUILDROOT /var/tmp/CLAM-buildroot 
 ** It will build the binary rpm packages into ~/rpmbuild/RPMS
+ # do whatever
+* Once done, don't forget to exit the chroot and umount the mounted points
+ exit
+ sudo umount $FEDORA_ROOT/dev
+ sudo umount $FEDORA_ROOT/home
+ sudo umount $FEDORA_ROOT/proc
+ sudo umount $FEDORA_ROOT/sys
 
 == The proper way ==
 
