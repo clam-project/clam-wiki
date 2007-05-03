@@ -1,4 +1,4 @@
-== The fast way ==
+== The fast dirty way ==
 
 If you just want to build the packages for your own distribution state,
 and you don't care about build dependencies and having an up-to-date system.
