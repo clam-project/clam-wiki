@@ -39,4 +39,22 @@ Do the following:
 
 == The proper way ==
 
-Using mock
+'''In progress'''
+
+Using mock to compile with up-to-date packages, different distributions and assure dependencies correctness.
+
+
+* Init the chroot (you need to do this just once)
+ mock --debug -r fedora-6-i386-core init
+
+* Add additional sources to the mock configuration at /etc/mock/fedora-6-i386-core.cfg
+ [livna]
+ name=Livna.org Fedora Compatible Packages (stable)
+ baseurl=http://rpm.livna.org/fedora/6/i386/
+         http://livna.cat.pdx.edu/fedora/6/i386/
+ enabled=1
+ gpgcheck=0
+
+
+* Later builds, just need to update it
+ mock --debug -r fedora-6-i386-core chroot yum update
