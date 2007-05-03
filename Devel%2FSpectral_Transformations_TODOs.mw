@@ -1,0 +1,22 @@
+= spectral transformations =
+
+* (high) harmonizer: Turn realtime/fix and port to NE 
+* (high) morph: Turn realtime and port to NE
+* (high) time-stretch: Turn realtime and port to NE 
+* (high) pitch-discretization: Turn realtime and port to NE
+* Fix gender change: already rt. Improve residual
+* make a harmonizer prototype with sliders to control each voice pitch gain
+* make a prototype to control harmonizer voices by midi
+* odd-even-harmonic-ration: check
+* sine-filter: check
+* spectral-shape-shift: check
+
+= audio to midi =
+
+* realtime voice2midi
+* make a network with rt audio to midi-output
+
+
+
+
+* piano-roll widget for networkeditor/prototyper
