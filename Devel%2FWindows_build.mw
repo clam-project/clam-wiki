@@ -7,7 +7,7 @@ This is work on progress. Do not use this instructions till its finished.
 :http://msdn.microsoft.com/vstudio/express/downloads/
 * Download and install cygwin
 :http://www.cygwin.com
-:Install the following packages: From Devel: cvs, subversion, make. Do '''not''' install python cygwin package.
+:Install the following packages: From Devel: cvs, subversion, make, open-ssh client. Do '''not''' install python cygwin package.
 :recommended: xorg-x11-bin, gvim, wget
 * Download and install python (2.5) and scons (0.96.1) Windows native versions. (I couldn't find a cygwin scons package)
 :These are direct download links for the versions I used, but prefere later versions if available.
