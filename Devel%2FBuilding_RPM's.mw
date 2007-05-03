@@ -1,5 +1,18 @@
 == The fast way ==
 
+* If fedora is not your native platform chroot to the fedora partition
+ export FEDORA_ROOT=/media/sda5
+ sudo mount /dev $FEDORA_ROOT/dev --bind
+ sudo mount /home $FEDORA_ROOT/home --bind
+ sudo mount /proc $FEDORA_ROOT/proc --bind
+ sudo mount /sys $FEDORA_ROOT/sys --bind
+ df
+ sudo chroot $FEDORA_ROOT
+ sudo umount $FEDORA_ROOT/dev
+ sudo umount $FEDORA_ROOT/home
+ sudo umount $FEDORA_ROOT/proc
+ sudo umount $FEDORA_ROOT/sys
+
 * install the rpmbuild package
  yum install rpm-build
 * Create a ~/.rpmmacros with those lines
