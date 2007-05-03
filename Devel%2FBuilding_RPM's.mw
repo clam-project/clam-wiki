@@ -4,7 +4,6 @@ If you just want to build the packages for your own distribution state,
 and you don't care about build dependencies and having an up-to-date system.
 Do the following:
 
-* TODO: Install dependencies
 * If fedora is not your native platform chroot to the fedora partition
  export FEDORA_ROOT=/media/sda5
  sudo mount /dev $FEDORA_ROOT/dev --bind
@@ -18,6 +17,7 @@ Do the following:
  sudo umount $FEDORA_ROOT/proc
  sudo umount $FEDORA_ROOT/sys
 
+* TODO: Install dependencies
 * install the rpmbuild package
  yum install rpm-build
 * Create a ~/.rpmmacros with those lines
