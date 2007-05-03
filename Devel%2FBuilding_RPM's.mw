@@ -4,7 +4,7 @@ If you just want to build the packages for your own distribution state,
 and you don't care about build dependencies and having an up-to-date system.
 Do the following:
 
-* If fedora is not your native platform chroot to the fedora partition
+* If fedora is not your native platform chroot to the fedora partition.
  export FEDORA_ROOT=/media/sda5
  sudo mount /dev $FEDORA_ROOT/dev --bind
  sudo mount /home $FEDORA_ROOT/home --bind
@@ -12,6 +12,8 @@ Do the following:
  sudo mount /sys $FEDORA_ROOT/sys --bind
  df
  sudo chroot $FEDORA_ROOT
+ # do whatever
+ 
  sudo umount $FEDORA_ROOT/dev
  sudo umount $FEDORA_ROOT/home
  sudo umount $FEDORA_ROOT/proc
