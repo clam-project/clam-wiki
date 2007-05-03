@@ -31,7 +31,6 @@ Do the following:
 ** It will call the build section from ~/rpmbuild/BUILD 
 ** It will call the install section with the specified BUILDROOT /var/tmp/CLAM-buildroot 
 ** It will build the binary rpm packages into ~/rpmbuild/RPMS
- # do whatever
 * Once done, don't forget to exit the chroot and umount the mounted points
  exit
  sudo umount $FEDORA_ROOT/dev
