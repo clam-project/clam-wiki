@@ -64,4 +64,4 @@ I don't know how to set PATH on wine so i just copied them on the binary folder.
  $ ./a.exe
 
 
-[[image:Mingw32WineHelloQt.png|Our fist crosscompiled Qt app]]
+[[image:Mingw32WineHelloQt.png|center|Our fist crosscompiled Qt app]]
