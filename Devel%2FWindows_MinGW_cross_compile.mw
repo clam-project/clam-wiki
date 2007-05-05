@@ -41,3 +41,27 @@ This installs by default Qt on ~/.wine/fake_windows/Qt/4.2.3/, so
 [[image:Mingw32DesignerUnderWine.png|thumb|Mingw Designer running on wine]]
 
  $ export QTDIR=~/.wine/fake_windows/Qt/4.2.3/
+
+Edit the following file helloqt.cxx
+
+ #include <QtGui/QApplication>
+ #include <QtGui/QMessageBox>
+
+ int main(int argc, char** argv)
+ {
+         QApplication app(argc,argv);
+         QMessageBox::warning(0,"Warning","Windows is about to be deprecated as development platform!");
+ }
+
+And now lets compile it.
+
+ $ i586-mingw32msvc-g++ -L $QTDIR/lib -I $QTDIR/include a.cxx -l QtCore4 -lQtGui4
+
+Windows requires dll's to be on PATH or on the same dir.
+I don't know how to set PATH on wine so i just copied them on the binary folder.
+
+ $ cp $QTDIR/bin/*dll .
+ $ ./a.exe
+
+
+[[image:Mingw32WineHelloQt.png|Our fist crosscompiled Qt app]]
