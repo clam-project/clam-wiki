@@ -68,7 +68,14 @@ I don't know how to set PATH on wine so i just copied them on the binary folder.
 
 == PortAudio ==
 
- $ wget -c http://www.portaudio.com/archives/pa_stable_v19_061121.tar.gz
+ $ wget -c http://www.portaudio.com/archives/pa_snapshot_v19.tar.gz
  $ wget -c http://alleg.sourceforge.net/files/dx80_mgw.zip
 
-=== ====
+
+
+=== Asio ====
+
+You also should download [http://www.steinberg.net/329+M52087573ab0.html Asio SDK].
+
+
+[[File:Makefile]]
