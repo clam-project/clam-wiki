@@ -30,3 +30,8 @@ Lets download Qt.
  $ wget -c http://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/qt-win-opensource-4.2.3-mingw.exe
  $ chmod a+x qt-win-opensource-4.2.3-mingw.exe
  $ ./qt-win-opensource-4.2.3-mingw.exe
+
+I accepted to intall mingw32 again but in the fake windows.
+This installs by default Qt on ~/.wine/fake_windows/Qt/4.2.3/, so
+
+ $ export QTDIR=~/.wine/fake_windows/Qt/4.2.3/
