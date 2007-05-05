@@ -1,6 +1,6 @@
 '''Ongoing work on cross compiling CLAM for Windows from Ubuntu'''
 
-
+== Installing mingw34 and Wine in ubuntu ==
 
  sudo apt-get install mingw32
  sudo apt-get install wine
@@ -25,6 +25,8 @@ You can test that that works
 
 So it works! We are building and executing a windows binary.
 
+== Crosscompiling with Qt ==
+
 Lets download Qt.
 
  $ wget -c http://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/qt-win-opensource-4.2.3-mingw.exe
@@ -34,9 +36,8 @@ Lets download Qt.
 I accepted to intall mingw32 again but in the fake windows.
 This installs by default Qt on ~/.wine/fake_windows/Qt/4.2.3/, so
 
+ $ ~/.wine/fake_windows/Qt/4.2.3/bin/designer.exe
+
+[[image:Mingw32DesignerUnderWine.png|Mingw Designer running on wine]]
+
  $ export QTDIR=~/.wine/fake_windows/Qt/4.2.3/
-
-
-== Alternate qt from sources ==
-
- $ wget http://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/qt-win-opensource-src-4.2.3.zip
