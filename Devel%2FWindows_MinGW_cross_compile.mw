@@ -1,6 +1,6 @@
 '''Ongoing work on cross compiling CLAM for Windows from Ubuntu'''
 
-== Installing mingw34 and Wine in ubuntu ==
+== Installing mingw32 and Wine in ubuntu ==
 
  sudo apt-get install mingw32
  sudo apt-get install wine
