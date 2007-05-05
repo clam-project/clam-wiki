@@ -1,0 +1,32 @@
+'''Ongoing work on cross compiling CLAM for Windows from Ubuntu'''
+
+
+
+ sudo apt-get install mingw32
+ sudo apt-get install wine
+
+You can test that that works
+
+ $ cat > hello.cxx <<EOF
+ > #include <iostream>
+ > int main()
+ > {
+ >         std::cout << "Hello world"  << std::endl;
+ > }
+ > EOF
+ 
+ $ i586-mingw32msvc-g++ hello.cxx
+ 
+ $ file a.exe
+ a.exe: MS-DOS executable PE  for MS Windows (console) Intel 80386 32-bit
+ 
+ $ ./a.exe
+ Hello world
+
+So it works! We are building and executing a windows binary.
+
+Lets download Qt.
+
+ $ wget -c http://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/qt-win-opensource-4.2.3-mingw.exe
+ $ chmod a+x qt-win-opensource-4.2.3-mingw.exe
+ $ ./qt-win-opensource-4.2.3-mingw.exe
