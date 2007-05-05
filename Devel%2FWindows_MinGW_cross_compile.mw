@@ -66,4 +66,8 @@ I don't know how to set PATH on wine so i just copied them on the binary folder.
 
 [[image:Mingw32WineHelloQt.png|center|Our fist crosscompiled Qt app]]
 
-== ==
+== PortAudio ==
+
+ $ wget http://www.portaudio.com/archives/pa_stable_v19_061121.tar.gz
+
+=== ====
