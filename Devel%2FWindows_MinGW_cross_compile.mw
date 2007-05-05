@@ -38,6 +38,6 @@ This installs by default Qt on ~/.wine/fake_windows/Qt/4.2.3/, so
 
  $ ~/.wine/fake_windows/Qt/4.2.3/bin/designer.exe
 
-[[image:Mingw32DesignerUnderWine.png|Mingw Designer running on wine]]
+[[image:Mingw32DesignerUnderWine.png|thumb|Mingw Designer running on wine]]
 
  $ export QTDIR=~/.wine/fake_windows/Qt/4.2.3/
