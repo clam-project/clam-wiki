@@ -69,12 +69,23 @@ I don't know how to set PATH on wine so i just copied them on the binary folder.
 == PortAudio ==
 
  $ wget -c http://www.portaudio.com/archives/pa_snapshot_v19.tar.gz
- $ wget -c http://alleg.sourceforge.net/files/dx80_mgw.zip
 
 
 
-=== Asio ====
+=== Asio ===
 
 You also should download [http://www.steinberg.net/329+M52087573ab0.html Asio SDK].
 
+It just provides some dsp to build. Try to use the provided Makefile.
+
+TODO: A link or whatever for the Makefile.
+
+
 === DirectX ===
+
+The Allegro project has a binary for all the DX versions compiled with mingw.
+
+ $ wget -c http://alleg.sourceforge.net/files/dx80_mgw.zip
+
+The zip just has a 'lib' and 'include' folders, so create
+a directory named 'directx' and unzip there.
