@@ -52,11 +52,12 @@ Things that core developers are eager to address but still not being refined in 
 == HOWTO's ==
 
 * [[Devel/Changelog release policy]]
+* [[Devel/Compile and install troubleshooting]]
 * [[Devel/Mac OSX build]]
 * [[Devel/Linux Gentoo build]]
 * [[Devel/Windows build]] with MS Visual Studio 2005 
 * [[Devel/Windows MinGW build]]
-* [[Devel/Compile and install troubleshooting]]
+* [[Devel/Windows MinGW cross compile]]
 * [[Devel/Eclipse]]
 * [[Devel/Building RPM's]]
 
