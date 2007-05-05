@@ -65,3 +65,5 @@ I don't know how to set PATH on wine so i just copied them on the binary folder.
 
 
 [[image:Mingw32WineHelloQt.png|center|Our fist crosscompiled Qt app]]
+
+== ==
