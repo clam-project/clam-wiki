@@ -66,9 +66,7 @@ I don't know how to set PATH on wine so i just copied them on the binary folder.
 
 [[image:Mingw32WineHelloQt.png|center|Our fist crosscompiled Qt app]]
 
-== PortAudio ==
-
- $ wget -c http://www.portaudio.com/archives/pa_snapshot_v19.tar.gz
+== Compiling PortAudio ==
 
 Port audio has some dependencies. So let's provide them.
 
@@ -96,6 +94,9 @@ a directory named 'directx' and unzip there.
 === Portaudio ===
 
 Once the dependencies are available let's compile portaudio.
+
+ $ wget -c http://www.portaudio.com/archives/pa_snapshot_v19.tar.gz
+
 Apply the patch to have a sane Makefile and adapt the sources.
 
 TODO: Link to the patch.
