@@ -55,14 +55,13 @@ Edit the following file helloqt.cxx
 
 And now lets compile it.
 
- $ i586-mingw32msvc-g++ -L $QTDIR/lib -I $QTDIR/include a.cxx -l QtCore4 -lQtGui4
+ $ i586-mingw32msvc-g++ -o helloqt.exe helloqt.cxx -L $QTDIR/lib -I $QTDIR/include -l QtCore4 -lQtGui4 
 
 Windows requires dll's to be on PATH or on the same dir.
 I don't know how to set PATH on wine so i just copied them on the binary folder.
 
  $ cp $QTDIR/bin/*dll .
- $ ./a.exe
-
+ $ ./helloqt.exe
 
 [[image:Mingw32WineHelloQt.png|center|Our fist crosscompiled Qt app]]
 
