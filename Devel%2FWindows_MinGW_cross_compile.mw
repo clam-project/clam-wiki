@@ -72,14 +72,14 @@ Port audio has some dependencies. So let's provide them.
 
 === Asio ===
 
-You also should download [http://www.steinberg.net/329+M52087573ab0.html Asio SDK].
+Download [http://www.steinberg.net/329+M52087573ab0.html Asio SDK].
  $ unzip asiosdk2.2.zip
  $ mv ASIOSDK2 asiosdk2
 
-It just provides some dsp to build. Try to use the provided Makefile.
+It just provides a .dsp file to build. 
+I managed to have a Makefile to crosscompile with mingw.
 
 TODO: A link or whatever for the Makefile.
-
 
 === DirectX ===
 
