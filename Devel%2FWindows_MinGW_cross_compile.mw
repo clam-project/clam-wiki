@@ -100,4 +100,8 @@ Apply the patch to have a sane Makefile and adapt the sources.
 
 TODO: Link to the patch.
 
+To test it just issue this command from the build/dev-cpp folder (change the wire example if you want).
+
+$ i586-mingw32msvc-c++ ../../test/patest_wire.c portaudio19.dll -I ../../include/
+
 == ==
