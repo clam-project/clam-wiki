@@ -46,7 +46,7 @@ Edit the following file helloqt.cxx
 
  #include <QtGui/QApplication>
  #include <QtGui/QMessageBox>
-
+ 
  int main(int argc, char** argv)
  {
          QApplication app(argc,argv);
