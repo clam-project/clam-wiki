@@ -104,7 +104,7 @@ To test it just issue this command from the build/dev-cpp folder (change the wir
 
  $ i586-mingw32msvc-c++ ../../test/patest_wire.c portaudio19.dll -I ../../include/
 
-== FFTW3 ==
+== Crosscompiled FFTW3 ==
 
 A precompiled mingw binary is available [ftp://ftp.fftw.org/pub/fftw/fftw-3.1.2-dll.zip here].
 * Create a folder named 'fftw3', 'fftw3/lib' and 'fftw3/include'
@@ -112,6 +112,5 @@ A precompiled mingw binary is available [ftp://ftp.fftw.org/pub/fftw/fftw-3.1.2-
 * move the files to the proper directories
  $ mv *dll *def lib
  $ mv fftw3.h fftw3.f include
-
 
 == ==
