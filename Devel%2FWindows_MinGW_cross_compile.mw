@@ -104,4 +104,8 @@ To test it just issue this command from the build/dev-cpp folder (change the wir
 
  $ i586-mingw32msvc-c++ ../../test/patest_wire.c portaudio19.dll -I ../../include/
 
-== ==
+== FFTW3 ==
+
+It is available [ftp://ftp.fftw.org/pub/fftw/fftw-3.1.2-dll.zip here].
+* Create a folder named 'fftw3', 'fftw3/lib' and 'fftw3/include'
+* Enter the directory and decompress inside it,
