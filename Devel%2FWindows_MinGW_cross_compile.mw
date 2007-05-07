@@ -71,14 +71,18 @@ I don't know how to set PATH on wine so i just copied them on the binary folder.
 Let check whether Wine is able to run existing CLAM binaries.
 
 * Download the latest version of CLAM NetworkEditor for Windows.
-* Run winecfg and set the audio backend (i choose ALSA)
-* Obtain a missing DLL  http://www.dlldump.com/download-dll-files_new.php/dllfiles/M/MSVCIRT.DLL/7.0.2600.2180/download.html
-** THIS IS A PACKAGING BUG!!!
+* Install any or all wine audio backend (esd, alsa, jack...)
+* Run winecfg and set the desired audio backend (i chose ALSA)
+* Obtain a missing DLL '''THIS IS A PACKAGING BUG!!!''' http://www.dlldump.com/download-dll-files_new.php/dllfiles/M/MSVCIRT.DLL/7.0.2600.2180/download.html
 * Run it with Wine
 
 [[image:WineRunningNetworkEditorVC.png|center|Wine running the NetworkEditor compiled with VisualC]]
 
-It runs with a lot of underruns but it works and the goodness of the build procces on mingw can be tested.
+It runs with a lot of underruns but it works so we can check goodness of the build procces on mingw can be tested.
+
+Well not all works as desired. OpenGl Based views doesn't work properly.
+
+[[image:WineRunningNetworkEditorVC-OpenGlBug.png|center|As you introduce an OpenGl view, the interface framebuffer gets messed]]
 
 == Crosscompiling PortAudio ==
 
