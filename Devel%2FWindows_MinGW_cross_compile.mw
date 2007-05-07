@@ -65,6 +65,21 @@ I don't know how to set PATH on wine so i just copied them on the binary folder.
 
 [[image:Mingw32WineHelloQt.png|center|Our fist crosscompiled Qt app]]
 
+
+== Does it runs CLAM? ==
+
+Let check whether Wine is able to run existing CLAM binaries.
+
+* Download the latest version of CLAM NetworkEditor for Windows.
+* Run winecfg and set the audio backend (i choose ALSA)
+* Obtain a missing DLL  http://www.dlldump.com/download-dll-files_new.php/dllfiles/M/MSVCIRT.DLL/7.0.2600.2180/download.html
+** THIS IS A PACKAGING BUG!!!
+* Run it with Wine
+
+[image:WineRunningNetworkEditorVC.png|center|Wine running the NetworkEditor compiled with VisualC]
+
+It runs with a lot of underruns but it works and the goodness of the build procces on mingw can be tested.
+
 == Crosscompiling PortAudio ==
 
 Port audio has some dependencies. So let's provide them.
