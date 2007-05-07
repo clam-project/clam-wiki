@@ -117,7 +117,7 @@ Once the dependencies are available let's compile portaudio.
 
 Apply the patch to have a sane Makefile and adapt the sources.
 
-TODO: Link to the patch.
+TODO: Link to the patch. (it is on the clam-level list)
 
 To test it just issue this command from the build/dev-cpp folder (change the wire example if you want).
 
