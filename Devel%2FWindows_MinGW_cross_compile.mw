@@ -76,7 +76,7 @@ Let check whether Wine is able to run existing CLAM binaries.
 ** THIS IS A PACKAGING BUG!!!
 * Run it with Wine
 
-[image:WineRunningNetworkEditorVC.png|center|Wine running the NetworkEditor compiled with VisualC]
+[[image:WineRunningNetworkEditorVC.png|center|Wine running the NetworkEditor compiled with VisualC]]
 
 It runs with a lot of underruns but it works and the goodness of the build procces on mingw can be tested.
 
