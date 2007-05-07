@@ -113,4 +113,6 @@ A precompiled mingw binary is available [ftp://ftp.fftw.org/pub/fftw/fftw-3.1.2-
  $ mv *dll *def lib
  $ mv fftw3.h fftw3.f include
 
-== ==
+== ID3Lib ==
+
+http://kent.dl.sourceforge.net/sourceforge/id3lib/id3lib-3.8.3binaries.zip
