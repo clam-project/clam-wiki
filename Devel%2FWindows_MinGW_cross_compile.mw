@@ -324,10 +324,12 @@ It is missing the lib.
 
  CXX=i586-mingw32msvc-g++ RANLIB=i586-mingw32msvc-ranlib AR=i586-mingw32msvc-ar CC=i586-mingw32msvc-gcc ./configure mingw32
  make
+ cp src/.libs/libsndfile-1.dll ../dlls
  cp src/.libs/libsndfile-1.dll ../libsndfile/lib/
+ cp src/.libs/libsndfile.dll.a ../libsndfile/lib/libsndfile.lib
  cp src/libsndfile.la ../libsndfile/lib/
- cp src/sndfile.h ../libsndfile/include/
  cp src/libsndfile.def ../libsndfile/lib/
+ cp src/sndfile.h ../libsndfile/include/
 
 == CLAM ==
 
