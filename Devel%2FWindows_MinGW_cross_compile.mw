@@ -373,7 +373,7 @@ copy to the sandbox the following folders:
 * pthreads
 
 copy the dlls
- cp windows-external-libs/dlls/pthreadVCE.dll portaudio/lib/portaudio.dll dlls
+ cp windows-external-libs/dlls/pthreadVCE.dll dlls
 
  scons configure with_fftw3=1 with_fftw=0 audio_backend=portaudio xmlbackend=none prefix=~/CajitasDeArena/mingw/local sandbox_path=~/CajitasDeArena/mingw/
 
