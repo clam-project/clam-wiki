@@ -246,6 +246,11 @@ sources.remove("minimad.c")
 env.Library("libmad",sources)
 </pre>
 
+ scons
+ mkdir -p ../libmad/{lib/include}
+ cp mad.h ../libmad/include
+ cp libmad.lib ../libmad/lib
+
 == ID3Lib ==
 
 I tried those VC binaries and they don't work:
