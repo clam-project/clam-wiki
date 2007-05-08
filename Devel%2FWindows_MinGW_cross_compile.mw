@@ -357,24 +357,3 @@ copy the dlls
  cp windows-external-libs/dlls/{pthreadVCE.dll,ogg.dll,vorbisenc.dll,vorbis.dll} portaudio/lib/portaudio.dll dlls
 
  scons configure with_fftw3=1 with_fftw=0 audio_backend=portaudio xmlbackend=none prefix=~/CajitasDeArena/mingw/local sandbox_path=~/CajitasDeArena/mingw/
-
-
-== libogg and libvorbis ==
-
-I didn't managed to crosscompile them my self, but i found some precompiled binaries.
-
- cd download
- wget http://globulation2.org/dev/glob2_required_libs_mingw.tar.bz2
- mkdir glob
- cd glob/
- tar xvfj ../glob2_required_libs_mingw.tar.bz2
- cd ../..
- mkdir -p oggvorbis/{lib,include,bin}
- cp download/glob/lib/*ogg* oggvorbis/lib/
- cp download/glob/lib/*vorbis* oggvorbis/lib/
- cp -r download/glob/include/ogg/ oggvorbis/include/
- cp -r download/glob/include/vorbis/ oggvorbis/include/
- cp download/glob/bin/*ogg* dlls/
- cp download/glob/bin/*ogg* oggvorbis/bin/
- cp download/glob/bin/*vorbis* oggvorbis/bin/
- cp download/glob/bin/*vorbis* dlls/
