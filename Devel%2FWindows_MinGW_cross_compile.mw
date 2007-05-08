@@ -184,6 +184,7 @@ Change the file portaudio/src/hostapi/dsound/pa_win_ds_dynlink.h
  scons -f SConstruct.crossmingw
  mkdir lib
  cp portaudio.def portaudio.dll portaudio.lib lib
+ cp portaudio.dll ../dlls 
 
 To test it just issue this command from the build/dev-cpp folder (change the wire example if you want).
 
