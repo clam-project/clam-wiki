@@ -185,7 +185,8 @@ Change the file portaudio/src/hostapi/dsound/pa_win_ds_dynlink.h
 
 To test it just issue this command from the build/dev-cpp folder (change the wire example if you want).
 
- $ i586-mingw32msvc-c++ ../../test/patest_wire.c portaudio19.dll -I ../../include/
+ i586-mingw32msvc-c++ test/patest_sine.c portaudio.dll -I include/
+ ./a.exe
 
 == Crosscompiled FFTW3 ==
 
