@@ -247,7 +247,12 @@ Then:
  scons
  mkdir -p ../id3lib/{lib,include}
  cp id3lib.lib ../id3lib/lib/
- cp include/id3.h ../id3lib/include/   (Maybe we need to move the full directory)
+ cp -r include ../id3lib/   (Maybe we need to move the full directory)
+
+Edit id3lib/include/id3/globals.h line 44
+ < #ifdef WIN32
+ --
+ > #ifdef __MSVC_VER
 
 == CLAM ==
 
