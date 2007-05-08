@@ -335,6 +335,27 @@ http://www.mega-nerd.com/libsndfile/libsndfile-1.0.17.tar.gz
  cp src/libsndfile.def ../libsndfile/lib/
  cp src/sndfile.h ../libsndfile/include/
 
+== libogg and libvorbis ==
+
+I didn't managed to crosscompile them my self, but i found some precompiled binaries.
+
+ cd download
+ wget http://globulation2.org/dev/glob2_required_libs_mingw.tar.bz2
+ mkdir glob
+ cd glob/
+ tar xvfj ../glob2_required_libs_mingw.tar.bz2
+ cd ../..
+ mkdir -p oggvorbis/{lib,include,bin}
+ cp download/glob/lib/*ogg* oggvorbis/lib/
+ cp download/glob/lib/*vorbis* oggvorbis/lib/
+ cp -r download/glob/include/ogg/ oggvorbis/include/
+ cp -r download/glob/include/vorbis/ oggvorbis/include/
+ cp download/glob/bin/*ogg* dlls/
+ cp download/glob/bin/*ogg* oggvorbis/bin/
+ cp download/glob/bin/*vorbis* oggvorbis/bin/
+ cp download/glob/bin/*vorbis* dlls/
+
+
 == CLAM ==
 
 Apply the patch send to the mailing list.
