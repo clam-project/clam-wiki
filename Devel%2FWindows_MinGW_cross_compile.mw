@@ -113,7 +113,11 @@ a directory named 'directx' and unzip there.
 
 Once the dependencies are available let's compile portaudio.
 
- $ wget -c http://www.portaudio.com/archives/pa_snapshot_v19.tar.gz
+ wget -c http://www.portaudio.com/archives/pa_snapshot_v19.tar.gz
+ tar xvfz pa_snapshot_v19.tar.gz
+ cd portaudio
+ cat > SConstruct.crossmingw
+
 <pre>
 #!/usr/bin/python
 import glob
@@ -169,10 +173,15 @@ for blacksheep in blacklist:
 env.SharedLibrary("portaudio",sources+["../asiosdk2/asiosdk2.a"])
 </pre> 
 
+Change the file portaudio/src/hostapi/dsound/pa_win_ds_dynlink.h
+<pre>
+63c63
+< #include <DSound.h>
+---
+> #include <dsound.h>
+</pre>
 
-Apply the patch to have a sane Makefile and adapt the sources.
-
-TODO: Link to the patch. (it is on the clam-level list)
+ scons -f SConstruct.crossmingw
 
 To test it just issue this command from the build/dev-cpp folder (change the wire example if you want).
 
