@@ -308,7 +308,7 @@ Edit id3lib/include/id3/globals.h line 44
 
 === By using precompiled binary on its web ===
 
-It doesn't work:
+'''It doesn't work''' Try with the cross compiling option
 
 http://www.mega-nerd.com/libsndfile/libsndfile-1_0_17.zip
 
