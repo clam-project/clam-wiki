@@ -251,7 +251,7 @@ env.Library("libmad",sources)
  cp mad.h ../libmad/include
  cp libmad.lib ../libmad/lib
 
-== id3Lib ==
+== id3lib ==
 
 I tried those VC binaries and they don't work:
 
