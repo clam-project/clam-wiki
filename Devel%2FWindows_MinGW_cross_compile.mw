@@ -138,4 +138,39 @@ A precompiled mingw binary is available [ftp://ftp.fftw.org/pub/fftw/fftw-3.1.2-
 
 == ID3Lib ==
 
+I tried those VC binaries and they don't work:
+
 http://kent.dl.sourceforge.net/sourceforge/id3lib/id3lib-3.8.3binaries.zip
+
+So i tried to build from sources.
+
+http://ovh.dl.sourceforge.net/sourceforge/id3lib/id3lib-3.8.3.zip
+
+i had to comment out some lines on the configure.in (line 251)
+
+ C_CHECK_FUNCS(mkstemp)
+ #AC_CHECK_FUNCS(
+ #  truncate                      \
+ #  ,,AC_MSG_ERROR([Missing a vital function for id3lib])
+ #)
+ 
+ dnl Checks for typedefs, structures, and compiler characteristics.
+
+And create the following 'SConstruct' file:
+ import glob
+ 
+ env=Environment()
+ env.Tool('crossmingw', toolpath=['/home/vokimon/mingwtest/mingw/clam/CLAM/scons/sconstools'])
+ 
+ env.AppendUnique(CPPPATH=[
+ 	".", 
+ 	"include",
+ 	"include/id3",
+ 	"zlib/include",
+ 	])
+ env.AppendUnique(CPPDEFINES=[
+ 	"HAVE_CONFIG_H",
+ 	("ID3LIB_LINKOPTION",1),
+ 	])
+ sources = glob.glob("src/*cpp")+glob.glob('zlib/src/*.c')
+ env.Library("id3lib",sources)
