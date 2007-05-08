@@ -378,3 +378,7 @@ copy the dlls
  cp windows-external-libs/dlls/{pthreadVCE.dll,ogg.dll,vorbisenc.dll,vorbis.dll} portaudio/lib/portaudio.dll dlls
 
  scons configure with_fftw3=1 with_fftw=0 audio_backend=portaudio xmlbackend=none prefix=~/CajitasDeArena/mingw/local sandbox_path=~/CajitasDeArena/mingw/
+
+ scons install
+ cd ../NetworkEditor
+ QTDIR=~/.wine/drive_c/Qt/4.2.3/ scons clam_prefix=~/CajitasDeArena/mingw/local install_prefix=~/CajitasDeArena/mingw/local
