@@ -306,6 +306,10 @@ Edit id3lib/include/id3/globals.h line 44
 
 == libsndfile ==
 
+=== By using precompiled binary on its web ===
+
+It doesn't work:
+
 http://www.mega-nerd.com/libsndfile/libsndfile-1_0_17.zip
 
 It comes with precompiled binaries:
@@ -313,6 +317,16 @@ It comes with precompiled binaries:
  mkdir -p ../libsndfile/{lib,include}
  cp libsndfile-1.dll ../libsndfile/lib/libsndfile.dll
  cp sndfile.{h,hh} ../libsndfile/include/
+
+It is missing the lib.
+
+=== By crosscompiling ===
+
+ CXX=i586-mingw32msvc-g++ RANLIB=i586-mingw32msvc-ranlib AR=i586-mingw32msvc-ar CC=i586-mingw32msvc-gcc ./configure mingw32
+ make
+ cp src/.libs/libsndfile-1.dll ../libsndfile/lib/
+ cp src/libsndfile.la ../libsndfile/lib/
+ cp src/sndfile.h ../libsndfile/include/
 
 == CLAM ==
 
