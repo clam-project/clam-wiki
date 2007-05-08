@@ -327,6 +327,7 @@ It is missing the lib.
  cp src/.libs/libsndfile-1.dll ../libsndfile/lib/
  cp src/libsndfile.la ../libsndfile/lib/
  cp src/sndfile.h ../libsndfile/include/
+ cp src/libsndfile.def ../libsndfile/lib/
 
 == CLAM ==
 
