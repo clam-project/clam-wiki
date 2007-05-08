@@ -372,7 +372,6 @@ I didn't managed to crosscompile them my self, but i found some precompiled bina
  mkdir -p oggvorbis/{lib,include,bin}
  cp download/glob/lib/*ogg* oggvorbis/lib/
  cp download/glob/lib/*vorbis* oggvorbis/lib/
- cp download/glob/include/*ogg* oggvorbis/include/
  cp -r download/glob/include/ogg/ oggvorbis/include/
  cp -r download/glob/include/vorbis/ oggvorbis/include/
  cp download/glob/bin/*ogg* dlls/
