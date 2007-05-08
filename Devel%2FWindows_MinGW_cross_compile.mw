@@ -322,6 +322,10 @@ It is missing the lib.
 
 === By crosscompiling ===
 
+http://www.mega-nerd.com/libsndfile/libsndfile-1.0.17.tar.gz
+ 
+ tar xvfz libsndfile-1.0.17.tar.gz
+ cd libsndfile-1.0.17.tar.gz
  CXX=i586-mingw32msvc-g++ RANLIB=i586-mingw32msvc-ranlib AR=i586-mingw32msvc-ar CC=i586-mingw32msvc-gcc ./configure mingw32
  make
  cp src/.libs/libsndfile-1.dll ../dlls
