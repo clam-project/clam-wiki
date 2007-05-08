@@ -174,3 +174,9 @@ And create the following 'SConstruct' file:
  	])
  sources = glob.glob("src/*cpp")+glob.glob('zlib/src/*.c')
  env.Library("id3lib",sources)
+
+Adapt Tool path on the previous file to your clam scons location. 
+Then:
+ autoconf
+ CC=i586-mingw32msvc-gcc CXX=i586-mingw32msvc-g++ ./configure
+ scons
