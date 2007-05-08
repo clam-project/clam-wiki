@@ -304,6 +304,16 @@ Edit id3lib/include/id3/globals.h line 44
  --
  > #ifdef __MSVC_VER
 
+== libsndfile ==
+
+http://www.mega-nerd.com/libsndfile/libsndfile-1_0_17.zip
+
+It comes with precompiled binaries:
+
+ mkdir -p ../libsndfile/{lib,include}
+ cp libsndfile-1.dll ../libsndfile/lib/libsndfile.dll
+ cp sndfile.{h,hh} ../libsndfile/include/
+
 == CLAM ==
 
 Apply the patch send to the mailing list.
