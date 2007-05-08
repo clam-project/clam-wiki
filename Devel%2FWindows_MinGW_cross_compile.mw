@@ -264,5 +264,8 @@ The "z:\\home\\vokimon\\CajitasDeArena\\mingw" part will vary on your case.
 copy to the sandbox the following folders:
 * dlls
 * pthreads
+* libsndfile
+* oggvorbis
+
 
  scons configure with_fftw3=1 with_fftw=0 audio_backend=portaudio xmlbackend=none prefix=~/CajitasDeArena/mingw/local sandbox_path=~/CajitasDeArena/mingw/
