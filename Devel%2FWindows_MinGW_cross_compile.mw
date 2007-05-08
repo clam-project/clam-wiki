@@ -203,6 +203,13 @@ A precompiled mingw binary is available [ftp://ftp.fftw.org/pub/fftw/fftw-3.1.2-
  $ mv *dll *def lib
  $ mv fftw3.h fftw3.f include
 
+== LibMad ==
+
+With previously compiled binary of libmad didn't work for mingw so i recompiled it.
+
+http://kent.dl.sourceforge.net/sourceforge/mad/libmad-0.15.1b.tar.gz
+
+
 == ID3Lib ==
 
 I tried those VC binaries and they don't work:
