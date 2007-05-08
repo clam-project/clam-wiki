@@ -114,6 +114,61 @@ a directory named 'directx' and unzip there.
 Once the dependencies are available let's compile portaudio.
 
  $ wget -c http://www.portaudio.com/archives/pa_snapshot_v19.tar.gz
+<pre>
+#!/usr/bin/python
+import glob
+env=Environment()
+env.Tool('crossmingw', toolpath=['../clam/CLAM/scons/sconstools'])
+
+env.AppendUnique(CPPPATH=[
+	'../asiosdk2',
+	'../asiosdk2/common',
+	'../asiosdk2/host',
+	'../asiosdk2/host/pc',
+	'../directx/include',
+	'src/common',
+	'include',
+])
+env.AppendUnique(LDFLAGS = [
+	'-fmessage-length=0',
+	'--add-stdcall-alias',
+])
+
+env.AppendUnique(LIBS=[
+	'kernel32',
+	'user32',
+	'gdi32',
+	'shell32',
+	'ole32',
+	'uuid',
+	'winmm',
+])
+
+env.AppendUnique(CXXFLAGS=['-O3','-s','-Wall'])
+env.AppendUnique(CPPDEFINES=[
+	('BUILDING_DLL','1'),
+])
+
+sourcePaths = [
+	'src/common',
+	'src/os/win',
+	'src/hostapi/asio',
+	'src/hostapi/dsound',
+	'src/hostapi/wmme',
+]
+blacklist = [
+	'src/os/win/pa_x86_plain_converters.c',
+]
+sources=[]
+for sourcePath in sourcePaths :
+	sources += glob.glob(sourcePath+"/*.cpp")
+	sources += glob.glob(sourcePath+"/*.c")
+for blacksheep in blacklist:
+	sources.remove(blacksheep)
+
+env.SharedLibrary("portaudio",sources+["../asiosdk2/asiosdk2.a"])
+</pre> 
+
 
 Apply the patch to have a sane Makefile and adapt the sources.
 
