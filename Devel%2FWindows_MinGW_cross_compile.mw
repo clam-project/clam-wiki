@@ -180,3 +180,6 @@ Then:
  autoconf
  CC=i586-mingw32msvc-gcc CXX=i586-mingw32msvc-g++ ./configure
  scons
+ mkdir -p ../id3lib/{lib,include}
+ cp id3lib.lib ../id3lib/lib/
+ cp include/id3.h ../id3lib/include/   (Maybe we need to move the full directory)
