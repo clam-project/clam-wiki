@@ -282,4 +282,7 @@ copy to the sandbox the following folders:
 * oggvorbis
 * libmad
 
+copy the dlls
+ cp windows-external-libs/dlls/{pthreadVCE.dll,libsndfile.dll,ogg.dll,vorbisenc.dll,vorbis.dll} portaudio/lib/portaudio.dll dlls
+
  scons configure with_fftw3=1 with_fftw=0 audio_backend=portaudio xmlbackend=none prefix=~/CajitasDeArena/mingw/local sandbox_path=~/CajitasDeArena/mingw/
