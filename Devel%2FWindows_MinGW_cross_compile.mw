@@ -378,6 +378,8 @@ copy the dlls
  cp windows-external-libs/dlls/pthreadVCE.dll dlls
  cp /home/vokimon/.wine/drive_c/Qt/4.2.3/bin/*dll dlls
 
+ mkdir local
+ http://iua-share.upf.edu/mnt/svn/clam/trunk clam
  cd clam/CLAM
  scons configure with_fftw3=1 with_fftw=0 audio_backend=portaudio xmlbackend=none prefix=~/CajitasDeArena/mingw/local sandbox_path=~/CajitasDeArena/mingw/
  cp scons/libs/*/*dll ../../dlls
