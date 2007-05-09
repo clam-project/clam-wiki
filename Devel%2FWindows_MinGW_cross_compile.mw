@@ -330,6 +330,7 @@ http://www.mega-nerd.com/libsndfile/libsndfile-1.0.17.tar.gz
  cd libsndfile-1.0.17
  CXX=i586-mingw32msvc-g++ RANLIB=i586-mingw32msvc-ranlib AR=i586-mingw32msvc-ar CC=i586-mingw32msvc-gcc ./configure mingw32
  make
+ mkdir ../libsndfile/{lib,include,bin}
  cp src/.libs/libsndfile-1.dll ../dlls
  cp src/.libs/libsndfile-1.dll ../libsndfile/lib/
  cp src/.libs/libsndfile.dll.a ../libsndfile/lib/libsndfile.lib
