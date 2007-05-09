@@ -248,7 +248,7 @@ env.Library("libmad",sources)
 </pre>
 
  scons
- mkdir -p ../libmad/{lib/include}
+ mkdir -p ../libmad/{lib,include}
  cp mad.h ../libmad/include
  cp libmad.lib ../libmad/lib
 
