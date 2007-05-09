@@ -272,6 +272,12 @@ i had to comment out some lines on the configure.in (line 251)
  
  dnl Checks for typedefs, structures, and compiler characteristics.
 
+Edit include/id3/globals.h line 44
+ < #ifdef WIN32
+ --
+ > #ifdef __MSVC_VER
+
+
 And create the following 'SConstruct' file:
  import glob
  
@@ -298,12 +304,7 @@ Then:
  scons
  mkdir -p ../id3lib/{lib,include}
  cp id3lib.lib ../id3lib/lib/
- cp -r include ../id3lib/   (Maybe we need to move the full directory)
-
-Edit id3lib/include/id3/globals.h line 44
- < #ifdef WIN32
- --
- > #ifdef __MSVC_VER
+ cp -r include ../id3lib/
 
 == libsndfile ==
 
