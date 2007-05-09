@@ -197,13 +197,12 @@ A precompiled mingw binary is available [ftp://ftp.fftw.org/pub/fftw/fftw-3.1.2-
 * Create a folder named 'fftw3', 'fftw3/lib' and 'fftw3/include'
 * Enter the directory and decompress inside it,
 * move the files to the proper directories
- $ mkdir fftw3
- $ cd fftw3
- $ mkdir lib include
- $ unzip ../fftw-3.1.2-dll.zip
- $ mv *dll *def lib
- $ mv fftw3.h fftw3.f include
- $ cp lib/libfftw3-3.dll dlls/
+ mkdir -p fftw3{lib,include} dlls
+ cd fftw3
+ unzip ../fftw-3.1.2-dll.zip
+ mv *dll *def lib
+ mv fftw3.h fftw3.f include
+ cp lib/libfftw3-3.dll ../dlls/
 
 == LibMad ==
 
