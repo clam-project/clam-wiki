@@ -1,9 +1,12 @@
-= spectral transformations =
+= Unsorted tasks =
 
-* (high) harmonizer: Turn realtime/fix and port to NE 
-* (high) morph: Turn realtime and port to NE
-* (high) time-stretch: Turn realtime and port to NE 
-* (high) pitch-discretization: Turn realtime and port to NE
+Not all the following tasks are meant to be part of the GSoC project.
+
+== spectral transformations ==
+* (high) harmonizer: port it to realtime and NE 
+* (high) morph: port it to realtime and NE
+* (high) time-stretch: port it realtime and NE 
+* (high) pitch-discretization: port it realtime and NE 
 * Fix gender change: already rt. Improve residual
 * make a harmonizer prototype with sliders to control each voice pitch gain
 * make a prototype to control harmonizer voices by midi
@@ -11,12 +14,18 @@
 * sine-filter: check
 * spectral-shape-shift: check
 
-= audio to midi =
+== audio to midi ==
 
 * realtime voice2midi
 * make a network with rt audio to midi-output
-
-
-
-
 * piano-roll widget for networkeditor/prototyper
+
+= milestones =
+
+# pitch-discretization working in NE and prototyped example
+# ''other transformations?''
+# audio2midi in NE (using smsanalysis ''fundamental'' output)
+# piano-roll (instant) view in NE and Prototyper/Designer
+# harmonizer working in NE and prototyped example
+# prototyped example of harmonized voices control.led by midi
+# complex transformations: time-stretch and morph
