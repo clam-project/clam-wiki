@@ -1,10 +1,11 @@
 == TODO ==
 
-* (high) use the real value (get rid of the fixed-value hack)
-* (high) clamp values outside the range
+
 * (high) add examples to example-data
 ----
 * (med) more verbose keys for LadspaFactory. at least including "ladspa"
+* '''Done''' use the real value (get rid of the fixed-value hack)
+* '''Done''' clamp values outside the range
 * '''Done'''  (med) load plugins from LADSPA_PATH plus standard paths
 * '''Dropped''' (low) add Ladspa tree and order it by cat
 ** '''Dropped''' (low) check for # of plugins to make a branch in the tree
