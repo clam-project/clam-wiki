@@ -359,6 +359,14 @@ I didn't managed to crosscompile them my self, but i found some precompiled bina
  cp download/glob/bin/*vorbis* dlls/
 
 
+== pthreads ==
+
+ cd download
+ wget ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-2-8-0-release.exe
+ cd ..
+ unzip download/pthreads-w32-2-8-0-release.exe
+
+
 == CLAM ==
 
 Apply the patch send to the mailing list.
