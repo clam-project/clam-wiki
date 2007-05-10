@@ -1,8 +1,8 @@
 == TODO ==
 
-
 * (high) add examples to example-data
 ----
+* '''Done''' (must change interaction?) automatic in-control sliders in networkeditor
 * (med) more verbose keys for LadspaFactory. at least including "ladspa"
 * '''Done''' use the real value (get rid of the fixed-value hack)
 * '''Done''' clamp values outside the range
@@ -10,7 +10,7 @@
 * '''Dropped''' (low) add Ladspa tree and order it by cat
 ** '''Dropped''' (low) check for # of plugins to make a branch in the tree
 * '''Done''' (med) check for non-valid directory
-* open ladspa libs bug
+* (med) open ladspa libs bug
 * (med) extract implementation in file LadspaFactory.cxx
 * (med) '''new''' make LadspaFactory.hxx non-coupled with ladspa headers. so uses of LFactory don't need #ifdef USE_LADSPA. use Pimpl C++ idiom in LFactory.
 * (med) update LadspaFactoryTest with "real" classes
@@ -26,9 +26,8 @@
 
 
 === high level TODOs to discuss ===
-
 * save controls state with network
-* automatic in-control sliders in networkeditor
+
 
 == DONE ==
 * (med) Network: catch FactoryError
