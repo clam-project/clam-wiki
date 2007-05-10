@@ -364,8 +364,9 @@ I didn't managed to crosscompile them my self, but i found some precompiled bina
  cd download
  wget ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-2-8-0-release.exe
  cd ..
- unzip download/pthreads-w32-2-8-0-release.exe
-
+ unzip download/pthreads-w32-2-8-0-release.exe Pre-built.2/*
+ mv Pre-built.2 pthreads
+ cp pthreads/lib/pthreadGCE2.dll dlls/
 
 == CLAM ==
 
