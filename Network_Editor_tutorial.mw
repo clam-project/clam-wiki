@@ -208,11 +208,12 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 
 ==SMS Transformations==
 
-*Appart from the regular STFFT (Phase Vocoder) implementation, CLAM also has implemented the Sinusoidal plus Residual Model (a.k.a. SMS). Even more interesting transformations can be implemented with that model. Now that you have a working knowledge of the NetworkEditor the best you can do is to start off with an example. Open the freqshift-gains-plots.xml file (in windows this file should be in your working directory and in Linux you should point your browser to /usr/share/networkeditor/example-data) network and experiment with it, changing the SMS Transformations for others in the same category.
+Besides the regular STFFT (Phase Vocoder) implementation, CLAM also has implemented the Sinusoidal plus Residual Model (a.k.a. SMS). That model identifies the sinusoids (the tonal part) on the spectral representation and substract them to get residual (the noisy part). By doing so, we can process both components separatelly so even more interesting transformations can be implemented with that model. 
+
+Now that you have a working knowledge of the NetworkEditor the best you can do is to start off with an example. Open SMSMess.clamnetwork and experiment with it, changing the SMS Transformations for others in the same category.
 
 
 [[Image:SMSFreqShiftGainsPlots.png|500px|center]]
-
 
 == Building Interfaces with the Prototyper ==
 
