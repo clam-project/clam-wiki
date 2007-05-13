@@ -237,6 +237,7 @@ Name bindings:
 * PlaybackIndicator
 :  To be bound to a Label. It adds a indicator that says whether the network is playing.
 
+When adding the names, you must change any space into a triple underline.
 
 The Prototyper is a utility that allows wrap a network you built
 with the NetworkEditor on an interface as a stand alone application.
