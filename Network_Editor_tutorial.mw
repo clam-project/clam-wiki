@@ -218,6 +218,26 @@ Now that you have a working knowledge of the NetworkEditor the best you can do i
 == Building Interfaces with the Prototyper ==
 
 
+Name bindings:
+
+* InControl__<em>ProcessingName</em>__<em>InControlName</em>:
+:  For sliders and knobs, sends integer numbers to the in control
+* InControlFloat__<em>ProcessingName</em>__<em>InControlName</em>
+:  The same as the previous one but sends double by dividing by 100
+* InControlBool__<em>Processing</em>__<em>Control</em>: 
+:  For check buttons (Radio buttons, check boxes or 
+* AudoFile__<em>ProcessingName</em>:
+:  Binds buttons with MonoAudioFileReaders, on click opens a file selection dialog.
+* PlayButton:
+:  Starts the network on click
+* StopButton:
+:  Stops the network on click
+* BackendIndicator
+:  To be bound to a Label. It adds a indicator of which backend is used.
+* PlaybackIndicator
+:  To be bound to a Label. It adds a indicator that says whether the network is playing.
+
+
 The Prototyper is a utility that allows wrap a network you built
 with the NetworkEditor on an interface as a stand alone application.
 '''No compilation, and no programming is involved.'''
