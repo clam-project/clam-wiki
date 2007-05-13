@@ -1,0 +1,175 @@
+
+This is the development page of the NetworkEditor port to Qt4. 
+
+== Tasks ==
+
+* Implement the check that all inports are connected before play
+* Prototyper: Rethink connector names to use for the prototyper
+* Solve code duplication on play prevention code (unconfigured, unconnected, empty, no blocking processing...) for Prototyper a Network editor
+* Solve code duplication on backend selection for Prototyper a Network editor
+* Solve code duplication on commandline processing for Prototyper a Network editor
+* Investigate how not having to register the configurations
+* Control senders clean up
+** Different control sender widgets (or else limit the configuration)
+** Refactor: not updating the embeded widget geometry on every repaint
+** Use a thread safe way of sending controls from GUI (both qt4 and qt3 ways are unsafe)
+* Refactor connection loading code in NetworkCanvas
+* Select (suggest) the audio backend on command line
+* Select (suggest) the audio device on command line
+* Unify External (Source/Sink) and explicit (AudioIn/Out) audio inputs and outputs so a network will work whatever the mode (jack, alsa, protaudio, embeded into a network...)
+* Saving/Loading dummy networks
+* 'Changed' flag
+** Set it on every change ( see checklist bellow )
+** Both in dummy and clam mode
+* Review loading error check list (bellow)
+* Review tooltip logic
+** (./) Fix: Big tooltips jumps out the area when pass the border
+** Fix: Zoom is not considered when considering the border
+* Keep the offset of the viewport when moving boxes to < (0,0)
+* Solve the MIDIManager hack (still not done in qt4)
+* Move new colors to canvas as methods
+* Checks on renaming
+** Which processing names are valids?
+** '.' should not be valid <- is used as connector full name separator Processing.Connector
+** '__' (two or more underlines) should not be valid <- is used in prototyper name as place holder for space and separator between the processing and the connector
+processings/ports/controls crashes.
+* Processing selection
+** (./) Add a 'selected' state to ProcessingBoxes
+** (./) Add a visual cue to the selected state
+** (./) Make the canvas control the selection changes on click
+** (./) Enable the control key to multiple selection.
+** (./) Enable a drag mode for the selection box
+** Select all action
+** Deselect all action
+** Click on canvas deselects all when no ctrl pressed
+** Implement selection actions
+*** (./) Remove
+*** Move
+*** Copy & paste
+* Monitors:
+** (./) Make Chroma peaks available for the Prototyper
+** New ones:
+*** Tunning needle
+*** ConstantQ view
+*** Chords rank (to see other than m and M chords)
+*** Chromagram
+*** Spectrogram
+*** Sinusoidal tracks
+* Abstract meta information such as units, scale, ranges, labels, circularity... as DataSource interface.
+* Unify widgets thanks to this abstraction
+* Push data abstraction to the Pools and to the Ports.
+
+= Feature proposals =
+
+* Undo
+* Dropping a wire over a processing body connects to any suitable connector
+** Hover should not work through an overlapping processing.
+
+
+= Testing Check Lists =
+
+
+== Changed flag ==
+
+* Set it on every change
+** Proc added from context menu
+*** No when user cancelled the name dialog
+*** No when the type does not exists
+** Proc added by drag
+*** No when the type does not exists
+** Proc removed
+** Proc reconfigured
+*** No when user cancelled the config dialog
+** Proc renamed
+*** No when user cancelled the name dialog
+** Connection
+*** No when the connection was discarded as illegal
+** Disconnection
+*** No when no wire is involved with port
+** Move?
+** Resize?
+** Both in dummy and clam mode
+* Reset it on:
+** new
+** load
+** save/save as
+
+
+== Network loading errors ==
+ * XML Error
+ * Bad processing definition
+   * Type not available
+   * Name already exists in network
+   * Invalid name (dots or whatever)
+ * Bad processing configuration
+   * Wrong configuration parameter name
+ * Bad port/control connection definition
+   * Source processing not in network
+   * Source connector not in processing
+   * Target processing not in network
+   * Target connector not in processing
+   * Non connectable peers
+     * Incompatible types
+     * Already connected peers
+     * Other connection present (just for InPorts)
+
+== Play-disturbing actions ==
+ 
+ * Should be reviewed in which cases they disturb and which ones they doesn't
+   * Adding a wire
+   * Removing a wire
+   * Adding a processing
+   * Removing a processing
+   * Configuring a processing
+   * Load/Clear the network
+   * More?
+
+
+= Design thoughts =
+
+== Model-Widget interface ==
+
+ * Widget actions with implications on the network and things to check afterwards
+   * Add a processing of a given class
+     * Was it possible?
+     * Name?
+   * Connect ports/controls
+     * Was it possible?
+   * Remove wires connected to a given port/control
+     * (?)
+   * Remove a processing and related wires
+     * (?)
+   * Configure a processing
+     * Configuration status?
+     * Ports/Connections changed?
+   * Rename a processing
+     * Was it possible (valid and unique)?
+ * Widget required information
+   * The name of a created processing
+   * The number of ports/controls
+   * The name of a port/control by index
+   * The processing status
+   * Whether two connectors are connectable
+ * Things to be checked
+   * Network status changes: It is playing?
+   * Processing status changes: Are they configured?
+   * Could we get the list of processings for the processing toolbox?
+   * Can we rely on the processing name to index model objects?
+   * Is any one, appart from canvas and new/load actions, modifiying the model?
+ * Full update (on new/load) alternatives
+   * Push: the model manipulates the canvas
+   * Pull: canvas ask the model all the information
+
+Notes about the interface on the Qt3 version:
+ * ProcessingController
+   * slots
+      * send control -> does it directly
+      * name changed -> bypass, emits the same
+      * configure processing -> agh, sync-signals a lot of things Configure, then change state. If running, starts and stops the processing (just that processing!!) and if it changes the connectors it removes connections and updates the connectors on the presentation
+ * NetworkController
+
+
+To ask:
+ * stoping just the processing being configured instead the full network is the proper thing to do?
+  
+   stop the whole network. or else the flowcontrol will assert (or fire a unready processing). Note that this could be done transparently to the user. I mean, the user can perceive that the network is playing all the time. ''--pau''
