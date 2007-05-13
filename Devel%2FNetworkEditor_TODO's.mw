@@ -10,7 +10,7 @@ This is the development page of the NetworkEditor port to Qt4.
 * Solve code duplication on commandline processing for Prototyper a Network editor
 * Investigate how not having to register the configurations
 * Control senders clean up
-** (./) Different control sender widgets (or else limit the configuration)
+** [[Image:Done.png]] Different control sender widgets (or else limit the configuration)
 ** Refactor: not updating the embeded widget geometry on every repaint
 ** Use a thread safe way of sending controls from GUI
 * Refactor connection loading code in NetworkCanvas
@@ -23,7 +23,7 @@ This is the development page of the NetworkEditor port to Qt4.
 ** Both in dummy and clam mode
 * Review loading error check list (bellow)
 * Review tooltip logic
-** (./) Fix: Big tooltips jumps out the area when pass the border
+** [[Image:Done.png]] Fix: Big tooltips jumps out the area when pass the border
 ** Fix: Zoom is not considered when considering the border
 * Keep the offset of the viewport when moving boxes to < (0,0)
 * Solve the MIDIManager hack (still not done in qt4)
