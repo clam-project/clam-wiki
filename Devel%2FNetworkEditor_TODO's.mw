@@ -4,7 +4,7 @@ This is the development page of the NetworkEditor port to Qt4.
 == Tasks ==
 
 * Implement the check that all inports are connected before play
-* [[Image::Done.png]] Prototyper: Rethink connector names to use for the prototyper
+* [[Image:Done.png]] Prototyper: Rethink connector names to use for the prototyper
 * Solve code duplication on play prevention code (unconfigured, unconnected, empty, no blocking processing...) for Prototyper a Network editor
 * Solve code duplication on backend selection for Prototyper a Network editor
 * Solve code duplication on commandline processing for Prototyper a Network editor
