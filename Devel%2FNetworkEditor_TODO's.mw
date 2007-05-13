@@ -39,12 +39,13 @@ processings/ports/controls crashes.
 ** (./) Make the canvas control the selection changes on click
 ** (./) Enable the control key to multiple selection.
 ** (./) Enable a drag mode for the selection box
-** Select all action
-** Deselect all action
-** Click on canvas deselects all when no ctrl pressed
+** (./) Select all action
+** (./) Deselect all action
+** (./) Click on canvas deselects all when no ctrl pressed
+** Box selection to take int account just the body (not the connectors)
 ** Implement selection actions
 *** (./) Remove
-*** Move
+*** (./) Move
 *** Copy & paste
 * Monitors:
 ** (./) Make Chroma peaks available for the Prototyper
