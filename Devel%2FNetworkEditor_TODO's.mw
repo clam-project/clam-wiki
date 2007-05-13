@@ -4,22 +4,22 @@ This is the development page of the NetworkEditor port to Qt4.
 == Tasks ==
 
 * Implement the check that all inports are connected before play
-* Prototyper: Rethink connector names to use for the prototyper
+* [[Image::Done.png]] Prototyper: Rethink connector names to use for the prototyper
 * Solve code duplication on play prevention code (unconfigured, unconnected, empty, no blocking processing...) for Prototyper a Network editor
 * Solve code duplication on backend selection for Prototyper a Network editor
 * Solve code duplication on commandline processing for Prototyper a Network editor
 * Investigate how not having to register the configurations
 * Control senders clean up
-** Different control sender widgets (or else limit the configuration)
+** (./) Different control sender widgets (or else limit the configuration)
 ** Refactor: not updating the embeded widget geometry on every repaint
-** Use a thread safe way of sending controls from GUI (both qt4 and qt3 ways are unsafe)
+** Use a thread safe way of sending controls from GUI
 * Refactor connection loading code in NetworkCanvas
 * Select (suggest) the audio backend on command line
 * Select (suggest) the audio device on command line
 * Unify External (Source/Sink) and explicit (AudioIn/Out) audio inputs and outputs so a network will work whatever the mode (jack, alsa, protaudio, embeded into a network...)
 * Saving/Loading dummy networks
-* 'Changed' flag
-** Set it on every change ( see checklist bellow )
+* Undo feature
+* Review 'Changed' flag check list (see checklist bellow )
 ** Both in dummy and clam mode
 * Review loading error check list (bellow)
 * Review tooltip logic
@@ -33,7 +33,8 @@ This is the development page of the NetworkEditor port to Qt4.
 ** '.' should not be valid <- is used as connector full name separator Processing.Connector
 ** '__' (two or more underlines) should not be valid <- is used in prototyper name as place holder for space and separator between the processing and the connector
 processings/ports/controls crashes.
-* Processing selection
+* Box selection to take int account just the body (not the connectors)
+* (./) Processing selection
 ** (./) Add a 'selected' state to ProcessingBoxes
 ** (./) Add a visual cue to the selected state
 ** (./) Make the canvas control the selection changes on click
@@ -42,11 +43,9 @@ processings/ports/controls crashes.
 ** (./) Select all action
 ** (./) Deselect all action
 ** (./) Click on canvas deselects all when no ctrl pressed
-** Box selection to take int account just the body (not the connectors)
 ** Implement selection actions
 *** (./) Remove
 *** (./) Move
-*** Copy & paste
 * Monitors:
 ** (./) Make Chroma peaks available for the Prototyper
 ** New ones:
@@ -59,6 +58,7 @@ processings/ports/controls crashes.
 * Abstract meta information such as units, scale, ranges, labels, circularity... as DataSource interface.
 * Unify widgets thanks to this abstraction
 * Push data abstraction to the Pools and to the Ports.
+* Copy & paste processings (or xml's?)
 
 = Feature proposals =
 
