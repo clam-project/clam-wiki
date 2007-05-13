@@ -4,7 +4,7 @@ This is the development page of the NetworkEditor port to Qt4.
 == Tasks ==
 
 * Implement the check that all inports are connected before play
-* [[Image:Done.png]] Prototyper: Rethink connector names to use for the prototyper
+* Prototyper: Rethink connector names to use for the prototyper
 * Solve code duplication on play prevention code (unconfigured, unconnected, empty, no blocking processing...) for Prototyper a Network editor
 * Solve code duplication on backend selection for Prototyper a Network editor
 * Solve code duplication on commandline processing for Prototyper a Network editor
@@ -34,20 +34,20 @@ This is the development page of the NetworkEditor port to Qt4.
 ** '__' (two or more underlines) should not be valid <- is used in prototyper name as place holder for space and separator between the processing and the connector
 processings/ports/controls crashes.
 * Box selection to take int account just the body (not the connectors)
-* (./) Processing selection
-** (./) Add a 'selected' state to ProcessingBoxes
-** (./) Add a visual cue to the selected state
-** (./) Make the canvas control the selection changes on click
-** (./) Enable the control key to multiple selection.
-** (./) Enable a drag mode for the selection box
-** (./) Select all action
-** (./) Deselect all action
-** (./) Click on canvas deselects all when no ctrl pressed
+* [[Image:Done.png]] Processing selection
+** [[Image:Done.png]] Add a 'selected' state to ProcessingBoxes
+** [[Image:Done.png]] Add a visual cue to the selected state
+** [[Image:Done.png]] Make the canvas control the selection changes on click
+** [[Image:Done.png]] Enable the control key to multiple selection.
+** [[Image:Done.png]] Enable a drag mode for the selection box
+** [[Image:Done.png]] Select all action
+** [[Image:Done.png]] Deselect all action
+** [[Image:Done.png]] Click on canvas deselects all when no ctrl pressed
 ** Implement selection actions
-*** (./) Remove
-*** (./) Move
+*** [[Image:Done.png]] Remove
+*** [[Image:Done.png]] Move
 * Monitors:
-** (./) Make Chroma peaks available for the Prototyper
+** [[Image:Done.png]] Make Chroma peaks available for the Prototyper
 ** New ones:
 *** Tunning needle
 *** ConstantQ view
