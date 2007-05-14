@@ -368,6 +368,11 @@ I didn't managed to crosscompile them my self, but i found some precompiled bina
  mv Pre-built.2 pthreads
  cp pthreads/lib/pthreadGCE2.dll dlls/
 
+
+== Xerces-C ==
+
+No supported yet. Work on progress.
+
 == CLAM ==
 
 Apply the patch send to the mailing list.
