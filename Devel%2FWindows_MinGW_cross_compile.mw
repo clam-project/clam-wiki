@@ -380,6 +380,11 @@ There are precompiled binaries are this page:
 
 http://ftp.gnome.org/pub/gnome/binaries/win32/gtkmm/2.10/gtkmm-win32-devel-2.10.8-1.exe
 
+ cp -r /home/vokimon/.wine/drive_c/GTK/{include,lib,bin} gtk
+
+TODO: Filter out the non needed libraries
+TODO: Move dll's to 'dlls' folder
+
 == CLAM ==
 
 Apply the patch send to the mailing list.
