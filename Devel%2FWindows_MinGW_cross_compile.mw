@@ -97,7 +97,41 @@ Download [http://www.steinberg.net/329+M52087573ab0.html Asio SDK].
 It just provides a .dsp file to build. 
 I managed to have a Makefile to crosscompile with mingw.
 
-TODO: A link or whatever for the Makefile.
+<pre>
+# Be careful when cut and pasting, ALL INDENTATIONS MUST BE TAB'S!!
+CXX=i586-mingw32msvc-g++
+AR=i586-mingw32msvc-ar
+BIN=asiosdk2.a
+SOURCES:= \
+    common/asio.cpp \
+    common/combase.cpp \
+    common/debugmessage.cpp \
+    common/register.cpp \
+    host/ASIOConvertSamples.cpp \
+    host/asiodrivers.cpp \
+    host/pc/asiolist.cpp \
+#   host/sample/hostsample.cpp \
+    host/mac/asioshlib.cpp \
+    host/mac/codefragments.cpp \
+    driver/asiosample/makesamp.cpp \
+    driver/asiosample/asiosmpl.cpp \
+    driver/asiosample/wintimer.cpp \
+    driver/asiosample/macnanosecs.cpp \
+    driver/asiosample/mactimer.cpp \
+    common/asiodrvr.cpp \
+    common/dllentry.cpp \
+
+OBJS:=$(SOURCES:.cpp=.o)
+CFLAGS=-Icommon -Ihost -Ihost/pc/
+LDFLAGS=-lkernel32 -luser32 -lgdi32 -lshell32 -luuid -lole32 -lwinmm
+
+
+${BIN} : $(OBJS)
+    ${AR} rcs $(BIN) $(OBJS)
+
+%.o: %.cpp
+    ${CXX} ${CFLAGS} -c $< -o $@
+</pre>
 
 === DirectX ===
 
