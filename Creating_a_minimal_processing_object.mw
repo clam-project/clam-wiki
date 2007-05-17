@@ -31,11 +31,11 @@ class MyProcessing : public CLAM::Processing
 	CLAM::OutPort<MyOutputDataType> mOut;
 public:
 	const char* GetClassName() const { return "MyProcessing"; }
-	MyProcessing() 
+	MyProcessing(const Config& config = Config()) 
 		: mIn("My Input", this)
 		, mOut("My Output", this) 
 	{
-		Configure( Config() );
+		Configure( config );
 	}
  
 	bool Do()
