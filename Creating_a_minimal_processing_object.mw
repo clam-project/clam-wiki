@@ -13,63 +13,47 @@ Here is a minimal implementation of a processing object with a single input and 
 [[Image:MyProcessing.png|thumb|How the processing will look like on the NetworkEditor]]
 
 
-== MyProcessing.hxx ==
+#ifndef MyProcessing_hxx
+#define MyProcessing_hxx
 
- #ifndef MyProcessing_hxx
- #define MyProcessing_hxx
+#include <CLAM/InPort.hxx>
+#include <CLAM/OutPort.hxx>
+#include <CLAM/Processing.hxx>
+
+// Those two configuration types could be the ones you choose.
+// Your own ones or any type already in CLAM.
+#include "MyInputDataType.hxx"
+#include "MyOutputDataType.hxx"
+
+class MyProcessing : public CLAM::Processing
+{ 
+	CLAM::InPort<MyInputDataType> mIn;
+	CLAM::OutPort<MyOutputDataType> mOut;
+public:
+	const char* GetClassName() const { return "MyProcessing"; }
+	MyProcessing() 
+		: mIn("My Input", this)
+		, mOut("My Output", this) 
+	{
+		Configure( Config() );
+	}
  
- #include <CLAM/InPort.hxx>
- #include <CLAM/OutPort.hxx>
- #include <CLAM/Processing.hxx>
- #include <CLAM/NullProcessingConfig.hxx>
- 
- // Those two configuration types could be the ones you choose.
- // Your own ones or any type already in CLAM.
- #include "MyInputDataType.hxx"
- #include "MyOutputDataType.hxx"
- 
- class MyProcessing : public CLAM::Processing
- { 
- 	CLAM::InPort<MyInputDataType> mIn;
- 	CLAM::OutPort<MyOutputDataType> mOut;
- 	typedef CLAM::NullProcessingConfig Config;
- public:
- 	const char* GetClassName() const { return "MyProcessing"; }
- 	MyProcessing(const Config & config=Config()) 
- 		: mIn("My Input", this)
- 		, mOut("My Output", this) 
- 	{
- 		Configure( config );
- 	}
-  
- 	~MyProcessing() {}
- 
- 	// Configuration to the minimal expression
- 	bool ConcreteConfigure(const CLAM::ProcessingConfig&)
- 	{
- 		return true; // I got proper configuration
- 	}
- 	const CLAM::ProcessingConfig& GetConfig() const
- 	{
- 		static Config config;
- 		return config;
- 	}
- 	
- 	bool Do()
- 	{
- 		bool result = Do(mIn.GetData(), mOut.GetData()); 
- 		// Tell the ports this is done
- 		mIn.Consume();
- 		mOut.Produce();
- 		return result;
- 	}
- 
- 	bool Do(const MyInputDataType& in, MyOutputDataType& out)
- 	{
- 		// Your implementation
- 	}
- };
- #endif // MyProcessing_hxx
+	bool Do()
+	{
+		bool result = Do(mIn.GetData(), mOut.GetData()); 
+		// Tell the ports this is done
+		mIn.Consume();
+		mOut.Produce();
+		return result;
+	}
+
+	bool Do(const MyInputDataType& in, MyOutputDataType& out)
+	{
+		// Your implementation
+	}
+};
+
+#endif // MyProcessing_hxx
 
 == MyProcessing.cxx ==
 
