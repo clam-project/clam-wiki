@@ -12,7 +12,7 @@ Here is a minimal implementation of a processing object with a single input and 
 
 [[Image:MyProcessing.png|thumb|How the processing will look like on the NetworkEditor]]
 
-
+<pre>
 #ifndef MyProcessing_hxx
 #define MyProcessing_hxx
 
@@ -54,6 +54,7 @@ public:
 };
 
 #endif // MyProcessing_hxx
+</pre>
 
 == MyProcessing.cxx ==
 
