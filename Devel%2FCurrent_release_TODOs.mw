@@ -1,3 +1,13 @@
+== 1.1 ==
+
+* New InControlInt__XXX prototyper bind name
+* InControl__XXX maps the InControl bounds
+* Add InControl bounds to every processing used in prototyped examples
+* Update examples (.ui files)
+* NetworkEditor faust_dir option
+* MSVC NetworkEditor installer (thanks Pol Pros)
+
+
 == 0.99 (aka 1.0 preview) ==
 
 * '''hi:''' windows do not compile. PA errors 'paWASAPI' and 'paAudioScienceHPI' undeclared
