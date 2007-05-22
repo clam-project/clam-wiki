@@ -1,0 +1,5 @@
+'''TODO'''
+
+* Implementation of OSC to control the synthesis parameters of the engine
+* Construct the database of ebow recordings to use for the engine
+* Create simple network to loop an audio file with limited real-time control
