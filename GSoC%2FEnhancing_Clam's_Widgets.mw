@@ -1,0 +1,19 @@
+= Application Information =
+
+'''Title:''' [http://code.google.com/soc/clam/appinfo.html?csaid=BFDEFF29EEB54EC7 Enhancing Annotator Widgets]
+
+'''Mentor:''' [http://vokicodder.blogspot.com/ David García Garzón]
+
+'''License:''' [http://creativecommons.org/licenses/GPL/2.0/ GNU General Public License (GPL)]
+
+'''Abstract: (IN PROGRESS)'''
+Add the following instant views to Annotator:
+*Peak
+*RMS
+*Spectrum
+
+=Details=
+==Milestones==
+==Notes==
+==Blog==
+==Links==
