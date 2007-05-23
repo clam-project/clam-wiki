@@ -1,0 +1,36 @@
+= Application Information =
+
+'''Title:''' [http://code.google.com/soc/clam/appinfo.html?csaid=BFDEFF29EEB54EC7 Real-time spectral transformations]
+
+'''Mentor:''' [http://parumi.wordpress.com/ Pau Arumí Albó]
+
+'''License:''' [http://creativecommons.org/licenses/GPL/2.0/ GNU General Public License (GPL)]
+
+'''Abstract:''' Revamp all CLAM SMS transformations. Turn real-time all those still aren’t and have them working on Network Editor. For example: Harmonizer, Morph and Time Stretch. Make nice prototypes for use them with Prototyper and have special focus on some. Also make real-time Voice2Midi and all those widgets which can be needed.
+
+
+= Details =
+== Milestones ==
+# pitch-discretization working in NE and prototyped example
+# ''other transformations?''
+# audio2midi in NE (using smsanalysis ''fundamental'' output)
+# piano-roll (instant) view in NE and Prototyper/Designer
+# harmonizer working in NE and prototyped example
+# prototyped example of harmonized voices control.led by midi
+# complex transformations: time-stretch and morph
+
+
+Updated version of milestones and TODOs: [[Devel/Spectral Transformations TODOs]]
+
+== Notes ==
+# [[GSoC/Real-time_Spectral_Transformations/planning | Some notes about project planning and organization]]
+# [[GSoC/Real-time_Spectral_Transformations/beginning | Beginning]]
+
+
+= Blogging =
+== Some selected posts ==
+* Sinusoidal plus Residual Model (SMS): [http://audiores.uint8.com.ar/blog/?p=101 english] / [http://audiores.uint8.com.ar/blog/?p=105 castellano]
+== Links ==
+* [http://h.ordia.com.ar/blog/GSoC2007.php My blog page about GSoC] (with all blog posts about this)
+* [http://clam.iua.upf.edu/planet/ Planet CLAM]
+* [http://planet-soc.com/ Planet SoC]
