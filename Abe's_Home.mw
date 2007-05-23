@@ -1,3 +1,7 @@
 == First tries ==
 
 == Playing with the vowel synthesizer ==
+
+Meeting Xavier last week was very helpful.  I found out that my idea to use glottal pulses as an input for the vowel synthesizer was easier than I thought.  I didn't need to write any code and most of what I needed was already in the experimental vowel synthesizer made by David Garcia.  Learning how to use Jack was the missing link that let me play the electroglottogram data (http://sail.usc.edu/~kazemzad/EGG/only_source/ , this is a measurement of the opening and closing of the vocal folds from the USC phonetics lab) in Xmms and route it to the tweaked vowel synthesizer (http://sail.usc.edu/~kazemzad/EGG/clam/experimentalVowelSynth_from_EGG.clamnetwork , here I disconnected the harmonic peak generator and rerouted the peaks from the SMSAnalysisCore0 processing to the vowel resonator).  It sounds a bit more natural than the original, but this may be more b/c of the natural pitch and timing than the actual glottal pulse info (the EGG records the opening and closing, not the actual sound input to the vocal resonator).
+
+Another thought for a possible improvement would be to reorient the f1 f2 space so it matches the typical vowel diagram (and maybe put such a diagram in the background).  This will probably involve real programming...
