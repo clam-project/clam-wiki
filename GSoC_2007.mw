@@ -1,6 +1,25 @@
 * [http://clam.iua.upf.edu/download/misc/ Flyers] to promote students applications.
 
 
+== Accepted projects ==
+
+{| border="1" cellpadding="5" cellspacing="0"
+|+ CLAM Google Summer of Code 2007 Projects
+! Project !! Student !! Mentor
+|-
+| [[GSoC/Real-time Spectral Transformations]] || Hernan Ordiales (UBA, Argentina) || Pau Arumí
+|-
+| [[GSoC/Plugin System for a Dynamically Extensible Framework]] || Andreas Calvo (UPF, Spain) || Pau Arumí
+|-
+| [[GSoC/Real-time Spectral Model Synthesizer]] || Gregory Ryan Kellum (UPF, Spain) || Pau Arumí
+|-
+| [[GSoC/Clam for Speech]] || Ebrahim Kazemzadeh (USC, USA) || Xavier Amatriain
+|-
+| [[GSoC/Enhancing Clam's Widgets]] || Bennet Kolasinski (NYU, USA) || David García
+|-
+| [[GSoC/Enhancing Clam’s Chord Detection for Real-time]] || Roman Goj (Warsaw University, Poland) || David García
+|}
+
 == How to apply ==
 
 * Google's SoC's [http://code.google.com/support/bin/topic.py?topic=10442 frequently asked questions]
