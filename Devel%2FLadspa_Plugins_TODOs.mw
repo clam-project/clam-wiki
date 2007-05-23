@@ -13,8 +13,8 @@
 * (med) open ladspa libs bug
 * (med) extract implementation in file LadspaFactory.cxx
 * (med) '''new''' make LadspaFactory.hxx non-coupled with ladspa headers. so uses of LFactory don't need #ifdef USE_LADSPA. use Pimpl C++ idiom in LFactory.
-* (med) update LadspaFactoryTest with "real" classes
-* (med) don't use a Config in LWrapper. Use NullConfig instead.
+* '''Done''' update LadspaFactoryTest with "real" classes
+* '''Done''' don't use a Config in LWrapper. Use NullConfig instead.
 * "extensible processings" refactoring: change NetworkEditor processing loading logic
 ** 1. put all info about processings in the factory
 ** 2. build QTree from factory data.
