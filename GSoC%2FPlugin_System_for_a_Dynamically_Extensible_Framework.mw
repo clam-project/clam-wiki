@@ -15,10 +15,13 @@ Moreover, it also will provide a generic interface for all kind of plugins in or
 
 == Notes ==
 [[Devel/Ladspa_Plugins_TODOs]]
+
 [[Devel/Faust_integration_TODOs]]
 
 
 == Links ==
 http://faust.grame.fr/
+
 http://www.ladspa.org/
+
 http://lv2plug.in/
