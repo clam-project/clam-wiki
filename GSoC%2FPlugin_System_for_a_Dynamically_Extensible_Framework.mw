@@ -10,18 +10,19 @@
 Moreover, it also will provide a generic interface for all kind of plugins in order to manage and provide more detailed information of them.
 
 = Details =
-
-== Milestones ==
-
-== Notes ==
 [[Devel/Ladspa_Plugins_TODOs]]
 
 [[Devel/Faust_integration_TODOs]]
 
+== Milestones ==
+
+== Notes ==
+[http://lalists.stanford.edu/lad/2007/05/0061.html Discussion about LV2]
+
 
 = Links =
-http://faust.grame.fr/
+[http://faust.grame.fr/ FAUST]
 
-http://www.ladspa.org/
+[http://www.ladspa.org/ LADSPA]
 
-http://lv2plug.in/
+[http://lv2plug.in/ LV2]
