@@ -1,0 +1,24 @@
+= Application Information =
+
+'''Title:''' [http://code.google.com/soc/clam/appinfo.html?csaid=5B3C30CF27F845BC Plugin system for a dynamically extensible framework]
+
+'''Mentor:''' [http://parumi.wordpress.com/ Pau Arumí Albó]
+
+'''License:''' [http://creativecommons.org/licenses/GPL/2.0/ GNU General Public License (GPL)]
+
+'''Abstract:''' This projects aims to bring together some audio plugin standards that exists in the present and make them available for the CLAM networks. And also to provide the ability to treat a CLAM network as a standard plugin.
+Moreover, it also will provide a generic interface for all kind of plugins in order to manage and provide more detailed information of them.
+
+= Details =
+
+== Milestones ==
+
+== Notes ==
+[[Devel/Ladspa_Plugins_TODOs]]
+[[Devel/Faust_integration_TODOs]]
+
+
+== Links ==
+http://faust.grame.fr/
+http://www.ladspa.org/
+http://lv2plug.in/
