@@ -15,5 +15,9 @@ Add the following instant views to Annotator:
 =Details=
 ==Milestones==
 ==Notes==
+==Mac-specific Caveats==
+* extractors are bundled within Annotator.app, so for a project to see them the path the the extractors need to be passed to the app-- not just the extractor name.  i.e. /Applications/Annotator.app/Contents/MacOS/ChordExtractor instead of simply 'ChordExtractor'.  (using CLAM_Annotator-0.3.9~svn10111-powerpc.dmg, 15 May build)
+* Annotator crashes when ClamExtractorExample is loaded (CLAM_Annotator-0.3.9~svn10111-powerpc.dmg, 15 May build)
+
 ==Blog==
 ==Links==
