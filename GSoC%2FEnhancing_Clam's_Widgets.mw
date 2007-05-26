@@ -14,8 +14,8 @@ Add the following instant views to Annotator:
 <br/>
 Deliver the following usability enhancements to Annotator:<br/>
 *Add optional to color-code segments based on segment value
-*Synchronize zooms and scrolling among plot widgets  [http://clam.iua.upf.edu/wikis/clam/index.php/Devel/Annotator_TODO%27s Devel/Annotator TODO's]
-*Option to synchronize scrolling to playhead [http://clam.iua.upf.edu/wikis/clam/index.php/Devel/Annotator_TODO%27s Devel/Annotator TODO's]
+*Synchronize zooms and scrolling among plot widgets  ([http://clam.iua.upf.edu/wikis/clam/index.php/Devel/Annotator_TODO%27s Devel/Annotator TODO's])
+*Option to synchronize scrolling to playhead ([http://clam.iua.upf.edu/wikis/clam/index.php/Devel/Annotator_TODO%27s Devel/Annotator TODO's])
 
 =Details=
 ==Milestones==
