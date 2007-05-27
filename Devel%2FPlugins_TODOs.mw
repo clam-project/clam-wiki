@@ -15,6 +15,14 @@
 * host ladspa in mac (we should be ready for that)
 * host ladspa in windows (see if someone have already compiled ladspas as dlls) 
 * host lv2 [andreas]
+** osc extension
+** midi extension
+** gui extension?
+
+=== embedded networks ===
+* clam networks (xml files) seen as plugins. Integrated in the processing tree.
+* publish not only audio-ports but any-type ports (and controls, of course)
+* Make NetworkEditor able to edit sub-networks
 
 == improve plugins creation infrastructure ==
 
