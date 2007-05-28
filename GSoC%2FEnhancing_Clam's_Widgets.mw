@@ -26,11 +26,12 @@ Those are the open fronts on the widget arena -- dgarcia
 * Consider layers on the Instant Views
 * Vector evolution view
 * Tracks view
+* Time synchronization of views
 * Consider evolution views on the NetEditor
 * Segment editor
 ** Assign Height/Color to segment data
 ** Implement pending segment editor modes
-** Scrolling segment editor
+** Time scrolling
 
 ==Ideas==
 Add the following instant views to Annotator:
