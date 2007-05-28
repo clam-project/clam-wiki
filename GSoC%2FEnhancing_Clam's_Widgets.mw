@@ -19,14 +19,17 @@ Weeks 1&2:
 == Open Fronts on Widgets ==
 
 Those are the open fronts on the widget arena -- dgarcia
-- Conciliate and clean DataSource and KeySpace/Tonnetz views
-- Migrate new InstantViews from NetEditor: BarGraph, Peak views, Polar peak views...
-- Lower vmqt complexity
-- Consider layers on the Instant Views
-- Vector evolution view
-- Tracks view
-- Consider evolution views on the NetEditor
-- Editable views
+* Conciliate and clean DataSource and KeySpace/Tonnetz views
+* Migrate new InstantViews from NetEditor: BarGraph, Peak views, Polar peak views...
+* Lower vmqt complexity
+* Consider layers on the Instant Views
+* Vector evolution view
+* Tracks view
+* Consider evolution views on the NetEditor
+* Segment editor
+** Assign Height/Color to segment data
+** Implement pending segment editor modes
+** Scrolling segment editor
 
 ==Ideas==
 Add the following instant views to Annotator:
