@@ -21,6 +21,10 @@ Deliver the following usability enhancements to Annotator:<br/>
 
 =Details=
 ==Milestones==
+Weeks 1&2:
+* Synchronize Annotator's KeySpace / Tonnetz / DataSource implementations with NetworkEditor's more up-to-date implementations
+* Port BarGraph to Annotator InstantView
+
 ==Notes==
 ==Mac-specific Caveats==
 * extractors are bundled within Annotator.app, so for a project to see them the path the the extractors need to be passed to the app-- not just the extractor name.  i.e. /Applications/Annotator.app/Contents/MacOS/ChordExtractor instead of simply 'ChordExtractor'.  (using CLAM_Annotator-0.3.9~svn10111-powerpc.dmg, 15 May build)
