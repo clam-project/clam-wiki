@@ -44,18 +44,18 @@ Those are the open fronts on the widget arena -- dgarcia
 ==Ideas==
 Add the following instant views to Annotator:
 
-    * Peak
-    * RMS
-    * Spectrum
-    * (still considering) perceived loudness i.e. Bark/Sone view 
+* Peak
+* RMS
+* Spectrum
+* (still considering) perceived loudness i.e. Bark/Sone view 
 
 
 Deliver the following usability enhancements to Annotator:
 
-    * Add option to color-code segments based on segment value
+* Add option to color-code segments based on segment value
           o something like MATLAB colormap ? 
-    * Synchronize zooms and scrolling among plot widgets (Devel/Annotator TODO's)
-    * Option to synchronize scrolling to playhead (Devel/Annotator TODO's)
+* Synchronize zooms and scrolling among plot widgets (Devel/Annotator TODO's)
+* Option to synchronize scrolling to playhead (Devel/Annotator TODO's)
 
 ==Mac-specific Caveats==
 * extractors are bundled within Annotator.app, so for a project to see them the path the the extractors need to be passed to the app-- not just the extractor name.  i.e. /Applications/Annotator.app/Contents/MacOS/ChordExtractor instead of simply 'ChordExtractor'.  (using CLAM_Annotator-0.3.9~svn10111-powerpc.dmg, 15 May build)
