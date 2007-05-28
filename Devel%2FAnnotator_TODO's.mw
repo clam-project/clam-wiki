@@ -120,13 +120,13 @@
 
 == Global Goals for Simac ==
 
-* Opening boca files
-** Downloading/Uploading descriptors from services
+* '''[Done]''' Opening boca files
+** '''[Done]''' Downloading/Uploading descriptors from services
 * Numeric attributes does not get changed until you exit the cell
 * Descriptor Table Plugin for Chords
 * Frame view: Spectrum, Peaks
 * Segment modes: Unsized, Continuous... (Cal decidir prioritaris)
-* Segment display: Semitransparent box with opaque borders
+* '''[Done]''' Segment display: Semitransparent box with opaque borders
 * Mapping segment pool attributes to segment colors
 * Mapping segment pool attributes to segment height
 * Tooltip: Height handle, Time handles & Body
@@ -134,4 +134,4 @@
 * Changing enums attributes with keys maps
 * Changing enums attributes with contextual menus
 * Defining the (keyboard, mouse) user interaction as a whole to be coherent
-* Schema browser (or editor), and integrated descriptors documentation (or annotation instructions)
+* '''[Done]''' Schema browser (or editor), and integrated descriptors documentation (or annotation instructions)
