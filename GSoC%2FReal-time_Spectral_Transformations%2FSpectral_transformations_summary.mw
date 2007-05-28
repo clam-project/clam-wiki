@@ -1,12 +1,12 @@
-* Frequency shift: '''not''' real-time
-* Gender change: real-time (to improve residual)
-* Harmonizer: '''not''' real-time
-* Morph: '''not''' real-time
-* Odd/Even Harmonic Ratio: ?
-* Pitch Discretization: '''not''' real-time ('''important''')
-* Pitch Shift: real-time
-* Residual Gain: real-time
-* Sine Filter: ?
-* Sinusoidal Gain: real-time
-* Spectral Shape Shift: ?
-* Time Stretch: '''not''' real-time ('''important''')
+* '''Frequency Shift''': not real-time yet
+* '''Gender Change''': real-time (to improve residual)
+* '''Harmonizer''': not real-time yet
+* '''Morph''': not real-time yet
+* '''Odd/Even Harmonic Ratio''': ?
+* '''Pitch Discretization''': not real-time yet ('''important''')
+* '''Pitch Shift''': real-time
+* '''Residual Gain''': real-time
+* '''Sine Filter''': ?
+* '''Sinusoidal Gain''': real-time
+* '''Spectral Shape Shift''': ?
+* '''Time Stretch''': not real-time yet ('''important''')
