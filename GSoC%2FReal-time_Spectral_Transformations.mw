@@ -9,7 +9,9 @@
 '''Abstract:''' Revamp all CLAM SMS transformations. Turn real-time all those still aren’t and have them working on Network Editor. For example: Harmonizer, Morph and Time Stretch. Make nice prototypes for use them with Prototyper and have special focus on some. Also make real-time Voice2Midi and all those widgets which can be needed.
 
 
+
 = Details =
+
 == Milestones ==
 # pitch-discretization working in NE and prototyped example
 # ''other transformations?''
@@ -21,18 +23,20 @@
 
 
 Updated version of milestones and TODOs: [[Devel/Spectral Transformations TODOs]]
-
 == Notes ==
 # [[GSoC/Real-time_Spectral_Transformations/planning | Some notes about project planning and organization]]
 # [[GSoC/Real-time_Spectral_Transformations/beginning | Beginning]]
 
 
 = Blogging =
-== Some selected posts ==
-* Sinusoidal plus Residual Model (SMS): [http://audiores.uint8.com.ar/blog/?p=101 english] / [http://audiores.uint8.com.ar/blog/?p=105 castellano]
-== Links ==
 * [http://h.ordia.com.ar/blog/GSoC2007.php My blog page about GSoC] (with all blog posts about this)
-* [[GSoC/Real-time_Spectral_Transformations/My_devel_links | My CLAM development links]]
-* [[GSoC/Real-time_Spectral_Transformations/My_useful_links_related_to_the_project | Useful links related with my GSoC project]]
 * [http://clam.iua.upf.edu/planet/ Planet CLAM]
 * [http://planet-soc.com/ Planet SoC]
+== Some selected posts ==
+* Sinusoidal plus Residual Model (SMS): [http://audiores.uint8.com.ar/blog/?p=101 english] / [http://audiores.uint8.com.ar/blog/?p=105 castellano]
+
+
+= Links =
+* [[GSoC/Real-time_Spectral_Transformations/My_devel_links | My CLAM development links]]
+* [[GSoC/Real-time_Spectral_Transformations/My_useful_links_related_to_the_project | Useful links related with my GSoC project]]
+* [[GSoC/Real-time_Spectral_Transformations/CLAM bugs_that_I_took | CLAM bugs that I took]]
