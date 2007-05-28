@@ -7,6 +7,7 @@
 '''License:''' [http://creativecommons.org/licenses/GPL/2.0/ GNU General Public License (GPL)]
 
 '''Abstract:'''<br/>
+I will deliver a number of usability and implementation enhancements to Annotator.  For one, enhance Annotator's InstantViews system so they're synchronized with NetworkEditor's views.  Also, interesting InstantViews and EvolutionViews will be ported from NetworkEditor or implemented from scratch.  There are also a number of Mac-specific issues that hinder Annotator's usability such as crashes and interface anomalies that I will address.
 
 =Details=
 ==Milestones==
