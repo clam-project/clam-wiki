@@ -36,6 +36,7 @@ Those are the open fronts on the widget arena -- dgarcia
 * Time synchronization of views
 * Consider evolution views on the NetEditor
 * Adding multiple temporal evolution views
+* Clean up the plugin system
 * Segment editor
 ** Assign Height/Color to segment data
 ** Implement pending segment editor modes
