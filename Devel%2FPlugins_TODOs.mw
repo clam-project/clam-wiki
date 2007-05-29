@@ -33,6 +33,8 @@
 * better SConstruct for compiling network-players into plugins  (.dll, .so)
 ** improve the way to specify and install the clamnetwork file
 
+* allow plugin creation from NetworkEditor (choose plugin architecture, etc)
+
 === new plugins architectures ===
 
 * vst (license issue)
@@ -40,7 +42,6 @@
 * vst for mac 
 * dssi with clam-prototyped gui
 * others?
-
 
 = DONE =
 
