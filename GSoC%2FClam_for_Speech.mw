@@ -21,3 +21,19 @@ I finally got clam working on my desktop.  Using Ubuntu on my desktop was easy, 
 I decided to start working on a formant recognizer/extractor.  It seems that this could be used as a precursor to several other things, so it seems like a good place to start.  For one, it could be used with the vowel synthesizer as a kind of analysis/synthesis loop.  A further step could be to make a special formant recognizer for singing voice.  Another aspect that is close to my interest is user specific modeling of formants (b/c people have different formant locations based on their anatomy, native language/dialect, etc, even though perceptually we can distinguish which vowel is being said).  This could be applied to the gender change network since one of the main factors in formant variation is male/female.  (cf a  paper, Robust Gender Dependent Acoustic Phonetic Modelling in Continuous Speech Recognition based on a new Automatic Male/Female Classification by Vergin, Farhat, and O'Shaughnessy: approximately 90% accuracy automatically predicting male/female using f1 and f2).
 
 ==== todo ====
+
+
+=== Week 3-4  (Jun 11 to Jun 25) ===
+
+=== Week 5-6  (Jun 25 to Jul 9) ===
+
+=== Week 7-8  (Jul 9 to Jul 23) ===
+*mid term evaluation
+
+=== Week 9-10  (Jul 23 to Aug 6) ===
+
+=== Week 11-12  (Aug 6 to Aug 20) ===
+
+=== Week 13 +  (Aug 20 +) ===
+*final evaluation
+*define continuing work
