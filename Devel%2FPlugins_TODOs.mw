@@ -18,6 +18,8 @@
 ** osc extension
 ** midi extension
 ** gui extension?
+* vst
+* au
 
 === embedded networks ===
 * clam networks (xml files) seen as plugins. Integrated in the processing tree.
