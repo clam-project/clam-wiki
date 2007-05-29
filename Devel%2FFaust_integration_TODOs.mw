@@ -1,4 +1,6 @@
-== milestone 1 "loading a hardcoded faust .dsp" ==
+== milestones ==
+
+=== milestone 1 "loading a hardcoded faust .dsp" ===
 * user edits faust.dsp with external editor
 * network editor provides a compile-and-load button
 * errors goes to cerr
@@ -7,5 +9,5 @@
 ** refresh QTree
 * svg diagram window in NetworkEditor that reads the current svg file.
 
-== milestone 2 "adding all .dsps in a dir and embedded svg" ==
+=== milestone 2 "adding all .dsps in a dir and embedded svg" ===
 * scons that compiles all .dsp in a dir.
