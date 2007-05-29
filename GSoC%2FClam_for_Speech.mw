@@ -4,10 +4,18 @@ Installing with ubuntu fiesty was relatively easy.  The biggest problems were no
 
 == Playing with the vowel synthesizer ==
 
+(May 21)
 Meeting Xavier last week was very helpful.  I found out that my idea to use glottal pulses as an input for the vowel synthesizer was easier than I thought.  I didn't need to write any code and most of what I needed was already in the experimental vowel synthesizer made by David Garcia.  Learning how to use Jack was the missing link that let me play the electroglottogram data (http://sail.usc.edu/~kazemzad/EGG/only_source/ , this is a measurement of the opening and closing of the vocal folds from the USC phonetics lab) in Xmms and route it to the tweaked vowel synthesizer (http://sail.usc.edu/~kazemzad/EGG/clam/experimentalVowelSynth_from_EGG.clamnetwork , here I disconnected the harmonic peak generator and rerouted the peaks from the SMSAnalysisCore0 processing to the vowel resonator).  It sounds a bit more natural than the original, but this may be more b/c of the natural pitch and timing than the actual glottal pulse info (the EGG records the opening and closing, not the actual sound input to the vocal resonator).
 
 Another thought for a possible improvement would be to reorient the f1 f2 space so it matches the typical vowel diagram (and maybe put such a diagram in the background).  This will probably involve real programming...
 
+== Installing clam on Gentoo ==
+
+(May 28)
+I finally got clam working on my desktop.  Using Ubuntu on my desktop was easy, but with my desktop has given me some problems.  One problem was that I already had qt3 installed and the portage package manager didn't like trying to install two versions of a program.  I down loaded qt4 to install manually in a separate location and I had trouble building it.  It turns out there was some kind of typo in one of the defines in qglframebufferobject.cpp (cf. http://lists.kde.org/?l=kde-devel&m=115260405432346&w=2 ) .  Luckily, I found this kde mailing list post instead of having to figure it out myself.  Then I added /usr/local/Trolltech/Qt-4.2.3/lib to the PKG_CONFIG_PATH environment variable in ~/.bash_profile.  Also, I changed the QTDIR env var to /usr/local/Trolltech/Qt-4.2.3.  So far I've tested Annotator and NetworkEditor.  There is still some problems with audio playback but I'm not sure what it is... could be jack or sound card.  It seems to occur when there is a lot of load on the cpu.
+
+
 == Project Planning ==
 
-Here  I'll put planning info
+=== Week 1-2  (May 28 to Jun 11) ===
+I decided to start working on a formant extractor.
