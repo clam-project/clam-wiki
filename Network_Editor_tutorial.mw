@@ -217,6 +217,17 @@ Now that you have a working knowledge of the NetworkEditor the best you can do i
 
 == Building Interfaces with the Prototyper ==
 
+When doing development the suggested procedure to run designer and prototyper 
+with plugins is:
+
+ export QT_PLUGIN_PATH=.
+ cd NetworkEditor
+ scons
+ mkdir designer
+ cp libCLAMWidgets.so designer
+ designer-qt4
+ ./Prototyper
+
 
 Name bindings:
 
