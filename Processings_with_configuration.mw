@@ -31,7 +31,9 @@ Once stored in XML format from the Network Editor, the Processing object that ha
     <FrameSize>1024</FrameSize>
  </processing>
 
-TODO: Add the resulting XML and an screenshot of the Configuration dialog
+And the automatically derived configuration widget will look like this:
+
+[[Image:SimpleConfigDialog.png|Splash screen]]
 
 == Using your configuration object in the processing ==
 
