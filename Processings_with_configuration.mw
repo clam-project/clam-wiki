@@ -10,6 +10,27 @@ This is an example of configuration object definition:
 
 TODO: Paste a simple example here
 
+ class SimpleConfig:public CLAM::ProcessingConfig
+ {
+     DYNAMIC_TYPE_USING_INTERFACE( SimpleConfig, 1, ProcessingConfig );
+     DYN_ATTRIBUTE( 0, public, int, FrameSize);
+ protected:
+     void DefaultInit()
+     {
+           AddAll();
+           UpdateData();
+           SetFrameSize(512);
+     };
+ };
+
+The DefaultInit method is where default attributes are added and initialized with a value. This is automatically called from the constructor.
+
+Once stored in XML format from the Network Editor, the Processing object that has this kind of configuration will read like this:
+
+ <processing id="SimpleProcessing_0" type="SimpleProcessing">
+    <FrameSize>1024</FrameSize>
+ </processing>
+
 TODO: Add the resulting XML and an screenshot of the Configuration dialog
 
 == Using your configuration object in the processing ==
