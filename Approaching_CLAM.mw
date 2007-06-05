@@ -14,7 +14,7 @@ The three major application distributed with CLAM have a tutorial. Also on the w
 
 == Getting insight on CLAM concepts ==
 
-First of all, follow the [[Network Editor tutorial]] to get used to the main CLAM concepts such as Processing, Port, Control, Configuration... Also to get insight on the Processing objects which are available and which is the prototyping work flow.
+The [[Network Editor tutorial]] explains the Network Editor application but it also gives insight on the main CLAM inner concepts such as Processing, Port, Control, Configuration... It also gives insight on the Processing objects which are available and which is the prototyping work flow.
 
 == Coding with CLAM ==
 
