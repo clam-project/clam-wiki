@@ -1,5 +1,17 @@
 This page gives advice on how to approach to CLAM.
 
+== Installing and building ==
+
+Major platform have binaries available so check out the download page before trying to compile binaries themselves.
+
+When building from source code, look first of all the INSTALL files distributed with the source code. CLAM libraries have one and so do each application.
+
+Some platform specific issues are collectively documented on the wiki (Installation notes on the main page).
+
+== Getting insight on CLAM concepts ==
+
 First of all, follow the [[Network Editor tutorial]] to get used to the main CLAM concepts such as Processing, Port, Control, Configuration... Also to get insight on the Processing objects which are available and which is the prototyping work flow.
+
+== Coding with CLAM ==
 
 Then, you might want to create CLAM applications which can not be just prototyped, or to define brand new processings. The wiki home page contains short howto's targeting concrete and progressive goals.
