@@ -1,0 +1,5 @@
+This page gives advice on how to approach to CLAM.
+
+First of all, follow the [[Network Editor tutorial]] to get used to the main CLAM concepts such as Processing, Port, Control, Configuration... Also to get insight on the Processing objects which are available and which is the prototyping work flow.
+
+Then, you might want to create CLAM applications which can not be just prototyped, or to define brand new processings. The wiki home page contains short howto's targeting concrete and progressive goals.
