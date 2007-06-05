@@ -2,9 +2,9 @@ This page gives advice on how to approach to CLAM.
 
 == Installing and building ==
 
-Major platform have binaries available so check out the [http://www.iua.upf.edu/download.html download page] before trying to compile binaries themselves.
+Major platform have binaries available so check out the [http://www.iua.upf.edu/download.html download page] before trying to compile from the source code.
 
-When building from source code, look first of all the INSTALL files distributed with the source code. CLAM libraries have one and so do each application.
+When building from source code, look first of all the [http://iua-share.upf.edu/svn/clam/trunk/CLAM/INSTALL INSTALL] files distributed with the source code. CLAM libraries have one and so do each application.
 
 Some platform specific issues are collectively documented on the wiki (Installation notes on the main page).
 
