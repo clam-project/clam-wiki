@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1 =
 <gallery>
+Image:AnnotatorBarGraph.png|The BarGraph as instant view on the Annotator
 Image:OptimizedKeySpace.png|Gonzalez bross (Sergi and Eduard) helped me with some ideas on how to optimize my poor implementation of the KeySpace. 7 smooth KeySpaces on the screen with a decent frame rate and no penalty on the playback. Even with no HW acceleration.
 Image:SampleBySample.png|Experiments in sample by sample processing in CLAM. This is a 5th order FIR filter implemented with delay lines.
 Image:automatic-sliders-contextual-menu.png|Now automatic slider action also apears in the contextual menu.
