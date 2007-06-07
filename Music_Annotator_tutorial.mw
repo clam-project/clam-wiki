@@ -147,8 +147,11 @@ Two kinds attribute deserve a deeper explanation: <tt>Segmentation</tt> and <tt>
 They are used to connect a parent scope with a child scope.
 Click on some attributes of those types and check, on the right parameters, which child scopes are relating.
 
-* '''Segmentation''' attributes are used to define arbitrary time segments or time marks: Note onsets, notes, break points, chord regions, song structural parts... The segmentation attribute defines the boundaries and the child scope defines the other attributes for the region.
-
+* '''Segmentation''' attributes are used to define arbitrary time segments or time marks: Note onsets, notes, break points, chord regions, song structural parts... The segmentation attribute defines the boundaries and the child scope defines the other attributes for the region. Segmentation hold a 'segmentation policy' attribute which sets the restriction on the segments definitions:
+** '''Overlaping''' segmentation may contain segments that overlap and regions with any segment.
+** '''Discontinuous''' segmentation can have gaps but segments can not overlap. Every point has one segment or none.
+** '''Continuous''' segmentation doesn't allow gaps. One segment ends when the next starts.
+** '''Unsized''' segmentation consists on marking points with no duration.
 * '''FrameDivision''' attributes define equidistant points in time. Child scopes for that attribute are used mainly to store values that happen for every instant in the song, such the energy, the spectrum...
 
 == Building your own extractor ==
