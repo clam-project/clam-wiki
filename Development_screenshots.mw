@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1 =
 <gallery>
+Image:OptimizedKeySpace.png|Gonzalez bross (Sergi and Eduard) helped me with some ideas on how to optimize my poor implementation of the KeySpace. 7 smooth KeySpaces on the screen and no penalty on the playback.
 Image:SampleBySample.png|Experiments in sample by sample processing in CLAM. This is a 5th order FIR filter implemented with delay lines.
 Image:automatic-sliders-contextual-menu.png|Now automatic slider action also apears in the contextual menu.
 Image:automatic-control-senders.png|This network with many control senders has been created in few seconds. How? A new feature automatically creates a well configured control-sender by double-clicking an incontrol.
