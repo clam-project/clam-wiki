@@ -20,7 +20,7 @@ Note: Due to a bug on the qt4 scons tool, If you have a class with the Q_OBJECT 
  	return filter( (lambda a : a.rfind( ".svn")==-1 ),  [ a[0] for a in os.walk(root)]  )
  
  options = Options('options.cache', ARGUMENTS)
- options.Add(PathOption('clam_prefix', 'The prefix where CLAM was installed', ''))
+ options.Add(PathOption('clam_prefix', 'The prefix where CLAM was installed', '''''''))
  
  env = Environment(ENV=os.environ, options=options)
  options.Save('options.cache', env)
