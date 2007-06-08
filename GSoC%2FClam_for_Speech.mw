@@ -28,6 +28,7 @@ I decided to start working on a formant recognizer/extractor.  It seems that thi
 ** Sandra Gilaberts thesis, 
 ** matlab speech tools, and 
 ** Rabiner's notes
+** Xavier's chapter 10 in DAFX
 
 * figure out how to create a processing (difficulty: 5, importance: 10 )
 
