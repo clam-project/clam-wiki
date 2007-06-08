@@ -135,3 +135,6 @@
 * '''[Done]''' Bug: double free of project properties when edited
 * '''[Done]''' Fix: Clearing the song list after new project
 * '''[Done]''' Edit extractor on the lineedit affects the project
+* '''[Done]''' Opening boca files
+** '''[Done]''' Downloading/Uploading descriptors from services
+* '''[Done]''' Schema browser (or editor), and integrated descriptors documentation (or annotation instructions)
