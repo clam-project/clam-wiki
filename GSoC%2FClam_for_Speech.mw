@@ -34,6 +34,7 @@ I decided to start working on a formant recognizer/extractor.  It seems that thi
 
 * implement best candidate from above existing implementations (difficulty: 7, importance: 10)
 ** get something working as soon as possible and submit it for review
+** do detailed review of David's vowel synth code.
 
 ==== notes ====
 
