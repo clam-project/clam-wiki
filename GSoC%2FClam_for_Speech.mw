@@ -42,7 +42,7 @@ In the past two weeks I've refreshed my knowledge about the basics of the LPC me
 
 The example programs (trunk/CLAM/examples) helped a lot getting started, esp the LPCAnalysis_example.  I guess this hasn't been ported to qt4 yet but I think it should provide a good starting point to get the formant locations/bandwidths.
 
-I got a standalone program that reads an audio file and performs lpc working, but I need to figure out the DYN_ATTRIBUTE way of accessing the LPC coefficients.
+I got a standalone program that reads an audio file and performs lpc working by figure out the DYN_ATTRIBUTE way of accessing the LPC coefficients and then printing the lpc coefficients.  To actually get the formants, I'll need to get the complex roots of the equation defined by these coefficients (I think...).
 
 === Week 3-4  (Jun 11 to Jun 25) ===
 
