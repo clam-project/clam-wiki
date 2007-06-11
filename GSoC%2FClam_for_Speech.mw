@@ -46,7 +46,7 @@ I got a standalone program that reads an audio file and performs lpc working by 
 
 === Week 3-4  (Jun 11 to Jun 25) ===
 
-I was able to get an initial program to extract the LPC coefficients from a wave file.  To accomplish the goal of formant extraction, I still need to get the complex roots of the coefficients in order to get the formant locations and bandwidths, so this will be my primary goal for the next two weeks.  It involves a knowledge goal of verifying that I'm correct with these ideas about the LPC and then figuring out how to get the roots.  Then I should program it into my simple initial program.  After I'll verify that the formants match the output of some accepted program (wavesurfer/snack) and perhaps put the formant  extraction (or maybe just the lpc root extraction) into the CLAM::LPModel class.  Further goals are to integrate it with the network editor and annotator.
+I was able to get an initial program to extract the LPC coefficients from a wave file.  To accomplish the goal of formant extraction, I still need to get the complex roots of the coefficients in order to get the formant locations and bandwidths, so this will be my primary goal for the next two weeks.  It involves a knowledge goal of verifying that I'm correct with these ideas about the LPC and then figuring out how to get the roots.  Then I should program it into my simple initial program.  After I'll verify that the formants match the output of some accepted program (wavesurfer/snack) and perhaps put the formant  extraction (or maybe just the lpc root extraction) into the CLAM::LPModel class.  Further goals are to add tracking and smoothing  and to integrate it with the network editor and annotator.
 
 === Week 5-6  (Jun 25 to Jul 9) ===
 
