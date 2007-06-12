@@ -14,7 +14,7 @@ The three major application distributed with CLAM have a tutorial. Also on the w
 
 == Getting insight on CLAM concepts ==
 
-A very recommendable step is reading the [[Network Editor tutorial]]. It explains the Network Editor application it self but also gives insight on
+A very recommendable step is reading the [[Network Editor tutorial]]. It explains the Network Editor application itself but also gives insight on
 * Main CLAM inner concepts such as Processing, Port, Control, Configuration... 
 * The processing objects which are available (SMS, Spectral, TonalAnalysis...)
 * The visual prototyping work flow (how to visually develop applications)
