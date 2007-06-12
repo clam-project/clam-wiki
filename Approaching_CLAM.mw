@@ -6,7 +6,7 @@ Binary packages are available for major platforms, so check out the [http://www.
 
 When building from source code, look first of all the [http://iua-share.upf.edu/svn/clam/trunk/CLAM/INSTALL INSTALL] files distributed with the source code. CLAM applications also have an INSTALL file themselves.
 
-Some platform specific issues are collectively documented on the wiki (Installation notes on the main page).
+Some platform specific issues are collectively documented on the [[Main Page|wiki]] (Installation notes on the main page).
 
 == Using the applications ==
 
