@@ -1,5 +1,10 @@
 This manual chapter gives hints on how to migrate existing code from one version of CLAM to another hihglighting code level incompatibilities and new ways of doing things.
 
+== 1.1 to 1.2 ==
+
+* Processing::GetExecState() has been removed. Use Processing::IsRunning() and Processing::IsConfigured() which lead to more readable code.
+* {Mono|MultiChannel}AudioFileReader::GetAudioFile() method has been removed. If you want to access the header or the text descriptors just use the {Mono|MultiChannel}AudioFileReader::GetHeader() and {Mono|MultiChannel}AudioFileReader::GetTextDescriptors() 
+
 == 1.0 to 1.1 ==
 
 === vmqt and vmfl ===
