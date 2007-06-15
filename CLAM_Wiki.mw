@@ -29,6 +29,7 @@
 ** [[Processings with controls]]
 ** [[Processings with configuration]]
 ** [[Adding Monitors]]
+** [[Defining a ProcessingComposite]]
 * [[Version Migration Guide]]
 
 * Old: [[DeprecatedDoc/CLAMUserManual|documentation index]] (deprecated documentation dumped from the old manual)
