@@ -58,6 +58,10 @@ I was able to get an initial program to extract the LPC coefficients from a wave
 ** Annotator
 ** do I need a special visualization for formants?  (ideally a scrolling window)
 
+==== Notes ====
+
+While waiting to see Sandra's code I looked into some linear algebra books about finding roots.  Kind of interesting change of pace.  Since the numerical methods are by definition approximations, I was thinking about having the root finding and formant tracking/smoothing combined.  Seems like this would be good, but also would be a distraction from other things.  Let's see how efficient the formant tracking is and if its necessary or not.  Also, I've been thinking about a poster to the list who asked about an application that DTW would be good for.  Pau expressed interest on the list (Subject: Re: [CLAM] request), so I have been thinking about possibilities for this.  Actually, I still feel a bit of a newbie still b/c it's kind of hard to think of how DTW can be incorporated into clam.   One idea is to have two similar files in network editor and blend them together using DTW to find the best alignment of the two.   This however might not have realtime performance b/c the distance matrix would have to be constructed (and the path found) prior to playback.  So this aspect seems to indicate annotator, but annotator only has one file per annotation. I'll think it over some more and then post back to the list to see what Pau had in mind...
+
 === Week 5-6  (Jun 25 to Jul 9) ===
 
 === Week 7-8  (Jul 9 to Jul 23) ===
