@@ -5,15 +5,10 @@
 
 === Medium priority ===
 * (med) open ladspa libs bug
-* (med) extract implementation in file LadspaFactory.cxx
-* (med) '''new''' make LadspaFactory.hxx non-coupled with ladspa headers. so uses of LFactory don't need #ifdef USE_LADSPA. use Pimpl C++ idiom in LFactory.
 * "extensible processings" refactoring: change NetworkEditor processing loading logic
 ** 1. put all info about processings in the factory
 ** 2. build QTree from factory data.
 ** 3. query list of processings of a given category to the factory.
-* Factory:
-** refactoring: clam creators being objects not functions
-** unify clam and ladspa factory
 ** add new columns to the associative data-structure: category, description.
 
 === Low priority ===
@@ -24,6 +19,10 @@
 
 
 == Done ==
+* Factory:
+** refactoring: clam creators being objects not functions
+** unify clam and ladspa factory
+* '''new''' make LadspaFactory.hxx non-coupled with ladspa headers. so uses of LFactory don't need #ifdef USE_LADSPA. use Pimpl C++ idiom in LFactory.
 * (must change interaction?) automatic in-control sliders in networkeditor
 * (med) more verbose keys for LadspaFactory. at least including "ladspa"
 * use the real value (get rid of the fixed-value hack)
@@ -52,5 +51,6 @@
 * (med) wrapper any plugin in the three
 
 == Dropped ==
+* (med) extract implementation in file LadspaFactory.cxx
 * (low) add Ladspa tree and order it by cat
 ** (low) check for # of plugins to make a branch in the tree
