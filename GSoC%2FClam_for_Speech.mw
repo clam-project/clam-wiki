@@ -51,17 +51,11 @@ I was able to get an initial program to extract the LPC coefficients from a wave
 ==== To do ====
 
 * finish the formant extraction: 
-
 ** figure out how to get roots
-
 ** tracking and smoothing
-
 * figure out incorporation into clam applications
-
 ** Network Editor
-
 ** Annotator
-
 ** do I need a special visualization for formants?  (ideally a scrolling window)
 
 === Week 5-6  (Jun 25 to Jul 9) ===
