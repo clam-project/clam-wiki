@@ -4,6 +4,9 @@
 **add the properties to the example schemas
 **add properties to the FloatArray type on the schema
 **use such properties to fill the FloatArrayDataSource interface
+* Add Scrolling Spectrogram view
+**Add to Network Editor
+**Port to Annotator
 
 == Scheduled tasks ==
 
