@@ -15,10 +15,10 @@ There are also a number of Mac-specific issues that hinder Annotator's usability
 =Details=
 ==Milestones==
 Weeks 1&2:
-* Synchronize Annotator's KeySpace / Tonnetz / DataSource implementations with NetworkEditor's more up-to-date implementations
-* Port BarGraph to Annotator InstantView
+* [[Image:done.png]] Synchronize Annotator's KeySpace / Tonnetz / DataSource implementations with NetworkEditor's more up-to-date implementations
+* [[Image:done.png]] Port BarGraph to Annotator InstantView
 To follow (in order):
-* Add Properties to Attributes
+* (IN PROGRESS NOW) Add Properties to Attributes
 * Add Vector evolution view to Annotator (weeks 3&4?)
 * clean up vmqt & lower vmqt complexity (weeks 4&5)
 * Add Spectrum instant view to Annotator
