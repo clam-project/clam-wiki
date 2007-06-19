@@ -1,6 +1,9 @@
 == Widget related tasks ==
 
-* [[Image:done.png]] Add this section to the Annotator Todo page for Bennett to use it
+* Add Properties to Attributes
+**add the properties to the example schemas
+**add properties to the FloatArray type on the schema
+**use such properties to fill the FloatArrayDataSource interface
 
 == Scheduled tasks ==
 
