@@ -1,5 +1,5 @@
 == Widget related tasks ==
-
+(All being addressed as part of [http://iua-share.upf.edu/wikis/clam/index.php/GSoC/Enhancing_Clam%27s_Widgets Bennett's GSoC work] unless otherwise noted)
 * Add Properties to Attributes
 **add the properties to the example schemas
 **add properties to the FloatArray type on the schema
