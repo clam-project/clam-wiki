@@ -434,7 +434,7 @@ copy the qt4 dlls
  mkdir local
  http://iua-share.upf.edu/mnt/svn/clam/trunk clam
  cd clam/CLAM
- scons configure with_fftw3=1 with_fftw=0 audio_backend=portaudio xmlbackend=none prefix=~/CajitasDeArena/mingw/local sandbox_path=~/CajitasDeArena/mingw/
+ scons configure with_fftw3=1 with_fftw=0 audio_backend=portaudio xmlbackend=xmlpp prefix=~/CajitasDeArena/mingw/local sandbox_path=~/CajitasDeArena/mingw/
  scons
  cp scons/libs/*/*dll ../../dlls
  scons install
