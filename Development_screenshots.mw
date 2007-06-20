@@ -2,7 +2,9 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1.1 (1.2?) =
 <gallery>
+Image:MingwWindowsNetEditor.png|The crosscompiled NetworkEditor (in Linux) now working in a real Windows!!!
 Image:MingwWineNetEditor.png|A mingw32 crosscompiled NetworkEditor working under Wine!!!
+
 </gallery>
 
 = 1.1 =
