@@ -1,8 +1,9 @@
 == GSoC TODO's ==
 
-* [[Image:done.png]] Adding this section for Roman to handle his ToDo's
-
-
+Some short term goals for getting accustomed with the code:
+* Make the parameters of TonalAnalysis configurable in NetworkEditor
+* Make a precomputed SparseKernel for the default configuration
+* Seperate the inner workings of TonalAnalysis into Processing Composites
 
 == Detection algorithm enhancements ==
 
