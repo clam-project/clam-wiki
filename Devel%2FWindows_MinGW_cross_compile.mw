@@ -60,11 +60,10 @@ And now lets compile it.
 Windows requires dll's to be on PATH or on the same dir.
 I don't know how to set PATH on wine so i just copied them on the binary folder.
 
- $ cp $QTDIR/bin/*dll .
+ $ cp $QTDIR/bin/Qt*dll .
  $ ./helloqt.exe
 
 [[image:Mingw32WineHelloQt.png|center|Our fist crosscompiled Qt app]]
-
 
 == Does wine runs current Visual based CLAM release? ==
 
