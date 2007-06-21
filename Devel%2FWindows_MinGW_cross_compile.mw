@@ -426,7 +426,10 @@ http://mesh.dl.sourceforge.net/sourceforge/nsis/nsis-2.28-setup.exe
 
 == CLAM ==
 
-Apply the patch send to the mailing list.
+Apply the CLAM tree the patch with the higher number in this download page.
+ http://clam.iua.upf.edu/download/win/mingw32-spike/
+
+
 
 Add the dll path to the ~/.wine/system.reg
 Section [System\\CurrentControlSet\\Control\\Session Manager\\Environment], Key PATH
