@@ -415,9 +415,8 @@ http://ftp.gnome.org/pub/gnome/binaries/win32/gtkmm/2.10/gtkmm-win32-devel-2.10.
 
  cp -r /home/vokimon/.wine/drive_c/GTK/{include,lib,bin} gtk
 
-TODO: Filter out the non needed libraries
-TODO: Move dll's to 'dlls' folder
-
+GTK adds the bin folder to the wine PATH, this is needed just for NSIS to find the dll's
+ cp gtk/bin/*.dll dlls
 
 == NSIS ==
 
