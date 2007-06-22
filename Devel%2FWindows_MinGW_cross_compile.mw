@@ -438,7 +438,11 @@ Download py2exe and install it.
 
 
  cd clam/Annotator/SimacServicesClient
+ mkdir -p build/bdist.win32/winexe/bundle-2.5
+ cp /home/vokimon/.wine/drive_c/windows/system32/python25.dll build/bdist.win32/winexe/bundle-2.5
  wine /home/vokimon/.wine/drive_c/Python25/python.exe buildExeFromPython.py
+
+Still getting errors at this point
 
 == CLAM ==
 
