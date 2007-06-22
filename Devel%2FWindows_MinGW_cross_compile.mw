@@ -452,4 +452,4 @@ copy the qt4 dlls
  cd ../Annotator/vmqt
  QTDIR=~/.wine/drive_c/Qt/4.2.3/ scons clam_prefix=~/CajitasDeArena/mingw/local crosscompiling=1
  cd ..
- QTDIR=~/.wine/drive_c/Qt/4.2.3/ scons prefix=~/CajitasDeArena/mingw/local  clam_prefix=~/CajitasDeArena/mingw/local crosscompiling=1 package
+ QTDIR=~/.wine/drive_c/Qt/4.2.3/ scons prefix=~/CajitasDeArena/mingw/local  clam_prefix=~/CajitasDeArena/mingw/local external_dll_path=~/CajitasDeArena/mingw/dlls crosscompiling=1 package
