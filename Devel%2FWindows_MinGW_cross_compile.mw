@@ -447,13 +447,13 @@ copy the qt4 dlls
  mkdir local
  http://iua-share.upf.edu/mnt/svn/clam/trunk clam
  cd clam/CLAM
- scons configure with_fftw3=1 with_fftw=0 audio_backend=portaudio xmlbackend=xmlpp prefix=~/CajitasDeArena/mingw/local sandbox_path=~/CajitasDeArena/mingw/ crosscompiling=1
+ scons configure with_fftw3=1 with_fftw=0 audio_backend=portaudio xmlbackend=xmlpp prefix=~/CajitasDeArena/mingw/local sandbox_path=~/CajitasDeArena/mingw/ crossmingw=1
  scons
  cp scons/libs/*/*dll ../../dlls
  scons install
  cd ../NetworkEditor
- QTDIR=~/.wine/drive_c/Qt/4.2.3/ scons clam_prefix=~/CajitasDeArena/mingw/local prefix=~/CajitasDeArena/mingw/local external_dll_path=~/CajitasDeArena/mingw/dlls crosscompiling=1 package
+ QTDIR=~/.wine/drive_c/Qt/4.2.3/ scons clam_prefix=~/CajitasDeArena/mingw/local prefix=~/CajitasDeArena/mingw/local external_dll_path=~/CajitasDeArena/mingw/dlls crossmingw=1 package
  cd ../Annotator/vmqt
- QTDIR=~/.wine/drive_c/Qt/4.2.3/ scons clam_prefix=~/CajitasDeArena/mingw/local crosscompiling=1
+ QTDIR=~/.wine/drive_c/Qt/4.2.3/ scons clam_prefix=~/CajitasDeArena/mingw/local crossmingw=1
  cd ..
- QTDIR=~/.wine/drive_c/Qt/4.2.3/ scons prefix=~/CajitasDeArena/mingw/local  clam_prefix=~/CajitasDeArena/mingw/local external_dll_path=~/CajitasDeArena/mingw/dlls crosscompiling=1 package
+ QTDIR=~/.wine/drive_c/Qt/4.2.3/ scons prefix=~/CajitasDeArena/mingw/local  clam_prefix=~/CajitasDeArena/mingw/local external_dll_path=~/CajitasDeArena/mingw/dlls crossmingw=1 package
