@@ -428,8 +428,13 @@ http://mesh.dl.sourceforge.net/sourceforge/nsis/nsis-2.28-setup.exe
 
 [http://www.py2exe.org/ py2exe] is needed to add Annotator's support for Boca tasks. 
 
+Download and install python
+ wget http://python.org/ftp/python/2.5.1/python-2.5.1.msi
+ msiexec /i python-2.5.1.msi
+
 Download py2exe and install it.
-http://switch.dl.sourceforge.net/sourceforge/py2exe/py2exe-0.6.6.win32-py2.5.exe
+ wget http://switch.dl.sourceforge.net/sourceforge/py2exe/py2exe-0.6.6.win32-py2.5.exe
+ wine py2exe-0.6.6.win32-py2.5.exe
 
 == CLAM ==
 
