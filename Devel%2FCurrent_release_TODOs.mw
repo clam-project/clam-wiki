@@ -1,3 +1,12 @@
+
+== 1.1.1 ==
+
+* Migration guide: FactoryRegistrator instead of Factory::Registrator
+* '''Update How-to new processing'''
+* Add new how-to: minimal processing with audio ports
+* Clean old neteditor tests?
+* Make Assert handler thread safe. Store message in network.
+
 == 1.1 ==
 
 * New InControlInt__XXX prototyper bind name
@@ -6,7 +15,6 @@
 * Update examples (.ui files)
 * NetworkEditor faust_dir option
 * MSVC NetworkEditor installer (thanks Pol Pros)
-
 
 == 0.99 (aka 1.0 preview) ==
 
