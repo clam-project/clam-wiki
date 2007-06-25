@@ -7,6 +7,11 @@
 * Clean old neteditor tests?
 * Make Assert handler thread safe. Store message in network.
 
+* testfarm 
+** Unify testfarm client scripts
+** Add windows mingw client
+** nightly execution: doxygen, release, double, snapshot up
+
 == 1.1 ==
 
 * New InControlInt__XXX prototyper bind name
