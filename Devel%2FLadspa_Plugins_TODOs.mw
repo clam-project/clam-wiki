@@ -22,7 +22,7 @@
 * Factory:
 ** refactoring: clam creators being objects not functions
 ** unify clam and ladspa factory
-* '''new''' make LadspaFactory.hxx non-coupled with ladspa headers. so uses of LFactory don't need #ifdef USE_LADSPA. use Pimpl C++ idiom in LFactory.
+* ('''not needed''') make LadspaFactory.hxx non-coupled with ladspa headers. so uses of LFactory don't need #ifdef USE_LADSPA. use Pimpl C++ idiom in LFactory.
 * (must change interaction?) automatic in-control sliders in networkeditor
 * (med) more verbose keys for LadspaFactory. at least including "ladspa"
 * use the real value (get rid of the fixed-value hack)
