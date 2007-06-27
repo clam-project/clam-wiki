@@ -76,4 +76,4 @@ And recompile it. Add also any 3rd party library not already used in CLAM distri
 
 As no symbol from the processing library is directly accessed by the NetworkEditor,
 you won't need to recompile NetworkEditor
-just recompiling and reinstalling your library.
+just recompiling and reinstalling your library. (At least in Linux)
