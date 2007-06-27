@@ -13,6 +13,8 @@ That will come soon.
 You can use this simple SConstruct file to compile all the processings found in a folder
 and create a dynamic library with them.
 
+'''Don't forget to change the 'libraryName' variable to your own library name'''
+
  import os, glob, sys
  
  libraryName='myclamlib'
@@ -57,7 +59,8 @@ and create a dynamic library with them.
  env.Alias('install', install)
  env.Default(libraries)
 
-Don't forget to change the 'libraryName' variable to your taste
+
+== Usage ==
 
 Build the library by doing:
  $ scons clam_prefix=path/to/installed/clam/prefix
