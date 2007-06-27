@@ -25,7 +25,7 @@ and create a dynamic library with them.
  options.Save('options.cache', env)
  Help(options.GenerateHelpText(env))
  env.SConsignFile() # Single signature file
-
+ 
  CLAMInstallDir = env['clam_prefix']
  clam_sconstoolspath = os.path.join(CLAMInstallDir,'share','clam','sconstools')
  nv.Tool('clam', toolpath=[clam_sconstoolspath])
@@ -40,7 +40,7 @@ and create a dynamic library with them.
  sources = dict.fromkeys(sources).keys()
  if sys.platform=='linux2' :
  	env.Append( CCFLAGS=['-g','-O3','-Wall'] )
-libraries = [
+ libraries = [
  	env.SharedLibrary(target=libraryName, source = sources),
  	]
  
