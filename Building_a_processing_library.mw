@@ -1,7 +1,7 @@
 == Scenario and limitations ==
 
 This page explains how to proceed when you are developing a set of processings,
-you want to try them and you have your own source tree.
+you want to try them with the NetworkEditor/Prototyper but you have your own source tree.
 
 The procedure just works but it will eventually evolve toward a dynamic loading of dlls.
 
