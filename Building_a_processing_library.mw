@@ -8,7 +8,7 @@ The procedure just works but it will eventually evolve toward a dynamic loading 
 It also does not provide a way of having Configuration dialogs for the processing.
 That will come soon.
 
-= A sample SConstruct file =
+== A sample SConstruct file ==
 
 You can use this simple SConstruct file to compile all the processings found in a folder
 and create a dynamic library with them.
