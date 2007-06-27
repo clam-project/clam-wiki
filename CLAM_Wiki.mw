@@ -29,7 +29,7 @@
 ** [[Processings with controls]]
 ** [[Processings with configuration]]
 ** [[Adding Monitors]]
-** [[Minimal SConstruct to build a processing dll]]
+** [[Building a processing library]]
 ** [[Defining a ProcessingComposite]]
 * [[Version Migration Guide]]
 
