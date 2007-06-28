@@ -8,6 +8,23 @@
 **Add to Network Editor
 **Port to Annotator
 
+* On BuildSchema, add a call to add 'Frame::SpectrumMagnitude', guess or
+invent the bin gap and offset.
+* On MFCC2Pool get the write pool for such attribute and fill it.
+* Regenarate the example pool data
+
+in PoolFloatArrayDataSource (PFADS) and InstantViewPlugin:
+* PFADS::nBins() should be taken from the new attribute property NBins if
+available, if not, from the labels size as it is done now.
+* PFADS::getLabel should return:
+** The binLabel if bin<_binLabel size.
+** A numeric representation if the needed attribute properties is available
+** Empty string or 'ERR' if not
+* For BarGraph filter FloatArrays without binLabels AND without NBins
+* Adapt all the InstantViewPlugins to use the NBins when available.
+* Run the Annotator, add a BarGraph for SpectrumMagnitude and send a
+development screenshot to the wiki ;-)
+
 == Scheduled tasks ==
 
 * When no pool can be loaded do something. What?
