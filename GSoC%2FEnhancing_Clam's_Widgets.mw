@@ -31,9 +31,10 @@ To follow (in order):
 
 ==TODOs==
 * Add Properties to Attributes
-**add properties to the example schemas
-**add properties to the FloatArray type on the schema
+**[[Image:done.png]]add properties to the example schemas
+**[[Image:done.png]]add properties to the FloatArray type on the schema
 **use such properties to fill the FloatArrayDataSource interface
+**modify ClamExtractorExample to demonstrate / test properties
 
 === Open Fronts on Widgets ===
 
