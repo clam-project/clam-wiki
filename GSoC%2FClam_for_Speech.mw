@@ -72,6 +72,22 @@ Another thing I noticed was that there doesn't seem to be preemphasis being done
 
 === Week 5-6  (Jun 25 to Jul 9) ===
 
+Last weeks, I found algorithms that work solving the roots of the LP coefficients.  It uses a Hessenberg companion matrix.  These coming two weeks I will implement this into clam.  My approach is to incorporate it into the LP model first.  Then I think it might deserve it's own class, or perhaps be put into the matrix class.  
+
+
+==== todo ====
+
+* Finish root solving algorithm
+* Tracking and smoothing
+* Incorporation into clam tools/visualizations
+* testing
+* ask about how to best incorporate the code (in which class)
+
+==== notes ====
+
+it took me a while to figure out the matrix class code.  Perhaps I can submit a version with more comments.  there are also some areas with @todo's marked.  One other point of uncertainty is that there are matrix classes in src/... and also in scons/... .
+
+
 === Week 7-8  (Jul 9 to Jul 23) ===
 *mid term evaluation
 
