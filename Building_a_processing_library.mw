@@ -83,7 +83,8 @@ just by placing the library in a given directory.
 
 This is work in progress. 
 It just works in Linux by putting the dll in a hardcoded /usr/lib/clam directory.
+So you should change the hardcoded path or moving the libraries there.
 
-In the future, (1.1.1 release?) we aim to support the rest platforms, and
+In the future, (final 1.1.1 release?) we aim to support the rest platforms, and
 looking for a set of paths. Including user writeable paths and 
 taking some environment variable into account.
