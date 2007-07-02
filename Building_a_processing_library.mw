@@ -67,6 +67,9 @@ Build the library by doing:
 Install it the same place you have CLAM by issuing:
  $ scons install
 
+
+== Compile time mode (deprecated) ==
+
 To use the library from the NetworkEditor, Prototyper... you should add this line to its SConstruct file:
 
  env.AppendUnique(LIBS='myclamlib')
@@ -76,3 +79,15 @@ And recompile it. Add also any 3rd party library not already used in CLAM distri
 As no symbol from the processing library is directly accessed by the NetworkEditor,
 you won't need to recompile NetworkEditor
 just recompiling and reinstalling your library. (At least in Linux)
+
+== Run time mode (experimental) ==
+
+As for CLAM 1.1.1 (svn) we can load processing plugins on runtime, 
+just by placing the library in a given directory.
+
+This is work in progress. 
+It just works in Linux by putting the dll in a hardcoded /usr/lib/clam directory.
+
+In the future, (1.1.1 release?) we aim to support the rest platforms, and
+looking for a set of paths. Including user writeable paths and 
+taking some environment variable into account.
