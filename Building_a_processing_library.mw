@@ -26,7 +26,7 @@ and create a dynamic library with them.
  	return filter( (lambda a : a.rfind( ".svn")==-1 ),  [ a[0] for a in os.walk(root)]  )
  
  options = Options('options.cache', ARGUMENTS)
- options.Add(PathOption('clam_prefix', 'The prefix where CLAM was installed', ''))
+ options.Add(PathOption('clam_prefix', 'The prefix where CLAM was installed', '/bad/path'))
  if platform=='linux2' :
  	options.Add(BoolOption('crossmingw', 'Activates the MinGW Windows crosscompiling mode', 'no'))
  
