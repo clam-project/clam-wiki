@@ -1,11 +1,9 @@
-== Scenario and limitations ==
+== Scenario ==
 
-This page explains how to proceed when you are developing a set of processings,
-you want to try them with the NetworkEditor/Prototyper tandem 
-but you have your own source tree and you don't want to recompile the NetworkEditor.
+This page explains how to develop your own library of processings,
+to be used with the NetworkEditor/Prototyper tandem or any other CLAM based application.
 
-The procedure does not provide a way of having Configuration dialogs for the processing.
-But it is feasible with CLAM as is, so that will come soon.
+TODO: Explain extra setup to provide ''configuration dialogs'' for the new processings.
 
 == A sample SConstruct file ==
 
