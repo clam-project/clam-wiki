@@ -1,12 +1,11 @@
 == Scenario and limitations ==
 
 This page explains how to proceed when you are developing a set of processings,
-you want to try them with the NetworkEditor/Prototyper but you have your own source tree.
+you want to try them with the NetworkEditor/Prototyper tandem 
+but you have your own source tree and you don't want to recompile the NetworkEditor.
 
-The procedure just works but it will eventually evolve toward a dynamic loading of dlls.
-
-It also does not provide a way of having Configuration dialogs for the processing.
-That will come soon.
+The procedure does not provide a way of having Configuration dialogs for the processing.
+But it is feasible with CLAM as is, so that will come soon.
 
 == A sample SConstruct file ==
 
