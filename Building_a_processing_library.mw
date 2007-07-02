@@ -27,6 +27,8 @@ and create a dynamic library with them.
  
  options = Options('options.cache', ARGUMENTS)
  options.Add(PathOption('clam_prefix', 'The prefix where CLAM was installed', ''))
+ if platform=='linux2' :
+ 	options.Add(BoolOption('crossmingw', 'Activates the MinGW Windows crosscompiling mode', 'no'))
  
  env = Environment(ENV=os.environ, options=options)
  options.Save('options.cache', env)
@@ -35,7 +37,9 @@ and create a dynamic library with them.
  
  CLAMInstallDir = env['clam_prefix']
  clam_sconstoolspath = os.path.join(CLAMInstallDir,'share','clam','sconstools')
- nv.Tool('clam', toolpath=[clam_sconstoolspath])
+ if env['crossmingw'] :
+ 	env.Tool('crossmingw', toolpath=[clam_sconstoolspath])
+ env.Tool('clam', toolpath=[clam_sconstoolspath])
  env.EnableClamModules([
  	'clam_core',
  	'clam_audioio',
