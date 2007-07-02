@@ -61,12 +61,20 @@ public:
 As the class methods get verbose, it is convenient to move the implementation to the cxx. To keep the example short and easy to follow and copy, we kept all the implementations on the hxx.
 
 But, still, what needs always be on the cxx file is the factory registration.
-
+ // Version up to 1.1.0
  #include "MyProcessing.hxx"
  #include <CLAM/Factory.hxx>
  
  static CLAM::Factory<CLAM::Processing>::Registrator<MyProcessing>
  	myProcessingRegistrator("MyProcessing");
+
+ // Version beyond 1.1.0
+ #include "MyProcessing.hxx"
+ #include <CLAM/ProcessingFactory.hxx>
+ 
+ static CLAM::FactoryRegistrator<CLAM::ProcessingFactory, MyProcessing>
+ 	myProcessingRegistrator("MyProcessing");
+
 
 You can blindly copy and change 'MyProcessing' by the name of your actual class.
 
