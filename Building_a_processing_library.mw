@@ -78,7 +78,7 @@ As no symbol from the processing library is directly accessed by the NetworkEdit
 you won't need to recompile NetworkEditor
 just recompiling and reinstalling your library. (At least in Linux)
 
-== Run time mode (experimental) ==
+== Usage: Run time mode (experimental) ==
 
 As for CLAM 1.1.1 (svn) we can load processing plugins on runtime, 
 just by placing the library in a given directory.
