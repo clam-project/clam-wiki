@@ -66,7 +66,7 @@ Build the library by doing:
 Install it the same place you have CLAM by issuing:
  $ scons install
 
-== Compile time mode (deprecated) ==
+== Usage: compile time mode (deprecated) ==
 
 To use the library from the NetworkEditor, Prototyper... you should add this line to its SConstruct file:
 
