@@ -83,12 +83,12 @@ just recompiling and reinstalling your library. (At least in Linux)
 == Usage: Run time mode (experimental) ==
 
 As for CLAM 1.1.1 (svn) we can load processing plugins on runtime, 
-just by placing the library in a given directory.
+just by placing the library in a given directory:
+* One of the colon/semicolon separated paths on CLAM_PLUGIN_PATH environment variable
+* ~/.clam/plugins
+* /opt/lib/clam
+* /usr/local/lib/clam
+* /usr/lib/clam
 
-This is work in progress. 
-It just works in Linux by putting the dll in a hardcoded /usr/lib/clam directory.
-So you should change the hardcoded path or moving the libraries there.
-
-In the future, (final 1.1.1 release?) we aim to support the rest platforms, and
-looking for a set of paths. Including user writeable paths and 
-taking some environment variable into account.
+The former SConstruct script install the library at $clam_prefix/lib/clam when you issue:
+ $ scons install
