@@ -27,7 +27,7 @@ and create a dynamic library with them.
  
  options = Options('options.cache', ARGUMENTS)
  options.Add(PathOption('clam_prefix', 'The prefix where CLAM was installed', '/bad/path'))
- if platform=='linux2' :
+ if sys.platform=='linux2' :
  	options.Add(BoolOption('crossmingw', 'Activates the MinGW Windows crosscompiling mode', 'no'))
  
  env = Environment(ENV=os.environ, options=options)
