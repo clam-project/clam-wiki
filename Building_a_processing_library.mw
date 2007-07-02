@@ -55,7 +55,7 @@ and create a dynamic library with them.
  	env.SharedLibrary(target=libraryName, source = sources),
  	]
  
- install = env.Install(os.path.join(CLAMInstallDir,'lib'), libraries)
+ install = env.Install(os.path.join(CLAMInstallDir,'lib','clam'), libraries)
  
  env.Alias('install', install)
  env.Default(libraries)
