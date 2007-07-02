@@ -75,7 +75,6 @@ To use the library from the NetworkEditor, Prototyper... you should add this lin
  env.AppendUnique(LIBS='myclamlib')
 
 And recompile it. NetworkEditor recompiling is needed just once.
-
 As no symbol from the processing library is directly accessed by the NetworkEditor,
 you won't need to recompile NetworkEditor
 just recompiling and reinstalling your library. (At least in Linux)
