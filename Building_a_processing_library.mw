@@ -59,14 +59,12 @@ and create a dynamic library with them.
  env.Default(libraries)
 
 
-== Usage ==
 
 Build the library by doing:
  $ scons clam_prefix=path/to/installed/clam/prefix
 
 Install it the same place you have CLAM by issuing:
  $ scons install
-
 
 == Compile time mode (deprecated) ==
 
