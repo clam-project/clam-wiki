@@ -81,6 +81,11 @@ The configuration object may contain errors. In such case the ConcreteConfigure 
  	}
  	...
 
+Returning false will turn red the processing when displayed by the NetworkEditor.
+The message can be seen when you hover over the red processing.
+
+[Image:NetTutorial-ErrorTooltip.png|A badly configured processing in the NetworkEditor]
+
 == Useful attribute types for configuration objects ==
 
 * '''[http://clam.iua.upf.edu/doc/CLAM-devel-doxygen/classCLAM_1_1Text.html CLAM::Text]:''' It shares interface with std::string but Text supports spaces. std::string fails to read strings with spaces, it just takes the first word. Dont't use 'char*' as attribute type in any case.
