@@ -92,5 +92,5 @@ just by placing the library in a given directory:
 The former SConstruct script install the library at $clam_prefix/lib/clam when you issue:
  $ scons install
 
-Considering your prefix is at ~/local you could run the NetworkEditor this way:
+Considering your prefix is at ~/local you could run the NetworkEditor or any CLAM based application this way:
  $ CLAM_PLUGIN_PATH=~/local/lib/clam NetworkEditor
