@@ -73,9 +73,9 @@ The configuration object may contain errors. In such case the ConcreteConfigure 
 * Explaining the user the error by appending a message with the Processing::AddConfigErrorMessage method
 * Returning false so that CLAM knows the configuration failed.
 
-bool ConcreteConfigure(const CLAM::ProcessingConfig & config)
-{
-	...
+ bool ConcreteConfigure(const CLAM::ProcessingConfig & config)
+ {
+ 	...
  	if (SomeWeirdConditionHappens)
  	{
  		AddConfigErrorMessage("Some weird condition");
