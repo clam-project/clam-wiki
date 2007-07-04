@@ -83,7 +83,8 @@ The configuration object may contain errors. In such case the ConcreteConfigure 
  	}
  	...
 
-Returning false will turn red the processing when displayed by the NetworkEditor.
+Returning false will keep your processing in Unconfigured state (it can not be started).
+It will also turn in red the processing when displayed by the NetworkEditor.
 The message can be seen when you hover over the red processing.
 Here we can see an example:
 
