@@ -18,6 +18,8 @@
 ** Adapt all the InstantViewPlugins to use the NBins when available.
 ** Run the Annotator, add a BarGraph for SpectrumMagnitude and send adevelopment screenshot to the wiki ;-)
 
+* Investigate factoring plugins out of InstantViewPlugin.cxx or adding helper methods to reduce code repetition
+
 * Add Scrolling Spectrogram view
 **Add to Network Editor
 **Port to Annotator
