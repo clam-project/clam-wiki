@@ -8,7 +8,7 @@
 ** [[Image:done.png]]add properties to the FloatArray type on the schema
 ** [[Image:done.png]]use such properties to fill the FloatArrayDataSource interface
 ** [[Image:done.png]] PFADS::nBins() should be taken from the new attribute property NBins if available, if not, from the labels size as it is done now.
-** [[Image:done.png]] PFADS::getLabel should return:
+* [[Image:done.png]] PFADS::getLabel should return:
 ** The binLabel if bin<_binLabel size.
 ** A numeric representation if the needed attribute properties is available
 ** Empty string or 'ERR' if not
