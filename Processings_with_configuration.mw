@@ -83,8 +83,9 @@ The configuration object may contain errors. In such case the ConcreteConfigure 
 
 Returning false will turn red the processing when displayed by the NetworkEditor.
 The message can be seen when you hover over the red processing.
+Here we can see an example:
 
-[[Image:NetTutorial-ErrorTooltip.png|A badly configured processing in the NetworkEditor]]
+[[Image:NetTutorial-ErrorTooltip.png|center|A badly configured processing in the NetworkEditor]]
 
 == Useful attribute types for configuration objects ==
 
