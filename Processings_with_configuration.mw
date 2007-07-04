@@ -73,15 +73,15 @@ The configuration object may contain errors. In such case the ConcreteConfigure 
 * Explaining the user the error by appending a message with the Processing::AddConfigErrorMessage method
 * Returning false so that CLAM knows the configuration failed.
 
- bool ConcreteConfigure(const CLAM::ProcessingConfig & config)
- {
- 	...
- 	if (SomeWeirdConditionHappens)
+ 	bool ConcreteConfigure(const CLAM::ProcessingConfig & config)
  	{
- 		AddConfigErrorMessage("Some weird condition");
- 		return false;
- 	}
- 	...
+ 		...
+ 		if (SomeWeirdConditionHappens)
+ 		{
+ 			AddConfigErrorMessage("Some weird condition");
+ 			return false;
+ 		}
+ 		...
 
 Returning false will keep your processing in Unconfigured state (it can not be started).
 It will also turn in red the processing when displayed by the NetworkEditor.
