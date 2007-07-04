@@ -85,7 +85,9 @@ Last weeks, I found algorithms that work solving the roots of the LP coefficient
 
 ==== notes ====
 
-it took me a while to figure out the matrix class code.  Perhaps I can submit a version with more comments.  there are also some areas with @todo's marked.  One other point of uncertainty is that there are matrix classes in src/... and also in scons/... .  I should verify that my code is using the right pragmatics for Matrix and Complex b/c those are the ones I'm most unsure about.
+it took me a while to figure out the matrix class code.  Perhaps I can submit a version with more comments.  there are also some areas with @todo's marked.  One other point of uncertainty is that there are matrix classes in src/... and also in scons/... .  I should verify that my code is using the right pragmatics for Matrix and Complex b/c those are the ones I'm most unsure about.  
+
+The algorithm I implemented makes use of epsilon for checking if matrix elements are smaller than rounding errors.  I grepped thru clam and it seems like there is some epsilon used in some assert statements, but I couldn't find where it was defined or how to use it.
 
 === Week 7-8  (Jul 9 to Jul 23) ===
 *mid term evaluation
