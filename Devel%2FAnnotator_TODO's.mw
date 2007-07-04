@@ -5,7 +5,7 @@
 ** [[Image:done.png]] On BuildSchema, add a call to add 'Frame::SpectrumMagnitude', guess or invent the bin gap and offset.
 ** [[Image:done.png]] On MFCC2Pool get the write pool for such attribute and fill it.
 ** Regenerate the example pool data
-*[[Image:done.png]]add properties to the FloatArray type on the schema
+** [[Image:done.png]]add properties to the FloatArray type on the schema
 ** [[Image:done.png]]use such properties to fill the FloatArrayDataSource interface
 ** [[Image:done.png]] PFADS::nBins() should be taken from the new attribute property NBins if available, if not, from the labels size as it is done now.
 ** [[Image:done.png]] PFADS::getLabel should return:
