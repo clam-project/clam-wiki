@@ -89,6 +89,8 @@ it took me a while to figure out the matrix class code.  Perhaps I can submit a 
 
 The algorithm I implemented makes use of epsilon for checking if matrix elements are smaller than rounding errors.  I grepped thru clam and it seems like there is some epsilon used in some assert statements, but I couldn't find where it was defined or how to use it.
 
+I wanted to ask about where to put the code I've been working on, but I think it will be clearer if I pick a place.  That way I'll be able to submit a patch and it will be clearer what the code does.  My idea is to create a class for polynomial in src/standard/.  This will have the solveRoots function.  I think for now, I'll put the matrix stuff in there and ask about where is the best place to put it.  The matrixTmplDec had some stubs for eigenvalues so that might be a good place to put it, but I think that the algorithm I'm using is only for upper (and maybe just real) Hessenberg matrices, so it might need to go in a derived class.  I think that the idea
+
 === Week 7-8  (Jul 9 to Jul 23) ===
 *mid term evaluation
 
