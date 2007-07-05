@@ -1,4 +1,4 @@
-Here we will keep a list of external interesting papers/works citing or acknowledging CLAM in any way. If you happen to be using CLAM or citing it in a paper please let us know. By external we mean those not writen or developed at the MTG in Barcelona. If you want to see the list of CLAM related articles written by the authors please follow this [http://www.iua.upf.es/mtg/publicacions.php?lng=cat&authorid=&authorlink=&search=clam link].
+Here we will keep a list of external interesting papers/works citing or acknowledging CLAM in any way. If you happen to be using CLAM or citing it in a paper please let us know. By external we mean those not writen or developed at the UPF in Barcelona. If you want to see the list of CLAM related articles written by the authors please follow this [http://www.iua.upf.es/mtg/publicacions.php?lng=cat&authorid=&authorlink=&search=clam link].
 
 
 *An [http://www.pd.istc.cnr.it/FESTIVAL/home/SMS.htm italian speech synthesizer]
@@ -14,7 +14,7 @@ Here we will keep a list of external interesting papers/works citing or acknowle
 *The people at OFAI (The Austrian Artificial Research Institute) have used CLAM for several projects. 
 **See [http://wwwx.ofai.at/cgi-bin/get-tr?paper=oefai-tr-2004-22.pdf An Open Source Tool for Semi-Automatic Rhythmic Annotation] by Gouyon, Wack and Dixon, for instance.
 **Tim Pohle also cites CLAM in his Thesis [http://kluedo.ub.uni-kl.de/volltexte/2005/1881/pdf/diplomarbeit.pdf Extraction of Audio and their Evaluation in Music Classification Tasks]
-*A very curious one: ALEXANDER IVANOV SOTIROV talks about CLAM in his thesis [http://cs.ua.edu/research/TechnicalReports/TR-2005-01.pdf AUTOMATIC VULNERABILITY DETECTION USING STATIC SOURCE CODE ANALYSIS]
+*A very curious one: Alexander Sotirov talks about CLAM in his thesis [http://gcc.vulncheck.org/sotirov05automatic.pdf Automatic Vulnerability Detection Using Static Source Code Analysis]
 *Robert Rowe, from the New York university cites CLAM in his article [http://homepages.nyu.edu/~rr6/spark.pdf Personal Effects: Weaning Interactive Systems from MIDI]
 *Paul Brossier and other people at Queen Mary's University of London have used CLAM in some projects [http://www.elec.qmul.ac.uk/people/juan/Documents/Brossier-ISMIR-2004.pdf Real-time segmentation of note objects in music signals]
 *Alexandre Francois, from University of Southern California, also acknowledges CLAM in his recent articles. See [http://iris.usc.edu/~afrancoi/pdf/afims-tr.pdf An Architectural Framework for Interactive Music Systems]
