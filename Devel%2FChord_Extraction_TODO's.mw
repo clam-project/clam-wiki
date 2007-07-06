@@ -3,6 +3,7 @@
 Some short term goals for getting accustomed with the code:
 * Make the parameters of TonalAnalysis configurable in NetworkEditor
 ** Make the algorithm "change the tunning" when starting from a different minimum frequency then 98 Hz
+*** Quick (hopefully) and dirty (hopefully not) solution (hopefully) - change the reference tunning while reconfiguring TonalAnalysis
 * Make a precomputed SparseKernel for the default configuration
 * Seperate the inner workings of TonalAnalysis into Processing Composites
 
