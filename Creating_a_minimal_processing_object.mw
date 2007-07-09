@@ -81,8 +81,8 @@ You can blindly copy and change 'MyProcessing' by the name of your actual class.
 But if you want to understand what it does, here comes an explanation:
 Static objects like this one are constructed before the 
 program's 'main' function is called.
-The constructor of this one just add the Processing Factory 
-intructions on how to create a MyProcessing object when you ask
+The constructor of this one just adds the Processing Factory 
+instructions on how to create a MyProcessing object when you ask
 for the label "MyProcessing".
 
 Nasty details.
