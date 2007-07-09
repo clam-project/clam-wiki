@@ -6,6 +6,7 @@ Some short term goals for getting accustomed with the code:
 *** [[Image:Done.png]] Quick (hopefully) and dirty (hopefully not) solution (hopefully) - change the reference tunning while reconfiguring TonalAnalysis
 * Make a precomputed SparseKernel for the default configuration
 * Seperate the inner workings of TonalAnalysis into Processing Composites
+* Adapt InstantTunningEstimator's tests to the changes in the class
 
 == Detection algorithm enhancements ==
 
