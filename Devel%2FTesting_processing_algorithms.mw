@@ -1,0 +1,37 @@
+Testing a processing algorithm is not something trivial.
+This page includes some approaches we take when testing the algorithms.
+
+* '''Direct review:'''
+Compare the algorithm implementation to bibliographic sources.
+This includes contrasting sources when more than one is available.
+
+* '''Singularities handling and unit testing:'''
+Algorithms are tested against numerical singularities (e.g. 0/0, x/0, -x1/2, ln(-x)). 
+If singularities exist, they are documented and automatically checked unit tests are provided, 
+so that we can measure quantitatively if algorithms behave as expected. 
+This provides a complete set of results that can be used for comparisons.
+
+* '''Back to back testing:'''
+First we produce “ground truth” output data from any reference implementation: 
+e.g. a Matlab implementation when we are porting to C++ or 
+the original program, when we are implementing a third party algorithm. 
+Then, this ground truth is used to compare against the output of the ported algorithm (back to back testing). Differences are highlighted and, when possible, corrected. 
+Changes detected by the 'back-to-back' procedure that are not due to implementation errors 
+need to be evaluated using a qualitative criteria to be deemed acceptable or not. 
+When the changes have been validated by other means, the back-to-back tests should be updated to the new value.
+
+* '''White box unit testing:'''
+Use case studies, where results can be theoretically predicted without any computation from reference implementations. 
+Test signals are usually non-realistic but quick and simple to generate and check. 
+Examples include: silences, Dirac deltas, pulses, sounds from synthetic sources, etc. 
+Known bug cases can be provided as automatically-checked unit tests.
+
+* '''Accuracy checks and testing:'''
+Use a quality measure so that whenever differences appear
+on the back-to-back testing, we could check whether the results are within a tolerance
+window of performance. Purpose-made signals and manual annotations (e.g. a sequence of
+pitches on a test signal, annotated beat, chords, etc) are often used for these quality
+measurements (e.g. detection accuracy, distortion rate, interference rate, etc).
+Alternatively, when no automated quality measure can be given, manual guidelines could be
+provided to allow implementers to validate a changed result (e.g. an expected harmonic
+structure, a decomposition of the signals into parts that sound in a particular way, etc).
