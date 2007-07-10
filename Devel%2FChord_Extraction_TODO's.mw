@@ -7,9 +7,9 @@ Some short term goals for getting accustomed with the code:
 * Make a precomputed SparseKernel for the default configuration
 * Seperate the inner workings of TonalAnalysis into Processing Composites
 * Adapt InstantTunningEstimator's tests to the changes in the class
-** Change assertFoundCenterIs to use the vector<pair> interface
-** Divide any position (positions and expectedCenter) by 3 and pass 1 as the second constructor parameter
-** Adapt the last two tests to use the vector<pair> interface
+** [[Image:Done.png]] Change assertFoundCenterIs to use the vector<pair> interface
+** [[Image:Done.png]] Divide any position (positions and expectedCenter) by 3 and pass 1 as the second constructor parameter
+** [[Image:Done.png]] Adapt the last two tests to use the vector<pair> interface
 ** Remove the useless doIt
 ** Change any occurrences of _binsPerSemitone within the class to a 1
 ** Adapt user interface and user code
