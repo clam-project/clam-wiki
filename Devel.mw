@@ -13,8 +13,7 @@ Subversion tree contains CLAM libs and applications: NetworkEditor, Annotator, S
 '''Update:''' (July 11th 2007) we closed the http access and now only allow http'''s'''.
 * Open and read-only 
  $ svn co https://iua-share.upf.edu/svn/clam/trunk clam
-* With write permissions. You need an account at iua-share.
- $ svn co svn+ssh://<usrname>@iua-share.upf.edu/mnt/svn/clam/trunk clam
+* Active CLAM developers can also obtain commit access. See [[rules for commit access]]
 
 == Getting involved ==
 
