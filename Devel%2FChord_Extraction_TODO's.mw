@@ -14,6 +14,9 @@ Some short term goals for getting accustomed with the code:
 ** Change any occurrences of _binsPerSemitone within the class to a 1
 ** Adapt user interface and user code
 
+
+=== Old Done Tasks ===
+
 == Detection algorithm enhancements ==
 
 Several algorithm enhancements are to be considered:
