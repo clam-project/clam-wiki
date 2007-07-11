@@ -6,7 +6,11 @@ Some short term goals for getting accustomed with the code:
 *** Quick (hopefully) and dirty (hopefully not) solution (hopefully) - change the reference tunning while reconfiguring TonalAnalysis
 * Make a precomputed SparseKernel for the default configuration
 * Seperate the inner workings of TonalAnalysis into Processing Composites
-* Adapt InstantTunningEstimator's tests to the changes in the class
+
+=== Old Done Tasks ===
+
+Exercise in using test with cppunit:
+* [[Image:Done.png]] Adapt InstantTunningEstimator's tests to the changes in the class
 ** [[Image:Done.png]] Change assertFoundCenterIs to use the vector<pair> interface
 ** [[Image:Done.png]] Divide any position (positions and expectedCenter) by 3 and pass 1 as the second constructor parameter
 ** [[Image:Done.png]] Adapt the last two tests to use the vector<pair> interface
@@ -14,8 +18,6 @@ Some short term goals for getting accustomed with the code:
 ** [[Image:Done.png]] Change any occurrences of _binsPerSemitone within the class to a 1
 ** [[Image:Done.png]] Adapt user interface and user code
 ** [[Image:Done.png]] Change last two tests to use a special helper function
-
-=== Old Done Tasks ===
 
 == Detection algorithm enhancements ==
 
