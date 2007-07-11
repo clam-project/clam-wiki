@@ -13,16 +13,9 @@
 = Details =
 
 == Milestones ==
-# pitch-discretization working in NE and prototyped example
-# ''other transformations?''
-# audio2midi in NE (using smsanalysis ''fundamental'' output)
-# piano-roll (instant) view in NE and Prototyper/Designer
-# harmonizer working in NE and prototyped example
-# prototyped example of harmonized voices control.led by midi
-# complex transformations: time-stretch and morph
-
 
 Updated version of milestones and TODOs: [[Devel/Spectral Transformations TODOs]]
+
 == Notes ==
 * [[GSoC/Real-time_Spectral_Transformations/planning | Some notes about project planning and organization]]
 * [[GSoC/Real-time_Spectral_Transformations/Spectral_transformations_summary | Spectral transformations summary]]
