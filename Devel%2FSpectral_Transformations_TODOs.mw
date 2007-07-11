@@ -14,16 +14,16 @@ Not all the following tasks are meant to be part of the GSoC project.
 
 == audio to midi ==
 
-* realtime voice2midi
-* make a network with rt audio to midi-output
-* piano-roll widget for networkeditor/prototyper
+* realtime voice2midi (needs lv2 host implementation) 
+* make a network with rt audio to midi-output (needs lv2 host implementation)
+* piano-roll widget for networkeditor/prototyper (needs lv2 host implementation)
 
 = milestones =
 
-# pitch-discretization working in NE and prototyped example
-# ''other transformations?''
-# audio2midi in NE (using smsanalysis ''fundamental'' output)
-# piano-roll (instant) view in NE and Prototyper/Designer
-# harmonizer working in NE and prototyped example
-# prototyped example of harmonized voices control.led by midi
+# [[Image:done.png]] pitch-discretization working in NE and prototyped example
+# [[Image:done.png]] Tweak some processings, bounds setting, adding defaults, etc
+# audio2midi in NE (using smsanalysis ''fundamental'' output) (needs lv2 host implementation)
+# piano-roll (instant) view in NE and Prototyper/Designer (needs lv2 host implementation)
+# [[Image:done.png]] harmonizer working in NE and prototyped example 
+# prototyped example of harmonized voices control.led by midi (needs lv2 host implementation)
 # complex transformations: time-stretch and morph
