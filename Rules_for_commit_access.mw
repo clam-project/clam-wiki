@@ -1,0 +1,35 @@
+== Who can get commit access? ==
+
+Any active Clam developer can get a SVN account. Normally one is considered an 'active' developer after sending several patches to the mailing lists for review and getting them accepted.
+
+== When to directly commit? ==
+
+* Small refactorings, typos, trivial fixes...
+
+* Bigger changes but in safer places: examples, apps or processings not used by other people at the moment.
+
+For any commit check that:
+
+* It doesn't break [http://clam.iua.upf.edu/testfarm/ testfarm] (if it does fix it quickly or revert the commit). Of course, do not rely on testfarm to see if tests pass, do it locally before commiting.
+
+* You write a proper changelog (use itemized "*" lines)
+
+* Different aspects goes into different commits.
+
+* Send a "last commits" notice to the mailing list explaining the last recent commits (sending changelog might be fine).
+
+== When not to directly commit? ==
+
+* When the change is larger and effect existing code (maybe client code not in SVN). In this case the patch *must* be send to clam-devel list for a previous review of a core developer. Check that tests pass and apps build before sending patches.
+
+When a first patch has been approved the rules for follow-up patches in a discussed and agreed direction are slightly relaxed.
+
+== Repository ==
+
+The normal one with https access: 
+ $ svn co https://iua-share.upf.edu/svn/clam/trunk clam
+* In case your SVN username does not coincide with your local user add the --username option to the commit command (see also svn ci --help)
+* Passwords get automatically stored in local.
+
+Or, in case you have an account at iua-share (this method is likely to be deprecated)
+ $ svn co svn+ssh://<usrname>@iua-share.upf.edu/mnt/svn/clam/trunk clam
