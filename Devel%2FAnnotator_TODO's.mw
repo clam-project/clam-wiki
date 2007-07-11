@@ -14,8 +14,8 @@
 *** [[Image:done.png]] Empty string or 'ERR' if not
 
 *Update InstantViewPlugin
-** For BarGraph filter FloatArrays without binLabels AND without NBins
-** Adapt all the InstantViewPlugins to use the NBins when available.
+** [[Image:done.png]] For BarGraph filter FloatArrays without binLabels AND without NBins
+** [[Image:done.png]] Adapt all the InstantViewPlugins to use the NBins when available.
 ** Run the Annotator, add a BarGraph for SpectrumMagnitude and send adevelopment screenshot to the wiki ;-)
 
 * Investigate factoring plugins out of InstantViewPlugin.cxx or adding helper methods to reduce code repetition
