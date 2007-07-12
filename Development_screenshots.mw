@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1.1 (1.2?) =
 <gallery>
+Image:BarGraph with Labels.png|BarGraph InstantView in Annotator displaying Spectrum Magnitude with bin labels.
 Image:RulerTicksAndSubticks.png|Annotator rulers are displayed at rounded points. Also Subticks are displayed on horitzontal rulers.
 Image:ClamPluginInWindows.png|Plugins are working!! A processing from run-time loaded plugin (working in wine).
 Image:MingwWinePrototyper.png|A mingw32 crosscompiled Prototyper working under Wine. This means that now XML is working. Still OpenGl widgets do not in Wine but they work perfectly in a regular Windows.
