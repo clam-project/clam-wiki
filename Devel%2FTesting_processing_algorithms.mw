@@ -47,3 +47,9 @@ measurements (e.g. detection accuracy, distortion rate, interference rate, etc).
 Alternatively, when no automated quality measure can be given, manual guidelines could be
 provided to allow implementers to validate a changed result (e.g. an expected harmonic
 structure, a decomposition of the signals into parts that sound in a particular way, etc).
+
+
+== Janitors ==
+
+Janitors are scripts that detect bad coding practices,
+such non-conventional code formatting, licenses, naming conventions...
