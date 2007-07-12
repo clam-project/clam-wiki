@@ -50,5 +50,6 @@ structure, a decomposition of the signals into parts that sound in a particular 
 
 == Janitors ==
 
-Janitors are scripts that detect bad coding practices,
-such non-conventional code formatting, licenses, naming conventions...
+Janitors are scripts that detect bad coding practices:
+bad formatting and naming conventions,
+absence of license or doxygen documentation...
