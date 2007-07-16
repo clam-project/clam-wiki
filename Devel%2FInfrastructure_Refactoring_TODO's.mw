@@ -9,7 +9,8 @@
 * [[image:done.png]] Profile new spectrum processings
 ** [[image:done.png]] Why the mixer is taking all the time!?? -> accessing sample by sample to GetData(sample)
 ** Forbid the port.GetData(sample) interface
-** Prepoint to buffers.
+** [[image:done.png]] Prepoint to buffers.
+** [[image:done.png]] Optimize Sources and Sinks by no accessing the dynamictype accessor on the inner loop
 
 == Audio File IO ==
 
