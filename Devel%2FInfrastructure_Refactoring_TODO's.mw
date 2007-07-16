@@ -1,8 +1,10 @@
 
 * Configurators for processing in plugins
 * Solving parameter propagation problem
-* Complex->AudioBuffer IFFT
-* AudioBuffer->AudioStream OverlapAndAdd
+* [[image:done.png]] Complex->AudioBuffer IFFT
+* [[image:done.png]] AudioBuffer->AudioStream OverlapAndAdd (named AudioBuffer2Stream)
+* AudioBuffer2Stream: Provide its own configuration, now taking AudioWindowingConfig
+* AudioBuffer2Stream: solve the gain problem
 * Why window size is windowSize+1?
 * Assert accepting strings (or formatting)
 
