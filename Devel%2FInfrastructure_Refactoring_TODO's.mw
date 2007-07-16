@@ -1,4 +1,3 @@
-
 * Configurators for processing in plugins
 * Solving parameter propagation problem
 * [[image:done.png]] Complex->AudioBuffer IFFT
@@ -7,6 +6,10 @@
 * AudioBuffer2Stream: solve the gain problem
 * Why window size is windowSize+1?
 * Assert accepting strings (or formatting)
+* [[image:done.png]] Profile new spectrum processings
+** [[image:done.png]] Why the mixer is taking all the time!?? -> accessing sample by sample to GetData(sample)
+** Forbid the port.GetData(sample) interface
+** Prepoint to buffers.
 
 == Audio File IO ==
 
