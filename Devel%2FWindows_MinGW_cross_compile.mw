@@ -402,10 +402,15 @@ I didn't managed to crosscompile them my self, but i found some precompiled bina
  cp pthreads/lib/pthreadGCE2.dll dlls/
 
 
-== Xerces-C ==
+== cppunit ==
 
 No supported yet. Work on progress.
 
+ $ cvs -z3 -d:pserver:anonymous@cppunit.cvs.sourceforge.net:/cvsroot/cppunit co -P cppunit
+
+== Xerces-C ==
+
+No supported yet. Work on progress.
 
 == libxml++ ==
 
