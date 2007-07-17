@@ -13,7 +13,7 @@
 *** [[Image:done.png]] A numeric representation if the needed attribute properties is available
 *** [[Image:done.png]] Empty string or 'ERR' if not
 
-[[Image:done.png]]*Update InstantViewPlugin
+*[[Image:done.png]] Update InstantViewPlugin
 ** [[Image:done.png]] For BarGraph filter FloatArrays without binLabels AND without NBins
 ** [[Image:done.png]] Adapt all the InstantViewPlugins to use the NBins when available.
 ** [[Image:done.png]] Run the Annotator, add a BarGraph for SpectrumMagnitude and send adevelopment screenshot to the wiki ;-)
