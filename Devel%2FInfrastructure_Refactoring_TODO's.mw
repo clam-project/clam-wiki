@@ -12,6 +12,19 @@
 ** [[image:done.png]] Prepoint to buffers.
 ** [[image:done.png]] Optimize Sources and Sinks by no accessing the dynamictype accessor on the inner loop
 
+
+== Mingw testfarm ==
+
+* [[image:done.png]] 
+* Enabling Tests crosscompile (not ported to use crossmingw)
+* Enabling SMSTools (missing qt3)
+* Read the dictionary from a file
+* Making the dictionary substitution an inner testfarm
+* Reduce the delta on linux and packaging
+* Add configuration options for crosscompiling (currently taking off testfarm configuration)
+
+
+
 == Audio File IO ==
 
 * Add Encoding and Endianess fields to writer's configs
