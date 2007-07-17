@@ -412,7 +412,7 @@ To get some extra autoconf macros and libtool do:
 
  $ cd $HOME/CajitasDeArena/mingw/cppunit/cppunit-cvs
  $ ./autogen.sh
- $ ./configure --host=i386-mingw32msvc --prefix=$HOME/CajitasDeArena/mingw/cppunit
+ $ ./configure --host=i586-mingw32msvc --prefix=$HOME/CajitasDeArena/mingw/cppunit
  $ make
  $ make install
 
