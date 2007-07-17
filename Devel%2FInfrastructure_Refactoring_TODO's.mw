@@ -15,15 +15,13 @@
 
 == Mingw testfarm ==
 
-* [[image:done.png]] 
+* [[image:done.png]] Enabling testfarm for mingw
 * Enabling Tests crosscompile (not ported to use crossmingw)
 * Enabling SMSTools (missing qt3)
 * Read the dictionary from a file
 * Making the dictionary substitution an inner testfarm
 * Reduce the delta on linux and packaging
 * Add configuration options for crosscompiling (currently taking off testfarm configuration)
-
-
 
 == Audio File IO ==
 
