@@ -408,6 +408,8 @@ No supported yet. Work on progress.
 
  $ cvs -z3 -d:pserver:anonymous@cppunit.cvs.sourceforge.net:/cvsroot/cppunit co -P cppunit
 
+Not tryed: This [[http://www.comsec.com/wiki?MinGW page]] contains a patch to cppunit to compile it in MinGW.
+
 == Xerces-C ==
 
 No supported yet. Work on progress.
