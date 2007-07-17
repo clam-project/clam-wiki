@@ -408,7 +408,12 @@ No supported yet. Work on progress.
 
  $ cvs -z3 -d:pserver:anonymous@cppunit.cvs.sourceforge.net:/cvsroot/cppunit co -P cppunit
 
-Not tryed: This [[http://www.comsec.com/wiki?MinGW page]] contains a patch to cppunit to compile it in MinGW.
+To get some extra autoconf macros do:
+
+ $ sudo apt-get install autoconf-archive libtool
+ $ ./autogen.sh
+ $ ./configure --host=i386-mingw32msvc
+ $ make
 
 == Xerces-C ==
 
