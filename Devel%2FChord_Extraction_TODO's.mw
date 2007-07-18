@@ -14,7 +14,7 @@ Some short term goals for getting accustomed with the code:
 *** ...first making BinsPerOctave configurable, to check if everyting works
 ** Make the algorithm "change the tunning" when starting from a different minimum frequency then 98 Hz
 *** Quick (hopefully) and dirty (hopefully not) solution (hopefully) - change the reference tunning while reconfiguring TonalAnalysis
-** [[Image:Done.png]] Find the reason of the "delete _implenentation; _implementation = new..." crash
+** Find the reason of the "delete _implenentation; _implementation = new..." crash
 * Make a precomputed SparseKernel for the default configuration
 * Seperate the inner workings of TonalAnalysis into Processing Composites
 
