@@ -5,7 +5,7 @@
  sudo apt-get install mingw32
  sudo apt-get install wine
 
-You can test that that works
+You can test such programs work by doing:
 
  $ cat > hello.cxx <<EOF
  > #include <iostream>
