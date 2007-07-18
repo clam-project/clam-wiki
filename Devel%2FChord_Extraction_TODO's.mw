@@ -1,5 +1,9 @@
 == GSoC TODOs ==
 
+* Realtime segmentation in chord extraction (make a processing for dividing the songs into segments and assigning chords to the segments in realtime)
+* Improve segmantation in ChordExtractor
+** extract the code responsible for segmentation and make a separate class out of it
+
 Some short term goals for getting accustomed with the code:
 * Make the parameters of TonalAnalysis configurable in NetworkEditor, one by one:
 ** [[Image:Done.png]] tunningEnabled
