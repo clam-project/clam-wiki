@@ -2,7 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1.1 (1.2?) =
 <gallery>
-Image:OptimizingSpectral-Before.png|Spectral processing after optimization
+Image:OptimizingSpectral-After.png|Spectral processing after optimization
 Image:OptimizingSpectral-Before.png|Spectral processing before optimization
 Image:OptimizingSpectral-Setup.png|Simplifying spectral processing
 Image:ColoredPorts.png|Now ports are colored by token type. Why we took so long to incorporate this functionality? :)
