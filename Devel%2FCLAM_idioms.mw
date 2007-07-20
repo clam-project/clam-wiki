@@ -1,0 +1,11 @@
+* If you need to put variables in an assert message (which is something extremely useful) :
+
+ if ( error-condition )
+ {
+   std::ostringstream os;
+   os
+     << "err message: "
+     << "some var: " << var
+     << std::flush;
+   CLAM_ASSERT(false, os.str().c_str());
+ }
