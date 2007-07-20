@@ -63,6 +63,7 @@ Things that core developers are eager to address but still not being refined in 
 * [[Devel/Windows MinGW cross compile]]
 * [[Devel/Eclipse]]
 * [[Devel/Testing processing algorithms]]
+* [[Devel/CLAM idioms]] C++ techniques we use over and over.
 
 == Prepare and apply a patch ==
 
