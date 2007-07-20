@@ -1,4 +1,4 @@
-* If you need to put variables in an assert message (which is something extremely useful) :
+* How to insert variables in a clam assert message? (which is something extremely useful)
 
  if ( error-condition )
  {
