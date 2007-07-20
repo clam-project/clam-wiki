@@ -18,11 +18,23 @@
 ** [[Image:done.png]] Adapt all the InstantViewPlugins to use the NBins when available.
 ** [[Image:done.png]] Run the Annotator, add a BarGraph for SpectrumMagnitude and send adevelopment screenshot to the wiki ;-)
 
-* Investigate factoring plugins out of InstantViewPlugin.cxx or adding helper methods to reduce code repetition
+* Add Spectrogram view
+** (idea) offer option to switch between waveform view & spectrogram view in segment editor?
+*** use code from vmqt/spectrogram_plot_example.cxx for spectrogram view?
 
-* Add Scrolling Spectrogram view
-**Add to Network Editor
-**Port to Annotator
+* synchronize view zoom and position and provide an option for live scrolling along with playback
+
+* refactor widgets so they share canvas with plots
+
+* complete the segmenteditor modes
+** continuous
+** overlapping
+** unsized
+
+* turn spectrogram into a texture
+
+
+* Investigate factoring plugins out of InstantViewPlugin.cxx or adding helper methods to reduce code repetition
 
 == Scheduled tasks ==
 
