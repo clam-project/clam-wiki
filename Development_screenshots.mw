@@ -2,9 +2,9 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = 1.1.1 (1.2?) =
 <gallery>
-Image:OptimizingSpectral-After.png|Spectral processing after optimization
-Image:OptimizingSpectral-Before.png|Spectral processing before optimization
-Image:OptimizingSpectral-Setup.png|Simplifying spectral processing. Complex and MagPhase spectrum are different types of objects. Explicit conversions. Conversions to old Spectrum. Segregating Streaming audio and buffered audio.
+Image:OptimizingSpectral-After.png|Spectral processing after optimization. Comparatively the MagPhaseProduct is cheaper than ComplexProduct but it requires two conversions which are lot more expensive. (take the numbers proportional to the number of executions)
+Image:OptimizingSpectral-Before.png|Spectral processing before optimization. The mixer takes it all. AudioSource and Sink wasting the time on DT accessors. AudioWindowing is doing dummy Windowings and Shift.
+Image:OptimizingSpectral-Setup.png|Simplifying spectral processing: Complex and MagPhase spectra. Explicit conversions. Segregating Streaming audio and buffered audio. Two products are present to benchmark them.
 Image:ColoredPorts.png|Now ports are colored by token type. Why we took so long to incorporate this functionality? :)
 Image:BarGraph with Labels.png|BarGraph InstantView in Annotator displaying Spectrum Magnitude with bin labels.
 Image:RulerTicksAndSubticks.png|Annotator rulers are displayed at rounded points. Also Subticks are displayed on horitzontal rulers.
