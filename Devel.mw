@@ -82,3 +82,5 @@ Luckily, working with patches in subversion is very easy:
 </pre>
 
 We prefer the patches being sent to the '''clam-devel mailing list'''. The issue tracker will be used when patches can not be applied (or discarded) immediately and need to remain on hold for some time.
+
+== Pass the automatic tests ==
