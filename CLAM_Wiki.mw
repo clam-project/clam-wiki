@@ -31,7 +31,7 @@
 ** [[Adding Monitors]]
 ** [[Building a processing library]]
 ** [[Defining a ProcessingComposite]]
-** [[Using custom processing data types]]
+** [[Using custom data token types]]
 * [[Version Migration Guide]]
 
 * Old: [[DeprecatedDoc/CLAMUserManual|documentation index]] (deprecated documentation dumped from the old manual)
