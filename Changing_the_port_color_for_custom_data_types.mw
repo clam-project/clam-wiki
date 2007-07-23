@@ -3,6 +3,9 @@
 Virtually any type of token can be communicated through processing ports,
 provided that they are copyable and default constructable and they behave in a sane way.
 
+Every port is bound to a given token type and 
+can be connected just to complementary ports of the same token type.
+
 == Registering a color for a token type ==
 
 '''The documentation bellow refers to experimental features still in the svn that may change before the release'''
