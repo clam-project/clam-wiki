@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.1.1 (1.2?) =
 <gallery>
+Image:PluginTypeColoring.png|Types defined in plugins can now take a color too.
 Image:SchemaBrowser-Hierarchy.png|Annotator's schema browser display child scopes in hierarchy.
 Image:OptimizingSpectral-After.png|Spectral processing after optimization. Comparatively the MagPhaseProduct is cheaper than ComplexProduct but it requires two conversions which are lot more expensive. (take the numbers proportional to the number of executions)
 Image:OptimizingSpectral-Before.png|Spectral processing before optimization. The mixer takes it all. AudioSource and Sink wasting the time on DT accessors. AudioWindowing is doing dummy Windowings and Shift.
