@@ -84,3 +84,13 @@ Luckily, working with patches in subversion is very easy:
 We prefer the patches being sent to the '''clam-devel mailing list'''. The issue tracker will be used when patches can not be applied (or discarded) immediately and need to remain on hold for some time.
 
 == Pass the automatic tests ==
+
+Checkout the clam test-data repository:
+
+ $ svn co https://iua-share.upf.edu/svn/clam-test-data/trunk testdata
+
+
+Change dir to CLAM/test and compile with scons (providing clam_prefix and test_data_path options). Then execute unit and functional tests:
+ $ scons clam_prefix=~/local test_data_path=~/clam-test-data
+ $ ./UnitTests/UnitTests
+ $ ./FunctionalTests/FunctionalTests
