@@ -1,7 +1,7 @@
 == Which token types does CLAM allow ==
 
-CLAM allows any type of token to be used through processing ports
-provided that is copyable and default constructable.
+Virtually any type of token can be communicated through processing ports,
+provided that they are copyable and default constructable and they behave in a sane way.
 
 == Registering a color for a token type ==
 
