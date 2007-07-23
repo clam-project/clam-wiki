@@ -1,0 +1,15 @@
+CLAM allows any type to be used as processing type through processing ports
+provided that is copyable and default constructable.
+
+'''The documentation bellow refers to experimental features that can change before the release'''
+
+CLAM also provides a way to color the ports on the NetworkEditor depending on the type.
+You can get the default color but if you want to use an specific color for your own data type,
+you should define the following object on any cxx file linked with CLAM libs, a plugins or any application:
+
+ #include <CLAM/ProcessingDataPlugin.hxx>
+ static CLAM::ProcessingDataPlugin::Registrator<MyDataType> registrator("fucsia");
+
+Being fucsia the color to use for the ports that communicate MyDataType.
+
+Registering the color is not necessary to use such a type on CLAM neither on the NetworkEditor.
