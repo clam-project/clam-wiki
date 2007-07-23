@@ -16,7 +16,7 @@ This is the development page of the NetworkEditor port to Qt4.
 * Refactor connection loading code in NetworkCanvas
 * Select (suggest) the audio backend on command line
 * Select (suggest) the audio device on command line
-* Unify External (Source/Sink) and explicit (AudioIn/Out) audio inputs and outputs so a network will work whatever the mode (jack, alsa, protaudio, embeded into a network...)
+* [[Image:Done.png]] Unify External (Source/Sink) and explicit (AudioIn/Out) audio inputs and outputs so a network will work whatever the mode (jack, alsa, protaudio, embeded into a network...)
 * Saving/Loading dummy networks
 * Undo feature
 * Review 'Changed' flag check list (see checklist bellow )
