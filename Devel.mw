@@ -87,10 +87,14 @@ We prefer the patches being sent to the '''clam-devel mailing list'''. The issue
 
 Checkout the clam test-data repository:
 
- $ svn co https://iua-share.upf.edu/svn/clam-test-data/trunk testdata
+ $ svn co https://iua-share.upf.edu/svn/clam-test-data/trunk clam-test-data
 
 
-Change dir to CLAM/test and compile with scons (providing clam_prefix and test_data_path options). Then execute unit and functional tests:
+Change dir to CLAM/test and compile with '''scons''' providing the following options (no installation step is needed):
+* clam_prefix --which is the prefix where you installed clam. /usr/local by default
+* test_data_path --the path to the clam-test-data sandbox (local copy of the repository).
+For example:
  $ scons clam_prefix=~/local test_data_path=~/clam-test-data
+Then execute unit and functional tests:
  $ ./UnitTests/UnitTests
  $ ./FunctionalTests/FunctionalTests
