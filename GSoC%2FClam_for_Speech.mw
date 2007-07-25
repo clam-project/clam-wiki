@@ -117,6 +117,7 @@ One major problem I had was that the CLAM/test directory wasn't building, most l
 ==== To Do ====
 * Send in patches for the formant extraction and make any revisions if necessary
 ** look into sampling rate changes to ensure the right LPC order
+** add tests
 * Vowel synth additions (in order)
 ** add third formant
 ** amplitude envelope
