@@ -1,10 +1,11 @@
 == GSoC TODOs ==
 
-* Realtime segmentation in chord extraction (make a processing for dividing the songs into segments and assigning chords to the segments in realtime)
 * Improve segmantation in ChordExtractor
 ** [[Image:Done.png]] Extract the code responsible for segmentation and make a separate class out of it
 *** [[Image:Done.png]] Make it possible to declare the class as a member of the dumper
 *** [[Image:Done.png]] Remove reference to the pool and extractor from the class
+* Realtime segmentation in chord extraction (make a processing for dividing the songs into segments and assigning chords to the segments in realtime)
+** Make a processing out of the class created in ChordExtractor
 
 
 Some short term goals for getting accustomed with the code:
