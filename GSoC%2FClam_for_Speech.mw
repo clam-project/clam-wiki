@@ -108,9 +108,29 @@ I wanted to ask about where to put the code I've been working on, but I think it
 === Week 7-8  (Jul 9 to Jul 23) ===
 *mid term evaluation
 
-=== Week 9-10  (Jul 23 to Aug 6) ===
+These weeks I got the formant extraction working.  The major changes to the previous work was using std::vector instead of CLAM::Matrix, using float.h to include the value for epsilon, and incorporation into the Network Editor.  The incorporation into the network editor used spectral peaks to output the formants.  So far it doesn't sound to good.
 
-=== Week 11-12  (Aug 6 to Aug 20) ===
+I also started working on making small changes to the vowel synthesizer.  Some ideas I had are adding a 3rd formant, stepping thru the cardinal vowels, and controlling vowel synthesis using the shape of the tube resonator.  Also, Xavier gave me the idea of having the duration of vowels fired off using an amplitude envelope.  
+
+One major problem I had was that the CLAM/test directory wasn't building, most likely because of cppunit.  I'm not too familiar with it, so I spent a lot of time installing different versions and trying to configure it differently.  
+
+==== To Do ====
+* Send in patches for the formant extraction and make any revisions if necessary
+** look into sampling rate changes to ensure the right LPC order
+* Vowel synth additions (in order)
+** add third formant
+** amplitude envelope
+** ( cardinal vowels and tube model for later iteration)
+
+=== Week 9  (Jul 23 to Jul 30) ===
+
+
+=== Week 10  (Jul 30 to Aug 6) ===
+
+
+=== Week 11  (Aug 6 to Aug 13) ===
+
+=== Week 12  (Aug 13 to Aug 20) ===
 
 === Week 13 +  (Aug 20 +) ===
 *final evaluation
