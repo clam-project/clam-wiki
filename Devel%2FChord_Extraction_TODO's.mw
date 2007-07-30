@@ -4,8 +4,10 @@
 ** [[Image:Done.png]] Extract the code responsible for segmentation and make a separate class out of it
 *** [[Image:Done.png]] Make it possible to declare the class as a member of the dumper
 *** [[Image:Done.png]] Remove reference to the pool and extractor from the class
+*** Change output into a Segmentation object
+*** Use the class from within ChordExtractor
 * Realtime segmentation in chord extraction (make a processing for dividing the songs into segments and assigning chords to the segments in realtime)
-** Make a processing out of the class created in ChordExtractor
+** Add a new port to TonalAnalysis for the segmentation from ChordExtractor
 
 
 Some short term goals for getting accustomed with the code:
