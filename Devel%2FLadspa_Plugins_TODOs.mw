@@ -1,5 +1,13 @@
 == ToDo ==
 
+Unsorted TODOs
+ - Unify RunTimeLibraryLoader and LadspaExplorer
+ - Add plugin functionality (ladspa, clam) to OfflinePlayer. Or any NetworkPlayer class actually.
+ - Registrator refactoring: pull up Registrator to base Factory class
+ - Registrator constructor with a static array of char* for metadata
+ - Add hierarchical metadata to reproduce the current processingTree
+ - load lv2 midi plugins
+
 === High priority ===
 * (high) add examples to example-data
 
@@ -16,7 +24,6 @@
 
 === high level ToDo's to discuss ===
 * save controls state with network
-
 
 == Done ==
 * Factory:
