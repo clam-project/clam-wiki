@@ -19,8 +19,10 @@
 ** [[Image:done.png]] Run the Annotator, add a BarGraph for SpectrumMagnitude and send adevelopment screenshot to the wiki ;-)
 
 * Add Spectrogram view
-** (idea) offer option to switch between waveform view & spectrogram view in segment editor?
-*** use code from vmqt/spectrogram_plot_example.cxx for spectrogram view?
+** create example using Annotator/vmqt/render/vmSpectrogramRenderer.cxx
+** port example to NetworkEditor
+** add scrolling to view
+** port to Annotator
 
 * synchronize view zoom and position and provide an option for live scrolling along with playback
 
