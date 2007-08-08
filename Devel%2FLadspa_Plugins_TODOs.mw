@@ -2,7 +2,6 @@
 
 Unsorted TODOs
  - Add plugin functionality (ladspa, clam) to OfflinePlayer. Or any NetworkPlayer class actually.
- - Registrator refactoring: pull up Registrator to base Factory class
  - Registrator constructor with a static array of char* for metadata
  - Add hierarchical metadata to reproduce the current processingTree
  - load lv2 midi plugins
@@ -25,6 +24,7 @@ Unsorted TODOs
 * save controls state with network
 
 == Done ==
+* Registrator refactoring: pull up Registrator to base Factory class
 * Unify RunTimeLibraryLoader and LadspaExplorer
 * Factory:
 ** refactoring: clam creators being objects not functions
