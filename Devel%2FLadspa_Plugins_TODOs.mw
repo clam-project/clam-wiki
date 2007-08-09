@@ -5,7 +5,7 @@ Unsorted TODOs
  - Registrator constructor with a static array of char* for metadata
  - Add hierarchical metadata to reproduce the current processingTree
  - load lv2 midi plugins
-
+ - Factory refactoring: unify two registry maps (creator and metadata)
 === High priority ===
 * (high) add examples to example-data
 
