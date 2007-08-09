@@ -2,16 +2,19 @@
 
 === High priority ===
 
-* Add plugin functionality (ladspa, clam) to OfflinePlayer. Or any NetworkPlayer class actually.
-** compile agains RunTime(Ladsap)Loader.cxx
 * Change static metadata classes to Registrator char* constructor for the spacialization plugin
 * The same for (some) clam processings (not plugins)
 * NE/ProcessingTree use some category attribute to construct the tree
+* ''''Milestone: get rid of the char* processingClasses[] hardcoded tree.'''
 * use some attribute to distinguish LADSPA and CLAM (and...) => so processing tree does not know about ladspa
 * Factory refactoring: unify two registry maps (creator and metadata)
 * Refactor RuntimeLibraryLoader to separate Ladspa and clam plugins. Use hollywood (template method) pattern.
-* load lv2 midi plugins
+* Add plugin functionality (ladspa, clam) to OfflinePlayer. Or any NetworkPlayer class actually.
+** compile agains RunTime(Ladsap)Loader.cxx
 
+Not so high prio
+* load lv2 plugins
+* load lv2 midi plugins
 
 === Medium priority ===
 * (med) open ladspa libs bug
