@@ -1,13 +1,17 @@
 == ToDo ==
 
-Unsorted TODOs
- - Add plugin functionality (ladspa, clam) to OfflinePlayer. Or any NetworkPlayer class actually.
- - Registrator constructor with a static array of char* for metadata
- - Add hierarchical metadata to reproduce the current processingTree
- - load lv2 midi plugins
- - Factory refactoring: unify two registry maps (creator and metadata)
 === High priority ===
-* (high) add examples to example-data
+
+* Add plugin functionality (ladspa, clam) to OfflinePlayer. Or any NetworkPlayer class actually.
+** compile agains RunTime(Ladsap)Loader.cxx
+* Change static metadata classes to Registrator char* constructor for the spacialization plugin
+* The same for (some) clam processings (not plugins)
+* NE/ProcessingTree use some category attribute to construct the tree
+* use some attribute to distinguish LADSPA and CLAM (and...) => so processing tree does not know about ladspa
+* Factory refactoring: unify two registry maps (creator and metadata)
+* Refactor RuntimeLibraryLoader to separate Ladspa and clam plugins. Use hollywood (template method) pattern.
+* load lv2 midi plugins
+
 
 === Medium priority ===
 * (med) open ladspa libs bug
@@ -24,6 +28,10 @@ Unsorted TODOs
 * save controls state with network
 
 == Done ==
+
+* (high) add examples to example-data
+
+*  Registrator constructor with a static array of char* for metadata
 * Registrator refactoring: pull up Registrator to base Factory class
 * Unify RunTimeLibraryLoader and LadspaExplorer
 * Factory:
