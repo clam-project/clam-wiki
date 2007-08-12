@@ -16,8 +16,12 @@
 ** Use this time input to inform ChordExtractor of the current time position
 ** Add a new port to TonalAnalysis for the segmentation from ChordExtractor
 
+
+
 Some other smaller/different/non-GSoC tasks:
 * Add an in control to AudioFileReaders to enable setting the time position within the file
+
+
 
 Some short term goals for getting accustomed with the code:
 * Make the parameters of TonalAnalysis configurable in NetworkEditor, one by one:
