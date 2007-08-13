@@ -26,7 +26,7 @@ And at the initialization of the class:
  		: mIn("My Input", this)
  		, mOut("My Output", this) 
  		, mInControl("In Control", this)   // <- New
- 		, mOutControl("Ot Control", this)  // <- New
+ 		, mOutControl("Out Control", this)  // <- New
  	{
  	....
 
