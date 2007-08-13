@@ -19,21 +19,21 @@
 ** [[Image:done.png]] Run the Annotator, add a BarGraph for SpectrumMagnitude and send adevelopment screenshot to the wiki ;-)
 
 * Add Spectrogram view
-** create example using Annotator/vmqt/render/vmSpectrogramRenderer.cxx
-** port example to NetworkEditor
-** add scrolling to view
-** port to Annotator
+** use NetworkEditor Keyspace to create scrolling lossy spectrogram & send screenshot
+*** (notes from David) the spectrogram must fill just one row with the texels
+with the gradient mapped values of the float array data source. Scroll can be
+performed simply by changing the texture coords assigned to the vertex of the
+single square KeySpace is drawing. All the bounds and the like should be
+provided by the DataSource.
+
+** for Annotator: refactor vmqt 
 
 * synchronize view zoom and position and provide an option for live scrolling along with playback
-
-* refactor widgets so they share canvas with plots
 
 * complete the segmenteditor modes
 ** continuous
 ** overlapping
 ** unsized
-
-* turn spectrogram into a texture
 
 
 * Investigate factoring plugins out of InstantViewPlugin.cxx or adding helper methods to reduce code repetition
