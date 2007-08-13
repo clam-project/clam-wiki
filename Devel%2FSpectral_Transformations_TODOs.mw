@@ -4,13 +4,15 @@ Not all the following tasks are meant to be part of the GSoC project.
 
 == spectral transformations ==
 * [[Image:done.png]] (high) harmonizer: port it to realtime and NE
-* tweak more harmonizer algorithm
-* (high) morph: port it to realtime and NE
+* [[Image:done.png]] tweak more harmonizer algorithm (detunning and delay added)
+* [[Image:done.png]] (high) morph: port it to realtime and NE
+* improve morph results
 * (high) time-stretch: port it realtime and NE 
 * [[Image:done.png]] (high) pitch-discretization: port it realtime and NE
-* Fix gender change: already rt. Improve residual
 * [[Image:done.png]] make a harmonizer prototype with sliders to control each voice pitch gain
+* Fix gender change: already rt. Improve residual
 * make a network (and a prototype) to control harmonizer voices by midi (needs lv2 host implementation)
+* fix pitch-shifting artifacts (bug)
 
 == audio to midi ==
 
