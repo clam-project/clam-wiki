@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.1.1 (1.2?) =
 <gallery>
+Image:Spectrogram-yellowbackground.png|First try for an spectrogram.
 Image:AnnotatorMultipleSegmentationPanes.png|That's how the annotator will look with several segmentation panes. Crafted by hand but it works.
 Image:ManyMonitorsContextualMenu.png|Now almost all processing-data have at least one port monitor.
 Image:PortMonitorsContextualMenu.png|The contextual menu of an out port now let the user choose a port monitor. And only the ones that matches with the port type. This also supports processings and types added in CLAM plugins.
