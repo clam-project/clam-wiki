@@ -2,10 +2,6 @@
 
 === High priority ===
 
-* Change static metadata classes to Registrator char* constructor for the spacialization plugin
-* The same for (some) clam processings (not plugins)
-* NE/ProcessingTree use some category attribute to construct the tree
-* ''''Milestone: get rid of the char* processingClasses[] hardcoded tree.'''
 * use some attribute to distinguish LADSPA and CLAM (and...) => so processing tree does not know about ladspa
 * Factory refactoring: unify two registry maps (creator and metadata)
 * Refactor RuntimeLibraryLoader to separate Ladspa and clam plugins. Use hollywood (template method) pattern.
@@ -33,6 +29,10 @@ Not so high prio
 * save controls state with network
 
 == Done ==
+* Change static metadata classes to Registrator char* constructor for the spacialization plugin
+* The same for (some) clam processings (not plugins)
+* NE/ProcessingTree use some category attribute to construct the tree
+* ''''Milestone: get rid of the char* processingClasses[] hardcoded tree.'''
 
 * (high) add examples to example-data
 
