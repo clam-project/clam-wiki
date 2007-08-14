@@ -28,17 +28,24 @@
 ** provide option to turn scrolling on or off similar to smoothing
 ** investigate texture limit problem- connect Spectrogram to chordCorrelation port
 ** Make the widget work on the Prototyper
+** Time accurate scrolling spectrogram
 
 * synchronize view zoom and position
+* Draggable handle for play position on the rulers
+* One shared time ruler and time scrollbar
 * provide an option for live scrolling along with playback
 * NetEditor scrolling segmentation view for Roman's chord extraction
 * Spectrogram view on the Annotator
 * Improve segmentEditor usability (better key bindings)
-
 * complete the segmenteditor modes
 ** overlapping: not even implemented
 ** unsized: added but not really tested
 ** continuous/discontinuous: check adding at the end bug
+* Adding attributes to the segments on the segment editor
+** Labels
+** Heights
+** Colors
+** Fill Patterns
 
 
 * Investigate factoring plugins out of InstantViewPlugin.cxx or adding helper methods to reduce code repetition
