@@ -18,15 +18,16 @@
 ** [[Image:done.png]] Adapt all the InstantViewPlugins to use the NBins when available.
 ** [[Image:done.png]] Run the Annotator, add a BarGraph for SpectrumMagnitude and send adevelopment screenshot to the wiki ;-)
 
-* Add Spectrogram view
-** use NetworkEditor Keyspace to create scrolling lossy spectrogram & send screenshot
-*** (notes from David) the spectrogram must fill just one row with the texels
-with the gradient mapped values of the float array data source. Scroll can be
-performed simply by changing the texture coords assigned to the vertex of the
-single square KeySpace is drawing. All the bounds and the like should be
-provided by the DataSource.
+* [[Image:done.png]] Add Scrolling Spectrogram View to NetworkEditor
+**tweaks:
+**remove var duplication on value and colorindex- the real colorindex is cidx
+**remove duped lines
+** make QT Designer plugin
+*** add NetworkEditor/clamWidgetsPlugin/SpectrogramPlugin.*xx
+*** update NetworkEditor/clamWidgetsPlugin/ClamWidgets.cxx
+** provide option to turn scrolling on or off similar to smoothing
+** investigate texture limit problem- connect Spectrogram to chordCorrelation port
 
-** for Annotator: refactor vmqt 
 
 * synchronize view zoom and position and provide an option for live scrolling along with playback
 
