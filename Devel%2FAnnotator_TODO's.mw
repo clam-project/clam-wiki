@@ -27,12 +27,14 @@
 *** update NetworkEditor/clamWidgetsPlugin/ClamWidgets.cxx
 ** provide option to turn scrolling on or off similar to smoothing
 ** investigate texture limit problem- connect Spectrogram to chordCorrelation port
+** Make the widget work on the Prototyper
 
-
-* synchronize view zoom and position and provide an option for live scrolling along with playback
+* synchronize view zoom and position
+* provide an option for live scrolling along with playback
+* NetEditor scrolling segmentation view for Roman's chord extraction
+* Spectrogram view on the Annotator
 
 * complete the segmenteditor modes
-** continuous
 ** overlapping
 ** unsized
 
