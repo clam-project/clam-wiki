@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.1.1 (1.2?) =
 <gallery>
+Image:Spectrogram-NotAMatterOfSize.png| It was not a matter of size just about being a size power of 2. NFrames fixed to such a power, nbins is the next power of two of the actual nbins.
 Image:Smoothandscrolling.png|Smoothed, scrolling spectrogram in networkeditor
 Image:Spectrogram-adjustedtexcoords.png|By adjusting the tex-coords to remove the trailing bins. Also reactivated smoothing. Not sure whether it is the better default.
 Image:Spectrogram-pitchslide.png|Sliding the pitch up and down. We should get ride of the bins we are not using.
