@@ -20,14 +20,14 @@
 
 * [[Image:done.png]] Add Scrolling Spectrogram View to NetworkEditor
 **tweaks:
-**remove var duplication on value and colorindex- the real colorindex is cidx
-**remove duped lines
-** make QT Designer plugin
-*** add NetworkEditor/clamWidgetsPlugin/SpectrogramPlugin.*xx
-*** update NetworkEditor/clamWidgetsPlugin/ClamWidgets.cxx
-** provide option to turn scrolling on or off similar to smoothing
+**[[Image:done.png]]remove var duplication on value and colorindex- the real colorindex is cidx
+**[[Image:done.png]]remove duped lines
+**[[Image:done.png]] make QT Designer plugin
+***[[Image:done.png]] add NetworkEditor/clamWidgetsPlugin/SpectrogramPlugin.*xx
+***[[Image:done.png]] update NetworkEditor/clamWidgetsPlugin/ClamWidgets.cxx
+**[[Image:done.png]] provide option to turn scrolling on or off similar to smoothing
 ** investigate texture limit problem- connect Spectrogram to chordCorrelation port
-** Make the widget work on the Prototyper
+** [[Image:done.png]] Make the widget work on the Prototyper
 ** Time accurate scrolling spectrogram
 
 * synchronize view zoom and position
