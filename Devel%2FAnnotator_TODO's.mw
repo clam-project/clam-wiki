@@ -33,10 +33,12 @@
 * provide an option for live scrolling along with playback
 * NetEditor scrolling segmentation view for Roman's chord extraction
 * Spectrogram view on the Annotator
+* Improve segmentEditor usability (better key bindings)
 
 * complete the segmenteditor modes
-** overlapping
-** unsized
+** overlapping: not even implemented
+** unsized: added but not really tested
+** continuous/discontinuous: check adding at the end bug
 
 
 * Investigate factoring plugins out of InstantViewPlugin.cxx or adding helper methods to reduce code repetition
