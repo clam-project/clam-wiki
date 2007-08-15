@@ -3,23 +3,16 @@
 === High priority ===
 
 * use some attribute to distinguish LADSPA and CLAM (and...) => so processing tree does not know about ladspa
-* Refactor RuntimeLibraryLoader to separate Ladspa and clam plugins. Use hollywood (template method) pattern.
 * Add plugin functionality (ladspa, clam) to OfflinePlayer. Or any NetworkPlayer class actually.
 ** compile agains RunTime(Ladsap)Loader.cxx
 * Mac Ladspas
 * Windows Ladspas (crosscompiled with mingw)
 
-Not so high prio
-* load lv2 plugins
-* load lv2 midi plugins
 
 === Medium priority ===
+* load lv2 plugins
+* load lv2 midi plugins
 * (med) open ladspa libs bug
-* "extensible processings" refactoring: change NetworkEditor processing loading logic
-** 1. put all info about processings in the factory
-** 2. build QTree from factory data.
-** 3. query list of processings of a given category to the factory.
-** add new columns to the associative data-structure: category, description.
 
 === Low priority ===
 
@@ -28,6 +21,8 @@ Not so high prio
 * save controls state with network
 
 == Done ==
+* Refactor RuntimeLibraryLoader to separate Ladspa and clam plugins. Use hollywood (template method) pattern. (Pau)
+
 * Factory refactoring: unify two registry maps (creator and metadata)
 * Change static metadata classes to Registrator char* constructor for the spacialization plugin
 * The same for (some) clam processings (not plugins)
@@ -43,6 +38,13 @@ Not so high prio
 ** refactoring: clam creators being objects not functions
 ** unify clam and ladspa factory
 * ('''not needed''') make LadspaFactory.hxx non-coupled with ladspa headers. so uses of LFactory don't need #ifdef USE_LADSPA. use Pimpl C++ idiom in LFactory.
+
+* "extensible processings" refactoring: change NetworkEditor processing loading logic
+** 1. put all info about processings in the factory
+** 2. build QTree from factory data.
+** 3. query list of processings of a given category to the factory.
+** add new columns to the associative data-structure: category, description.
+
 * (must change interaction?) automatic in-control sliders in networkeditor
 * (med) more verbose keys for LadspaFactory. at least including "ladspa"
 * use the real value (get rid of the fixed-value hack)
