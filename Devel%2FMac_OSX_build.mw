@@ -11,7 +11,7 @@
 === Macports packages ===
 
 * First, download and install macports binaries that allow search and install other software (similar to apt-get) 
-  http://svn.macports.org/repository/macpors/downloads/
+  http://svn.macports.org/repository/macports/downloads/
 
 * Check that ~/.profile has been automatically modified with PATH pointing at /opt/local/bin
 
