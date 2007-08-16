@@ -29,6 +29,7 @@
 Some other smaller/different/non-GSoC tasks:
 * Add an in control to AudioFileReaders to enable setting the time position within the file
 * Enhance the evaluation framework for comparisons between different implementations of chord extraction algorithms
+** write unit tests
 ** allow different attributes as Segmentation (not only Chords_Harte)
 ** allow different hop sizes
 ** generally there's room for improvement/rethinking:
