@@ -134,6 +134,13 @@ One major problem I had was that the CLAM/test directory wasn't building, most l
 * work on ADSR and CardinalVowel control
 
 === Week 12  (Aug 13 to Aug 20) ===
+* CardinalVowel Control
+** Finished first iteration
+** TODO: implement steps to make discrete vowels
+
+* ADSR
+** Construct networks to get a feel of ADSR
+** LADSPA ADSR seems more functional than clam's
 
 === Week 13 +  (Aug 20 +) ===
 *final evaluation
