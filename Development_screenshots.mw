@@ -2,7 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.1.1 (1.2?) =
 <gallery>
-Image:CardinalVowel.png|Abe's example netowrk of CardinalVowel. The input represents the location of the vowel with respect to cardinal vowels, eight evenly spaced vowels that start with iy (high front vowel) -> ey -> eh -> ae (low front vowel) -> aa (low back vowel) -> ao -> ow -> uw (high back vowel).
+Image:CardinalVowel.png|Abe's example network of CardinalVowel. The input represents the location of the vowel with respect to cardinal vowels, eight evenly spaced vowels that start with iy (high front vowel) -> ey -> eh -> ae -> aa -> ao -> ow -> uw.
 Image:CLAMTonalAnalysis.png|CLAM Tonal Analysis example with scrolling spectrogram in place
 Image:Spectrogram-NotAMatterOfSize.png|It was not a matter of size just about being a size power of 2. NFrames fixed to such a power, nbins is the next power of two of the actual nbins.
 Image:Smoothandscrolling.png|Smoothed, scrolling spectrogram in networkeditor
