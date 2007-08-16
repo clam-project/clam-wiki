@@ -7,6 +7,14 @@
 *** [[Image:Done.png]] Change output into a Segmentation object
 *** [[Image:Done.png]] Use the class from within ChordExtractor
 ** Setup framework for comparisons between different implementation of segmentation algorithms
+*** [[Image:Done.png]] Learn Python ;-)
+*** [[Image:Done.png]] A simple script with fixed hopsize and two pool files given at the command line
+*** [[Image:Done.png]] Compute Recall and Precision
+*** Get the Beatles wavesurfer files
+*** Write a bash script for:
+**** computing the segmentation on the songs
+**** comparing with ground truth
+** Decide on a method for allowing use of different chord extraction algorithms
 ** A chord similarity based implementation
 *** [[Image:Done.png]] Experiments, tests, fun, and some extremely ugly hacking
 *** Clean, code, commit the changes from the previous "take no prisoners an' burn all of 'em bridges" hacking 
@@ -20,7 +28,13 @@
 
 Some other smaller/different/non-GSoC tasks:
 * Add an in control to AudioFileReaders to enable setting the time position within the file
-
+* Enhance the evaluation framework for comparisons between different implementations of chord extraction algorithms
+** allow different attributes as Segmentation (not only Chords_Harte)
+** allow different hop sizes
+** generally there's room for improvement/rethinking:
+*** http://www.music-ir.org/mirex2007/index.php?title=Audio_Chord_Detection
+*** http://en.wikipedia.org/wiki/Recall_(information_retrieval)
+*** so a clear path needs to be decided upon...
 
 
 Some short term goals for getting accustomed with the code:
