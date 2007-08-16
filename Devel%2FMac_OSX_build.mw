@@ -6,7 +6,7 @@
 * Click Customize, expand the Applications category and click the checkbox beside X11 SDK to add it to the default items.
 * Click Install to install Xcode Tools and the X11 SDK.
 
-* For more info: http://trac.macosforge.org/projects/wiki/InstallingMacPorts
+* For more info: http://trac.macosforge.org/projects/macports
 
 === Macports packages ===
 
