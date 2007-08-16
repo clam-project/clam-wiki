@@ -124,7 +124,8 @@ One major problem I had was that the CLAM/test directory wasn't building, most l
 ** ( cardinal vowels and tube model for later iteration)
 
 === Week 9  (Jul 23 to Jul 30) ===
-
+* Added 3rd formant to vowel resonator
+* read up on ADSR
 
 === Week 10  (Jul 30 to Aug 6) ===
 
