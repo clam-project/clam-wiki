@@ -5,7 +5,7 @@
 * use some attribute to distinguish LADSPA and CLAM (and...) => so processing tree does not know about ladspa
 * Add plugin functionality (ladspa, clam) to OfflinePlayer. Or any NetworkPlayer class actually.
 ** compile agains RunTime(Ladsap)Loader.cxx
-* Mac Ladspas
+
 * Windows Ladspas (crosscompiled with mingw)
 
 
@@ -21,6 +21,7 @@
 * save controls state with network
 
 == Done ==
+* Mac Ladspas
 * Refactor RuntimeLibraryLoader to separate Ladspa and clam plugins. Use hollywood (template method) pattern. (Pau)
 
 * Factory refactoring: unify two registry maps (creator and metadata)
