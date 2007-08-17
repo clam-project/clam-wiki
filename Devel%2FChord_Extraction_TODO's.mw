@@ -16,7 +16,7 @@
 **** comparing with ground truth
 ** [[Image:Done.png]] Decide on a method for allowing use of different chord extraction algorithms
 *** Get approval ... uhm...
-*** [[Image:Done.png]] Implement (not necessarily the right order of "Done"...
+*** [[Image:Done.png]] Implement (not necessarily the right order of "Done"...)
 *** [[Image:Done.png]] Enable choice in the ChordExtractor exec
 *** Enable configuration in the TonalAnalysis processing
 ** A chord similarity based implementation
