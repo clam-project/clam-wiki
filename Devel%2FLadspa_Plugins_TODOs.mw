@@ -1,17 +1,18 @@
 == ToDo ==
 
-=== High priority ===
 
 * Use some attribute to distinguish LADSPA and CLAM (and...) => so processing tree does not know about ladspa
 ** '''this can be removed, we resolve ladspas vs clam with categories --pau'''
 * Add plugin functionality (ladspa, clam) to OfflinePlayer. Or any NetworkPlayer class actually.
 ** '''this is super quick. just see ProcessingTree.cxx.
+** '''high'''
 ** compile agains RunTime(Ladsap)Loader.cxx
 *** '''remove this. it is not done this way (decision taken during last refactoring) --pau'''
 
 * Windows Ladspas (crosscompiled with mingw)
 ** Compile some ladspa suites (the ones in ardour.org for example)
-*** '''new --pau'''
+*** '''new. but not sure its prio --pau'''
+
 
 * Hierarchic categories
 ** '''new one: it will allow better organization inside each architecture (clam, ladspas, lv2s...) --pau'''
@@ -24,7 +25,7 @@
 * open ladspa libs bug
 ** ''' low'''
 
-* search in PT
+* search in PT. similar to quick-silver
 ** '''med'''
 * completion in Add Processing
 ** '''??'''
