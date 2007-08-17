@@ -12,10 +12,16 @@
 === Medium priority ===
 * load lv2 plugins
 * load lv2 midi plugins
-* (med) open ladspa libs bug
+* open ladspa libs bug
 
 === Low priority ===
 
+=== Unsorted ===
+* completion on the AddProcessing feature
+* add a search box to the ProcessingTree of the NetworkEditor
+* display info on hover over a Processing (on the tree)
+* some GUI to help add metadata to the processings
+* fix destruction of the Processings (valgrind on NetworkEditor)
 
 === high level ToDo's to discuss ===
 * save controls state with network
