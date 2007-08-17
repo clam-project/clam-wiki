@@ -16,10 +16,28 @@
 * Hierarchic categories
 ** '''new one: it will allow better organization inside each architecture (clam, ladspas, lv2s...) --pau'''
 
-=== Medium priority ===
+
 * load lv2 plugins
+** '''high prio'''
 * load lv2 midi plugins
+** '''med. after gsoc'''
 * open ladspa libs bug
+** ''' low'''
+
+* search in PT
+** '''med'''
+* completion in Add Processing
+** '''??'''
+* show info on hover in a processing of PT
+** '''high, this would need either 1)a new metadata field "doc" or 2)show all existing attributes
+* GUI to add metadata?
+** '''no'''
+
+* ladspa and lv3 creation classes. needs reorganization (plugin folder) and doc
+** '''med. new'''
+
+* loading and re/loading libs on the fly. needed for faust
+** '''med'''
 
 === Low priority ===
 
