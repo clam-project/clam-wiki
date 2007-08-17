@@ -14,7 +14,11 @@
 *** Write a bash script for:
 **** computing the segmentation on the songs
 **** comparing with ground truth
-** Decide on a method for allowing use of different chord extraction algorithms
+** [[Image:Done.png]] Decide on a method for allowing use of different chord extraction algorithms
+*** Get approval ... uhm...
+*** [[Image:Done.png]] Implement (not necessarily the right order of "Done"...
+*** [[Image:Done.png]] Enable choice in the ChordExtractor exec
+*** Enable configuration in the TonalAnalysis processing
 ** A chord similarity based implementation
 *** [[Image:Done.png]] Experiments, tests, fun, and some extremely ugly hacking
 *** Clean, code, commit the changes from the previous "take no prisoners an' burn all of 'em bridges" hacking 
