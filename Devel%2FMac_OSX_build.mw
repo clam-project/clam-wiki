@@ -37,7 +37,7 @@
    $ sudo make install
 
 * qt4-3.1 precompiled package - recommended
-   $ wget http://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/qt-mac-opensource-src-4.3.1.tar.gz
+   $ wget http://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/qt-mac-opensource-4.3.1.dmg
 
 * qt4.3.1 mac-free (not x11)
    $ wget http://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/qt-mac-opensource-src-4.3.1.tar.gz
