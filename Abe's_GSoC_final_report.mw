@@ -1,1 +1,44 @@
-=Final Report=
+== Overview ==
+
+* Brief list of accomplishments
+* Implementation details
+* Strengths and weaknesses
+* Defining future work
+
+== Brief List of Accomplishments ==
+
+* Formant extractor 
+* third formant addition to vocal tract resonator
+* Cardinal vowel control for vocal tract resonator
+* Jitter and shimmer functionality and controls for harmonic peak generator
+
+== Implementation Details ==
+
+=== Formant Extractor ===
+
+The formant extractor uses the LPC coefficients (computed by LPCAutocorrelation) to find the poles of the corresponding polynomial.   It uses a root solving method that first builds a companion matrix for the polynomial, then it finds the roots by finding the eigenvalues of a Hessenberg matrix.  At first, this was implemented using CLAM::Matrix, but later I refactored it into std::vector.  
+
+The classes involved in the formant extractor are LPCAutoCorrelation, LPModel, Polynomial, and FormantExtractor.  LPCAutocorrelation computes the LPC coefficients and stores them in the data class LPModel.  LPModel was modified to include a method for outputting the roots.  This method is implemented by the Polynomial class.  The FormantExtractor class implements a processing that takes audio windows and outputs the roots as an array of spectral peaks.  Note that now the modified LPModel and LPCAutoCorrelation are now in AbeLPModel and AbeLPC_Autocorrelation of the CLAM/pluggins/speech directory.  
+
+=== Third formant addition to vocal tract resonator ===
+
+This was a small patch that allowed a control processing to set the 3rd formant of the VowelResonator.  It only involved changing a few lines of the VowelResonator so that the third formant, which was fixed, could be adjusted.
+
+=== Cardinal vowel control for the vocal tract resonator ===
+
+This control processing outputs first and second formants for input to VowelResonator.  In this respect it is similar to the control surface.  However instead of offering 2-D controls, the CardinalVowel class maps curves in this 2-D space (as traced by the locations of the cardinal vowels) to a 1-D slider.  This 1-D space is defined between 0 and 1 and is divided evenly between the vowels IY EY EH AE AA AO OW UW.  This mapping was created by hand.  The F1 values are represented as a piecewise, linear function that rises from IY to AA and falls back from AO to UW. The F2 values are represented by a linear function that falls from IY to UW.
+
+=== Jitter and Shimmer functionality for Harmonic peak generator ===
+
+This is an addition to HarmonicPeaksGenerator that allows an amount of random variation in the pitch and amplitude (jitter and shimmer, respectively) to the harmonic peaks.  Rather than apply it as a patch to HarmonicPeaksGenerator, I created a new class in CLAM/plugins/speech, GlottalSourceGenerator because I was not sure if the jitter and shimmer would be useful outside of the speech domain.  Also, a new class could allow further work on aspects of the voice source that are not harmonic.
+
+
+== Strengths and Weaknesses ==
+
+I learned a lot with my experience in the CLAM project during GSoC.  With any learning process, there are difficulties and the learning is unfortunately best understood in retrospect.  In this section I will discuss what I did well and what I could improve.  In general, I felt like I improved as the summer progressed, but at first my progress was slow.  Partially this could be expected because I had to become familiar with the code and plan my work.  However, I think it was worse than necessary because I started with a harder problem and I probably could have learned faster by starting with smaller problems.  I think that it might have been better if I had started with the last three tasks and finished with the first (FormantExtractor).  This would have helped me make more progress earlier and learn more gradually/efficiently.  
+
+The formant extractor was my largest contribution, but it the one that I am least satisfied with because it still has a lot of room for improvement.  There are a number of improvements that could be made, such as tracking to smooth the formants and only choose the first x number of formants.  Also, a testing functionality would be useful.  There are some refactoring changes that could improve the design, like having root solving as a processing that operates on polynomials as data.  Furthermore, it would be interesting to try other, non-LPC methods of formant extraction.  Getting to know CLAM better made me see other techniques like peak picking of the fft spectrum.  
+
+The patch where I added a 3rd formant control was small but  it was an important point in my learning process because I saw that I could make noticeable changes with adding very little code, provided I know what to add where.  
+
+The CardinalVowel control was good because I had a clear idea of what I wanted to do and I picked the easiest way to do it.
