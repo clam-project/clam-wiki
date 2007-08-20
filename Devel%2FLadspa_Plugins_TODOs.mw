@@ -1,53 +1,29 @@
 == ToDo ==
 
-
-* Use some attribute to distinguish LADSPA and CLAM (and...) => so processing tree does not know about ladspa
-** '''this can be removed, we resolve ladspas vs clam with categories --pau'''
+== High ==
 * Add plugin functionality (ladspa, clam) to OfflinePlayer. Or any NetworkPlayer class actually.
 ** '''this is super quick. just see ProcessingTree.cxx.
-** '''high'''
-** compile agains RunTime(Ladsap)Loader.cxx
-*** '''remove this. it is not done this way (decision taken during last refactoring) --pau'''
-
-* Windows Ladspas (crosscompiled with mingw)
-** Compile some ladspa suites (the ones in ardour.org for example)
-*** '''new. but not sure its prio --pau'''
-
-
+* load lv2 plugins
 * Hierarchic categories
 ** '''new one: it will allow better organization inside each architecture (clam, ladspas, lv2s...) --pau'''
-
-
-* load lv2 plugins
-** '''high prio'''
-* load lv2 midi plugins
-** '''med. after gsoc'''
-* open ladspa libs bug
-** ''' low'''
-
-* search in PT. similar to quick-silver
-** '''med'''
-* completion in Add Processing
-** '''??'''
 * show info on hover in a processing of PT
 ** '''high, this would need either 1)a new metadata field "doc" or 2)show all existing attributes
-* GUI to add metadata?
-** '''no'''
 
+== Med ==
+* load lv2 midi plugins
+** '''after gsoc'''
+* Windows Ladspas (crosscompiled with mingw)
+** Compile some ladspa suites (the ones in ardour.org for example)
+* search in PT. similar to quick-silver
+* completion in Add Processing
+** ''' similar to the Amarok search '''
 * ladspa and lv3 creation classes. needs reorganization (plugin folder) and doc
-** '''med. new'''
-
 * loading and re/loading libs on the fly. needed for faust
-** '''med'''
-
-=== Low priority ===
-
-=== Unsorted ===
-* completion on the AddProcessing feature
-* add a search box to the ProcessingTree of the NetworkEditor
-* display info on hover over a Processing (on the tree)
-* some GUI to help add metadata to the processings
 * fix destruction of the Processings (valgrind on NetworkEditor)
+
+== Low ==
+* open ladspa libs bug
+** ''' low'''
 
 === high level ToDo's to discuss ===
 * save controls state with network
@@ -106,6 +82,12 @@
 * (med) wrapper any plugin in the three
 
 == Dropped ==
+** compile agains RunTime(Ladsap)Loader.cxx
+*** '''remove this. it is not done this way (decision taken during last refactoring) --pau'''
+
+* Use some attribute to distinguish LADSPA and CLAM (and...) => so processing tree does not know about ladspa
+** '''this can be removed, we resolve ladspas vs clam with categories --pau'''
+
 * (med) extract implementation in file LadspaFactory.cxx
 * (low) add Ladspa tree and order it by cat
 ** (low) check for # of plugins to make a branch in the tree
