@@ -30,15 +30,44 @@ This control processing outputs first and second formants for input to VowelReso
 
 === Jitter and Shimmer functionality for Harmonic peak generator ===
 
-This is an addition to HarmonicPeaksGenerator that allows an amount of random variation in the pitch and amplitude (jitter and shimmer, respectively) to the harmonic peaks.  Rather than apply it as a patch to HarmonicPeaksGenerator, I created a new class in CLAM/plugins/speech, GlottalSourceGenerator because I was not sure if the jitter and shimmer would be useful outside of the speech domain.  Also, a new class could allow further work on aspects of the voice source that are not harmonic.
+This is an addition to HarmonicPeaksGenerator that allows an amount of random variation in the pitch and amplitude (jitter and shimmer, respectively) to the harmonic peaks.  Rather than apply it as a patch to HarmonicPeaksGenerator, I created a new class in CLAM/plugins/speech, GlottalSourceGenerator because I was not sure if the jitter and shimmer would be useful outside of the speech domain.  Also, a new class could allow further work on aspects of the voice source that are not harmonic.  The way this processing works is that the inputs define a maximum amount of jitter and shimmer and within this maximum amount, the processing randomly chooses a value by which to modify the pitch and amplitude.
 
 
 == Strengths and Weaknesses ==
 
 I learned a lot with my experience in the CLAM project during GSoC.  With any learning process, there are difficulties and the learning is unfortunately best understood in retrospect.  In this section I will discuss what I did well and what I could improve.  In general, I felt like I improved as the summer progressed, but at first my progress was slow.  Partially this could be expected because I had to become familiar with the code and plan my work.  However, I think it was worse than necessary because I started with a harder problem and I probably could have learned faster by starting with smaller problems.  I think that it might have been better if I had started with the last three tasks and finished with the first (FormantExtractor).  This would have helped me make more progress earlier and learn more gradually/efficiently.  
 
-The formant extractor was my largest contribution, but it the one that I am least satisfied with because it still has a lot of room for improvement.  There are a number of improvements that could be made, such as tracking to smooth the formants and only choose the first x number of formants.  Also, a testing functionality would be useful.  There are some refactoring changes that could improve the design, like having root solving as a processing that operates on polynomials as data.  Furthermore, it would be interesting to try other, non-LPC methods of formant extraction.  Getting to know CLAM better made me see other techniques like peak picking of the fft spectrum.  
+The formant extractor was my largest contribution, but it the one that I am least satisfied with because it still has a lot of room for improvement.  There are a number of improvements that could be made, such as tracking to smooth the formants and only choose the first x number of formants.  Also, a testing functionality would be useful.  There are some refactoring changes that could improve the design, like having root solving as a processing that operates on polynomials as data.  Furthermore, it would be interesting to try other, non-LPC methods of formant extraction.  Getting to know CLAM better made me see other techniques like peak picking of the fft spectrum.  Also, the scrolling widgets that are being developed will help visualize FormantExtractor output.
 
 The patch where I added a 3rd formant control was small but  it was an important point in my learning process because I saw that I could make noticeable changes with adding very little code, provided I know what to add where.  
 
-The CardinalVowel control was good because I had a clear idea of what I wanted to do and I picked the easiest way to do it.
+The CardinalVowel control was good because I had a clear idea of what I wanted to do and I picked the easiest way to do it.  There are many improvements that I could still make, but I think that they will be easy because the design is straight forward.
+
+The GlottalSource generator was a small addition to the HarmonicPeaksGenerator.  It moderately makes the vowel synthesizer sound more human-like.  It was also a very simple solution that I thought of, but in this case it would be good to check the literature description of jitter and shimmer because I am not really sure that the jitter and shimmer are randomly distributed.
+
+One thing that I did not end up making a implemented contribution for is the ADSR envelope for modulating the voice source.  This is an interesting topic but I did not have time to make a contribution because as the GSoC was ending, I decided to implement the jitter and shimmer, which was a less open ended task.  
+
+== Defining Future Work ==
+
+I am looking forward to continue working with CLAM both to continue the work I started and also to use CLAM in my own research.  
+
+Here are some ways that I could do to improve what I started with clam:
+
+* FormantExtractor 
+** Tracking
+** Tests
+** Refactoring the design
+** Scrolling ouput visualization
+
+* CardinalVowel
+** Discretize the vowel space
+** Include F3 output control
+** Include formant bandwidth output control
+
+* GlottalSourceGenerator
+** Make it sound more human (open question)
+** time domain source generation ?
+** amplitude envelope (open question)
+
+* LPC_autocorrelation
+** add prediction error/residual output
