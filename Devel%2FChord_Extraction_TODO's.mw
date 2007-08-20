@@ -35,8 +35,8 @@
 ** Internal time in TonalAnalysis, reset to 0 when the network starts
 ** Add a new port to TonalAnalysis for the segmentation from ChordExtractor
 ** Some changes to the Segmentation classes to allow use through a port
-*** a constructor with no (or default parameters)
-*** setMaxPosition
+*** [[Image:Done.png]] a constructor with no (default) parameters
+*** [[Image:Done.png]] setMaxPosition
 *** checking if any segments are out of bounds after setting maxPosition
 *** Add labels for segments
 
