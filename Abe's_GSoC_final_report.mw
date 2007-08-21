@@ -71,3 +71,6 @@ Here are some ways that I could do to improve what I started with clam:
 
 * LPC_autocorrelation
 ** add prediction error/residual output
+
+* Maintenance
+** fix compiler warnings
