@@ -1,6 +1,6 @@
 == ToDo ==
 
-== High ==
+=== High ===
 * Add plugin functionality (ladspa, clam) to OfflinePlayer. Or any NetworkPlayer class actually.
 ** '''this is super quick. just see ProcessingTree.cxx.
 * load lv2 plugins
@@ -9,7 +9,7 @@
 * show info on hover in a processing of PT
 ** '''high, this would need either 1)a new metadata field "doc" or 2)show all existing attributes
 
-== Med ==
+=== Med ===
 * load lv2 midi plugins
 ** '''after gsoc'''
 * Windows Ladspas (crosscompiled with mingw)
@@ -22,11 +22,11 @@
 * fix destruction of the Processings (valgrind on NetworkEditor)
 * save controls state with network (to discuss)
 
-== Low ==
+=== Low ===
 * open ladspa libs bug
 ** ''' low'''
 
-== Done ==
+=== Done ===
 * Mac Ladspas
 * Refactor RuntimeLibraryLoader to separate Ladspa and clam plugins. Use hollywood (template method) pattern. (Pau)
 
@@ -79,7 +79,7 @@
 * (med) refactor: extract ladspa specific to new files
 * (med) wrapper any plugin in the three
 
-== Dropped ==
+=== Dropped ===
 ** compile agains RunTime(Ladsap)Loader.cxx
 *** '''remove this. it is not done this way (decision taken during last refactoring) --pau'''
 
