@@ -20,13 +20,11 @@
 * ladspa and lv3 creation classes. needs reorganization (plugin folder) and doc
 * loading and re/loading libs on the fly. needed for faust
 * fix destruction of the Processings (valgrind on NetworkEditor)
+* save controls state with network (to discuss)
 
 == Low ==
 * open ladspa libs bug
 ** ''' low'''
-
-=== high level ToDo's to discuss ===
-* save controls state with network
 
 == Done ==
 * Mac Ladspas
