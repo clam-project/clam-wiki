@@ -78,8 +78,10 @@ But, still, what needs always be on the cxx file is the factory registration.
  	};
  static CLAM::FactoryRegistrator<CLAM::ProcessingFactory, MyProcessing> registrator(metadata);
 
+[[Image:MyProcessing-ProcessingTree.png|thumb|MyProcessing available at the end of the 'Spectral Transformations' group]]
 
 You can blindly copy and change 'MyProcessing' by the name of your actual class and the category.
+The category is the processing tool box category your processing will appear.
 
 But if you want to understand what it does, here comes an explanation:
 Static objects like this one are constructed before the 
@@ -87,10 +89,6 @@ program's 'main' function is called.
 The constructor of this one (FactoryRegistrator) just adds the Processing Factory 
 instructions on how to create a MyProcessing object when you ask
 for the label "MyProcessing".
-
-
-[[Image:MyProcessing-ProcessingTree.png|thumb|MyProcessing available at the end of the 'Spectral Transformations' group]]
-
 
 == NetworkEditor/ProcessingTree.cxx ==
 
