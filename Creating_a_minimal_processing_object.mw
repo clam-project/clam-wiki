@@ -88,9 +88,13 @@ The constructor of this one (FactoryRegistrator) just adds the Processing Factor
 instructions on how to create a MyProcessing object when you ask
 for the label "MyProcessing".
 
-== NetworkEditor/ProcessingTree.cxx ==
 
 [[Image:MyProcessing-ProcessingTree.png|thumb|MyProcessing available at the end of the 'Spectral Transformations' group]]
+
+
+== NetworkEditor/ProcessingTree.cxx ==
+
+'''This is just needed for versions 1.1.0 and earlier.'''
 
 In order to see the processing on the NetworkEditor processing list
 you still need to add it to the list of processings at
