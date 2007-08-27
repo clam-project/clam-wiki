@@ -71,21 +71,22 @@ But, still, what needs always be on the cxx file is the factory registration.
  // Version beyond 1.1.0
  #include "MyProcessing.hxx"
  #include <CLAM/ProcessingFactory.hxx>
- 
- static CLAM::FactoryRegistrator<CLAM::ProcessingFactory, MyProcessing>
- 	myProcessingRegistrator("MyProcessing");
+ static const char * metadata[] = {
+ 	"key", "MyProcessing",
+ 	"category", "Spectral Transformations",
+ 	0
+ 	};
+ static CLAM::FactoryRegistrator<CLAM::ProcessingFactory, MyProcessing> registrator(metadata);
 
 
-You can blindly copy and change 'MyProcessing' by the name of your actual class.
+You can blindly copy and change 'MyProcessing' by the name of your actual class and the category.
 
 But if you want to understand what it does, here comes an explanation:
 Static objects like this one are constructed before the 
 program's 'main' function is called.
-The constructor of this one just adds the Processing Factory 
+The constructor of this one (FactoryRegistrator) just adds the Processing Factory 
 instructions on how to create a MyProcessing object when you ask
 for the label "MyProcessing".
-
-Nasty details.
 
 == NetworkEditor/ProcessingTree.cxx ==
 
