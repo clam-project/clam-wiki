@@ -40,17 +40,6 @@ To get involved with CLAM development:
 * [[Devel/Real-Time Spectral Model Synthesizer]] GSoC project tasks. Mostly taken by Greg Kellum
 * [[Devel/Chord Extraction TODO's]] includes GSoC project tasks taken by Roman Goj
 
-== Hot Spots ==
-
-Things that core developers are eager to address but still not being refined in small tasks. Of course they need discussion.
-
-* Protocol allowing processings to let the network decide its (audio) port size. 
-* Parameter propagation through the data-flow
-* Recursive networks
-* Static network scheduling (Maybe based on an recursive analysis starting from sinks)
-* Ease Processing writing: not make a config attribute mandatory.
-* Unify Do() return semantics. One solution is do it void Do()
-* Spectrum refactoring: one class per representation (complex, mag-phase, ...)
 
 == HOWTO's ==
 
@@ -98,3 +87,16 @@ For example:
 Then execute unit and functional tests:
  $ ./UnitTests/UnitTests
  $ ./FunctionalTests/FunctionalTests
+
+
+== Hot Spots ==
+
+Things that core developers are eager to address but still not being refined in small tasks. Of course they need discussion.
+
+* Protocol allowing processings to let the network decide its (audio) port size. 
+* Parameter propagation through the data-flow
+* Recursive networks
+* Static network scheduling (Maybe based on an recursive analysis starting from sinks)
+* Ease Processing writing: not make a config attribute mandatory.
+* Unify Do() return semantics. One solution is do it void Do()
+* Spectrum refactoring: one class per representation (complex, mag-phase, ...)
