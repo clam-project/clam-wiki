@@ -24,6 +24,19 @@ To get involved with CLAM development:
 * Fill bugs in our [http://clam.iua.upf.edu/bugreporting.html bug tracking tool].
 * Fix bugs and send a patch ;-)
 
+== HOWTO's ==
+
+* [[Devel/Changelog release policy]]
+* [[Devel/Compile and install troubleshooting]]
+* [[Devel/Mac OSX build]]
+* [[Devel/Linux Gentoo build]]
+* [[Devel/Windows build]] with MS Visual Studio 2005 
+* [[Devel/Windows MinGW build]]
+* [[Devel/Windows MinGW cross compile]]
+* [[Devel/Eclipse]]
+* [[Devel/Testing processing algorithms]]
+* [[Devel/CLAM idioms]] C++ techniques we use over and over.
+
 == Tasks ==
 
 * [[Devel/Release task list]]
@@ -39,20 +52,6 @@ To get involved with CLAM development:
 * [[Devel/Spectral Transformations TODOs]] GSoC project tasks. Mostly taken by Hernán Ordiales
 * [[Devel/Real-Time Spectral Model Synthesizer]] GSoC project tasks. Mostly taken by Greg Kellum
 * [[Devel/Chord Extraction TODO's]] includes GSoC project tasks taken by Roman Goj
-
-
-== HOWTO's ==
-
-* [[Devel/Changelog release policy]]
-* [[Devel/Compile and install troubleshooting]]
-* [[Devel/Mac OSX build]]
-* [[Devel/Linux Gentoo build]]
-* [[Devel/Windows build]] with MS Visual Studio 2005 
-* [[Devel/Windows MinGW build]]
-* [[Devel/Windows MinGW cross compile]]
-* [[Devel/Eclipse]]
-* [[Devel/Testing processing algorithms]]
-* [[Devel/CLAM idioms]] C++ techniques we use over and over.
 
 == Prepare and apply a patch ==
 
