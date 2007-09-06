@@ -1,4 +1,4 @@
-* How to insert variables in a clam assert message? (which is something extremely useful)
+== How to insert variables in a clam assert message? (which is something extremely useful) ==
 
  if ( error-condition )
  {
@@ -10,7 +10,7 @@
    CLAM_ASSERT(false, os.str().c_str());
  }
 
-* How to plot any kind of data for debugging purposes?
+== How to plot any kind of data for debugging purposes? ==
 
 In short, write out the data to standard output and then use python with pylab to plot it.
 
