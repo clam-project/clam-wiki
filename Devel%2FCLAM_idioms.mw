@@ -24,3 +24,5 @@ Like in this example (note the [:-1] is to remove the last empty line)
  import pylab
  pylab.plot( file("debug.plot").readlines()[:-1] )
  pylab.show()
+
+Of course you can draw many kinds of plots. Check out this [http://matplotlib.sourceforge.net/tutorial.html matplotlib tutorial]
