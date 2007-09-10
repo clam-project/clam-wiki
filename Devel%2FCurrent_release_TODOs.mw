@@ -1,8 +1,8 @@
 
 == 1.1.1 ==
 
-* [[Image:Done]] Migration guide: FactoryRegistrator instead of Factory::Registrator
-* [[Image:Done]] '''Update How-to new processing'''
+* [[Image:Done.png]] Migration guide: FactoryRegistrator instead of Factory::Registrator
+* [[Image:Done.png]] '''Update How-to new processing'''
 * Add new how-to: minimal processing with audio ports
 * Clean old neteditor tests?
 * Make Assert handler thread safe. Store message in network.
