@@ -25,9 +25,12 @@ Updated version of milestones and TODOs: [[Devel/Spectral Transformations TODOs]
 * [http://h.ordia.com.ar/blog/GSoC2007.php My blog page about GSoC] (with all blog posts about this)
 * [http://clam.iua.upf.edu/planet/ Planet CLAM]
 * [http://planet-soc.com/ Planet SoC]
-== Some selected posts ==
+== Some selected blog posts ==
 * Sinusoidal plus Residual Model (SMS): [http://audiores.uint8.com.ar/blog/?p=101 english] / [http://audiores.uint8.com.ar/blog/?p=105 castellano]
-
+* [http://audiores.uint8.com.ar/blog/?p=124 SMS Harmonizer part1]
+* [http://audiores.uint8.com.ar/blog/?p=136 SMSMorph part1]
+* [http://audiores.uint8.com.ar/blog/?p=144 Fundamental (in Hz) to a MIDI note]
+([http://h.ordia.com.ar/blog/GSoC2007_allposts.php see all])
 
 = Links =
 * [[GSoC/Real-time_Spectral_Transformations/My_devel_links | My CLAM development links]]
