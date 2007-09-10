@@ -2,8 +2,9 @@ This manual chapter gives hints on how to migrate existing code from one version
 
 == 1.1 to 1.2 ==
 
+* The way processing are registered into the factory has changed to add metadata. More information in this [[Creating_a_minimal_processing_object#MyProcessing.cxx|howto]]
 * Processing::GetExecState() has been removed. Use Processing::IsRunning() and Processing::IsConfigured() which lead to more readable code.
-* {Mono|MultiChannel}AudioFileReader::GetAudioFile() method has been removed. If you want to access the header or the text descriptors just use the {Mono|MultiChannel}AudioFileReader::GetHeader() and {Mono|MultiChannel}AudioFileReader::GetTextDescriptors() 
+* {Mono|MultiChannel}AudioFileReader::GetAudioFile() method has been removed. If you want to access the header or the text descriptors just use the {Mono|MultiChannel}AudioFileReader::GetHeader() and {Mono|MultiChannel}AudioFileReader::GetTextDescriptors()
 
 == 1.0 to 1.1 ==
 
