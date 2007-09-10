@@ -38,6 +38,8 @@
 
 * qt4-3.1 precompiled package - recommended
    $ wget http://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/qt-mac-opensource-4.3.1.dmg
+: Qt is installed in /usr/local/Trolltech//Qt-4.3.1 so you should define QTDIR accordantly
+   $ export QTDIR=/usr/local/Trolltech//Qt-4.3.1
 
 * qt4.3.1 mac-free (not x11)
    $ wget http://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/qt-mac-opensource-src-4.3.1.tar.gz
