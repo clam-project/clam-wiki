@@ -1,16 +1,21 @@
 
 == 1.1.1 ==
 
-* Migration guide: FactoryRegistrator instead of Factory::Registrator
-* '''Update How-to new processing'''
+* [Image:Done] Migration guide: FactoryRegistrator instead of Factory::Registrator
+* [Image:Done] '''Update How-to new processing'''
 * Add new how-to: minimal processing with audio ports
 * Clean old neteditor tests?
 * Make Assert handler thread safe. Store message in network.
+* Package the plugins
+* Windows path for plugins
+* Look for plugins at clam install path
+* Add a README for each plugin
 
 * testfarm 
 ** Unify testfarm client scripts
 ** Add windows mingw client
 ** nightly execution: doxygen, release, double, snapshot up
+** Include plugin compilation
 
 == 1.1 ==
 
