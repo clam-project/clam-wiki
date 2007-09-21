@@ -2,7 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.1.1 (1.2?) =
 <gallery>
-Image:AddProcessingCompleter.png|The dialog to add a processing now has a completer.
+Image:AddProcessingCompleter.png|The dialog to add a processing now has a completer with the available processing keys.
 Image:MegaAnnotator.png|Annotator, with two segmentation views and two frame level descriptors views and a bargraph view all at the same time.
 Image:NewOldAnnotator.png|Meet the new Annotator... same as the old Annotator.  Annotator looking the same as it used to-- after some major gutting!
 Image:LadspaInMacOSX.png|Mac OSX NetworkEditor also supports LADSPA plugins.
