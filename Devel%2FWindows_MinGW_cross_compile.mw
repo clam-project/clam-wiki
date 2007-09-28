@@ -29,7 +29,7 @@ So it works! We are building and executing a windows binary.
 
 Lets download Qt.
 
- $ wget -c http://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/qt-win-opensource-4.2.3-mingw.exe
+ $ wget -c http://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/qt-win-opensource-4.3.1-mingw.exe
  $ chmod a+x qt-win-opensource-4.2.3-mingw.exe
  $ ./qt-win-opensource-4.2.3-mingw.exe
 
