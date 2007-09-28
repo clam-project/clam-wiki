@@ -40,7 +40,7 @@ This installs by default Qt on ~/.wine/drive_c/Qt/4.3.1/, so
 
 [[image:Mingw32DesignerUnderWine.png|thumb|Mingw Designer running on wine]]
 
- $ export QTDIR=~/.wine/drive_c/Qt/4.2.3/
+ $ export QTDIR=~/.wine/drive_c/Qt/4.3.1/
 
 Edit the following file helloqt.cxx
 
