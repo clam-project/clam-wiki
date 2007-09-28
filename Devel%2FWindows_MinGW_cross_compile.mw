@@ -34,7 +34,7 @@ Lets download Qt.
  $ ./qt-win-opensource-4.2.3-mingw.exe
 
 I accepted to intall mingw32 again but in the fake windows.
-This installs by default Qt on ~/.wine/drive_c/Qt/4.2.3/, so
+This installs by default Qt on ~/.wine/drive_c/Qt/4.3.1/, so
 
  $ ~/.wine/drive_c/Qt/4.2.3/bin/designer.exe
 
