@@ -422,19 +422,20 @@ I didn't managed to crosscompile them my self, but i found some precompiled bina
 
 == cppunit ==
 
+To get some extra autoconf macros and libtool do:
+ sudo apt-get install autoconf-archive libtool
+
+Then:
+
  cd download 
  cvs -z3 -d:pserver:anonymous@cppunit.cvs.sourceforge.net:/cvsroot/cppunit co -P -D cppunit-cvs cppunit
 
-To get some extra autoconf macros and libtool do:
-
- $ sudo apt-get install autoconf-archive libtool
-
- $ cd $HOME/CajitasDeArena/mingw/cppunit-cvs
- $ ./autogen.sh
- $ ./configure --host=i586-mingw32msvc --prefix=$HOME/CajitasDeArena/mingw/cppunit
- $ make
- $ make install
- $ cp $HOME/CajitasDeArena/mingw/cppunit-cvs/src/cppunit/.libs/libcppunit-1-12-0.dll $HOME/CajitasDeArena/mingw/dlls
+ cd cppunit-cvs
+ ./autogen.sh
+ ./configure --host=i586-mingw32msvc --prefix=$HOME/CajitasDeArena/mingw/cppunit
+ make
+ make install
+ cp $HOME/CajitasDeArena/mingw/cppunit-cvs/src/cppunit/.libs/libcppunit-1-12-0.dll $HOME/CajitasDeArena/mingw/dlls
 
 == Xerces-C ==
 
