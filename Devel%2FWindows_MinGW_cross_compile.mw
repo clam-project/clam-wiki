@@ -210,7 +210,7 @@ for blacksheep in blacklist:
 env.SharedLibrary("portaudio",sources+["../asiosdk2/asiosdk2.a"])
 </pre> 
 
-Change the file portaudio/src/hostapi/dsound/pa_win_ds_dynlink.h
+(Not needed in latest portaudio version) Change the file portaudio/src/hostapi/dsound/pa_win_ds_dynlink.h
 <pre>
 63c63
 < #include <DSound.h>
@@ -218,6 +218,7 @@ Change the file portaudio/src/hostapi/dsound/pa_win_ds_dynlink.h
 > #include <dsound.h>
 </pre>
 
+(requires crossming.py file from clam)
  scons -f SConstruct.crossmingw
  mkdir lib
  cp portaudio.def portaudio.dll portaudio.lib lib
