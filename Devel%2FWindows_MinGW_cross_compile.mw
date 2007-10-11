@@ -134,6 +134,14 @@ ${BIN} : $(OBJS)
 
 === DirectX ===
 
+* Download the devpak for DirectX 9 from http://devpaks.org/details.php?devpak=136
+* Unzip de file as it were a tar.bz file
+* move and rename the DirectX90c folder as directx in the sandbox
+* You may need to remove some of trailing directories
+
+
+'''Deprecated procedure for older version directx 8'''
+
 The Allegro project has a binary for all the DX versions compiled with mingw.
 
  $ cd download
