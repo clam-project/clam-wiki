@@ -423,7 +423,7 @@ I didn't managed to crosscompile them my self, but i found some precompiled bina
 == cppunit ==
 
 To get some extra autoconf macros and libtool do:
- sudo apt-get install autoconf-archive libtool
+ sudo apt-get install autoconf-archive libtool automake
 
 Then:
 
