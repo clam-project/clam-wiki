@@ -176,6 +176,7 @@ env.AppendUnique(CPPPATH=[
 	'../asiosdk2/host/pc',
 	'../directx/include',
 	'src/common',
+ 	'src/os/win',
 	'include',
 ])
 env.AppendUnique(LDFLAGS = [
@@ -191,6 +192,7 @@ env.AppendUnique(LIBS=[
 	'ole32',
 	'uuid',
 	'winmm',
+	'setupapi',
 ])
 
 env.AppendUnique(CXXFLAGS=['-O3','-s','-Wall'])
@@ -204,6 +206,8 @@ sourcePaths = [
 	'src/hostapi/asio',
 	'src/hostapi/dsound',
 	'src/hostapi/wmme',
+	'src/hostapi/wasapi',
+	'src/hostapi/wdmks',
 ]
 blacklist = [
 	'src/os/win/pa_x86_plain_converters.c',
