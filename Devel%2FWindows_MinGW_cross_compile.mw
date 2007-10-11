@@ -496,7 +496,7 @@ copy the qt4 dlls
  cp /home/vokimon/.wine/drive_c/Qt/4.3.1/bin/*dll dlls
 
  mkdir local
- http://iua-share.upf.edu/mnt/svn/clam/trunk clam
+ svn co http://iua-share.upf.edu/mnt/svn/clam/trunk clam
  cd clam/CLAM
  scons configure with_fftw3=1 with_fftw=0 audio_backend=portaudio xmlbackend=xmlpp prefix=~/CajitasDeArena/mingw/local sandbox_path=~/CajitasDeArena/mingw/ crossmingw=1
  scons
