@@ -435,7 +435,7 @@ Then:
  ./configure --host=i586-mingw32msvc --prefix=$HOME/CajitasDeArena/mingw/cppunit
  make
  make install
- cp $HOME/CajitasDeArena/mingw/cppunit-cvs/src/cppunit/.libs/libcppunit-1-12-0.dll $HOME/CajitasDeArena/mingw/dlls
+ cp $HOME/CajitasDeArena/mingw/download/cppunit-cvs/src/cppunit/.libs/libcppunit-1-12-0.dll $HOME/CajitasDeArena/mingw/dlls
 
 == Xerces-C ==
 
