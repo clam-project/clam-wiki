@@ -332,7 +332,7 @@ And create the following 'SConstruct' file:
  import glob
  
  env=Environment()
- env.Tool('crossmingw', toolpath=['/home/vokimon/mingwtest/mingw/clam/CLAM/scons/sconstools'])
+ env.Tool('crossmingw', toolpath=['../clam/CLAM/scons/sconstools'])
  
  env.AppendUnique(CPPPATH=[
  	".", 
