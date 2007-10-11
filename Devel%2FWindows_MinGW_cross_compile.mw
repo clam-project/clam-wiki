@@ -457,7 +457,7 @@ GTK adds the bin folder to the wine PATH, this is needed just for NSIS to find t
 
 Download the Installer and install it with wine:
 
-http://mesh.dl.sourceforge.net/sourceforge/nsis/nsis-2.28-setup.exe
+http://mesh.dl.sourceforge.net/sourceforge/nsis/nsis-2.31-setup.exe
 
 == Py2Exe ==
 
