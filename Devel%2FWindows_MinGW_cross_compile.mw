@@ -136,11 +136,15 @@ ${BIN} : $(OBJS)
 
 The Allegro project has a binary for all the DX versions compiled with mingw.
 
+ $ cd download
  $ wget -c http://alleg.sourceforge.net/files/dx80_mgw.zip
+ $ cd ..
+ $ mkdir directx
+ $ cd directx
+ $ unzip ../download/dx80_mgw.zip
 
-The zip just has a 'lib' and 'include' folders, so create
+The zip just has a 'lib' and 'include' folders, so previous commands create
 a directory named 'directx' and unzip there.
-
 
 === Portaudio ===
 
