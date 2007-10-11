@@ -422,7 +422,7 @@ I didn't managed to crosscompile them my self, but i found some precompiled bina
 
 == cppunit ==
 
- $ cvs -z3 -d:pserver:anonymous@cppunit.cvs.sourceforge.net:/cvsroot/cppunit co -P cppunit -D cppunit-cvs
+ $ cvs -z3 -d:pserver:anonymous@cppunit.cvs.sourceforge.net:/cvsroot/cppunit co -P -D cppunit-cvs cppunit
 
 To get some extra autoconf macros and libtool do:
 
