@@ -1,3 +1,6 @@
-http://ovh.dl.sourceforge.net/sourceforge/dev-cpp/devcpp-4.9.9.2_setup.exe
+We are currently generating Windows binaries crosscompiling from Linux.
+In [[Devel/Windows MinGW cross compile]] we give a detailed procedure
+that could give some clues if you want to natively compile in Windows
+using MinGW.
 
-http://mesh.dl.sourceforge.net/sourceforge/id3lib/id3lib-3.8.3.tar.gz
+http://ovh.dl.sourceforge.net/sourceforge/dev-cpp/devcpp-4.9.9.2_setup.exe
