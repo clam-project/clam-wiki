@@ -457,7 +457,7 @@ GTK adds the bin folder to the wine PATH, this is needed just for NSIS to find t
 
 == libsamplerate ==
 
-'''Not a current CLAM dependency. Experiment'''
+'''Not a current CLAM dependency. Just an experiment'''
 
  cd downloads
  wget http://www.mega-nerd.com/SRC/libsamplerate-0.1.2.tar.gz
