@@ -454,6 +454,17 @@ Execute it  with wine to install gtk and then:
 GTK adds the bin folder to the wine PATH, this is needed just for NSIS to find the dll's
  cp gtk/bin/*.dll dlls
 
+
+== libsamplerate ==
+
+'''Not a current CLAM dependency. Experiment'''
+
+ cd downloads
+ wget http://www.mega-nerd.com/SRC/libsamplerate-0.1.2.tar.gz
+ tar xvfz libsamplerate-0.1.2.tar.gz
+ PKG_CONFIG=../../gtk/bin/pkg-config.exe RANLIB=i586-mingw32msvc-ranlib CC=i586-mingw32msvc-gcc CXX=i586-mingw32msvc-g++ ./configure --target i586-mingw32msvc --prefix=/home/vokimon/CajitasDeArena/mingw/libsamplerate
+ QTDIR=~/.wine/drive_c/Qt/4.3.1/ scons clam_prefix=~/CajitasDeArena/mingw/local prefix=~/CajitasDeArena/mingw/local external_dll_path=~/CajitasDeArena/mingw/dlls crossmingw=1 package
+
 == NSIS ==
 
 Download the Installer and install it with wine:
