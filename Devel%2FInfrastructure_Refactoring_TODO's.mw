@@ -1,4 +1,4 @@
-* Configurators for processing in plugins
+* [[image:done.png]] Configurators for processing in plugins
 * Solving parameter propagation problem
 * [[image:done.png]] Complex->AudioBuffer IFFT
 * [[image:done.png]] AudioBuffer->AudioStream OverlapAndAdd (named AudioBuffer2Stream)
@@ -16,6 +16,7 @@
 == Mingw testfarm ==
 
 * [[image:done.png]] Enabling testfarm for mingw
+* Enable again testfarm for mingw
 * Enabling Tests crosscompile (not ported to use crossmingw)
 * Enabling SMSTools (missing qt3)
 * Read the dictionary from a file
