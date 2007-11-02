@@ -30,9 +30,9 @@ To get involved with CLAM development:
 * [[Devel/Compile and install troubleshooting]]
 * [[Devel/Mac OSX build]]
 * [[Devel/Linux Gentoo build]]
-* [[Devel/Windows build]] with MS Visual Studio 2005 
-* [[Devel/Windows MinGW build]]
-* [[Devel/Windows MinGW cross compile]]
+* [[Devel/Windows build]] with MS Visual Studio 2005 (obsolete)
+* [[Devel/Windows MinGW build]] (to-do)
+* [[Devel/Windows MinGW cross compile]] (important!)
 * [[Devel/Eclipse]]
 * [[Devel/Testing processing algorithms]]
 * [[Devel/CLAM idioms]] C++ techniques we use over and over.
