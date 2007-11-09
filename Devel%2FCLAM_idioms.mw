@@ -19,6 +19,8 @@ In your code, typically in a loop, put cout's like this:
  std::cout << data << std::endl;
 Then execute the program piping to a file
  ./OfflinePlayer mynetwork.clamnetwork > debug.plot
+
+Install python-matplotlib package if not already installed.
 Open a python shell an use plot and show commands of pylab. 
 Like in this example (note the [:-1] is to remove the last empty line)
  import pylab
