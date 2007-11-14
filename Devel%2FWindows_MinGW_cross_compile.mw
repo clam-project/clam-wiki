@@ -8,12 +8,12 @@
 You can test such programs work by doing:
 
  $ cat > hello.cxx <<EOF
- > #include <iostream>
- > int main()
- > {
- >         std::cout << "Hello world"  << std::endl;
- > }
- > EOF
+ #include <iostream>
+ int main()
+ {
+         std::cout << "Hello world"  << std::endl;
+ }
+ EOF
  
  $ i586-mingw32msvc-g++ hello.cxx
  
