@@ -3,8 +3,6 @@
 This page explains how to develop your own library of processings,
 to be used with the NetworkEditor/Prototyper tandem or any other CLAM based application.
 
-TODO: Explain extra setup to provide ''configuration dialogs'' for the new processings.
-
 == A sample SConstruct file ==
 
 You can use this simple SConstruct file to compile all the processings found in a folder
