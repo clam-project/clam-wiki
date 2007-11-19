@@ -121,3 +121,8 @@ gets more sophisticated (when it gets grouping features).
     "Utils",                   // This is the next group name
     "Fundamental2Control",
     ....
+
+== Further reading ==
+
+* [[Processings with controls]] If you want the processing to receive or send asynchronous data.
+* [[Processings with configuration]] If you want some aspects of the processing to be configurable.
