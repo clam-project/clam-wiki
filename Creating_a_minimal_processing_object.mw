@@ -126,3 +126,7 @@ gets more sophisticated (when it gets grouping features).
 
 * [[Processings with controls]] If you want the processing to receive or send asynchronous data.
 * [[Processings with configuration]] If you want some aspects of the processing to be configurable.
+ 
+* [[Building a processing library]] If you want your processing to become part of a CLAM plugin library.
+* [[Defining a ProcessingComposite]] If you want your processing to be an aggregation of processings.
+* [[Using custom data token types]] if you want to set the port color for your custom data type.
