@@ -10,7 +10,7 @@ This is an example of configuration object definition:
 
 TODO: Paste a simple example here
 
- class SimpleConfig:public CLAM::ProcessingConfig
+ class MyProcessingConfig:public CLAM::ProcessingConfig
  {
      DYNAMIC_TYPE_USING_INTERFACE( SimpleConfig, 1, ProcessingConfig );
      DYN_ATTRIBUTE( 0, public, int, FrameSize);
