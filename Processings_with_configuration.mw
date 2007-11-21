@@ -43,7 +43,7 @@ And the automatically derived configuration widget will look like this:
 * Implement the ConcreteConfigure method to be called every time it is provided a new configuration.
 * In such a method, firstly use the CopyAsConcreteConfig method to copy the object
 
- class MyProcessing : CLAM::Processing
+ class MyProcessing : public CLAM::Processing
  {
  	...
  public:
