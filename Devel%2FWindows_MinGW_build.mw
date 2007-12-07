@@ -14,4 +14,4 @@ Warning: the instructions below are not complete, so You will not be able to com
 In order to compile CLAM framework on Windows, You will need [http://www.scons.org/ scons].
 Scons is a python script that help developers to build their project. So You will need [http://www.python.org/ Python] too. Windows's Python implementation has a limitation on the length of the command line it can execute, so, in order to remove this limitation You will need also [https://sourceforge.net/projects/pywin32/ pywin32].
 
-Once that Python, pywin32 and scons are installed on Your system, You're ready to install MSYS and MinGW.
+Once that Python, pywin32 and scons are installed on Your system, You're ready to install [http://www.mingw.org/ MSYS] and [http://www.mingw.org/ MinGW]. MSYS is a minimal Unix-like environment for Windows and can (not too much) easily be replaced by any other similar tool. MinGW is a gcc based compiler and a set of utilities able to build pure Windows binaries. MSYS/MinGW distribution is mainly packaged in tar.gz form. They have also some installers, but they are a bit outdated, so it is better to install .tar.gz packages by hand.
