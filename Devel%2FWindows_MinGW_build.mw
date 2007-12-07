@@ -4,3 +4,14 @@ that could give some clues if you want to natively compile in Windows
 using MinGW.
 
 http://ovh.dl.sourceforge.net/sourceforge/dev-cpp/devcpp-4.9.9.2_setup.exe
+
+----
+
+Warning: the instructions below are not complete, so You will not be able to complete the job.
+
+'''Setup a MinGW/MSYS environment to build CLAM on Windows 2000/XP.'''
+
+In order to compile CLAM framework on Windows, You will need [http://www.scons.org/ scons].
+Scons is a python script that help developers to build their project. So You will need [http://www.python.org/ Python] too. Windows's Python implementation has a limitation on the length of the command line it can execute, so, in order to remove this limitation You will need also [https://sourceforge.net/projects/pywin32/ pywin32].
+
+Once that Python, pywin32 and scons are installed on Your system, You're ready to install MSYS and MinGW.
