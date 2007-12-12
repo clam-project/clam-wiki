@@ -20,3 +20,14 @@ A good choice to extract packages is [http://www.7-zip.org 7-zip] a powerful ope
 
 '''First we need to install the MSYS environment.''' Install first the ''MSYS Base System''. I prefer 1.0.11 version, since it has more updated tools. You will need almost all non source packages, so it's better to download them all. You need to extract first msysCORE and MSYS. These are needed to have a very minimal shell.
 Once extracted, start msys.bat and continue to extract packages from this shell. This is a required since the only tool I've found that is able to extract correctly these packages is MSYS tar (With other tools You will have a lot of empty file).
+
+To extract packages with tar, issue one of these command:
+''tar jxvf foo.tar.bz2''
+or
+''tar zxvf foo.tar.gz''
+You need the first to extract bzipped tar files, You need the other to extract gzipped tar files.
+
+
+Be careful to extract the packages in a location that doesn't contain spaces (i.e.: '''NOT''' inside ''C:\Documents and Settings\User\MinGW\''.) or the msys.bat and a lot of other tools later, will not work. I Usually choose something like ''C:\Programs\GNU\msys\'' as installation base dierectory for MSYS/MinGW.
+
+Once the ''MSYS Base System'' is installed You need to install the packages inside ''MSYS Supplementary Tools'' too. Once again You will need almost all non source packages, so it's better to download them all. Install them from the MSYS shell.
