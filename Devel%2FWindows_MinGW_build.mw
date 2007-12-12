@@ -41,7 +41,8 @@ Once all the packages are extracted You will find a lot of directory in the MSYS
 '''Configure the MSYS environment.'''
 On a Unix-like system, configuration goes into files inside /etc/. The main configuration for MSYS is handled by ''/etc/fstab'' and ''/etc/profile''. In the first file You can specify mount points. In the other You can specify options common to all users.
 
-''/etc/fstab'': if You are not used with mount points You can think a mount point like a link to a directory in Your system. This is misleading, but may help You to make an idea of what You are trying to setup. Once You start MSYS shell, it put Yourself in Your MSYS home: ''/home/username/''. This directory is located inside the home/ directory in the MSYS installation directory. You can instruct MSYS to put /home/ somewhere else. I usually like to make MSYS homes and Windows home to coincide, 'cause I want great integration of all the tools, so I usually put a line in fstab like this
+''/etc/fstab'':
+if You are not used with mount points You can think a mount point like a link to a directory in Your system. This is misleading, but may help You to make an idea of what You are trying to setup. Once You start MSYS shell, it put Yourself in Your MSYS home: ''/home/username/''. This directory is located inside the home/ directory in the MSYS installation directory. You can instruct MSYS to put /home/ somewhere else. I usually like to make MSYS homes and Windows home to coincide, 'cause I want great integration of all the tools, so I usually put a line in fstab like this
 
 F:/DOCUME~1/       /home/
 
@@ -49,3 +50,12 @@ Where I've used the short name of ''Document and Settings'' 'cause I cannot use 
 Other directories You may want to put outside MSYS installation directory is /mingw, but I usually '''create MinGW''' directory just there. You will need this directory, so create it and edit fstab as needed (if needed).
 
 ''/etc/profile'':
+Here You can define ENVIRONMENT variables, command alias and other useful things.
+The PATH variable is inherited by the user Windows PATH, so I often choose to put some programs in Windows PATH, instead of MSYS PATH. The main example is for '''Python''' and '''scons'''. Where You will need to add ''F:\Programmi\Python25'' and ''F:\Programmi\Python25\Scripts'' to it. I will suggest You to do so, but if You don't like this idea, You can add a line like this to the end of /etc/profile:
+
+PATH=$PATH:/f/Programmi/Python25:/f/Programmi/Python25/Scripts
+
+and the results will be quite the same.
+Later You will need '''pkg-config''', a tool that helps compiling programs. pkg-config usually stores its configuration files inside ''/usr/lib/pkgconfig'', but with MSYS/MinGW, You usually want that it will read them from ''/mingw/lib/pkgconfig''. You can obtain this by setting this environment variable in the /etc/profile:
+
+PKG_CONFIG_PATH=/mingw/lib/pkgconfig
