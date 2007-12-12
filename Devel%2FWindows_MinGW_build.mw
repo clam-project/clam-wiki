@@ -59,3 +59,13 @@ and the results will be quite the same.
 Later You will need '''pkg-config''', a tool that helps compiling programs. pkg-config usually stores its configuration files inside ''/usr/lib/pkgconfig'', but with MSYS/MinGW, You usually want that it will read them from ''/mingw/lib/pkgconfig''. You can obtain this by setting this environment variable in the /etc/profile:
 
 PKG_CONFIG_PATH=/mingw/lib/pkgconfig
+
+'''Installing MinGW'''
+You need at least the following packages:
+''GNU Binutils'',
+''MinGW API for MS-Windows'',
+''MinGW Runtime'',
+''GCC''.
+I'm used to install latest available package for everything except GCC where I install gcc 3.4.5.
+
+Extract the packages inside mingw/ directory (The one that You have created while configuring MSYS).
