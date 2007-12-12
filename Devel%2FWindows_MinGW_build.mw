@@ -60,7 +60,7 @@ Later You will need '''pkg-config''', a tool that helps compiling programs. pkg-
 
 PKG_CONFIG_PATH=/mingw/lib/pkgconfig
 
-'''Installing MinGW'''
+'''Installing MinGW.'''
 You need at least the following packages:
 ''GNU Binutils'',
 ''MinGW API for MS-Windows'',
