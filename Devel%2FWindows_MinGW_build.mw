@@ -61,11 +61,17 @@ Later You will need '''pkg-config''', a tool that helps compiling programs. pkg-
 PKG_CONFIG_PATH=/mingw/lib/pkgconfig
 
 '''Installing MinGW.'''
-You need at least the following packages:
+To install MinGW You simply need to extract the packages You want inside mingw/ directory
+(The one that You have created while configuring MSYS).
+
+You will need at least the following packages:
 ''GNU Binutils'',
 ''MinGW API for MS-Windows'',
 ''MinGW Runtime'',
 ''GCC''.
-I'm used to install latest available package for everything except GCC where I install gcc 3.4.5.
+I'm used to install latest available package for everything except GCC where I usually
+install gcc 3.4.5.
 
-Extract the packages inside mingw/ directory (The one that You have created while configuring MSYS).
+-----
+
+'''Obtaining CLAM dependencies.'''
