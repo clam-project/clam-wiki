@@ -127,7 +127,7 @@ You will be able to install it by giving the command
 
 You will be able to package it with
 
-''DESTDIR=$(shell pwd)/packaging/ make install''
+''DESTDIR=$(pwd)/packaging/ make install''
 
 ''cd packaging/mingw/''
 
@@ -148,4 +148,8 @@ somewhere, create directories (mainly ''include/'', ''lib/'' and ''bin/'') and p
 files in the right location. If You have any doubt, check the content of ''/mingw/'' directories to make an idea of what it should contain.
 
 
-'''Install libxml, sigc++, glibmm and libxml++-2.6.''' CLAM largely depends on an XML parser. You can choose between libxml++-2.6 or xerces-c. I prefer libxml++-2.6 (which is part of the Gnome project) because I manage projects which depends on libxml and because it works without any tweak in my environment. If You want to use xerces-c refers to [[Devel/Windows MinGW cross compile]]. You can get these packages
+'''Install libxml, sigc++, glibmm and libxml++-2.6.''' CLAM largely depends on an XML parser. You can choose between libxml++-2.6 or xerces-c. I prefer libxml++-2.6 (which is part of the Gnome project) because I manage projects which depends on libxml and because it works without any tweak in my environment. If You want to use xerces-c refers to [[Devel/Windows MinGW cross compile]]. You can get these packages, in source form, from:
+<a href="http://xmlsoft.org/">http://xmlsoft.org/</a>,
+<a href="http://libsigc.sourceforge.net/stable.shtml">http://libsigc.sourceforge.net/stable.shtml</a>,
+<a href="http://www.gtkmm.org/">http://www.gtkmm.org/</a>,
+<a href=""></a>
