@@ -80,4 +80,7 @@ The CLAM framework on a lot of libraries (directly or not). Here we are going to
 environment that will permit CLAM compilation. This is not exactly the same environment that
 is described in [[Devel/Windows MinGW cross compile]], so, if You have special needs, You will find useful information there.
 
-'''Install pkg-config.''' One of the main tools not included in MSYS/MinGW distribution is pkg-config. This tool is largely used by many big projects like <a href="http://www.gnome.org/">http://www.gnome.org/</a>.
+'''Install pkg-config, gettext, glib.''' One of the main tools not included in MSYS/MinGW distribution is pkg-config. This tool is largely used by many big projects like <a href="http://www.gnome.org/">http://www.gnome.org/</a>.
+One of the most used libraries from Gnome that works on Windows is <a href="http://www.gtk.org/">http://www.gtk.org/</a>. The ''official'' Windows page for Gtk is <a href="http://www.gimp.org/~tml/gimp/win32/">http://www.gimp.org/~tml/gimp/win32/</a>. Here You will find precompiled packages for ''pkg-config'', ''gettext'' and ''glib'', as a lot of other useful tools. You can extract them directly in /mingw directory. I'm used to install Gtk and all its dependencies as I need them for other projects. These are not required to build CLAM.
+
+'''Install libxml, libxml++-2.6, glibmm.''' CLAM largely depends on an XML parser. You can choose between libxml++-2.6 or xerces-c. I prefer libxml++-2.6 (which is part of the Gnome project) because I manage projects which depends on libxml and because it works without any tweak in my environment. If You want to use xerces-c refers to [[Devel/Windows MinGW cross compile]].
