@@ -80,8 +80,8 @@ The CLAM framework on a lot of libraries (directly or not). Here we are going to
 environment that will permit CLAM compilation. This is not exactly the same environment that
 is described in [[Devel/Windows MinGW cross compile]], so, if You have special needs, You will find useful information there.
 
-'''Install pkg-config, gettext, glib.''' One of the main tools not included in MSYS/MinGW distribution is pkg-config. This tool is largely used by many big projects like <a href="http://www.gnome.org/">http://www.gnome.org/</a>.
-One of the most used libraries from Gnome that works on Windows is <a href="http://www.gtk.org/">http://www.gtk.org/</a>. The ''official'' Windows page for Gtk is <a href="http://www.gimp.org/~tml/gimp/win32/">http://www.gimp.org/~tml/gimp/win32/</a>. Here You will find precompiled packages for ''pkg-config'', ''gettext'' and ''glib'', as a lot of other useful tools. You can extract them directly in /mingw directory. I'm used to install Gtk and all its dependencies as I need them for other projects. These are not required to build CLAM.
+'''Install pkg-config, gettext, glib.''' One of the main tools not included in MSYS/MinGW distribution is pkg-config. This tool is largely used by many big projects like [http://www.gnome.org/ Gnome].
+One of the most used libraries from Gnome that works on Windows is [http://www.gtk.org/ Gtk+]. The ''official'' Windows page for Gtk is [http://www.gimp.org/~tml/gimp/win32/ Tor Lillqvist Gtk page]. Here You will find precompiled packages for ''pkg-config'', ''gettext'' and ''glib'', as a lot of other useful tools. You can extract them directly in /mingw directory. I'm used to install Gtk and all its dependencies as I need them for other projects. These are not required to build CLAM.
 
 '''Learn the basic of compiling with MinGW.'''
 Most of the libraries we will need to compile is packaged by autoconf.
@@ -135,9 +135,9 @@ You will be able to package it with
 
 '''Install pthreads and glut.'''
 You can find precompiled packages for these libraries suitable of use with Mingw at
-<a href="http://sources.redhat.com/pthreads-win32/">http://sources.redhat.com/pthreads-win32/</a>
+[http://sources.redhat.com/pthreads-win32/ pthreads-win32 page]
 and
-<a href="http://www.xmission.com/~nate/glut.html">http://www.xmission.com/~nate/glut.html</a>.
+[http://www.xmission.com/~nate/glut.html Nate Robins GLUT page].
 I don't know if glut is needed by any CLAM project, but I need it for other reason.
 Note that is not required that You install pthread now, because in general it's not
 needed by CLAM's dependencies. A lot of them will use it, anyway, if You install now.
@@ -149,7 +149,6 @@ files in the right location. If You have any doubt, check the content of ''/ming
 
 
 '''Install libxml, sigc++, glibmm and libxml++-2.6.''' CLAM largely depends on an XML parser. You can choose between libxml++-2.6 or xerces-c. I prefer libxml++-2.6 (which is part of the Gnome project) because I manage projects which depends on libxml and because it works without any tweak in my environment. If You want to use xerces-c refers to [[Devel/Windows MinGW cross compile]]. You can get these packages, in source form, from:
-<a href="http://xmlsoft.org/">http://xmlsoft.org/</a>,
-<a href="http://libsigc.sourceforge.net/stable.shtml">http://libsigc.sourceforge.net/stable.shtml</a>,
-<a href="http://www.gtkmm.org/">http://www.gtkmm.org/</a>,
-<a href=""></a>
+[http://xmlsoft.org/ libxml homepage],
+[http://libsigc.sourceforge.net/ libsigc homepage],
+[http://www.gtkmm.org/ Gtkmm homepage]
