@@ -75,3 +75,9 @@ install gcc 3.4.5.
 -----
 
 '''Obtaining CLAM dependencies.'''
+
+The CLAM framework on a lot of libraries (directly or not). Here we are going to setup an
+environment that will permit CLAM compilation. This is not exactly the same environment that
+is described in [[Devel/Windows MinGW cross compile]], so, if You have special needs, You will find useful information there.
+
+'''Install pkg-config.''' One of the main tools not included in MSYS/MinGW distribution is pkg-config. This tool is largely used by many big projects like <a href="http://www.gnome.org/">http://www.gnome.org/</a>.
