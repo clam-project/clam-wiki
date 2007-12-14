@@ -83,4 +83,54 @@ is described in [[Devel/Windows MinGW cross compile]], so, if You have special n
 '''Install pkg-config, gettext, glib.''' One of the main tools not included in MSYS/MinGW distribution is pkg-config. This tool is largely used by many big projects like <a href="http://www.gnome.org/">http://www.gnome.org/</a>.
 One of the most used libraries from Gnome that works on Windows is <a href="http://www.gtk.org/">http://www.gtk.org/</a>. The ''official'' Windows page for Gtk is <a href="http://www.gimp.org/~tml/gimp/win32/">http://www.gimp.org/~tml/gimp/win32/</a>. Here You will find precompiled packages for ''pkg-config'', ''gettext'' and ''glib'', as a lot of other useful tools. You can extract them directly in /mingw directory. I'm used to install Gtk and all its dependencies as I need them for other projects. These are not required to build CLAM.
 
+'''Learn the basic of compiling with MinGW.'''
+Most of the libraries we will need to compile is packaged by autoconf.
+When a tool is packaged with autoconf, usually its source are in compressed
+tar form. And its filename is something like ''package_name-version_numbers.tar.gz''.
+When You extract the archive a ''package_name-version_numbers'' directory will be
+created. In that directory You will find a ''configure'' script, that will help
+You to give informations in order to setup compilation and installation steps.
+
+There are two way to give information to configure script: ENVIRONMENT variables and
+arguments. The command ''./configure --help'' will give You some hints about what
+variables and what arguments You can set to obtain what You need.
+
+The main configure's option is ''--prefix'' which permits to set the base of the
+installation. Its default is ''/usr/local/'' and You can leave as it is, but if You
+intend to build a binary MinGW package You usually want to set it to ''/mingw''
+
+Building C/C++ programs You will always have CFLAGS, CXXFLAGS, CC, CXX variables that
+You can change to pass preprocessor flags and compilers' names, if needed.
+
+Usually CFLAGS and CXXFLAGS will use the same values. Usually on MinGW You want to have
+some sort of compatibility with MSVC C-libraries, so that You can use them with both
+the compilers: to achieve this You need to provide ''-mms-bitfields'' to the compiler. 
+
+In a Bourne Shell (the one that You're using when You launch MSYS) You can pass
+ENVIRONMENT variables to a specific program, without setting them system-wide, by
+setting them on the same line where You call the program.
+
+So on MinGW, in general, You will be able to compile a program or a library by
+issuing these commands:
+
+''tar zxvf package_name-version_numbers.tar.gz''
+
+''cd package_name-version_numbers/''
+
+''CFLAGS=-mms-bitfields CXXFLAGS=$CFLAGS ./configure --prefix=/mingw''
+
+''make''
+
+You will be able to install it by giving the command
+
+''make install''
+
+You will be able to package it with
+
+''DESTDIR=$(shell pwd)/packaging/ make install''
+
+''cd packaging/mingw/''
+
+''tar zcvf package_name-version_numbers-bin.tar.gz *''
+
 '''Install libxml, libxml++-2.6, glibmm.''' CLAM largely depends on an XML parser. You can choose between libxml++-2.6 or xerces-c. I prefer libxml++-2.6 (which is part of the Gnome project) because I manage projects which depends on libxml and because it works without any tweak in my environment. If You want to use xerces-c refers to [[Devel/Windows MinGW cross compile]].
