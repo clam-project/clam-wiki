@@ -151,4 +151,6 @@ files in the right location. If You have any doubt, check the content of ''/ming
 '''Install libxml, sigc++, glibmm and libxml++-2.6.''' CLAM largely depends on an XML parser. You can choose between libxml++-2.6 or xerces-c. I prefer libxml++-2.6 (which is part of the Gnome project) because I manage projects which depends on libxml and because it works without any tweak in my environment. If You want to use xerces-c refers to [[Devel/Windows MinGW cross compile]]. You can get these packages, in source form, from:
 [http://xmlsoft.org/ libxml homepage],
 [http://libsigc.sourceforge.net/ libsigc homepage],
-[http://www.gtkmm.org/ Gtkmm homepage]
+[http://www.gtkmm.org/ Gtkmm homepage] and [http://libxmlplusplus.sourceforge.net/ lilbxml++ homepage].
+With the general instruction above, I've successfully built
+libsigc++-2.0.18, glibmm-2.14.2, libxml2-2.6.30 and libxml++-2.20.
