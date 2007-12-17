@@ -147,8 +147,10 @@ These binary packages are not ready to install in MinGW directory. You should ex
 somewhere, create directories (mainly ''include/'', ''lib/'' and ''bin/'') and put all the
 files in the right location. If You have any doubt, check the content of ''/mingw/'' directories to make an idea of what it should contain.
 
+'''Install zlib.''' Many libraries has zlib support, so You will need it in order to compile them. I found out only two methods to get things work: retrieve sources from [http://www.zlib.net/ zlib homepage] and compile in standard way (Note, however, that ''make install'' is not suitable for packaging), or to get it through MinGW ports (This is the better, but harder way. Take a look to [http://www.mingw.org/ MinGW homepage] for information). ''Important:'' if You need packages from [http://www.gimp.org/~tml/gimp/win32/ Tor Lillqvist Gtk page] other than pkg-config, You probably (sure with Gtk or libtiff) need the zlib binary on that page too.
 
-'''Install libxml, sigc++, glibmm and libxml++-2.6.''' CLAM largely depends on an XML parser. You can choose between libxml++-2.6 or xerces-c. I prefer libxml++-2.6 (which is part of the Gnome project) because I manage projects which depends on libxml and because it works without any tweak in my environment. If You want to use xerces-c refers to [[Devel/Windows MinGW cross compile]]. You can get these packages, in source form, from:
+
+'''Install libxml, sigc++, glibmm and libxml++-2.6.''' CLAM largely depends on an XML parser. You can choose between libxml++-2.6 or xerces-c. I prefer libxml++-2.6 (which is part of the Gnome project) because I manage projects which depends on libxml and because it works without any tweak in my environment. Anyway You should get zlib and pkg-config, before attempt to compile this library. If You want to use xerces-c refers to [[Devel/Windows MinGW cross compile]]. You can get these packages, in source form, from:
 [http://xmlsoft.org/ libxml homepage],
 [http://libsigc.sourceforge.net/ libsigc homepage],
 [http://www.gtkmm.org/ Gtkmm homepage] and [http://libxmlplusplus.sourceforge.net/ lilbxml++ homepage].
