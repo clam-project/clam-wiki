@@ -81,7 +81,7 @@ environment that will permit CLAM compilation. This is not exactly the same envi
 is described in [[Devel/Windows MinGW cross compile]], so, if You have special needs, You will find useful information there.
 
 '''Install pkg-config, gettext, glib.''' One of the main tools not included in MSYS/MinGW distribution is pkg-config. This tool is largely used by many big projects like [http://www.gnome.org/ Gnome].
-One of the most used libraries from Gnome that works on Windows is [http://www.gtk.org/ Gtk+]. The ''official'' Windows page for Gtk is [http://www.gimp.org/~tml/gimp/win32/ Tor Lillqvist Gtk page]. Here You will find precompiled packages for ''pkg-config'', ''gettext'' and ''glib'', as a lot of other useful tools. You can extract them directly in /mingw directory. I'm used to install Gtk and all its dependencies as I need them for other projects. These are not required to build CLAM.
+One of the most used libraries from Gnome that works on Windows is [http://www.gtk.org/ Gtk+]. The ''official'' Windows page for Gtk is [http://www.gimp.org/~tml/gimp/win32/ Tor Lillqvist Gtk page]. Here You will find precompiled packages for ''pkg-config'', ''gettext'' and ''glib'', as a lot of other useful tools. You can extract them directly in /mingw directory. I'm used to install Gtk and all the other dependencies too, as I need them for other projects, but these are not required to build CLAM.
 
 '''Learn the basic of compiling with MinGW.'''
 Most of the libraries we will need to compile is packaged by autoconf.
