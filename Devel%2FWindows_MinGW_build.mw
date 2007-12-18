@@ -165,7 +165,6 @@ libsigc++-2.0.18, glibmm-2.14.2, libxml2-2.6.30 and libxml++-2.20.
 
 
 '''Install libvorbis and libogg.''' First You need to download libvorbis and libogg sources from [http://www.xiph.org/ their homepage]. You need to compile ''libogg'' first. Once libogg is compiled and installed, You can try to compile ''libvorbis''. I've successfully compiled version 1.2.0 of libvorbis, but I needed to patch its ''lib/Makefile.am'':
-You need to modify two lines:
 
 From
 
