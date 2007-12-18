@@ -3,11 +3,11 @@ In [[Devel/Windows MinGW cross compile]] we give a detailed procedure
 that could give some clues if you want to natively compile in Windows
 using MinGW.
 
-http://ovh.dl.sourceforge.net/sourceforge/dev-cpp/devcpp-4.9.9.2_setup.exe
-
 ----
 
 Warning: the instructions below are not complete, so You will not be able to complete the job.
+
+--[[User:Giuliopaci|Giuliopaci]] 12:14, 18 December 2007 (CET)
 
 '''Setup a MinGW/MSYS environment to build CLAM on Windows 2000/XP.'''
 
@@ -165,3 +165,5 @@ libsigc++-2.0.18, glibmm-2.14.2, libxml2-2.6.30 and libxml++-2.20.
 
 
 '''Install libvorbis, libogg, etc..'''
+
+--[[User:Giuliopaci|Giuliopaci]] 12:14, 18 December 2007 (CET)
