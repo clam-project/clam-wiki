@@ -161,7 +161,7 @@ libsigc++-2.0.18, glibmm-2.14.2, libxml2-2.6.30 and libxml++-2.20.
 
 '''Install fftw3.''' Download from [http://www.fftw.org/ fftw homepage]. This compiles without any tweak, but I usually configure with the following command.
 
-''CFLAGS=-mms-bitfields ./configure --with-our-malloc16 --with-windows-f77-mangling --enable-portable-binary''
+''CFLAGS=-mms-bitfields ./configure --with-our-malloc16 --with-windows-f77-mangling --enable-portable-binary --prefix=/mingw''
 
 
 '''Install libvorbis, libogg, etc..'''
