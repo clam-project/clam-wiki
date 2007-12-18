@@ -184,6 +184,38 @@ To
 
 Once applyied the changes, You need to run the ''autogen.sh'' script (try ''sh autogen.sh''). You will need at least ''automake'', ''autoconf'', ''libtool'' installed (but You should already have these tools if You have followed these instructions from the beginning). When You're done You can compile in the standard way.
 
-'''Install id3lib and libmad.'''
+'''Install id3lib and libmad.''' You need to download sources from [http://id3lib.sourceforge.net/ id3lib homepage] and from [http://www.underbit.com/products/mad/ libmad homepage].
+
+I needed to patch two files with id3lib version 3.8.3:
+
+In ''configure.in'' comment out the following lines from
+
+AC_CHECK_FUNCS(
+
+  truncate                      \
+
+  ,,AC_MSG_ERROR([Missing a vital function for id3lib])
+
+)
+
+To
+
+dnl AC_CHECK_FUNCS(
+
+dnl   truncate                      \
+
+dnl   ,,AC_MSG_ERROR([Missing a vital function for id3lib])
+
+dnl )
+
+In ''include/id3/globals.h'' change the first occurrence of the following line from
+
+#ifdef WIN32
+
+to
+
+#ifdef __MSVC_VER
+
+Once applyied the changes You need to run '''autoconf'.
 
 --[[User:Giuliopaci|Giuliopaci]] 12:14, 18 December 2007 (CET)
