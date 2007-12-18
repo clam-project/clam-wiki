@@ -164,6 +164,27 @@ libsigc++-2.0.18, glibmm-2.14.2, libxml2-2.6.30 and libxml++-2.20.
 ''CFLAGS=-mms-bitfields ./configure --with-our-malloc16 --with-windows-f77-mangling --enable-portable-binary --prefix=/mingw''
 
 
-'''Install libvorbis, libogg, etc..'''
+'''Install libvorbis and libogg.''' First You need to download libvorbis and libogg sources from [http://www.xiph.org/ their homepage]. You need to compile ''libogg'' first. Once libogg is compiled and installed, You can try to compile ''libvorbis''. I've successfully compiled version 1.2.0 of libvorbis, but I needed to patch its ''lib/Makefile.am'':
+You need to modify two lines:
+
+From
+
+''libvorbisfile_la_LIBADD = libvorbis.la''
+
+To
+
+''libvorbisfile_la_LIBADD = @OGG_LIBS@ @VORBIS_LIBS@ libvorbis.la''
+
+From
+
+''libvorbisenc_la_LIBADD = libvorbis.la''
+
+To
+
+''libvorbisenc_la_LIBADD = @OGG_LIBS@ @VORBIS_LIBS@ libvorbis.la''
+
+Once applyied the changes, You need to run the ''autogen.sh'' script (try ''sh autogen.sh''). You will need at least ''automake'', ''autoconf'', ''libtool'' installed (but You should already have these tools if You have followed these instructions from the beginning). When You're done You can compile in the standard way.
+
+'''Install id3lib and libmad.'''
 
 --[[User:Giuliopaci|Giuliopaci]] 12:14, 18 December 2007 (CET)
