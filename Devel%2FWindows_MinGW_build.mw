@@ -7,7 +7,7 @@ using MinGW.
 
 Warning: the instructions below are not complete, so You will not be able to complete the job.
 
---[[User:Giuliopaci|Giuliopaci]] 12:14, 18 December 2007 (CET)
+--[[User:Giuliopaci|Giulio Paci]] 12:14, 18 December 2007 (CET)
 
 '''Setup a MinGW/MSYS environment to build CLAM on Windows 2000/XP.'''
 
@@ -209,6 +209,6 @@ to
 
  #ifdef __MSVC_VER
 
-Once applyied the changes You need to run '''autoconf'.
+Once applyied the changes You need to run ''autoconf''.
 
---[[User:Giuliopaci|Giuliopaci]] 12:14, 18 December 2007 (CET)
+--[[User:Giuliopaci|Giulio Paci]] 12:14, 18 December 2007 (CET)
