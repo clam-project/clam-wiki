@@ -23,11 +23,11 @@ Once extracted, start msys.bat and continue to extract packages from this shell.
 
 To extract packages with tar, issue one of these command:
 
-''tar jxvf foo.tar.bz2''
+ tar jxvf foo.tar.bz2
 
 or
 
-''tar zxvf foo.tar.gz''
+ tar zxvf foo.tar.gz
 
 You need the first to extract bzipped tar files, You need the other to extract gzipped tar files.
 
@@ -44,7 +44,7 @@ On a Unix-like system, configuration goes into files inside /etc/. The main conf
 ''/etc/fstab'':
 if You are not used with mount points You can think a mount point like a link to a directory in Your system. This is misleading, but may help You to make an idea of what You are trying to setup. Once You start MSYS shell, it put Yourself in Your MSYS home: ''/home/username/''. This directory is located inside the home/ directory in the MSYS installation directory. You can instruct MSYS to put /home/ somewhere else. I usually like to make MSYS homes and Windows home to coincide, 'cause I want great integration of all the tools, so I usually put a line in fstab like this
 
-F:/DOCUME~1/       /home/
+ F:/DOCUME~1/       /home/
 
 Where I've used the short name of ''Document and Settings'' 'cause I cannot use space in fstab.
 Other directories You may want to put outside MSYS installation directory is /mingw, but I usually '''create MinGW''' directory just there. You will need this directory, so create it and edit fstab as needed (if needed).
@@ -53,12 +53,12 @@ Other directories You may want to put outside MSYS installation directory is /mi
 Here You can define ENVIRONMENT variables, command alias and other useful things.
 The PATH variable is inherited by the user Windows PATH, so I often choose to put some programs in Windows PATH, instead of MSYS PATH. The main example is for '''Python''' and '''scons'''. Where You will need to add ''F:\Programmi\Python25'' and ''F:\Programmi\Python25\Scripts'' to it. I will suggest You to do so, but if You don't like this idea, You can add a line like this to the end of /etc/profile:
 
-PATH=$PATH:/f/Programmi/Python25:/f/Programmi/Python25/Scripts
+ PATH=$PATH:/f/Programmi/Python25:/f/Programmi/Python25/Scripts
 
 and the results will be quite the same.
 Later You will need '''pkg-config''', a tool that helps compiling programs. pkg-config usually stores its configuration files inside ''/usr/lib/pkgconfig'', but with MSYS/MinGW, You usually want that it will read them from ''/mingw/lib/pkgconfig''. You can obtain this by setting this environment variable in the /etc/profile:
 
-PKG_CONFIG_PATH=/mingw/lib/pkgconfig
+ PKG_CONFIG_PATH=/mingw/lib/pkgconfig
 
 '''Installing MinGW.'''
 To install MinGW You simply need to extract the packages You want inside mingw/ directory
@@ -92,7 +92,11 @@ created. In that directory You will find a ''configure'' script, that will help
 You to give informations in order to setup compilation and installation steps.
 
 There are two way to give information to configure script: ENVIRONMENT variables and
-arguments. The command ''./configure --help'' will give You some hints about what
+arguments. The command
+
+ ./configure --help
+
+will give You some hints about what
 variables and what arguments You can set to obtain what You need.
 
 The main configure's option is ''--prefix'' which permits to set the base of the
@@ -113,25 +117,20 @@ setting them on the same line where You call the program.
 So on MinGW, in general, You will be able to compile a program or a library by
 issuing these commands:
 
-''tar zxvf package_name-version_numbers.tar.gz''
-
-''cd package_name-version_numbers/''
-
-''CFLAGS=-mms-bitfields CXXFLAGS=$CFLAGS ./configure --prefix=/mingw''
-
-''make''
+ tar zxvf package_name-version_numbers.tar.gz
+ cd package_name-version_numbers/
+ CFLAGS=-mms-bitfields CXXFLAGS=$CFLAGS ./configure --prefix=/mingw
+ make
 
 You will be able to install it by giving the command
 
-''make install''
+ make install
 
 You will be able to package it with
 
-''DESTDIR=$(pwd)/packaging/ make install''
-
-''cd packaging/mingw/''
-
-''tar zcvf package_name-version_numbers-bin.tar.gz *''
+ DESTDIR=$(pwd)/packaging/ make install
+ cd packaging/mingw/
+ tar zcvf package_name-version_numbers-bin.tar.gz *
 
 '''Install pthreads and glut.'''
 You can find precompiled packages for these libraries suitable of use with Mingw at
@@ -161,26 +160,26 @@ libsigc++-2.0.18, glibmm-2.14.2, libxml2-2.6.30 and libxml++-2.20.
 
 '''Install fftw3.''' Download from [http://www.fftw.org/ fftw homepage]. This compiles without any tweak, but I usually configure with the following command.
 
-''CFLAGS=-mms-bitfields ./configure --with-our-malloc16 --with-windows-f77-mangling --enable-portable-binary --prefix=/mingw''
+ CFLAGS=-mms-bitfields ./configure --with-our-malloc16 --with-windows-f77-mangling --enable-portable-binary --prefix=/mingw
 
 
 '''Install libvorbis and libogg.''' First You need to download libvorbis and libogg sources from [http://www.xiph.org/ their homepage]. You need to compile ''libogg'' first. Once libogg is compiled and installed, You can try to compile ''libvorbis''. I've successfully compiled version 1.2.0 of libvorbis, but I needed to patch its ''lib/Makefile.am'':
 
 From
 
-''libvorbisfile_la_LIBADD = libvorbis.la''
+ libvorbisfile_la_LIBADD = libvorbis.la
 
 To
 
-''libvorbisfile_la_LIBADD = @OGG_LIBS@ @VORBIS_LIBS@ libvorbis.la''
+ libvorbisfile_la_LIBADD = @OGG_LIBS@ @VORBIS_LIBS@ libvorbis.la
 
 From
 
-''libvorbisenc_la_LIBADD = libvorbis.la''
+ libvorbisenc_la_LIBADD = libvorbis.la
 
 To
 
-''libvorbisenc_la_LIBADD = @OGG_LIBS@ @VORBIS_LIBS@ libvorbis.la''
+ libvorbisenc_la_LIBADD = @OGG_LIBS@ @VORBIS_LIBS@ libvorbis.la
 
 Once applyied the changes, You need to run the ''autogen.sh'' script (try ''sh autogen.sh''). You will need at least ''automake'', ''autoconf'', ''libtool'' installed (but You should already have these tools if You have followed these instructions from the beginning). When You're done You can compile in the standard way.
 
@@ -190,31 +189,25 @@ I needed to patch two files with id3lib version 3.8.3:
 
 In ''configure.in'' comment out the following lines from
 
-AC_CHECK_FUNCS(
-
-  truncate                      \
-
-  ,,AC_MSG_ERROR([Missing a vital function for id3lib])
-
-)
+ AC_CHECK_FUNCS(
+   truncate
+   ,,AC_MSG_ERROR([Missing a vital function for id3lib])
+ )
 
 To
 
-dnl AC_CHECK_FUNCS(
-
-dnl   truncate                      \
-
-dnl   ,,AC_MSG_ERROR([Missing a vital function for id3lib])
-
-dnl )
+ dnl AC_CHECK_FUNCS(
+ dnl   truncate
+ dnl   ,,AC_MSG_ERROR([Missing a vital function for id3lib])
+ dnl )
 
 In ''include/id3/globals.h'' change the first occurrence of the following line from
 
-#ifdef WIN32
+ #ifdef WIN32
 
 to
 
-#ifdef __MSVC_VER
+ #ifdef __MSVC_VER
 
 Once applyied the changes You need to run '''autoconf'.
 
