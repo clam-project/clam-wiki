@@ -34,7 +34,7 @@ You need the first to extract bzipped tar files, You need the other to extract g
 
 Be careful to extract the packages in a location that doesn't contain spaces (i.e.: '''NOT''' inside ''C:\Documents and Settings\User\MinGW\''.) or the msys.bat and a lot of other tools later, will not work. I Usually choose something like ''C:\Programs\GNU\msys\'' as installation base dierectory for MSYS/MinGW.
 
-Once the ''MSYS Base System'' is installed You need to install the packages inside ''MSYS Supplementary Tools'' too. Once again You will need almost all non source packages, so it's better to download them all. Install them from the MSYS shell.
+Once the ''MSYS Base System'' is installed You need to install the packages inside ''MSYS Supplementary Tools'' too. Once again You will need almost all non source packages, but be careful 'cause some of them will conflicts with later steps. At this time I needed to exclude from installation ''gettext-0.16.1-1-bin'', ''gettext-0.16.1-MSYS-1.0.11'', ''gettext-devel-0.16.1-MSYS-1.0.11'', ''libiconv-1.11-1-bin'', ''libiconv-1.11-MSYS-1.0.11'', ''zlib-1.2.3-MSYS-1.0.11''. Once again perform the installation from the MSYS shell.
 
 Once all the packages are extracted You will find a lot of directory in the MSYS installation. Some package will extract in their own directory, so You need to manually move their content (usually bin/, man/, info/ etc.) outside that directory. On most Unix-like system documentation goes inside the share directory, so I usually move man/, info/ and doc/ inside share/, after the package extraction.
 
