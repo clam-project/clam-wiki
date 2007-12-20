@@ -215,11 +215,20 @@ Once applyied the changes You need to run ''autoconf''.
 Once You're done, You can compile both id3lib and libmad in the standard way.
 
 '''Install libsndfile.'''
+Download libsndfile from [http://www.mega-nerd.com/libsndfile/ libsndfile homepage].
 You need to add the following line
 
  #include <stdint.h>
 
 to ''tests/utils.c'' and to ''tests/virtual_io_test.c'' files, then You can compile in the standard way.
 
+'''Install portaudio.'''
+You can download portaudio from [http://www.portaudio.com/ portaudio homepage]. I was able to compile only ''pa_stable_061121'', snapshots or ''pa_stable_20071207'' didn't work for me. I've not tried to compile with directx or asio support, but only with wmme.
+
+Anyway ''pa_stable_061121'' compiled using the standard way.
+
+----
+
+'''Compile and install CLAM Framework'''
 
 --[[User:Giuliopaci|Giulio Paci]] 12:14, 18 December 2007 (CET)
