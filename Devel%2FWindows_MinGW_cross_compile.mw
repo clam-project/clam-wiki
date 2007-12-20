@@ -136,11 +136,11 @@ ${BIN} : $(OBJS)
 
 * Download the devpak for DirectX 9 from http://devpaks.org/details.php?devpak=136
 * Unzip de file as it were a tar.bz file
-{{{tar xvfz DirectX90c.DevPackage}}}
+ $ tar xvfz DirectX90c.DevPackage
 * move and rename the DirectX90c folder as directx in the sandbox
-{{{mv DirectX90c ../directx}}}
+ $ mv DirectX90c ../directx
 * You may need to remove some of trailing directories the tarbal left there.
-{{{rmdir DirectX90c\\*}}} 
+ $ rmdir DirectX90c\\* 
 
 
 '''Deprecated procedure for older version directx 8'''
