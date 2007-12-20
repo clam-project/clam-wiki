@@ -519,7 +519,7 @@ Section [System\\CurrentControlSet\\Control\\Session Manager\\Environment], Key 
 The "z:\\home\\vokimon\\CajitasDeArena\\mingw" part will vary on your case.
 
 copy the qt4 dlls
- cp /home/vokimon/.wine/drive_c/Qt/4.3.1/bin/*dll dlls
+ cp /home/vokimon/.wine/drive_c/Qt/4.3.3/bin/*dll dlls
 
  mkdir local
  svn co http://iua-share.upf.edu/mnt/svn/clam/trunk clam
@@ -529,8 +529,8 @@ copy the qt4 dlls
  cp scons/libs/*/*dll ../../dlls
  scons install
  cd ../NetworkEditor
- QTDIR=~/.wine/drive_c/Qt/4.3.1/ scons clam_prefix=~/CajitasDeArena/mingw/local prefix=~/CajitasDeArena/mingw/local external_dll_path=~/CajitasDeArena/mingw/dlls crossmingw=1 package
+ QTDIR=~/.wine/drive_c/Qt/4.3.3/ scons clam_prefix=~/CajitasDeArena/mingw/local prefix=~/CajitasDeArena/mingw/local external_dll_path=~/CajitasDeArena/mingw/dlls crossmingw=1 package
  cd ../Annotator/vmqt
- QTDIR=~/.wine/drive_c/Qt/4.3.1/ scons clam_prefix=~/CajitasDeArena/mingw/local crossmingw=1
+ QTDIR=~/.wine/drive_c/Qt/4.3.3/ scons clam_prefix=~/CajitasDeArena/mingw/local crossmingw=1
  cd ..
- QTDIR=~/.wine/drive_c/Qt/4.3.1/ scons prefix=~/CajitasDeArena/mingw/local  clam_prefix=~/CajitasDeArena/mingw/local external_dll_path=~/CajitasDeArena/mingw/dlls crossmingw=1 package
+ QTDIR=~/.wine/drive_c/Qt/4.3.3/ scons prefix=~/CajitasDeArena/mingw/local  clam_prefix=~/CajitasDeArena/mingw/local external_dll_path=~/CajitasDeArena/mingw/dlls crossmingw=1 package
