@@ -431,7 +431,7 @@ To get some extra autoconf macros and libtool do:
 Then:
 
  cd download 
- cvs -z3 -d:pserver:anonymous@cppunit.cvs.sourceforge.net:/cvsroot/cppunit co -P -D cppunit-cvs cppunit
+ cvs -z3 -d:pserver:anonymous@cppunit.cvs.sourceforge.net:/cvsroot/cppunit co -P -d cppunit-cvs cppunit
  cd cppunit-cvs
  ./autogen.sh
  ./configure --host=i586-mingw32msvc --prefix=$HOME/CajitasDeArena/mingw/cppunit
