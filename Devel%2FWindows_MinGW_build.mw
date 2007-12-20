@@ -9,7 +9,7 @@ Warning: the instructions below are not complete, so You will not be able to com
 
 --[[User:Giuliopaci|Giulio Paci]] 12:14, 18 December 2007 (CET)
 
-'''Setup a MinGW/MSYS environment to build CLAM on Windows 2000/XP.'''
+== Setup a MinGW/MSYS environment to build CLAM on Windows 2000/XP ==
 
 In order to compile CLAM framework on Windows, You will need [http://www.scons.org/ scons].
 Scons is a python script that help developers to build their project. So You will need [http://www.python.org/ Python] too. Windows's Python implementation has a limitation on the length of the command line it can execute, so, in order to remove this limitation You will need also [https://sourceforge.net/projects/pywin32/ pywin32].
@@ -72,9 +72,7 @@ You will need at least the following packages:
 I'm used to install latest available package for everything except GCC where I usually
 install gcc 3.4.5.
 
------
-
-'''Obtaining CLAM dependencies.'''
+== Obtaining CLAM dependencies ==
 
 The CLAM framework on a lot of libraries (directly or not). Here we are going to setup an
 environment that will permit CLAM compilation. This is not exactly the same environment that
@@ -227,8 +225,8 @@ You need to add the following line
 
 to ''tests/utils.c'' and to ''tests/virtual_io_test.c'' files, then You can compile in the standard way.
 
-----
+== Compile and install CLAM Framework ==
 
-'''Compile and install CLAM Framework.'''
 Get CLAM Framwork from [ clam homepage]. My favourite way to get CLAM Framework is through its subversion repository.
+
 --[[User:Giuliopaci|Giulio Paci]] 12:14, 18 December 2007 (CET)
