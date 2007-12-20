@@ -183,7 +183,8 @@ To
 
 Once applyied the changes, You need to run the ''autogen.sh'' script (try ''sh autogen.sh''). You will need at least ''automake'', ''autoconf'', ''libtool'' installed (but You should already have these tools if You have followed these instructions from the beginning). When You're done You can compile in the standard way.
 
-'''Install id3lib and libmad.''' You need to download sources from [http://id3lib.sourceforge.net/ id3lib homepage] and from [http://www.underbit.com/products/mad/ libmad homepage].
+'''Install id3lib and libmad.'''
+You need to download sources from [http://id3lib.sourceforge.net/ id3lib homepage] and from [http://www.underbit.com/products/mad/ libmad homepage].
 
 I needed to patch two files with id3lib version 3.8.3:
 
@@ -210,5 +211,15 @@ to
  #ifdef __MSVC_VER
 
 Once applyied the changes You need to run ''autoconf''.
+
+Once You're done, You can compile both id3lib and libmad in the standard way.
+
+'''Install libsndfile.'''
+You need to add the following line
+
+ #include <stdint.h>
+
+to ''tests/utils.c'' and to ''tests/virtual_io_test.c'' files, then You can compile in the standard way.
+
 
 --[[User:Giuliopaci|Giulio Paci]] 12:14, 18 December 2007 (CET)
