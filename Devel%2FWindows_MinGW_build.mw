@@ -3,11 +3,7 @@ In [[Devel/Windows MinGW cross compile]] we give a detailed procedure
 that could give some clues if you want to natively compile in Windows
 using MinGW.
 
-----
-
-Warning: the instructions below are not complete, so You will not be able to complete the job.
-
---[[User:Giuliopaci|Giulio Paci]] 12:14, 18 December 2007 (CET)
+'''Warning: the instructions below are not complete, so You will not be able to complete the job.'''
 
 == Setup a MinGW/MSYS environment to build CLAM on Windows 2000/XP ==
 
@@ -18,7 +14,9 @@ Once that Python, pywin32 and scons are installed on Your system, You're ready t
 
 A good choice to extract packages is [http://www.7-zip.org 7-zip] a powerful opensource file archiver.
 
-'''First we need to install the MSYS environment.''' Install first the ''MSYS Base System''. I prefer 1.0.11 version, since it has more updated tools. You will need almost all non source packages, so it's better to download them all. You need to extract first msysCORE and MSYS. These are needed to have a very minimal shell.
+=== First we need to install the MSYS environment ===
+
+Install first the ''MSYS Base System''. I prefer 1.0.11 version, since it has more updated tools. You will need almost all non source packages, so it's better to download them all. You need to extract first msysCORE and MSYS. These are needed to have a very minimal shell.
 Once extracted, start msys.bat and continue to extract packages from this shell. This is a required since the only tool I've found that is able to extract correctly these packages is MSYS tar (With other tools You will have a lot of empty file). You may need to extract some packages with an external archiver, such as the one containing updated packages for tar, bzip2, bash: You're still using Windows, so You will not be able to replace a file/program in use.
 
 To extract packages with tar, issue one of these command:
@@ -38,7 +36,8 @@ Once the ''MSYS Base System'' is installed You need to install the packages insi
 
 Once all the packages are extracted You will find a lot of directory in the MSYS installation. Some package will extract in their own directory, so You need to manually move their content (usually bin/, man/, info/ etc.) outside that directory. On most Unix-like system documentation goes inside the share directory, so I usually move man/, info/ and doc/ inside share/, after the package extraction.
 
-'''Configure the MSYS environment.'''
+=== Configure the MSYS environment ===
+
 On a Unix-like system, configuration goes into files inside /etc/. The main configuration for MSYS is handled by ''/etc/fstab'' and ''/etc/profile''. In the first file You can specify mount points. In the other You can specify options common to all users.
 
 ''/etc/fstab'':
@@ -60,7 +59,8 @@ Later You will need '''pkg-config''', a tool that helps compiling programs. pkg-
 
  PKG_CONFIG_PATH=/mingw/lib/pkgconfig
 
-'''Installing MinGW.'''
+=== Installing MinGW ===
+
 To install MinGW You simply need to extract the packages You want inside mingw/ directory
 (The one that You have created while configuring MSYS).
 
@@ -78,10 +78,13 @@ The CLAM framework on a lot of libraries (directly or not). Here we are going to
 environment that will permit CLAM compilation. This is not exactly the same environment that
 is described in [[Devel/Windows MinGW cross compile]], so, if You have special needs, You will find useful information there.
 
-'''Install pkg-config, gettext, glib.''' One of the main tools not included in MSYS/MinGW distribution is pkg-config. This tool is largely used by many big projects like [http://www.gnome.org/ Gnome].
+=== Install pkg-config, gettext, glib ===
+
+One of the main tools not included in MSYS/MinGW distribution is pkg-config. This tool is largely used by many big projects like [http://www.gnome.org/ Gnome].
 One of the most used libraries from Gnome that works on Windows is [http://www.gtk.org/ Gtk+]. The ''official'' Windows page for Gtk is [http://www.gimp.org/~tml/gimp/win32/ Tor Lillqvist Gtk page]. Here You will find precompiled packages for ''pkg-config'', ''gettext'' and ''glib'', as a lot of other useful tools. You can extract them directly in /mingw directory. I'm used to install Gtk and all the other dependencies too, as I need them for other projects, but these are not required to build CLAM.
 
-'''Learn the basic of compiling with MinGW.'''
+=== Learn the basic of compiling with MinGW ===
+
 Most of the libraries we will need to compile is packaged by autoconf.
 When a tool is packaged with autoconf, usually its source are in compressed
 tar form. And its filename is something like ''package_name-version_numbers.tar.gz''.
@@ -130,7 +133,8 @@ You will be able to package it with
  cd packaging/mingw/
  tar zcvf package_name-version_numbers-bin.tar.gz *
 
-'''Install pthreads and glut.'''
+=== Install pthreads and glut ===
+
 You can find precompiled packages for these libraries suitable of use with Mingw at
 [http://sources.redhat.com/pthreads-win32/ pthreads-win32 page]
 and
@@ -144,24 +148,33 @@ These binary packages are not ready to install in MinGW directory. You should ex
 somewhere, create directories (mainly ''include/'', ''lib/'' and ''bin/'') and put all the
 files in the right location. If You have any doubt, check the content of ''/mingw/'' directories to make an idea of what it should contain.
 
-'''Install zlib.''' Many libraries has zlib support, so You will need it in order to compile them. I found out only two methods to get things work: retrieve sources from [http://www.zlib.net/ zlib homepage] and compile in standard way (Note, however, that ''make install'' is not suitable for packaging), or to get it through MinGW ports (This is the better, but harder way. Take a look to [http://www.mingw.org/ MinGW homepage] for information). ''Important:'' if You need packages from [http://www.gimp.org/~tml/gimp/win32/ Tor Lillqvist Gtk page] other than pkg-config, You probably (sure with Gtk or libtiff) need the zlib binary on that page too.
+=== Install zlib ===
+
+Many libraries has zlib support, so You will need it in order to compile them. I found out only two methods to get things work: retrieve sources from [http://www.zlib.net/ zlib homepage] and compile in standard way (Note, however, that ''make install'' is not suitable for packaging), or to get it through MinGW ports (This is the better, but harder way. Take a look to [http://www.mingw.org/ MinGW homepage] for information). ''Important:'' if You need packages from [http://www.gimp.org/~tml/gimp/win32/ Tor Lillqvist Gtk page] other than pkg-config, You probably (sure with Gtk or libtiff) need the zlib binary on that page too.
 
 
-'''Install libxml, sigc++, glibmm and libxml++-2.6.''' CLAM largely depends on an XML parser. You can choose between libxml++-2.6 or xerces-c. I prefer libxml++-2.6 (which is part of the Gnome project) because I manage projects which depends on libxml and because it works without any tweak in my environment. Anyway You should get zlib and pkg-config, before attempt to compile this library. If You want to use xerces-c refers to [[Devel/Windows MinGW cross compile]]. You can get these packages, in source form, from:
+=== Install libxml, sigc++, glibmm and libxml++-2.6 ===
+
+CLAM largely depends on an XML parser. You can choose between libxml++-2.6 or xerces-c. I prefer libxml++-2.6 (which is part of the Gnome project) because I manage projects which depends on libxml and because it works without any tweak in my environment. Anyway You should get zlib and pkg-config, before attempt to compile this library. If You want to use xerces-c refers to [[Devel/Windows MinGW cross compile]]. You can get these packages, in source form, from:
 [http://xmlsoft.org/ libxml homepage],
 [http://libsigc.sourceforge.net/ libsigc homepage],
 [http://www.gtkmm.org/ Gtkmm homepage] and [http://libxmlplusplus.sourceforge.net/ lilbxml++ homepage].
 With the general instruction above, I've successfully built
 libsigc++-2.0.18, glibmm-2.14.2, libxml2-2.6.30 and libxml++-2.20.
 
-'''Install cppunit.''' Download from [http://cppunit.sourceforge.net/ cppunit homepage]. This compiles without any tweak.
+=== Install cppunit ===
 
-'''Install fftw3.''' Download from [http://www.fftw.org/ fftw homepage]. This compiles without any tweak, but I usually configure with the following command.
+Download from [http://cppunit.sourceforge.net/ cppunit homepage]. This compiles without any tweak.
+
+=== Install fftw3 ===
+
+Download from [http://www.fftw.org/ fftw homepage]. This compiles without any tweak, but I usually configure with the following command.
 
  CFLAGS=-mms-bitfields ./configure --with-our-malloc16 --with-windows-f77-mangling --enable-portable-binary --prefix=/mingw
 
 
-'''Install libvorbis and libogg.''' First You need to download libvorbis and libogg sources from [http://www.xiph.org/ their homepage]. You need to compile ''libogg'' first. Once libogg is compiled and installed, You can try to compile ''libvorbis''. I've successfully compiled version 1.2.0 of libvorbis, but I needed to patch its ''lib/Makefile.am'':
+=== Install libvorbis and libogg ===
+First You need to download libvorbis and libogg sources from [http://www.xiph.org/ their homepage]. You need to compile ''libogg'' first. Once libogg is compiled and installed, You can try to compile ''libvorbis''. I've successfully compiled version 1.2.0 of libvorbis, but I needed to patch its ''lib/Makefile.am'':
 
 From
 
@@ -181,7 +194,8 @@ To
 
 Once applyied the changes, You need to run the ''autogen.sh'' script (try ''sh autogen.sh''). You will need at least ''automake'', ''autoconf'', ''libtool'' installed (but You should already have these tools if You have followed these instructions from the beginning). When You're done You can compile in the standard way.
 
-'''Install id3lib and libmad.'''
+=== Install id3lib and libmad ===
+
 You need to download sources from [http://id3lib.sourceforge.net/ id3lib homepage] and from [http://www.underbit.com/products/mad/ libmad homepage].
 
 I needed to patch two files with id3lib version 3.8.3:
@@ -212,12 +226,13 @@ Once applyied the changes You need to run ''autoconf''.
 
 Once You're done, You can compile both id3lib and libmad in the standard way.
 
-'''Install portaudio.'''
+=== Install portaudio ===
+
 You can download portaudio from [http://www.portaudio.com/ portaudio homepage]. I was able to compile only ''pa_stable_061121'', snapshots or ''pa_stable_20071207'' didn't work for me. I've not tried to compile with directx or asio support, but only with wmme.
 
 Anyway ''pa_stable_061121'' compiled using the standard way.
 
-'''Install libsndfile.'''
+=== Install libsndfile ===
 Download libsndfile from [http://www.mega-nerd.com/libsndfile/ libsndfile homepage].
 You need to add the following line
 
