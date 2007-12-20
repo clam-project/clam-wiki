@@ -30,17 +30,17 @@ So it works! We are building and executing a windows binary.
 Lets download Qt.
 
  $ wget -c http://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/qt-win-opensource-4.3.1-mingw.exe
- $ chmod a+x qt-win-opensource-4.3.1-mingw.exe
- $ ./qt-win-opensource-4.3.1-mingw.exe
+ $ chmod a+x qt-win-opensource-4.3.3-mingw.exe
+ $ ./qt-win-opensource-4.3.3-mingw.exe
 
 I accepted to intall mingw32 again but in the fake windows.
-This installs by default Qt on ~/.wine/drive_c/Qt/4.3.1/, so
+This installs by default Qt on ~/.wine/drive_c/Qt/4.3.3/, so
 
- $ ~/.wine/drive_c/Qt/4.3.1/bin/designer.exe
+ $ ~/.wine/drive_c/Qt/4.3.3/bin/designer.exe
 
 [[image:Mingw32DesignerUnderWine.png|thumb|Mingw Designer running on wine]]
 
- $ export QTDIR=~/.wine/drive_c/Qt/4.3.1/
+ $ export QTDIR=~/.wine/drive_c/Qt/4.3.3/
 
 Edit the following file helloqt.cxx
 
