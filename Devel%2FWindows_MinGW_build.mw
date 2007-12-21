@@ -78,7 +78,7 @@ Later You will need '''pkg-config''', a tool that helps compiling programs. pkg-
 
  PKG_CONFIG_PATH=/mingw/lib/pkgconfig
 
-=== Installing MinGW ===
+=== Install MinGW ===
 
 To install MinGW You simply need to extract the packages You want inside mingw/ directory
 (The one that You have created while configuring MSYS).
@@ -102,7 +102,7 @@ is described in [[Devel/Windows MinGW cross compile]], so, if You have special n
 One of the main tools not included in MSYS/MinGW distribution is pkg-config. This tool is largely used by many big projects like [http://www.gnome.org/ Gnome].
 One of the most used libraries from Gnome that works on Windows is [http://www.gtk.org/ Gtk+]. The ''official'' Windows page for Gtk is [http://www.gimp.org/~tml/gimp/win32/ Tor Lillqvist Gtk page]. Here You will find precompiled packages for ''pkg-config'', ''gettext'' and ''glib'', as a lot of other useful tools. You can extract them directly in /mingw directory. I'm used to install Gtk and all the other dependencies too, as I need them for other projects, but these are not required to build CLAM.
 
-=== Learn the basic of compiling with MinGW ===
+=== Basics of compiling with MinGW ===
 
 Most of the libraries we will need to compile is packaged by autoconf.
 When a tool is packaged with autoconf, usually its source are in compressed
