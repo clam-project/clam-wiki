@@ -40,16 +40,34 @@ Once all the packages are extracted You will find a lot of directory in the MSYS
 
 On a Unix-like system, configuration goes into files inside /etc/. The main configuration for MSYS is handled by ''/etc/fstab'' and ''/etc/profile''. In the first file You can specify mount points. In the other You can specify options common to all users.
 
-''/etc/fstab'':
-if You are not used with mount points You can think a mount point like a link to a directory in Your system. This is misleading, but may help You to make an idea of what You are trying to setup. Once You start MSYS shell, it put Yourself in Your MSYS home: ''/home/username/''. This directory is located inside the home/ directory in the MSYS installation directory. You can instruct MSYS to put /home/ somewhere else. I usually like to make MSYS homes and Windows home to coincide, 'cause I want great integration of all the tools, so I usually put a line in fstab like this
+==== /etc/fstab ====
 
- F:/DOCUME~1/       /home/
+If You are not used with mount points You can think a mount point like a link to a directory in Your system. This is misleading, but may help You to make an idea of what You are trying to setup.
+
+Once You start MSYS shell, You have two methods of calling a path: the one used by unix-like
+system (''/path/to/file'') and the one used by Windows (''DISK_LETTER:\path\to\file'').
+
+The unix-like path will be usually converted in a path where ''/'' is the MSYS installation directory, with a few exception (''/usr'' will coincide with ''/'', ''/DISK_LETTER/'' will coincide with ''DISK_LETTER:\'').
+
+You can put some directories outside from the MSYS installation, by editing the ''/etc/fstab''
+file. This is often useful with ''/mingw/'' or ''/home/'' directories.
+
+I used to make MSYS homes and Windows home to coincide, by editing the fstab file and adding
+a line like this
+
+ C:/DOCUME~1/       /home/
 
 Where I've used the short name of ''Document and Settings'' 'cause I cannot use space in fstab.
-Other directories You may want to put outside MSYS installation directory is /mingw, but I usually '''create MinGW''' directory just there. You will need this directory, so create it and edit fstab as needed (if needed).
+
+Now I've prefer editing ''msys.bat'' file and add ''HOME'' environment variable (that is used
+by MSYS to detect user's home) with a line like this:
+
+ set HOME=%USERPROFILE%
+
+This is not the same thing, as it will not change ''/home/'' location, but is much closer to the target I want to achieve.
 
 ''/etc/profile'':
-Here You can define ENVIRONMENT variables, command alias and other useful things.
+Here You can define ENVIRONMENT variables, command alias and other useful things common to all MSYS users.
 The PATH variable is inherited by the user Windows PATH, so I often choose to put some programs in Windows PATH, instead of MSYS PATH. The main example is for '''Python''' and '''scons'''. Where You will need to add ''F:\Programmi\Python25'' and ''F:\Programmi\Python25\Scripts'' to it. I will suggest You to do so, but if You don't like this idea, You can add a line like this to the end of /etc/profile:
 
  PATH=$PATH:/f/Programmi/Python25:/f/Programmi/Python25/Scripts
