@@ -1,6 +1,6 @@
 '''this page is work on progress. maybe some instructions are missleading'''
 
-It refers mainly on building CLAM framework which is no longer supported. Refers to
+It refers mainly on building CLAM framework with MSVC which is no longer supported. Refers to
 [[Devel/Windows MinGW build]] instead. MinGW is still unsupported on Windows, but that
 page has more updated informations.
 
