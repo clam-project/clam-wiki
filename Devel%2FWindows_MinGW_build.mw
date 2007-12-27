@@ -260,6 +260,9 @@ to ''tests/utils.c'' and to ''tests/virtual_io_test.c'' files, then You can comp
 
 == Compile and install CLAM Framework ==
 
-Get CLAM Framwork from [ clam homepage]. My favourite way to get CLAM Framework is through its subversion repository.
+Get CLAM Framwork source from [http://clam.iua.upf.edu/ clam homepage]. My favourite way to get CLAM Framework is through its subversion repository, 'cause I'd like to keep my projects in sync with latest CLAM snapshot.
+
+Since CLAM repository is changing faster, maybe You should need to modify the steps below, in
+order to be able to complete the task.
 
 --[[User:Giuliopaci|Giulio Paci]] 12:14, 18 December 2007 (CET)
