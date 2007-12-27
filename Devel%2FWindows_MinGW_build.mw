@@ -248,7 +248,7 @@ Once You're done, You can compile both id3lib and libmad in the standard way.
 
 You can download portaudio from [http://www.portaudio.com/ portaudio homepage]. I was able to compile only ''pa_stable_061121'', snapshots or ''pa_stable_20071207'' didn't work for me. I've not tried to compile with directx or asio support, but only with wmme.
 
-Anyway ''pa_stable_061121'' compiled using the standard way.
+Anyway ''pa_stable_061121'' with wmme compiled using the standard way.
 
 === Install libsndfile ===
 Download libsndfile from [http://www.mega-nerd.com/libsndfile/ libsndfile homepage].
