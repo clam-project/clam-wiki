@@ -293,10 +293,14 @@ Now You have DirectX suitable for CLAM compilation.
 
 Get CLAM Framwork source from [http://clam.iua.upf.edu/ clam homepage]. My favourite way to get CLAM Framework is through its subversion repository, 'cause I'd like to keep my projects in sync with latest CLAM snapshot.
 
-Since CLAM repository is changing faster, maybe You should need to modify the steps below, in
-order to be able to complete the task.
+Choose a patch appropriate for the revision closer to the one You're checking out.
+
+Since CLAM repository is changing faster, maybe You should need to modify something in order to be able to complete the task.
+
+If everything goes well You need simply to give:
 
  scons configure prefix=//mingw sandbox_path=/mingw xmlbackend=xmlpp
  scons
+ scons install
 
 --[[User:Giuliopaci|Giulio Paci]] 12:14, 18 December 2007 (CET)
