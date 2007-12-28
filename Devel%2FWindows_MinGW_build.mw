@@ -258,11 +258,45 @@ You need to add the following line
 
 to ''tests/utils.c'' and to ''tests/virtual_io_test.c'' files, then You can compile in the standard way.
 
+=== Install DirectX ===
+DirectX SDK is distributed by Microsoft in binary form at [http://www.microsoft.com/directx/ DirectX SDK homepage]. These binaries are built for MSVC and so should be converted in order to use them with standard MinGW tools. You can find information about this task at [http://www.mingw.org/ MinGW homepage].
+
+The quickest way to setup DirectX SDK for use with MinGW is finding someone that has already
+done the job for You. You can find converted DirectX SDK binaries at [http://alleg.sourceforge.net/files/ allegro files download section] (versions 7.0 and 8.0) or at [http://devpaks.org/details.php?devpak=136 DevPack DirectX SDK page] (version 9.0).
+
+At this time I'm using DirectX SDK 9.0c.
+
+A DevPack file is a compressed tar archive. You can extract its content from the command line with the command
+
+ tar jxvf DirectX90c.DevPak
+
+this will extract a DirectX90c/ directory. Now You should move files from ''DirectX90c/DLL/'' to ''/mingw/bin/'', from ''DirectX90c/include/'' to ''/mingw/include/'' and from ''DirectX90c/lib/'' to ''/mingw/lib/''.
+
+ mv DirectX90c/DLL/* /mingw/bin/
+ mv DirectX90c/include/* /mingw/include/
+ mv DirectX90c/lib/* /mingw/lib/
+
+gcc is less permissive than MSVC with ''#define'' and ''typedef'', so You cannot define two time the same thing or it will complain (and abort the compilation). CLAM uses ''dsound.h'' header which defines two times the type ''LPDIRECTSOUNDFULLDUPLEX'' when You are using DirectX 8.0 and later. In order to fix this issue, search the last occurrence of the line
+
+ typedef struct IDirectSoundFullDuplex *LPDIRECTSOUNDFULLDUPLEX;
+
+and replace it with
+
+ #if DIRECTSOUND_VERSION < 0x0800
+ typedef struct IDirectSoundFullDuplex *LPDIRECTSOUNDFULLDUPLEX;
+ #endif
+
+Now You have DirectX suitable for CLAM compilation.
+
+
 == Compile and install CLAM Framework ==
 
 Get CLAM Framwork source from [http://clam.iua.upf.edu/ clam homepage]. My favourite way to get CLAM Framework is through its subversion repository, 'cause I'd like to keep my projects in sync with latest CLAM snapshot.
 
 Since CLAM repository is changing faster, maybe You should need to modify the steps below, in
 order to be able to complete the task.
+
+ scons configure prefix=//mingw sandbox_path=/mingw
+ scons
 
 --[[User:Giuliopaci|Giulio Paci]] 12:14, 18 December 2007 (CET)
