@@ -296,7 +296,7 @@ Get CLAM Framwork source from [http://clam.iua.upf.edu/ clam homepage]. My favou
 Since CLAM repository is changing faster, maybe You should need to modify the steps below, in
 order to be able to complete the task.
 
- scons configure prefix=//mingw sandbox_path=/mingw
+ scons configure prefix=//mingw sandbox_path=/mingw xmlbackend=xmlpp
  scons
 
 --[[User:Giuliopaci|Giulio Paci]] 12:14, 18 December 2007 (CET)
