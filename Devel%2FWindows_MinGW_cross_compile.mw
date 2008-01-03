@@ -425,7 +425,8 @@ I didn't managed to crosscompile them my self, but i found some precompiled bina
 
 On some scenarios this seems not to work. Try this:
 
- cd download wget 'http://www.mirrorservice.org/sites/sourceware.org/pub/pthreads-win32/pthreads-w32-2-8-0-release.tar.gz'
+ cd download
+ wget 'http://www.mirrorservice.org/sites/sourceware.org/pub/pthreads-win32/pthreads-w32-2-8-0-release.tar.gz'
  tar xvfz pthreads-w32-2-8-0-release.tar.gz
  cd pthreads-w32-2-8-0-release
  make CROSS=i586-mingw32msvc- GC-inlined
