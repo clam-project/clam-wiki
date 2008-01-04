@@ -79,7 +79,7 @@ Let check whether Wine is able to run existing CLAM binaries.
 
 It runs with a lot of underruns but it works so we can check goodness of the build procces on mingw can be tested.
 
-Well not all works as desired. OpenGl Based views doesn't work properly.
+Well not all works as desired. OpenGl Based views doesn't work properly because Qt OpenGl and Wine. (Precompiled Qt examples doesn't work either)
 
 [[image:WineRunningNetworkEditorVC-OpenGlBug.png|center|As you introduce an OpenGl view, the interface framebuffer gets messed]]
 
