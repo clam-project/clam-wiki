@@ -299,8 +299,14 @@ Since CLAM repository is changing faster, maybe You should need to modify someth
 
 If everything goes well You need simply to give:
 
- scons configure prefix=//mingw sandbox_path=/mingw xmlbackend=xmlpp
+ scons configure prefix=//mingw prefix_for_packaging=/mingw xmlbackend=xmlpp
  scons
  scons install
+
+Currently the patch I provide is not complete (and not well tested) and has some '''KNOWN BUGS'''.
+
+# ''scons install'' will not install in the right location if You don't provide the configure step as described in this document.
+# pkg-config files are not correctly generated. Anyway this is a problem shared with the original SConstruct script.
+
 
 --[[User:Giuliopaci|Giulio Paci]] 12:14, 18 December 2007 (CET)
