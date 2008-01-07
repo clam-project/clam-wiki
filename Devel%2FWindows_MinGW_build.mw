@@ -3,7 +3,7 @@ In [[Devel/Windows MinGW cross compile]] we give a detailed procedure
 that could give some clues if you want to natively compile in Windows
 using MinGW.
 
-'''Warning: the instructions below are not well tested and the patch needed to build CLAM is still not included. These steps will help to get a lot of CLAM dependencies, but it's not yet complete.'''
+'''Warning: the instructions below are not well tested and the patch needed to build CLAM is still not included. These steps will help to get a lot of CLAM dependencies, but the HOWTO is not yet complete.'''
 
 == Setup a MinGW/MSYS environment ==
 
