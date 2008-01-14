@@ -1,6 +1,4 @@
-
-'''Warning: building CLAM on Windows is not very well tested. These steps will help to get CLAM dependencies on Windows, and at
-least clam_core, clam_audioio and clam_processing. But no other steps is described at this time.'''
+'''Warning: building CLAM on Windows is not very well tested. These steps will help to get CLAM dependencies on Windows, and at least clam_core, clam_audioio and clam_processing. But no other steps is described at this time.'''
 
 We are currently generating Windows binaries crosscompiling from Linux.
 In [[Devel/Windows MinGW cross compile]] we give a detailed procedure
