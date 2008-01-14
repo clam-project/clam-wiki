@@ -313,9 +313,7 @@ If everything is ok, from the clam source base directory You need only the follo
  scons
  scons install
 
-Currently the patch I provide is not complete (and not well tested) and has some '''KNOWN BUGS'''.
-
-# ''scons install'' will not install in the right location if You don't provide the configure step as described in this document.
+Be careful that ''scons install'' will not install in the right location if You don't provide the configure step as described in this document.
 
 
 --[[User:Giuliopaci|Giulio Paci]] 12:14, 18 December 2007 (CET)
