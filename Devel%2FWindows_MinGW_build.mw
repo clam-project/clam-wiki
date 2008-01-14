@@ -291,14 +291,24 @@ Now You have DirectX suitable for CLAM compilation.
 
 == Compile and install CLAM Framework ==
 
-Get CLAM Framwork source from [http://clam.iua.upf.edu/ clam homepage]. My favourite way to get CLAM Framework is through its subversion repository, 'cause I'd like to keep my projects in sync with latest CLAM snapshot.
+Get CLAM Framwork source from [http://clam.iua.upf.edu/ clam homepage].
 
-Choose a patch appropriate for the revision closer to the one You're checking out.
+My favourite way to get CLAM Framework is through its subversion repository, 'cause I'd like to keep my projects in sync with latest CLAM snapshot. There are a lot of Subversion's clients out there (i.e.: [http://tortoisesvn.tigris.org/ Tortoise SVN]), just pick up one and check out a working copy of CLAM Framework. Have a look at [[Devel#Subversion access]] for further information.
 
-Since CLAM repository is changing faster, maybe You should need to modify something in order to be able to complete the task.
 
-If everything goes well You need simply to give:
+Choose a patch appropriate from [https://svn.pd.istc.cnr.it:592/svn/sms/trunk/clam/ SPFD-ISTC] for the revision closer to the one You're checking out.
 
+Since CLAM repository is changing faster, if the patch is not exactly for the revision You're checking out, maybe You should need to modify something in order to be able to complete the task.
+
+Once You get the base directory of clam, You can patch the sources. You can do it with Tortoise SVN, by issuing the ''Apply patch'' command, or with the command line: entering in the clam source base directory and give this command:
+
+ patch -p0 < filename.patch
+
+Where ''filename.patch'' is the file name of the patch You've downloaded.
+
+If everything is ok, from the clam source base directory You need only the following commands to complete the job:
+
+ cd CLAM
  scons configure prefix=//mingw prefix_for_packaging=/mingw xmlbackend=xmlpp
  scons
  scons install
@@ -306,7 +316,6 @@ If everything goes well You need simply to give:
 Currently the patch I provide is not complete (and not well tested) and has some '''KNOWN BUGS'''.
 
 # ''scons install'' will not install in the right location if You don't provide the configure step as described in this document.
-# pkg-config files are not correctly generated. Anyway this is a problem shared with the original SConstruct script.
 
 
 --[[User:Giuliopaci|Giulio Paci]] 12:14, 18 December 2007 (CET)
