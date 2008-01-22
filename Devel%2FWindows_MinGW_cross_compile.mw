@@ -12,6 +12,7 @@ Not suported yet:
 * Building CLAM plugins
 * Passing the tests and compiling the examples
 * Py2Exe binaries for Annotator helper apps
+* Executing Qt + OpenGl based programs in wine.
 
 == Installing mingw32 and Wine in ubuntu ==
 
