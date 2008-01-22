@@ -5,7 +5,7 @@ This page explains '''how to cross compile CLAM for Windows in an Ubuntu Linux''
 Supported:
 * Building most dependencies
 * Building CLAM libraries
-* Building Network Editor and Annotator installer (results available at http://clam.iua.upf.edu/download/win/svnsnapshots/)
+* Building Network Editor and Annotator installers (results available at http://clam.iua.upf.edu/download/win/svnsnapshots/)
 Not suported yet:
 * Building an installer for the CLAM library development files (although this [[http://clam.iua.upf.edu/download/win/mingw32-spike/clam-devel-mingw-1.1.1~svn10446.zip old and unofficial package]] could help)
 * Building some dependencies: liblo, xerces (substituted by libxml)...
