@@ -1,5 +1,7 @@
 This page explains '''how to cross compile CLAM for Windows in an Ubuntu Linux'''.
 
+== Status ==
+
 Supported:
 * Building most dependencies
 * Building CLAM libraries
