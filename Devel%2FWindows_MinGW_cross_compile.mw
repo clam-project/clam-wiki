@@ -11,6 +11,7 @@ Not suported yet:
 * Building some dependencies: liblo, xerces (substituted by libxml)...
 * Building CLAM plugins
 * Passing the tests and compiling the examples
+* Py2Exe binaries for Annotator helper apps
 
 == Installing mingw32 and Wine in ubuntu ==
 
