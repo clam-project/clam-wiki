@@ -21,7 +21,7 @@
   $ sudo port install wget
 
 * Install CLAM dependencies available in darwinports. This command will compile each packages from upstream (the original project site) and will automatically pull its dependencies:
-   $ sudo port install xercesc pkgconfig libsndfile libogg libmad libvorbis fftw-3 fftw-3-single cppunit id3lib
+   $ sudo port install xercesc pkgconfig libsndfile libogg libmad libvorbis fftw-3 fftw-3-single cppunit id3lib portaudio
 
 * python and scons are also in macports. They are needed as build tools. CLAM builds both with scons/python in darwinports and with the native packages.
   $ sudo port install scons
