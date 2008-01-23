@@ -25,6 +25,10 @@
 
 === Packages not available in darwinports ===
 
+'''UPDATE: these packages are now available: portaudio, qt4-mac qt3-mac'''
+   $ sudo port install portaudio qt4-mac
+
+==== Deprecated: ===
 * portaudio
    $ wget http://www.portaudio.com/archives/pa_snapshot_v19.tar.gz
 :  untar the package, 
