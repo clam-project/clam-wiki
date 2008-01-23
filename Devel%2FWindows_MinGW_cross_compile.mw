@@ -460,7 +460,7 @@ Needed to compile the osc plugin.
  wget 'http://downloads.sourceforge.net/liblo/liblo-0.24.tar.gz'
  tar xvfz liblo-0.24.tar.gz
  cd liblo-0.24
- LDFLAGS=-L$MINGWSANDBOX/pthreads/lib/ CPPFLAGS=-I$MINGWSANDBOX/pthreads/include/ ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/liblo
+ ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/liblo LDFLAGS=-L$MINGWSANDBOX/pthreads/lib/ CPPFLAGS=-I$MINGWSANDBOX/pthreads/include/ LIBS=-lws2_32
  make install-data install-exec
 
 It complaints about a redefined function in <tt>src/server.c</tt>. Just comment the function out.
