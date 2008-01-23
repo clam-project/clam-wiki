@@ -460,10 +460,10 @@ Needed to compile the osc plugin.
  wget 'http://downloads.sourceforge.net/liblo/liblo-0.24.tar.gz'
  tar xvfz liblo-0.24.tar.gz
  cd liblo-0.24
- ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/liblo LDFLAGS=-L$MINGWSANDBOX/pthreads/lib/ CPPFLAGS=-I$MINGWSANDBOX/pthreads/include/ LIBS=-lws2_32
- make install-data install-exec
+ ./autogen.sh  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/liblo LDFLAGS=-L$MINGWSANDBOX/pthreads/lib/ CPPFLAGS="-I$MINGWSANDBOX/pthreads/include/ -D_WIN32_WINNT=0x0501" LIBS=-lws2_32
+ make install
 
-It complaints about a redefined function in <tt>src/server.c</tt>. Just comment the function out.
+It complaints about a redefined function <tt>gai_strerrorA</tt> in <tt>src/server.c</tt>. Just comment the function out.
 
 == cppunit ==
 
