@@ -393,6 +393,16 @@ So we are crosscompiling it ourselves from the sources.
  ./configure mingw32 --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/libsndfile --disable-sqlite
  make install
 
+If it fails, apply this patch:
+ diff -r libsndfile-1.0.17/tests/utils.h libsndfile-1.0.17-modified/tests/utils.h
+ 35a36,38
+ > #if (defined (WIN32) || defined (_WIN32))
+ > #define SIGNED_SIZEOF(x)      ((int) (sizeof (x)))
+ > #else
+ 36a40
+ > #endif
+
+
 Old steps:
 
  CXX=i586-mingw32msvc-g++ RANLIB=i586-mingw32msvc-ranlib AR=i586-mingw32msvc-ar CC=i586-mingw32msvc-gcc ./configure mingw32 --prefix=$MINGWSANDBOX/libsndfile --disable-sqlite
