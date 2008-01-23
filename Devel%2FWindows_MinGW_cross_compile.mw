@@ -375,22 +375,11 @@ Then:
 
 == libsndfile ==
 
-=== By using precompiled binary on its web ===
-
-'''It doesn't work''' Try with the cross compiling option
+Note that we couldn't get working the precompiled binary on its web.
 
 http://www.mega-nerd.com/libsndfile/libsndfile-1_0_17.zip
 
-It comes with precompiled binaries:
-
- mkdir -p ../libsndfile/{lib,include}
- cp libsndfile-1.dll ../libsndfile/lib/libsndfile.dll
- cp sndfile.{h,hh} ../libsndfile/include/
-
-It is missing the lib.
-
-=== By crosscompiling ===
-
+So we are crosscompiling it ourselves from the sources.
 
  cd download
  wget http://www.mega-nerd.com/libsndfile/libsndfile-1.0.17.tar.gz
