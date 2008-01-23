@@ -453,7 +453,7 @@ On some scenarios this seems not to work. Try this:
 
 Needed to compile the osc plugin.
 '''Still not working'''
-
+ export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever in your case
  cd $MINGWSANDBOX
  ln -s libpthreadGC2.a pthreads/lib/libpthread.a
  cd download
