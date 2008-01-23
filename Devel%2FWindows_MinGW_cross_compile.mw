@@ -454,14 +454,16 @@ On some scenarios this seems not to work. Try this:
 Needed to compile the osc plugin.
 '''Still not working'''
 
+ cd $MINGWSANDBOX
+ ln -s libpthreadGC2.a pthreads/lib/libpthread.a
  cd download
  wget 'http://downloads.sourceforge.net/liblo/liblo-0.24.tar.gz'
  tar xvfz liblo-0.24.tar.gz
  cd liblo-0.24
- ./configure --host=i586-mingw32msvc --prefix=$HOME/CajitasDeArena/mingw/liblo
+ LDFLAGS=-L$MINGWSANDBOX/pthreads/lib/ CPPFLAGS=-I$MINGWSANDBOX/pthreads/include/ ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/liblo
+ make install-data install-exec
 
-Some hacking is still needed to link against pthread and to disable some code which rewrites win32 api which is provided by the mingw runtime.
-
+It complaints about a redefined function in <tt>src/server.c</tt>. Just comment the function out.
 
 == cppunit ==
 
