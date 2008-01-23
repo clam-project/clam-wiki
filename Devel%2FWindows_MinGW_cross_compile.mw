@@ -97,6 +97,9 @@ Well not all works as desired. OpenGl Based views doesn't work properly because 
 
 [[image:WineRunningNetworkEditorVC-OpenGlBug.png|center|As you introduce an OpenGl view, the interface framebuffer gets messed]]
 
+Precompiled Qt examples which use OpenGL have the same problem.
+So when we get the same problem in our binaries we'll know it is not our fault.
+
 == Crosscompiling PortAudio ==
 
 Port audio has some dependencies. So let's provide them.
