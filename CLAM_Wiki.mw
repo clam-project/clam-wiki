@@ -32,7 +32,7 @@
 ** [[Adding Monitors]]
 ** [[Building a processing library]]
 ** [[Defining a ProcessingComposite]]
-** [[Using custom data token types]]
+** [[Changing the port color for custom data types]]
 * [[Version Migration Guide]]
 
 * Old: [[DeprecatedDoc/CLAMUserManual|documentation index]] (deprecated documentation dumped from the old manual)
