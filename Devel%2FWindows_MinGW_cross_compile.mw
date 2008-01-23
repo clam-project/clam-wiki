@@ -391,6 +391,7 @@ So we are crosscompiling it ourselves from the sources.
  tar xvfz libsndfile-1.0.17.tar.gz
  cd libsndfile-1.0.17
  CXX=i586-mingw32msvc-g++ RANLIB=i586-mingw32msvc-ranlib AR=i586-mingw32msvc-ar CC=i586-mingw32msvc-gcc ./configure mingw32 --prefix=$MINGWSANDBOX/libsndfile --disable-sqlite
+ ./configure mingw32 --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/libsndfile --disable-sqlite
  make
  mkdir -p ../libsndfile/{lib,include,bin}
  cp src/.libs/libsndfile-1.dll ../dlls
