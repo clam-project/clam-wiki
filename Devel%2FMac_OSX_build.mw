@@ -67,11 +67,11 @@ or get the latest version of subversion. In this case you'll also need to instal
 
 Note that you need to disable LADSPA support when building for Mac. Read the CLAM/INSTALL file if you're not familiar with the clam scons build sequence. Basically it's this:
 
-  $ scons configure with_ladspa=0
+  $ scons configure
   $ scons
   $ sudo scons install
  
-* Remember that before building Annotator you must build Annotator/vmqt
+* In case you are interested in building the Annotator app, you must build Annotator/vmqt first.
 
 * All applications should build and run. Inform clam-devel for any problem  
  
@@ -79,7 +79,6 @@ Note that you need to disable LADSPA support when building for Mac. Read the CLA
 ** just do 'scons bundle' and 'scons package'
 
 * Tip: use non system clam prefix (!= usr/local) for developing
-
 
 == Troubleshooting ==
 
