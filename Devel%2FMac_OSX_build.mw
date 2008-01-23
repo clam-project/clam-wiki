@@ -52,11 +52,12 @@
 
 == CLAM sources ==
 
-If you want to get CLAM sources using subversion you should install it too
+You can choose either download a source tarball from the clam website:
+: http://clam.iua.upf.edu//download-source.html
+
+or get the latest version of subversion. In this case you'll also need to install subversion macport:
    $ sudo port install subversion
    $ svn co http://iua-share.upf.edu/svn/clam/trunk
-
-Alternatively download a source release from the website.
 
 == CLAM build ==
 
