@@ -225,7 +225,7 @@ Name bindings:
 :  The same as the previous one but sends double by dividing by 100
 * InControlBool__<em>Processing</em>__<em>Control</em>: 
 :  For check buttons (Radio buttons, check boxes or 
-* AudoFile__<em>ProcessingName</em>:
+* AudioFile__<em>ProcessingName</em>:
 :  Binds buttons with MonoAudioFileReaders, on click opens a file selection dialog.
 * PlayButton:
 :  Starts the network on click
@@ -237,8 +237,6 @@ Name bindings:
 :  To be bound to a Label. It adds a indicator that says whether the network is playing.
 
 When adding the names, you must change any space into a triple underline.
-
-
 
 == We are still updating this tutorial to the 0.4.0 version ==
 
