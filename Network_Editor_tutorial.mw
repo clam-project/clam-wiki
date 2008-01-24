@@ -299,6 +299,20 @@ Use the property editor to set somethin similar to this:
 * styleSheet: background-color: #aff;
 * lineColor: just pick one by clicking on the color value
 
+[[Image:NETutorial-OscilloscopeWithColors.png]]
+
+== TODO: Adding a file chooser ==
+
+== TODO: Adding a volume control ==
+
+= Algorithms =
+
+== TODO: Spectral Modeling Synthesis ==
+
+== TODO: Tonal Analysis ==
+
+== TODO: 3D Spatialization ==
+
 == We are still updating this tutorial to the 0.4.0 version ==
 
 '''The rest of this tutorial still refers to the 0.3.X versions of the Network Editor. It is expected to be updated in short to the 0.4.X series. Although the interface has changes, you could still follow it as concepts are the same.'''
