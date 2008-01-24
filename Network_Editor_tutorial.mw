@@ -244,9 +244,11 @@ Let's take a simple file player network such as the one we had at the first step
 
 [[Image:NetTutorial-ConnectedProcessings.png|The network we already built before|center]]
 
-If we start the network with the Prototyper, we'll get a simple interface that is provided by default.
+If we start the Prototyper and choose that network, we'll get a simple interface that is provided by default.
 
 [[Image:NetEditQt4-PrototyperIndicators.png|Prototyper shows this default interface when you still have not designed one|center]]
+
+It is a very simple interface which starts and stops the network and provides some information on the playback status and the used audio backend (jack, portaudio...).
 
 == Rebuilding the default interface ourselves ==
 
