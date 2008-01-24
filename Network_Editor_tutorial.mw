@@ -267,16 +267,17 @@ Let's reproduce the same interface by our own using Qt Designer.
 [[Image:NetTutorial-CloseSigSlotConnection.png|600px|center]]
 * This way we are saying that whenever the 'Close' button is clicked the dialog will be accepted (closed without error).
 * Go back to the 'Edit widgets' mode [[Image:Icon-EditWidgets.png]].
-* To try the connection, launch a preview by pressing Ctrl-R.
-* The preview doesn't binds a network so no sound will play.
-* To run it with a network inside save the dialog in the same folder than the network as <tt>MyFilePlayer.ui</tt>. Note that the file names match but the extension.
-* Now call the Prototyper and choose the network again. It should show our new interface but now the audio is playing. 
-The problem now is that play and stop buttons are useless. Let's connect them!
+* To try the connection, launch a preview by pressing Ctrl-R. Push the Close button and the dialog will close :-)
+* The preview doesn't binds a network so no sound will play. To run it with a network inside save the dialog in the same folder than the network as <tt>MyFilePlayer.ui</tt>. Note that the file names match but the extension.
+* Now call the Prototyper and choose the network again. It should show our new interface but now the audio is playing. The problem now is that play and stop buttons are useless. Let's connect them!
 * Right click the Play button and choose 'Change objectName...' and name it 'PlayButton'.
+[[Image:NetTutorial-NamingPlayButton.png|400px|center]]
 * Do the same with the Stop button and name it 'StopButton'.
 * Save and launch again the prototyper. The Prototyper has identified the buttons names and now we can control the playback with them. Great!
-* Now, the only way to know whether the network is playing or not is by listening. We can drop a Label into the dialog and name it 'PlaybackIndicator'. If we save it and launch the prototyper again, we'll see that Prototyper fills the label with the playback status.
-[[Image:NetTutorial-LabelForPlaybackIndicator.png|400px|center]][[Image:NetTutorial-PlaybackIndicator.png|200px|center]]
+* Now, the only way to know whether the network is playing or not is by listening. We can drop a Label into the dialog and name it 'PlaybackIndicator'.
+[[Image:NetTutorial-LabelForPlaybackIndicator.png|400px|center]]
+* If we save it and launch the prototyper again, we'll see that Prototyper fills the label with the playback status.
+[[Image:NetTutorial-PlaybackIndicator.png|200px|center]]
 * A different label but named 'BackendIndicator' would show the audio backend (Jack, PortAudio, VST...) in a similar fashion.
 
 == Controlling the layout ==
