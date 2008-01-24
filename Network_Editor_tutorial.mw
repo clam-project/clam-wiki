@@ -250,9 +250,9 @@ If we start the Prototyper and choose that network, we'll get a simple interface
 
 It is a very simple interface which starts and stops the network and provides some information on the playback status and the used audio backend (jack, portaudio...).
 
-== Rebuilding the default interface ourselves ==
+== Rebuilding the default interface with Qt Designer ==
 
-Let's reproduce the same interface by our own.
+Let's reproduce the same interface by our own using Qt Designer.
 
 * Open the designer and create a new dialog without buttons.
 * Drag and drop three push buttons from the widget box to the dialog.
