@@ -126,7 +126,7 @@ Now we know the workflow, but we are cheating because we took already done netwo
 
 * Right now we only can use audio monitors. Later on we'll see other types of data that can be also viewed.
 
-== Saving and loading ==
+== Saving and loading networks ==
 
 * We have put too much work into this network just to risk loosing it now! We should save it somehow. Select File->Save and choose the location and name you want. Don't forget the '.clamnetwork' extension.
 *If you are wondering what the file looks like go ahead and open it with your favourite text editor. Note that it is a regular xml file that is easy to edit and export and should look something like this:
@@ -136,7 +136,6 @@ Now we know the workflow, but we are cheating because we took already done netwo
 This file specifies all the Processings, connections and configurations. Note that the graphical positions of the elements are stored in a separate .pos file.
 
 *If you feel adventurous you can go ahead and edit some of the values and then load the xml from the NetworkEditor.
-
 
 ==The Spectral Domain==
 
