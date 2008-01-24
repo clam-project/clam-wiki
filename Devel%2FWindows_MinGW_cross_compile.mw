@@ -8,7 +8,7 @@ Supported:
 * Building Network Editor and Annotator installers ([http://clam.iua.upf.edu/download/win/svnsnapshots/ here the results])
 Not suported yet (meaning 'any help is welcome'):
 * Packaging precompiled CLAM library development files (although this [http://clam.iua.upf.edu/download/win/mingw32-spike/clam-devel-mingw-1.1.1~svn10446.zip old and unofficial package] could help)
-* Building some dependencies: xerces (libxml alternative works but doesn't pass B2B functional tests because XML's differ)...
+* Building some dependencies: xerces (libxml alternative works but fails xml based B2B tests because XML's differ)...
 * Building SMSTools
 * Passing unit tests
 * Passing functional tests
