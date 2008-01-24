@@ -200,6 +200,45 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 
 [[Image:NetTutorial-SpectralTransformation.png|500px|center]]
 
+== Building Interfaces with the Prototyper ==
+
+As we saw at the beginning of the tutorial,
+the Prototyper is a utility that wraps a network definition
+under an interface to build an stand alone application.
+The interface can be prototyped visually so 
+'''no compilation, and no programming is involved.'''
+
+Interfaces can be designed with a nice tool, the Qt Designer, 
+which comes with the QT library by Trolltech.
+Designer is used to layout graphical elements (widgets) on an interface.
+Those includes some widgets that CLAM provides to visualize sound 
+related data and control the processing.
+
+Widget names are used to relate the processing and the interface elements. 
+At the NetworkEditor, you can use contextual menus for ports and controls  to get the binding names for the widgets you want to attach.
+
+Name bindings:
+
+* InControl__<em>ProcessingName</em>__<em>InControlName</em>:
+:  For sliders and knobs, sends integer numbers to the in control
+* InControlFloat__<em>ProcessingName</em>__<em>InControlName</em>
+:  The same as the previous one but sends double by dividing by 100
+* InControlBool__<em>Processing</em>__<em>Control</em>: 
+:  For check buttons (Radio buttons, check boxes or 
+* AudoFile__<em>ProcessingName</em>:
+:  Binds buttons with MonoAudioFileReaders, on click opens a file selection dialog.
+* PlayButton:
+:  Starts the network on click
+* StopButton:
+:  Stops the network on click
+* BackendIndicator
+:  To be bound to a Label. It adds a indicator of which backend is used.
+* PlaybackIndicator
+:  To be bound to a Label. It adds a indicator that says whether the network is playing.
+
+When adding the names, you must change any space into a triple underline.
+
+
 
 == We are still updating this tutorial to the 0.4.0 version ==
 
@@ -214,6 +253,58 @@ Now that you have a working knowledge of the NetworkEditor the best you can do i
 
 
 [[Image:SMSFreqShiftGainsPlots.png|500px|center]]
+
+
+
+
+To see its potential let's start opening with a example network named SMSmess.xml.
+
+[[Image:Prototyper-DesigningTheNetwork.png|500px|center]]
+
+
+What it does is mainly an SMS transfomation called PitchShift which shifts the Sinusoidal
+component of the sound and keeps the Residual component. 
+Independent gains are applied to both components.
+
+There is also a prepared interface for this example network. 
+It is named SMSmess.ui and it is placed on the examples folder.
+Open it with the Qt Designer.
+
+
+[[Image:Prototyper-Designer.png|500px|center|Qt Designer opening the example interface]]
+
+Notice that there is a '''CLAM Plots''' tab on the widget toolbox on the left.
+If you don't see that tab or if you don't se the black squares on the dialog, 
+you are having problems with the CLAM qt plugins.
+The CLAM Plots toolbox contains widgets that display CLAM objects such as
+audio, spectrums, spectral peaks...
+
+
+In order the Prototyper utility to know which widgets must to be connected to the network
+you must name the widgets like the examples above:
+
+For the port monitors <tt>OutPort__<em>ProcessingName</em>__<em>PortName</em></tt>.
+Be carefull, elements are separated with <b>double</b> underlines here!
+
+
+[[Image:Prototyper-BindingPortMonitor.png|500px|center|Binding a port monitor to an output port]]
+
+Similar names goes to knobs and sliders: <tt>InControl__<em>ProcessingName</em>__<em>ControlName</em></tt>
+
+[[Image:Prototyper-BindingInputControl.png|500px|center|Binding a slider to an input control in the network]]
+
+You should name a button <tt>PlayButton</tt> 
+and you may name other button <tt>StopButton</tt>.
+The prototyper will use them to control the network playback.
+
+Once you are done with the interface you can save it with the same base name 
+and in the same location than the network editor.
+Of course, this is the case of the example.
+Then, you can drag the SMSmess.xml file to the prototyper icon 
+and you will see the application working:
+
+[[Image:Prototyper-Running.png|500px|center|Running the application]]
+
 
 == Building Interfaces with the Prototyper ==
 
