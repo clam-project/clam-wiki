@@ -256,6 +256,7 @@ Let's reproduce the same interface by our own using Qt Designer.
 
 * Open the designer and create a new dialog without buttons.
 * Drag and drop three push buttons from the widget box to the dialog.
+[[Image:NetTutorial-PushButtonsDropped.png|Buttons dropped to the dialog|center]]
 * Double click each one to change the text to 'Play', 'Stop' and 'Close'
 * Click on the dialog to clear the selection and press the 'Lay Out Vertically' icon [[Image:Icon-LayOutVertically.png]] to have the buttons stacked.
 * You can try the interface (without network) by pressing Ctrl-R
