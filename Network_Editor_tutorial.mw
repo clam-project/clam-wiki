@@ -248,7 +248,7 @@ If we start the network with the Prototyper, we'll get a simple interface that i
 
 TODO: Screenshot for the default prototype
 
-== Building the default interface ourselves ==
+== Rebuilding the default interface ourselves ==
 
 Let's reproduce the same interface by our own.
 
