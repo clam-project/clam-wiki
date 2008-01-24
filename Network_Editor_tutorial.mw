@@ -1,4 +1,4 @@
-CLAM's visual builder is known as the NetworkEditor.
+CLAM visual builder's name is NetworkEditor.
 It is a patching tool to graphically connect processing units in a ''network''
 that you can use as the processing core of you application.
 CLAM also provides Qt Designer integration,
