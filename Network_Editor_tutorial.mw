@@ -281,6 +281,24 @@ At this point we have the same functionality that the default prototyper interfa
 
 == Visualizing data ==
 
+* Drag an Oscilloscope from the widget box. Resize the dialog if it has become just a line.
+
+[[Image:NETutorial-OscilloscopeInserted.png]]
+
+* Open the network with the NetworkEditor if you closed it.
+* Right-click the output port of the MonoAudioFilePlayer and choose 'Copy Prototyper Name'.
+* This puts the binding name on the clipboard.
+* Go back and change the name of the Oscilloscope. Delete the old name and paste the clipboard content.
+* Save and run the Prototyper. You will see the sounding wave instead of the static sinusoid that is shown on the designer.
+
+[[Image:NETutorial-OscilloscopePlaying.png]]
+
+Now let's tweak the oscilloscope properties to make it look nicer.
+Use the property editor to set somethin similar to this:
+* autofillBackground: true
+* styleSheet: background-color: #aff;
+* lineColor: just pick one by clicking on the color value
+
 == We are still updating this tutorial to the 0.4.0 version ==
 
 '''The rest of this tutorial still refers to the 0.3.X versions of the Network Editor. It is expected to be updated in short to the 0.4.X series. Although the interface has changes, you could still follow it as concepts are the same.'''
