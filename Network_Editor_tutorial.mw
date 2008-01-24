@@ -289,9 +289,9 @@ At this point we have the same functionality that the default prototyper interfa
 * Select both Play and Stop buttons and click 'Layout Horizontally' [[Image:Icon-LayOutHorizontally.png]]
 * A red box is surrounding them now. Do the same with the two labels.
 * Click again on the dialog background and click 'Layout Vertically' [[Image:Icon-LayOutVertically.png]] to set the top level layout.
+[[Image:NetTutorial-ButtonsRelayouts.png|300px|center]]
 * You can combine such layouts to get complex designs.
-* Splitters [[Image:Icon-VerticalSplitter.png]][[Image:Icon-HorizontalSplitter.png]] provide a similar way of stacking but enable the user to change the size proportions.
-[[Image:NetTutorial-ButtonsRelayouts.png|200px|center]]
+* Splitters [[Image:Icon-VerticalSplitter.png]][[Image:Icon-HorizontalSplitter.png]] provide a similar way of stacking but they enable the user to change the size proportions.
 
 == Visualizing data ==
 
