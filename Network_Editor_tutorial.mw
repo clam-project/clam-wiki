@@ -313,12 +313,12 @@ Use the property editor to set somethin similar to this:
 * lineColor: just pick one by clicking on the color value
 [[Image:NetTutorial-OscilloscopeWithColors.png|400px|center]]
 
-== TODO: Adding a file chooser ==
+== Adding a file chooser ==
 
 For sure we are feed up of listening the same song again and again.
 Let's add a button to change the music.
 * Drag a PushButton with text 'Open Audio File'.
-* Let's name it <tt>AudioFile__<em>MonoAudioFileIn</em></tt> in order to bind with the file reader processing.
+* Let's name it <tt>AudioFile___<em>MonoAudioFileIn</em></tt> in order to bind with the file reader processing <em>MonoAudioFileIn</em> (use the proper name if your processing name is different).
 
 == TODO: Adding a volume control ==
 
