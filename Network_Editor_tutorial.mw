@@ -309,7 +309,7 @@ Use the property editor to set somethin similar to this:
 * autofillBackground: true
 * styleSheet: background-color: #aff;
 * lineColor: just pick one by clicking on the color value
-[[Image:NETutorial-OscilloscopeWithColors.png|200px|center]]
+[[Image:NetTutorial-OscilloscopeWithColors.png|200px|center]]
 
 == TODO: Adding a file chooser ==
 
