@@ -279,6 +279,7 @@ Let's reproduce the same interface by our own using Qt Designer.
 * If we save it and launch the prototyper again, we'll see that Prototyper fills the label with the playback status.
 [[Image:NetTutorial-PlaybackIndicator.png|200px|center]]
 * A different label but named 'BackendIndicator' would show the audio backend (Jack, PortAudio, VST...) in a similar fashion.
+[[Image:NetTutorial-BackendIndicatorLabel.png|200px|center]]
 
 == Controlling the layout ==
 
