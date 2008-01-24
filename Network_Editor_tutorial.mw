@@ -261,18 +261,22 @@ Let's reproduce the same interface by our own using Qt Designer.
 * Click on the dialog to clear the selection and press the 'Lay Out Vertically' icon [[Image:Icon-LayOutVertically.png]] to have the buttons stacked.
 * Resize the dialog. Notice that the layout makes the widgets to be organized properly whatever the dialog size.
 [[Image:NetTutorial-ButtonsTextAndLayout.png|300px|center]]
-* You can try the interface (without processing network) by pressing Ctrl-R
 * Let's add some behaviour. Press the 'Edit Signal/Slots' button [[Image:Icon-EditSignalSlot.png]] to get into that edition mode.
 * Drag a connection from the 'Close' button to the dialog background.
-* A dialog will pop up. Select the 'clicked()' signal to the 'close()' slot and accept.
+* A dialog will pop up. Select the 'clicked()' signal to the 'accept()' slot and press 'Ok'.
 [[Image:NetTutorial-CloseSigSlotConnection.png|600px|center]]
-* This way we are saying that whenever the 'Close' button is clicked the dialog will be closed. Go back to the 'Edit widgets' mode [[Image:Icon-EditWidgets.png]].
-* Save the dialog in the same folder than the network as <tt>MyFilePlayer.ui</tt>. Note that the file names match but the extension.
-* Now call the Prototyper and choose the network again. Our new interface is shown now. Perfect but we miss the Play and Stop functionalities. Let's add them.
+* This way we are saying that whenever the 'Close' button is clicked the dialog will be accepted (closed without error).
+* Go back to the 'Edit widgets' mode [[Image:Icon-EditWidgets.png]].
+* To try the connection, launch a preview by pressing Ctrl-R.
+* The preview doesn't binds a network so no sound will play.
+* To run it with a network inside save the dialog in the same folder than the network as <tt>MyFilePlayer.ui</tt>. Note that the file names match but the extension.
+* Now call the Prototyper and choose the network again. It should show our new interface but now the audio is playing. 
+The problem now is that play and stop buttons are useless. Let's connect them!
 * Right click the Play button and choose 'Change objectName...' and name it 'PlayButton'.
 * Do the same with the Stop button and name it 'StopButton'.
 * Save and launch again the prototyper. The Prototyper has identified the buttons names and now we can control the playback with them. Great!
 * Now, the only way to know whether the network is playing or not is by listening. We can drop a Label into the dialog and name it 'PlaybackIndicator'. If we save it and launch the prototyper again, we'll see that Prototyper fills the label with the playback status.
+[[Image:NetTutorial-PlaybackIndicator.png|600px|center]]
 * A different label but named 'BackendIndicator' would show the audio backend (Jack, PortAudio, VST...) in a similar fashion.
 
 == Controlling the layout ==
