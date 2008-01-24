@@ -238,7 +238,7 @@ Name bindings:
 
 When adding the names, you must change any space into a triple underline.
 
-== Default interface ==
+== Getting the default interface ==
 
 Let's take a simple file player network such as the one we had at the first steps of the tutorial. The one with a MonoAudioFilePlayer and an AudioSink. Assure that the audio file is properly configured and save the network as <tt>MyFilePlayer.clamnetwork</tt>.
 
@@ -270,7 +270,10 @@ Let's reproduce the same interface by our own.
 
 At this point we have the same functionality that the default prototyper interface provides. As the interface is gonna get harder i recommand you to play a little with layouts before moving forward.
 
-Break the dialog layout [Img:Icon-BreakLayOut.png]
+* Break the dialog layout [Img:Icon-BreakLayOut.png]
+* Select a pair of buttons and click 'Layout Horizontally' [Img:Icon-LayOutHorizontally.png]
+* A red box is surrounding them now. Click again on the dialog and click 'Layout Vertically' [Img:Icon-LayOutVertically.png] to set the top level layout.
+* You can combine such layouts to get complex designs. Splitters provide a similar way of stacking but enable the user to change the size proportions.
 
 == Visualizing data ==
 
