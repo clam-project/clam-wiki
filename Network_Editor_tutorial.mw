@@ -253,16 +253,26 @@ Let's reproduce the same interface by our own.
 * Open the designer and create a new dialog without buttons.
 * Drag and drop three push buttons from the widget box to the dialog.
 * Double click each one to change the text to 'Play', 'Stop' and 'Close'
-* Click on the dialog to clear the selection and press the 'Lay Out Horizontally' icon ([Img:Icon-LayOutHorizontally]).
+* Click on the dialog to clear the selection and press the 'Lay Out Vertically' icon [Img:Icon-LayOutVertically.png] to have the buttons stacked.
 * You can try the interface (without network) by pressing Ctrl-R
 * Resize the dialog: the lay out makes the widgets to be organized properly whatever the dialog size
-* Let's add some behaviour. Press the 'Edit Signal/Slots' button ([Img:Icon-EditSignalSlot]) to get into that edition mode.
+* Let's add some behaviour. Press the 'Edit Signal/Slots' button [Img:Icon-EditSignalSlot.png] to get into that edition mode.
 * Drag a connection from the stop button to the dialog background.
 * A dialog will pop up. Select the 'clicked()' signal to the 'close()' slot and accept.
-* This way we are saying that whenever the 'Close' button is clicked the dialog will be closed. Go back to the 'Edit widgets' mode [Img:Icon-EditWidgets].
+* This way we are saying that whenever the 'Close' button is clicked the dialog will be closed. Go back to the 'Edit widgets' mode [Img:Icon-EditWidgets.png].
 * Save the dialog in the same folder than the network as <tt>MyFilePlayer.ui</tt>. Note that the file names match but the extension.
 * Now call the Prototyper and choose the network again. Our new interface is shown now. Perfect but we miss the Play and Stop functionalities. Let's add them.
-* Right click the Play button and choose 'Change objectName...'
+* Right click the Play button and choose 'Change objectName...' and name it 'PlayButton'.
+* Do the same with the Stop button and name it 'StopButton'.
+* Save and launch again the prototyper. The Prototyper has identified the buttons names and now we can control the playback with them. Great!
+* Now, the only way to know whether the network is playing or not is by listening. We can drop a Label into the dialog and name it 'PlaybackIndicator'. If we save it and launch the prototyper again, we'll see that Prototyper fills the label with the playback status.
+* A different label but named 'BackendIndicator' would show the audio backend (Jack, PortAudio, VST...) in a similar fashion.
+
+At this point we have the same functionality that the default prototyper interface provides. As the interface is gonna get harder i recommand you to play a little with layouts before moving forward.
+
+Break the dialog layout [Img:Icon-BreakLayOut.png]
+
+== Visualizing data ==
 
 == We are still updating this tutorial to the 0.4.0 version ==
 
