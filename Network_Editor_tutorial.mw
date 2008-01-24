@@ -297,6 +297,8 @@ At this point we have the same functionality that the default prototyper interfa
 
 * Drag an Oscilloscope from the widget box. Resize the dialog if it has become just a line.
 [[Image:NetTutorial-OscilloscopeInserted.png|400px|center]]
+* As we want the oscillator to expand vertically but not the indicator labels, we change the SizePolicy attribute of the labels.
+[[Image:NetTutorial-FixingIndicatorsVSize.png|400px|center]]
 * Open the network with the NetworkEditor if you closed it.
 * Right-click the output port of the MonoAudioFilePlayer and choose 'Copy Prototyper Name'. This puts the binding name on the clipboard.
 [[Image:NetTutorial-CopyingPortName.png|400px|center]]
