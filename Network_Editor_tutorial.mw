@@ -200,7 +200,7 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 
 [[Image:NetTutorial-SpectralTransformation.png|500px|center]]
 
-== Building Interfaces with the Prototyper ==
+= Building Interfaces with the Prototyper =
 
 As we saw at the beginning of the tutorial,
 the Prototyper is a utility that wraps a network definition
@@ -237,6 +237,32 @@ Name bindings:
 :  To be bound to a Label. It adds a indicator that says whether the network is playing.
 
 When adding the names, you must change any space into a triple underline.
+
+== Default interface ==
+
+Let's take a simple file player network such as the one we had at the first steps of the tutorial. The one with a MonoAudioFilePlayer and an AudioSink. Assure that the audio file is properly configured and save the network as <tt>MyFilePlayer.clamnetwork</tt>.
+
+TODO: Screenshot for the network
+
+If we start the network with the Prototyper, we'll get a simple interface that is provided by default.
+
+TODO: Screenshot for the default prototype
+
+Let's reproduce the same interface by our own.
+
+* Open the designer and create a new dialog without buttons.
+* Drag and drop three push buttons from the widget box to the dialog.
+* Double click each one to change the text to 'Play', 'Stop' and 'Close'
+* Click on the dialog to clear the selection and press the 'Lay Out Horizontally' icon ([Img:Icon-LayOutHorizontally]).
+* You can try the interface (without network) by pressing Ctrl-R
+* Resize the dialog: the lay out makes the widgets to be organized properly whatever the dialog size
+* Let's add some behaviour. Press the 'Edit Signal/Slots' button ([Img:Icon-EditSignalSlot]) to get into that edition mode.
+* Drag a connection from the stop button to the dialog background.
+* A dialog will pop up. Select the 'clicked()' signal to the 'close()' slot and accept.
+* This way we are saying that whenever the 'Close' button is clicked the dialog will be closed. Go back to the 'Edit widgets' mode [Img:Icon-EditWidgets].
+* Save the dialog in the same folder than the network as <tt>MyFilePlayer.ui</tt>. Note that the file names match but the extension.
+* Now call the Prototyper and choose the network again. Our new interface is shown now. Perfect but we miss the Play and Stop functionalities. Let's add them.
+* Right click the Play button and choose 'Change objectName...'
 
 == We are still updating this tutorial to the 0.4.0 version ==
 
