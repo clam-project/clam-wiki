@@ -263,8 +263,9 @@ Let's reproduce the same interface by our own using Qt Designer.
 [[Image:NetTutorial-ButtonsTextAndLayout.png|300px|center]]
 * You can try the interface (without processing network) by pressing Ctrl-R
 * Let's add some behaviour. Press the 'Edit Signal/Slots' button [[Image:Icon-EditSignalSlot.png]] to get into that edition mode.
-* Drag a connection from the stop button to the dialog background.
+* Drag a connection from the 'Close' button to the dialog background.
 * A dialog will pop up. Select the 'clicked()' signal to the 'close()' slot and accept.
+[[Image:NetTutorial-CloseSigSlotConnection.png|300px|center]]
 * This way we are saying that whenever the 'Close' button is clicked the dialog will be closed. Go back to the 'Edit widgets' mode [[Image:Icon-EditWidgets.png]].
 * Save the dialog in the same folder than the network as <tt>MyFilePlayer.ui</tt>. Note that the file names match but the extension.
 * Now call the Prototyper and choose the network again. Our new interface is shown now. Perfect but we miss the Play and Stop functionalities. Let's add them.
