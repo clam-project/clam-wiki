@@ -322,6 +322,13 @@ Let's add a button to change the music.
 
 == TODO: Adding a volume control ==
 
+
+[[Image:NetTutorial-InsertedAmplifier.png|500px|center]]
+
+[[Image:NetTutorial-SliderParameters.png|500px|center]]
+
+[[Image:NetTutorial-HoveringControlBounds.png|500px|center]]
+
 = Algorithms =
 
 == TODO: Spectral Modeling Synthesis ==
