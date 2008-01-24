@@ -317,7 +317,7 @@ Use the property editor to set somethin similar to this:
 
 For sure we are feed up of listening the same song again and again.
 Let's add a button to change the music.
-* Drag a PushButton with text 'Open'.
+* Drag a PushButton with text 'Open Audio File'.
 * Let's name it <tt>AudioFile__<em>MonoAudioFileIn</em></tt> in order to bind with the file reader processing.
 
 == TODO: Adding a volume control ==
