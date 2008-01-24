@@ -238,7 +238,7 @@ Name bindings:
 
 When adding the names, you must change any space into a triple underline.
 
-== Getting the default interface ==
+== Using prototyper with the default interface ==
 
 Let's take a simple file player network such as the one we had at the first steps of the tutorial. The one with a MonoAudioFilePlayer and an AudioSink. Assure that the audio file is properly configured and save the network as <tt>MyFilePlayer.clamnetwork</tt>.
 
@@ -246,7 +246,7 @@ TODO: Screenshot for the network
 
 If we start the network with the Prototyper, we'll get a simple interface that is provided by default.
 
-TODO: Screenshot for the default prototype
+[[Image:NetEditQt4-PrototyperIndicators.png|Prototyper shows this default interface when you still have not designed one|center]]
 
 == Rebuilding the default interface ourselves ==
 
