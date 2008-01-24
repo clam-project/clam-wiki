@@ -248,6 +248,8 @@ If we start the network with the Prototyper, we'll get a simple interface that i
 
 TODO: Screenshot for the default prototype
 
+== Building the default interface ourselves ==
+
 Let's reproduce the same interface by our own.
 
 * Open the designer and create a new dialog without buttons.
@@ -267,6 +269,8 @@ Let's reproduce the same interface by our own.
 * Save and launch again the prototyper. The Prototyper has identified the buttons names and now we can control the playback with them. Great!
 * Now, the only way to know whether the network is playing or not is by listening. We can drop a Label into the dialog and name it 'PlaybackIndicator'. If we save it and launch the prototyper again, we'll see that Prototyper fills the label with the playback status.
 * A different label but named 'BackendIndicator' would show the audio backend (Jack, PortAudio, VST...) in a similar fashion.
+
+== Controlling the layout ==
 
 At this point we have the same functionality that the default prototyper interface provides. As the interface is gonna get harder i recommand you to play a little with layouts before moving forward.
 
