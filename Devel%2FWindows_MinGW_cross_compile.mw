@@ -285,7 +285,7 @@ A precompiled mingw binary is available [ftp://ftp.fftw.org/pub/fftw/fftw-3.1.2-
 It is not required but apply this patch to have a pkg-config file for libmad:
 http://www.mars.org/mailman/public/mad-dev/2004-August/001066.html
 
- export $MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever  
+ export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever  
  cd $MINGWSANDBOX
  cd download
  wget http://kent.dl.sourceforge.net/sourceforge/mad/libmad-0.15.1b.tar.gz
