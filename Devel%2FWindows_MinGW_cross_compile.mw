@@ -282,51 +282,17 @@ A precompiled mingw binary is available [ftp://ftp.fftw.org/pub/fftw/fftw-3.1.2-
 
 == LibMad ==
 
-With previously compiled binary of libmad didn't work for mingw so i recompiled it.
+It is not required but apply this patch to have a pkg-config file for libmad:
+http://www.mars.org/mailman/public/mad-dev/2004-August/001066.html
 
-http://kent.dl.sourceforge.net/sourceforge/mad/libmad-0.15.1b.tar.gz
-
-The stardard distribution supports mingw crosscompiling.
-
- CC=i586-mingw32msvc-gcc ./configure  --host=mingw32
-
-use this SConstruct
-
-<pre>
-import glob
-env=Environment()
-env.Tool('crossmingw', toolpath=['../clam/CLAM/scons/sconstools'])
-env.AppendUnique(CPPPATH=[
-    ".",
-    ])
-env.AppendUnique(CPPDEFINES=[
-    "HAVE_CONFIG_H",
-    "FPM_INTEL",
-    "ASO_ZEROCHECK",
-    ])
-env.AppendUnique(CCFLAGS=[
-    "-Wall",
-    "-g",
-    "-O",
-    "-fforce-mem",
-    "-fforce-addr",
-    "-fthread-jumps",
-    "-fcse-follow-jumps",
-    "-fcse-skip-blocks",
-    "-fexpensive-optimizations",
-    "-fregmove",
-    "-fschedule-insns2",
-    "-fstrength-reduce",
-    ])
-sources = glob.glob("*.c")
-sources.remove("minimad.c")
-env.Library("libmad",sources)
-</pre>
-
- scons
- mkdir -p ../libmad/{lib,include}
- cp mad.h ../libmad/include
- cp libmad.lib ../libmad/lib
+ export $MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever  
+ cd $MINGWSANDBOX
+ cd download
+ wget http://kent.dl.sourceforge.net/sourceforge/mad/libmad-0.15.1b.tar.gz
+ tar xvfz libmad-0.15.1b.tar.gz
+ cd libmad-0.15.1b
+ ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/libmad
+ make install
 
 == id3lib ==
 
