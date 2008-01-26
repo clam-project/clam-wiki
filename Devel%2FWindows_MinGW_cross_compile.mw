@@ -415,7 +415,7 @@ But i found some precompiled binaries:
  cd glob/
  tar xvfj ../glob2_required_libs_mingw.tar.bz2
  cd ../..
- mkdir -p oggvorbis/{lib,include,bin}
+ mkdir -p oggvorbis/{lib,lib/pkgconfig,include,bin}
  cp download/glob/lib/*ogg* oggvorbis/lib/
  cp download/glob/lib/*vorbis* oggvorbis/lib/
  cp -r download/glob/include/ogg/ oggvorbis/include/
@@ -424,7 +424,7 @@ But i found some precompiled binaries:
  cp download/glob/bin/*ogg* oggvorbis/bin/
  cp download/glob/bin/*vorbis* oggvorbis/bin/
  cp download/glob/bin/*vorbis* dlls/
- cp -r download/glob/lib/pkgconfig/ oggvorbis/lib
+ cp download/glob/lib/pkgconfig/{ogg,vorbis}* oggvorbis/lib/pkgconfig
 
 == pthreads ==
 
