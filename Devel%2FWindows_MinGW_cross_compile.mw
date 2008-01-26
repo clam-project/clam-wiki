@@ -292,7 +292,7 @@ http://www.mars.org/mailman/public/mad-dev/2004-August/001066.html
  wget 'http://osdir.com/ml/audio.mad.devel/2004-08/txtRb6wKMmabF.txt' -O libmad-0.15.1b-pkgconfig.patch
  tar xvfz libmad-0.15.1b.tar.gz
  cd libmad-0.15.1b
- patch -p0 < ../libmad-0.15.1b-pkgconfig.patch
+ patch -p1 < ../libmad-0.15.1b-pkgconfig.patch
  ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/libmad
  make install
 
