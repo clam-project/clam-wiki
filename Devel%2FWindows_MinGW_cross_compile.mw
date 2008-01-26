@@ -282,9 +282,6 @@ A precompiled mingw binary is available [ftp://ftp.fftw.org/pub/fftw/fftw-3.1.2-
 
 == LibMad ==
 
-It is not required but apply this patch to have a pkg-config file for libmad:
-http://www.mars.org/mailman/public/mad-dev/2004-August/001066.html
-
  export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever  
  cd $MINGWSANDBOX
  cd download
@@ -298,6 +295,8 @@ http://www.mars.org/mailman/public/mad-dev/2004-August/001066.html
  autoconf
  ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/libmad
  make install
+
+The patch is to create a pkg-config file. We are not using it but it will be good to have in the future. See http://www.mars.org/mailman/public/mad-dev/2004-August/001066.html
 
 == id3lib ==
 
