@@ -508,7 +508,7 @@ I also found some precompiled binaries:
  unzip download/pthreads-w32-2-8-0-release.exe Pre-built.2/*
  mv Pre-built.2 pthreads
  cp pthreads/lib/pthreadGCE2.dll dlls/
-
+ ln -s libpthreadGC2.a pthreads/lib/libpthread.a
 
 On some scenarios this seems not to work. Try this:
 
@@ -521,6 +521,7 @@ On some scenarios this seems not to work. Try this:
  cp libpthreadGC2.a ../../pthreads/lib
  cp *.h ../../pthreads/include
  cp pthreadGC2.dll ../../dlls
+ ln -s libpthreadGC2.a pthreads/lib/libpthread.a
 
 == liblo ==
 
