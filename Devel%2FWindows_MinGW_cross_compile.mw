@@ -481,7 +481,7 @@ Apply this patch:
  ./autogen.sh  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local/  PKG_CONFIG_PATH=$MINGWSANDBOX/local/lib/pkgconfig --disable-shared --disable-xmms-plugin
  make install
 
-=== libspeex ===
+=== libspeex (not used in CLAM) ===
 
  cd $MINGWSANDBOX/downloads
  wget http://downloads.xiph.org/releases/speex/speex-1.0.5.tar.gz
