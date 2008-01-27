@@ -541,11 +541,10 @@ On some scenarios this seems not to work. Try this:
 == liblo ==
 
 Needed to compile the osc plugin.
+Assure you did all the steps with pthread in order to have a link named pthreads/lib/libpthread.a pointing to libpthreadGC2.a.
 
  export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever in your case
- cd $MINGWSANDBOX
- ln -s libpthreadGC2.a pthreads/lib/libpthread.a
- cd download
+ cd $MINGWSANDBOX/download
  wget 'http://downloads.sourceforge.net/liblo/liblo-0.24.tar.gz'
  tar xvfz liblo-0.24.tar.gz
  cd liblo-0.24
