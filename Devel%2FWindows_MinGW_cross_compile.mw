@@ -583,9 +583,10 @@ Execute it  with wine to install gtk and then:
 GTK adds the bin folder to the wine PATH, this is needed just for NSIS to find the dll's
  cp gtk/bin/*.dll dlls
 
-== libsamplerate ==
+== libsamplerate (not used in CLAM) ==
 
-'''Not a current CLAM dependency. Just an experiment'''
+This library is not a current CLAM dependency.
+This is just an experiment foreseeing an eventual use.
 
  export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever in your case
  cd $MINGWSANDBOX/download
