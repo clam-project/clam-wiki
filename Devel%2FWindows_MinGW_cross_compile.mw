@@ -599,7 +599,7 @@ GTK adds the bin folder to the wine PATH, this is needed just for NSIS to find t
  wget http://www.mega-nerd.com/SRC/libsamplerate-0.1.2.tar.gz
  tar xvfz libsamplerate-0.1.2.tar.gz
  cd libsamplerate-0.1.2
- PKG_CONFIG_PATH=$MINGWSANDBOX/local/lib/pkgconfig/ PKG_CONFIG='wine pkg-config' ./configure --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local CPPFLAGS=-I$MINGWSANDBOX/local/include/
+ ./configure --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local CPPFLAGS=-I$MINGWSANDBOX/local/include/ PKG_CONFIG_PATH=$MINGWSANDBOX/local/lib/pkgconfig/
  make install
 
 == NSIS ==
