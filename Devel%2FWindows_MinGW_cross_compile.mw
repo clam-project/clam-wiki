@@ -446,8 +446,16 @@ I didn't managed to crosscompile them my self
  tar xvfz flac-1.2.1.tar.gz
  tar xvfz speex-1.0.5.tar.gz
  cd  libogg-1.1.3
- ./autogen.sh  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/oggvorbis
+Edit configure.in after each
+ #include <sys/types.h>
+Append
+ #include <stdint.h>
+And continue
+ autoconf
+ ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/oggvorbis
+
 Here i get some weird 'no 16 int type in this platform'.
+
 
 But i found some precompiled binaries:
  cd download
