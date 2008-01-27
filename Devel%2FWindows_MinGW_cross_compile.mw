@@ -302,7 +302,7 @@ You can also crosscompile it:
  tar xvfz libmad-0.15.1b.tar.gz
  cd libmad-0.15.1b
  patch -p1 < ../libmad-0.15.1b-pkgconfig.patch
- autolocal
+ aclocal
  automake
  autoconf
  ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/libmad
