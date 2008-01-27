@@ -280,6 +280,12 @@ A precompiled mingw binary is available [ftp://ftp.fftw.org/pub/fftw/fftw-3.1.2-
  mv fftw3.h fftw3.f include
  cp lib/libfftw3-3.dll ../dlls/
 
+Trying to crosscompile it:
+ 
+ autoconf
+ ./configure --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local
+ make install
+
 == LibMad ==
 
  export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever  
