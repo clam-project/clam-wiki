@@ -548,6 +548,10 @@ Assure you did all the steps with pthread in order to have a link named pthreads
  wget 'http://downloads.sourceforge.net/liblo/liblo-0.24.tar.gz'
  tar xvfz liblo-0.24.tar.gz
  cd liblo-0.24
+Substitue in liblo.pc.in
+ - Libs: -L${libdir} -llo -lpthread
+ + Libs: @LDFLAGS@ -L${libdir} @LIBS@ -llo
+Then:
  ./autogen.sh  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/liblo LDFLAGS=-L$MINGWSANDBOX/pthreads/lib/ CPPFLAGS="-I$MINGWSANDBOX/pthreads/include/ -D_WIN32_WINNT=0x0501" LIBS=-lws2_32
  make install
 
