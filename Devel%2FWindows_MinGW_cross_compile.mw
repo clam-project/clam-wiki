@@ -280,7 +280,7 @@ A precompiled mingw binary is available [ftp://ftp.fftw.org/pub/fftw/fftw-3.1.2-
  mv fftw3.h fftw3.f include
  cp lib/libfftw3-3.dll ../dlls/
 
-Trying to crosscompile it:
+You can also crosscompile it:
  
  export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever in your case
  cd $MINGWSANDBOX
