@@ -568,7 +568,7 @@ Then:
  cvs -z3 -d:pserver:anonymous@cppunit.cvs.sourceforge.net:/cvsroot/cppunit co -P -d cppunit-cvs cppunit
  cd cppunit-cvs
  ./autogen.sh
- ./configure --host=i586-mingw32msvc --prefix=$HOME/CajitasDeArena/mingw/cppunit
+ ./configure --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local
  make
  make install
  cp src/cppunit/.libs/libcppunit-1-12-0.dll ../../dlls
