@@ -366,7 +366,12 @@ Then:
 
 
 Trying to crosscompile
+ export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever  
+ cd $MINGWSANDBOX
+ cd download
  wget http://ovh.dl.sourceforge.net/sourceforge/id3lib/id3lib-3.8.3.zip
+ unzip id3lib-3.8.3.zip
+ cd id3lib-3.8.3
 
 == libsndfile ==
 
