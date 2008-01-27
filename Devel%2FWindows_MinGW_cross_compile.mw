@@ -527,16 +527,16 @@ I also found some precompiled binaries for libogg and libvorbis:
 
 On some scenarios this seems not to work. Try this:
 
- cd download
+ cd $MINGWSANDBOX/download
  wget 'http://www.mirrorservice.org/sites/sourceware.org/pub/pthreads-win32/pthreads-w32-2-8-0-release.tar.gz'
  tar xvfz pthreads-w32-2-8-0-release.tar.gz
  cd pthreads-w32-2-8-0-release
  make CROSS=i586-mingw32msvc- GC-inlined
- mkdir -p ../../pthreads/{include,lib,bin}
- cp libpthreadGC2.a ../../pthreads/lib
- cp *.h ../../pthreads/include
- cp pthreadGC2.dll ../../dlls
- ln -s libpthreadGC2.a pthreads/lib/libpthread.a
+ mkdir -p $MINGWSANDBOX/local/{include,lib,bin}
+ cp libpthreadGC2.a $MINGWSANDBOX/local/lib
+ cp *.h $MINGWSANDBOX/local/include
+ cp pthreadGC2.dll $MINGWSANDBOX/local/bin
+ ln -s libpthreadGC2.a $MINGWSANDBOX/local/lib/libpthread.a
 
 == liblo ==
 
