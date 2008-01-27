@@ -450,12 +450,11 @@ Edit configure.in after each
  #include <sys/types.h>
 Append
  #include <stdint.h>
-And continue
+And continue:
  autoconf
  ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/oggvorbis
-
-Here i get some weird 'no 16 int type in this platform'.
-
+ make install
+ cd ../libvorbis-1.2.0
 
 But i found some precompiled binaries:
  cd download
