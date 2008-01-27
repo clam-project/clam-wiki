@@ -517,16 +517,6 @@ I also found some precompiled binaries for libogg and libvorbis:
 
 == pthreads ==
 
- cd download
- wget ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-2-8-0-release.exe
- cd ..
- unzip download/pthreads-w32-2-8-0-release.exe Pre-built.2/*
- mv Pre-built.2 pthreads
- cp pthreads/lib/pthreadGCE2.dll dlls/
- ln -s libpthreadGC2.a pthreads/lib/libpthread.a
-
-On some scenarios this seems not to work. Try this:
-
  cd $MINGWSANDBOX/download
  wget 'http://www.mirrorservice.org/sites/sourceware.org/pub/pthreads-win32/pthreads-w32-2-8-0-release.tar.gz'
  tar xvfz pthreads-w32-2-8-0-release.tar.gz
@@ -537,6 +527,8 @@ On some scenarios this seems not to work. Try this:
  cp *.h $MINGWSANDBOX/local/include
  cp pthreadGC2.dll $MINGWSANDBOX/local/bin
  ln -s libpthreadGC2.a $MINGWSANDBOX/local/lib/libpthread.a
+
+The last step is needed for libraries such as liblo that look for -lpthread
 
 == liblo ==
 
