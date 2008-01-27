@@ -479,7 +479,7 @@ Apply this patch:
  wget http://downloads.xiph.org/releases/speex/speex-1.0.5.tar.gz
  tar xvfz speex-1.0.5.tar.gz
  cd speex-1.0.5
- # currently working on that
+ # currently working on that, not needed for CLAM though
 
 
 I also found some precompiled binaries:
