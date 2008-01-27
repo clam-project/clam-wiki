@@ -595,6 +595,8 @@ GTK adds the bin folder to the wine PATH, this is needed just for NSIS to find t
 
 '''Not a current CLAM dependency. Just an experiment'''
 
+ export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever in your case
+ cd $MINGWSANDBOX/download
  cd downloads
  wget http://www.mega-nerd.com/SRC/libsamplerate-0.1.2.tar.gz
  tar xvfz libsamplerate-0.1.2.tar.gz
