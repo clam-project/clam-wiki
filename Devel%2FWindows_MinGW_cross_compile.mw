@@ -364,6 +364,10 @@ Then:
  cp id3lib.lib ../id3lib/lib/
  cp -r include ../id3lib/
 
+
+Trying to crosscompile
+ wget http://ovh.dl.sourceforge.net/sourceforge/id3lib/id3lib-3.8.3.zip
+
 == libsndfile ==
 
 Note that we couldn't get working the precompiled binary on its web.
