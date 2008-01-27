@@ -452,7 +452,7 @@ Append
  #include <stdint.h>
 And continue:
  autoconf
- ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local
+ ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local --disable-shared
  make install
  cd ../libvorbis-1.2.0
  ./autogen.sh  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local/ PKG_CONFIG_PATH=$MINGWSANDBOX/local/lib/pkgconfig --disable-shared
