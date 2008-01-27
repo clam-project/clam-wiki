@@ -291,7 +291,7 @@ Alternatively you can install a precompiled mingw binary:
  cp lib/libfftw3-3.dll $MINGWSANDBOX/local/bin
  cp fftw3.h fftw3.f $MINGWSANDBOX/local/include
 
-== LibMad ==
+== libmad ==
 
  export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever  
  cd $MINGWSANDBOX
