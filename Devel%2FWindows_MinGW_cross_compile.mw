@@ -457,6 +457,9 @@ And continue:
  cd ../libvorbis-1.2.0
  ./autogen.sh  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local/ PKG_CONFIG_PATH=$MINGWSANDBOX/local/lib/pkgconfig --disable-shared
  make install
+ cd ../flac-1.2.1
+ ./autogen.sh  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local/  PKG_CONFIG_PATH=$MINGWSANDBOX/local/lib/pkgconfig --disable-shared --disable-xmms-plugin
+ make install
 
 
 And i got stuck there but i found some precompiled binaries:
