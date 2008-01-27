@@ -305,7 +305,7 @@ You can also crosscompile it:
  aclocal
  automake
  autoconf
- ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/libmad
+ ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local
  make install
 
 The patch is to create a pkg-config file. We are not using it but it will be good to have in the future. See http://www.mars.org/mailman/public/mad-dev/2004-August/001066.html
