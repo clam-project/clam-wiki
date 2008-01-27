@@ -267,30 +267,29 @@ To test it just issue this command from the build/dev-cpp folder (change the wir
  i586-mingw32msvc-c++ test/patest_sine.c portaudio.dll -I include/
  ./a.exe
 
-== Crosscompiled FFTW3 ==
+== fftw3 ==
 
-A precompiled mingw binary is available [ftp://ftp.fftw.org/pub/fftw/fftw-3.1.2-dll.zip here].
-* Create a folder named 'fftw3', 'fftw3/lib' and 'fftw3/include'
-* Enter the directory and decompress inside it,
-* move the files to the proper directories
- mkdir -p fftw3/{lib,include} dlls
- cd fftw3
- unzip ../fftw-3.1.2-dll.zip
- mv *dll *def lib
- mv fftw3.h fftw3.f include
- cp lib/libfftw3-3.dll ../dlls/
-
-You can also crosscompile it:
- 
+You can crosscompile it:
  export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever in your case
- cd $MINGWSANDBOX
- cd download
+ cd $MINGWSANDBOX/download
  wget http://www.fftw.org/fftw-3.1.2.tar.gz
  tar xvfz fftw-3.1.2.tar.gz
  cd fftw-3.1.2
  autoconf
  ./configure --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local
  make install
+
+Alternatively you can install a precompiled mingw binary: 
+ export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever in your case
+ cd $MINGWSANDBOX/download
+ wget ftp://ftp.fftw.org/pub/fftw/fftw-3.1.2-dll.zip
+ mkdir fftw3-bin
+ cd fftw3-bin
+ unzip fftw-3.1.2-dll.zip
+ mkdir -p $MINGWSANDBOX/local/{lib,include,bin}
+ cp *dll *def $MINGWSANDBOX/local/lib
+ cp lib/libfftw3-3.dll $MINGWSANDBOX/local/bin
+ cp fftw3.h fftw3.f $MINGWSANDBOX/local/include
 
 == LibMad ==
 
