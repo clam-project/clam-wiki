@@ -157,13 +157,12 @@ ${BIN} : $(OBJS)
 
 === DirectX ===
 
-* Download the devpak for DirectX 9 from http://devpaks.org/details.php?devpak=136
-* Unzip de file as it were a tar.bz file
- $ tar xvfz DirectX90c.DevPackage
-* move and rename the DirectX90c folder as directx in the sandbox
- $ mv DirectX90c ../directx
-* You may need to remove some of trailing directories the tarbal left there.
- $ rmdir DirectX90c\\* 
+ export MINGWSANDBOX=~/CajitasDeArena/mingw
+ cd $MINGWSANDBOX/download
+ wget http://www.g-productions.net/files/devpak/DirectX90c.DevPak
+ tar xvfj DirectX90c.DevPak
+ rmdir DirectX90c\\*  # To delete some created windows style dirs
+ mv DirectX90c ../directx
 
 
 '''Deprecated procedure for older version directx 8'''
