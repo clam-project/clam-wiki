@@ -459,7 +459,7 @@ And continue:
  ./autogen.sh  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local/ PKG_CONFIG_PATH=$MINGWSANDBOX/local/lib/pkgconfig --disable-shared
  make install
 
-=== libflac ===
+=== libflac (not used in CLAM) ===
 
  cd $MINGWSANDBOX/downloads
  wget http://downloads.xiph.org/releases/flac/flac-1.2.1.tar.gz
