@@ -452,11 +452,14 @@ Append
  #include <stdint.h>
 And continue:
  autoconf
- ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/oggvorbis
+ ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local
  make install
  cd ../libvorbis-1.2.0
+ ./autogen.sh  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local/ PKG_CONFIG_PATH=$MINGWSANDBOX/local/lib/pkgconfig --disable-shared
+ make install
 
-But i found some precompiled binaries:
+
+And i got stuck there but i found some precompiled binaries:
  cd download
  wget http://globulation2.org/dev/glob2_required_libs_mingw.tar.bz2
  mkdir glob
