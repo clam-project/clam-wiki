@@ -183,7 +183,7 @@ a directory named 'directx' and unzip there.
 
 Once the dependencies are available let's compile portaudio.
 
- wget -c http://www.portaudio.com/archives/pa_snapshot_v19.tar.gz
+ wget -c http://www.portaudio.com/archives/pa_stable_v19_061121.tar.gz
  tar xvfz pa_snapshot_v19.tar.gz
  cd portaudio
  cat > SConstruct.crossmingw
