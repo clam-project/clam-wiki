@@ -11,6 +11,7 @@ Supported:
 
 
 Not suported yet (meaning 'any help is welcome'):
+* Make the precompiled development package to compile apps in native windows.
 * Building some dependencies:
 ** xerces (libxml alternative works but fails xml based B2B tests because XML's differ)
 ** ...
