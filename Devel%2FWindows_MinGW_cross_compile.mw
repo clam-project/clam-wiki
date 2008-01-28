@@ -310,6 +310,37 @@ The patch is to create a pkg-config file. We are not using it but it will be goo
 
 == id3lib ==
 
+Trying to crosscompile
+ export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever  
+ cd $MINGWSANDBOX
+ cd download
+ wget http://ovh.dl.sourceforge.net/sourceforge/id3lib/id3lib-3.8.3.zip
+ unzip id3lib-3.8.3.zip
+ cd id3lib-3.8.3
+
+i had to comment out some lines on the configure.in (line 251)
+
+ C_CHECK_FUNCS(mkstemp)
+ #AC_CHECK_FUNCS(
+ #  truncate                      \
+ #  ,,AC_MSG_ERROR([Missing a vital function for id3lib])
+ #)
+ 
+ dnl Checks for typedefs, structures, and compiler characteristics.
+
+Edit include/id3/globals.h line 44
+ < #ifdef WIN32
+ --
+ > #ifdef __MSVC_VER
+
+And then follow:
+ autoconf
+ ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local  CPPFLAGS='-DID3LIB_LINKOPTION=1'
+ make install
+
+'''Old steps'''
+
+
 I tried those VC binaries and they don't work:
 
 http://kent.dl.sourceforge.net/sourceforge/id3lib/id3lib-3.8.3binaries.zip
@@ -361,35 +392,6 @@ Then:
  mkdir -p ../id3lib/{lib,include}
  cp id3lib.lib ../id3lib/lib/
  cp -r include ../id3lib/
-
-
-Trying to crosscompile
- export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever  
- cd $MINGWSANDBOX
- cd download
- wget http://ovh.dl.sourceforge.net/sourceforge/id3lib/id3lib-3.8.3.zip
- unzip id3lib-3.8.3.zip
- cd id3lib-3.8.3
-
-i had to comment out some lines on the configure.in (line 251)
-
- C_CHECK_FUNCS(mkstemp)
- #AC_CHECK_FUNCS(
- #  truncate                      \
- #  ,,AC_MSG_ERROR([Missing a vital function for id3lib])
- #)
- 
- dnl Checks for typedefs, structures, and compiler characteristics.
-
-Edit include/id3/globals.h line 44
- < #ifdef WIN32
- --
- > #ifdef __MSVC_VER
-
-And then follow:
- autoconf
- ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local
- make install
 
 == libsndfile ==
 
