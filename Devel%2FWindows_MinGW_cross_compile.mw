@@ -114,12 +114,9 @@ There are precompiled binaries are this page:
 http://ftp.gnome.org/pub/gnome/binaries/win32/gtkmm/2.10/gtkmm-win32-devel-2.10.11-1.exe
 
 Execute it  with wine to install gtk and then:
-
- mkdir -p gtk
- cp -r `winepath -u 'c:\\GTK`{include,lib,bin} gtk
-
-GTK adds the bin folder to the wine PATH, this is needed just for NSIS to find the dll's
- cp gtk/bin/*.dll dlls
+ export MINGWSANDBOX=~/CajitasDeArena/mingw # Or whatever in your system
+ mkdir -p $MINGWSANDBOX/local
+ cp -r `winepath -u 'c:\\GTK`{include,lib,bin} $MINGWSANDBOX/local
 
 == Crosscompiling PortAudio ==
 
