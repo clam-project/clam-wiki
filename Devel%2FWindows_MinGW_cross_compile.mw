@@ -257,10 +257,7 @@ env.SharedLibrary("portaudio",sources+["../asiosdk2/asiosdk2.a"])
 
 (requires crossming.py file from clam)
  wget http://iua-share.upf.edu/svn/clam/trunk/CLAM/scons/sconstools/crossmingw.py
- scons -f SConstruct.crossmingw
- mkdir lib
- cp portaudio.def portaudio.dll portaudio.lib lib
- cp portaudio.dll ../dlls 
+ scons -f SConstruct.crossmingw install prefix=$MINGWSANDBOX/local
 
 To test it just issue this command from the build/dev-cpp folder (change the wire example if you want).
 
