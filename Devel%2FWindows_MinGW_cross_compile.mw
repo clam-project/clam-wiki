@@ -192,7 +192,7 @@ Once the dependencies are available let's compile portaudio.
 #!/usr/bin/python
 import glob
 env=Environment()
-env.Tool('crossmingw', toolpath=['../clam/CLAM/scons/sconstools'])
+env.Tool('crossmingw', toolpath=['.'])
 
 env.AppendUnique(CPPPATH=[
 	'../asiosdk2',
@@ -256,6 +256,7 @@ env.SharedLibrary("portaudio",sources+["../asiosdk2/asiosdk2.a"])
 </pre>
 
 (requires crossming.py file from clam)
+ wget http://iua-share.upf.edu/svn/clam/trunk/CLAM/scons/sconstools/crossmingw.py
  scons -f SConstruct.crossmingw
  mkdir lib
  cp portaudio.def portaudio.dll portaudio.lib lib
