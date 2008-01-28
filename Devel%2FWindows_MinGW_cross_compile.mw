@@ -190,64 +190,73 @@ Once the dependencies are available let's compile portaudio.
 
 <pre>
 #!/usr/bin/python
-import glob
+import glob,os
 env=Environment()
 env.Tool('crossmingw', toolpath=['.'])
+prefix = ARGUMENTS.get('prefix','/usr/local')
 
 env.AppendUnique(CPPPATH=[
-	'../asiosdk2',
-	'../asiosdk2/common',
-	'../asiosdk2/host',
-	'../asiosdk2/host/pc',
-	'../directx/include',
-	'src/common',
- 	'src/os/win',
-	'include',
+        '../asiosdk2',
+        '../asiosdk2/common',
+        '../asiosdk2/host',
+        '../asiosdk2/host/pc',
+        '../directx/include',
+        'src/common',
+        'src/os/win',
+        'include',
 ])
 env.AppendUnique(LDFLAGS = [
-	'-fmessage-length=0',
-	'--add-stdcall-alias',
+        '-fmessage-length=0',
+        '--add-stdcall-alias',
 ])
 
 env.AppendUnique(LIBS=[
-	'kernel32',
-	'user32',
-	'gdi32',
-	'shell32',
-	'ole32',
-	'uuid',
-	'winmm',
-	'setupapi',
+        'kernel32',
+        'user32',
+        'gdi32',
+        'shell32',
+        'ole32',
+        'uuid',
+        'winmm',
+        'setupapi',
 ])
 
 env.AppendUnique(CXXFLAGS=['-O3','-s','-Wall'])
 env.AppendUnique(CPPDEFINES=[
-	('BUILDING_DLL','1'),
+        ('BUILDING_DLL','1'),
 ])
 
 sourcePaths = [
-	'src/common',
-	'src/os/win',
-	'src/hostapi/asio',
-	'src/hostapi/dsound',
-	'src/hostapi/wmme',
-	'src/hostapi/wasapi',
-	'src/hostapi/wdmks',
+        'src/common',
+        'src/os/win',
+        'src/hostapi/asio',
+        'src/hostapi/dsound',
+        'src/hostapi/wmme',
+        'src/hostapi/wasapi',
+        'src/hostapi/wdmks',
 ]
 blacklist = [
-	'src/os/win/pa_x86_plain_converters.c',
+        'src/os/win/pa_x86_plain_converters.c',
 ]
 sources=[]
 for sourcePath in sourcePaths :
-	sources += glob.glob(sourcePath+"/*.cpp")
-	sources += glob.glob(sourcePath+"/*.c")
+        sources += glob.glob(sourcePath+"/*.cpp")
+        sources += glob.glob(sourcePath+"/*.c")
 for blacksheep in blacklist:
-	sources.remove(blacksheep)
+        sources.remove(blacksheep)
 
-env.SharedLibrary("portaudio",sources+["../asiosdk2/asiosdk2.a"])
+lib=env.SharedLibrary("portaudio",sources+["../asiosdk2/asiosdk2.a"])
+install= [
+	env.Install(os.path.join(prefix,'lib'),lib),
+	env.Install(os.path.join(prefix,'bin'),lib[0]),
+	env.Install(os.path.join(prefix,'include'),glob.glob('include/*')),
+]
+
+env.Alias('install',install)
 </pre> 
 
-(Not needed in latest portaudio version) Change the file portaudio/src/hostapi/dsound/pa_win_ds_dynlink.h
+* Comment out the function PaUtil_DebugPrint in src/common/pa_front.c
+* Change the file portaudio/src/hostapi/dsound/pa_win_ds_dynlink.h
 <pre>
 63c63
 < #include <DSound.h>
@@ -255,7 +264,7 @@ env.SharedLibrary("portaudio",sources+["../asiosdk2/asiosdk2.a"])
 > #include <dsound.h>
 </pre>
 
-(requires crossming.py file from clam)
+
  wget http://iua-share.upf.edu/svn/clam/trunk/CLAM/scons/sconstools/crossmingw.py
  scons -f SConstruct.crossmingw install prefix=$MINGWSANDBOX/local
 
