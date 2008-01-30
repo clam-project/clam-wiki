@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.1.1 (1.2?) =
 <gallery>
+Image:NetEditor-PortHintWithType.mng|Port tooltips show the port type.
 Image:WinePlugins.png|New CLAM plugins from GSoC and BM projects working on windows (wine).
 Image:RoomSimulationSurroundAndHrtfs.png|A very big network including most of the new 3D acoustic plugin features: Room reverb simulation with moving emitter and receiver, surround coding, and hrtf mapping back to stereo.
 Image:AddProcessingCompleter.png|The dialog to add a processing now has a completer with the available processing keys.
