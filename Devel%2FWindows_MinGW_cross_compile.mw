@@ -121,8 +121,7 @@ There are precompiled binaries are this page:
  ./gtkmm-win32-devel-2.10.11-1.exe
 Agree to install gtk, all options by default, then all options for gtkmm by default.
  mkdir -p $MINGWSANDBOX/local
- cp -r `winepath -u 'c:\\GTK'`{include,lib,bin} $MINGWSANDBOX/local
-
+ cp -r `winepath -u 'c:\\GTK'`/{include,lib,bin} $MINGWSANDBOX/local
 
 == Using precompiled 3rd party libraries ==
 
