@@ -140,7 +140,7 @@ Agree to install gtk, all options by default, then all options for gtkmm by defa
  mkdir -p $MINGWSANDBOX/local
  cp -r `winepath -u 'c:\\GTK'`/{include,lib,bin} $MINGWSANDBOX/local
 
-= Using precompiled 3rd party libraries =
+= Using precompiled library dependencies =
 
 Once you have installed precompiled NSIS, Qt and Gtk binaries,
 you can follow the next chapters on building the rest of 3rd party libraries by hand
