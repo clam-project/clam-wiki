@@ -114,12 +114,14 @@ So when we get the same problem in our binaries we'll know it is not our fault.
 
 There are precompiled binaries are this page:
 
-http://ftp.gnome.org/pub/gnome/binaries/win32/gtkmm/2.10/gtkmm-win32-devel-2.10.11-1.exe
-
-Execute it  with wine to install gtk and then:
  export MINGWSANDBOX=~/CajitasDeArena/mingw # Or whatever in your system
+ cd $MINGWSANDBOX/download
+ wget http://ftp.gnome.org/pub/gnome/binaries/win32/gtkmm/2.10/gtkmm-win32-devel-2.10.11-1.exe
+ chmod u+x gtkmm-win32-devel-2.10.11-1.exe
+ ./gtkmm-win32-devel-2.10.11-1.exe
+Agree to install gtk, all options by default, then all options for gtkmm by default.
  mkdir -p $MINGWSANDBOX/local
- cp -r `winepath -u 'c:\\GTK`{include,lib,bin} $MINGWSANDBOX/local
+ cp -r `winepath -u 'c:\\GTK'`{include,lib,bin} $MINGWSANDBOX/local
 
 == Crosscompiling PortAudio ==
 
