@@ -623,7 +623,7 @@ copy the qt4 dlls
  cp /home/vokimon/.wine/drive_c/Qt/4.3.3/bin/*dll $MINGWSANDBOX/local/bin
 
  mkdir $MINGWSANDBOX/local
- svn co http://iua-share.upf.edu/svn/clam/trunk
+ svn co http://iua-share.upf.edu/svn/clam/trunk clam
 
 Apply the CLAM tree the patch with the higher number in this download page.
  http://clam.iua.upf.edu/download/win/mingw32-spike/
