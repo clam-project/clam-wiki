@@ -624,10 +624,6 @@ copy the qt4 dlls
 
  mkdir $MINGWSANDBOX/local
  svn co http://iua-share.upf.edu/svn/clam/trunk clam
-
-Apply the CLAM tree the patch with the higher number in this download page.
- http://clam.iua.upf.edu/download/win/mingw32-spike/
-
  cd $MINGWSANDBOX/clam/CLAM
  scons configure with_fftw3=1 audio_backend=portaudio xmlbackend=xmlpp prefix=$MINGWSANDBOX/local sandbox_path=$MINGWSANDBOX crossmingw=1
  scons
