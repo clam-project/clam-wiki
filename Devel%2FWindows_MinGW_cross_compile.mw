@@ -616,12 +616,12 @@ Section [System\\CurrentControlSet\\Control\\Session Manager\\Environment], Key 
 The "z:\\home\\vokimon\\CajitasDeArena\\mingw" part will vary in your case.
 
  export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever in your case
+ mkdir -p $MINGWSANDBOX/local/bin
  cp /home/vokimon/.wine/drive_c/Qt/4.3.3/bin/*dll  $MINGWSANDBOX/local/bin
- mkdir $MINGWSANDBOX/local
  svn co http://iua-share.upf.edu/svn/clam/trunk clam
+Comment out the 
  cd $MINGWSANDBOX/clam/CLAM
  scons configure with_fftw3=1 audio_backend=portaudio xmlbackend=xmlpp prefix=$MINGWSANDBOX/local sandbox_path=$MINGWSANDBOX crossmingw=1
- scons
  scons install
  cd $MINGWSANDBOX/clam/CLAM/plugins/continuousExcitationSynthesizer
  scons install clam_prefix=$MINGWSANDBOX/local crossmingw=1
