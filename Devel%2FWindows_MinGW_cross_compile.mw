@@ -633,15 +633,15 @@ Apply the CLAM tree the patch with the higher number in this download page.
  scons
  scons install
  cd $MINGWSANDBOX/clam/CLAM/plugins/continuousExcitationSynthesizer
- scons clam_prefix=$MINGWSANDBOX/local crossmingw=1 install
+ scons install clam_prefix=$MINGWSANDBOX/local crossmingw=1
  cd $MINGWSANDBOX/clam/CLAM/plugins/spacialization
- scons clam_prefix=$MINGWSANDBOX/local crossmingw=1 install
+ scons install clam_prefix=$MINGWSANDBOX/local crossmingw=1
  cd $MINGWSANDBOX/clam/CLAM/plugins/speech
- scons clam_prefix=$MINGWSANDBOX/local crossmingw=1 install
+ scons install clam_prefix=$MINGWSANDBOX/local crossmingw=1
  cd $MINGWSANDBOX/clam/CLAM/plugins/osc
- scons clam_prefix=$MINGWSANDBOX/local crossmingw=1 install
+ scons install clam_prefix=$MINGWSANDBOX/local crossmingw=1 sandbox_path=$MINGWSANDBOX
  cd $MINGWSANDBOX/clam/CLAM/plugins/GuitarDistortion
- scons clam_prefix=$MINGWSANDBOX/local crossmingw=1 install
+ scons install clam_prefix=$MINGWSANDBOX/local crossmingw=1
  cd $MINGWSANDBOX/clam/NetworkEditor
  QTDIR=~/.wine/drive_c/Qt/4.3.3/ scons clam_prefix=$MINGWSANDBOX/local prefix=$MINGWSANDBOX/local external_dll_path=$MINGWSANDBOX/local/bin crossmingw=1 package
  cd $MINGWSANDBOX/clam/Annotator/vmqt
