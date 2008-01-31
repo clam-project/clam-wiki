@@ -153,7 +153,7 @@ To use the precompiled tarball do the following:
  cd $MINGWSANDBOX
  tar xvfz download/clam-3rdparty-mingw-20080128.tar.gz # this will create or populate local/
 
-= Hand compiling dependencies =
+= Compiling library dependencies =
 
 == Crosscompiling PortAudio ==
 
