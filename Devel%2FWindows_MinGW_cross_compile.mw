@@ -1,6 +1,6 @@
 This page explains '''how to cross compile CLAM for Windows in an Ubuntu Linux'''.
 
-== Status ==
+= Status =
 
 Supported:
 * Building most external dependencies
