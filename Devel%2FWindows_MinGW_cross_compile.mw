@@ -612,7 +612,7 @@ copy the qt4 dlls
  mkdir local
  svn co http://iua-share.upf.edu/svn/clam/trunk
  cd clam/CLAM
- scons configure with_fftw3=1 with_fftw=0 audio_backend=portaudio xmlbackend=xmlpp prefix=$MINGWSANDBOX/local sandbox_path=$MINGWSANDBOX crossmingw=1
+ scons configure with_fftw3=1 audio_backend=portaudio xmlbackend=xmlpp prefix=$MINGWSANDBOX/local sandbox_path=$MINGWSANDBOX crossmingw=1
  scons
  scons install
  cd ../NetworkEditor
