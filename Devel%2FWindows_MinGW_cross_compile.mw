@@ -110,6 +110,13 @@ Precompiled Qt examples which use OpenGL have the same problem.
 So when we get the same problem in our binaries we'll know it is not our fault.
 
 
+== NSIS ==
+
+Download the Installer and install it with wine:
+ wget http://mesh.dl.sourceforge.net/sourceforge/nsis/nsis-2.31-setup.exe
+ chmod u+x nsis-2.31-setup.exe
+ ./nsis-2.31-setup.exe
+
 == libxml++/pkgconfig ==
 
 There are precompiled binaries are this page:
