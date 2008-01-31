@@ -567,11 +567,7 @@ This is just an experiment foreseeing an eventual use.
  ./configure --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local CPPFLAGS=-I$MINGWSANDBOX/local/include/ PKG_CONFIG_PATH=$MINGWSANDBOX/local/lib/pkgconfig/
  make install
 
-== NSIS ==
 
-Download the Installer and install it with wine:
-
-http://mesh.dl.sourceforge.net/sourceforge/nsis/nsis-2.31-setup.exe
 
 == Py2Exe ==
 
