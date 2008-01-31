@@ -628,23 +628,23 @@ copy the qt4 dlls
 Apply the CLAM tree the patch with the higher number in this download page.
  http://clam.iua.upf.edu/download/win/mingw32-spike/
 
- cd $MINGWSANDBOX/local/clam/CLAM
+ cd $MINGWSANDBOX/clam/CLAM
  scons configure with_fftw3=1 audio_backend=portaudio xmlbackend=xmlpp prefix=$MINGWSANDBOX/local sandbox_path=$MINGWSANDBOX crossmingw=1
  scons
  scons install
- cd $MINGWSANDBOX/local/clam/CLAM/plugins/continuousExcitationSynthesizer
+ cd $MINGWSANDBOX/clam/CLAM/plugins/continuousExcitationSynthesizer
  QTDIR=~/.wine/drive_c/Qt/4.3.3/ scons clam_prefix=$MINGWSANDBOX/local crossmingw=1 package
- cd $MINGWSANDBOX/local/clam/CLAM/plugins/spacialization
+ cd $MINGWSANDBOX/clam/CLAM/plugins/spacialization
  QTDIR=~/.wine/drive_c/Qt/4.3.3/ scons clam_prefix=$MINGWSANDBOX/local crossmingw=1 package
- cd $MINGWSANDBOX/local/clam/CLAM/plugins/speech
+ cd $MINGWSANDBOX/clam/CLAM/plugins/speech
  QTDIR=~/.wine/drive_c/Qt/4.3.3/ scons clam_prefix=$MINGWSANDBOX/local crossmingw=1 package
- cd $MINGWSANDBOX/local/clam/CLAM/plugins/osc
+ cd $MINGWSANDBOX/clam/CLAM/plugins/osc
  QTDIR=~/.wine/drive_c/Qt/4.3.3/ scons clam_prefix=$MINGWSANDBOX/local crossmingw=1 package
- cd $MINGWSANDBOX/local/clam/CLAM/plugins/GuitarDistortion
+ cd $MINGWSANDBOX/clam/CLAM/plugins/GuitarDistortion
  QTDIR=~/.wine/drive_c/Qt/4.3.3/ scons clam_prefix=$MINGWSANDBOX/local crossmingw=1 package
- cd $MINGWSANDBOX/local/clam/NetworkEditor
+ cd $MINGWSANDBOX/clam/NetworkEditor
  QTDIR=~/.wine/drive_c/Qt/4.3.3/ scons clam_prefix=$MINGWSANDBOX/local prefix=$MINGWSANDBOX/local external_dll_path=$MINGWSANDBOX/local/bin crossmingw=1 package
- cd $MINGWSANDBOX/local/clam/Annotator/vmqt
+ cd $MINGWSANDBOX/clam/Annotator/vmqt
  QTDIR=~/.wine/drive_c/Qt/4.3.3/ scons clam_prefix=$MINGWSANDBOX/local crossmingw=1
- cd $MINGWSANDBOX/local/clam/Annotator/
+ cd $MINGWSANDBOX/clam/Annotator/
  QTDIR=~/.wine/drive_c/Qt/4.3.3/ scons prefix=$MINGWSANDBOX/local  clam_prefix=$MINGWSANDBOX/local external_dll_path=$MINGWSANDBOX/local/bin crossmingw=1 package
