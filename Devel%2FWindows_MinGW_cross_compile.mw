@@ -123,6 +123,18 @@ Agree to install gtk, all options by default, then all options for gtkmm by defa
  mkdir -p $MINGWSANDBOX/local
  cp -r `winepath -u 'c:\\GTK'`{include,lib,bin} $MINGWSANDBOX/local
 
+
+== Using precompiled 3rd party libraries
+
+You can follow the next chapters on building the rest of 3rd party libraries 
+or you can download a precompiled tarball and jump to  [[#CLAM CLAM compilation]].
+
+ export MINGWSANDBOX=~/CajitasDeArena/mingw # Or whatever in your system
+ cd $MINGWSANDBOX/download
+ wget http://clam.iua.upf.edu/download/win/svnsnapshots/clam-3rdparty-mingw-20080128.tar.gz
+ cd $MINGWSANDBOX
+ tar xvfz download/clam-3rdparty-mingw-20080128.tar.gz # this will create or populate local/
+
 == Crosscompiling PortAudio ==
 
 Port audio has some dependencies. So let's provide them.
