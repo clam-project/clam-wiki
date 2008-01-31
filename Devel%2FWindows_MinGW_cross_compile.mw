@@ -138,9 +138,9 @@ Agree to install gtk, all options by default, then all options for gtkmm by defa
  mkdir -p $MINGWSANDBOX/local
  cp -r `winepath -u 'c:\\GTK'`/{include,lib,bin} $MINGWSANDBOX/local
 
-== Using precompiled 3rd party libraries ==
+= Using precompiled 3rd party libraries =
 
-Once you have installed precompiled Qt and Gtk binaries,
+Once you have installed precompiled NSIS, Qt and Gtk binaries,
 you can follow the next chapters on building the rest of 3rd party libraries by hand
 or you can download a precompiled tarball and jump to  [[#CLAM|CLAM compilation]].
 To use the precompiled tarball do the following:
@@ -150,6 +150,8 @@ To use the precompiled tarball do the following:
  wget http://clam.iua.upf.edu/download/win/svnsnapshots/clam-3rdparty-mingw-20080128.tar.gz
  cd $MINGWSANDBOX
  tar xvfz download/clam-3rdparty-mingw-20080128.tar.gz # this will create or populate local/
+
+= Hand compiling dependencies =
 
 == Crosscompiling PortAudio ==
 
