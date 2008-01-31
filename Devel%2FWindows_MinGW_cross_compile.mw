@@ -119,6 +119,12 @@ Download the Installer and install it with wine:
  chmod u+x nsis-2.31-setup.exe
  ./nsis-2.31-setup.exe
 
+When asking for install location put this:
+ C:\Program Files\NSIS
+Despite whatever localized name you have for 'Program Files' ('Archivos de Programa' or whatever)
+
+TODO: Make this a parameter for the CLAM application package building
+
 == libxml++/pkgconfig ==
 
 There are precompiled binaries are this page:
