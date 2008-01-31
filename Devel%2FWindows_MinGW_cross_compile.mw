@@ -496,25 +496,7 @@ Currently working on that, not needed for CLAM though, not  even the library.
 PKG_CONFIG is needed in order autoconf not detecting linux version of ogg.
 I don't know why this is needed here and not in other libraries.
 
-=== Using precompiled binaries instead ===
 
-I also found some precompiled binaries for libogg and libvorbis:
- cd download
- wget http://globulation2.org/dev/glob2_required_libs_mingw.tar.bz2
- mkdir glob
- cd glob/
- tar xvfj ../glob2_required_libs_mingw.tar.bz2
- cd ../..
- mkdir -p oggvorbis/{lib,lib/pkgconfig,include,bin}
- cp download/glob/lib/*ogg* oggvorbis/lib/
- cp download/glob/lib/*vorbis* oggvorbis/lib/
- cp -r download/glob/include/ogg/ oggvorbis/include/
- cp -r download/glob/include/vorbis/ oggvorbis/include/
- cp download/glob/bin/*ogg* dlls/
- cp download/glob/bin/*ogg* oggvorbis/bin/
- cp download/glob/bin/*vorbis* oggvorbis/bin/
- cp download/glob/bin/*vorbis* dlls/
- cp download/glob/lib/pkgconfig/{ogg,vorbis}* oggvorbis/lib/pkgconfig
 
 == pthreads ==
 
