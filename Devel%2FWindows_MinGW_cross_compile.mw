@@ -126,8 +126,10 @@ Agree to install gtk, all options by default, then all options for gtkmm by defa
 
 == Using precompiled 3rd party libraries ==
 
-You can follow the next chapters on building the rest of 3rd party libraries 
+Once you have installed precompiled Qt and Gtk binaries,
+you can follow the next chapters on building the rest of 3rd party libraries by hand
 or you can download a precompiled tarball and jump to  [[#CLAM CLAM compilation]].
+To use the precompiled tarball do the following:
 
  export MINGWSANDBOX=~/CajitasDeArena/mingw # Or whatever in your system
  cd $MINGWSANDBOX/download
