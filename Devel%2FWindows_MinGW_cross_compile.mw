@@ -23,6 +23,8 @@ Not suported yet (meaning 'any help is welcome'):
 * Py2Exe binaries for Annotator helper apps
 * Executing Qt + OpenGl based programs in wine.
 
+= Installing Tools =
+
 == Installing mingw32 and Wine in ubuntu ==
 
  sudo apt-get install mingw32
