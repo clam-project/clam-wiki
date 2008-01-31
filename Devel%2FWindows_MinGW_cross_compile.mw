@@ -113,6 +113,8 @@ So when we get the same problem in our binaries we'll know it is not our fault.
 == NSIS ==
 
 Download the Installer and install it with wine:
+ export MINGWSANDBOX=~/CajitasDeArena/mingw # Or whatever in your system
+ cd $MINGWSANDBOX/download
  wget http://mesh.dl.sourceforge.net/sourceforge/nsis/nsis-2.31-setup.exe
  chmod u+x nsis-2.31-setup.exe
  ./nsis-2.31-setup.exe
