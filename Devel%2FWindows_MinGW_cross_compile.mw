@@ -602,7 +602,7 @@ Apply the CLAM tree the patch with the higher number in this download page.
 
 Add the dll path to the ~/.wine/system.reg
 Section [System\\CurrentControlSet\\Control\\Session Manager\\Environment], Key PATH
- "PATH"="c:\\windows\\system32;c:\\windows;z:\\home\\vokimon\\CajitasDeArena\\mingw\\local\\bin;z:\\home\\vokimon\\CajitasDeArena\\mingw\\gtk\\bin"
+ "PATH"="c:\\windows\\system32;c:\\windows;z:\\home\\vokimon\\CajitasDeArena\\mingw\\local\\bin;z:\\home\\vokimon\\CajitasDeArena\\mingw\\local"
 
 The "z:\\home\\vokimon\\CajitasDeArena\\mingw" part will vary in your case.
 
