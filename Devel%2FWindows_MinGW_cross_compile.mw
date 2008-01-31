@@ -127,7 +127,7 @@ Despite whatever localized name you have for 'Program Files' ('Archivos de Progr
 
 TODO: Make this a parameter for the CLAM application package building
 
-== libxml++/pkgconfig ==
+== GtK/Gtkmm (for libxml++ and pkg-config) ==
 
 There are precompiled binaries are this page:
 
