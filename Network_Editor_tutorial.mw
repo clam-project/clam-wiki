@@ -322,16 +322,47 @@ Let's add a button to change the music.
 * Drag a PushButton with text 'Open Audio File'.
 * Let's name it <tt>AudioFile___<em>MonoAudioFileIn</em></tt> in order to bind with the file reader processing <em>MonoAudioFileIn</em> (use the proper name if your processing name is different).
 
-== TODO: Adding a volume control ==
+== Adding a volume control ==
 
+Now we want to add a volume control to our player.
+Firstly let's insert the processing that will perform such task.
+It is the AudioAmplifier found at 'Arithmetic Operations' category.
+Insert it this way:
 
 [[Image:NetTutorial-InsertedAmplifier.png|500px|center]]
 
+Although is not needed for our network you can add a controller slider
+using the context menu on the amplifier's control.
+
+Next we'll edit the interface to include a vertical slider.
+It's not a CLAM widget, an standard Qt slider.
+To make up this layout you should break the top level one,
+then select former widgets, press to the ''vertical layout'',
+then clicking on the background and press ''horizontal layout''
+to make that the top level one, so that all the old widgets and 
+the new slider are layed out horizontally.
+
 [[Image:NetTutorial-SliderParameters.png|500px|center]]
+
+Notice that the control bounds are displayed on hovering the control.
+This means that the programmer of the processing has set a range for such a control. 
+In this case, Prototyper will adapt the slider range to adapt the controls one
+just by binding it.
 
 [[Image:NetTutorial-HoveringControlBounds.png|200px|center]]
 
+The binding is done similarly to the port binding:
+Copy the control name and paste it as the name of the widget.
+
+You can enhance your network by binding a Vumeter widget to the output
+of the amplifier, this way you can see if you still have room
+to amplify without clipping.
+
 [[Image:NetTutorial-FinalVumeter.png|200px|center]]
+
+Controlling the stylesheets you could get a fuzzing nice player.
+Style sheets not only let you control colors but also pixmaps,
+so your player is stylable as XMMS or WinAmp!!
 
 [[Image:NetTutorial-FinalVumeterStyledDark.png|200px|center]]
 
