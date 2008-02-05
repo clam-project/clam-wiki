@@ -8,9 +8,7 @@ can be connected just to complementary ports of the same token type.
 
 == Registering a color for a token type ==
 
-'''The documentation bellow refers to experimental features still in the svn that may change before the release'''
-
-CLAM also provides a way to color the ports on the NetworkEditor depending on the type.
+Since version 1.2, CLAM also provides a way to color the ports on the NetworkEditor depending on the type.
 Registering token type color is not necessary to use such a token type on CLAM neither on the NetworkEditor.
 If you don't, you'll just get the default color for ports.
 But if you want, you can specify such color by defining the 
