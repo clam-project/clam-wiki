@@ -202,7 +202,7 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 
 [[Image:NetTutorial-SpectralTransformation.png|500px|center]]
 
-= Building Interfaces for Prototyper =
+= Building Prototyper interfaces =
 
 As we saw at the beginning of the tutorial,
 the Prototyper is a utility that wraps a network definition
