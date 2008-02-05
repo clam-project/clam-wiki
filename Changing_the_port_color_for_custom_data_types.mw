@@ -22,3 +22,15 @@ Being fucsia the color to use for the ports that communicate MyDataType.
 The color is any string representing a color specified on the [http://www.december.com/html/spec/colorsvg.html svg color names] or colors in the form "#RGB", "#RRGGBB", "#RRRGGGBBB".
 
  static CLAM::ProcessingDataPlugin::Registrator<MyDataType> registrator("#FF0000"); // Pure red
+
+== Changing the display name for the type ==
+
+By default, CLAM shows the C++ demangled type for example, 
+to describe on the port tooltip.
+This is sane for most cases but for very single cases this is not appropiate.
+For example, full name STL structures such as std::vector and std::string include
+allocator declarations and other default template parameters that just represents noise to the user handling such type names.
+
+A second parameter can be used to manually indicate the type. For example:
+
+ static CLAM::ProcessingDataPlugin::Registrator<std::vector<Spectrum> > registrator("fucsia", "std::vector<Spectrums>");
