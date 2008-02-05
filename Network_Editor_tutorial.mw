@@ -363,6 +363,7 @@ to amplify without clipping.
 Controlling the stylesheets you could get a fuzzing nice player.
 Style sheets not only let you control colors but also pixmaps,
 so your player is stylable as XMMS or WinAmp!!
+Read the [http://doc.trolltech.com/latest/stylesheet.html Qt Stylesheets manual].
 
 [[Image:NetTutorial-FinalVumeterStyledDark.png|200px|center]]
 
