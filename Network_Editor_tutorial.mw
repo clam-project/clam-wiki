@@ -61,7 +61,10 @@ Feel free to try other provided examples both with the Prototyper and the Networ
 
 [[Image:NetEditQt4-PrototyperIndicators.png|center]]
 
+= Building Networks =
+
 == Creating the simplest Network ==
+
 
 Now we know the workflow, but we are cheating because we took already done networks. So let's build a network from scratch, the simplest one.
 
