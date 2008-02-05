@@ -33,4 +33,5 @@ allocator declarations and other default template parameters that just represent
 
 A second parameter can be used to manually indicate the type. For example:
 
- static CLAM::ProcessingDataPlugin::Registrator<std::vector<Spectrum> > registrator("fucsia", "std::vector<Spectrums>");
+ static CLAM::ProcessingDataPlugin::Registrator<std::vector<Spectrum> >
+ 	registrator("fucsia", "std::vector<Spectrums>");
