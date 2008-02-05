@@ -369,28 +369,30 @@ Read the [http://doc.trolltech.com/latest/stylesheet.html Qt Stylesheets manual]
 
 = Algorithms =
 
+In this chapter of the tutorial we will get more insight on the 
+algorithm families that are provided with CLAM and standard plugins.
+
+
 == TODO: Spectral Modeling Synthesis ==
+
+Besides the regular STFFT (Phase Vocoder) implementation, CLAM also has implemented the Sinusoidal plus Residual Model (a.k.a. SMS). That model identifies the sinusoids (the tonal part) on the spectral representation and substract them to get residual (the noisy part). By doing so, we can process both components separatelly so even more interesting transformations can be implemented with that model. 
 
 == TODO: Tonal Analysis ==
 
+
 == TODO: 3D Spatialization ==
 
-== We are still updating this tutorial to the 0.4.0 version ==
+= Obsolete text =
 
 '''The rest of this tutorial still refers to the 0.3.X versions of the Network Editor. It is expected to be updated in short to the 0.4.X series. Although the interface has changes, you could still follow it as concepts are the same.'''
 
 
 ==SMS Transformations==
 
-Besides the regular STFFT (Phase Vocoder) implementation, CLAM also has implemented the Sinusoidal plus Residual Model (a.k.a. SMS). That model identifies the sinusoids (the tonal part) on the spectral representation and substract them to get residual (the noisy part). By doing so, we can process both components separatelly so even more interesting transformations can be implemented with that model. 
-
 Now that you have a working knowledge of the NetworkEditor the best you can do is to start off with an example. Open SMSMess.clamnetwork and experiment with it, changing the SMS Transformations for others in the same category.
 
 
 [[Image:SMSFreqShiftGainsPlots.png|500px|center]]
-
-
-
 
 To see its potential let's start opening with a example network named SMSmess.xml.
 
