@@ -391,7 +391,7 @@ that decode such format to several exhibition formats such as 5.0 Surround, N-Su
 Such processings need several data packages not distributed with CLAM but available at the download page.
 TODO: Link to the download page
 
-[[Image:RoomSimulationSurroundAndHrtfs.png|width:50%|center]]
+[[Image:RoomSimulationSurroundAndHrtfs.png|width=50%|center]]
 
 Spacialization plugin require two kinds of databases:
 * Room point-to-point hyper grid of simulated impulse responses
