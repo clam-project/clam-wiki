@@ -391,7 +391,7 @@ that decode such format to several exhibition formats such as 5.0 Surround, N-Su
 Such processings need several data packages not distributed with CLAM but available at the download page.
 TODO: Link to the download page
 
-[[Image:RoomSimulationSurroundAndHrtfs.png|50px|center]]
+[[Image:RoomSimulationSurroundAndHrtfs.png|500px|center]]
 
 Spacialization plugin require two kinds of databases:
 * Room point-to-point hyper grid of simulated impulse responses
@@ -406,3 +406,10 @@ Spacialization plugin require two kinds of databases:
 * Connect your backend so you are feeding the input with a continuous sound.
 * You can move the source and listener position by draging the red points on the pads.
 * You can also turn your head by moving the orientation slider
+
+
+So, how that it works.
+
+The upper left section of the network chooses the P, Vx and Vy components of a point on the grid and 
+convolves each one with the input audio.
+The second line of each component is a delayed convolution so when we change the database point we can crossfade.
