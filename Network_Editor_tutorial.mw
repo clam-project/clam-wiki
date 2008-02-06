@@ -381,3 +381,28 @@ Besides the regular STFFT (Phase Vocoder) implementation, CLAM also has implemen
 
 
 == TODO: 3D Spatialization ==
+
+'spacialization' plugin includes some processings for 3D sound.
+Such plugin enables real-time simulation of room acoustics for a moving listener and a moving sound source.
+It encodes the simulation results in the so called B-Format (pressure+velocity vector components).
+To reproduce the 3D sound you can use several processings
+that decode such format to several exhibition formats such as 5.0 Surround, N-Surround and Binaural.
+
+Such processings need several data packages not distributed with CLAM but available at the download page.
+TODO: Link to the download page
+
+[[Image:RoomSimulationSurroundAndHrtfs.png|width:50%|center]]
+
+Spacialization plugin require two kinds of databases:
+* Room point-to-point hyper grid of simulated impulse responses
+** data18.zip contains four databases for the same room and four fixed sources
+** Unzip it and rename (or link in unix) any db18/sourceX directory as 'db' in a working dir.
+* Head related impulse responses in a polar grid
+** MIT_KEMAR_HRTF.zip contains such a database computer with a [http://www.gras.dk/00012/00330/|KEMAR manikin].
+** Unzip it directly at the working dir.
+
+* Open the following example network:
+ impulse-response-database-surround-to-stereo.clamnetwork
+* Connect your backend so you are feeding the input with a continuous sound.
+* You can move the source and listener position by draging the red points on the pads.
+* You can also turn your head by moving the orientation slider
