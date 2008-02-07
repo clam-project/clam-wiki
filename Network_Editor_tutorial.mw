@@ -396,8 +396,9 @@ Spacialization plugin require two kinds of databases:
 
 * Open the following example network:
  impulse-response-database-surround-to-stereo.clamnetwork
-* Connect your backend so you are feeding the input with a continuous sound.
-* You can move the source and listener position by draging the red points on the pads.
+* If some processing is red probably means that relative paths on their configurations doesn't match. (Remember NetworkEditor is though to be used with a given working dir where the databases have been setup). Edit the configurations to fix the paths or run the NetworkEditor with such a working dir.
+* Connect your backend so you are feeding the input with a continuous sound (Jack in linux or feeding some mic.
+* You can move the source and listener position by draging the red points on the pads. (In the sample database there is just one source position so source navigation has no changes).
 * You can also turn your head by moving the orientation slider
 
 
@@ -406,8 +407,6 @@ So, how that it works.
 The upper left section of the network chooses the P, Vx and Vy components of a point on the grid and 
 convolves each one with the input audio.
 The second line of each component is a delayed convolution so when we change the database point we can crossfade.
-
-
 
 == TODO: Spectral Modeling Synthesis ==
 
