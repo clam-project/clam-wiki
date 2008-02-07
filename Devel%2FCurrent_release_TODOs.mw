@@ -15,17 +15,18 @@
 ** Mac
 * Prepare the announcement
 ** [[Image:Done.png]] Full in English (general)
-* Preparing the next release
-** [[Image:Done.png]] Create a new chapter on [[Version Migration Guide]] for the next release
-** Update CHANGES to get the new version for svn snapshots (see [[Devel/Changelog release policy]])
+** [[Image:Done.png]] Publish it into clamnews
 * Update doxygen
 * Update screenshots if needed
-* Send the announcement
+* Spread the announcement
 ** LAD,LAU,LANN
 ** Freshmeat
 ** Barrapunto
 ** STSI (La farga)
 ** Harmony-Central and Spanish musical webs
+* Preparing the next release
+** [[Image:Done.png]] Create a new chapter on [[Version Migration Guide]] for the next release
+** Update CHANGES to get the new version for svn snapshots (see [[Devel/Changelog release policy]])
 
 == 1.1.1 ==
 
