@@ -396,8 +396,8 @@ Spacialization plugin require two kinds of databases:
 * Room point-to-point hyper grid of simulated impulse responses
 ** data18.zip contains four databases for the same room and four fixed sources
 ** Unzip it and rename (or link in unix) any db18/sourceX directory as 'db' in a working dir.
-* Head related impulse responses in a polar grid
-** MIT_KEMAR_HRTF.zip contains such a database computer with a [http://www.gras.dk/00012/00330/ KEMAR manikin].
+* Head related impulse responses for different source orientations in a polar grid.
+** MIT_KEMAR_HRTF.zip contains such a database meassured with a [http://www.gras.dk/00012/00330/ KEMAR manikin].
 ** Unzip it directly at the working dir.
 
 * Open the following example network:
