@@ -4,7 +4,7 @@
 * [[Image:Done.png]] Assert that all testfarm clients are green
 * [[Image:Done.png]] Add pending changes to the CHANGES file
 * [[Image:Done.png]] Prepare the CHANGES versioning
-* [[Image:Done.png]] Remove svn marker (see [[Changelog release policy]])
+* [[Image:Done.png]] Remove svn marker (see [[Devel/Changelog release policy]])
 * [[Image:Done.png]] Generating packages
 ** Src
 ** [[Image:Done.png]] Windows (testfarm)
@@ -23,7 +23,6 @@
 ** Freshmeat
 ** Barrapunto
 ** STSI (La farga)
-
 
 == 1.1.1 ==
 
