@@ -373,13 +373,6 @@ In this chapter of the tutorial we will get more insight on the
 algorithm families that are provided with CLAM and standard plugins.
 
 
-== TODO: Spectral Modeling Synthesis ==
-
-Besides the regular STFFT (Phase Vocoder) implementation, CLAM also has implemented the Sinusoidal plus Residual Model (a.k.a. SMS). That model identifies the sinusoids (the tonal part) on the spectral representation and substract them to get residual (the noisy part). By doing so, we can process both components separatelly so even more interesting transformations can be implemented with that model. 
-
-== TODO: Tonal Analysis ==
-
-
 == 3D Spacialization ==
 
 'spacialization' plugin includes some processings for 3D sound.
@@ -413,3 +406,11 @@ So, how that it works.
 The upper left section of the network chooses the P, Vx and Vy components of a point on the grid and 
 convolves each one with the input audio.
 The second line of each component is a delayed convolution so when we change the database point we can crossfade.
+
+
+
+== TODO: Spectral Modeling Synthesis ==
+
+Besides the regular STFFT (Phase Vocoder) implementation, CLAM also has implemented the Sinusoidal plus Residual Model (a.k.a. SMS). That model identifies the sinusoids (the tonal part) on the spectral representation and substract them to get residual (the noisy part). By doing so, we can process both components separatelly so even more interesting transformations can be implemented with that model. 
+
+== TODO: Tonal Analysis ==
