@@ -383,7 +383,7 @@ that decode such format to several exhibition formats such as 5.0 Surround, N-Su
 
 At the moment, this tutorial just covers how having the most interesting network working
 to explain and demonstrate the technology.
-The [[http://iua-share.upf.es/svn/clam/trunk/CLAM/plugins/spacialization/README|spacialization plugin README]] 
+The [http://iua-share.upf.es/svn/clam/trunk/CLAM/plugins/spacialization/README spacialization plugin README]
 file makes an extensive explanation of the included processings and networks.
 
 Such processings need several data packages not distributed with CLAM but available at the 
