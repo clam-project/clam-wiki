@@ -402,11 +402,18 @@ Spacialization plugin require two kinds of databases:
 * You can also turn your head by moving the orientation slider
 
 
-So, how that it works.
 
 The upper left section of the network chooses the P, Vx and Vy components of a point on the grid and 
 convolves each one with the input audio.
-The second line of each component is a delayed convolution so when we change the database point we can crossfade.
+Notice that there is a double line of each component.
+The second line corresponds to a one frame delayed impulse response, 
+so that whenever the impulse response changes,
+we can crossfade audios with the new and changed impulse response to obtain smooth transitions.
+
+Once we have the B-Format components (P,Vx,Vy) they are feed to a N-Surround decodec.
+The output of such a decodec could be feed to an N-Surround installation (N equiangular speakers)
+but what we are doing is convoluting every output with the HRTF for the speaker position and adding it
+to get the output of each binaural signal, left and right.
 
 == TODO: Spectral Modeling Synthesis ==
 
