@@ -381,8 +381,14 @@ It encodes the simulation results in the so called B-Format (pressure+velocity v
 To reproduce the 3D sound you can use several processings
 that decode such format to several exhibition formats such as 5.0 Surround, N-Surround and Binaural.
 
-Such processings need several data packages not distributed with CLAM but available at the download page.
-TODO: Link to the download page
+At the moment, this tutorial just covers how having the most interesting network working
+to explain and demonstrate the technology.
+The [[http://iua-share.upf.es/svn/clam/trunk/CLAM/plugins/spacialization/README|spacialization plugin README]] 
+file makes an extensive explanation of the included processings and networks.
+
+Such processings need several data packages not distributed with CLAM but available at the 
+[http://clam.iua.upf.edu/download/data/| data download page].
+
 
 [[Image:RoomSimulationSurroundAndHrtfs.png|500px|center]]
 
