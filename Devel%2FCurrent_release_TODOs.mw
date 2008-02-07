@@ -5,7 +5,7 @@
 ** [[Image:Done.png]] Freeze (just a be-carefull warning)
 ** [[Image:Done.png]] Request for pending changes to the CHANGES file
 ** [[Image:Done.png]] Request for pending notes in [[Version Migration Guide]]
-** [[Image:Done.png]] Assert that all testfarm clients are green
+** [[Image:Done.png]] Assert that all [http://clam.iua.upf.edu/testfarm testfarm clients] are green
 ** [[Image:Done.png]] Remove svn marker (see [[Devel/Changelog release policy]])
 * Generating packages
 ** Src
