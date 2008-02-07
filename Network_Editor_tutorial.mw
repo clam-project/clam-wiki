@@ -380,7 +380,7 @@ Besides the regular STFFT (Phase Vocoder) implementation, CLAM also has implemen
 == TODO: Tonal Analysis ==
 
 
-== TODO: 3D Spatialization ==
+== 3D Spacialization ==
 
 'spacialization' plugin includes some processings for 3D sound.
 Such plugin enables real-time simulation of room acoustics for a moving listener and a moving sound source.
