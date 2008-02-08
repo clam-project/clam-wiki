@@ -14,11 +14,13 @@
 ** [[Image:Done.png]] Debian
 ** [[Image:Done.png]] Mac
 * Prepare the announcement
+** [[Image:Done.png]] Update screenshots if needed
+** [[Image:Done.png]] Build a thumbnail screenshot for the announcement
 ** [[Image:Done.png]] Full in English (general)
 ** [[Image:Done.png]] Publish it into clamnews
 * Update doxygen
-* Update screenshots if needed
 * Spread the announcement
+** [[Image:Done.png]] clam, clam-devel
 ** [[Image:Done.png]] LAD,LAU,LANN
 ** [[Image:Done.png]] Freshmeat
 ** [[Image:Done.png]] Ubuntu-cat
