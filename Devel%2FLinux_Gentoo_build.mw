@@ -1,2 +1,22 @@
-the ProAudio overlay team has made a nice ebuild with some use flags.
+The ProAudio overlay team has made a few nice ebuilds with some use flags.
 Take a look at [http://proaudio.tuxfamily.org/wiki/index.php?title=Usage ProAudioOverlay]
+
+== Ebuilds description ==
+The listed USE flags are only a part of the flags in the ebuilds. The other ones are obvious.
+
+'''media-libs/libclam''': ebuild for CLAM (versions 1.0.0, 1.0.1, (1.2.0 in preparation) and SVN)
+- USE flags:
+* doc: install the examples
+* double: use doubles instead of floats (Who want this when we have jack?)
+* fftw: use fftw3
+* optimize: made some speed optimizations but loose precision
+
+'''media-sound/Annotator''': versions 0.3.8, 0.3.9, (0.3.10 in preparation) and SVN
+- USE flags:
+* doc: install the examples
+
+'''media-sound/NetworkEditor''': versions 1.0.0, 1.1.0, (1.2.0 in preparation) and SVN
+
+'''media-sound/SMSTools''': versions 0.4.7, 0.4.8, (0.4.9 in preparation) and SVN
+
+'''media-sound/Voice2MIDI''': versions 0.3.6, 0.3.7, (0.3.8 in preparation) and SVN
