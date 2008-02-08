@@ -20,3 +20,6 @@ The listed USE flags are only a part of the flags in the ebuilds. The other ones
 '''media-sound/SMSTools''': versions 0.4.7, 0.4.8, (0.4.9 in preparation) and SVN
 
 '''media-sound/Voice2MIDI''': versions 0.3.6, 0.3.7, (0.3.8 in preparation) and SVN
+
+== Installation ==
+Install the pro-audio overlay as explained on its website. Just emerge the wanted package(s) as usual.
