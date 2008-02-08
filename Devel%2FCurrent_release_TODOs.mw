@@ -8,19 +8,21 @@
 ** [[Image:Done.png]] Assert that all [http://clam.iua.upf.edu/testfarm testfarm clients] are green
 ** [[Image:Done.png]] Remove svn marker (see [[Devel/Changelog release policy]])
 * Generating packages
-** Src
+** [[Image:Done.png]] Src
 ** [[Image:Done.png]] Windows (testfarm)
 ** [[Image:Done.png]] Ubuntu
 ** [[Image:Done.png]] Debian
-** Mac
+** [[Image:Done.png]] Mac
 * Prepare the announcement
 ** [[Image:Done.png]] Full in English (general)
 ** [[Image:Done.png]] Publish it into clamnews
 * Update doxygen
 * Update screenshots if needed
 * Spread the announcement
-** LAD,LAU,LANN
-** Freshmeat
+** [[Image:Done.png]] LAD,LAU,LANN
+** [[Image:Done.png]] Freshmeat
+** [[Image:Done.png]] Ubuntu-cat
+** kde-es
 ** Barrapunto
 ** STSI (La farga)
 ** Harmony-Central and Spanish musical webs
