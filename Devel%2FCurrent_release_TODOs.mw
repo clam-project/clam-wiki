@@ -1,23 +1,29 @@
 
 
 
-== 1.1.1 ==
+== 1.2.1 ==
 
-* [[Image:Done.png]] Migration guide: FactoryRegistrator instead of Factory::Registrator
-* [[Image:Done.png]] '''Update How-to new processing'''
-* Add new how-to: minimal processing with audio ports
+* Incorporate resample plugin into testfarm and debian
+* Fix the zero sample on Resample
+* Build windows packages for Voice2MIDI
+* How-to: minimal processing with audio ports
+* How-to: processing composite
 * Clean old neteditor tests?
 * Make Assert handler thread safe. Store message in network.
-* Package the plugins
 * Windows path for plugins
 * Look for plugins at clam install path
-* Add a README for each plugin
-
 * testfarm 
 ** Unify testfarm client scripts
-** Add windows mingw client
 ** nightly execution: doxygen, release, double, snapshot up
-** Include plugin compilation
+
+== 1.2.0 ==
+
+* [[Image:Done.png]] Package the plugins
+* [[Image:Done.png]] Add a README for each plugin
+* [[Image:Done.png]] Migration guide: FactoryRegistrator instead of Factory::Registrator
+* [[Image:Done.png]] '''Update How-to new processing'''
+* [[Image:Done.png]] Testfarm: Add windows mingw client
+* [[Image:Done.png]] Testfarm: Include plugin compilation
 
 == 1.1 ==
 
