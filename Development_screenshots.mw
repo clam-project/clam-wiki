@@ -1,6 +1,11 @@
 This page hosts screenshots galleries of the ongoing development of CLAM and its applications.
 
-= Upcoming 1.2.0 =
+= Upcoming 1.2.1 =
+<gallery>
+Image:Resampling.png|A first version of a resampling processing. The first step to address a lot of samplerate problems.
+</gallery>
+
+= 1.2.0 =
 <gallery>
 Image:NetEditor-faust-svg-embedded.png|NetworkEditor with faust processings with svg diagram embedded.
 Image:NetEditor-PortHintWithType.gif|Port tooltips show the port type.
