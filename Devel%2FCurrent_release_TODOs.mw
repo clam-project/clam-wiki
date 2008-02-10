@@ -1,35 +1,5 @@
 
-== Common tasks for any release ==
 
-* Closing the release
-** [[Image:Done.png]] Freeze (just a be-carefull warning)
-** [[Image:Done.png]] Request for pending changes to the CHANGES file
-** [[Image:Done.png]] Request for pending notes in [[Version Migration Guide]]
-** [[Image:Done.png]] Assert that all [http://clam.iua.upf.edu/testfarm testfarm clients] are green
-** [[Image:Done.png]] Remove svn marker (see [[Devel/Changelog release policy]])
-* Generating packages
-** [[Image:Done.png]] Src
-** [[Image:Done.png]] Windows (testfarm)
-** [[Image:Done.png]] Ubuntu
-** [[Image:Done.png]] Debian
-** [[Image:Done.png]] Mac
-* Prepare the announcement
-** [[Image:Done.png]] Update screenshots if needed
-** [[Image:Done.png]] Build a thumbnail screenshot for the announcement
-** [[Image:Done.png]] Full in English (general)
-** [[Image:Done.png]] Publish it into clamnews
-* Update doxygen
-* Spread the announcement
-** [[Image:Done.png]] clam, clam-devel
-** [[Image:Done.png]] LAD,LAU,LANN
-** [[Image:Done.png]] Freshmeat
-** [[Image:Done.png]] Ubuntu-cat
-** Barrapunto
-** [[Image:Done.png]] STSI (La farga)
-** Harmony-Central and Spanish musical webs
-* Preparing the next release
-** [[Image:Done.png]] Create a new chapter on [[Version Migration Guide]] for the next release
-** [[Image:Done.png]] Update CHANGES to get the new version for svn snapshots (see [[Devel/Changelog release policy]])
 
 == 1.1.1 ==
 
