@@ -3,7 +3,7 @@
 As tasks get done mark them with [[Image:Done.png]] 
 
 * Closing the release
-** Freeze (just a be-carefull warning)
+** Freeze (a 'be-carefull' warning on the clam-devel list)
 ** Request for pending changes to the CHANGES file
 ** Request for pending notes in [[Version Migration Guide]]
 ** Assert that all [http://clam.iua.upf.edu/testfarm testfarm clients] are green
