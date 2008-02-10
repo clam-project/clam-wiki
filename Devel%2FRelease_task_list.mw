@@ -1,0 +1,33 @@
+== Common tasks for any release ==
+
+[[Image:Done.png]] 
+
+* Closing the release
+** Freeze (just a be-carefull warning)
+** Request for pending changes to the CHANGES file
+** Request for pending notes in [[Version Migration Guide]]
+** Assert that all [http://clam.iua.upf.edu/testfarm testfarm clients] are green
+** Remove svn marker (see [[Devel/Changelog release policy]])
+* Generating packages
+** Src
+** Windows (testfarm)
+** Ubuntu
+** Debian
+** Mac
+* Prepare the announcement
+** Update screenshots if needed
+** Build a thumbnail screenshot for the announcement
+** Redact announcement
+** Publish it into clamnews
+* Update doxygen
+* Spread the announcement
+** clam, clam-devel
+** LAD,LAU,LANN
+** Freshmeat
+** Ubuntu-cat
+** Barrapunto
+** STSI (La farga)
+** Harmony-Central and Spanish musical webs
+* Preparing the next release
+** Create a new chapter on [[Version Migration Guide]] for the next release
+** Update CHANGES to get the new version for svn snapshots (see [[Devel/Changelog release policy]])
