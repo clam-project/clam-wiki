@@ -7,6 +7,8 @@ Image:Resampling.png|A first version of a resampling processing. The first step 
 
 = 1.2.0 =
 <gallery>
+Image:GuitarEffectsInterface.png|Hernan Hordiales' interface for guitar effects
+Image:GuitarEffectsNetwork.png|Hernan Hordiales' network for a chain of guitar effects
 Image:NetEditor-faust-svg-embedded.png|NetworkEditor with faust processings with svg diagram embedded.
 Image:NetEditor-PortHintWithType.gif|Port tooltips show the port type.
 Image:WinePlugins.png|New CLAM plugins from GSoC and BM projects working on windows (wine).
