@@ -1,5 +1,8 @@
 This manual chapter gives hints on how to migrate existing code from one version of CLAM to another hihglighting code level incompatibilities and new ways of doing things.
 
+== 1.1 to svn ==
+
+
 == 1.1 to 1.2 ==
 
 * The way processing are registered into the factory has changed to add metadata. More information in this [[Creating_a_minimal_processing_object#MyProcessing.cxx|howto]]
