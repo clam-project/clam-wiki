@@ -66,16 +66,7 @@ Build the library by doing:
 Install it the same place you have CLAM by issuing:
  $ scons install
 
-== Usage: Compile time mode (deprecated) ==
 
-To use the library from the NetworkEditor, Prototyper... you should add this line to its SConstruct file:
-
- env.AppendUnique(LIBS='myclamlib')
-
-And recompile it. NetworkEditor recompiling is needed just once.
-As no symbol from the processing library is directly accessed by the NetworkEditor,
-you won't need to recompile NetworkEditor
-just recompiling and reinstalling your library.
 
 == Usage: Run time mode ==
 
