@@ -19,10 +19,11 @@ interesting aspects to be addressed:
 * Integrating other kind of plugins being CLAM the host: LV2, VST...
 * Plugin reloading and checking: one should be able to reload one kind of plugins or explicitly loading a given plugin
 * Creating plugins given a CLAM network
-** Load CLAM networks as Ladspa/LV2 plugins
-** Load CLAM networks as VST plugins
-** One button generation of plugins from NetworkEditor (CLAM, LADSPA, VST...)
-* Enabling Prototyper Qt interfaces for VST, CoreUnits or LV2.
+** CLAM network as Ladspa/LV2 plugin
+** CLAM network as VST plugin
+** One button generation of plugins from NetworkEditor (native, LADSPA, VST...)
+* Explicit plugin (re)loading
+* Enabling Prototyper Qt interfaces in plugins systems that allow that such as VST, CoreUnits or LV2.
 
 See more here: [[Devel/Plugins TODOs]]
 
