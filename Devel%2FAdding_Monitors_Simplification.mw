@@ -12,6 +12,9 @@
 * The widget reads a given datasource
 * A widget could have several data sources
 
+
+Processing -(Port Interface)-> Port Monitor -(Data source Interface)-> Widget
+
 = Use cases =
 
 == Prototyper Binding ==
