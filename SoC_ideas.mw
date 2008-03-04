@@ -8,21 +8,25 @@
 
 Plugin systems are both a way of extending available
 modules for CLAM (CLAM as a plugin host) 
-and also a way of using CLAM defined systems in other contexts
+and also a way of using CLAM networks in 3rd party contexts
 (CLAM as a development tool to build plugins).
 
 Several plugins systems exist: Ladspa, DSSI, LV2, VST, AudioUnits...
+Also CLAM has its own plugin system to allow native 3rd party extensions.
 After the last GSoC, CLAM supports some of them as host 
 and some other as development tool, but there is still 
 interesting aspects to be addressed:
-* Plugin reloading and checking
 * Integrating other kind of plugins being CLAM the host: LV2, VST...
+* Plugin reloading and checking: one should be able to reload one kind of plugins or explicitly loading a given plugin
 * Creating plugins given a CLAM network
 ** Load CLAM networks as Ladspa/LV2 plugins
 ** Load CLAM networks as VST plugins
 ** One button generation of plugins from NetworkEditor (CLAM, LADSPA, VST...)
+* Enabling Prototyper Qt interfaces for VST, CoreUnits or LV2.
 
 See more here: [[Devel/Plugins TODOs]]
+
+This project has room for several projects. It also has contacts with many other projects: Subnetworks, metainformation, visual definition of processings...
 
 == Network Scalability (aka Subnetworks) ==
 
