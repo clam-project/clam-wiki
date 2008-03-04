@@ -15,6 +15,11 @@
 
 Processing -(Port Interface)-> Port Monitor -(Data source Interface)-> Widget
 
+We would like also to reuse Widgets and abstract data source interfaces
+for the non-realtime version (Annotator, SMSTools).
+
+DataPool -(Data source Interface)-> Widget
+
 = Use cases =
 
 == Prototyper Binding ==
