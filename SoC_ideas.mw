@@ -42,6 +42,16 @@ A project to address that should include:
 * Providing user interface on the NetworkEditor.
 * ...
 
+== Relative configurations and network configuration ==
+
+That is being able to configure some parameters of a module in function
+of other modules parameters or even network level ones.
+* Some configuration parameters should take the value from other module parameters.
+* We could consider output only parameters which are computed based on the input ones.
+* We could add network level parameters so that we can change a repeated parameter at once.
+* Network level parameters could become regular module configuration when used as a subnetwork
+* A way of setting the connections that could be some hideable control ports with a different shape and position. Other could be editable expressions.
+
 == Network Editor documentation system ==
 
 The idea is providing networks and processing modules of documentation
