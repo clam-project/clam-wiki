@@ -147,6 +147,12 @@ Check the details on the [[Chord Extraction TODO's]] page.
 Enabling a Qt Designer interface to control a CLAM Network 
 run as VST plugin the same way CLAM does now for JACK and PortAudio players.
 
+== VAMP plugins on the Annotator ==
+
+VAMP is the feature extraction plugin system used by SonicVisualizer.
+This project would consist in being able to lauch VAMP plugins within the Annotator.
+
+
 == Annotation Merger ==
 
 Currently BOCA system does pretty well by defining merges, projections and 
