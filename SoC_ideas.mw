@@ -47,7 +47,7 @@ A project to address that should include:
 The idea is providing networks and processing modules of documentation
 which can be browsable and navigable from the network editor interface.
 This project would include the interface and a system to obtain
-metadata (webservice or just compiled information).
+metadata (web, webservice or just compiled information).
 
 == Processing Editor ==
 
