@@ -150,8 +150,11 @@ run as VST plugin the same way CLAM does now for JACK and PortAudio players.
 == VAMP plugins on the Annotator ==
 
 VAMP is the feature extraction plugin system used by SonicVisualizer.
-This project would consist in being able to lauch VAMP plugins within the Annotator.
+This project would consist in being able to lauch VAMP plugins within the Annotator
+and integrating its results in an Annotator data pool.
 
+This project could be also defined for other descriptors source not being VAMP,
+for example, public web services such as Lastfm, MusicBrainz, EchoNest...
 
 == Annotation Merger ==
 
