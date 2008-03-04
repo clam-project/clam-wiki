@@ -38,8 +38,8 @@ but one could consider sinks and sources of a network the ports and controls
 of a brand new processing.
 A project to address that should include:
 * Infrastructure to control the flow of recursive networks
-* Integrate user-defined networks in the component library.
-* Provide the NetworkEditor of a user interface to address that.
+* Integrating user-defined networks in the component library.
+* Providing user interface on the NetworkEditor.
 * ...
 
 == Network Editor documentation system ==
