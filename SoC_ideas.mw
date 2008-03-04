@@ -2,39 +2,63 @@
 '''Please see general information about how to apply here: [[GSoC 2007]]'''
 
 
-= Proposed ideas for the 2007 SoC =
+= Proposed ideas for the 2008 SoC =
 
-== Plugin system for a dynamically extensible framework ==
-more here: [[Devel/Plugins TODOs]]
+== Enhancing plugin system ==
 
-* CLAM network as plugins host
-** Multi-platform dynamic loading of factories.
-** Hierarchical organization
-** Documentation and plugin metadata (ports meta-data, etc)
-** Loading Ladspa plugins
-** Loading VST plugins
-* Using CLAM as plugin creation toolkit
-** Load CLAM networks as ladspa plugins
-** Load CLAM networks as vst plugins
+Plugin systems are both a way of extending available
+modules for CLAM (CLAM as a plugin host) 
+and also a way of using CLAM defined systems in other contexts
+(CLAM as a development tool to build plugins).
+
+Several plugins systems exist: Ladspa, DSSI, LV2, VST, AudioUnits...
+After the last GSoC, CLAM supports some of them as host 
+and some other as development tool, but there is still 
+interesting aspects to be addressed:
+* Plugin reloading and checking
+* Integrating other kind of plugins being CLAM the host: LV2, VST...
+* Creating plugins given a CLAM network
+** Load CLAM networks as Ladspa/LV2 plugins
+** Load CLAM networks as VST plugins
+** One button generation of plugins from NetworkEditor (CLAM, LADSPA, VST...)
+
+See more here: [[Devel/Plugins TODOs]]
 
 == Network Scalability (aka Subnetworks) ==
+
+One compeling issue in CLAM is addressing scalability for the visual builder.
+That means building processings modules out of a composition of existing ones.
+CLAM supports that just by coding (ProcessingComposites),
+but one could consider sinks and sources of a network the ports and controls
+of a brand new processing.
+A project to address that should include:
 * Infrastructure to control the flow of recursive networks
 * Integrate user-defined networks in the component library.
-* Make it usable in NetworkEditor application.
+* Provide the NetworkEditor of a user interface to address that.
 * ...
+
+== Network Editor documentation system ==
+
+The idea is providing networks and processing modules of documentation
+which can be browsable and navigable from the network editor interface.
+This project would include the interface and a system to obtain
+metadata (webservice or just compiled information).
 
 == Processing Editor ==
 
+The idea is that one could build new compiled processing modules from the interface
+by graphically defining the structure of the module and coding with an editor
+the key methods.
 * Defining a new processing just by defining the ports and the code in the Do method
 * The system will compile it and will add it to the user's plugin library
 * It would be great to have it integrated on the NetworkEditor
-* This project could be related to the Python scripting project but we are considering C++ code here.
+* This project could be related to the Python scripting project (see below) but we are considering C++ code here.
 
 == Scripting CLAM in Python ==
 
 * several approaches: Adhoc API or API export using SWIG or SIP
 * build and use a clam network with python
-* this could lead to a NetworkEditor python console with tab-completion
+* this could lead to a NetworkEditor python console with tab-completion (QPyConsole)
 * use clam processings and processing-data with python. use it to visualize data, etc.
 * write clam processings with python
 ** Related to the 'Processing editor' project
@@ -50,12 +74,14 @@ more here: [[Devel/Plugins TODOs]]
 * Minimize the provided data by using object information (sampling rate on analysis, and most of the analysis parameters embedded on the object for resynthesis)
 
 == Convergence of SMSTools and CLAM widgets infrastructure ==
+
 * Transformation parameter automation using time-lines (ala ardour automation)
 * Metadata based widgets
 * Widgets interaction (zoom)
 * Network based transformations. The user should be able to define the transformation chain using NetworkEditor.
 
 == Real-time synthesizer using SMS models ==
+
 * a new revamped but very simple salto synthesizer.
 * a db of sms samples
 * processings 
