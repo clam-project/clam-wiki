@@ -42,8 +42,8 @@ One project could be integrating aubio as processing(s) into clam.
 Other task to be done is to create an Annotator extractor for Aubio.
 There is an outdated example in CLAM/Example/TickExtractor 
 that did tempo tracking and meter estimation for the Annotator.
-Development on such example was discontinued when aubio license was not clear
-and now it needs some work to have it working again.
+Development on such example was discontinued during a period when aubio license was not clearly GPL.
+Now it needs some work to have it working again.
 
 This project could consist in providing processings that makes aubio features
 availables on the NetworkEditor or/and making the TickExtractor example working again.
