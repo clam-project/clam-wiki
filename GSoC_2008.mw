@@ -93,7 +93,9 @@ CLAM (Universitat Pompeu Fabra)
 http://clam.iua.upf.edu
 
 === Describe your organization. ===
- 
+
+[http://www.clam.iua.upf.edu CLAM](C++ Library for Audio and Music) is a project that aims at developing a full-featured application framework for Audio and Music Applications. It offers a conceptual metamodel as well as many different tools for that particular domain. One of its most relevant features is the availability of a visual building dataflow application that allows to develop rapid prototypes without writing code. The project started 7 years ago and, won the ACM award to the Best Open Source Multimedia Software in 2006. CLAM is mostly developed and hosted by the [http://www.upf.edu Universitat Pompeu Fabra] (Barcelona, Spain).
+
 === Why is your organization applying to participate in GSoC 2008? What do you hope to gain by participating? ===
  
 === Did your organization participate in previous GSoC years? If so, please summarize your involvement and the successes and failures of your student projects. (optional) ===
