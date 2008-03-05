@@ -264,14 +264,20 @@ Some use cases:
 
 == Flexible auralization on Annotator ==
 
-Currently the auralization is limited to some kinds of descriptors auralization.
-Currently just playing a tick on segment onset and 
-float value frame level descriptors controlling the pitch of a tone.
-This is still very limiting. 
+Annotator provides auralization for the user to check the descriptors.
+But auralization capabilities are limited to
+playing a click on segment onset and 
+float value frame level descriptors controlling the pitch of an oscillator.
 By adding a general way to convert descriptors to control signals
 they can be used to control an arbitrary synthesizer set by the user.
 Possible solutions for that  could be a CLAM network with selected hooks
 for descriptors or generating OSC or MIDI to control a synthesizer.
+
+This project consists in:
+* Define controllers that can take attributes on the pool data to control a network
+* Recode Annotator auralizer to use networks and to feed in control values
+* Provide the interface to configure auralizators for each project
+* Build several useful auralizations.
 
 = Still not included =
 
