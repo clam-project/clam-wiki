@@ -49,7 +49,7 @@ and to coordinate with him:
 
 Which is your experience with:
 * Signal processing
-* Audio, MIDI computer systems
+* Audio/MIDI computer subsystems (jack, portaudio, osc, vst...)
 * SVN
 * C++
 * GCC
@@ -58,8 +58,6 @@ Which is your experience with:
 * CppUnit or similar, and test driven development
 * Python
 * Any technology not listed here that is related to the project you choose
-
-
 
 = Draft of the organization submision =
 
