@@ -248,16 +248,19 @@ Some use cases:
 * "I want to correct an offset that a given segment annotation adds to all segments"
 * "I want to extend a regular beat annotation and just correct when it varies"
 
-== Enhancing Annotator Widgets ==
+== Enhancing Segment Editor ==
 
-* Enhancing the usability of the segment editor
-** Selection and edit actions (copy, paste..)
-** Overlapping segments
-** Displaying segment attributes as height
-** Displaying segment attributes as color
-* Views for multibin frame parameters (spectrums, pcp's, chord correlation...)
-* Better frame level float editor
+* Selection and edit actions (copy, paste..)
+* Overlapping segments
+* Displaying segment attributes as height
+* Displaying segment attributes as color
+* Using metadata: Units, intervals...
+
+== Enhancing Annotator Views ==
+
 * Bring more CLAM monitors as instant views
+* Time evolution views for multibin frame parameters (spectrums, pcp's, chord correlation...)
+* Better frame level float editor
 
 == Flexible auralization on Annotator ==
 
