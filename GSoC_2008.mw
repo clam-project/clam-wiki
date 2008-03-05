@@ -171,5 +171,16 @@ But even if this happens, most mentors are flexible enough to collaboratively co
 In fact, last year, mentors supported each other all the time with their students.
 
 === What steps will you take to encourage students to interact with your project's community before, during and after the program? ===
- 
+
+In order they integrate into project's community
+we will ask them to send queries to their mentor to the mailing list instead of directly to his mailbox,
+we will encourage them to use the IRC channel to ask questions even when their mentor is not present,
+we will invite them to subscribe their blogs in the [http://clam.iua.upf.edu/planet CLAM plannet],
+we will be carefull letting them answering questions of users and other students, 
+before providing an answer ourselves,
+telling them that doing so will be evaluated very positively.
+
+At the end of the program we will ask them for things that they would like to do in CLAM beyond GSoC,
+in order to motivate them to keep contributing.
+
 === What will you do to ensure that your accepted students stick with the project after GSoC concludes? ===
