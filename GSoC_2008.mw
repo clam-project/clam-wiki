@@ -145,7 +145,25 @@ dgarcia iua.upf.edu
 == About The Program ==
 
 ===   What is your plan for dealing with disappearing students? ===
- 
+
+We don't know any mechanism for dealing with disapparing students besides evaluating them badly.
+But to avoid reaching that point we learned last year that mentors have to be very dedicated
+to get results on the first part of the GSoC program.
+
+We will set some flexible gloals that students should achieve.
+Before starting the program they should, at least, have the development setup ready, 
+a first list of tasks and having sent some patch.
+After that we'll set up close remote-pair-programming sessions to get some early goals done
+so that they get the methodology and could send their first valid patches.
+This will continue until they have sent enough valid patches to be considered as commiters.
+With some flexibility this should happen before the mid-term evaluation
+when we will evaluate having done significant commits/patches.
+
+We hope that developer live cycle and close mentor guiding will engage them with the project.
+Beside that we would like to integrate them into the community 
+by aggregating their blog in the planet, having nice talks at the IRC and 
+interesting discussions with them on the mailing list.
+
 === What is your plan for dealing with disappearing mentors? ===
 
 Due to the close commitment of the mentors that can happen just by major causes.
