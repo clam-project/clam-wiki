@@ -8,7 +8,7 @@ The number of steps is large and we are in the process of reducing it so this is
 *** provides input ports of the proper class, and
 *** offers thread safe access to the data from the GUI thread.
 ** XXXXDataSource:
-*** abstract interface to be used by the visualization to get data and metadata
+*** abstract interface to be used by the visualization to get data and metadata (units, sizes, limits...)
 **** one must reimplement such interface to map MyToken into a DSP agnostic type
 **** reusing an existing data source will increase the usability of the port
 **** some interfaces examples: sampled functions (float arrays), point defined envelopes, list of placed values, segmentations...
