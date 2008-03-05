@@ -1,5 +1,48 @@
 = Draft of the student application template =
 
+== Availability ==
+
+* How many hours a week do you plan to dedicate to the project?
+* Are you going to have any other occupation during the period (studying, jobs...)? Which one? How many hours it will take you?
+* Are you planning to get any days off during the period (trips, exams...)? Which ones or how many?
+
+== CLAM involvement ==
+
+* Which kind of interaction did you had with CLAM project/commutity?
+** I have used CLAM based applications (which ones and how in Notes)
+** I have compiled the source code (problems? solved?)
+** I have already coded my own projects using CLAM (explain it)
+** I have send patches to the CLAM list (which ones)
+** I did commits on the svn (which user)
+** I took conversations on the IRC channels with CLAM developers (nick and subject)
+** I sent mails to CLAM related mailing lists (email, subject)
+** Notes:
+
+== Free software involvement ==
+
+* Which kind of knowledge do you have of free software and its methods?
+** I normally work in free software environments as user
+** I have compiled a C++ free software svn/cvs tree
+** I have been involved some free software project (which one, involved technologies, contributions, personal or large community?)
+
+== Technological background ==
+
+Which is your experience with:
+* Signal processing
+* Audio, MIDI computer systems
+* SVN
+* C++
+* GCC
+* SCons
+* Qt
+* CppUnit or similar, and test driven development
+* Python
+* Any technology not listed here that is related to the project you choose
+
+== Motivation ==
+
+* What do you expecto to get on the program
+* Why do you want to be in the program
 
 = Draft of the organization submision =
 
