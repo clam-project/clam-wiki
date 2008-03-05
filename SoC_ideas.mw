@@ -220,19 +220,25 @@ for example, public web services such as Lastfm, MusicBrainz, EchoNest...
 
 == Annotation Merger ==
 
-Currently BOCA system does pretty well by defining merges, projections and 
-attribute renaming of several annotation sources (extractors, databases,
-webservices...).
+This project consist in implementing an interface in the Annotator to
+merge and select the outputs of different existing extractors into a single project.
+That would be useful for example to combine in a project, 
+chords extracted automatically by an algorithm, with hand annotated ground truth
+while keeping both in separated files.
 
-BOCA merging scripts (developed in python) are distributed with the annotator.
-They are useful for example to combine several extractors locally or 
-an extractor and a manually annotated ground truth and compare them.
-But they are hard to use for a non expert user.
+BOCA interface was able to merge several annotation sources,
+such as extractors, databases and webservices, 
+as a unique Annotator descriptors file (data pool).
+Python scripts developed to implement that do pretty well to 
+define merges, projections and attribute renaming 
+of several annotation sources (extractors, databases, webservices...).
 
-It would be nice to integrate into the annotator a tool to graphically configure 
-how to perform such a merge to run it locally.
-The idea is that a project could have, instead of a single extractor,
-a combination of descriptors sources.
+BOCA merging scripts are distributed with the annotator.
+With some knowledge you can build a python extractor that does the merge.
+But for regular users this is not that intuitive to write an script,
+so this project proposes to build:
+* A graphical interface to build merging script
+* Some extra application logic needed to launch several extractors and to mapping back pool modifications.
 
 == Macro manipulation of descriptors with python on Annotator ==
 
