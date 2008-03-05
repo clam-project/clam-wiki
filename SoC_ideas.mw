@@ -52,6 +52,7 @@ Such conditions are raised on processing thread while it should be detected
 by the application interface thread.
 This task (which is not a project by itself, but can complement others that are also small)
 consists in implementing  a proper method of raising such error conditions and catching
+whithout the application dying, just stopping.
 
 == Enhancing plugin system ==
 
