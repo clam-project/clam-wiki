@@ -3,24 +3,27 @@ The number of steps is large and we are in the process of reducing it so this is
 
 == Getting the monitor working on the NetworkEditor ==
 
-* Create a Monitor class (MyViewMonitor) with double derivation from:
-** PortMonitor templated by the port data, which gives the class:
-*** input ports of the proper class, and
-*** thread safe access to the data from the GUI thread.
-** XXXXDataSource which gives the class:
-*** abstract interface to be used by the visualization to get data
+* Create a Monitor class (MyViewMonitor) with double inheritance from:
+** PortMonitor templated by the port data (MyToken):
+*** provides input ports of the proper class, and
+*** offers thread safe access to the data from the GUI thread.
+** XXXXDataSource:
+*** abstract interface to be used by the visualization to get data and metadata
+**** one must reimplement such interface to map MyToken into a DSP agnostic type
+**** reusing an existing data source will increase the usability of the port
+**** some interfaces examples: sampled functions (float arrays), point defined envelopes, list of placed values, segmentations...
+** See examples at NetworkEditor/src/monitors
 ** The implementation should implement XXXXAudioSource interface to map DSP data to visualization, and metadata (units, sizes, limits...)
-** Such implementation should access the data using the PortMonitor thread safe interface.
+** Such implementation should access the data using the PortMonitor thread safe interface (freeze and release).
 ** Be carefull with the freeze and release policy:
 *** Every call do not get data more than once by keep references or copying it
 *** Don't forget to release data before exiting the function.
 *** Don't release if you didn't get it.
-*** Do not use reference after release, copy if you want.
-** See examples at chordWidgets
+*** Do not use reference after release, copy data to thread if you want to.
 
-* Create a view widget (MyView) attached to the audio source
+* Create a view widget (MyView) which uses the XXXXDataSource interface
+** See examples at NetworkEditor/src/monitors
 ** The widget should freeze the Monitor and use/copy the data
-** (see ChordWidgets).
 ** Use QDESIGNER_WIDGET_EXPORT macro after 'class' keyword:
        #include <QtDesigner/QDesignerExportWidget>
        class QDESIGNER_WIDGET_EXPORT Oscilloscope : public QWidget
@@ -29,7 +32,7 @@ The number of steps is large and we are in the process of reducing it so this is
        http://doc.trolltech.com/latest/properties.html
 ** If you use the QGLWidget remember to undefine GetClassName for Windows(tm) glory
 ** Define a constructor passing a datasource as parameter default to null pointer
-** When null pointer it's being called by Designer so make it point to an static dummy data source with dummy data.
+** When null pointer it's being called by Designer so make it point to an static dummy data source with dummy data which is useful for dummy display on designer.
 
 * Register in the factory the monitor with the name of the view (Why?)
 ** The GetClassName for the PortMonitor should match the view name too. (Why?)
