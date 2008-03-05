@@ -6,8 +6,52 @@
 
 == Integrating external libraries ==
 
-* Resampler: libsamplerate
-* OnsetDetection: aubio
+Integrating one or more of those libraries could be great
+
+=== libsamplerate ===
+
+An existing experiment of processing exists as plugin.
+Still  it is not working properly and proper configuration parameters must be found.
+
+Working with different samplerates is a hard problem now in CLAM.
+One solution could be using network configuration parameters (see GSoC project).
+still, wave file could provide different samplerates thant the 
+Also integration with FileReaders and Writers and with Backends will be useful.
+
+This project consists in providing both a good Resampling processing and 
+minimizing samplerate impedance between processings requiring a given samplerate,
+audio files and the audio backend.
+
+=== Libflac and libspeex ===
+
+CLAM's AudioFileReaders/Writers use different backends for audio loading and saving.
+Such backends offers the readers and writers a common interface to several libraries.
+Current underlying libraries are
+sndfile for wav, aiff, au, and others, libmad for MP3 and liboggvorbis for ogg/vorbis.
+
+There are some other libraries developed at http://xiph.org/ which support other formats:
+* libflac supports FLAC which is a lossless compression format
+* libspeex supports speex format which is specialized on voice compression
+
+This project will consist on adding support for such libraries in CLAM.
+
+=== Aubio ===
+
+Aubio provide nice realtime onset detection algorithms.
+One project could be integrating aubio as processing(s) into clam.
+Other task to be done is to create an Annotator extractor for Aubio.
+There is an outdated example in CLAM/Example/TickExtractor.
+Development on such example was discontinued when aubio license was not clear
+and now it needs some work to have it working again.
+
+
+== Runtime checks ==
+
+Some error conditions are not available until the processings are executed.
+Such conditions are raised on processing thread while it should be detected
+by the application interface thread.
+This task (which is not a project by itself, but can complement others that are also small)
+consists in implementing  a proper method of raising such error conditions and catching
 
 == Enhancing plugin system ==
 
