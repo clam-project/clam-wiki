@@ -32,14 +32,15 @@ So having the following information will help a lot.
 
 == Previous CLAM involvement ==
 
-* Which is the kind of interaction you already had with CLAM project/commutity (fill as many as you had)?
+* Which is the kind of interaction you already had with CLAM project/commutity (fill as many as you had):
 ** I have used CLAM based applications (which ones and how)
 ** I have compiled the source code (problems? solved?)
 ** I have already coded my own projects using CLAM (explain it)
-** I have send patches to the CLAM list (which ones)
+** I reported CLAM bugs (BTS, mailing list or irc, whatever)
+** I sent patches to the CLAM list (which ones)
 ** I did commits on the svn (which user)
 ** I took conversations on the IRC channels with CLAM developers (nick and subject)
-** I sent mails to CLAM related mailing lists (email, subject)
+** I sent mails to CLAM related mailing lists (email, topics)
 
 == Free software involvement ==
 
