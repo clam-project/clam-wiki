@@ -4,6 +4,11 @@
 
 = Proposed ideas for the 2008 SoC =
 
+== Integrating external libraries ==
+
+* Resampler: libsamplerate
+* OnsetDetection: aubio
+
 == Enhancing plugin system ==
 
 TODO: Split that in small project packages
