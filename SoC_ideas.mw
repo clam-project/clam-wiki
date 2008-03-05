@@ -250,17 +250,14 @@ Some use cases:
 
 == Enhancing Annotator Widgets ==
 
-* Views for multibin frame parameters (spectrums, pcp's, chord correlation...)
-* Frame level float editor
-* More instant views
-** Spectrum + peaks
-** 
-* Multiple segmentation panes
 * Enhancing the usability of the segment editor
 ** Selection and edit actions (copy, paste..)
 ** Overlapping segments
 ** Displaying segment attributes as height
 ** Displaying segment attributes as color
+* Views for multibin frame parameters (spectrums, pcp's, chord correlation...)
+* Better frame level float editor
+* Bring more CLAM monitors as instant views
 
 == Flexible auralization on Annotator ==
 
