@@ -45,14 +45,21 @@ Development on such example was discontinued when aubio license was not clear
 and now it needs some work to have it working again.
 
 
-== Runtime checks ==
+== Recovering from Processing errors ==
 
 Some error conditions are not available until the processings are executed.
 Such conditions are raised on processing thread while it should be detected
 by the application interface thread.
+
 This task (which is not a project by itself, but can complement others that are also small)
 consists in implementing  a proper method of raising such error conditions and catching
 without the application dying, just recovering the backend and stopping the player.
+
+Also graphical (qt) handler of assertion failures has been disabled because
+when the assertion is thrown from the processing thread the error message was
+even more obscure that the console message you get with the plain console handler.
+Another related task could be catching assertions and forward them to the application 
+thread by any means without AssertFailure reaching the top of the processing thread stack.
 
 == Enhancing plugin system ==
 
