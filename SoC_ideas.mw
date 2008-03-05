@@ -6,7 +6,7 @@
 
 == Enhancing plugin system ==
 
-TODO: Split that in coherent project packages
+TODO: Split that in small project packages
 
 Plugin systems are both a way of extending available
 modules for CLAM (CLAM as a plugin host) 
