@@ -6,6 +6,8 @@
 
 == Enhancing plugin system ==
 
+TODO: Split that in coherent project packages
+
 Plugin systems are both a way of extending available
 modules for CLAM (CLAM as a plugin host) 
 and also a way of using CLAM networks in 3rd party contexts
