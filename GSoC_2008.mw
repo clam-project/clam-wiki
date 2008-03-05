@@ -55,17 +55,19 @@ So having the following information will help a lot.
 
 == Technological background ==
 
-Which is your experience with:
+Explain your experience with:
 * Signal processing
-* Audio/MIDI computer subsystems (jack, portaudio, osc, vst...)
-* SVN
-* C++
-* GCC
+* Audio computer subsystems (hardware, jack, portaudio, osc, ladspa, vst...)
+* SVN/CVS
+* C++ (and GCC)
+* Python
 * SCons
 * Qt
 * CppUnit or similar, and test driven development
-* Python
-* Any technology not listed here that is related to the project you choose
+* Any technology not listed here being related to the project you choose
+
+Other information:
+* URL to your technical-content blog, vitae or web page if you have.
 
 = Draft of the organization submision =
 
