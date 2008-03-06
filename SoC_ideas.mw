@@ -63,7 +63,7 @@ Some of the concrete use cases to be addressed are:
 ** Moving fastforward and backwards
 ** Playing a limited length of the song and then back
 ** Replay from the same point
-** Time streetch playback
+** Time stretch playback
 * Display
 ** A scrolling segmentation view
 ** Segmentation view should have chord text displayed
@@ -273,8 +273,12 @@ Some use cases:
 == Enhancing NetworkEditor ==
 
 * Add undo/redo support.
-* Realtime wiring. 
 * Add the possibility of save all the controls values to have networks ready to play (like a patch).
+* Cut and paste.
+
+== Hot-wiring in NetworkEditor ==
+
+* Change the connections without stopping the network.
 
 == Enhancing Segment Editor ==
 
