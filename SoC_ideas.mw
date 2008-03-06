@@ -248,6 +248,12 @@ Some use cases:
 * "I want to correct an offset that a given segment annotation adds to all segments"
 * "I want to extend a regular beat annotation and just correct when it varies"
 
+== Enhancing NetworkEditor ==
+
+* Add undo/redo support.
+* Realtime wiring. 
+* Add the possibility of save all the controls values to have networks ready to play (like a patch).
+
 == Enhancing Segment Editor ==
 
 * Selection and edit actions (copy, paste..)
@@ -279,12 +285,11 @@ This project consists in:
 * Provide the interface to configure auralizators for each project
 * Build several useful auralizations.
 
-
 == MIDI support ==
 
 * NetworkEditor: Realtime Input/Output using portmidi. Read/Write on files
 * Improve and update all the MIDI support of the framework
-     
+
 
 
 = Still not included =
