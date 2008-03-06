@@ -279,6 +279,14 @@ This project consists in:
 * Provide the interface to configure auralizators for each project
 * Build several useful auralizations.
 
+
+== MIDI support ==
+
+* NetworkEditor: Realtime Input/Output using portmidi. Read/Write on files
+* Improve and update all the MIDI support of the framework
+     
+
+
 = Still not included =
 
 Those ideas were discarded to be offered as SoC project but if you are still interested, just ask.
