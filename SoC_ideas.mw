@@ -48,6 +48,28 @@ Now it needs some work to have it working again.
 This project could consist in providing processings that makes aubio features
 availables on the NetworkEditor or/and making the TickExtractor example working again.
 
+== Standalone chord extractor application ==
+
+We have the chord extraction running whithin Annotator, NetworkEditor, Offline, but none of these applications are addressed towards the real use that one can make of such technology.
+
+This project consists on building an application which addresses usability issues for the use case that some one want to learn the chords of a song.
+
+Some of the concrete use cases to be addressed are:
+
+* Most of user actions should consist on single key actions (no control keys) to facilitate usage with an musical instrument at hand.
+* Precomputing a song when loading it.
+* Playback
+** Preloading the song 
+** Moving fastforward and backwards
+** Playing a limited length of the song and then back
+** Replay from the same point
+** Time streetch playback
+* Display
+** A scrolling segmentation view
+** Segmentation view should have chord text displayed
+** Segmentation view should have a different color for each chord for the user to associate them. Maybe different color association per song or maybe using a color/pattern combination for Root/Mode.
+
+
 == Recovering from Processing errors ==
 
 Some error conditions are not available until the processings are executed.
