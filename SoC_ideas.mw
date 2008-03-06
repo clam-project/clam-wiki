@@ -196,6 +196,8 @@ so that user could figure out what's going on.
 Due to the extend it could be split into a set of projects.
 Check the details on the [[Chord Extraction TODO's]] page.
 
+== Speech synthesis ==
+
 == CLAM for Video ==
 
 * Add video processing/playback capabilities
