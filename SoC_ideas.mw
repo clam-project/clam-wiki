@@ -167,7 +167,7 @@ the key methods.
 ** create stream flow
 ** etc.
 
-== Vowel synthesizer ==
+== Educational vowel synthesizer ==
 
 Build a educative program that would consist on:
 * synthesizing different vowels by placing a point within the [http://en.wikipedia.org/wiki/Vowel_triangle Vowel triangle],
@@ -183,8 +183,6 @@ This could be enhanced by:
 A teacher could limit the set of vowels to the ones used for 
 a particular language such as Catalan or English,
 so that the students just see the relevant ones for the exercise.
-
-
 
 == Enhancing chord detection algorithm for real-time usage ==
 
