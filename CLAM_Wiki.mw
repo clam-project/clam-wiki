@@ -33,6 +33,7 @@
 ** [[Building a processing library]]
 ** [[Defining a ProcessingComposite]]
 ** [[Changing the port color for custom data types]]
+* [[Metamodel of network using a class diagram]]
 * [[Version Migration Guide]]
 
 * Old: [[DeprecatedDoc/CLAMUserManual|documentation index]] (deprecated documentation dumped from the old manual)
