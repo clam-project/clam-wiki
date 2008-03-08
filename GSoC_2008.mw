@@ -54,16 +54,18 @@ But you can  [http://clam.iua.upf.edu/wikis/clam/index.php/Devel#Getting_involve
 
 == Technological background ==
 
-Briefly explain your experience with:
-* Signal processing
-* Audio computer subsystems (hardware, jack, portaudio, osc, ladspa, vst...)
-* SVN/CVS
-* C++ (and GCC)
-* Python
-* SCons
-* Qt
-* CppUnit or similar, and test driven development
-* Any technology not listed here being related to the project you choose
+* Which are your main working platforms?
+* Which is your experience regarding open source as user, developer, supporter or within a given open source community?
+* Briefly explain your experience with the following technologies:
+** Signal processing
+** Audio computer subsystems (hardware, jack, portaudio, osc, ladspa, vst...)
+** SVN/CVS
+** C++ (and GCC)
+** Python
+** SCons
+** Qt
+** CppUnit or similar, and test driven development
+** Any technology not listed here being related to the project you choose
 
 == Aditional information ==
 
