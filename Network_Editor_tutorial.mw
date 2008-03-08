@@ -423,6 +423,6 @@ to get the output of each binaural signal, left and right.
 
 == TODO: Spectral Modeling Synthesis ==
 
-Besides the regular STFFT (Phase Vocoder) implementation, CLAM also has implemented the Sinusoidal plus Residual Model (a.k.a. SMS). That model identifies the sinusoids (the tonal part) on the spectral representation and substract them to get residual (the noisy part). By doing so, we can process both components separatelly so even more interesting transformations can be implemented with that model. 
+Besides the regular STFT (Phase Vocoder) implementation, CLAM also has implemented the Sinusoidal plus Residual Model (a.k.a. SMS). That model identifies the sinusoids (the tonal part) on the spectral representation and substract them to get residual (the noisy part). By doing so, we can process both components separatelly so even more interesting transformations can be implemented with that model.
 
 == TODO: Tonal Analysis ==
