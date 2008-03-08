@@ -60,7 +60,7 @@ But you can  [http://clam.iua.upf.edu/wikis/clam/index.php/Devel#Getting_involve
 ** Signal processing
 ** Audio computer subsystems (hardware, jack, portaudio, osc, ladspa, vst...)
 ** SVN/CVS
-** C++ (and GCC)
+** C++/GCC
 ** Python
 ** Qt
 ** CppUnit or similar, and test driven development
