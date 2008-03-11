@@ -1,0 +1,9 @@
+[http://www.archlinux.org ArchLinux] is a lightweight, i686 optimized GNU/Linux distribution. To install CLAM, you must first install all of the dependencies. Almost all of these can be found in the "Extra" or "Community" repositories, although you may need to compile a few from source. 
+
+After installing these via 'pacman -S [package name]', make a directory into which you will download the CLAM [http://www.clam.iua.upf.edu/download/src/CLAM-1.2.0.tar.gz source tarball]. Extract the CLAM-1.2.0.tar.gz by running 'tar -xvzf CLAM-1.2.0.tar.gz'. 
+
+'cd' into the CLAM-1.2.0 folder, and you'll see a list of source files. At this point, you must run 'scons configure' to ensure all dependencies are available and generate a makefile. By default, CLAM installs to /usr/local. If you prefer a different directory, specify it in the SConstruct file. Next, run 'export QTDIR=/usr.' 
+
+Run 'scons', which will compile CLAM. After this completes, you should run 'scons install', which will copy the files you just compiled into /usr/local/include and /usr/local/lib. CLAM is now installed.
+
+'''Network Editor tutorial coming soon'''
