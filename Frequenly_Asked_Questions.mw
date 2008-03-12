@@ -6,6 +6,19 @@ CLAM is a development framework to build Audio and Music applications. You can u
 
 CLAM is distributed along with some example applications that are usefull by themselves.
 
+=== What does CLAM stands for? ===
+
+CLAM is the acronym for ''C++ Library for Audio and Music'' and it is also a pun on the catalan word 'clam' which means ''clamor'', a continuous sound produced by a large number of people as to show approval or disapproval of a given event.
+
+=== Will CLAM suit my needs? ===
+
+This is of course the million dollar question. It is difficult to be sure whether CLAM can suit your needs until you really try it out. Nevertheless, here are a few hints that may help you decide:
+* CLAM can be used for audio analysis and synthesis It is specially well-suited for spectral analysis/synthesis
+* It includes features that make it suitable for Music Information Retrieval
+* It can be used to build real-time, efficient applications
+* In any case you should keep on reading the rest of this FAQ as well as any other CLAM documentation that can help you out in the decision.
+
+
 === I want to start using CLAM, how do I approach CLAM as user or as developer? ===
 
 The guide "[[Approaching CLAM]]" will advice you the proper steps to take depending on your goals and level of expertise.
