@@ -22,6 +22,14 @@ This is of course the million dollar question. It is difficult to be sure whethe
 * It can be used to build real-time, efficient applications
 * In any case you should keep on reading the rest of this FAQ as well as any other CLAM documentation that can help you out in the decision.
 
+=== Why does CLAM depend on so many 3rd party libraries? ===
+
+CLAM aims at offering all necessary services for building an audio and music application. This implies many different tools and possible requirements. Some of those tools already exist and, as it makes no sense implementing them from scratch, all we do is take them and provide them all under an uniform interface that eases their combination. 
+
+CLAM would be unthinkable without the great work of all those developers.
+
+== Documentation ==
+
 === I want to start using CLAM, how do I approach CLAM as user or as developer? ===
 
 The guide "[[Approaching CLAM]]" will advice you the proper steps to take depending on your goals and level of expertise.
@@ -33,12 +41,6 @@ Often we advice possible contributors to follow [[Devel#Getting_involved|those s
 === I want to upgrade my code to a new CLAM version, what does has changed? ===
 
 We summarize all the sensible changes that you will require to upgrade your code from one CLAM version to the next on the [[Version Migration Guide]].
-
-=== Why does CLAM depend on so many 3rd party libraries? ===
-
-CLAM aims at offering all necessary services for building an audio and music application. This implies many different tools and possible requirements. Some of those tools already exist and, as it makes no sense implementing them from scratch, all we do is take them and provide them all under an uniform interface that eases their combination. 
-
-CLAM would be unthinkable without the great work of all those developers.
 
 == Compilation ==
 
