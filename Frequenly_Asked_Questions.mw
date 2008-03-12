@@ -2,7 +2,7 @@
 
 === What is CLAM? ===
 
-CLAM is a development framework to build Audio and Music applications. You can use CLAM as a library to program your applications in C++ but it also provides graphical tools to build applications without coding. CLAM provides an uniform interface to facilities that addresses complex tasks in audio applications such as audio devices, audio files, thread safe communication, DSP algorithm reconvination and scaling...
+CLAM is a development framework to build Audio and Music applications. You can use CLAM as a library to program your applications in C++ but you can also use graphical tools to build full applications without coding. CLAM provides an uniform interface to facilities that addresses complex tasks in audio applications such as audio devices, audio files, thread safe communication, DSP algorithm reconvination and scaling...
 
 CLAM is distributed along with some example applications that are usefull by themselves.
 
