@@ -11,3 +11,11 @@ Normally we advice possible contributors to follow [[Devel#Getting_involved|thos
 == I want to upgrade my code to a new CLAM version, what does has changed? ==
 
 We summarize all the sensible changes that you will require to upgrade your code from one CLAM version to the next on the [[Version Migration Guide]].
+
+= Compilation =
+
+== When compiling the NetworkEditor i get an 'Undefined Interface' error ==
+
+This error is normally caused because the moc command does not receive the proper '-I' option pointing to the path of Qt4's QtDesigner includes.
+
+This problem is solved in a distinct way depending on the platform. Check the INSTALL file and the user contributed platform specific installation guides on the wiki.
