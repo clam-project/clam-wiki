@@ -46,4 +46,4 @@ CLAM would be unthinkable without the great work of all those developers.
 
 This error is normally caused because the moc command does not receive the proper '-I' option pointing to the path of Qt4's QtDesigner includes.
 
-This problem is solved in a distinct way depending on the platform. Check the INSTALL file and the user contributed platform specific installation guides on the wiki.
+Often this error is due to a missconfiguration of the QTDIR environment path. But this problem is solved in a distinct way depending on the platform. Check the INSTALL file and the user contributed platform specific installation guides on the wiki.
