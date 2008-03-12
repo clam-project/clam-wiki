@@ -12,7 +12,7 @@ CLAM is the acronym for ''C++ Library for Audio and Music'' and it is also a pun
 
 === Is CLAM a "library" or a "framework"? ===
 
-CLAM is a software framework as defined by Ralph E. Johnson. CLAM does not only offer a set of functionalities but also provides a conceptual metamodel or way of doing things. Read [http://www.iua.upf.es/~xamat/Thesis|X. Amatriain's PhD thesis] if you are interested on this theoretical discussion.
+Despite the name, CLAM is a software framework as defined by Ralph E. Johnson. CLAM does not only offer a set of functionalities but also provides a conceptual metamodel or way of doing things. Read [http://www.iua.upf.es/~xamat/Thesis|X. Amatriain's PhD thesis] if you are interested on this theoretical discussion.
 
 === Will CLAM suit my needs? ===
 
