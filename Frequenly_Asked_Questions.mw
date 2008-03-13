@@ -46,7 +46,7 @@ We summarize all the sensible changes that you will require to upgrade your code
 
 == Compilation ==
 
-=== When compiling the NetworkEditor i get an 'Undefined Interface' error ===
+=== Why do I get an 'Undefined Interface' error when compiling the NetworkEditor ===
 
 This error is normally caused because the moc command does not receive the proper '-I' option pointing to the path of Qt4's QtDesigner includes.
 
