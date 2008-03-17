@@ -48,7 +48,7 @@ Often we advice possible contributors to follow [[Devel#Getting_involved|those s
 
 === I want to upgrade my code to a new CLAM version, what should I change? ===
 
-We summarize all the sensible changes that you will require to upgrade your code from one CLAM version to the next on the [[Version Migration Guide]].
+The [[Version Migration Guide]] summarizes all the sensible changes that you will require to upgrade your code from one CLAM version to the next one.
 
 == Compilation ==
 
