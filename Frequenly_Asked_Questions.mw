@@ -34,6 +34,26 @@ CLAM would be unthinkable without the great work of all those developers.
 
 For third party (non-UPF) uses and citations take a look at [[CLAM citations]].
 
+
+=== Are there any similar frameworks? ===
+
+There are a few frameworks that overlap with CLAM's goals.
+
+If you are only interested in audio analysis and feature extraction you should check:
+* [http://marsyas.sourceforge.net/ Marsyas]
+* [http://cmis.csiro.au/maaate Maaate]
+
+If you are interested only in audio synthesis you should check:
+* [http://ccrma.stanford.edu/software/stk STK]
+* [http://www.cnmat.berkeley.edu/OSW Open Sound World]
+* [http://www-2.cs.cmu.edu/aura Aura]
+
+And if you are looking for a framework with both analysis and synthesis capabilities check:
+* [http://www.create.ucsb.edu/CSL CSL]
+* [http://www.may.ie/academic/music/musictec/SndObj/main.html SndObj]
+
+In any case, CLAM presents both conceptual and practical differences with all of them. If you are interested in a thorough presentation of CLAM alternatives and how they compare to our framework please refer to X. Amatriain's phd.
+
 == Documentation ==
 
 === I want to start using CLAM, how do I approach CLAM as user or as developer? ===
