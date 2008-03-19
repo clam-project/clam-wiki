@@ -112,6 +112,14 @@ See more here: [[Devel/Plugins TODOs]]
 
 This project has room for several projects. It also has contacts with many other projects: Subnetworks, metainformation, visual definition of processings... So if you choose this project, be specific on the set of aspects that will be addressed.
 
+== Integrate Faust with CLAM ==
+
+FAUST http://sourceforge.net/projects/faudiostream/ is a functional language for audio processing. A faust module can be compiled as a ladspa plugin and then loaded into a clam network
+Thigs to be added:
+* Display faust diagrams (svg) embedded in clam processing boxes. Navigable (hierarchically) faust diagrams
+* On-the-fly compilation of faust modules
+* Faust code editing within clam networkeditor
+
 == Network Scalability (aka Subnetworks) ==
 
 One compeling issue in CLAM is addressing scalability for the visual builder.
