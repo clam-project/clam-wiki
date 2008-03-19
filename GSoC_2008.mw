@@ -1,3 +1,37 @@
+== How to apply ==
+
+* Google's SoC's [http://code.google.com/opensource/gsoc/2008/faqs.html frequently asked questions]
+* Check [http://code.google.com/opensource/gsoc/2008/faqs.html#0.1_eligibility Google's Summer of Code eligibility page]. 
+* You must also provide a project proposal in your SoC application. Please see the [[SoC ideas]] for potential projects.
+* Direct link to Google's [http://groups.google.com/group/google-summer-of-code-announce/web/guide-to-the-gsoc-web-app-for-student-applicants application page]. And the main Google's [http://code.google.com/soc/ SoC page].
+
+== Important Dates ==
+* March 17: List of accepted mentoring organizations published on code.google.com
+* March 24: Student application opens.
+* March 31: Student application deadline.
+* April 14: List of accepted student applications published on [[http://code.google.com/soc/2008/ Google Summer of Code home page]]
+* May 26: Students begin coding for their GSoC projects; Google begins issuing initial student payments
+
+And see the [http://code.google.com/opensource/gsoc/2008/faqs.html#0.1_timeline SoC timeline]
+
+== Contact ==
+If you have any question about any of the information below please contact clam-info@iua.upf.edu or join the #clam channel at FreeNode IRC.
+
+== About CLAM ==
+[http://www.clam.iua.upf.edu CLAM](C++ Library for Audio and Music) is a project that aims at developing a full-featured application framework for Audio and Music Applications. It offers a conceptual metamodel as well as many different tools for that particular domain. One of its most relevant features is the availability of a visual building dataflow application that allows to develop rapid prototypes without writing code. The project started 7 years ago and, among other highlights, it won the ACM award to the Best Open Source Multimedia Software in 2006. The framework just published its release 1.2. CLAM is coordinated and hosted at the Universitat Pompeu Fabra (Barcelona, Spain). 
+
+== Mentors ==
+
+After publish the 1.2 release we are very excited about the possibility of participating in Google's Summer of Code again. We intend to draw a larger developer and also user base once our first milestone has been surpassed.
+
+For SoC we are offering four mentors (Xavier Amatriain, Pau Arumi, David Garcia and a last year GSoCer Hernán Ordiales) that are currently CLAM's main developers and have an extensive background in audio and software development. We hope to offer an enjoyable working atmosphere with a large, growing community and very exciting goals.
+
+We look forward for your participation!
+
+== Potential projects ==
+
+See [[SoC ideas]]
+
 = For your SoC Application =
 
 These are the questions we would like you to address in your application. Besides the content of it we will evaluate community involvement and (irc/mail) talks with mentors and community members.
