@@ -329,5 +329,3 @@ Those ideas were discarded to be offered as SoC project but if you are still int
 == CLAM web browser plug-in ==
 
 * Develop a plugin for basic CLAM Network edition through a web browser.
-
-== Integrate Faust with CLAM. And spectral transformations with Faust ==
