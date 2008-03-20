@@ -7,6 +7,10 @@
 
 Integrating one or more of those libraries could be great
 
+=== 3D audio games ===
+
+This project would consist on designing and developing a game based on 3D location of audio using the current 3D audio facilities available on CLAM spacialization plugin.
+
 === libsamplerate ===
 
 An existing experiment of processing exists as plugin.
