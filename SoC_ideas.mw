@@ -48,11 +48,7 @@ This project could consist in providing processings that makes aubio features
 availables on the NetworkEditor or/and making the TickExtractor example working again.
 
 
-== 3D audio games ==
 
-This project would consist on designing and developing a game based on 3D location of audio using the current 3D audio facilities available on CLAM spacialization plugin.
-
-For the proposal is important to define the game you want to implement. It should be amusing and feasible to be implemented within the GSoC period.
 
 == Standalone chord extractor application ==
 
