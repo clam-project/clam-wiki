@@ -241,8 +241,9 @@ Check the details on the [[Chord Extraction TODO's]] page.
 
 == Qt based interfaces for CLAM Network based VST plugins ==
 
-Enabling a Qt Designer interface to control a CLAM Network 
-run as VST plugin the same way CLAM does now for JACK and PortAudio players.
+Currently the Prototyper enables wrapping network in an interface built in with Qt Designer and play them as Jack or PortAudio application.
+
+We would like to do the same with VST plugins. VST plugins have their own graphical control loop but some people succeded on using Qt on it. The key then is using such trick to run a Qt interface in several steps. First a dummy programmed qt interface. Then a xml (ui file) based interface and finally to connect it to the network.
 
 == VAMP plugins on the Annotator ==
 
