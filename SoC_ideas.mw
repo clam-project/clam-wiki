@@ -256,7 +256,9 @@ and integrating its results in an Annotator data pool.
 This project could be also defined for other descriptors source not being VAMP,
 for example, public web services such as Lastfm, MusicBrainz, EchoNest...
 
-== Annotation Merger ==
+=== Annotation Merger ===
+
+High priority on Annotator.
 
 This project consist in implementing an interface in the Annotator to
 merge and select the outputs of different existing extractors into a single project.
