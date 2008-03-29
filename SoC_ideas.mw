@@ -249,6 +249,8 @@ We would like to do the same with VST plugins. VST plugins have their own graphi
 
 Core CLAM developers are dedicated to real time processing issues and 
 they have interest on someone taking care of this key application.
+Tasks of the following proposals can be mixed up in a single proposal
+if they build a coherent set.
 
 === Coretize Annotator Pool features ===
 
@@ -348,7 +350,6 @@ This project consists in:
 * Recode Annotator auralizer to use networks and to feed in control values
 * Provide the interface to configure auralizators for each project
 * Build several useful auralizations.
-
 
 == Enhancing NetworkEditor Usability ==
 
