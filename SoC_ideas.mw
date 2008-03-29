@@ -317,6 +317,38 @@ Some use cases:
 * "I want to correct an offset that a given segment annotation adds to all segments"
 * "I want to extend a regular beat annotation and just correct when it varies"
 
+=== Enhancing Segment Editor ===
+
+* Selection and edit actions (copy, paste..)
+* Overlapping segments
+* Displaying segment attributes as height
+* Displaying segment attributes as color
+* Using metadata: Units, intervals...
+
+=== Enhancing Annotator Views ===
+
+* Bring more CLAM monitors as instant views
+* Time evolution views for multibin frame parameters (spectrums, pcp's, chord correlation...)
+* Better frame level float editor
+
+=== Flexible auralization on Annotator ===
+
+Annotator provides auralization for the user to check the descriptors.
+But auralization capabilities are limited to
+playing a click on segment onset and 
+float value frame level descriptors controlling the pitch of an oscillator.
+By adding a general way to convert descriptors to control signals
+they can be used to control an arbitrary synthesizer set by the user.
+Possible solutions for that  could be a CLAM network with selected hooks
+for descriptors or generating OSC or MIDI to control a synthesizer.
+
+This project consists in:
+* Define controllers that can take attributes on the pool data to control a network
+* Recode Annotator auralizer to use networks and to feed in control values
+* Provide the interface to configure auralizators for each project
+* Build several useful auralizations.
+
+
 == Enhancing NetworkEditor Usability ==
 
 * Add undo/redo support.
@@ -338,43 +370,11 @@ on how to address core classes.
 Proficiency on C++ and basic notions of threading are the key skills to have.
 Having some knowledge on the CLAM core classes implementation would be perfect but not required.
 
-== Enhancing Segment Editor ==
-
-* Selection and edit actions (copy, paste..)
-* Overlapping segments
-* Displaying segment attributes as height
-* Displaying segment attributes as color
-* Using metadata: Units, intervals...
-
-== Enhancing Annotator Views ==
-
-* Bring more CLAM monitors as instant views
-* Time evolution views for multibin frame parameters (spectrums, pcp's, chord correlation...)
-* Better frame level float editor
-
-== Flexible auralization on Annotator ==
-
-Annotator provides auralization for the user to check the descriptors.
-But auralization capabilities are limited to
-playing a click on segment onset and 
-float value frame level descriptors controlling the pitch of an oscillator.
-By adding a general way to convert descriptors to control signals
-they can be used to control an arbitrary synthesizer set by the user.
-Possible solutions for that  could be a CLAM network with selected hooks
-for descriptors or generating OSC or MIDI to control a synthesizer.
-
-This project consists in:
-* Define controllers that can take attributes on the pool data to control a network
-* Recode Annotator auralizer to use networks and to feed in control values
-* Provide the interface to configure auralizators for each project
-* Build several useful auralizations.
 
 == MIDI support ==
 
 * NetworkEditor: Realtime Input/Output using portmidi. Read/Write on files
 * Improve and update all the MIDI support of the framework
-
-
 
 = Still not included =
 
