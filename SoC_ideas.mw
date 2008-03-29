@@ -326,7 +326,17 @@ Some use cases:
 
 == Hot-wiring in NetworkEditor ==
 
-* Change the connections without stopping the network.
+Currently any change to the network structure such as
+adding or removing processings, connecting them are not realtime
+safe and the network playback is stopped for safety reasons.
+This project would enable changing connections without stopping the network.
+
+That means doing real-time safe changes on the network structure.
+Some known techniques exist to do that and mentors will provide guidance
+on how to address core classes.
+
+Proficiency on C++ and basic notions of threading are the key skills to have.
+Having some knowledge on the CLAM core classes implementation would be perfect but not required.
 
 == Enhancing Segment Editor ==
 
