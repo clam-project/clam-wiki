@@ -270,10 +270,11 @@ Many parts of the annotator are defined as plugin based:
 Type management, type dependant table editors, instant views, 
 time evolution views and auralization.
 Those plugins are not real plugins as they are not loaded dlls,
-but clam already has solved multiplatform dll loading with plugins.
+but clam already has solved multiplatform dll loading for plugins.
 
-This project would consist in making this elements plugable
-and addressing issues that could appear.
+This project would consist in cleaning up the API's of each
+set of plugins and making them loadable dll's so that third party
+users can extend pool types and annotator views.
 
 === Annotation Merger ===
 
