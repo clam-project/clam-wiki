@@ -258,7 +258,7 @@ for example, public web services such as Lastfm, MusicBrainz, EchoNest...
 
 === Annotation Merger ===
 
-High priority on Annotator.
+Higher priority on Annotator.
 
 This project consist in implementing an interface in the Annotator to
 merge and select the outputs of different existing extractors into a single project.
