@@ -264,7 +264,7 @@ In consequence, Annotator has an ill duplication of structures,
 and also other CLAM based applications cannot benefit of such features.
 This project would consist on merging such features in the common Pool related classes in CLAM core, refactoring the Annotator code base and enhancing/redesigning the Pool API usability.
 
-=== Annotator data type plugins ===
+=== Annotator data type and view plugins ===
 
 High priority on Annotator front.
 
