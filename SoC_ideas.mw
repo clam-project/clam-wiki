@@ -322,6 +322,7 @@ Some use cases:
 * Add undo/redo support.
 * Add the possibility of save all the controls values to have networks ready to play (like a patch).
 * Cut and paste.
+* Studing which other things would enhance the usability
 
 == Hot-wiring in NetworkEditor ==
 
