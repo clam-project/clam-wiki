@@ -317,7 +317,7 @@ Some use cases:
 * "I want to correct an offset that a given segment annotation adds to all segments"
 * "I want to extend a regular beat annotation and just correct when it varies"
 
-== Enhancing NetworkEditor ==
+== Enhancing NetworkEditor Usability ==
 
 * Add undo/redo support.
 * Add the possibility of save all the controls values to have networks ready to play (like a patch).
