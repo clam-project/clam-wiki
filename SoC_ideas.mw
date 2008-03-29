@@ -280,7 +280,7 @@ so this project proposes to build:
 * A graphical interface to build merging script
 * Some extra application logic needed to launch several extractors and to mapping back pool modifications.
 
-== Macro manipulation of descriptors with python on Annotator ==
+=== Macro manipulation of descriptors with python on Annotator ===
 
 Make the annotation data accessible to python scripts
 so that one can automate repetitive descriptors manipulation.
