@@ -245,7 +245,9 @@ Currently the Prototyper enables wrapping network in an interface built in with 
 
 We would like to do the same with VST plugins. VST plugins have their own graphical control loop but some people succeded on using Qt on it. The key then is using such trick to run a Qt interface in several steps. First a dummy programmed qt interface. Then a xml (ui file) based interface and finally to connect it to the network.
 
-== VAMP plugins on the Annotator ==
+== Annotator and description data pools ==
+
+=== VAMP plugins on the Annotator ===
 
 VAMP is the feature extraction plugin system used by SonicVisualizer.
 This project would consist in being able to lauch VAMP plugins within the Annotator
