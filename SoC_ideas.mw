@@ -247,18 +247,37 @@ We would like to do the same with VST plugins. VST plugins have their own graphi
 
 == Annotator and description data pools ==
 
-=== VAMP plugins on the Annotator ===
+Core CLAM developers are dedicated to real time processing issues and 
+they have interest on someone taking care of this key application.
 
-VAMP is the feature extraction plugin system used by SonicVisualizer.
-This project would consist in being able to lauch VAMP plugins within the Annotator
-and integrating its results in an Annotator data pool.
+=== Coretize Annotator Pool features ===
 
-This project could be also defined for other descriptors source not being VAMP,
-for example, public web services such as Lastfm, MusicBrainz, EchoNest...
+High priority on Annotator front.
+
+Parts of this project can be added to another Annotator one to add priority bonus or it can be a project by itself if you are a refactoring fanatic.
+
+Annotator schemas have some features that are implemented in
+specific classes not in the core CLAM Pool related classes.
+In consequence, Annotator has an ill duplication of structures, 
+and also other CLAM based applications cannot benefit of such features.
+This project would consist on merging such features in the common Pool related classes in CLAM core, refactoring the Annotator code base and enhancing/redesigning the Pool API usability.
+
+=== Annotator pluginization ===
+
+High priority on Annotator front.
+
+Many parts of the annotator are defined as plugin based: 
+Type management, type dependant table editors, instant views, 
+time evolution views and auralization.
+Those plugins are not real plugins as they are not loaded dlls,
+but clam already has solved multiplatform dll loading with plugins.
+
+This project would consist in making this elements plugable
+and addressing issues that could appear.
 
 === Annotation Merger ===
 
-Higher priority on Annotator.
+High priority on Annotator front.
 
 This project consist in implementing an interface in the Annotator to
 merge and select the outputs of different existing extractors into a single project.
@@ -279,6 +298,16 @@ But for regular users this is not that intuitive to write an script,
 so this project proposes to build:
 * A graphical interface to build merging script
 * Some extra application logic needed to launch several extractors and to mapping back pool modifications.
+
+=== VAMP plugins on the Annotator ===
+
+VAMP is the feature extraction plugin system used by SonicVisualizer.
+This project would consist in being able to lauch VAMP plugins within the Annotator
+and integrating its results in an Annotator data pool.
+
+=== Web services based extractors ===
+
+Building extractors that call public web services such as Lastfm, MusicBrainz, EchoNest... and wraps the results as CLAM data pool xml to be open by the Annotator.
 
 === Macro manipulation of descriptors with python on Annotator ===
 
