@@ -177,7 +177,9 @@ the key methods.
 ** Sequencing changes on a network along the time
 ** Configurations, connections, control sending...
 
-== Improve usability of SMSTools workflow ==
+== SMSTools ==
+
+=== Improve usability of SMSTools workflow ===
 
 * Remove the files to process from the configuration and use configuration as presets
 * Data to open are just audio or analysis data
