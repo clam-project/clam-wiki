@@ -1,5 +1,5 @@
 == Widget related tasks ==
-(All being addressed as part of [http://iua-share.upf.edu/wikis/clam/index.php/GSoC/Enhancing_Clam%27s_Widgets Bennett's GSoC work] unless otherwise noted)
+
 * Make always visible playhead an option
 * Option to display the playhead always on the center while playing (piano roll mode)
 
@@ -20,8 +20,6 @@
 
 
 * Investigate factoring plugins out of InstantViewPlugin.cxx or adding helper methods to reduce code repetition
-
-
 
 == Scheduled tasks ==
 
