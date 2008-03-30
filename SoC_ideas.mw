@@ -356,6 +356,16 @@ This project consists in:
 * Provide the interface to configure auralizators for each project
 * Build several useful auralizations.
 
+=== Configuration parameters for extractors ===
+
+Currently there is no way of specifying configuration parameters to the extractors.
+Each extractor could have their own parameters so we need a system to deal with such flexibility but still being simple to define new extractors.
+
+* Defining a special extractor option to query the parameters (name, type, range, defaults...) as the one we have to query the output data schema.
+* Implementing the interface to query such parameters depending on the extractor.
+* Launching the extractor feeding the parameters
+* Offering a C++/python solution to ease the programming of extractors with configuration.
+
 == Enhancing NetworkEditor Usability ==
 
 * Add undo/redo support.
