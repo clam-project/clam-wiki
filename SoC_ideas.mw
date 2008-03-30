@@ -312,6 +312,11 @@ and integrating its results in an Annotator data pool.
 
 Building extractors that call public web services such as Lastfm, MusicBrainz, EchoNest... and wraps the results as CLAM data pool xml to be open by the Annotator.
 
+=== Pool based web services ===
+
+Another possibility is offering web services that given an audio excerpt
+they return you the descriptors as an xml pool with or as any other existing format.
+
 === Macro manipulation of descriptors with python on Annotator ===
 
 Make the annotation data accessible to python scripts
