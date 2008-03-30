@@ -186,7 +186,7 @@ the key methods.
 * Object centric interaction: you apply an action (synthesis, analysis, transform) to an object
 * Minimize the provided data by using object information (sampling rate on analysis, and most of the analysis parameters embedded on the object for resynthesis)
 
-== Convergence of SMSTools and CLAM widgets infrastructure ==
+=== Convergence of SMSTools and CLAM widgets infrastructure ===
 
 * Transformation parameter automation using time-lines (ala ardour automation)
 * Metadata based widgets
