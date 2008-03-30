@@ -54,6 +54,8 @@ availables on the NetworkEditor or/and making the TickExtractor example working 
 
 == New standalone applications ==
 
+End user applications are interesting because they increase the user base and project visibility. Building CLAM based applications require skills on Qt.
+
 === Standalone chord extractor application ===
 
 We have the chord extraction running whithin Annotator, NetworkEditor, Offline, but none of these applications are addressed towards the real use that one can make of such technology.
@@ -93,6 +95,8 @@ This could be enhanced by:
 A teacher could limit the set of vowels to the ones used for 
 a particular language such as Catalan or English,
 so that the students just see the relevant ones for the exercise.
+
+'''Note:''' Last year a student focused on having some of the processing working. Processing still needs work but this year we will like to focus on the interface so we can say the application exists, and then enhance the processing as secondary goal.
 
 == Recovering from Processing errors ==
 
