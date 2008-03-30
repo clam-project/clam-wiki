@@ -98,6 +98,21 @@ so that the students just see the relevant ones for the exercise.
 
 '''Note:''' Last year a student focused on having some of the processing working. Processing still needs work but this year we will like to focus on the interface so we can say the application exists, and then enhance the processing as secondary goal.
 
+
+=== Real-time synthesizer using SMS models ===
+
+Salto is a CLAM legacy application to synthesize Saxo.
+This project consist on revamp a very simple Salto like synthesizer.
+
+It consists on:
+* Building a db of sms samples
+* Build processings to
+** process control signals
+** choose samples
+** interpolate
+** create stream flow
+** etc.
+
 == Recovering from Processing errors ==
 
 Some error conditions are not available until the processings are executed.
