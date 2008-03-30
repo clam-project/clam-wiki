@@ -105,7 +105,7 @@ This project consist on revamp a very simple Salto like synthesizer.
 
 It consists on:
 * Building a db of sms samples
-* Build processings to
+* Building processings to
 ** process control signals
 ** choose samples
 ** interpolate
