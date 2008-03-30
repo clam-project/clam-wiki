@@ -4,7 +4,7 @@
 * Option to display the playhead always on the center while playing (piano roll mode)
 
 * Draggable handle for play position on the rulers
-* One shared time ruler and time scrollbar
+* Shared time ruler and time scrollbar for all views
 * NetEditor scrolling segmentation view for Roman's chord extraction
 * Spectrogram view on the Annotator
 * Improve segmentEditor usability (better key bindings)
