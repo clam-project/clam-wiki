@@ -10,7 +10,7 @@ To compile this example you can use this [[Minimal SConstruct to build with CLAM
  
  #include <CLAM/Network.hxx>
  #include <CLAM/PANetworkPlayer.hxx>
- #include <CLAM/MonoAudioFileReaderConfig.hxx>
+ #include <CLAM/MonoAudioFileReader.hxx>
  
  int error(const std::string & msg)
  {
@@ -25,13 +25,12 @@ To compile this example you can use this [[Minimal SConstruct to build with CLAM
  	CLAM::Network network;
   
  	std::string reader = network.AddProcessing("MonoAudioFileReader");
-  
  	// Configure the reader
  	CLAM::MonoAudioFileReaderConfig cfg;
  	cfg.SetSourceFile(argv[1]);
  	if (!network.ConfigureProcessing(reader, cfg))
  		 return error("Could not open the file");
- 	int length = network.GetProcessing(reader).GetAudioFile().GetHeader().GetLength()/1000;
+ 	int length = ((CLAM::MonoAudioFileReader &) network.GetProcessing(reader)).GetHeader().GetLength()/1000;
  
   	// Add an audio sink and connect its input to the reader's output
  	std::string sink = network.AddProcessing("AudioSink");
