@@ -163,6 +163,7 @@
 * '''[Done]''' Schema browser (or editor), and integrated descriptors documentation (or annotation instructions)
 
 === Done (Bennet GSoC) ===
+(All being addressed as part of [http://iua-share.upf.edu/wikis/clam/index.php/GSoC/Enhancing_Clam%27s_Widgets Bennett's GSoC work] unless otherwise noted)
 
 * [[Image:done.png]]Add Properties to Attributes
 ** [[Image:done.png]]update ClamExtractorExample
