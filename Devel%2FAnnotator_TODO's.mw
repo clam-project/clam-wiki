@@ -1,5 +1,28 @@
 == Widget related tasks ==
 (All being addressed as part of [http://iua-share.upf.edu/wikis/clam/index.php/GSoC/Enhancing_Clam%27s_Widgets Bennett's GSoC work] unless otherwise noted)
+* Make always visible playhead an option
+* Option to display the playhead always on the center while playing (piano roll mode)
+
+* Draggable handle for play position on the rulers
+* One shared time ruler and time scrollbar
+* NetEditor scrolling segmentation view for Roman's chord extraction
+* Spectrogram view on the Annotator
+* Improve segmentEditor usability (better key bindings)
+* complete the segmenteditor modes
+** overlapping: not even implemented
+** unsized: added but not really tested
+** continuous/discontinuous: check adding at the end bug
+* Adding attributes to the segments on the segment editor
+** Labels
+** Heights
+** Colors
+** Fill Patterns
+
+
+* Investigate factoring plugins out of InstantViewPlugin.cxx or adding helper methods to reduce code repetition
+
+=== Done ===
+
 * [[Image:done.png]]Add Properties to Attributes
 ** [[Image:done.png]]update ClamExtractorExample
 ** [[Image:done.png]] On BuildSchema, add a call to add 'Frame::SpectrumMagnitude', guess or invent the bin gap and offset.
@@ -36,26 +59,6 @@
 * [[Image:done.png]] Synchronize views position
 * [[Image:done.png]] Fix scroll bar sincronization
 * [[Image:done.png]] Always visible playhead
-* Make always visible playhead an option
-* Option to display the playhead always on the center while playing (piano roll mode)
-
-* Draggable handle for play position on the rulers
-* One shared time ruler and time scrollbar
-* NetEditor scrolling segmentation view for Roman's chord extraction
-* Spectrogram view on the Annotator
-* Improve segmentEditor usability (better key bindings)
-* complete the segmenteditor modes
-** overlapping: not even implemented
-** unsized: added but not really tested
-** continuous/discontinuous: check adding at the end bug
-* Adding attributes to the segments on the segment editor
-** Labels
-** Heights
-** Colors
-** Fill Patterns
-
-
-* Investigate factoring plugins out of InstantViewPlugin.cxx or adding helper methods to reduce code repetition
 
 == Scheduled tasks ==
 
