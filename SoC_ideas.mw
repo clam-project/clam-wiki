@@ -217,16 +217,6 @@ the key methods.
 * Widgets interaction (zoom)
 * Network based transformations. The user should be able to define the transformation chain using NetworkEditor.
 
-== Real-time synthesizer using SMS models ==
-
-* a new revamped but very simple salto synthesizer.
-* a db of sms samples
-* processings 
-** to choose samples
-** interpolate
-** create stream flow
-** etc.
-
 
 
 == Enhancing chord detection algorithm for real-time usage ==
