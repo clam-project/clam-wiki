@@ -58,7 +58,7 @@ End user applications are interesting because they increase the user base and pr
 
 === Standalone chord extractor application ===
 
-We have the chord extraction running whithin Annotator, NetworkEditor, Offline, but none of these applications are addressed towards the real use that one can make of such technology.
+We have the chord extraction running whithin Annotator, NetworkEditor, Offline, but none of these applications are addressed towards the real use that one can make of such technology being a guitar player.
 
 This project consists on building an application which addresses usability issues for the use case that some one want to learn the chords of a song.
 
@@ -76,7 +76,6 @@ Some of the concrete use cases to be addressed are:
 ** A scrolling segmentation view
 ** Segmentation view should have chord text displayed
 ** Segmentation view should have a different color for each chord for the user to associate them. Maybe different color association per song or maybe using a color/pattern combination for Root/Mode.
-
 
 === Educational vowel synthesizer ===
 
