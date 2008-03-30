@@ -87,6 +87,9 @@ Only attributes that support this kind of view will appear.
 * Apply the Tonnetz view to the Frame::HartePCP
 * Apply the KeySpace view to the Frame::HarteChordCorrelation
 
+If you want to compare two different low level descriptors
+or two different segmentations you could also add new panes with
+'''View/Add Low Level View''' and '''View/Add Segmentation View'''.
 
 == Editing the description ==
 
