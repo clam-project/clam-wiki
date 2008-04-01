@@ -157,7 +157,8 @@ This project has room for several projects. It also has contacts with many other
 
 == Integrate Faust with CLAM ==
 
-FAUST http://sourceforge.net/projects/faudiostream/ is a functional language for audio processing. A faust module can be compiled as a ladspa plugin and then loaded into a clam network
+FAUST http://sourceforge.net/projects/faudiostream/ is a functional language for audio processing. A faust module can be compiled as a ladspa plugin and then loaded into a clam network.
+[http://clam.iua.upf.edu/wikis/clam/index.php/Image:NetEditor-faust-svg-embedded.png Screenshot] showing SVG diagrams into CLAM NetworkEditor: 
 Thigs to be added:
 * Display faust diagrams (svg) embedded in clam processing boxes. Navigable (hierarchically) faust diagrams
 * On-the-fly compilation of faust modules
