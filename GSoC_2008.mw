@@ -111,7 +111,9 @@ If you are not familiar with CLAM, we recommend take a talk with some of the cur
 * The project should engage you (both, project usefulness and joy should be balanced)
 * Projects from the ideas page are in the developers road map
 * Before chosing a project not in the ideas page, read again the previous point. If it still in doubt, discuss it with a mentor and get his feeling
-* Ask mentors for feedback
+* In general we like final user apps, maturing the infrastruture and polishing existing apps.
+* We have less stress in incorporating new algorithms and exploring new complex systems (we like them but is hard to fit them in GSoC schedule).
+* In any case, ask mentors for feedback
 * Propose several projects as alternative when other student ask for the same one. Balance number of alternatives and their deepness, and sort your preferences.
 * Follow the steps in [[Devel#Getting_involved|Getting involved]], the more steps you did, the more elegibility.
 * Be clear on the goal and scope of you project
