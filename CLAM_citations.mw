@@ -20,3 +20,4 @@ Here we will keep a list of external interesting papers/works citing or acknowle
 *Alexandre Francois, from University of Southern California, also acknowledges CLAM in his recent articles. See [http://iris.usc.edu/~afrancoi/pdf/afims-tr.pdf An Architectural Framework for Interactive Music Systems]
 *The Eyes web team at the University of Genova is looking at ways to integrate CLAM with Eyesweb: [http://www.taichi.cf.ac.uk/files/AES118paper_Final.pdf Audio Processing in a multimodal framework]
 *Stefan Büttner, University of Mannheim, Diploma Thesis "Visualization of Drum Sound Objects", stebu at gmx.de
+* Steve Mann, Ryan Janzen, and James Meier from the University of Toronto [http://wearcam.org/icmc2007/cr1009100279067.pdf used CLAM to implement some filters needed for their electric hydraulophone].
