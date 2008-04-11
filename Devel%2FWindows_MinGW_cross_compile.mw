@@ -50,7 +50,7 @@ You can test such programs work by doing:
 
 So it works! We are building and executing a windows binary.
 
-== Does wine runs current Visual based CLAM release? ==
+== Does wine run current Visual based CLAM release? ==
 
 Let check whether Wine is able to run existing CLAM binaries.
 
@@ -70,7 +70,6 @@ Well not all works as desired. OpenGl Based views doesn't work properly because 
 
 Precompiled Qt examples which use OpenGL have the same problem.
 So when we get the same problem in our binaries we'll know it is not our fault.
-
 
 == Crosscompiling with Qt ==
 
