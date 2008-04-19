@@ -6,8 +6,8 @@ You can define and initialize InControls and OutControls in a similar way you di
 
 First you should add the necessary includes:
 
-        #include "InControl.hxx"
-        #include "OutControl.hxx"
+        #include<CLAM/InControl.hxx>
+        #include<CLAM/OutControl.hxx>
 
 Then you are ready to add your input and output controls to the class declaration:
 
