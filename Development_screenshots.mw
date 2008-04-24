@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.2.1 =
 <gallery>
+Image:add_source_and_sink.png|Right-clicking on an audio port now "add source" or "add sink" options are availble. Very handy! First patch from Natanael Olaiz.
 Image:Resampling.png|A first version of a resampling processing. The first step to address a lot of samplerate problems.
 </gallery>
 
