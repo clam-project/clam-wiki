@@ -1,5 +1,22 @@
 {{Announce}}
 
+== Accepted projects ==
+
+{| border="1" cellpadding="5" cellspacing="0"
+|+ CLAM Google Summer of Code 2008 Projects
+! Project !! Student !! Mentor
+|-
+| [[GSoC/AnnMerger-to stand on the shoulders of the masses]] || Wang Jun (Chinese Academy of Science, China) || David García
+|-
+| [[GSoC/MIDI Implementation for Network Editor]] ||  Francisco Tufro (UBA, Argentina) || Hernán Ordiales
+|-
+| [[GSoC/Real-time Synthesizer Using SMS Models for a Woodwind Instrument]] || Yushen Han (Indiana University, US) || Pau Arumí
+|-
+| [[GSoC/Network scalability and Blender integration]] || Natanael Olaiz (UNQ, Argentina) || Pau Arumí
+|-
+| [[GSoC/Standalone chord extractor application]] || Pawel Bartkiewicz (AGH University, Poland) || David García
+|}
+
 == How to apply ==
 
 * Google's SoC's [http://code.google.com/opensource/gsoc/2008/faqs.html frequently asked questions]
