@@ -7,14 +7,14 @@
 '''License:''' [http://creativecommons.org/licenses/GPL/2.0/ GNU General Public License (GPL)]
 
 '''Abstract:'''
-*'''Network Scalability''':
-:The CLAM NetworkEditor is a powerful tool to easily make complex audio processing units ("networks") without need to write a single line of code. But if you want to do a big network with many processing boxes, even if it's a simple process could be difficult to understand the signals flows. The use of subnetworks allows to group the processing boxes by levels, allowing not only to simplify the reading of signals flows, but also allowing the users to improve their designs in an object-oriented way, making new processing units connecting and grouping previous ones.
-:That is the main idea of the network scalability proposal.
-*'''Blender integration''':
-:The main goal of this proposal is to integrate 3D CAD files generated in Blender within CLAM/NetworkEditor. These integration will allow to take use of the 3D models parameters and variables in CLAM sound processes. For example:
-::* use custom designed rooms and spaces to generate 3D acoustic modelers
-::* define custom predefined trajectories for spatialization plugins
-::* define custom 3D parametrizations to apply on any control signals within CLAM networks
+:*'''Network Scalability''':
+::The CLAM NetworkEditor is a powerful tool to easily make complex audio processing units ("networks") without need to write a single line of code. But if you want to do a big network with many processing boxes, even if it's a simple process could be difficult to understand the signals flows. The use of subnetworks allows to group the processing boxes by levels, allowing not only to simplify the reading of signals flows, but also allowing the users to improve their designs in an object-oriented way, making new processing units connecting and grouping previous ones.
+::That is the main idea of the network scalability proposal.
+:*'''Blender integration''':
+::The main goal of this proposal is to integrate 3D CAD files generated in Blender within CLAM/NetworkEditor. These integration will allow to take use of the 3D models parameters and variables in CLAM sound processes. For example:
+:::* use custom designed rooms and spaces to generate 3D acoustic modelers
+:::* define custom predefined trajectories for spatialization plugins
+:::* define custom 3D parametrizations to apply on any control signals within CLAM networks
 
 = Details =
 
