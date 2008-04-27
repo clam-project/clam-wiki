@@ -6,7 +6,7 @@
 
 '''License:''' [http://creativecommons.org/licenses/GPL/2.0/ GNU General Public License (GPL)]
 
-'''Abstract:'''
+'''Abstract:''' ''Not available yet, because my original project was "Educational Vowel Synthesiser"''
 
 = Details =
 
@@ -14,12 +14,13 @@
 ''Add here pointers to another more general clam devel pages with TODO's''
 
 = ''(optional)'' Blogging =
-
+I don't have a blog yet, but I'm planning to create one.
 
 == ''(optional)'' Selected posts ==
 ''The most relevant ones related with the project''
 
 = Tasks prior to the coding period =
+* Implementing seeking in file reader
 
 = Related links =
 
