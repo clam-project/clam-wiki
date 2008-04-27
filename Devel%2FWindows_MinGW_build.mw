@@ -317,3 +317,11 @@ Be careful that ''scons install'' will not install in the right location if You 
 
 
 --[[User:Giuliopaci|Giulio Paci]] 12:14, 18 December 2007 (CET)
+
+= Jun install notes =
+
+* Installed MinGW and MSYS
+* Moved the 'local' folder in the 3rd party tarball into c:\MinGW\local
+* Added to /MSYS/etc/profile:
+** {{{export PATH=$PATH:/mingw/local/bin }}}
+** {{{export PKG_CONFIG_PATH=C:/mingw/local/lib/pkgconfig }}}
