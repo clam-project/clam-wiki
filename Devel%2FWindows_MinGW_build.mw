@@ -324,4 +324,4 @@ Be careful that ''scons install'' will not install in the right location if You 
 * Moved the 'local' folder in the [http://clam.iua.upf.edu/download/win/svnsnapshots/clam-3rdparty-mingw-20080128.tar.gz 3rd party libraries tarball] into c:\MinGW\local
 * Added to /MSYS/etc/profile:
 ** export PATH=$PATH:/mingw/local/bin
-** export PKG_CONFIG_PATH=C:/mingw/local/lib/pkgconfig
+** export PKG_CONFIG_PATH=c:/mingw/local/lib/pkgconfig
