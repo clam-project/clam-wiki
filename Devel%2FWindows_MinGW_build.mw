@@ -289,6 +289,10 @@ and replace it with
 
 Now You have DirectX suitable for CLAM compilation.
 
+= Jun install notes =
+
+* Installed MinGW and MSYS
+* Copied the 'local' folder in the 3rd party tarball into c:\MinGW\
 
 == Compile and install CLAM Framework ==
 
