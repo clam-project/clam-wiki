@@ -328,3 +328,5 @@ Be careful that ''scons install'' will not install in the right location if You 
 * Added to /MSYS/etc/profile:
 ** export PATH=$PATH:/mingw/local/bin
 ** export PKG_CONFIG_PATH="C:\MinGW\local\lib\pkgconfig"
+* In clam_build_helpers.py, commented the line 256:
+   #os.path.join(env["sandbox_path"],'gtk','lib','pkgconfig'),
