@@ -321,7 +321,10 @@ Be careful that ''scons install'' will not install in the right location if You 
 = Jun install notes =
 
 * Installed MinGW and MSYS
+**added the MinGW and MSYS related path to the Windows PATH variable.
 * Moved the 'local' folder in the [http://clam.iua.upf.edu/download/win/svnsnapshots/clam-3rdparty-mingw-20080128.tar.gz 3rd party libraries tarball] into c:\MinGW\local
+* As MSVC is installed in the system, to get rid of some VC++ compiler/linker options，changed the Sconstruct where：
+    clam_env = Environment( ENV=os.environ, tools=['default'], [CCFLAGS=' '])
 * Added to /MSYS/etc/profile:
 ** export PATH=$PATH:/mingw/local/bin
 ** export PKG_CONFIG_PATH="C:\MinGW\local\lib\pkgconfig"
