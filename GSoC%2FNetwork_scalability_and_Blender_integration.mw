@@ -31,11 +31,22 @@
 
 = Related links =
 
+* CLAM:
+:* Wiki:
+::* [[Main_Page#Documentation|Documentation]]
+::* [[Devel]]
+:* [http://clam.iua.upf.edu/doc/CLAM-devel-doxygen/ Devel doxygen]
+:* [https://projectes.lafarga.cat/tracker/?group_id=24 Tracker]
+:* [http://audiores.uint8.com.ar/blog/?cat=37 CLAM on AudioResearchBlog]
+
 * C++
 
 * Python
 
 * Blender:
+:* [http://www.blender.org/development/ Development]
+::* [http://www.blender.org/development/architecture/ Architecture]
+::* [http://www.blender.org/development/coding-guides/ Coding Guides]
 :* [http://wiki.blender.org/index.php/Scripts Scripts in Blender] (wiki)
 ::* [http://wiki.blender.org/index.php/Scripts/Manual Scripts User Manual]: Information & Catalog index
 :::* [http://www.blender.org/documentation/245PythonDoc/ The Blender Python API Reference (Blender 2.45)]
