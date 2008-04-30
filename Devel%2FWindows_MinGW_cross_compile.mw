@@ -390,7 +390,7 @@ Edit include/id3/globals.h line 44
 
 And then follow:
  autoconf
- ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local  CPPFLAGS='-DID3LIB_LINKOPTION=1'
+ ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local
  make install
 
 == libsndfile ==
