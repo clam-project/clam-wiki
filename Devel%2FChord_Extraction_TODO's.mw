@@ -1,4 +1,19 @@
-== GSoC TODOs ==
+== Stand alone application (GSoC TODOs - Pawel) ==
+
+=== Big project millestons ===
+
+* Having an application that seeks allong the song.
+* Launching the analysis whenever you change the song
+* The playback controlling the time displayed on the views
+* Additional features/views
+** ...
+
+=== Tasks ===
+
+* [[Image:Done.png]] Having a working sandbox
+
+== Realtime segmentation (Last GSoC TODO's - Roman) ==
+
 
 * Improve segmantation in ChordExtractor
 ** [[Image:Done.png]] Extract the code responsible for segmentation and make a separate class out of it
