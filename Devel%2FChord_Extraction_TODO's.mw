@@ -11,6 +11,10 @@
 === Tasks ===
 
 * [[Image:Done.png]] Having a working sandbox
+* Having the editor configured to use tabs instead of spaces
+* Take a look at the FileReader classes
+* Understanding how unit tests work (compiling and running them and adding a dummy test class)
+* Take a look at the unit tests for the FileReader classes
 
 == Realtime segmentation (GSoC 2007 Roman) ==
 
