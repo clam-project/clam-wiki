@@ -31,4 +31,27 @@
 
 = Related links =
 
+==Bibliography - useful information and links==
+
+* C++
+
+* Python
+
+* Blender:
+:* [http://wiki.blender.org/index.php/Scripts Scripts in Blender] (wiki)
+::* [http://wiki.blender.org/index.php/Scripts/Manual Scripts User Manual]: Information & Catalog index
+:::* [http://www.blender.org/documentation/245PythonDoc/ The Blender Python API Reference (Blender 2.45)]
+:::* [http://wiki.blender.org/index.php/Manual/Python_Scripting Python Scripting] A great reference for Script Usage & Python Scripting Language use within Blender.
+:::* [http://wiki.blender.org/index.php/Manual/Modelling_Scripts Modelling Scripts]
+:::* [http://wiki.blender.org/index.php/Manual/Bundled_Scripts Bundled Scripts] This is older list I found. It links back here. It does still hold some relevant information.
+::* [http://wiki.blender.org/index.php/Scripts/Catalog Catalog]: a large listing of scripts, grouped by function, one page per script.
+:* [http://wiki.blender.org/index.php/Release_Notes/Notes243/Python_Scripts Release Notes/Notes243/Python Scripts]
+:* [http://www.blender.org/download/python-scripts/ Download Python Scripts]
+:* [http://blenderartists.org Blender Artists] forums:
+::* [http://blenderartists.org/forum/forumdisplay.php?s=b00ff078ceaf214ca0e7e86fc22cd2b6&f=11 ''Python & Plugins'']
+::* [http://blenderartists.org/forum/forumdisplay.php?f=34 ''Game Engine'']
+:* [https://svn.blender.org/svnroot/bf-blender/trunk/blender SVN]
+:* [http://projects.blender.org/tracker/?atid=269&group_id=63&func=browse Bug Tracking]
+
+
 [[Category:GSoC2008]]
