@@ -330,3 +330,5 @@ Be careful that ''scons install'' will not install in the right location if You 
 ** export PKG_CONFIG_PATH="C:\MinGW\local\lib\pkgconfig"
 * In clam_build_helpers.py, commented the line 256:
    #os.path.join(env["sandbox_path"],'gtk','lib','pkgconfig'),
+
+* mingw for windows distrubutes with gcc version 3.x, while the crosscompilation mingw is gcc 4.X. gcc 3.X didn't support std::wstrings required by id3lib. You can download the 4.X version from [http://sourceforge.net/project/showfiles.php?group_id=2435 here]. Overwrite MinGW installation files with the ones on the tarball
