@@ -47,6 +47,7 @@
 :* [http://www.blender.org/development/ Development]
 ::* [http://www.blender.org/development/architecture/ Architecture]
 ::* [http://www.blender.org/development/coding-guides/ Coding Guides]
+:* [http://www.blender.org/documentation/pydoc_gameengine/PyDoc-Gameengine-2.34/trees.html Game Engine Module Hierarchy]
 :* [http://wiki.blender.org/index.php/Scripts Scripts in Blender] (wiki)
 ::* [http://wiki.blender.org/index.php/Scripts/Manual Scripts User Manual]: Information & Catalog index
 :::* [http://www.blender.org/documentation/245PythonDoc/ The Blender Python API Reference (Blender 2.45)]
