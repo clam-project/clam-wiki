@@ -7,6 +7,13 @@
 '''License:''' [http://creativecommons.org/licenses/GPL/2.0/ GNU General Public License (GPL)]
 
 '''Abstract:'''
+This project plans to add MIDI support in the Network Editor and enhance the CLAM's Framework MIDI implementation.
+The main goal of the project includes:
+
+- Rewriting the control class to accept typed controls, not only floats. (this is usefull beyond MIDI implementation)
+- Creating Source and Sinks to interface with PortMIDI
+- Creating MIDI Processings that are useful for music.
+- Create some demo networks.
 
 = Details =
 
