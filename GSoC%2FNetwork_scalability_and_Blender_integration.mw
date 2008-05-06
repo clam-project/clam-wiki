@@ -65,8 +65,14 @@
 
 :Sctructures, formats:
 :* [http://www.bitbucket.ca/~acheater/blender/ Python Script X3D Exporter]
-::* [http://en.wikipedia.org/wiki/X3D X3D on wikipedia]]
+::* [http://en.wikipedia.org/wiki/X3D X3D on wikipedia]
 ::* [http://www.web3d.org/x3d/specifications/ X3D Specifications]
 
+:Acoustics:
+:* [http://www.acoustics.hut.fi/ Laboratory of Acoustics and Audio Signal Processing @ Helsinki University of Technology]
+::* [http://www.acoustics.hut.fi/~ville/ Ville Pulkki (HUT Acoustics researcher) page]
+::* [http://www.acoustics.hut.fi/research/cat/RVac/ Real and Virtual acoustics @ TKK Acoustics Laboratory]
+::* [http://www.acoustics.hut.fi/research/teams.html TKK Akustiikka / TKK Acoustics Laboratory / Research teams]
+::* [http://www.acoustics.hut.fi/research/cat/vbap/ Vector base amplitude panning]
 
 [[Category:GSoC2008]]
