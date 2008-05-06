@@ -72,15 +72,6 @@ But, still, what needs always be on the cxx file is the factory registration.
  static CLAM::FactoryRegistrator<CLAM::ProcessingFactory, MyProcessing> registrator(metadata);
 
 
-For versions < 1.1.0 this code was:
-
- // DEPRECATED: Version up to 1.1.0
- #include "MyProcessing.hxx"
- #include <CLAM/Factory.hxx>
- 
- static CLAM::Factory<CLAM::Processing>::Registrator<MyProcessing>
- 	myProcessingRegistrator("MyProcessing");
-
 [[Image:MyProcessing-ProcessingTree.png|thumb|MyProcessing available at the end of the 'Spectral Transformations' group]]
 
 You can blindly copy and change 'MyProcessing' by the name of your actual class and the category.
