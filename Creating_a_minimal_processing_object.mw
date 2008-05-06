@@ -85,37 +85,7 @@ instructions on how to create a MyProcessing object when you ask
 for the label "MyProcessing".
 It also introduces the processing into a category that can be browsed in the NetworkEditor processing toolbox, for instance.
 
-== NetworkEditor/ProcessingTree.cxx ==
 
-'''DEPRECATED: This is just needed for versions 1.1.0 and earlier.'''
-
-In order to see the processing on the NetworkEditor processing list
-you still need to add it to the list of processings at
-ProcessingTree.cxx.
-
-This step will eventually disappear as the Processing Factory
-gets more sophisticated (when it gets grouping features).
-
-
-    ....
-    "SMSTranspose",
-    "VowelResonator",
-    0,
-    "Spectral Transformations",  // Group name item after a 0
-    "OscillatingSpectralNotch",
-    "SpectralDelay",
-    "Vocoder",
-    "ThreeBandFilter",
-    "Robotization",
-    "SampleAndHold",
-    "ThreeBandCompressor",
-    "Peakalizer",
-    "ThreeBandAM",
-    "MyProcessing",         <- New
-    0,
-    "Utils",                   // This is the next group name
-    "Fundamental2Control",
-    ....
 
 == Further reading ==
 
