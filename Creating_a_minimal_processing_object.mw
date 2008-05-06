@@ -92,7 +92,7 @@ for the label "MyProcessing".
 
 == NetworkEditor/ProcessingTree.cxx ==
 
-'''This is just needed for versions 1.1.0 and earlier.'''
+'''DEPRECATED: This is just needed for versions 1.1.0 and earlier.'''
 
 In order to see the processing on the NetworkEditor processing list
 you still need to add it to the list of processings at
