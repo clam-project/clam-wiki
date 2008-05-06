@@ -58,6 +58,8 @@ public:
 
 == MyProcessing.cxx ==
 
+[[Image:MyProcessing-ProcessingTree.png|thumb|MyProcessing available at the end of the 'Spectral Transformations' group]]
+
 As the class methods get verbose, it is convenient to move the implementation to the cxx. To keep the example short and easy to follow and copy, we kept all the implementations on the hxx.
 
 But, still, what needs always be on the cxx file is the factory registration.
@@ -72,20 +74,21 @@ But, still, what needs always be on the cxx file is the factory registration.
  static CLAM::FactoryRegistrator<CLAM::ProcessingFactory, MyProcessing> registrator(metadata);
 
 
-[[Image:MyProcessing-ProcessingTree.png|thumb|MyProcessing available at the end of the 'Spectral Transformations' group]]
-
 You can blindly copy and change 'MyProcessing' by the name of your actual class and the category.
 The category is the processing tool box category your processing will appear.
+The key is the name you can provide the factory to create actual processing objects.
 
-But if you want to understand what it does, here comes an explanation:
-Factory registrators like this one are constructed before the 
-program's 'main' function is called.
-The constructor of this one (FactoryRegistrator) just adds the Processing Factory 
-instructions on how to create a MyProcessing object when you ask
-for the label "MyProcessing".
-It also introduces the processing into a category that can be browsed in the NetworkEditor processing toolbox, for instance.
+The constructor of this FactoryRegistrator, which is called before main,
+just adds the Processing Factory instructions on how to create a MyProcessing object 
+when you ask for the label "MyProcessing".
 
+It also relates the Processing to different metadata.
 
+For instance, the 'category' is the category that can be browsed in the NetworkEditor processing toolbox.
+If no 'category' is provided, such processing can be instanciated by the factory but
+the NetworkEditor will not display it in the processing tree.
+
+TODO: Explain other used metadata (icon...)
 
 == Further reading ==
 
