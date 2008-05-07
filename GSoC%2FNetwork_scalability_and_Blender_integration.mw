@@ -11,11 +11,10 @@
 ::The CLAM NetworkEditor is a powerful tool to easily make complex audio processing units ("networks") without need to write a single line of code. But if you want to do a big network with many processing boxes, even if it's a simple process could be difficult to understand the signals flows. The use of subnetworks allows to group the processing boxes by levels, allowing not only to simplify the reading of signals flows, but also allowing the users to improve their designs in an object-oriented way, making new processing units connecting and grouping previous ones.
 ::That is the main idea of the network scalability proposal.
 :*'''Blender integration''':
-::The main goal of the Blender integration proposal is to allow the importation and use 3D scene's objects data within CLAM. This will allow to use 3D models parameters and variables in CLAM sound processes to, for example:
-:::* use custom designed 3D Blender models to implement acoustic ones within CLAM
+::The main goal of the Blender integration proposal is to allow the importation and use of 3D scene objects data within CLAM. This will allow to use 3D models parameters and variables in CLAM sound processes to, for example:
+:::* implement acoustic models / simulations within CLAM
 :::* define custom predefined trajectories for spatialization plugins
 :::* define custom 3D parametrizations to apply on any control signals within CLAM networks
-
 
 = Details =
 
