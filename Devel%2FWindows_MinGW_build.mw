@@ -263,7 +263,7 @@ to ''tests/utils.c'' and to ''tests/virtual_io_test.c'' files, then You can comp
 DirectX SDK is distributed by Microsoft in binary form at [http://www.microsoft.com/directx/ DirectX SDK homepage]. These binaries are built for MSVC and so should be converted in order to use them with standard MinGW tools. You can find information about this task at [http://www.mingw.org/ MinGW homepage].
 
 The quickest way to setup DirectX SDK for use with MinGW is finding someone that has already
-done the job for You. You can find converted DirectX SDK binaries at [http://alleg.sourceforge.net/files/ allegro files download section] (versions 7.0 and 8.0) or at [http://devpaks.org/details.php?devpak=136 DevPack DirectX SDK page] (version 9.0).
+done the job for You. You can find converted DirectX SDK binaries at [http://alleg.sourceforge.net/files/ allegro files download section] (versions 7.0 and 8.0) or at [http://devpaks.org/details.php?devpak=136 DevPack DirectX SDK page] or [http://www.g-productions.net/page.php?id=23](version 9.0).
 
 At this time I'm using DirectX SDK 9.0c.
 
