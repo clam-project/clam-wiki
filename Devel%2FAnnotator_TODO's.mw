@@ -1,3 +1,19 @@
+== Annotator extractor merger (Jun GSoC) ==
+
+* Native windows compilation
+** [[Image:done.png]] Compiling the libraries
+** [[Image:done.png]] Compiling NetworkEditor
+** Compiling Annotator/vmqt
+** Compiling Annotator
+** Compiling the plugins (not required)
+** Compiling Voice2Midi (not required)
+
+* Training tasks:
+** Take a look to the Pool related classes
+** Build a simple extractor
+** Build a pool to lab converter
+
+
 == Widget related tasks ==
 
 * Make always visible playhead an option
