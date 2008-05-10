@@ -18,6 +18,15 @@
 
 = Details =
 
+This proposal cover two main areas. The first one claims to improve the connections and processes into the NetworkEditor interface, and the second to integrate 3D objects functionality to the CLAM network. The tasks of each area are quite independent, so I think to work on both at the same time.
+
+* For the NetworkEditor interface, these are some proposed chronologically ordered tasks:
+::* normalize processing boxes descriptors keys (add missings keys in some objects, improve the factory class key implementation to manage the key missing errors without generating segmentation faults)
+::* improve the user interface to interconnect signals of the same type. Make contextual menus showing compatible type pair to connect to (implemented now only with the port monitors type). Implement sending/receiving named processing boxes, for every control and signal types (allowing to make "wireless" connections).
+::* improve NE GUI processing boxes manipulation. Allow the user to group/lock a group of processing boxes, and operate with them as a unique object (for copy/paste/duplicate/move/etc). 
+::* improve the grouping implementation to a new instance, allowing the user to save a group as a network, and load it as a closed processing box into a network ("subnetwork"). Derivate the sending/receiving processing boxes to manage subnetworks inputs/outputs.
+::* improve the subnetwork support to allow the user to "enter" in the subnetworks (if possible when playing, to allow manage subnetworks controls in RT)
+
 = Milestones =
 ''Add here pointers to another more general clam devel pages with TODO's''
 
