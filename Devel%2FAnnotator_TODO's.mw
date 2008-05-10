@@ -10,8 +10,8 @@
 
 * Training tasks:
 ** Take a look to the Pool related classes
-** Build a simple extractor
-** Build a pool to lab converter
+** Build a simple extractor (c++)
+** Build a pool to lab converter (python)
 
 == Widget related tasks ==
 
