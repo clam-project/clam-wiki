@@ -20,23 +20,35 @@
 
 This proposal cover two main areas. The first one claims to improve the connections and processes into the NetworkEditor interface, and the second to integrate 3D objects functionality to the CLAM network. The tasks of each area are quite independent, so I think to work on both at the same time.
 
-* For the NetworkEditor interface, these are some proposed chronologically ordered tasks:
-:* normalize processing boxes descriptors keys (add missings keys in some objects, improve the factory class key implementation to manage the key missing errors without generating segmentation faults)
-:* improve the user interface to interconnect signals of the same type. Make contextual menus showing compatible type pair to connect to (implemented now only with the port monitors type). Implement sending/receiving named processing boxes, for every control and signal types (allowing to make "wireless" connections).
-:* improve NE GUI processing boxes manipulation. Allow the user to group/lock a group of processing boxes, and operate with them as a unique object (for copy/paste/duplicate/move/etc). 
-:* improve the grouping implementation to a new instance, allowing the user to save a group as a network, and load it as a closed processing box into a network ("subnetwork"). Derivate the sending/receiving processing boxes to manage subnetworks inputs/outputs.
-:* improve the subnetwork support to allow the user to "enter" in the subnetworks (if possible when playing, to allow manage subnetworks controls in RT)
+== Network Interface ==
+'''For the NetworkEditor interface, these are some proposed chronologically ordered tasks:'''
+* normalize processing boxes descriptors keys (add missings keys in some objects, improve the factory class key implementation to manage the key missing errors without generating segmentation faults)
+* improve the user interface to interconnect signals of the same type. Make contextual menus showing compatible type pair to connect to (implemented now only with the port monitors type). Implement sending/receiving named processing boxes, for every control and signal types (allowing to make "wireless" connections).
+* improve NE GUI processing boxes manipulation. Allow the user to group/lock a group of processing boxes, and operate with them as a unique object (for copy/paste/duplicate/move/etc). 
+* improve the grouping implementation to a new instance, allowing the user to save a group as a network, and load it as a closed processing box into a network ("subnetwork"). Derivate the sending/receiving processing boxes to manage subnetworks inputs/outputs.
+* improve the subnetwork support to allow the user to "enter" in the subnetworks (if possible when playing, to allow manage subnetworks controls in RT)
 
-* The main goals for the Blender-CLAM integration are:
-:* Allow Blender to export scenes objects parameters on intermediate files (with cameras-listeners and objects-sound sources positions over time) make them readable into CLAM, and use as offline spatialization choreography.
-:* Allow Blender to send the previous point parameters in RT over OSC, and CLAM to use them onto networks. Adapt the spatialization  networks examples to use them, and make new ones.
-:* Improve the Vector Based Amplitude Panning related processing boxes to manage distances (with optional filters) and different speakers configurations. Allow the spatial speaker's configuration importing blender scene objects.
-:* Make new VBAP alike processing boxes to enconde/decode Ambisonics (externals LADSPA/VST plugins can be used too)
-:* Make a simple OpenGL monitor to display the 3D scene within NE.
-:* Start doing a 3D modeler/spatializer:
-::* make a new spatializer processing box which can manage multiple sound sources
-:::* improve it to take in count objects sound oclussions
-:::* improve it to manage sound early reflections
+== Blender-CLAM integration == 
+'''The main goals for the Blender-CLAM integration are:'''
+* Allow Blender to export scenes objects parameters on intermediate files (with cameras-listeners and objects-sound sources positions over time) make them readable into CLAM, and use as offline spatialization choreography.
+* Allow Blender to send the previous point parameters in RT over OSC, and CLAM to use them onto networks. Adapt the spatialization  networks examples to use them, and make new ones.
+* Improve the Vector Based Amplitude Panning related processing boxes to manage distances (with optional filters) and different speakers configurations. Allow the spatial speaker's configuration importing blender scene objects.
+* Make new VBAP alike processing boxes to enconde/decode Ambisonics (externals LADSPA/VST plugins can be used too)
+* Make a simple OpenGL monitor to display the 3D scene within NE.
+* Start doing a 3D modeler/spatializer:
+:* make a new spatializer processing box which can manage multiple sound sources
+::* improve it to take in count objects sound oclussions
+::* improve it to manage sound early reflections
+
+'''Firsts tasks needed on this area:'''
+* in Blender
+:* implement an intermediate scene description file format. SpatDIF over SDIF?
+:* implement Open Sound Control sender on python scripts
+:* implement some 3D scene description format over OSC. SpatDIF?
+
+* in CLAM:
+:* implement the Blender intermediate used formats (SpatDIF over OSC/SDIF?)
+:* make an earlier simple OpenGL monitor
 
 = Milestones =
 ''Add here pointers to another more general clam devel pages with TODO's''
