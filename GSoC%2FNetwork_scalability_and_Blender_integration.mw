@@ -51,6 +51,9 @@ This proposal cover two main areas. The first one claims to improve the connecti
 :* implement the Blender intermediate used formats (SpatDIF over OSC/SDIF?)
 :* make an earlier simple OpenGL monitor
 
+'''Optional:'''
+* Improve the scene description management to allow X3D/VRML/MPEG4/BIFS use.
+
 = Milestones =
 ''Add here pointers to another more general clam devel pages with TODO's''
 
