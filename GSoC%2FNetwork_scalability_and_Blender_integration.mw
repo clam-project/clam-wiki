@@ -37,8 +37,9 @@ This proposal cover two main areas. The first one claims to improve the connecti
 * Make a simple OpenGL monitor to display the 3D scene within NE.
 * Start doing a 3D modeler/scene spatializer:
 :* make a network prototype which can manage multiple sound sources and:
-::* spatialize them taking care of objects sound oclussions
-::* add early reflections as automatic-variable "new sources"
+::* allow the definition of sound sources emition directionalities
+::* spatialize them taking care of objects sound oclussions (and emition direct.)
+::* add early reflections as automatic-variable "new sources" (idem)
 :* make a processing box doing the work of the previous prototype network (at this point an intermediate task could be to make a subnetwork, using the proposed scalabilities improves).
 
 '''Firsts tasks needed on this area:'''
