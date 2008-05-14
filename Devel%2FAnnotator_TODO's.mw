@@ -7,6 +7,7 @@
 ** [[Image:done.png]]Compiling Annotator
 ** Compiling the plugins (not required)
 ** Compiling Voice2Midi (not required)
+** Update the [[Devel/Windows_MinGW_build|native mingw compile wiki]]
 
 * Training tasks:
 ** Take a look to the Pool related classes
