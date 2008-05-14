@@ -335,4 +335,4 @@ Be careful that ''scons install'' will not install in the right location if You 
 
 * Scons configure prefix='c:\\mingw\\local' prefix_for_packaging='c:\\mingw\\local'  sandbox_path='c:\\mingw' verbose=True xmlbackend='xmlpp' audio_backend=portaudio
 
-* To solve long command line problems (in win32 scons), we added in Sconstruct a function "SetupSpawn(clam_env)", which is ugly and intend to be removed when the scons group fix the bug.
+* To solve long command line problems (in win32 scons), we added in Sconstruct a function "SetupSpawn(clam_env)", which is ugly and intends to be removed when the scons group fix the bug.
