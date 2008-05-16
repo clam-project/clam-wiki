@@ -58,6 +58,16 @@ This proposal cover two main areas. The first one claims to improve the connecti
 = Milestones =
 ''Add here pointers to another more general clam devel pages with TODO's''
 
+* Milestone 1 (for Blender Integration):
+** place a source and a listener object in blender.  
+** when source/listener moves an osc is sent to clam
+** clam receives an audio source (by jack), and source/listener positions by OSC. Then processes this controls and convolves the audio using HRTF and distance gain compensation.
+
+:To be done:
+** The OSC receiver, adapting from the existing processing
+** The osc->azimuth/elevation convertion
+** If it's needed, extend the HRTF database processing.
+
 *[[Devel/Plugins_TODOs]]
 :*[[Devel/Plugins_TODOs#embedded_networks|Embedded Networks]]
 *[[Devel/NetworkEditor TODO's]]
