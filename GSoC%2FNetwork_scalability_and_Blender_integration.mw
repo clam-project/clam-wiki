@@ -35,12 +35,10 @@ This proposal cover two main areas. The first one claims to improve the connecti
 * Improve the Vector Based Amplitude Panning related processing boxes to manage distances (with variable delay lines and optional filters) and different speakers configurations. Allow the spatial speaker's configuration importing blender scene objects.
 * Make new VBAP alike processing boxes to enconde/decode Ambisonics (externals LADSPA/VST plugins can be used too)
 * Make a simple OpenGL monitor to display the 3D scene within NE.
-* Start doing a 3D modeler/scene spatializer:
-:* make a network prototype which can manage multiple sound sources and:
-::* allow the definition of sound sources emition directionalities
-::* spatialize them taking care of objects sound oclussions (and emition direct.)
-::* add early reflections as automatic-variable "new sources" (idem)
-:* make a processing box doing the work of the previous prototype network (at this point an intermediate task could be to make a subnetwork, using the proposed scalabilities improves).
+* Make a network prototype which can manage multiple sound sources and:
+:* allow the definition of sound sources emition directivity
+:* spatialize them taking care of objects sound oclussions (and emition direct.)
+* Make a processing box doing the work of the previous prototype network (at this point an intermediate task could be to make a subnetwork, using the proposed scalabilities improves).
 
 '''Firsts tasks needed on this area:'''
 * in Blender
