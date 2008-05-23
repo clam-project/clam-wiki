@@ -44,6 +44,8 @@
 ** Notice that this step is due to the scheme classes duplication
 * Create a CLAM::DataPool with the description scheme
 ** Guess how
+* Dump the pool
+** What happens? file a bug ;-)
 
 == Widget related tasks ==
 
