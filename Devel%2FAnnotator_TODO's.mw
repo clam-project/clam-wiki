@@ -17,6 +17,8 @@
 *** Create a pool according to the schema
 *** Populate the pool with dummy data
 *** Add to the TODO list the shortcommings found in the existing infrastructure during the session
+*** Implement the command line options
+*** Process the actual wave file
 ** Build a pool to lab converter (python)
 
 == Widget related tasks ==
