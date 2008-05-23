@@ -36,6 +36,13 @@
 ** Run the program and notice how the XML for the schema has changed
 * Add your own schema name
 ** schema.SetUri("descriptionScheme:www.iua.upf.edu:clam:JunJunSilenceDetector");
+* Add documentation to the segmentation attribute
+** Use schema.AttributeDocumentation(scope, attribute, doc)
+* Create a CLAM description scheme and fill it
+** CLAM::DescriptionScheme descriptionScheme;
+** scheme.FillDescriptionScheme(descriptionScheme);
+** Notice that this step is due to the scheme classes duplication
+* Create a CLAM::DataPool with the description scheme
 
 == Widget related tasks ==
 
