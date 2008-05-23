@@ -21,6 +21,18 @@
 *** Process the actual wave file
 ** Build a pool to lab converter (python)
 
+=== Session plan ===
+
+* Notice the duplication of schemas CLAM::DescriptionSchema and CLAM_Annotator::Schema
+** Along the session we will identify which functions cover each one
+** One long term TODO is to join them in a single one
+* Dumping schema into the standard output:
+** It requires <CLAM/XMLStorage.hxx>
+** CLAM::XMLStorage::Dump(schema, "Schema", std::cout);
+* Adding the segmentation attribute for the silences segmentation
+** schema.AddSegmentation("Song","Silences",CLAM_Annotator::SegmentationPolicy::eDiscontinuous,"");
+** Notice again the duplication: ../CLAM/src/Data/Editable/Segmentation.hxx
+
 == Widget related tasks ==
 
 * Make always visible playhead an option
