@@ -34,6 +34,8 @@
 ** Scope: 'Song', Name: 'Silences', Policy: discontinuous, ChildScope: none
 ** Notice again the duplication: ../CLAM/src/Data/Editable/Segmentation.hxx and it's subclasses.
 ** Run the program and notice how the XML for the schema has changed
+* Add your own schema name
+** schema.SetUri("descriptionScheme:www.iua.upf.edu:clam:JunJunSilenceDetector");
 
 == Widget related tasks ==
 
