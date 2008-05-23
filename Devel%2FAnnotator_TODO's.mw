@@ -12,6 +12,11 @@
 * Training tasks:
 ** Take a look to the Pool related classes
 ** Build a simple extractor (c++)
+*** [[Image:done.png]] Adapt the build system to compile the new binary 
+*** Code a simple schema with a segmentation and no attribute
+*** Create a pool according to the schema
+*** Populate the pool with dummy data
+*** Add to the TODO list the shortcommings found in the existing infrastructure during the session
 ** Build a pool to lab converter (python)
 
 == Widget related tasks ==
