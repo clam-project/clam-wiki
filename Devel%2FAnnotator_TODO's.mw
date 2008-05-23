@@ -31,7 +31,9 @@
 ** CLAM::XMLStorage::Dump(schema, "Schema", std::cout);
 * Adding the segmentation attribute for the silences segmentation
 ** schema.AddSegmentation("Song","Silences",CLAM_Annotator::SegmentationPolicy::eDiscontinuous,"");
+** Scope: 'Song', Name: 'Silences', Policy: discontinuous, ChildScope: none
 ** Notice again the duplication: ../CLAM/src/Data/Editable/Segmentation.hxx and it's subclasses.
+** Run the program and notice how the XML for the schema has changed
 
 == Widget related tasks ==
 
