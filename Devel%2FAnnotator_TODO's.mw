@@ -31,7 +31,7 @@
 ** CLAM::XMLStorage::Dump(schema, "Schema", std::cout);
 * Adding the segmentation attribute for the silences segmentation
 ** schema.AddSegmentation("Song","Silences",CLAM_Annotator::SegmentationPolicy::eDiscontinuous,"");
-** Notice again the duplication: ../CLAM/src/Data/Editable/Segmentation.hxx
+** Notice again the duplication: ../CLAM/src/Data/Editable/Segmentation.hxx and it's subclasses.
 
 == Widget related tasks ==
 
