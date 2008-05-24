@@ -16,6 +16,13 @@ The main goal of the project includes:
 * Create some demo networks.
 
 = Details =
+== TypedControls ==
+
+== MIDI Implementation ==
+* Processings
+** [[GSoC/MIDI Implementation for Network Editor/MIDIMon]]
+** [[GSoC/MIDI Implementation for Network Editor/MIDINoteOutControlSender]]
+** [[GSoC/MIDI Implementation for Network Editor/MIDIControlOutSender]]
 
 = Milestones =
 ''Add here pointers to another more general clam devel pages with TODO's''
