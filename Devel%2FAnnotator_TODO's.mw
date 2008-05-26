@@ -38,9 +38,10 @@
 ** Run the program and notice how the XML for the schema has changed
 * Add your own schema name
 ** schema.SetUri("descriptionScheme:www.iua.upf.edu:clam:JunJunSilenceDetector");
+** The uri is used to identify the kind of document.
 * Add documentation to the segmentation attribute
 ** Use schema.AttributeDocumentation(scope, attribute, doc)
-** The uri is used to identify the kind of document.
+** The documentation is the text you can see on the schema browser in Annotator
 * Create a CLAM description scheme and fill it
 ** CLAM::DescriptionScheme descriptionScheme;
 ** scheme.FillDescriptionScheme(descriptionScheme);
