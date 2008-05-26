@@ -40,6 +40,7 @@
 ** schema.SetUri("descriptionScheme:www.iua.upf.edu:clam:JunJunSilenceDetector");
 * Add documentation to the segmentation attribute
 ** Use schema.AttributeDocumentation(scope, attribute, doc)
+** The uri is used to identify the kind of document.
 * Create a CLAM description scheme and fill it
 ** CLAM::DescriptionScheme descriptionScheme;
 ** scheme.FillDescriptionScheme(descriptionScheme);
