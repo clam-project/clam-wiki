@@ -99,3 +99,7 @@ Things that core developers are eager to address but still not being refined in 
 * Ease Processing writing: not make a config attribute mandatory.
 * Unify Do() return semantics. One solution is do it void Do()
 * Spectrum refactoring: one class per representation (complex, mag-phase, ...)
+
+== User / Developer Wish List ==
+* A plugin system - ability to use both VST and "CLAM proprietary" plugins to add new features without recompiling
+* The ability to write and read images (EG: .bmp or .png) of spectrums so that the image can be manipulated (EG: stretching, pinching, skewing) (like Metasynth http://www.uisoftware.com/MetaSynth/index.html) with graphic tools and then converted back into sound. See this link for spectrogram pictures http://en.wikipedia.org/wiki/Spectrogram_%28audio%29#Creating_sound_from_a_spectrogram .
