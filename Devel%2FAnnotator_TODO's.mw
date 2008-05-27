@@ -30,10 +30,10 @@
 ** [[Image:done.png]] It requires <CLAM/XMLStorage.hxx>
 ** [[Image:done.png]] CLAM::XMLStorage::Dump(schema, "Schema", std::cout);
 * Adding the segmentation attribute for the silences segmentation
-** schema.AddSegmentation("Song","Silences",CLAM_Annotator::SegmentationPolicy::eDiscontinuous,"");
-** Scope: 'Song', Name: 'Silences', Policy: discontinuous, ChildScope: none
+** [[Image:done.png]] Schema.AddSegmentation("Song","Silences",CLAM_Annotator::SegmentationPolicy::eDiscontinuous,"");
+** [[Image:done.png]]Scope: 'Song', Name: 'Silences', Policy: discontinuous, ChildScope: none
 ** Notice again the duplication: ../CLAM/src/Data/Editable/Segmentation.hxx and it's subclasses.
-** Run the program and notice how the XML for the schema has changed
+** [[Image:done.png]]Run the program and notice how the XML for the schema has changed
 * Add your own schema name
 ** schema.SetUri("descriptionScheme:www.iua.upf.edu:clam:JunJunSilenceDetector");
 ** The uri is used to identify the kind of document.
