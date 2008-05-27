@@ -27,8 +27,8 @@
 ** Along the session we will identify which functions cover each one
 ** One long term TODO is to join them in a single one
 * Dumping schema into the standard output:
-** It requires <CLAM/XMLStorage.hxx>
-** CLAM::XMLStorage::Dump(schema, "Schema", std::cout);
+** [[Image:done.png]] It requires <CLAM/XMLStorage.hxx>
+** [[Image:done.png]] CLAM::XMLStorage::Dump(schema, "Schema", std::cout);
 * Adding the segmentation attribute for the silences segmentation
 ** schema.AddSegmentation("Song","Silences",CLAM_Annotator::SegmentationPolicy::eDiscontinuous,"");
 ** Scope: 'Song', Name: 'Silences', Policy: discontinuous, ChildScope: none
