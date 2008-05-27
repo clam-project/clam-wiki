@@ -13,12 +13,10 @@
 ** Take a look to the Pool related classes
 ** Build a simple extractor (c++)
 *** [[Image:done.png]] Adapt the build system to compile the new binary 
-*** Code a simple schema with a segmentation and no attribute
-*** Create a pool according to the schema
-*** Populate the pool with dummy data
+*** [[Image:done.png]]Code a simple schema with a segmentation and no attribute
+*** [[Image:done.png]]Create a pool according to the schema
+*** [[Image:done.png]]Populate the pool with dummy data
 *** Add to the TODO list the shortcommings found in the existing infrastructure during the session
-****Able to deal with segmentation in case of an "odd" size, rather than a warning popping out
-****Annotator crashes while creating a new project 
 *** Implement the command line options
 *** Process the actual wave file
 ** Build a pool to lab converter (python)
