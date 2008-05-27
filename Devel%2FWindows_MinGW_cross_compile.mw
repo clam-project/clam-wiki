@@ -577,6 +577,9 @@ Download and install python
  wget http://python.org/ftp/python/2.5.1/python-2.5.1.msi
  msiexec /i python-2.5.1.msi
 
+Note: Newest Python is: http://python.org/ftp/python/2.5.2/python-2.5.2.msi
+
+
 Download py2exe and install it.
  wget http://switch.dl.sourceforge.net/sourceforge/py2exe/py2exe-0.6.6.win32-py2.5.exe
  wine py2exe-0.6.6.win32-py2.5.exe
