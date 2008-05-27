@@ -551,7 +551,7 @@ Then:
 
 No supported yet. Work in progress.
 
-
+Note: Xerces-C is available for Cygwin. Use the Cygwin "setup.exe" program (may need to try a different mirror).
 
 == libsamplerate (not used in CLAM) ==
 
