@@ -6,11 +6,14 @@ This is the development page of the NetworkEditor port to Qt4.
 * Adding processing documentation
 * [[Image:Done.png]] Coloring ports by token type
 * Implement the check that all inports are connected before play
-* Prototyper: Rethink connector names to use for the prototyper
 * Solve code duplication on play prevention code (unconfigured, unconnected, empty, no blocking processing...) for Prototyper a Network editor
 * Solve code duplication on backend selection for Prototyper a Network editor
 * Solve code duplication on commandline processing for Prototyper a Network editor
-* Investigate how not having to register the configurations
+* Binder by properties (now that Qt allows arbitrary properties)
+** Add the properties to clam widgets
+** Adapt the binder
+** Designer plugin to add such properties from the menu to acceptable processings
+* [[Image:Done.png]] Investigate how not having to register the configurations
 * Control senders clean up
 ** [[Image:Done.png]] Different control sender widgets (or else limit the configuration)
 ** Refactor: not updating the embeded widget geometry on every repaint
