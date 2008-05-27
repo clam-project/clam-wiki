@@ -298,6 +298,9 @@ My favourite way to get CLAM Framework is through its subversion repository, 'ca
 
 Choose a patch appropriate from [https://svn.pd.istc.cnr.it:592/svn/sms/trunk/clam/ SPFD-ISTC] for the revision closer to the one You're checking out.
 
+NOTE: https://svn.pd.istc.cnr.it:592/svn/sms/trunk/clam/ is 404! (Plus there is a problem with the site's Security Certificate)
+
+
 Since CLAM repository is changing faster, if the patch is not exactly for the revision You're checking out, maybe You should need to modify something in order to be able to complete the task.
 
 Once You get the base directory of clam, You can patch the sources. You can do it with Tortoise SVN, by issuing the ''Apply patch'' command, or with the command line: entering in the clam source base directory and give this command:
