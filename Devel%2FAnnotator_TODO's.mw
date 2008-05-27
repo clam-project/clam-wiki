@@ -26,12 +26,12 @@
 * Notice the duplication of schemas CLAM::DescriptionSchema and CLAM_Annotator::Schema
 ** Along the session we will identify which functions cover each one
 ** One long term TODO is to join them in a single one
-* Dumping schema into the standard output:
+* [[Image:done.png]] Dumping schema into the standard output:
 ** [[Image:done.png]] It requires <CLAM/XMLStorage.hxx>
 ** [[Image:done.png]] CLAM::XMLStorage::Dump(schema, "Schema", std::cout);
-* Adding the segmentation attribute for the silences segmentation
+* [[Image:done.png]] Adding the segmentation attribute for the silences segmentation
 ** [[Image:done.png]] Schema.AddSegmentation("Song","Silences",CLAM_Annotator::SegmentationPolicy::eDiscontinuous,"");
-** [[Image:done.png]]Scope: 'Song', Name: 'Silences', Policy: discontinuous, ChildScope: none
+** [[Image:done.png]] Scope: 'Song', Name: 'Silences', Policy: discontinuous, ChildScope: none
 ** Notice again the duplication: ../CLAM/src/Data/Editable/Segmentation.hxx and it's subclasses.
 ** [[Image:done.png]]Run the program and notice how the XML for the schema has changed
 * Add your own schema name
