@@ -101,5 +101,8 @@ Things that core developers are eager to address but still not being refined in 
 * Spectrum refactoring: one class per representation (complex, mag-phase, ...)
 
 == User / Developer Wish List ==
-* A plugin system - ability to use both VST and "CLAM proprietary" plugins to add new features without recompiling
-* The ability to write and read images (EG: .bmp or .png) of spectrums so that the image can be manipulated (EG: stretching, pinching, skewing) (like Metasynth http://www.uisoftware.com/MetaSynth/index.html) with graphic tools and then converted back into sound. See this link for spectrogram pictures http://en.wikipedia.org/wiki/Spectrogram_%28audio%29#Creating_sound_from_a_spectrogram .
+* 1. A plugin system - ability to use both VST and "CLAM proprietary" plugins to add new features without recompiling
+* 2. The ability to write and read images (EG: .bmp, pbm, .png, etc.) of spectrums so that the image can be manipulated (EG: stretching, pinching, skewing) (like Metasynth http://www.uisoftware.com/MetaSynth/index.html) with graphic tools and then converted back into sound. See this link for spectrogram pictures http://en.wikipedia.org/wiki/Spectrogram_%28audio%29#Creating_sound_from_a_spectrogram . 
+* -- Netpbm (http://netpbm.sourceforge.net/) has programs that can be used for realtime image manipulation (see http://netpbm.sourceforge.net/doc/directory.html#editors). 
+* -- GIMP (www.gimp.org/) has extensive scripting ability (http://docs.gimp.org/en/gimp-scripting.html#id2615658) that can be used for realtime image manipulation.
+* -- A Monitor with a Touchscreen (http://en.wikipedia.org/wiki/Touchscreen) (or just a graphics tablet :( ) would allow you to draw sounds with your fingers, convert the image (assumed to be a spectrogram) from image format to a sound that would then play in near realtime (you would want to be able to draw for 1 second (variable) and then have the picture (lines) played). Piano keys could be drawn on the screen and you would touch those spots to play and wiggle your fingers to wiggle the frequencies. "Gestures" would allow squishing, flipping, gliding etc ...
