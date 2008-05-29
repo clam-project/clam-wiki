@@ -43,16 +43,15 @@
 ** [[Image:done.png]]The documentation is the text you can see on the schema browser in Annotator
 * [[Image:done.png]]Create a CLAM description scheme and fill it
 ** [[Image:done.png]]CLAM::DescriptionScheme descriptionScheme;
-** [[Image:done.png]]scheme.FillDescriptionScheme(descriptionScheme);
+** [[Image:done.png]]scheme.FillDescriptionScheme(descriptionScheme)
 ** [[Image:done.png]]Notice that this step is due to the scheme classes duplication
 * [[Image:done.png]]Create a CLAM::DataPool with the description scheme
-** [[Image:done.png]]CLAM::DescriptionDataPool pool(descriptionScheme);
+** [[Image:done.png]]CLAM::DescriptionDataPool pool(descriptionScheme)
 * [[Image:done.png]]Dump the pool without data
 ** [[Image:done.png]]What happens? file a bug ;-)
-***[[Image:done.png]] The bug/crash appears when you actually dump a pool with no added scope 
-instances.
+***[[Image:done.png]] The bug/crash appears when you actually dump a pool with no added scope instances.
 ** If you feel adventurous figure out the bug and fix it
-*** The _scopePools is not populated and is pointing to a NULL (ScopePool*) address
+*** The "_scopePools" is not populated and is pointing to a NULL address of ScopePool
 
 == Widget related tasks ==
 
