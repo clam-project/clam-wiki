@@ -3,7 +3,7 @@ This is the development page of the NetworkEditor port to Qt4.
 == Tasks ==
 
 * Porting NetworkCanvas to QGraphicsView framework
-* Abstract NetworkCanvas from CLAM dependencies
+* [david] Abstract NetworkCanvas from CLAM dependencies
 * Implement a Jack based NetworkCanvas
 * Filtering the processing tree (like Amarok playlist)
 * Adding processing documentation (doc widget or tab?)
