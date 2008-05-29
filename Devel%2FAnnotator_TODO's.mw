@@ -13,7 +13,7 @@
 ** Take a look to the Pool related classes
 ** Build a simple extractor (c++)
 *** [[Image:done.png]] Adapt the build system to compile the new binary 
-    **** copied the SchemaAttribute.XXX and TypePlugin.XXX to the directory src/SilenceDetector, which is ugly
+****copied the SchemaAttribute.XXX and TypePlugin.XXX to the directory src/SilenceDetector, which is ugly  and needs a modification
 *** [[Image:done.png]]Code a simple schema with a segmentation and no attribute
 *** [[Image:done.png]]Create a pool according to the schema
 *** [[Image:done.png]]Populate the pool with dummy data
