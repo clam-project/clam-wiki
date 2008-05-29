@@ -35,21 +35,24 @@
 ** [[Image:done.png]] Scope: 'Song', Name: 'Silences', Policy: discontinuous, ChildScope: none
 ** Notice again the duplication: ../CLAM/src/Data/Editable/Segmentation.hxx and it's subclasses.
 ** [[Image:done.png]]Run the program and notice how the XML for the schema has changed
-* Add your own schema name
-** schema.SetUri("descriptionScheme:www.iua.upf.edu:clam:JunJunSilenceDetector");
-** The uri is used to identify the kind of document.
-* Add documentation to the segmentation attribute
-** Use schema.AttributeDocumentation(scope, attribute, doc)
-** The documentation is the text you can see on the schema browser in Annotator
-* Create a CLAM description scheme and fill it
-** CLAM::DescriptionScheme descriptionScheme;
-** scheme.FillDescriptionScheme(descriptionScheme);
-** Notice that this step is due to the scheme classes duplication
-* Create a CLAM::DataPool with the description scheme
-** Guess how
-* Dump the pool without data
-** What happens? file a bug ;-)
+* [[Image:done.png]]Add your own schema name
+** [[Image:done.png]]schema.SetUri("descriptionScheme:www.iua.upf.edu:clam:JunJunSilenceDetector");
+** [[Image:done.png]]The uri is used to identify the kind of document.
+* [[Image:done.png]]Add documentation to the segmentation attribute
+** [[Image:done.png]]Use schema.AttributeDocumentation(scope, attribute, doc)
+** [[Image:done.png]]The documentation is the text you can see on the schema browser in Annotator
+* [[Image:done.png]]Create a CLAM description scheme and fill it
+** [[Image:done.png]]CLAM::DescriptionScheme descriptionScheme;
+** [[Image:done.png]]scheme.FillDescriptionScheme(descriptionScheme);
+** [[Image:done.png]]Notice that this step is due to the scheme classes duplication
+* [[Image:done.png]]Create a CLAM::DataPool with the description scheme
+** [[Image:done.png]]CLAM::DescriptionDataPool pool(descriptionScheme);
+* [[Image:done.png]]Dump the pool without data
+** [[Image:done.png]]What happens? file a bug ;-)
+***[[Image:done.png]] The bug/crash appears when you actually dump a pool with no added scope 
+instances.
 ** If you feel adventurous figure out the bug and fix it
+*** The _scopePools is not populated and is pointing to a NULL (ScopePool*) address
 
 == Widget related tasks ==
 
