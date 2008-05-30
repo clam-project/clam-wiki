@@ -58,6 +58,7 @@
 ** Notice that it will return an array of one Segmentation element, not the Segmentation, it can be considered a pointer.
 * Explore the Segmentation interface:
 ** How is that segmentation initialized? Has it sense?
+** Notice that the end segment position is one of the initialization parameters
 
 == Widget related tasks ==
 
