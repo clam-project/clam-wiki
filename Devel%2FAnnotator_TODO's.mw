@@ -135,7 +135,7 @@
 ** Error remove on non instanciated
 ** Test XML still works fine
 ** Dealing with zero size scopes
-* TDD Implementation of SizelessSegmentation
+* TDD Implementation of SizelessSegmentation (??? is it the same as "UnsizedSegmentation")
 * TDD Implementation of OverlapingSegmentation
 * Corrections on XML dumping
 ** '''[DONE]''' Simplify the RestrictedString XML
@@ -189,7 +189,6 @@
 *** Can the choosing method for height be used also for colors?
 *** Should we force to be the same attribute for color and height?
 *** Adding a thicker lower bar will illustrate better the color?
-
 
 == Global Goals for Simac ==
 
