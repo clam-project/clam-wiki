@@ -63,6 +63,7 @@
 ** Notice that the end segment position is one of the initialization parameters
 ** What about adding new segments? Has it sense?
 ** Switch the segmentation to different kinds of segmentation policy and check whether is doing the proper thing
+***add CLAM::OverlappingSegment
 
 == Widget related tasks ==
 
