@@ -52,7 +52,8 @@
 ***[[Image:done.png]] The bug/crash appears when you actually dump a pool with no added scope instances.
 ** If you feel adventurous figure out the bug and fix it
 *** The "_scopePools" is not populated and is pointing to a NULL address of ScopePool
-* Populate the 'Song' scope with 0 elements: What it does?
+* Is it a bug: the attribute pool can have just a single size attribute, if you  had more than two songs, just the last one would survive?
+* [[Image:done.png]]Populate the 'Song' scope with 0 elements: What it does?
 * Query the attribute array: What it does?
 * Populate the 'Song' with 1 element and query the Segmentation element.
 ** Notice that it will return an array of one Segmentation element, not the Segmentation, it can be considered a pointer.
