@@ -111,7 +111,7 @@
 * Feature: Key bindings for segment edition
 * Feature: Current segment always visible
 * The vertical rulers on the bpf editor are not displayed until a vertical resize
-* Syncronize zooms and scrolling among plot widgets
+* Synchronize zooms and scrolling among plot widgets
 * Support for <List> tag inside multiple item attributes (currently xoliver's annotations have to be checked to avoid the usage of this tag)
 
 == Unscheduled tasks ==
