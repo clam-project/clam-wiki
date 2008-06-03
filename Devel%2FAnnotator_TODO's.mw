@@ -57,6 +57,7 @@
 * Query the attribute array: What it does?
 * Populate the 'Song' with 1 element and query the Segmentation element.
 ** Notice that it will return an array of one Segmentation element, not the Segmentation, it can be considered a pointer.
+** Populate a silence segmentation with random data.
 * Explore the Segmentation interface:
 ** How is that segmentation initialized? Has it sense?
 ** Notice that the end segment position is one of the initialization parameters
