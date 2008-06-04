@@ -11,11 +11,11 @@
 === Tasks ===
 
 * [[Image:Done.png]] Having a working sandbox
-* Having the editor configured to use tabs instead of spaces
-* Take a look at the FileReader classes
+* [[Image:Done.png]] Having the editor configured to use tabs instead of spaces
+* [[Image:Done.png]] Take a look at the FileReader classes
 * Understanding how unit tests work (compiling and running them and adding a dummy test class)
 * Take a look at the unit tests for the FileReader classes
-* TDD a seek control on the mono audio file reader
+* '''TDD a seek control on the mono audio file reader'''
 * Extend it to the Multi channel file reader
 * Build a Control sender with feedback (to build a progress slider)
 
