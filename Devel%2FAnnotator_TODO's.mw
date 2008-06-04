@@ -64,6 +64,9 @@
 ** What about adding new segments? Has it sense?
 ** Switch the segmentation to different kinds of segmentation policy and check whether is doing the proper thing
 ***add CLAM::OverlappingSegmentation
+* Proper integration of Segmentation classes into the Pool/Schema. Currently we are using DataArrays and converting them to segmentation outside the Pool
+** figure out how the TypePlugins are used over the Annotator, that is searching where each plugin method is used, and understanding why it is a type dependant task
+** meanwhile think on what other task could be type dependant and whether the current ones are well defined or not and why
 
 == Widget related tasks ==
 
