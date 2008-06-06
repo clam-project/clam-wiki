@@ -54,18 +54,18 @@
 *** The "_scopePools" is not populated and is pointing to a NULL address of ScopePool
 * Is it a bug: the attribute pool can have just a single size attribute, if you  had more than two songs, just the last one would survive?
 * [[Image:done.png]]Populate the 'Song' scope with 0 elements: What it does?
-* Query the attribute array: What it does?
-* Populate the 'Song' with 1 element and query the Segmentation element.
-** Notice that it will return an array of one Segmentation element, not the Segmentation, it can be considered a pointer.
-** Populate a silence segmentation with random data.
-* Explore the Segmentation interface:
-** How is that segmentation initialized? Has it sense?
-** Notice that the end segment position is one of the initialization parameters
-** What about adding new segments? Has it sense?
-** Switch the segmentation to different kinds of segmentation policy and check whether is doing the proper thing
+* [[Image:done.png]]Query the attribute array: What it does?
+* [[Image:done.png]]Populate the 'Song' with 1 element and query the Segmentation element.
+** [[Image:done.png]]Notice that it will return an array of one Segmentation element, not the Segmentation, it can be considered a pointer.
+** [[Image:done.png]]Populate a silence segmentation with random data.
+* [[Image:done.png]]Explore the Segmentation interface:
+** [[Image:done.png]]How is that segmentation initialized? Has it sense?
+** [[Image:done.png]]Notice that the end segment position is one of the initialization parameters
+** [[Image:done.png]]What about adding new segments? Has it sense?
+** [[Image:done.png]]Switch the segmentation to different kinds of segmentation policy and check whether is doing the proper thing
 ***add CLAM::OverlappingSegmentation
 * Proper integration of Segmentation classes into the Pool/Schema. Currently we are using DataArrays and converting them to segmentation outside the Pool
-** figure out how the TypePlugins are used over the Annotator, that is searching where each plugin method is used, and understanding why it is a type dependant task
+** [[Image:done.png]]figure out how the TypePlugins are used over the Annotator, that is searching where each plugin method is used, and understanding why it is a type dependant task
 ** meanwhile think on what other task could be type dependant and whether the current ones are well defined or not and why
 
 == Widget related tasks ==
