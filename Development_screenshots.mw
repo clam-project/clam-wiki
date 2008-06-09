@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.2.1 =
 <gallery>
+Image:CopyAndPasteInNECanvas.gif|Copy and Paste processing boxes in Network Editor canvas
 Image:NetEditorContextConnectToControl.png|Added a "Connect to" functionality to the Network Editor processing box control context menu.
 Image:NetEditorContextMenuConnectTo.png|Added a "Connect to" functionality to the Network Editor processing box port context menu.
 Image:Networkeditor_WindowMingw_Native_Build.png|Succeed in compiling the libraries and then compiling NetworkEditor, through native Windows plus Mingw compilation.
