@@ -61,7 +61,7 @@ We like receiving patches very much. Please do it even for very small things lik
 Luckily, working with patches in subversion is very easy:
 
 * How to create a patch with your local modifications?
-: Change dir to the '''root of your svn tree''' (under CLAM/ and NetworkEditor/, etc.) and do 
+: Change dir to the '''root of your svn tree''' (the directory containing CLAM/ and NetworkEditor/, etc.) and do 
 : <pre>$ svn diff > good-description.patch</pre>
 
 * How to apply a patch (that maybe somebody posted to the list)?
