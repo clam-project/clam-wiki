@@ -22,10 +22,19 @@ This proposal cover two main areas. The first one claims to improve the connecti
 
 == Network Interface ==
 '''For the NetworkEditor interface, these are some proposed chronologically ordered tasks:'''
-* normalize processing boxes descriptors keys (add missings keys in some objects, improve the factory class key implementation to manage the key missing errors without generating segmentation faults)
-* improve the user interface to interconnect signals of the same type. Make contextual menus showing compatible type pair to connect to (implemented now only with the port monitors type). Implement sending/receiving named processing boxes, for every control and signal types (allowing to make "wireless" connections).
+* normalize processing boxes descriptors keys (add missings keys in some objects, improve the factory class key implementation to manage the key missing errors without generating segmentation faults) [[Image:Done.png]]
+::bool CLAM::Factory::AttributeExists (const std::string& key, const std::string& attribute)
+:://returns true if attribute exists in list "key".
+* improve the user interface to interconnect signals of the same type. Make contextual menus showing compatible type pair to connect to (implemented now only with the port monitors type). 
+:: Discussing about the interface. Specific things to define:
+::* Kind of interface to simplify cable connections between processings
+::* ToolTips, messages boxes, and error management
+* Implement sending/receiving named processing boxes, for every control and signal types (allowing to make "wireless" connections).
+:: In process. 
 * improve NE GUI processing boxes manipulation. Allow the user to group/lock a group of processing boxes, and operate with them as a unique object (for copy/paste/duplicate/move/etc). 
+:: Done copy / cut and paste. Added canvas geometries to the network XML store/load management. Still needs refactoring and be sure of the format to use, since it then will be improved to manage subnetworks.
 * improve the grouping implementation to a new instance, allowing the user to save a group as a network, and load it as a closed processing box into a network ("subnetwork"). Derivate the sending/receiving processing boxes to manage subnetworks inputs/outputs.
+:: In process.
 * improve the subnetwork support to allow the user to "enter" in the subnetworks (if possible when playing, to allow manage subnetworks controls in RT)
 
 == Blender-CLAM integration == 
