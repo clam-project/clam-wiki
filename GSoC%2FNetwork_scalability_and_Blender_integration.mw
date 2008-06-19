@@ -90,6 +90,9 @@ Related TODOs pages:
 : for:
 :: struct ProcessingInfo { Processing* p, Geometry g};
 :: typedef std::map< std::string, ProcessingInfo > ProcessingsMap;
+: to merge processings and geometries maps getting on canvas.
+* Change and simplify "connect to" context menues
+* (Low-Priority) Improve embedded Faust diagrams displaying ([[:Image:NetEditor-faust-svg-embedded.png|Pau antecedents]])
 
 = ''(optional)'' Blogging =
 
