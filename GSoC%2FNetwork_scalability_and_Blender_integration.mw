@@ -41,7 +41,7 @@ This proposal cover two main areas. The first one claims to improve the connecti
 '''The main goals for the Blender-CLAM integration are:'''
 * Allow Blender to export scenes objects parameters on intermediate files (with cameras-listeners and objects-sound sources positions over time) make them readable into CLAM, and use as offline spatialization choreography.
 * Allow Blender to send the previous point parameters in RT over OSC, and CLAM to use them onto networks. Adapt the spatialization  networks examples to use them, and make new ones.
-:: -successful using a first python script to send scene parameters using osc to a receiver osc clam plugins [[Image:Done.png]]
+:: -successfuly first python script to send scene parameters using osc to a receiver osc clam plugins [[Image:Done.png]]
 :: -needs refactoring on sender code and improvements on OSC clam receiver. Make specifics spatializer parameters receiver processings (using SpatDIF?).
 * Improve the Vector Based Amplitude Panning related processing boxes to manage distances (with variable delay lines and optional filters) and different speakers configurations. Allow the spatial speaker's configuration importing blender scene objects.
 * Make new VBAP alike processing boxes to enconde/decode Ambisonics (externals LADSPA/VST plugins can be used too)
