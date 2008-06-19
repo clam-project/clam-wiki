@@ -83,7 +83,14 @@ Related TODOs pages:
 *[[Devel/NetworkEditor TODO's]]
 
 ==Pending tasks, proposed features and improvements==
-* Define subnetworks implementation
+* Define subnetworks implementation:
+:* Pau's proposal ([[Talk:GSoC/Network_scalability_and_Blender_integration#Pau's proposal|see discussion]])
+: Related tasks:
+:: - do group managements on canvas. Load and Save groups from files.
+:: - implement several opened networks management on canvas. ?
+:: - do the ports and controls sinks/sources and send/receivers
+:: - define the semantics and hierarchy for subnetworks management
+
 * Pau proposed refactoring:
 : change actual (CLAM::Network):
 :: typedef std::map< std::string, Processing* > ProcessingsMap;
@@ -92,7 +99,7 @@ Related TODOs pages:
 :: typedef std::map< std::string, ProcessingInfo > ProcessingsMap;
 : to merge processings and geometries maps getting on canvas.
 * Change and simplify "connect to" context menues
-* (Low-Priority) Improve embedded Faust diagrams displaying ([[:Image:NetEditor-faust-svg-embedded.png|Pau antecedents]])
+* (Low-Priority) Improve embedded Faust diagrams displaying ([[:Image:NetEditor-faust-svg-embedded.png|antecedents]])
 
 = ''(optional)'' Blogging =
 
