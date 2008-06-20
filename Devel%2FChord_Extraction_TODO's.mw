@@ -21,8 +21,8 @@
 *** [[Image:Done.png]] Write a processing which loads whole files using internal MonoAudioFileReader
 *** [[Image:Done.png]] Add internal MonoAudioFileReader error handling
 *** [[Image:Done.png]] Add position variable to it
-*** '''Add output of current position to OutControl'''
-*** Add a position InControl to it
+*** [[Image:Done.png]] Add output of current position to an OutControl
+*** '''Add a position InControl to it'''
 ** Final version (?)
 *** TDD a seek control on the mono audio file reader
 *** Extend it to the Multi channel file reader
