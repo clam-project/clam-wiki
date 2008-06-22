@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.2.1 =
 <gallery>
+Image:Embedded faust diagrams.png|NetworkEditor: embedding diagrams of Faust plugins on the canvas
 Image:ContextMenuEditIcons.png|Icons and shortcuts for the edit actions in the context menu.
 Image:CopyAndPasteInNECanvas.gif|Copy and Paste processing boxes in Network Editor canvas
 Image:NetEditorContextConnectToControl.png|Added a "Connect to" functionality to the Network Editor processing box control context menu.
