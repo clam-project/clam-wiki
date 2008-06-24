@@ -13,8 +13,11 @@
 * Preparation
 ** [[Image:Done.png]] Having a working sandbox
 ** [[Image:Done.png]] Having the editor configured to use tabs instead of spaces
-** Understanding how unit tests work (compiling and running them and adding a dummy test class)
-** Take a look at the unit tests for the FileReader classes
+** Understanding how unit tests work
+*** [[Image:Done.png]] compiling them
+*** running them
+*** adding a dummy test class
+** [[Image:Done.png]] Take a look at the unit tests for the FileReader classes
 * Implement seeking
 ** Simple hack
 *** [[Image:Done.png]] Take a look at the FileReader classes
@@ -22,7 +25,9 @@
 *** [[Image:Done.png]] Add internal MonoAudioFileReader error handling
 *** [[Image:Done.png]] Add position variable to it
 *** [[Image:Done.png]] Add output of current position to an OutControl
-*** '''Add a position InControl to it'''
+*** [[Image:Done.png]] Add a position InControl to it
+*** '''Add support for the loop option'''
+*** Write a multichannel version
 ** Final version (?)
 *** TDD a seek control on the mono audio file reader
 *** Extend it to the Multi channel file reader
