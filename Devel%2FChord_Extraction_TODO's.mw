@@ -32,6 +32,8 @@
 *** TDD a seek control on the mono audio file reader
 *** Extend it to the Multi channel file reader
 *** Build a Control sender with feedback (to build a progress slider)
+* Widget library
+** '''splitting monitors and widgets in NetworkEditor/src/monitors'''
 
 == Realtime segmentation (GSoC 2007 Roman) ==
 
