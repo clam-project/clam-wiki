@@ -26,7 +26,7 @@
 *** [[Image:Done.png]] Add position variable to it
 *** [[Image:Done.png]] Add output of current position to an OutControl
 *** [[Image:Done.png]] Add a position InControl to it
-*** '''Add support for the loop option'''
+*** [[Image:Done.png]] Add support for the loop option
 *** Write a multichannel version
 ** Final version (?)
 *** TDD a seek control on the mono audio file reader
