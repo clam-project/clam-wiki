@@ -14,34 +14,56 @@
 ''Add here pointers to another more general clam devel pages with TODO's''
 
 = ''(optional)'' Blogging =
-
 (Just like many other things, I hope that I had this in the first day when I started to work on this project.)
 
+SimpleOboeSynthesizer
+and
+continuousExcitationSynthesizer
 
-This synthesizer for a woodwind is a further development
+This synthesizer for a woodwind (oboe) instrument is a further development
 of Greg's continuousExcitationSynthesizer, a real-time synthesizer for an ebow-driven string instrument  in SoC 2007.
 
+I decided to keep his design, especially the management of the metadata (in XML) of musical samples in SDIF.
+So I can experiment with and gradually change the synthesizing guts.. 
 
 Here is the link:
 
-Let's start from how it works.
+Let's start from (my understanding in) how it works.
+{I will put the changes that I've made or would make inside brace.}
 
 
-Platform:
+1. Platform
 It is supposed to work either as a plugin in Network Editor or as a command line tool.
+For users to add the musical samples, a tool called Wav2SDIF is available in the console.
+Also, loopMaker can convert any wave with a definite pitch to SDIF and find the loop point's by Earth Mover's distance.
+{I only work with the command line tools so far, which is enough for me, but maybe not for end-users.}
 
-
-I/O:
+2. Input from the instrument
 It could take OSC or read the score files offline 
-Rather than musical notation, the "score" file is actually a sequence of frequency-loudness duplets, 
+Rather than musical notation, the "score" file is actually a sequence of frequency-velocity duplets, 
 which is all the expression that the instrument could have.
+The frequency is given in Hertz and the velocity, brightness in Greg's word, is a float between 0 and 1.
+{The fundamental question is: how much control could an oboist have over the oboe? 
+When I am thinking of a MIDI breath controller, this two-column "score" seem to be reasonable to me.
+However, how the "velocity" reflects the dynamic of the sound is still open to me.}
 
-Sound Samples
+3.Sound Samples
 
 
 
+4. Synthesis
 
+4.1 Voice
 
+4.2 Stages of a note
+
+4.3 Frame preloading
+
+4.4 Frame Buffering
+
+4.5 Choosing a loop
+
+4.6 Cross fading
 
 == ''(optional)'' Selected posts ==
 ''The most relevant ones related with the project''
