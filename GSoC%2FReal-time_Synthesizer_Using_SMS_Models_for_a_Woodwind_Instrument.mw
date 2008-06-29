@@ -14,7 +14,8 @@
 ''Add here pointers to another more general clam devel pages with TODO's''
 
 = ''(optional)'' Blogging =
-(Just like many other things, I hope that I had this in the first day when I started to work on this project.)
+(Just like many other things, I hope that I had this in the first day when I started to work on this project.
+Now it sounds like a mid-term report..)
 
 SimpleOboeSynthesizer
 and
@@ -29,8 +30,8 @@ So I can experiment with and gradually change the synthesizing guts..
 Here is the link:
 
 Let's start from (my understanding in) how it works.
-{I will put the changes that I've made or would make inside brace.}
-
+[I give my comments inside square brackets] 
+{I will put the changes that I've made or would make inside braces.}
 
 1. Platform
 It is supposed to work either as a plugin in Network Editor or as a command line tool.
@@ -43,13 +44,38 @@ It could take OSC or read the score files offline
 Rather than musical notation, the "score" file is actually a sequence of frequency-velocity duplets, 
 which is all the expression that the instrument could have.
 The frequency is given in Hertz and the velocity, brightness in Greg's word, is a float between 0 and 1.
-{The fundamental question is: how much control could an oboist have over the oboe? 
+
+[The fundamental question is: how much control could an oboist have over the oboe? 
 When I am thinking of a MIDI breath controller, this two-column "score" seem to be reasonable to me.
-However, how the "velocity" reflects the dynamic of the sound is still open to me.}
+However, how the "velocity" reflects the dynamic of the sound is still open to me.]
+
+{A minor problem in reading the text score is that Greg's code looked for "\r" as a delimiting symbol.
+It was for CR in Mac as a line break but does not work for Linux '\n' or window \r\n as a line break.
+I tried to make it working in 3 different platforms but did not test in windows.}
 
 3.Sound Samples
+A database of 6 notes (C5, D5, E5, F#5, G#5, C6) is used to synthesize the string instrument.
+Essentially, the database gives the distribution of the spectral peaks ( and residue) for each note.
+It is further transformed by SMS to cover all the pitches in the score.
+The residue part is not used in Greg's version.
+
+[Here the question is: how representative a note of a curtain pitch/dynamic could be in terms of the shape of its spectral peaks,
+which is a key factor in the pitch-shifting operation in SMS.
+To answer this question, in my experiment I used classical multidimensional scaling (CMDS) to embed 72 oboe note samples that span 2 octave in 3 dynamics (ff, mf, pp) into a 2 dimensional space. 
+The distance between any 2 notes is measure by the sum of the squared difference between the first 10 normalized spectral peaks of each note.
+As a result, the pitch seems to play a more important role in determining the distances between notes. The 2 dimensional picture explain only half of the variation though, it suggested that we would cover the all the pitches in the scale. For each pitch, 3 dynamics are given.
+Somehow my database 
+http://theremin.music.uiowa.edu/MIS.html
+seems to be down at the moment.
+72 oboes notes recorded in isolation are all I have at hand. Some of the note of dynamics pp are not very good.]
+
+{Instead of using Greg's earth mover's distance,
+I looked for the loop points using an external program R to detect the best zero crossing points.
+The samples are all 16-bit [-32768,32767] and I set the tolerance to be within [-2,2].
+It is easy for me to write a script in R to do this but I should make this available as an executable.}
 
 
+(I will finish the rest part when I overcome the sleepiness caused by the painkiller :-)
 
 4. Synthesis
 
