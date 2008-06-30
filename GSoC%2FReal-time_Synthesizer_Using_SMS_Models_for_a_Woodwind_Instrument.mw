@@ -41,9 +41,10 @@ Also, loopMaker can convert any wave with a definite pitch to SDIF and find the 
 
 2. Input from the instrument
 It could take OSC or read the score files offline 
-Rather than musical notation, the "score" file is actually a sequence of frequency-velocity duplets, 
+Rather than musical notation, the "score" file is actually a sequence of frequency-velocity frames, 
 which is all the expression that the instrument could have.
 The frequency is given in Hertz and the velocity, brightness in Greg's word, is a float between 0 and 1.
+In this implementation, each frame has 1024 samples with HOP size 256 at sampling rate 44100Hz.
 
 [The fundamental question is: how much control could an oboist have over the oboe? 
 When I am thinking of a MIDI breath controller, this two-column "score" seem to be reasonable to me.
@@ -79,7 +80,15 @@ It is easy for me to write a script in R to do this but I should make this avail
 
 4. Synthesis
 
+The synthesizer will find and index all the SDIF files and associated XML files in a given fold as the material.
+A "reader" associated with a SDIF/XML of a certain pitch will be loaded into memory in the initialization.
+
 4.1 Voice
+By the monophonic nature of this woodwind instrument (oboe), 
+The input frequency-brightness frames, in a somewhat musical sense, could be viewed as streams of voices.
+The purpose of having voices is to encapsulate the input sequences of frames into musical "notes", 
+each of  which consists an attack stage and steady state.
+If the difference in frequency between two consecutive input frame is above a certain threshold, a new voice will be issued.
 
 4.2 Stages of a note
 
