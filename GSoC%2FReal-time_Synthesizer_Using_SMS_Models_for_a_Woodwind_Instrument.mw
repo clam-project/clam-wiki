@@ -14,6 +14,9 @@
 ''Add here pointers to another more general clam devel pages with TODO's''
 
 = ''(optional)'' Blogging =
+June 30 2008
+Yushen Han
+
 (Just like many other things, I hope that I had this in the first day when I started to work on this project.
 Now it sounds like a mid-term report..)
 
@@ -81,7 +84,13 @@ It is easy for me to write a script in R to do this but I should make this avail
 4. Synthesis
 
 The synthesizer will find and index all the SDIF files and associated XML files in a given fold as the material.
-A "reader" associated with a SDIF/XML of a certain pitch will be loaded into memory in the initialization.
+For each sound sample stored in SDIF with XML, an associated "reader" will be loaded into memory in the initialization.
+Then the program read the frequency-brightness couple from the score and makes a decision on which reader sample file to use in realtime.
+Each reader has a queue of buffered frames loaded in advance. Newly synthesized frames will be added to the queue of the selected frame reader.
+A minimal number of frames (5) should be kept so the program will not stall when it is proceeding.
+The frames stored in the SDIF will undergo a pitch transformation by SMS before it is directed to the audio core of CLAM.
+
+(Fortunately Greg has complete SDIF file conversion and good metadata management. I reused his code with little difficulty.)
 
 4.1 Voice
 By the monophonic nature of this woodwind instrument (oboe), 
@@ -90,15 +99,70 @@ The purpose of having voices is to encapsulate the input sequences of frames int
 each of  which consists an attack stage and steady state.
 If the difference in frequency between two consecutive input frame is above a certain threshold, a new voice will be issued.
 
-4.2 Stages of a note
+4.2 Stages of a note and loop 
+After the sound samples are pre-analyzed by SMS, an attack region is identified ( by hand ) and the middle part of the note is considered steady state,
+in which loop points are found. Note that the attack region is fixed in a sample and a new voice is always starting from the attack.
+However, a sample can have, desirably, more than one loop in order to avoid the monotone of repeating the same loop over and over again.
+The duration of loops could partially overlap, which is desirable too. If two loops are overlapping, it is easy to switch from one loop to the other.
+e.g.  suppose that we have 4 loops in the sample
+loop1 (100,350), loop2 (200,450), loop3 (300, 550), loop4 (400, 650) 
+By default the program will alway go with the first loop after it finishes the attack (0,100).
+After it finishes loop1 when the first 350+ frames have been loaded into memory, 
+it will select loop2 or loop3 since the starting frames of loop2 and loop3 are within loop1.
+Loop1 is skipped (to avoid repeating) while loop4 will not be selected either because its starting frame 400 is not loaded at the moment loop1 is finished.
 
-4.3 Frame preloading
+[I realized that if the first loop is not overlapping with the other loops,
+sometimes it does not go back to the start frame of the first loop and hence causes a runtime error.
+According to Greg's comments since no candidate other than the first loop itself could be selected.
+It works for Greg because when his loopMaker will always find overlapping loops, which may not be true in my case.]
 
-4.4 Frame Buffering
+I was confused at Greg's comment below and did not know why we need to choose a loop in the middle of nowhere (1413).
+	// suppose that the current frame number is 1413. If we have a list of possible
+	// loops whose start and end points are (580, 1163), (850, 2100), and (982, 2310)
+	// we can only choose the second two loops, because the end point of the first
+	// is before the current frame position.
+	// but if we've only loaded 2200 frames into memory, then actually only the middle
+	// loop is valid.
+	// so here we look for valid loops that pass these two tests.
 
-4.5 Choosing a loop
 
-4.6 Cross fading
+One case that I think is illunimating: we have loop1(16,62) and loop2(88,132)
+When it finished the first loop, the size of the buffer is 68 and current buffer position is 61,
+it chose to switch to loop2(88,132) ( whose frames had not been loaded yet ) and started from frame 16 until it reached 132.  
+
+In one word, choosing a loop is about making a compromise between using loops as different as possible and creating buffers as less as possible.
+
+
+4.3 Frame preloading and buffering
+Greg preloaded the frames from the beginning of the attack to the end of the first loop for each reader.
+To push the limit, I tried to preload frames as many as the musical sample has. It was not a problem since my oboe notes are usually 1-2 second long.
+
+When the buffer of the activated reader is less than a threshold (5), the reader will read more frames from the SDIF file sequencially.
+This is very important for a realtime application. In my experiment, 5 frames are enough for switching loops within one voice. 
+However, jumping between different voices (readers) could be a problem.
+
+[My idea is to apply a filter over the frequency value of the most recent frames. 
+This is to identify the "false" voice that did not really have an attack and a steady state.
+But I need to know the physical constrain of the oboe.]
+
+[Greg has a different number of frames for the frame is being loading on a new thread.
+I did not observe the behavior of a thread in his code nor did I explicitly create any thread 
+in my program. I did not try much of multi-thread programming before
+but I would like to know about this.]
+
+4.4 Cross fading
+
+When the current frame is quite near the end loop point (within 100 frames in Greg's implementation),
+crossfading in the spectra. In fact, the currect frame is fading out while the first frame of the loop is fading in.
+I assumed that Greg's implementation always went back to the first frame of the loop after a loop is finished.
+I think it is a good idea if the loop points are not zero cross points in the musical sample.
+[Here I have a problem of making use of the zero-cross (or closely zero-cross) points in sample since I did not know how to 
+specify a sample. I can only be as precise as a million sec. Is that true? I applied the cross-fading as Greg did in my implementation. 
+I tried to use a frame that is not the first frame of the loop and it did not sound much different. 
+I wonder how he came up with this idea.  Is that a standard thing to do for our synthesizer?]
+
+4.5 Sound quality - dynamics, loudness, and brightness
+{ to be continued }
 
 == ''(optional)'' Selected posts ==
 ''The most relevant ones related with the project''
