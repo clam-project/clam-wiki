@@ -169,7 +169,7 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 
 [[Image:NetTutorial-SpectralView.png|500px|center]]
 
-* Note that you cannot connect the SpectrumView to any audio port.
+* Note that you cannot connect the SpectrumView to audio ports, just to the ones that feed spectrums.
 
 ==Transformations and Controls==
 
