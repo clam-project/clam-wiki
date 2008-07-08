@@ -596,7 +596,7 @@ Still getting errors at this point
 
 Add the dll path to the ~/.wine/system.reg
 Section [System\\CurrentControlSet\\Control\\Session Manager\\Environment], Key PATH
- "PATH"="c:\\windows\\system32;c:\\windows;z:\\home\\vokimon\\CajitasDeArena\\mingw\\local\\bin;z:\\home\\vokimon\\CajitasDeArena\\mingw\\local\\bin"
+ "PATH"="c:\\windows\\system32;c:\\windows;z:\\home\\vokimon\\CajitasDeArena\\mingw\\local\\bin"
 The "z:\\home\\vokimon\\CajitasDeArena\\mingw" part will vary in your case.
 
  export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever in your case
