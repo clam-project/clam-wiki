@@ -24,6 +24,7 @@ TODO: Paste a simple example here
  };
 
 The DefaultInit method is where default attributes are added and initialized with a value. This is automatically called from the constructor.
+'''Troubleshooting:''' If the plugin is not loading in NetworkEditor, check that "''DefaultInit()''" is defined (versus only declared: ''DefaultInit();'')
 
 Once stored in XML format from the Network Editor, the Processing object that has this kind of configuration will read like this:
 
