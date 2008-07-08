@@ -202,6 +202,17 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 
 [[Image:NetTutorial-SpectralTransformation.png|500px|center]]
 
+== Convenience tools ==
+
+TODO: Explain new usability features
+* Control+Space -> add processing dialog with completition
+* Cut & Paste
+* Type coloring of ports
+* Port context menu: Connect to existing compatible ports
+* Port context menu: Add connected source/sink
+* Port context menu: Add connected compatible data monitor
+* Control context menu: Add connected slider with proper range configured
+
 = Building Prototyper interfaces =
 
 As we saw at the beginning of the tutorial,
