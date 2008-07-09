@@ -65,3 +65,6 @@ The Faust compiled plugins will have new functions from the processing box conte
 Orlarey, Y., Fober, D., & Letz, S. (2002). ''An algebra for block diagram languages''. Paper presented at International Computer Music Conference. 
 
 Orlarey, Y., Fober, D., & Letz, S. (2004). ''Syntactical and semantical aspects of faust''. Paper presented at Soft Computing, Lyon, France.
+
+
+<sup>[2]</sup> At this moment, the default size of the generated processings boxes with the embedded svg diagrams on the canvas depends of the number of ports and controls inlets/outlets. To open with a normalized size it could to be changed some resizing and zoom routines, and define how to decide the minimum default size of the diagram (some are really bigs!).
