@@ -32,10 +32,10 @@ Define the FAUST_PATH environment var as your faust local sandbox (if you have i
 That's it!
 
 === Using Faust from NetworkEditor ===
-Execute the NetworkEditor. If you already compiled the ladspa plugins within the examples directory, you will see them on the "processing toolbox", on "FAUST" category.
-[[Image:Processing_Tree_Toolbox_With_Faust.png]]
+[[Image:Reload_Faust_Modules_Menu_Item.png|thumb|Reloading and recompiling FAUST Plugins from the Network Editor main menu]]
+Execute the NetworkEditor. If you already compiled the ladspa plugins within the examples directory, you will see them on the FAUST Category of the [[:Image:Processing_Tree_Toolbox_With_Faust.png|processing tree toolbox]].
+
 If you don't have compiled the plugins you can do it within NE. From the main menu you have to run "Reload FAUST modules" from the "Interface" menu item.
-[[Image:Reload_Faust_Modules_Menu_Item.png]]
 
 == References and notes ==
 <sup>[1]</sup> Orlarey, Y., Fober, D., & Letz, S. (2002). ''An algebraic approach to block diagram constructions''. Paper presented at Actes des Journées d'Informatique Musicale, Marseille - GMEM. 
