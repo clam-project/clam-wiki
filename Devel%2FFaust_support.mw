@@ -31,11 +31,31 @@ Define the FAUST_PATH environment var as your faust local sandbox (if you have i
 
 That's it!
 
-=== Using Faust from NetworkEditor ===
 [[Image:Reload_Faust_Modules_Menu_Item.png|thumb|Reloading and recompiling FAUST Plugins from the Network Editor main menu]]
+=== Using Faust from NetworkEditor ===
 Execute the NetworkEditor. If you already compiled the ladspa plugins within the examples directory, you will see them on the FAUST Category of the [[:Image:Processing_Tree_Toolbox_With_Faust.png|processing tree toolbox]].
 
 If you don't have compiled the plugins you can do it within NE. From the main menu you have to run "Reload FAUST modules" from the "Interface" menu item.
+
+
+It will appear some warning messages. First one will let you that is an experimental support: [[:Image:FaustCompileFirstWarningMessage.png]]
+
+Then other will remind you that the compilation could take some minutes (in which -for now- the program will seems frozed), and ask if you want to continue [[:Image:Faust_compilation_AreYouSure.png]]
+
+If all works good, after the compilation you will be able to see the FAUST category inside the [[:Image:Processing_Tree_Toolbox_With_Faust.png|processings Tool Box Tree]].
+
+You can use any compiled faust plugin as every other clam processing:
+[[Image:Clam_Processing_On_Canvas.png]]
+
+You can see that the processing box widget include the faust block diagram <sup>[2]</sup>
+
+The Faust compiled plugins will have new functions from the processing box context menu:
+
+Open diagram with browser (Konqueror):
+[[Image:Open_SVG_Diagram_with_Konqueror.png]]
+
+Open source with editor (Kate<sup>[3]</sup>):
+[[Image:Open_DSP_Source_with_Kate.png]]
 
 == References and notes ==
 <sup>[1]</sup> Orlarey, Y., Fober, D., & Letz, S. (2002). ''An algebraic approach to block diagram constructions''. Paper presented at Actes des Journées d'Informatique Musicale, Marseille - GMEM. 
