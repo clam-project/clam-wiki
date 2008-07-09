@@ -1,5 +1,5 @@
 == What is Faust? ==
-FAUST (Functional AUdio STream) is a compiled language for real-time audio signal processing. It allows to easily describe a DSP flow with a algebraic type syntax[1] and generate an optimized fast code to compile to different platforms.
+FAUST (Functional AUdio STream) is a compiled language for real-time audio signal processing. It allows to easily describe a DSP flow with a algebraic type syntax<sup>[1]</sup> and generate an optimized fast code to compile to different platforms.
 
 === What Faust can do? ===
 With Faust you can design and implement easily DSP audio algorithms and compile it for several environments (Pd, LADSPA, SuperCollider, etc). Plus, you can export the design to visualize it internal diagram functional blocks (with browseables SVGs) and to analyze its response exporting to Octave.
@@ -31,6 +31,9 @@ Define the FAUST_PATH environment var as your faust local sandbox (if you instal
 
 That's it!
 
-[1] Orlarey, Y., Fober, D., & Letz, S. (2002). An algebraic approach to block diagram constructions. Paper presented at Actes des Journées d'Informatique Musicale, Marseille - GMEM. 
-Orlarey, Y., Fober, D., & Letz, S. (2002). An algebra for block diagram languages. Paper presented at International Computer Music Conference. 
-Orlarey, Y., Fober, D., & Letz, S. (2004). Syntactical and semantical aspects of faust. Paper presented at Soft Computing, Lyon, France.
+== References and notes ==
+<sup>[1]</sup> Orlarey, Y., Fober, D., & Letz, S. (2002). ''An algebraic approach to block diagram constructions''. Paper presented at Actes des Journées d'Informatique Musicale, Marseille - GMEM. 
+
+Orlarey, Y., Fober, D., & Letz, S. (2002). ''An algebra for block diagram languages''. Paper presented at International Computer Music Conference. 
+
+Orlarey, Y., Fober, D., & Letz, S. (2004). ''Syntactical and semantical aspects of faust''. Paper presented at Soft Computing, Lyon, France.
