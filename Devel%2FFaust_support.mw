@@ -54,10 +54,10 @@ You can see that the processing box widget include the faust block diagram <sup>
 The Faust compiled plugins will have new functions from the processing box context menu:
 
 [[Image:Faust_Processing_Box_Context_Menu.png]]
-
-* [[Image:Open_SVG_Diagram_with_Konqueror.png|thumb|Open diagram with browser (Konqueror)]]
-
-* [[Image:Open_DSP_Source_with_Kate.png|thumb|Open source with editor (Kate<sup>[3]</sup>)]]
+<gallery>
+Image:Open_SVG_Diagram_with_Konqueror.png|thumb|Open diagram with browser (Konqueror)
+Image:Open_DSP_Source_with_Kate.png|thumb|Open source with editor (Kate<sup>[3]</sup>)
+</gallery>
 
 == References and notes ==
 <sup>[1]</sup> Orlarey, Y., Fober, D., & Letz, S. (2002). ''An algebraic approach to block diagram constructions''. Paper presented at Actes des Journées d'Informatique Musicale, Marseille - GMEM. 
