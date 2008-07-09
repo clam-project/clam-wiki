@@ -40,9 +40,9 @@ Execute the NetworkEditor. If you already compiled the ladspa plugins within the
 If you don't have compiled the plugins you can do it within NE. From the main menu you have to run "Reload FAUST modules" from the "Interface" menu item.
 
 
-It will appear some warning messages. First one will let you that is an experimental support: [[:Image:FaustCompileFirstWarningMessage.png]]
+It will appear some warning messages. First [[:Image:FaustCompileFirstWarningMessage.png|one letting you that is an experimental support]].
 
-Then other will remind you that the compilation could take some minutes (in which -for now- the program will seems frozed), and ask if you want to continue [[:Image:Faust_compilation_AreYouSure.png]]
+Then [[:Image:Faust_compilation_AreYouSure.png|other will remind you that the compilation could take some minutes]] (in which -for now- the program will seems frozed), and ask if you want to continue.
 
 If all works good, after the compilation you will be able to see the FAUST category inside the [[:Image:Processing_Tree_Toolbox_With_Faust.png|processings Tool Box Tree]].
 
