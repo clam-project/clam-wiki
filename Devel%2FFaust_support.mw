@@ -23,13 +23,19 @@ You copy it to "$HOME/src" (or wherever you want) and you uncompress the package
 
 That would generate a "faust-0.9.9.4" directory. From there you need to execute "make". If all goes right, you will see faust binary on "compile" subdirectory.
 You will have to be sure that the "examples" subdirectory exists (and have the .dsp examples), and the user haves write permissions on it.
-Define the FAUST_PATH environment var as your faust local sandbox (if you installed it on "$HOME/.faust" this is not needed):
+Define the FAUST_PATH environment var as your faust local sandbox (if you have it on "$HOME/.faust" this is not needed):
 
 <pre>	$ export FAUST_PATH=~/src/faust-0.9.9.4</pre>
 
 (if you don't want to have to define it everytime you run a session you can add it on your default shell init script -for instance, "~/.bashrc"- or make a script which says "export FAUST_PATH=~/src/faust-0.9.9.4; NetworkEditor" -with faust installed in "$HOME/src/faust-0.9.9.4"-)
 
 That's it!
+
+=== Using Faust from NetworkEditor ===
+Execute the NetworkEditor. If you already compiled the ladspa plugins within the examples directory, you will see them on the "processing toolbox", on "FAUST" category.
+[[Image:Processing_Tree_Toolbox_With_Faust.png]]
+If you don't have compiled the plugins you can do it within NE. From the main menu you have to run "Reload FAUST modules" from the "Interface" menu item.
+[[Image:Reload_Faust_Modules_Menu_Item.png]]
 
 == References and notes ==
 <sup>[1]</sup> Orlarey, Y., Fober, D., & Letz, S. (2002). ''An algebraic approach to block diagram constructions''. Paper presented at Actes des Journées d'Informatique Musicale, Marseille - GMEM. 
