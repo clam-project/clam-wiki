@@ -2,6 +2,9 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.2.1 =
 <gallery>
+Image:SeekableFilePlayer-QtDesigner.png|ProgressControl is available in Qt Designer.
+Image:SeekableFilePlayer-Prototyper.png|The same FilePlayer example running in Prototyper.
+Image:SeekableFilePlayer-NetworkEditor.png|New, seekable version of FilePlayer example as shown in Network Editor.
 Image:Open SVG Diagram with Konqueror.png|Browsing Faust diagram on Konqueror
 Image:Open_DSP_Source_with_Kate.png|Editing .dsp Faust source file with kate (using included Faust syntax highlighting)
 Image:NetworkEditor Context Menu on Faust Processing.png|Faust plugins have extra items on processing boxes context menus
