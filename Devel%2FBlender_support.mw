@@ -5,12 +5,7 @@ At the moment you could access the Blender scene using OSC. Further integration 
 == How-to using OSC ==
 Let's see how to send OSC from blender scene and receive it on CLAM.
 
-=== CLAM ===
-CLAM implements OSC as a plugin. You could compile just runing 'scons' on [https://iua-share.upf.edu/svn/clam/trunk/CLAM/plugins/osc/ trunk/CLAM/plugins/osc]. For now that compiles the LibloSource processing, which is a simple OSC server. You need to configure the port and the path:
-[[Image:LibloSource_OSC_Setup.png]].
-
 === Blender ===
-
 Sending OSC messages using [https://iua-share.upf.edu/svn/clam/trunk/CLAM/plugins/osc/oscpython/OSC.py OSC.py] (OSC client module for python by stefan kersten, you have to put a copy on your home/src/liblo). You could link this script to any object. It checks for ObjectUpdate events of objects which are on GroupAudio group. The sending path is '/[http://www.jamoma.org/wiki/SpatDIFSpatialSoundDescriptionInterchangeFormat SpatDIF]/type/number/xyz', where 'type' is the type of audio object ('source' if the object exists on 'GroupSources', 'sink' if exists on 'GroupSinks') and number is the relative number within the correspondent type group.
 
 <pre>#!BPY
@@ -85,3 +80,7 @@ def main():
 # This lets you can import the script without running it
 if __name__ == '__main__':
 	main()</pre>
+
+=== CLAM ===
+CLAM implements OSC as a plugin. You could compile just runing 'scons' on [https://iua-share.upf.edu/svn/clam/trunk/CLAM/plugins/osc/ trunk/CLAM/plugins/osc]. For now that compiles the LibloSource processing, which is a simple OSC server. You need to configure the port and the path:
+[[Image:LibloSource_OSC_Setup.png]].
