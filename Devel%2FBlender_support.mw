@@ -11,7 +11,7 @@ CLAM implements OSC as a plugin. You could compile just runing 'scons' on [https
 
 === Blender ===
 
-Sending OSC messages using [https://iua-share.upf.edu/svn/clam/trunk/CLAM/plugins/osc/oscpython/OSC.py OSC.py] (OSC client module for python by stefan kersten). You could link this script to any object. It checks for ObjectUpdate events of objects which are on GroupAudio group. The sending path is '/[http://www.jamoma.org/wiki/SpatDIFSpatialSoundDescriptionInterchangeFormat SpatDIF]/type/number/xyz', where 'type' is the type of audio object ('source' if the object exists on 'GroupSources', 'sink' if exists on 'GroupSinks') and number is the relative number within the correspondent type group.
+Sending OSC messages using [https://iua-share.upf.edu/svn/clam/trunk/CLAM/plugins/osc/oscpython/OSC.py OSC.py] (OSC client module for python by stefan kersten, you have to put a copy on your home/src/liblo). You could link this script to any object. It checks for ObjectUpdate events of objects which are on GroupAudio group. The sending path is '/[http://www.jamoma.org/wiki/SpatDIFSpatialSoundDescriptionInterchangeFormat SpatDIF]/type/number/xyz', where 'type' is the type of audio object ('source' if the object exists on 'GroupSources', 'sink' if exists on 'GroupSinks') and number is the relative number within the correspondent type group.
 
 <pre>#!BPY
 """
