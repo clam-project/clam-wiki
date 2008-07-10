@@ -7,7 +7,7 @@ Let's see how to send OSC from blender scene and receive it on CLAM.
 
 === CLAM ===
 CLAM implements OSC as a plugin. You could compile just runing 'scons' on [https://iua-share.upf.edu/svn/clam/trunk/CLAM/plugins/osc/ trunk/CLAM/plugins/osc]. For now that compiles the LibloSource processing, which is a simple OSC server. You need to configure the port and the path:
-[[Image:LibloSource_OSC_Setup]].
+[[Image:LibloSource_OSC_Setup.png]].
 
 === Blender ===
 
