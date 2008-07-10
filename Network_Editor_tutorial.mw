@@ -207,7 +207,7 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 TODO: Explain and illustrate new usability features
 * Control+Space -> add processing dialog with completition
 * Cut & Paste
-* Type coloring of ports
+* Type coloring of ports, ports type on tooltips
 * Port context menu: Connect to existing compatible ports
 * Port context menu: Add connected source/sink
 * Port context menu: Add connected compatible data monitor
