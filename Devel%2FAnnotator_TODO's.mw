@@ -22,6 +22,9 @@
 *** Process the actual wave file
 ** Build a pool to lab converter (python)
 *** Add the Version Maker
+** [[Image:done.png]]build a script to update the annotator data (python)
+*** [[Image:done.png]]Locating the segmentation attributes
+*** [[Image:done.png]]Inserting the new attributes and moving the content into the deeper level
 
 === Session plan ===
 
