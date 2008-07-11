@@ -36,6 +36,7 @@ To get involved with CLAM development:
 * [[Devel/Eclipse]]
 * [[Devel/Testing processing algorithms]]
 * [[Devel/CLAM idioms]] C++ techniques we use over and over.
+* [[Devel/Programming with Qt]] tips and conventions for the CLAM code that uses the Qt framework.
 * [[Devel/Faust support]]
 * [[Devel/Blender support]]
 
