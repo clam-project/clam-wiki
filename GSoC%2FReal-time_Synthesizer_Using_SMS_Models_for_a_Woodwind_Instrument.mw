@@ -164,6 +164,35 @@ I wonder how he came up with this idea.  Is that a standard thing to do for our 
 4.5 Sound quality - dynamics, loudness, and brightness
 { to be continued }
 
+
+The sound quality is the no.1 issue at the point.
+The sound of my digital oboe strikes me as an string instrument with its continuous pitch-shifting.
+It does whatever the score indicates, which is good, but whether the frequency deviation in the score is physically possible for an oboe is another question.
+
+I must miss some of the quality in the oboe samples in the articulation as well.
+An experiment was to replace all my oboes sound with samples of other instruments.
+As I tried with McGill Master Samples, my "oboe" was making similar sound with good pitch but dubious sound quality.
+......
+
+
+During the past week, I was talking to Prof. Don Byrd who is a veteran of digital sound synthesizer and Prof. Chris Raphael who is also a good oboist.
+From those conversations, I was convinced:
+
+(1) The technique of a digital synthesizer did not dramatically improve over years.
+However, the capacity of the computer really changed, especially memory  - so I really should take the advantage of it - to include more samples.
+Cross-fading is a common way to deal with transition. But I may make some new here...
+
+(2) I should have the information from the score to give the note on time and pitch explicitly.
+If I had to "guess" a new note from the frequency sequence, I will have only about 10ms of time.
+
+(3) More samples that involve the transition between notes of different pitches are needed for me to observe the sound property in note transition behaviors.
+ 
+My next move:
+
+
+
+
+
 == ''(optional)'' Selected posts ==
 ''The most relevant ones related with the project''
 
