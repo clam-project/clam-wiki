@@ -2,7 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.2.1 =
 <gallery>
-Image:Main Window NE Faust SubMenu.png|Faust NE submenu
+Image:Main Window NE Faust SubMenu.png|NetworkEditor Faust support available actions and options from a submenu
 Image:SeekableFilePlayer-QtDesigner.png|ProgressControl is available in Qt Designer.
 Image:SeekableFilePlayer-Prototyper.png|The same FilePlayer example running in Prototyper.
 Image:SeekableFilePlayer-NetworkEditor.png|New, seekable version of FilePlayer example as shown in Network Editor.
