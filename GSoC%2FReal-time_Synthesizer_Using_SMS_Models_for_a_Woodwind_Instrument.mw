@@ -164,7 +164,6 @@ I wonder how he came up with this idea.  Is that a standard thing to do for our 
 4.5 Sound quality - dynamics, loudness, and brightness
 { to be continued }
 
-
 The sound quality is the no.1 issue at the point.
 The sound of my digital oboe strikes me as an string instrument with its continuous pitch-shifting.
 It does whatever the score indicates, which is good, but whether the frequency deviation in the score is physically possible for an oboe is another question.
@@ -174,6 +173,7 @@ An experiment was to replace all my oboes sound with samples of other instrument
 As I tried with McGill Master Samples, my "oboe" was making similar sound with good pitch but dubious sound quality.
 ......
 
+(16 July)
 
 During the past week, I was talking to Prof. Don Byrd who is a veteran of digital sound synthesizer and Prof. Chris Raphael who is also a good oboist.
 From those conversations, I was convinced:
@@ -185,9 +185,42 @@ Cross-fading is a common way to deal with transition. But I may make some new he
 (2) I should have the information from the score to give the note on time and pitch explicitly.
 If I had to "guess" a new note from the frequency sequence, I will have only about 10ms of time.
 
-(3) More samples that involve the transition between notes of different pitches are needed for me to observe the sound property in note transition behaviors.
+(3) For a note of a pitch, there are different ways to play (in terms of the pipe) but there is usually one certain way to play in practice.
+It is a good approximation to couple the brightness with the loudness.
+
+(4) More samples that involve the transition between notes of different pitches are needed for me to observe the sound property in note transition behaviors.
  
-My next move:
+
+My response:
+
+(1) (3) To expand my samples. I will do principle component analysis on the first few spectral peaks to associate the brightness/loudness to a certain samples.
+
+(2) On top of Prof. Raphael's score-following technique, I just made a pitch tracker to follow extract the pitch in Hz over frames in a voice.
+It could identify the most observable harmonics of a certain voice (oboe solo) in a concerto where the oboe and the orchestra are playing together.
+The point is to get  not only realistic score that is extracted from a real performance, but also explicit note onset time.
+
+Tonight I applied it to Bellini's oboe concerto in Eb. 
+I got something like
+
+frameIndex freq(Hz) amplitude
+
+new note pitch == 75
+0 645.878174 0.000051
+1 639.528870 0.000523
+2 632.872620 0.001930
+3 630.824402 0.001946
+......
+
+158 791.396118 0.005913
+new note pitch == 79
+159 804.301086 0.000579
+160 795.698975 0.001821
+161 795.698853 0.003279
+......
+
+
+(4) I made an arrangement to get an oboist from School of Music to make a recording that involves the transition between 2 notes of different pitches.
+I need to make a plan of the range of pitches / intervals / dynamics that would be recorded.
 
 
 
