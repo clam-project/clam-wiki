@@ -47,7 +47,6 @@ If you don't have compiled the plugins you can do it within NE.
 In the Interface item from the main menu on NE, you should see the faust submenu enabled:
 [[Image:Main Window NE Faust SubMenu.png|Faust support available actions and options from the Network Editor main menu]]
 
-
 The items:
 *'''Recompile Faust modules:'''
 :recompile all the .dsp source files found at the examples dir, generating and importing the ladspa plugin and svg diagrams.
@@ -56,6 +55,10 @@ The items:
 *'''Embed SVG diagrams on new processings:''' 
 :bool option to embed (or not) the diagrams onto the new faust processings boxes.
 
+
+'''Recompiling the modules:'''
+
+[[Image:Compiling faust modules from NE.png]]
 
 === Using Faust plugins ===
 If all were good, after the compilation you will be able to see the FAUST category inside the [[:Image:Processing_Tree_Toolbox_With_Faust.png|processings Tool Box Tree]].
