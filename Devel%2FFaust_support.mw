@@ -14,20 +14,24 @@ First you have to check that CLAM was compiled with LADSPA support.
 To compile it, you will need the LADSPA API (ladspa dependency on Debian, alsa-devel on RH/Fedora). The SConstruct configuration parameter for compile CLAM with LADSPA support is 'with_ladspa=yes'. If you compile CLAM under linux without crosscompiling, is enabled by default.
 
 === FAUST ===
-You need the Faust compiler binary and libraries. You may install some distribution package, or compile yourself. To compile Faust for yourself you can use any directory you want, and define the environment variable "FAUST_PATH" pointing to the root of that local Faust copy. CLAM will search the Faust source code files (*.dsp) on "$FAUST_PATH/examples" or if it doesn't exist it will use "$HOME/.faust/examples". The LADSPA compiled plugins will be on "examples/ladspadir" and the SVG diagrams on individual directories within "examples".
 
-For instance: you download the last Faust tar.gzipped source code (http://downloads.sourceforge.net/faudiostream/faust-0.9.9.4b.tar.gz?modtime=1206634618&big_mirror=0). 
+You need Faust installed on your system. You can search for a Faust package for your GNU/Linux distribution (at the moment the CLAM Faust support is limited to LADSPA plugins), or download the sources and compile by yourself (http://sourceforge.net/projects/faudiostream/). In any case, you need the compiler binary 'faust' and the library file 'ladspa.cpp' on system paths (usually one is on '/usr/bin' and the other on '/usr/lib/faust').
 
-You copy it to "$HOME/src" (or wherever you want) and you uncompress the package:
-<pre>	~/src$ tar xvzf ./faust-0.9.9.4b.tar.gz</pre>
+CLAM will search for the Faust 'examples' directory on the user home '.faust' dir (i.e.: '~/.faust/examples'), or 'FAUST_PATH' environment variable path ('$FAUST_PATH/examples'), to grant write permissions when running the makefiles. So, you can copy the examples directory of Faust (usually '/usr/share/doc/faust/examples'), or directly from the sources package.
+If you want to add new faust plugins, just copy the .dsp source files in this user 'examples' directory.
 
-That would generate a "faust-0.9.9.4" directory. From there you need to execute "make". If all goes right, you will see faust binary on "compile" subdirectory.
-You will have to be sure that the "examples" subdirectory exists (and have the .dsp examples), and the user haves write permissions on it.
-Define the FAUST_PATH environment var as your faust local sandbox (if you have it on "$HOME/.faust" this is not needed):
+== Option 1: using 'FAUST_PATH' environment variable == 
+For instance, imagine you have the examples directory on the '~/src/faust-0.9.9.4'. You need to define the FAUST_PATH environment var:
 
 <pre>	$ export FAUST_PATH=~/src/faust-0.9.9.4</pre>
 
-(if you don't want to have to define it everytime you run a session you can add it on your default shell init script -for instance, "~/.bashrc"- or make a script which says "export FAUST_PATH=~/src/faust-0.9.9.4; NetworkEditor" -with faust installed in "$HOME/src/faust-0.9.9.4"-)
+If you don't want to have to define it everytime you run a session you can add it on your default shell init script -for instance, "~/.bashrc"- or make a script which says "export FAUST_PATH=~/src/faust-0.9.9.4; NetworkEditor" (with faust installed in "~/src/faust-0.9.9.4")
+
+== Option 2: linking '~/.faust' ==
+If you have the faust 'examples' dir on your "~/.faust" dir you don't have to define 'FAUST_PATH'. So, if you have the examples Faust directory on a writable path, you could make just a simbolic link once. For instance, having '~/src/faust-0.9.9.4/examples':
+
+<pre>   $ mkdir ~/.faust
+   $ ln -s ~/src/faust-0.9.9.4/examples ~/.faust/examples</pre>
 
 That's it!
 
