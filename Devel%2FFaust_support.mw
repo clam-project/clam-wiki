@@ -64,14 +64,15 @@ If all were good, after the compilation you will be able to see the FAUST catego
 You can use any compiled faust plugin as every other clam processing:
 [[Image:Faust Plugin On Canvas.png|Faust plugin on canvas with embedding diagrams enabled]]
 
-You can see that the processing box widget include the faust block diagram <sup>[2]</sup>
+You can see there how faust diagrams could be embedded on the widget.
 
+==== Processing boxes context menues ====
 The Faust compiled plugins will have new functions from the processing box context menu:
 
 [[Image:Faust_Processing_Box_Context_Menu.png]]
 <gallery>
 Image:Open_SVG_Diagram_with_Konqueror.png|Open diagram with browser (Konqueror)
-Image:Open_DSP_Source_with_Kate.png|Open source with editor (Kate<sup>[3]</sup>)
+Image:Open_DSP_Source_with_Kate.png|Open source with editor (Kate<sup>[2]</sup>)
 </gallery>
 
 == References and notes ==
