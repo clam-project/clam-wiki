@@ -40,7 +40,7 @@ If you want to add new faust plugins, just copy the .dsp source files in this us
 That's it!
 
 === Using Faust from NetworkEditor ===
-[[Image:Reload_Faust_Modules_Menu_Item.png|thumb|Reloading and recompiling FAUST Plugins from the Network Editor main menu]]
+[[Image:Main Window NE Faust SubMenu.png|thumb|Faust support available actions and options from the Network Editor main menu]]
 
 
 Execute the NetworkEditor. If you already compiled the ladspa plugins within the examples directory, you will see them on the FAUST Category of the [[:Image:Processing_Tree_Toolbox_With_Faust.png|processing tree toolbox]].
