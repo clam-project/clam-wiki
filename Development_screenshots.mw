@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.2.1 =
 <gallery>
+Image:RTSegmentView.png|A real time segment view. Roman was so close to this!
 Image:Embedded svg logos.png|Embedding of svg logos on processings boxes widgets, using 'embedded_svg' attribute (will be changed to 'embedded_logo')
 Image:Compiling faust modules from NE.png|Compiling Faust modules from Network Editor
 Image:Main Window NE Faust SubMenu.png|NetworkEditor Faust support available actions and options from a submenu
