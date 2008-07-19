@@ -35,33 +35,21 @@ I highlighted the second reason.
 
 When to add a signal? 
 When the widget you are programming is generating events that
-will be catch by '''widgets you don't have control over them'''.
-By the 'avoid sigslot' principle, 
-this means that you should want to know the widgets that 
-would receive that signal and call a method on them.
+will be catched by '''widgets that the emiting widget don't know'''.
 
-A bad smell for this is the case of programming a widget and having:
+A clear bad smell for this is the case of programming a widget and having:
  connect(this, signal, knownWidget, slot)
 and some other method doing:
  emit signal()
-The emision should be turn simply into:
+The emision should become simply:
  knownWidget->slot()
 and the connection removed.
+If 'knownWidget' is 'this', well, wtf...
 
-
-In this case, I don't know if you did so, but anyway is a good advice to 
-anyone new (or not that new) to qt: avoid using the signal slot mechanism 
-when the signal is not directly an user event but code you write, and you 
-know who is the receiver object and the receiver method. New people to Qt get 
-entusiastic with sigslot mechanism which is powerful but has less compile 
-time checks, is hard to trace and adds signal resolution overhead. 
-Annotator's vmqt is a good example on over use and it is a hell to understand 
-it ;-)
-
-Also I saw you are emiting slots or regular methods. Don't emit methods not 
-being signals, just call them. If you call an slot within the class just call 
-it like a regular function. Just emit signals, not slots neither regular 
-methods.
+By the 'avoid sigslot' principle, 
+this also means that you should want to know the widgets that 
+would receive a signal in order to call a method instead.
+So keep pointers to receiver widgets instead of settings connections.
 
 == When to use designer and when to use code? ==
 
