@@ -66,6 +66,15 @@ Previous developments using the ui as base for the layout of the widgets in main
 In the case of dialogs, use the designer freely as long as
 the dialog content is not dynamic.
 
+== Using designer ==
+
+When experimenting with properties, if you let a property as it was at first, click on the red tick button on the right to set it to default (not in bold).
+Default property values are not writen to the xml file so that if the property changes in future Qt versions, you still get sane defaults.
+
+Always set the container layout by clicking on the container and selecting a layout.
+If you don't the container won't adapt to children, 
+even if children have been set in a layout (red box).
+
 == Icons ==
 
 * In a given application, place the icons in src/images/
