@@ -16,7 +16,7 @@ Again, when creating widgets use the Qt convention, not CLAM's.
 
 In general the conventions for slots and signals are:
 * Signals: <tt>somethingHappened()</tt>   (using past)
-* Slots: <tt>doThatThink</tt>   (imperative, just like a regular method)
+* Slots: <tt>doThatThing</tt>   (imperative, just like a regular method)
 so that when you connect you can read:
 ''When emmiter somethingHappened receiver doThatThing''
 
