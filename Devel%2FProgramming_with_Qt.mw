@@ -24,7 +24,7 @@ Reserve the onSomethingHappened method names for [http://doc.trolltech.com/4.4/d
 which follow qt naming conventions: <tt>on_uiObjectName_signalName()</tt>
 Defining such a method saves you writting that connection code:
 
- connect(_ui->uiActionName, SIGNAL(triggered()), this, SLOT(doThat()))
+ connect(_ui->uiObjectName, SIGNAL(signalName()), this, SLOT(on_uiObjectName_signalName()))
 
 == Deciding whether to use signals slots or not ==
 
