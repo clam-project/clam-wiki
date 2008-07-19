@@ -31,8 +31,8 @@ Defining such a method saves you writting that connection code:
 The signal/slot mechanism is powerful but can turn you code a jungle.
 '''Don't over use it.'''
 * has less compile time checks, 
-* '''makes execution harder to trace''',
-* adds signal resolution overhead. 
+* adds signal resolution overhead,
+* and, above all, '''makes execution harder to trace''',
 
 When to add a signal? 
 When the widget you are programming is generating events that
