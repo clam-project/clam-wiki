@@ -32,3 +32,11 @@ entusiastic with sigslot mechanism which is powerful but has less compile
 time checks, is hard to trace and adds signal resolution overhead. 
 Annotator's vmqt is a good example on over use and it is a hell to understand 
 it ;-)
+
+== Icons ==
+
+* In a given application, place the icons in src/images/
+* Include them in a src/images.qrc file in the :/icons/ path
+* SVG format is preferred over PNG.
+* For stock icons use the crystalsvg theme
+* Write down the path of copied stock icons in src/images/origin.txt so that they could be updated as a whole when we change/update the theme.
