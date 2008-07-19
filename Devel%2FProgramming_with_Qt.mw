@@ -34,8 +34,6 @@ The signal/slot mechanism is powerful but can turn you code a jungle.
 * '''makes execution harder to trace''',
 * adds signal resolution overhead. 
 
-I highlighted the second reason.
-
 When to add a signal? 
 When the widget you are programming is generating events that
 will be catched by '''widgets that the emiting widget don't know'''.
