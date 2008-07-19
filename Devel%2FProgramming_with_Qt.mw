@@ -12,7 +12,7 @@ for methods and use firstLetterLowerCase.
 
 Also, in CLAM, we use GetAttribute() and SetAttribute(val) convention for accessors,
 while Qt uses attribute() and setAttribute(). 
-Again, when dealing with widgets use the Qt convention, not CLAM's.
+Again, when creating widgets use the Qt convention, not CLAM's.
 
 In general the conventions for slots and signals are:
 * Signals: <tt>somethingHappened()</tt>   (using past)
