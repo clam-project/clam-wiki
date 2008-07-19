@@ -79,7 +79,7 @@ Always set the container layout by clicking on the container and selecting a lay
 If you don't the container won't adapt to children, 
 even if children have been set in a layout (red box).
 
-=== Name carefully widgets that are referenced in code ==
+=== Name carefully widgets that are referenced in code ===
 
 Some widgets defined in the ui can be accessed from the code.
 Widgets adopt the name that you give them in designer,
