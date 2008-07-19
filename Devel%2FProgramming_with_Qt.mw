@@ -79,6 +79,14 @@ Always set the container layout by clicking on the container and selecting a lay
 If you don't the container won't adapt to children, 
 even if children have been set in a layout (red box).
 
+=== Name carefully widgets that are referenced in code ==
+
+Some widgets defined in the ui can be accessed from the code.
+Widgets adopt the name that you give them in designer,
+and by default they are given awfull such as 'slider3'.
+If you are to reference an ui element assure that it has a nice name
+so that we all understand the widget role.
+
 == Icons ==
 
 * In a given application, place the icons in src/images/
