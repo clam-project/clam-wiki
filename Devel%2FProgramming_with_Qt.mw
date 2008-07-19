@@ -36,7 +36,7 @@ The signal/slot mechanism is powerful but can turn your code a jungle.
 
 When to add a signal? 
 When the widget you are programming is generating events that
-will be catched by '''widgets that the emiting widget don't know'''.
+will be catched by '''widgets that the emitting widget doesn't know'''.
 
 A clear bad smell for this is the case of programming a widget and having:
  connect(this, signal, knownWidget, slot)
