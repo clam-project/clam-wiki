@@ -51,10 +51,10 @@ The emision should become simply:
 and the connection removed.
 If 'knownWidget' is 'this', well, wtf...
 
-By the 'avoid sigslot' principle, 
+Also, by the 'avoid sigslot' principle, 
 this also means that you should want to know the widgets that 
 would receive a signal in order to call a method instead.
-So keep pointers to receiver widgets instead of settings connections.
+So '''keep pointers to receiver widgets instead of setting connections'''.
 
 == When to use designer and when to use code? ==
 
