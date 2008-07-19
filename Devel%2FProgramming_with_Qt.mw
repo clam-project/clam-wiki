@@ -71,7 +71,7 @@ the dialog content is not dynamic.
 === Keep default property values ===
 
 When experimenting with properties, if you let a property as it was at first, click on the red tick button on the right to set it to default (not in bold).
-Default property values are not writen to the xml file so that if the property changes in future Qt versions, you still get sane defaults.
+Default property values are not writen to the xml file so that if the property changes in future Qt versions, you don't get in ui porting troubles.
 
 === Choose a container layout ===
 
