@@ -10,8 +10,9 @@ CLAM uses FirstLetterUpperCase names for methods
 but when dealing with widgets and qt code adhere to the qt naming conventions
 for methods and use firstLetterLowerCase.
 
-Avoid the tendency shown in Annotator/vmqt that rewrittes an uppercase
-'Show' that calls a lower case qt 'show' method.
+Also, in CLAM, we use GetAttribute() and SetAttribute(val) convention for accessors,
+while Qt uses attribute() and setAttribute(). 
+Again, when dealing with widgets use the Qt convention, not CLAM's.
 
 In general the conventions for slots and signals are:
 * Signals: <tt>somethingHappened()</tt>   (using past)
