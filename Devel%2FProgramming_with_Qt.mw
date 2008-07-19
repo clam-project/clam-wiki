@@ -59,7 +59,7 @@ So '''keep pointers to receiver widgets instead of setting connections'''.
 == When to use designer and when to use code? ==
 
 Use the designer for '''main window''' but just to include
-'''actions, menus, toolbars and images'''.
+'''actions, menus, toolbars and resources (images)'''.
 '''Avoid inserting widgets''' or controling the layout.
 Previous developments using the ui as base for the layout of the widgets in main window has rendered in a hardly mantainable code.
 
