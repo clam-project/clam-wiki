@@ -38,6 +38,8 @@
 ** [[Building a processing library]]
 ** [[Defining a ProcessingComposite]]
 ** [[Changing the port color for custom data types]]
+* Using Faust inside CLAM (including on-the-fly Faust programming)
+** [[Devel/Faust_support]]
 * [[Metamodel of network using a class diagram]]
 * [[Version Migration Guide]]
 
