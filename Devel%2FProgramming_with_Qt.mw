@@ -49,7 +49,7 @@ The emision should become simply:
  knownWidget->slot()
 
 and the connection removed.
-If 'knownWidget' is 'this', well, wtf...
+If 'knownWidget' is 'this', well, there is something ill in your mind...
 
 Also, by the 'avoid sigslot' principle, 
 this also means that you should want to know the widgets that 
