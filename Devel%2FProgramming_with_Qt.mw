@@ -1,17 +1,24 @@
 The current content is copy-pasted from a David mail "Re: faust status" in 11th July 2008. 
 '''TODO: rephrase and reformat to proper documentation style.'''
 
+== Method (and signals and slots) naming conventions ==
 
+CLAM uses FirstLetterUpperCase names for methods
+(although there is a underground trend to change that ;-) )
+but when dealing with widgets and qt code adhere to the qt naming conventions
+for methods and use firstLetterLowerCase.
 
-Restrict the on_... method names to the ones that are implicitly connected 
-slots which follow qt naming conventions to implicitly connect slots. For 
-example onLaunchBrowser would be launchBrowser.
+Avoid the tendency shown in Annotator/vmqt that rewrittes an uppercase
+'Show' that calls a lower case qt 'show' method.
 
-In general the conventions for slots and signals
-Signals: <tt>somethingHappened()</tt>   (using past)
-Slots: <tt>doThatThink</tt>   (imperative, just like a regular method)
+Reserve the onXXXXXX method names to the ones that are [http://doc.trolltech.com/4.4/designer-using-a-component.html#automatic-connections|ui implicitly connected slots] 
+which follow qt naming conventions to implicitly connect slots. 
+
+In general the conventions for slots and signals are:
+* Signals: <tt>somethingHappened()</tt>   (using past)
+* Slots: <tt>doThatThink</tt>   (imperative, just like a regular method)
 so that when you connect you can read:
-When emmiter somethingHappened receiver doThatThing
+''When emmiter somethingHappened receiver doThatThing''
 
 Then the explicitly connected slots are named
 <tt>on_uiObjectName_signalName()</tt>
@@ -33,10 +40,20 @@ time checks, is hard to trace and adds signal resolution overhead.
 Annotator's vmqt is a good example on over use and it is a hell to understand 
 it ;-)
 
+== When to use designer and when to use code? ==
+
+Use the designer for '''main window''' but just to include
+'''actions, menus, toolbars and images'''.
+'''Avoid inserting widgets''' or controling the layout.
+Previous developments using the ui as base for the layout of the widgets in main window has rendered in a hardly mantainable code.
+
+In the case of dialogs, use the designer freely as long as
+the dialog content is not dynamic.
+
 == Icons ==
 
 * In a given application, place the icons in src/images/
 * Include them in a src/images.qrc file in the :/icons/ path
-* SVG format is preferred over PNG.
+* SVG format is preferred over PNG, mostly with non stock icons.
 * For stock icons use the crystalsvg theme
 * Write down the path of copied stock icons in src/images/origin.txt so that they could be updated as a whole when we change/update the theme.
