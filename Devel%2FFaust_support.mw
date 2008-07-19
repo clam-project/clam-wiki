@@ -17,20 +17,20 @@ To compile it, you will need the LADSPA API (ladspa dependency on Debian, alsa-d
 You need Faust installed on your system. You can search for a Faust package for your GNU/Linux distribution (at the moment the CLAM Faust support is limited to LADSPA plugins), or download the sources and compile by yourself (http://sourceforge.net/projects/faudiostream/). In any case, you need the compiler binary 'faust' and the library file 'ladspa.cpp' on system paths (usually one is on '/usr/bin' and the other on '/usr/lib/faust').
 
 ==== Preparing and defining a writable location for faust compilation ====
-CLAM will search for the Faust 'examples' directory on the user home '.faust' dir (i.e.: '~/.faust/examples'), or 'FAUST_PATH' environment variable path ('$FAUST_PATH/examples'), to grant write permissions when running the makefiles. So, you can copy the examples directory of Faust (usually '/usr/share/doc/faust/examples'), or directly from the sources package.
+CLAM will search for the Faust 'examples' directory on the user home '.faust' dir (i.e.: '~/.faust/examples'), or 'CLAM_FAUST_PATH' environment variable path ('$CLAM_FAUST_PATH/examples'), to grant write permissions when running the makefiles. So, you can copy the examples directory of Faust (usually '/usr/share/doc/faust/examples'), or directly from the sources package.
 If you want to add new faust plugins, just copy the .dsp source files in this user 'examples' directory.
 
-* '''Option 1: using 'FAUST_PATH' environment variable'''
-:For instance, imagine you have the examples directory on the '~/src/faust-0.9.9.4'. You need to define the FAUST_PATH environment var:
+* '''Option 1: using 'CLAM_FAUST_PATH' environment variable'''
+:For instance, imagine you have the examples directory on the '~/src/faust-0.9.9.4'. You need to define the CLAM_FAUST_PATH environment var:
 
 :<pre>
-:$ export FAUST_PATH=~/src/faust-0.9.9.4
+:$ export CLAM_FAUST_PATH=~/src/faust-0.9.9.4
 </pre>
 
-:If you don't want to have to define it everytime you run a session you can add it on your default shell init script -for instance, "~/.bashrc"- or make a script which says "export FAUST_PATH=~/src/faust-0.9.9.4; NetworkEditor" (with faust installed in "~/src/faust-0.9.9.4")
+:If you don't want to have to define it everytime you run a session you can add it on your default shell init script -for instance, "~/.bashrc"- or make a script which says "export CLAM_FAUST_PATH=~/src/faust-0.9.9.4; NetworkEditor" (with faust installed in "~/src/faust-0.9.9.4")
 
 * '''Option 2: linking '~/.faust''''
-:If you have the faust 'examples' dir on your "~/.faust" dir you don't have to define 'FAUST_PATH'. So, if you have the Faust examples directory on a writable path, you could make just a simbolic link once. For instance, having '~/src/faust-0.9.9.4/examples':
+:If you have the faust 'examples' dir on your "~/.faust" dir you don't have to define 'CLAM_FAUST_PATH'. So, if you have the Faust examples directory on a writable path, you could make just a simbolic link once. For instance, having '~/src/faust-0.9.9.4/examples':
 
 :<pre>
 :$ mkdir ~/.faust
