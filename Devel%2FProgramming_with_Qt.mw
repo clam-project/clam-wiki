@@ -31,6 +31,24 @@ The signal/slot mechanism is powerful but can turn you code a jungle.
 * '''makes execution harder to trace''',
 * adds signal resolution overhead. 
 
+I highlighted the second reason.
+
+When to add a signal? 
+When the widget you are programming is generating events that
+will be catch by '''widgets you don't have control over them'''.
+By the 'avoid sigslot' principle, 
+this means that you should want to know the widgets that 
+would receive that signal and call a method on them.
+
+A bad smell for this is the case of programming a widget and having:
+ connect(this, signal, knownWidget, slot)
+and some other method doing:
+ emit signal()
+The emision should be turn simply into:
+ knownWidget->slot()
+and the connection removed.
+
+
 In this case, I don't know if you did so, but anyway is a good advice to 
 anyone new (or not that new) to qt: avoid using the signal slot mechanism 
 when the signal is not directly an user event but code you write, and you 
