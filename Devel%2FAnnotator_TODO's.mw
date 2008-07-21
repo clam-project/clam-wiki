@@ -1,14 +1,5 @@
 == Annotator extractor merger (Jun GSoC) ==
 
-* Native windows compilation
-** [[Image:done.png]] Compiling the libraries
-** [[Image:done.png]] Compiling NetworkEditor
-** [[Image:done.png]] Compiling Annotator/vmqt
-** [[Image:done.png]] Compiling Annotator
-** [[Image:done.png]] Compiling the plugins (not required)
-** [[Image:done.png]] Compiling Voice2Midi (not required)
-** Update the [[Devel/Windows_MinGW_build|native mingw compile wiki]]
-
 * Core tasks
 ** Create a new extractor that does the aggregation for some fixed sources
 ** Figure out which is the varying information when changing the sources and how to feed the variable information from the Annotator and the script.
@@ -23,52 +14,6 @@
 ** A per descriptor read-only flag in order to control which descriptor can be modified (ie. avoid the write back if not supported)
 ** A per descriptor modified flag in order to control which descriptor must be saved (ie. avoid the write back if not needed)
 ** Addressing building a description from a blank sheet
-
-=== Session plan ===
-
-* Notice the duplication of schemas CLAM::DescriptionSchema and CLAM_Annotator::Schema
-** Along the session we will identify which functions cover each one
-** One long term TODO is to join them in a single one
-* [[Image:done.png]] Dumping schema into the standard output:
-** [[Image:done.png]] It requires <CLAM/XMLStorage.hxx>
-** [[Image:done.png]] CLAM::XMLStorage::Dump(schema, "Schema", std::cout);
-* [[Image:done.png]] Adding the segmentation attribute for the silences segmentation
-** [[Image:done.png]] Schema.AddSegmentation("Song","Silences",CLAM_Annotator::SegmentationPolicy::eDiscontinuous,"");
-** [[Image:done.png]] Scope: 'Song', Name: 'Silences', Policy: discontinuous, ChildScope: none
-** Notice again the duplication: ../CLAM/src/Data/Editable/Segmentation.hxx and it's subclasses.
-** [[Image:done.png]]Run the program and notice how the XML for the schema has changed
-* [[Image:done.png]]Add your own schema name
-** [[Image:done.png]]schema.SetUri("descriptionScheme:www.iua.upf.edu:clam:JunJunSilenceDetector");
-** [[Image:done.png]]The uri is used to identify the kind of document.
-* [[Image:done.png]]Add documentation to the segmentation attribute
-** [[Image:done.png]]Use schema.AttributeDocumentation(scope, attribute, doc)
-** [[Image:done.png]]The documentation is the text you can see on the schema browser in Annotator
-* [[Image:done.png]]Create a CLAM description scheme and fill it
-** [[Image:done.png]]CLAM::DescriptionScheme descriptionScheme;
-** [[Image:done.png]]scheme.FillDescriptionScheme(descriptionScheme)
-** [[Image:done.png]]Notice that this step is due to the scheme classes duplication
-* [[Image:done.png]]Create a CLAM::DataPool with the description scheme
-** [[Image:done.png]]CLAM::DescriptionDataPool pool(descriptionScheme)
-* [[Image:done.png]]Dump the pool without data
-** [[Image:done.png]]What happens? file a bug ;-)
-***[[Image:done.png]] The bug/crash appears when you actually dump a pool with no added scope instances.
-** If you feel adventurous figure out the bug and fix it
-*** The "_scopePools" is not populated and is pointing to a NULL address of ScopePool
-* Is it a bug: the attribute pool can have just a single size attribute, if you  had more than two songs, just the last one would survive?
-* [[Image:done.png]]Populate the 'Song' scope with 0 elements: What it does?
-* [[Image:done.png]]Query the attribute array: What it does?
-* [[Image:done.png]]Populate the 'Song' with 1 element and query the Segmentation element.
-** [[Image:done.png]]Notice that it will return an array of one Segmentation element, not the Segmentation, it can be considered a pointer.
-** [[Image:done.png]]Populate a silence segmentation with random data.
-* [[Image:done.png]]Explore the Segmentation interface:
-** [[Image:done.png]]How is that segmentation initialized? Has it sense?
-** [[Image:done.png]]Notice that the end segment position is one of the initialization parameters
-** [[Image:done.png]]What about adding new segments? Has it sense?
-** [[Image:done.png]]Switch the segmentation to different kinds of segmentation policy and check whether is doing the proper thing
-***add CLAM::OverlappingSegmentation
-* Proper integration of Segmentation classes into the Pool/Schema. Currently we are using DataArrays and converting them to segmentation outside the Pool
-** [[Image:done.png]]figure out how the TypePlugins are used over the Annotator, that is searching where each plugin method is used, and understanding why it is a type dependant task
-** meanwhile think on what other task could be type dependant and whether the current ones are well defined or not and why
 
 == Widget related tasks ==
 
