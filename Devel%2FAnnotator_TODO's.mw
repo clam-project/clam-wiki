@@ -219,6 +219,15 @@
 * [[Image:done.png]] Fix scroll bar sincronization
 * [[Image:done.png]] Always visible playhead
 === Done (Jun GSoC) ===
+* Native windows compilation
+** [[Image:done.png]] Compiling the libraries
+** [[Image:done.png]] Compiling NetworkEditor
+** [[Image:done.png]] Compiling Annotator/vmqt
+** [[Image:done.png]] Compiling Annotator
+** [[Image:done.png]] Compiling the plugins (not required)
+** [[Image:done.png]] Compiling Voice2Midi (not required)
+** Update the [[Devel/Windows_MinGW_build|native mingw compile wiki]]
+
 * Training tasks:
 ** Take a look to the Pool related classes
 ** Build a simple extractor (c++)
