@@ -274,3 +274,19 @@
 * [[Image:done.png]] Fix scroll bar sincronization
 * [[Image:done.png]] Always visible playhead
 === Done (Jun GSoC) ===
+* Training tasks:
+** Take a look to the Pool related classes
+** Build a simple extractor (c++)
+*** [[Image:done.png]] Adapt the build system to compile the new binary 
+****copied the SchemaAttribute.XXX and TypePlugin.XXX to the directory src/SilenceDetector, which is ugly  and needs a modification
+*** [[Image:done.png]]Code a simple schema with a segmentation and no attribute
+*** [[Image:done.png]]Create a pool according to the schema
+*** [[Image:done.png]]Populate the pool with dummy data
+*** Add to the TODO list the shortcommings found in the existing infrastructure during the session
+*** Implement the command line options
+*** Process the actual wave file
+** Build a pool to lab converter (python)
+*** Add the Version Maker
+** [[Image:done.png]]build a script to update the annotator data (python)
+*** [[Image:done.png]]Locating the segmentation attributes
+*** [[Image:done.png]]Inserting the new attributes and moving the content into the deeper level
