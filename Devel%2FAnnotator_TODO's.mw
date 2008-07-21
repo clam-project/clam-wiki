@@ -25,6 +25,20 @@
 ** [[Image:done.png]]build a script to update the annotator data (python)
 *** [[Image:done.png]]Locating the segmentation attributes
 *** [[Image:done.png]]Inserting the new attributes and moving the content into the deeper level
+* Core tasks
+** Create a new extractor that does the aggregation for some fixed sources
+** Figure out which is the varying information when changing the sources and how to feed the variable information from the Annotator and the script.
+** design an interface to configure them instead of the "Extractor" field of the Project.
+*** an interface
+*** means to store such configuration into the project
+*** a write-back path
+** Add extractors (MusicBrainz)
+** Do a second iteration on the configuration
+** Write an upload script as an example (Boca? MusicBrainz?)
+** Be able to configure parameters on the extractors with an configuration file
+** A per descriptor read-only flag in order to control which descriptor can be modified (ie. avoid the write back if not supported)
+** A per descriptor modified flag in order to control which descriptor must be saved (ie. avoid the write back if not needed)
+** Addressing building a description from a blank sheet
 
 === Session plan ===
 
