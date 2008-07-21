@@ -15,6 +15,9 @@
 ** A per descriptor modified flag in order to control which descriptor must be saved (ie. avoid the write back if not needed)
 ** Addressing building a description from a blank sheet
 
+=== Session plan ===
+* Milestone: Create a new extractor that does the aggregation for some fixed sources.
+
 == Widget related tasks ==
 
 * Make always visible playhead an option
