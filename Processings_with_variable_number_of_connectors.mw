@@ -1,4 +1,4 @@
-Using dynamic ports is very useful if you want to work with multichannel files. Dynamic ports allow us to increase and decrease the number of ports whenever you want.
+Using dynamic ports is very useful if you, for example, want to write a multichannel file reader. Dynamic ports allow us to increase and decrease the number of ports whenever you want.
 
 == Defining dynamic ports ==
 
@@ -9,8 +9,8 @@ First of all, we have to decide the class of Ports that we want to use. In this 
         #include <CLAM/AudioOutPort.hxx>
         ...
 
-We have to have a vector of AudioInPort or AudioOutPort instead of an unique AudioInPort or AudioOutPort. That's because we want to work with dynamic port and we don't know the number of ports that we will need.
-So we can add this lines in the class declaration. It's also useful to have an attribute that we will save the number of channels that we need for each AudioPort.
+We'll use a vector of AudioInPort (or AudioOutPort) instead of an unique AudioInPort or AudioOutPort. That's because we want to work with dynamic port and we don't know the number of ports that we will need.
+So we can add this lines in the class declaration. 
 
         ...
         CLAM::InPort<AudioInPor> mIn;                      <--- OLD
@@ -19,13 +19,11 @@ So we can add this lines in the class declaration. It's also useful to have an a
         typedef std::vector<CLAM::AudioInPort*> InPorts;   <--- NEW
         OutPorts _outports;                                <--- NEW
         InPorts _inports;                                  <--- NEW
-        unsigned _numberChannelsOut;                       <--- NEW
-        unsigned _numberChannelsIn;                        <--- NEW
         ...
 
 == Initialization == 
 
-We know that at least we will have one port, so we can initialize the vector with one port. This initialization has been written in the ConcreteConfigure() method, but you can write it wherever you want.
+In case we decide to have at least one port, we need to initialize the vectorin the ConcreteConfigure() method.
 ( This code is for _inports vector, but it's the same for the _outports vector).
 
         if(_inports.empty())
@@ -35,7 +33,7 @@ We know that at least we will have one port, so we can initialize the vector wit
                 _inports.push_back( port );
         }
 
-For increase in number of ports, we have to create an AudioPort and put it in the vector. 
+To increase the number of ports, we have to create an AudioPort and insert it in the vector. 
 The following code shows how to create as number of AudioInPort as number of channels.
 The condition is the number of channels has to be greater than the vector size.
 
@@ -79,7 +77,7 @@ For removing all the ports we have to delete all the items and tell the ports th
 
 == Using the dynamic ports ==
 
-Within the Do method we can read or write the AudioPorts. We create a CLAM::TDATA* array for save the buffer of each channel. 
+Within the Do method we can read or write the AudioPorts. We create a CLAM::TData* array for save the buffer of each channel. 
 
         CLAM::TData* channels[_numberChannelsOut];
         for (unsigned channel=0; channel<_numberChannelsOut; channel++)
