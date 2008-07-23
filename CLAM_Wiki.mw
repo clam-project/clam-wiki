@@ -34,6 +34,7 @@
 ** [[Creating a minimal processing object]]
 ** [[Processings with controls]]
 ** [[Processings with configuration]]
+** [[Processings with dynamic ports]]
 ** [[Adding Monitors]]
 ** [[Building a processing library]]
 ** [[Defining a ProcessingComposite]]
