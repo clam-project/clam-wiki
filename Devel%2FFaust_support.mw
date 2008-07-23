@@ -47,7 +47,7 @@ If you don't have compiled the plugins you can do it within NE.
 === 'Interface' Faust submenu ===
 In the Interface item from the main menu on NE, you should see the faust submenu enabled:
 
-[[Image:Main Window NE Faust SubMenu.png|Faust support available actions and options from the Network Editor main menu]]
+[[Image:Main Window NE Faust SubMenu_newicon.png|Faust support available actions and options from the Network Editor main menu]]
 
 The items:
 *'''Recompile Faust modules:'''
@@ -60,7 +60,7 @@ The items:
 
 '''Recompiling the modules:'''
 
-[[Image:Compiling faust modules from NE.png]]
+[[Image:Compiling_faust.png]]
 
 === Using Faust plugins ===
 If all were good, after the compilation you will be able to see the FAUST category inside the [[:Image:Processing_Tree_Toolbox_With_Faust.png|processings Tool Box Tree]].
