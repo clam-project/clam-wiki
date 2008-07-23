@@ -2,6 +2,8 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.2.1 =
 <gallery>
+Image:EmbeddedFaustDiagrams.png|Embedded Faust svg diagrams
+Image:CompilingFaust.png|Compiling Faust (.dsp) modules and automatically reloading the changed ones. 
 Image:SongDescriptors2.JPG|Aggregator: A screenshot of the interface "Song Descriptors".
 Image:IntrasongDescriptors2.JPG|Aggregator: A screenshot of the interface "Intrasong Descriptors"
 Image:DescriptionSchema2.JPG|Aggregator: A screenshot of the interface "Description Schema". 
