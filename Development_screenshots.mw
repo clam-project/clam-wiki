@@ -2,10 +2,9 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.2.1 =
 <gallery>
-Image:SongDescriptors.JPG|Aggregator: A screenshot of the interface "Song Descriptors".
-Image:IntrasongDescriptors_coffee.JPG|Aggregator: A screenshot of the interface "Intrasong Descriptors", note that the "energy" attribute is not displayed integrally, which is to be solved.
-Image:IntrasongDescriptors_wooden.JPG|Aggregator: Another screenshot of the interface "Intrasong Descriptors", note that the "energy" attribute is not displayed integrally, which is to be solved.
-Image:DescriptionSchema.JPG|Aggregator: A screenshot of the interface "Description Schema". 
+Image:SongDescriptors2.JPG|Aggregator: A screenshot of the interface "Song Descriptors".
+Image:IntrasongDescriptors2.JPG|Aggregator: A screenshot of the interface "Intrasong Descriptors"
+Image:DescriptionSchema2.JPG|Aggregator: A screenshot of the interface "Description Schema". 
 Image:RTSegmentView-SegmentationMethod.png|Now using segmentation method 1. Why it is not the default! Now it is.
 Image:RTSegmentView.png|A real time segment view. Roman was so close to this!
 Image:Embedded svg logos.png|Embedding of svg logos on processings boxes widgets, using 'embedded_svg' attribute (will be changed to 'embedded_logo')
