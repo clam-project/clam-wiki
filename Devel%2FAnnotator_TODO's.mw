@@ -1,6 +1,5 @@
 == Annotator extractor merger (Jun GSoC) ==
 
-
 === Core tasks ===
 * Create a new extractor that does the aggregation for some fixed sources
 * Figure out which is the varying information when changing the sources and how to feed the variable information from the Annotator and the script.
