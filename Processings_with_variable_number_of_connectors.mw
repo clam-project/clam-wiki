@@ -23,7 +23,7 @@ So we can add this lines in the class declaration.
 
 == Initialization == 
 
-In case we decide to have at least one port, we need to initialize the vectorin the ConcreteConfigure() method.
+In case we decide to have at least one port, we need to initialize the vector in the ConcreteConfigure() method.
 ( This code is for _inports vector, but it's the same for the _outports vector).
 
         if(_inports.empty())
@@ -32,6 +32,8 @@ In case we decide to have at least one port, we need to initialize the vectorin 
                 port->SetHop( BackendBufferSize());
                 _inports.push_back( port );
         }
+
+[[image:init_1_channel.png|center|This processing has one provisional port|]]
 
 == Removing all ports ==
 
