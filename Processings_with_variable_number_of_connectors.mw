@@ -33,7 +33,34 @@ In case we decide to have at least one port, we need to initialize the vectorin 
                 _inports.push_back( port );
         }
 
-To increase the number of ports, we have to create an AudioPort and insert it in the vector. 
+== Removing all ports ==
+
+For removing all the ports we have to delete all the items and tell the ports that the vector of AudioPorts is clear.
+
+        if(!_outports.empty())
+        {
+                for(OutPorts::iterator itOutPorts=_outports.begin();itOutPorts!=_outports.end();itOutPorts++)
+                        delete *itOutPorts;        					            
+        }
+         _outports.clear();
+        // Delete ports from Processing (base class) register
+        GetOutPorts().Clear();
+
+== Keeping the port connections ==
+
+If we want to increase or decrease the number of ports we can not remove all the ports because we will lose the port connections. The solution is delete
+or add the items that are completely necessary. So we have three cases.
+
+=== First case: Maintaining the same ports ===
+
+We don't have to put and remove anything.
+
+        if ( numberChannelsOut == _outports.size() )
+                return true;
+
+=== Second case: To increase the number of ports===    
+
+We have to create an AudioPort and insert it in the vector. 
 The following code shows how to create as number of AudioInPort as number of channels.
 The condition is the number of channels has to be greater than the vector size.
 
@@ -51,7 +78,7 @@ The condition is the number of channels has to be greater than the vector size.
                 }
         }
 
-== Deleting some items from the dynamic ports ==
+=== Third case: Deleting some items from the dynamic ports ===
 
 The example below shows how to decrease in number of ports. We want to get a vector that will have as number of AudioPorts as number and channels, so we will delete the remaining items. The condition is that the vector size has to be greater than the number of channels.
 
@@ -62,18 +89,7 @@ The example below shows how to decrease in number of ports. We want to get a vec
                 _outports.resize( _numberChannelsOut );
         }
 
-== Removing all ports ==
 
-For removing all the ports we have to delete all the items and tell the ports that the vector of AudioPorts is clear.
-
-        if(!_outports.empty())
-        {
-                for(OutPorts::iterator itOutPorts=_outports.begin();itOutPorts!=_outports.end();itOutPorts++)
-                        delete *itOutPorts;        					            
-        }
-         _outports.clear();
-        // Delete ports from Processing (base class) register
-        GetOutPorts().Clear();
 
 == Using the dynamic ports ==
 
