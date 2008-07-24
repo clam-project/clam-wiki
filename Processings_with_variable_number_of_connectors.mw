@@ -13,7 +13,7 @@ We'll use a vector of AudioInPort (or AudioOutPort) instead of an unique AudioIn
 So we can add this lines in the class declaration. 
 
         ...
-        CLAM::InPort<AudioInPor> mIn;                      <--- OLD
+        CLAM::InPort<AudioInPort> mIn;                      <--- OLD
         CLAM::OutPort<AudioOutPort> mOut;                  <--- OLD
         typedef std::vector<CLAM::AudioOutPort*> OutPorts; <--- NEW
         typedef std::vector<CLAM::AudioInPort*> InPorts;   <--- NEW
