@@ -66,17 +66,17 @@ We have to create an AudioPort and insert it in the vector.
 The following code shows how to create as number of AudioInPort as number of channels.
 The condition is the number of channels has to be greater than the vector size.
 
-        std::string nameInPort = "in";
-        if ( _numberChannelsIn > _inports.size() )
+        std::string nameOutPort = "out";
+        if ( numberChannelsOut > _outports.size() )
         {
-                for (int i=_inports.size()+1; i<= _numberChannelsIn; i++)
+                for (int i=_outports.size()+1; i<= numberChannelsOut; i++)
                 {
                         std::ostringstream nameStream;
-                        nameStream << nameInPort << i;
-                        AudioInPort * port = new AudioInPort( nameStream.str(), this);
+                        nameStream << nameOutPort << i;
+                        AudioOutPort * port = new AudioOutPort( nameStream.str(), this);
                         port->SetSize( BackendBufferSize());
                         port->SetHop(BackendBufferSize());
-                        _inports.push_back( port );
+                        _outports.push_back( port );
                 }
         }
 
@@ -84,11 +84,11 @@ The condition is the number of channels has to be greater than the vector size.
 
 The example below shows how to decrease in number of ports. We want to get a vector that will have as number of AudioPorts as number and channels, so we will delete the remaining items. The condition is that the vector size has to be greater than the number of channels.
 
-        if ( _numberChannelsOut < _outports.size() )
+        if ( numberChannelsOut < _outports.size() )
         {
-                for (unsigned i= _numberChannelsOut; i<_outports.size(); i++)
+                for (unsigned i= numberChannelsOut; i<_outports.size(); i++)
                         delete _outports[i];
-                _outports.resize( _numberChannelsOut );
+                _outports.resize( numberChannelsOut );
         }
 
 
