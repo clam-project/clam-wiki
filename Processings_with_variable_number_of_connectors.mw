@@ -33,7 +33,7 @@ In case we decide to have at least one port, we need to initialize the vector in
                 _inports.push_back( port );
         }
 
-[[image:init_1_channel.png|center|This processing has one provisional port|]]
+[[image:init_1_channel.png|center|This processing has one provisional port]]
 
 == Removing all ports ==
 
