@@ -1,19 +1,24 @@
 == Annotator extractor merger (Jun GSoC) ==
 
-* Core tasks
-** Create a new extractor that does the aggregation for some fixed sources
-** Figure out which is the varying information when changing the sources and how to feed the variable information from the Annotator and the script.
-** design an interface to configure them instead of the "Extractor" field of the Project.
-*** an interface
-*** means to store such configuration into the project
-*** a write-back path
-** Add extractors (MusicBrainz)
-** Do a second iteration on the configuration
-** Write an upload script as an example (Boca? MusicBrainz?)
-** Be able to configure parameters on the extractors with an configuration file
-** A per descriptor read-only flag in order to control which descriptor can be modified (ie. avoid the write back if not supported)
-** A per descriptor modified flag in order to control which descriptor must be saved (ie. avoid the write back if not needed)
-** Addressing building a description from a blank sheet
+Core tasks
+* Create a new extractor that does the aggregation for some fixed sources
+* Figure out which is the varying information when changing the sources and how to feed the variable information from the Annotator and the script.
+* design an interface to configure them instead of the "Extractor" field of the Project.
+** an interface
+** means to store such configuration into the project
+** a write-back path
+* Add extractors (MusicBrainz)
+* Do a second iteration on the configuration
+* Write an upload script as an example (Boca? MusicBrainz?)
+* Be able to configure parameters on the extractors with an configuration file
+* A per descriptor read-only flag in order to control which descriptor can be modified (ie. avoid the write back if not supported)
+* A per descriptor modified flag in order to control which descriptor must be saved (ie. avoid the write back if not needed)
+* Addressing building a description from a blank sheet
+
+Bugs
+* The .dll and .def files are not installed correctly into MingW/local/bin, which is a bug of scons
+* If the schema is changed and an old pool is loaded, Annotator crashes with an Schema::Exception which should be catched and managed
+* when a second song is loaded the InstantViews don't update.
 
 === Session plan ===
 * [[Image:done.png]] Milestone: Create a new extractor that does the aggregation for some fixed sources.
