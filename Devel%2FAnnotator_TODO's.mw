@@ -22,10 +22,11 @@
 * A per descriptor modified flag in order to control which descriptor must be saved (ie. avoid the write back if not needed)
 * Addressing building a description from a blank sheet
 
-=== Bugs ===
-* The .dll and .def files are not installed correctly into MingW/local/bin, which is a bug of scons
-* If the schema is changed and an old pool is loaded, Annotator crashes with an Schema::Exception which should be catched and managed
-* when a second song is loaded the InstantViews don't update.
+=== To be fixed ===
+* Bug: the .dll and .def files are not installed correctly into MingW/local/bin, which is a bug of scons
+* Bug: if the schema is changed and an old pool is loaded, Annotator crashes with an Schema::Exception which should be catched and managed
+* Bug: when a second song is loaded the InstantViews don't update
+* TODO: a different check for os.access in Windows
 
 === Milestones ===
 * [[Image:done.png]] Milestone: Create a new extractor that does the aggregation for some fixed sources.
