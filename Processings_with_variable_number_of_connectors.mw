@@ -92,6 +92,7 @@ The example below shows how to decrease in number of ports. We want to get a vec
         }
 
 
+[[image:dynamic_ports_4_channels.png|center|This example shows the connection of two multi-port processing]]
 
 == Using the dynamic ports ==
 
