@@ -16,7 +16,7 @@
 ** Addressing building a description from a blank sheet
 
 === Session plan ===
-* Milestone: Create a new extractor that does the aggregation for some fixed sources.
+* [[Image:done.png]] Milestone: Create a new extractor that does the aggregation for some fixed sources.
 * Milestone: Make the aggregator editable with the Annotator.
 
 == Widget related tasks ==
