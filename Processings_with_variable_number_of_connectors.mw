@@ -1,4 +1,4 @@
-Using dynamic ports is very useful if you, for example, want to write a multichannel file reader. Dynamic ports allow us to increase and decrease the number of ports whenever you want.
+This page explain a technique to create processings that can be configured to have a different number of ports, multichannel processings so that the number of channels can be changed at configuration time. If you just need a fixed number of ports see [[Creating a minimal processing object]].
 
 == Defining dynamic ports ==
 
