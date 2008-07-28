@@ -76,6 +76,18 @@ This proposal cover two main areas. The first one claims to improve the connecti
 ** The osc->azimuth/elevation conversion
 ** If it's needed, extend the HRTF database processing.
 
+* Subnetwork implementation milestones:
+** Milestone 1:
+*** Decouple MainWindow and Canvas (NE, basically) from Network using an abstract BaseNetwork class (aka interface). Rename Network to FlattenedNetwork
+*** Improve the "graph getter" interface (used by Canvas and FlowControl)
+*** Refactor FLowControl so it have a unique GraphChanged() method
+** Milestone 2:
+*** Create a new class Network and duplicate the graph model, using IDs that refers to the flattened network. Eacy graph change is automatically sync with the flattened network.
+** Milestone 3:
+*** introduce subnetworks with a Composite (truly Composite) pattern. Thoroughly unit tested
+** Milestone 4:
+*** User Interface, and complex workflows (like create subnetwork)
+
 ----
 Related TODOs pages:
 *[[Devel/Plugins_TODOs]]
