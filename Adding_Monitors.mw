@@ -13,7 +13,7 @@ The number of steps is large and we are in the process of reducing it so this is
 **** reusing an existing data source will increase the usability of the port
 **** some interfaces examples: sampled functions (float arrays), point defined envelopes, list of placed values, segmentations...
 ** See examples at NetworkEditor/src/monitors
-** The implementation should implement XXXXAudioSource interface to map DSP data to visualization, and metadata (units, sizes, limits...)
+** The implementation should implement XXXXDataSource interface to map DSP data to visualization, and metadata (units, sizes, limits...)
 ** Such implementation should access the data using the PortMonitor thread safe interface (freeze and release).
 ** Be carefull with the freeze and release policy:
 *** Every call do not get data more than once by keep references or copying it
