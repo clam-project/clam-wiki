@@ -66,7 +66,7 @@ This proposal cover two main areas. The first one claims to improve the connecti
 
 = Milestones =
 
-* Milestone 1 (for Blender Integration):
+* Milestone 1 ('''for Blender Integration'''):
 ** place a source and a listener object in blender.  [[Image:Done.png]]
 ** when source/listener moves an osc is sent to clam [[Image:Done.png]]
 ** clam receives an audio source (by jack), and source/listener positions by OSC. Then processes this controls and convolves the audio using HRTF and distance gain compensation.
@@ -76,7 +76,7 @@ This proposal cover two main areas. The first one claims to improve the connecti
 ** The osc->azimuth/elevation conversion
 ** If it's needed, extend the HRTF database processing.
 
-* Subnetwork implementation milestones:
+* '''Subnetwork implementation milestones:'''
 ** Milestone 1:
 *** Decouple MainWindow and Canvas (NE, basically) from Network using an abstract BaseNetwork class (aka interface). Rename Network to FlattenedNetwork
 *** Improve the "graph getter" interface (used by Canvas and FlowControl)
