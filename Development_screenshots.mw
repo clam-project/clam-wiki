@@ -2,7 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.2.1 =
 <gallery>
-
+Image:LadspaMetadataEditor.png|A dialog to edit LADSPA plugin metadata. Notice FocusPropertyFollower at the bottom prints the whatsthis text of the currently focused widget.
 Image:bformat_to_surround.png|A very simple network that converts a B-Format stream to 5.1 Surround
 Image:bformat_render_with_raytracing.png|A network that renders B-Format spatialized audio, by  modeling the acoustic of a 3D geometry (with a moving source and target) with a ray-tracing engine
 Image:FilteringProcessingTree.png|Putting a ribbon on the nice filter Natanael added on the processing tree/toolbox.
