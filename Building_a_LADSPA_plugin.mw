@@ -33,7 +33,7 @@ If you want to export a given processing (CLAM::AudioAmplifier in the example) a
 The extra parameters are the numeric id, the maker and the copyright.
 Label is built by prepending 'CLAM_' to the processing class name and the descriptive name is built by prepending 'CLAM '.
 
-== Exporting a CLAM network ==
+== Exporting a network ==
 
 TODO: explain this
 
@@ -49,8 +49,6 @@ TODO: explain this
  			"CLAM Team <clam@iua.upf.edu>", "GPL");
  	return library.pluginAt(index);
  }
-
-
 
 == Building more than one plugin in a single library ==
 
