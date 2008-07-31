@@ -39,6 +39,10 @@ This maps:
 * CLAM AudioSources/Sinks in the network as LADSPA audio ports, and
 * CLAM ControlSources/Sinks the processing as LADSPA control ports.
 
+Besides the maker and the copyright, networks require that you add the plugin label and the descriptive name.
+
+'''Caution:''' The network file path specified in the CLAM_EXTERNAL_FILE_DATA macro, is relative to the build working dir not to the source file that contains the macro as it could seem natural.
+
  #include <CLAM/LadspaNetworkExporter.hxx>
  #include <CLAM/LadspaLibrary.hxx> 
  
