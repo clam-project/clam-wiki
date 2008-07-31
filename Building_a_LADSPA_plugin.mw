@@ -1,7 +1,13 @@
 [http://www.ladspa.org/ LADSPA] is the Linux Audio Developer Simple Plugin API. It enables audio effects to be reused across several host applications such Ardour, Audacity, Sweep, Amarok...
 CLAM can be also LADSPA host but this page just explains how to build a LADSPA plugin using CLAM.
 
-'''Notice:''' Features explained in this page exist just on versions older than 1.2.0 or the subversion trunk.
+'''Notice:''' Features explained in this page are not available in CLAM 1.2 or earlier versions.
+
+== Using NetworkEditor to generate LADSPA ==
+
+[[Network Editor Tutorial|CLAM NetworkEditor]] has a new menu command [Image:GenerateLadspa.png] to generate a LADSPA plugin given a network definition. We recommend to use it unless you need to provide the source files, not just the final binary. You might also need to wrap just a processing object or to join several plugins in a single library.
+
+The techniques explained here are the same ones the NetworkEditor does under the interface.
 
 == SConstruct ==
 
@@ -90,5 +96,3 @@ You can pack more than one plugin in a given dll. Not by duplicating the ladspa_
  			"CLAM Team <clam@iua.upf.edu>", "GPL");
  	return library.pluginAt(index);
  }
-
-== Using NetworkEditor to generate LADSPA ==
