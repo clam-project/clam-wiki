@@ -1,7 +1,7 @@
 [http://www.ladspa.org/ LADSPA] is the Linux Audio Developer Simple Plugin API. It enables audio effects to be reused across several host applications such Ardour, Audacity, Sweep, Amarok...
 CLAM can be also LADSPA host but this page just explains how to build a LADSPA plugin using CLAM.
 
-== Common SConstruct ==
+== SConstruct ==
 
 All the examples here can be built by using the same template of SConstruct file that is presented in [[Building a processing library]] section just changing the line:
 
@@ -10,7 +10,6 @@ All the examples here can be built by using the same template of SConstruct file
 by:
 
  install = env.Install(os.path.join(CLAMInstallDir,'lib','ladspa'), libraries)
-
 
 == Exporting a processing ==
 
