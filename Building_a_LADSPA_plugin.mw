@@ -1,4 +1,4 @@
-[http://www.ladspa.org/ LADSPA] is the Linux Audio Developer Simple Plugin API. It enable audio effects to be reused across several host applications such Ardour, Audacity, Sweep, Amarok...
+[http://www.ladspa.org/ LADSPA] is the Linux Audio Developer Simple Plugin API. It enables audio effects to be reused across several host applications such Ardour, Audacity, Sweep, Amarok...
 CLAM can be also LADSPA host but this page just explains how to build a LADSPA plugin using CLAM.
 
 == Common SConstruct ==
@@ -36,6 +36,9 @@ Label is built by prepending 'CLAM_' to the processing class name and the descri
 == Exporting a network ==
 
 TODO: explain this
+This maps:
+* CLAM AudioSources/Sinks in the network as LADSPA audio ports, and
+* CLAM ControlSources/Sinks the processing as LADSPA control ports.
 
  #include <CLAM/LadspaNetworkExporter.hxx>
  #include <CLAM/LadspaLibrary.hxx> 
