@@ -85,7 +85,7 @@ Just add more than one LadspaProcessingExporter or LadspaNetworkExporter like in
  	return library.pluginAt(index);
  }
 
-== Exporting a network ==
+
 
 == Multiple plugins in a single dll ==
 
