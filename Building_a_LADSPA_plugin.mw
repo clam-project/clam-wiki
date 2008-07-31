@@ -8,7 +8,7 @@ CLAM can be also LADSPA host but this page just explains how to build a LADSPA p
 [[Image:LadspaPropertiesDialog.png|thumb|The NetworkEditor dialog to query LADSPA options]]
 [[Network Editor tutorial|CLAM NetworkEditor]] has a new menu command to generate a LADSPA plugin [[Image:GenerateLadspa.png]] given a network definition. We recommend to use it unless you need to provide the source files, not just the final binary. You might also need to wrap just a processing object or to join several plugins in a single library.
 
-The techniques explained here are the same ones the NetworkEditor does under the interface.
+The techniques explained here are the same ones the NetworkEditor does under the interface that you can do by hand.
 
 == SConstruct ==
 
