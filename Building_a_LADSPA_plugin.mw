@@ -3,7 +3,13 @@ CLAM can be also LADSPA host but this page just explains how to build a LADSPA p
 
 == Common SConstruct ==
 
-All the examples here can be built by using the same template of SConstruct file that is presented in [[Building a processing library]] section.
+All the examples here can be built by using the same template of SConstruct file that is presented in [[Building a processing library]] section just changing the line:
+
+ install = env.Install(os.path.join(CLAMInstallDir,'lib','clam'), libraries)
+
+by:
+
+ install = env.Install(os.path.join(CLAMInstallDir,'lib','ladspa'), libraries)
 
 == Exporting a processing ==
 
