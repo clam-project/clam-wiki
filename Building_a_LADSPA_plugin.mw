@@ -24,9 +24,7 @@ Remember also to change the 'libname' on the top of the SConstruct file.
 
 == Exporting a processing ==
 
-If you want to export a given processing (CLAM::AudioAmplifier in the example) as a LADSPA plugin, the following code will do the trick. This will map:
-* CLAM input and output ports in the processing as LADSPA audio ports, and
-* CLAM input and output controls in the processing as LADSPA control ports.
+If you want to export a given processing (CLAM::AudioAmplifier in the example) as a LADSPA plugin, the following code will do the trick.
 
  #include <CLAM/AudioAmplifier.hxx>
  #include <CLAM/LadspaProcessingExporter.hxx>
@@ -40,8 +38,12 @@ If you want to export a given processing (CLAM::AudioAmplifier in the example) a
   	return library.pluginAt(index);
  }
 
+This will map:
+* CLAM input and output ports in the processing as LADSPA audio ports, and
+* CLAM input and output controls in the processing as LADSPA control ports.
+
 The extra parameters are the numeric id, the maker and the copyright.
-Label is built by prepending 'CLAM_' to the processing class name and the descriptive name is built by prepending 'CLAM '.
+Label is built by prepending 'CLAM_' to the processing class name and the descriptive name is built by prepending 'CLAM '. In  this example, 'CLAM_AudioAmplifier' would be the label and 'CLAM AudioAmplifier' would be the text string shown to the user by the plugin host.
 
 == Exporting a network ==
 
