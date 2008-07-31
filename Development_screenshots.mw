@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.2.1 =
 <gallery>
+Image:ConfigurationFileBrowse.PNG|Adding a text line and browse button for configuration File. The edit button is not available by far.
 Image:SweepLadspaEmbededNetwork.png|Sweep sees two Ladspa plugins based on embeded CLAM networks.
 Image:LadspaMetadataEditor.png|A dialog to edit LADSPA plugin metadata. Notice FocusPropertyFollower at the bottom prints the whatsthis text of the currently focused widget.
 Image:bformat_to_surround.png|A very simple network that converts a B-Format stream to 5.1 Surround
