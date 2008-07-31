@@ -85,6 +85,6 @@ Just add more than one LadspaProcessingExporter or LadspaNetworkExporter like in
 
 
 
-== Multiple plugins in a single dll ==
+
 
 == Using NetworkEditor to generate LADSPA ==
