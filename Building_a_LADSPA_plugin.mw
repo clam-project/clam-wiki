@@ -12,13 +12,15 @@ The techniques explained here are the same ones the NetworkEditor does under the
 
 == SConstruct ==
 
-All the examples here can be built by using the same template of SConstruct file that is presented in [[Building a processing library]] section just changing the line:
+All the examples here can be built by using the same template of SConstruct file that is presented in [[Building a processing library]] section just by changing the line:
 
  install = env.Install(os.path.join(CLAMInstallDir,'lib','clam'), libraries)
 
 by:
 
  install = env.Install(os.path.join(CLAMInstallDir,'lib','ladspa'), libraries)
+
+Remember also to change the 'libname' on the top of the SConstruct file.
 
 == Exporting a processing ==
 
