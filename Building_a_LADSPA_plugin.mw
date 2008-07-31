@@ -52,7 +52,8 @@ TODO: explain this
 
 == Building more than one plugin in a single library ==
 
-Just add more than one LadspaProcessingExporter or LadspaNetworkExporter like in the following example:
+A single ladspa_descriptor function is to be defined in a given dll.
+To have more htan one plugin just add more than one LadspaProcessingExporter or LadspaNetworkExporter like in the following example:
 
  #include <CLAM/AudioMultiplier.hxx>
  #include <CLAM/AudioAmplifier.hxx>
@@ -82,9 +83,5 @@ Just add more than one LadspaProcessingExporter or LadspaNetworkExporter like in
  			"CLAM Team <clam@iua.upf.edu>", "GPL");
  	return library.pluginAt(index);
  }
-
-
-
-
 
 == Using NetworkEditor to generate LADSPA ==
