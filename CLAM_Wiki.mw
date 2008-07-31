@@ -37,7 +37,7 @@
 ** [[Processings with dynamic ports]]
 ** [[Adding Monitors]]
 ** [[Building a processing library]]
-** [[Building a LADSPA plugin with CLAM]]
+** [[Building a LADSPA plugin]]
 ** [[Defining a ProcessingComposite]]
 ** [[Changing the port color for custom data types]]
 * Using Faust inside CLAM (including on-the-fly Faust programming)
