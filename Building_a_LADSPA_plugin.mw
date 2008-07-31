@@ -3,6 +3,8 @@ CLAM can be also LADSPA host but this page just explains how to build a LADSPA p
 
 == Common SConstruct ==
 
+All the examples here can be built by using the same template of SConstruct file that is presented in [[Building a processing library]] section.
+
 == Exporting a processing ==
 
 == Exporting a network ==
