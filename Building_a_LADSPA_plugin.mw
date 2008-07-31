@@ -54,8 +54,7 @@ This maps:
 
 == Building more than one plugin in a single library ==
 
-A single ladspa_descriptor function is to be defined in a given dll.
-To have more htan one plugin just add more than one LadspaProcessingExporter or LadspaNetworkExporter like in the following example:
+You can pack more than one plugin in a given dll. Not by duplicating the ladspa_descriptor function, which is to be defined only once in a given dll, but by adding more LadspaProcessingExporter's and LadspaNetworkExporter's like in the following example:
 
  #include <CLAM/AudioMultiplier.hxx>
  #include <CLAM/AudioAmplifier.hxx>
