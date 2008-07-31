@@ -49,7 +49,7 @@ Networks can be compiled as LADSPA plugins doing the following mapping:
 * CLAM AudioSources/Sinks in the network as LADSPA audio ports, and
 * CLAM ControlSources/Sinks the processing as LADSPA control ports.
 
-Besides the maker and the copyright, networks require that you add the plugin label and the descriptive name.
+Networks require that you specify more metadata than for a single processing: the numeric id, the string label, a name to present the user, the maker and the copyright.
 
 '''Caution:''' The network file path specified in the CLAM_EXTERNAL_FILE_DATA macro, is relative to the build working dir not to the source file that contains the macro as it could seem natural. So be carefull if you are not placing the sources in the same folder than the SConstruct file.
 
