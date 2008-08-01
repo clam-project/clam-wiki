@@ -1,3 +1,14 @@
+== Release TODO's ==
+
+* What to do with SilenceExtractor? Remove? Disable? Finnish?
+* Actually use the new segmentation format
+* Add a version marker on the pool
+* Throw an error when pool version marker does not match
+* UpdateAnnotatorData.py use the version marker to identify already ported files
+* Step-by-step guide on how to setup an aggregation extractor on the [[Annotator Manual]]
+
+
+
 == Annotator extractor merger (Jun GSoC) ==
 
 === Core tasks ===
