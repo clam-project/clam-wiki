@@ -10,15 +10,15 @@
 ** [[Image:done.png]]adding the project a parameter for the extractor configuration file
 ***[[Image:done.png]] adding the 'configuration' field, make it editable from the interface
 ** means to store such configuration into the project
-** a write-back path, ie. writting back the descriptors to the origin
 ** Do a second iteration on the configuration
 *** level-1: Be able to edit the sources and mappings graphically
 *** level-2: Be able to configure parameters on the extractors graphically
+** a write-back path, ie. writting back the descriptors to the origin
+*** A per descriptor read-only flag in order to control which descriptor can be modified (ie. avoid the write back if not supported)
+*** A per descriptor modified flag in order to control which descriptor must be saved (ie. avoid the write back if not needed)
 
 * Add extractors (MusicBrainz)
 * Write an upload script as an example (Boca? MusicBrainz?)
-* A per descriptor read-only flag in order to control which descriptor can be modified (ie. avoid the write back if not supported)
-* A per descriptor modified flag in order to control which descriptor must be saved (ie. avoid the write back if not needed)
 * Addressing building a description from a blank sheet
 
 === To be fixed ===
