@@ -3,23 +3,24 @@
 === Core tasks ===
 * [[Image:done.png]]Create a new extractor that does the aggregation for some fixed sources
 * [[Image:done.png]]Figure out which is the varying information when changing the sources and how to feed the variable information from the Annotator and the script.
-* design an interface to configure them besides the "Extractor" field of the Project.
-** [[Image:done.png]]adding configuration to the python script
-** [[Image:done.png]]adding the option for the extractor configuration file, say [-c <configfile>]
-*** update the Annotator manual documentation with the changes of the API
-** [[Image:done.png]]adding the project a parameter for the extractor configuration file
-***[[Image:done.png]] adding the 'configuration' field, make it editable from the interface
-** means to store such configuration into the project
+* Write a documentation for users of the warnings about the aggregator configuration content
+* Design an interface to configure them besides the "Extractor" field of the Project.
+** [[Image:done.png]]Add configuration to the python script
+** [[Image:done.png]]Add the option for the extractor configuration file, say [-c <configfile>]
+*** Update the Annotator manual documentation with the changes of the API
+** [[Image:done.png]]Add the project a parameter for the extractor configuration file
+***[[Image:done.png]]Add the 'configuration' field, make it editable from the interface
+** Implement means to store such configuration into the project
 ** Do a second iteration on the configuration
 *** level-1: Be able to edit the sources and mappings graphically
 *** level-2: Be able to configure parameters on the extractors graphically
-** a write-back path, ie. writting back the descriptors to the origin
+** Do a write-back path, ie. writting back the descriptors to the origin
 *** A per descriptor read-only flag in order to control which descriptor can be modified (ie. avoid the write back if not supported)
 *** A per descriptor modified flag in order to control which descriptor must be saved (ie. avoid the write back if not needed)
 
 * Add extractors (MusicBrainz)
 * Write an upload script as an example (Boca? MusicBrainz?)
-* Addressing building a description from a blank sheet
+* Address building a description from a blank sheet
 
 === To be fixed ===
 * Bug: the .dll and .def files are not installed correctly into MingW/local/bin, which is a bug of scons
