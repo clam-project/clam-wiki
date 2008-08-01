@@ -3,7 +3,7 @@
 === Core tasks ===
 * [[Image:done.png]]Create a new extractor that does the aggregation for some fixed sources
 * [[Image:done.png]]Figure out which is the varying information when changing the sources and how to feed the variable information from the Annotator and the script.
-* Write a documentation for users of the warnings about the aggregator configuration content
+* Give users a documentation of the warnings about the aggregator configuration content
 * Design an interface to configure them besides the "Extractor" field of the Project.
 ** [[Image:done.png]]Add configuration to the python script
 ** [[Image:done.png]]Add the option for the extractor configuration file, say [-c <configfile>]
