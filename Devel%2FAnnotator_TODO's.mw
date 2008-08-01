@@ -26,7 +26,6 @@
 * Bug: the .dll and .def files are not installed correctly into MingW/local/bin, which is a bug of scons
 * Bug: if the schema is changed and an old pool is loaded, Annotator crashes with an Schema::Exception which should be catched and managed
 * Bug: when a second song is loaded the InstantViews don't update
-* By now a line "<Config></Config>" must be added in .pro files, orelse there will be an Assertion Failed
 * TODO: a different check of os.access in FileMetadataSource.py for Windows
 
 === Milestones ===
