@@ -12,6 +12,7 @@
 ** Add a version marker on the pool
 ** Throw an error when pool version marker does not match
 ** UpdateAnnotatorData.py use the version marker to identify already ported files
+* Review TODO's and move the significant ones here
 
 == Annotator extractor merger (Jun GSoC) ==
 
