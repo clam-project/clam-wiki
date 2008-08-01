@@ -2,14 +2,13 @@
 
 === Core tasks ===
 * [[Image:done.png]]Create a new extractor that does the aggregation for some fixed sources
-* Figure out which is the varying information when changing the sources and how to feed the variable information from the Annotator and the script.
-* design an interface to configure them instead of the "Extractor" field of the Project.
-** adding configuration to the python script
-** adding the option for the extractor configuration file, say [-c <configfile>]
-*** by far, just using the project XML not being editable
+* [[Image:done.png]]Figure out which is the varying information when changing the sources and how to feed the variable information from the Annotator and the script.
+* design an interface to configure them besides the "Extractor" field of the Project.
+** [[Image:done.png]]adding configuration to the python script
+** [[Image:done.png]]adding the option for the extractor configuration file, say [-c <configfile>]
 *** update the Annotator manual documentation with the changes of the API
-** adding the project a parameter for the extractor configuration file
-***  adding the 'configuration' field, make it editable from the interface
+** [[Image:done.png]]adding the project a parameter for the extractor configuration file
+***[[Image:done.png]] adding the 'configuration' field, make it editable from the interface
 ** means to store such configuration into the project
 ** a write-back path, ie. writting back the descriptors to the origin
 ** Do a second iteration on the configuration
