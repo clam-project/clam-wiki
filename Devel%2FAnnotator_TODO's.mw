@@ -1,6 +1,6 @@
 == Release TODO's ==
 
-* Step-by-step guide on how to setup an aggregation extractor at the end of the [[Music Annotator tutorial]] (writting down drawbacks of the process)
+* Step-by-step guide on how to setup an aggregation extractor at the end of the [[Music Annotator tutorial]] (writting down drawbacks of the process for further iterations)
 * Update installation
 ** What to do with python scripts in Windows installation
 ** What to do with python scripts in Debian installation
