@@ -1,13 +1,17 @@
 == Release TODO's ==
 
+* Step-by-step guide on how to setup an aggregation extractor at the end of the [[Music Annotator Tutorial]] (writting down drawbacks of the process)
+* Update installation
+** What to do with python scripts in Windows installation
+** What to do with python scripts in Debian installation
+** Incorporate new binaries
+** Solve the calling of the scripts
 * What to do with SilenceExtractor? Remove? Disable? Finnish?
-* Actually use the new segmentation format
-* Add a version marker on the pool
-* Throw an error when pool version marker does not match
-* UpdateAnnotatorData.py use the version marker to identify already ported files
-* Step-by-step guide on how to setup an aggregation extractor on the [[Annotator Manual]]
-
-
+* Segmentation format
+** Actually use the new segmentation format
+** Add a version marker on the pool
+** Throw an error when pool version marker does not match
+** UpdateAnnotatorData.py use the version marker to identify already ported files
 
 == Annotator extractor merger (Jun GSoC) ==
 
