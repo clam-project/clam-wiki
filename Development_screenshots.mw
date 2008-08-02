@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.3.0 =
 <gallery>
+Image:PluginCodeGenerator.png|Frontend for template scripts allowing automatic generation of plugins base code.
 Image:AddingSchemaWidget.PNG|after “select a description Scheme"，add a "description schema QWidget" into the Configuration dialog.
 Image:SchemaBrowse.PNG|add a Browse button in the dialog "Configuration Information". click on it to “select a description Scheme"
 Image:ConfigurationFileEditorWriteBack.PNG|being able to write from the text of the editor interface back to the configuration file
