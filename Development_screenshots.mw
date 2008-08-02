@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.2.1 =
 <gallery>
+Image:AddingSchemaWidget.PNG|after “select a description Scheme"，add a "description schema QWidget" into the Configuration dialog.
 Image:SchemaBrowse.PNG|add a Browse button in the dialog "Configuration Information". click on it to “select a description Scheme"
 Image:ConfigurationFileEditorWriteBack.PNG|being able to write from the text of the editor interface back to the configuration file
 Image:ConfigurationFileEditor.PNG|User interface of Configuration file editor. The write back to file function is not implemented yet.
