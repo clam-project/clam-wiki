@@ -11,7 +11,7 @@ The development version of NetworkEditor allows to compile and import the plugin
 == How? ==
 === LADSPA support in CLAM ===
 First you have to check that CLAM was compiled with LADSPA support.
-To compile it, you will need the LADSPA API (ladspa dependency on Debian, alsa-devel on RH/Fedora). The SConstruct configuration parameter for compile CLAM with LADSPA support is 'with_ladspa=yes'. If you compile CLAM under linux without crosscompiling, is enabled by default.
+To compile it, you will need the LADSPA API (ladspa-sdk dependency on Debian/Ubuntu, alsa-devel on RH/Fedora). The SConstruct configuration parameter for compile CLAM with LADSPA support is 'with_ladspa=yes'. If you compile CLAM under linux without crosscompiling, is enabled by default.
 
 === FAUST ===
 You need Faust installed on your system. You can search for a Faust package for your GNU/Linux distribution (at the moment the CLAM Faust support is limited to LADSPA plugins), or download the sources and compile by yourself (http://sourceforge.net/projects/faudiostream/). In any case, you need the compiler binary 'faust' and the library file 'ladspa.cpp' on system paths (usually one is on '/usr/bin' and the other on '/usr/lib/faust').
