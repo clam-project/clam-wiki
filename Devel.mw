@@ -68,6 +68,11 @@ Luckily, working with patches in subversion is very easy:
 * How to create a patch with your local modifications?
 : Change dir to the '''root of your svn tree''' (the directory containing CLAM/ and NetworkEditor/, etc.) and do 
 : <pre>$ svn diff > good-description.patch</pre>
+: 
+: You can also add new files in a patch by doing "svn add <newfile>". This adds the file locally -- doesn't need commit access.
+: However, if you do so, when the patch is commited by somebody else, svn up '''will generate a confict''' with the local added file. Therefore do "svn rm <newfile>" '''before''' updating for the applied patch.
+: If this fails, apply brute force: move the directory containing the new file elsewhere (out of the svn tree). And do restore it with "svn up".
+
 
 * How to apply a patch (that maybe somebody posted to the list)?
 : Change dir to the root of your svn tree and do
