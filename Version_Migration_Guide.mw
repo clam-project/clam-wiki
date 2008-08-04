@@ -1,7 +1,7 @@
 This manual chapter gives hints on how to migrate existing code from one version of CLAM to another hihglighting code level incompatibilities and new ways of doing things.
 
 == 1.1 to svn ==
-
+* Controls will change some behaviour in the future, see [[Control_Migration_Guide|this]] to enable your code to be compatible with next CLAM modifications.
 
 == 1.1 to 1.2 ==
 
