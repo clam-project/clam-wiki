@@ -1,9 +1,13 @@
 == Control migration guide ==
 
 Since we're implementing typed controls some interface will change in the future.
+
 The most important change is that Get*Controls will return a Typed*ControlRegistry filled with BaseTyped*Controls, and BaseTyped*Controls will have only part of the interface that *Controls have now.
+
 Get*Control will return a BaseTyped*Control, so we are in the same situation.
+
 For those who were using GetInControl and GetInControls to retrieve controls from a processing and doing a SendControl/DoControl/GetLastValue we have implemented the following functions:
+
 * SendFloatToInControl
 * SendFloatToOutControl
 * GetFloatFromInControl
