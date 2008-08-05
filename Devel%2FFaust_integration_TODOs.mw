@@ -16,3 +16,6 @@
 === milestone 3 "make the diagrams navigable and improve the compilation of faust modules" ===
 * make the svg diagrams navigable
 * improve the compilation using a standard makefile for faust on new .dsp source files
+
+== Related articles ==
+* [[Devel/Faust support]]
