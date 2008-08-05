@@ -1,13 +1,14 @@
 == milestones ==
 
 === milestone 1 "loading a hardcoded faust .dsp" ===
-* user edits faust.dsp with external editor
-* network editor provides a compile-and-load button
-* errors goes to cerr
+* user edits faust.dsp with external editor [[Image:Done.png]]
+* network editor provides a compile-and-load button 
+:(for now it compiles an entire directory, as milestone 2)
+* errors goes to cerr [[Image:Done.png]] (used a task runner widget instead)
 * on successful compilation:
-** '''refresh ladspa factory'''
-** refresh QTree
-* svg diagram window in NetworkEditor that reads the current svg file.
+** '''refresh ladspa factory''' [[Image:Done.png]]
+** refresh QTree [[Image:Done.png]]
+* svg diagram window in NetworkEditor that reads the current svg file. [[Image:Done.png]] (embedded on widget)
 
 === milestone 2 "adding all .dsps in a dir and embedded svg" ===
 * scons that compiles all .dsp in a dir.
