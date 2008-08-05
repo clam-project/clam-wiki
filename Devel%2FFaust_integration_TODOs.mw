@@ -11,4 +11,4 @@
 * svg diagram window in NetworkEditor that reads the current svg file. [[Image:Done.png]] (embedded on widget)
 
 === milestone 2 "adding all .dsps in a dir and embedded svg" ===
-* scons that compiles all .dsp in a dir.
+* scons that compiles all .dsp in a dir. [[Image:Done.png]] (using 'make' with the original faust makefiles)
