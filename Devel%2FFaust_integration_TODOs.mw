@@ -12,3 +12,7 @@
 
 === milestone 2 "adding all .dsps in a dir and embedded svg" ===
 * scons that compiles all .dsp in a dir. [[Image:Done.png]] (using 'make' with the original faust makefiles)
+
+=== milestone 3 "make the diagrams navigable and improve the compilation of faust modules" ===
+* make the svg diagrams navigable
+* improve the compilation using a standard makefile for faust on new .dsp source files
