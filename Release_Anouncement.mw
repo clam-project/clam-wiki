@@ -1,18 +1,24 @@
 = 1.3.0 =
 
 We are enraptured to announce the 1.3.0 of [http://clam.iua.upf.edu CLAM, the C++ framework for audio and music],
-code name ''The binary clones factory release''.
+code name ''The binary clones factory release''. 
 
 Highlights of this release are:
 * NetworkEditor automatically generates and compiles [http://www.ladspa.org/ LADSPA plugins] from a network definition and CLAM provides a [http://iua-share.upf.edu/wikis/clam/index.php/Building_a_LADSPA_plugin new simple API for coding them yourself].
 * More [http://faust.grame.fr FAUST] integration into network editor: edit faust code, compile, reload, view the svg diagram (Nathanael Olaiz GSoC)
-* A graphical front-end to generate a plugin project from scractch.
+* A graphical front-end to generate a native plugin project from scractch.
 * Usability enhancements on the NetworkEditor: cut&paste, context menus to connect processings and processing tree filter (Nathanael Olaiz GSoC)
 * Annotator can build a project that takes aggregated content of several extractors (Wang Jun GSoC)
-* New ProgressControl widget and processing (Pawel Bartkiewicz GSoC)
+* New ProgressControl widget and paired InMemoryFileReader processing (Pawel Bartkiewicz GSoC)
 * A bunch of new 3D spatialization processings from [http://www.barcelonamedia.org/ CI Barcelona Media] Audio .
 
 And a lot of small nice features and fixes you will appreciate for sure.
 Take a look at the [http://clam.iua.upf.edu/wikis/clam/index.php/Development_screenshots development screenshots].
 For a complete detail see the [http://iua-share.upf.edu/svn/clam/trunk/CLAM/CHANGES CHANGELOG].
 Also take a look at the [http://iua-share.upf.edu/wikis/clam/index.php/Version_Migration_Guide|migration guide].
+
+We are very excited on what next releases promise us. Some ongoing work:
+* Generating other types of network based plugins and programs (LV2, JACK, VST...),
+* Typed controls (Francisco Tufro GSoC)
+* A new stand alone chord extraction application (Pawel Bartkiewicz GSoC)
+* Python bindings (experimentally working on this release)
