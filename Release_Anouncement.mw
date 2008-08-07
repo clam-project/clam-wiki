@@ -24,6 +24,6 @@ See also: [http://clam.iua.upf.edu/wikis/clam/index.php/Development_screenshots 
 We are very excited on what next releases promise us. Some ongoing work:
 * Generating other types of network based plugins and programs (LV2, JACK, VST...),
 * Subnetworks (Natanael Olaiz GSoC)
-* Improved [http://opensoundcontrol.org/ OSC] support, 3D scene descriptors parametrization receivers processings and [http://www.blender.org/ Blender] exporter to the spatialization processing choreographer. (Natanael Olaiz GSoC)
+* Improved [http://opensoundcontrol.org/ OSC] support, 3D scene descriptors parametrization receivers processings and [http://www.blender.org/ Blender] exporter to the spatialization processing choreographer. (Natanael Olaiz GSoC - [http://dadaisonline.blogspot.com/search/label/blender related blogging])
 * Typed controls (Francisco Tufro GSoC)
 * A new musician-oriented standalone [http://iua-share.upf.edu/svn/clam/trunk/Turnaround/ chord extraction application] (Pawel Bartkiewicz GSoC)
