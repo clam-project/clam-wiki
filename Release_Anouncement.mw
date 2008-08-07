@@ -14,6 +14,7 @@ Highlights of this release are:
 ** Extractors can write back data (useful if the extractor is a database of webservice and needs to upload modifications)
 * New ProgressControl widget and paired AudioFileMemoryLoader processing supporting seeking (Pawel Bartkiewicz GSoC)
 * A bunch of new 3D spatialization processings from [http://www.barcelonamedia.org/ CI Barcelona Media] audio research group.
+* Experimental python bindings
 
 And a lot of small nice features and fixes you will appreciate for sure.
 
@@ -26,4 +27,3 @@ We are very excited on what next releases promise us. Some ongoing work:
 * Generating other types of network based plugins and programs (LV2, JACK, VST...),
 * Typed controls (Francisco Tufro GSoC)
 * A new stand alone chord extraction application (Pawel Bartkiewicz GSoC)
-* Python bindings (experimentally working on this release)
