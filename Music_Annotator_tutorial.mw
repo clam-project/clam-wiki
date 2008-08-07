@@ -190,3 +190,8 @@ Commandline requirements are the following ones:
 
 You should expect on the input any format supported libsndfile (AIFF, WAV, AU, VOC...), MP3 and Ogg-Vorbis.
 And the output should match the XML format of the examples.
+
+Furthermore, you may also use the aggregation extractor to aggregate different extractors, which can be specified in the configuration file.
+
+Commandline requirements are as following:
+ AggregationExtractor [-s <''schema.sc''>] [-f <''.suffix''>] [-c <''AggregatorConfig.conf''>] [<''song1.wav''> [<''song2.mp3''> ...]]
