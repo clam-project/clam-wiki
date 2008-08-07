@@ -8,7 +8,7 @@ Highlights of this release are:
 * More [http://faust.grame.fr FAUST] integration into network editor: edit faust code, compile, reload, view the svg diagrams (Nathanael Olaiz GSoC)
 * Lots of usability enhancements on the NetworkEditor: cut&paste, context menus to connect ports, keyboard shortcuts, default double click actions, and a processing tree filter (Nathanael Olaiz GSoC)
 * Annotator has also enhanced its functionality (Wang Jun GSoC):
-** It can build a project that takes aggregated content of several extractors
+** It can build a project that aggregates content from several extractors
 ** Extractors may have a config file
 ** Extractors can write back data (useful if the extractor is a database of webservice and needs to upload modifications)
 * New ProgressControl widget and paired AudioFileMemoryLoader processing to support seeking (Pawel Bartkiewicz GSoC)
