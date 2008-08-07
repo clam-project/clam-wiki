@@ -35,7 +35,7 @@ Now it will be:
  CLAM::MonoAudioFileReaderConfig config;
  config.SetSourceFile("audio.wav");
  CLAM::MonoAudioFileReader reader(config);
- if (reader.GetExecState()==Unconfigured)
+ if (not reader.IsConfigured())
  {
  	std::cerr << reader.GetErrorConfigMessage() << std::endl;
  	// Manage error
