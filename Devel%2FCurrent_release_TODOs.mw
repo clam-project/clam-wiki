@@ -1,7 +1,7 @@
 
 
 
-== 1.2.1 ==
+== 1.3.0 ==
 
 * [[Image:done.png]] Add GuitarEffects plugin into linux testfarm
 * Incorporate resample plugin into testfarm and debian
