@@ -5,8 +5,8 @@ code name ''The binary clones factory release''.
 
 Highlights of this release are:
 * NetworkEditor [http://clam.iua.upf.edu/wikis/clam/index.php/Image:LadspaPropertiesDialog.png automatically generates and compiles] [http://www.ladspa.org/ LADSPA plugins] from a network definition and CLAM provides a [http://iua-share.upf.edu/wikis/clam/index.php/Building_a_LADSPA_plugin new simple API to code that by hand yourself].
-* More [http://faust.grame.fr FAUST] integration into network editor: edit faust code, compile, reload, view the svg diagrams (Nathanael Olaiz GSoC)
-* Lots of usability enhancements on the NetworkEditor: cut&paste, context menus to connect ports, keyboard shortcuts, default double click actions, and a processing tree filter (Nathanael Olaiz GSoC)
+* More [http://faust.grame.fr FAUST] integration into network editor: edit faust code, compile, reload, view the svg diagrams (Natanael Olaiz GSoC)
+* Lots of usability enhancements on the NetworkEditor: cut&paste, context menus to connect ports, keyboard shortcuts, default double click actions, and a processing tree filter (Natanael Olaiz GSoC)
 * Annotator has also enhanced its functionality (Wang Jun GSoC):
 ** You can build a project that aggregates content from several extractors
 ** Extractors may have a config file
@@ -23,6 +23,7 @@ See also: [http://clam.iua.upf.edu/wikis/clam/index.php/Development_screenshots 
 
 We are very excited on what next releases promise us. Some ongoing work:
 * Generating other types of network based plugins and programs (LV2, JACK, VST...),
-* Subnetworks (Nathanael Olaiz GSoC)
+* Subnetworks (Natanael Olaiz GSoC)
+* Improved [http://opensoundcontrol.org/ OSC] support, 3D scene descriptors parametrization receivers processings and [http://www.blender.org/ Blender] exporter to the spatialization processing choreographer. (Natanael Olaiz GSoC)
 * Typed controls (Francisco Tufro GSoC)
 * A new musician-oriented standalone [http://iua-share.upf.edu/svn/clam/trunk/Turnaround/ chord extraction application] (Pawel Bartkiewicz GSoC)
