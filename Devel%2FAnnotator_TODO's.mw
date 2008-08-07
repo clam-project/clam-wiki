@@ -6,7 +6,7 @@
 ** What to do with python scripts in Debian installation
 ** Incorporate new binaries
 ** Solve the calling of the scripts
-* What to do with SilenceExtractor? Remove? Disable? Finnish?
+* [[Image:done.png]]What to do with SilenceExtractor? Remove? Disable? Finnish? --Removed
 * Segmentation format
 ** Actually use the new segmentation format
 ** Add a version marker on the pool
