@@ -5,8 +5,8 @@ code name ''The binary clones factory release''.
 
 Highlights of this release are:
 * NetworkEditor [http://clam.iua.upf.edu/wikis/clam/index.php/Image:LadspaPropertiesDialog.png automatically generates and compiles] [http://www.ladspa.org/ LADSPA plugins] from a network definition and CLAM provides a [http://iua-share.upf.edu/wikis/clam/index.php/Building_a_LADSPA_plugin new simple API to code that by hand yourself].
-* More [http://faust.grame.fr FAUST] integration into network editor: edit faust code, compile, reload, view the svg diagram (Nathanael Olaiz GSoC)
-* A graphical front-end to generate a native plugin project from scractch.
+* More [http://faust.grame.fr FAUST] integration into network editor: edit faust code, compile, reload, view the svg diagrams (Nathanael Olaiz GSoC)
+* A graphical front-end to generate a native CLAM plugin project from scractch.
 * Usability enhancements on the NetworkEditor: cut&paste, context menus to connect processings and processing tree filter (Nathanael Olaiz GSoC)
 * Annotator can build a project that takes aggregated content of several extractors (Wang Jun GSoC)
 * New ProgressControl widget and paired InMemoryFileReader processing (Pawel Bartkiewicz GSoC)
