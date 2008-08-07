@@ -26,4 +26,4 @@ If your project depends on CLAM take a look at the [http://iua-share.upf.edu/wik
 We are very excited on what next releases promise us. Some ongoing work:
 * Generating other types of network based plugins and programs (LV2, JACK, VST...),
 * Typed controls (Francisco Tufro GSoC)
-* A new musicians oriented stand alone [http://iua-share.upf.edu/svn/clam/trunk/Turnaround/ chord extraction application] (Pawel Bartkiewicz GSoC)
+* A new musician-oriented standalone [http://iua-share.upf.edu/svn/clam/trunk/Turnaround/ chord extraction application] (Pawel Bartkiewicz GSoC)
