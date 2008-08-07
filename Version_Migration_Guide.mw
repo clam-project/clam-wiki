@@ -2,6 +2,7 @@ This manual chapter gives hints on how to migrate existing code from one version
 
 == 1.1 to svn ==
 * Controls will change some behaviour in the future, see [[Control_Migration_Guide|this]] to enable your code to be compatible with next CLAM modifications.
+* The API for creating LADSPA plugins from CLAM processings and networks has changed. See this [[http://iua-share.upf.edu/wikis/clam/index.php/Building_a_LADSPA_plugin tutorial]]
 
 == 1.1 to 1.2 ==
 
