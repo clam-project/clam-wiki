@@ -7,10 +7,13 @@ Highlights of this release are:
 * NetworkEditor [http://clam.iua.upf.edu/wikis/clam/index.php/Image:LadspaPropertiesDialog.png automatically generates and compiles] [http://www.ladspa.org/ LADSPA plugins] from a network definition and CLAM provides a [http://iua-share.upf.edu/wikis/clam/index.php/Building_a_LADSPA_plugin new simple API to code that by hand yourself].
 * More [http://faust.grame.fr FAUST] integration into network editor: edit faust code, compile, reload, view the svg diagrams (Nathanael Olaiz GSoC)
 * A graphical front-end to generate a native CLAM plugin project from scractch.
-* Usability enhancements on the NetworkEditor: cut&paste, context menus to connect processings and processing tree filter (Nathanael Olaiz GSoC)
-* Annotator can build a project that takes aggregated content of several extractors (Wang Jun GSoC)
-* New ProgressControl widget and paired InMemoryFileReader processing (Pawel Bartkiewicz GSoC)
-* A bunch of new 3D spatialization processings from [http://www.barcelonamedia.org/ CI Barcelona Media] Audio .
+* Lots of usability enhancements on the NetworkEditor: cut&paste, context menus to connect ports and processing tree filter (Nathanael Olaiz GSoC)
+* Annotator has also enhanced its functionality (Wang Jun GSoC):
+** It can build a project that takes aggregated content of several extractors
+** Extractors may have a config file
+** Extractors can write back data (useful if the extractor is a database of webservice and needs to upload modifications)
+* New ProgressControl widget and paired AudioFileMemoryLoader processing supporting seeking (Pawel Bartkiewicz GSoC)
+* A bunch of new 3D spatialization processings from [http://www.barcelonamedia.org/ CI Barcelona Media] audio research group.
 
 And a lot of small nice features and fixes you will appreciate for sure.
 Take a look at the [http://clam.iua.upf.edu/wikis/clam/index.php/Development_screenshots development screenshots].
