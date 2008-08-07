@@ -15,7 +15,7 @@ Highlights of this release are:
 * A bunch of new 3D spatialization processings from [http://www.barcelonamedia.org/ CI Barcelona Media] audio research group.
 * A graphical front-end to generate a native CLAM plugin project from scractch.
 * [http://audiores.uint8.com.ar/blog/2008/08/03/interactive-clam-programming/ Experimental Python bindings]
-* Setup procedure for Windows native compilation using MinGW (Wang Jun GSoC)
+* Development deployment for Windows native compilation using MinGW (Wang Jun GSoC)
 
 And a lot of small nice features and fixes you will appreciate for sure.
 
