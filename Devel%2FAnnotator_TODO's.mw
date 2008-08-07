@@ -43,7 +43,7 @@
 * Bug: if the schema is changed and an old pool is loaded, Annotator crashes with an Schema::Exception which should be catched and managed
 * Bug: when a second song is loaded the InstantViews don't update
 * TODO: a different check of os.access in FileMetadataSource.py for Windows
-* Bug: there has to be some charactors except a blank after the -w (the flag of writing back)
+* Bug: there has to be some characters except a blank after the -w (the flag of writing back)
 
 === Milestones ===
 * [[Image:done.png]] Milestone: Create a new extractor that does the aggregation for some fixed sources.
