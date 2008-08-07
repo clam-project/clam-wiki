@@ -3,7 +3,7 @@
 
 == 1.2.1 ==
 
-* Add GuitarEffects plugin into linux testfarm
+* [[Image:done.png]] Add GuitarEffects plugin into linux testfarm
 * Incorporate resample plugin into testfarm and debian
 * Fix the zero sample on Resample
 * Build windows packages for Voice2MIDI
