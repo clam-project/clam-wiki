@@ -173,7 +173,7 @@ Now we will use the third extractor provided with the program  <tt>AggregationEx
 * Once you have defined all that, you can add songs to your project and compute them with aggregation extractor.
 
 <tt>AggregationExtractor</tt> extracts the specified descriptors by calling the specified sub-extractors according to the configuration file.
-[[Image:DescriptionSchema2.JPG]]
+[[Image:DescriptionSchema2.JPG|100px]]
 
 == Building your own extractor ==
 
