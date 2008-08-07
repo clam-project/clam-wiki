@@ -15,7 +15,7 @@ Highlights of this release are:
 And a lot of small nice features and fixes you will appreciate for sure.
 Take a look at the [http://clam.iua.upf.edu/wikis/clam/index.php/Development_screenshots development screenshots].
 For a complete detail see the [http://iua-share.upf.edu/svn/clam/trunk/CLAM/CHANGES CHANGELOG].
-Also take a look at the [http://iua-share.upf.edu/wikis/clam/index.php/Version_Migration_Guide|migration guide].
+Also take a look at the [http://iua-share.upf.edu/wikis/clam/index.php/Version_Migration_Guide migration guide].
 
 We are very excited on what next releases promise us. Some ongoing work:
 * Generating other types of network based plugins and programs (LV2, JACK, VST...),
