@@ -192,7 +192,7 @@ Commandline requirements are the following ones:
 * <tt>-s <schema.sc></tt>: should write a description scheme to <tt>schema.sc</tt>
 * <tt>-f <.suffix></tt>: should use <tt>.suffix</tt> as suffix for the description files. The default should be <tt>.pool</tt>
 * <tt>-c <configfile></tt>: should take that file as configuration. If not provided the extractor should set the default configuration.
-* <tt>-w<tt>: should writting back the descriptors to backend sources instead of querying them (See bellow).
+* <tt>-w</tt>: should writting back the descriptors to backend sources instead of querying them (See bellow).
 
 You should expect on the input any format supported libsndfile (AIFF, WAV, AU, VOC...), MP3 and Ogg-Vorbis.
 And the output should match the XML format of the examples.
