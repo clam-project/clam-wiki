@@ -14,7 +14,7 @@ Highlights of this release are:
 * New ProgressControl widget and paired AudioFileMemoryLoader processing to support seeking (Pawel Bartkiewicz GSoC)
 * A bunch of new 3D spatialization processings from [http://www.barcelonamedia.org/ CI Barcelona Media] audio research group.
 * [http://audiores.uint8.com.ar/blog/2008/07/07/clam-processing-generator-script-example-of-use/ Scripts] and [http://clam.iua.upf.edu/wikis/clam/index.php/Image:ProcessingCodeGenerator.png graphical front-end] to generate a native CLAM plugin project from scratch.
-* [http://audiores.uint8.com.ar/blog/2008/08/03/interactive-clam-programming/ Experimental Python bindings] ([http://iua-share.upf.edu/svn/clam/trunk/CLAM/pyclam/INSTALL still just for hackers install procedure])
+* [http://audiores.uint8.com.ar/blog/2008/08/03/interactive-clam-programming/ Experimental Python bindings] ([http://iua-share.upf.edu/svn/clam/trunk/CLAM/pyclam/INSTALL still just-for-hackers install procedure])
 * Development deployment for Windows native compilation using MinGW (Wang Jun GSoC)
 
 And a lot of small nice features and fixes you will appreciate for sure.
