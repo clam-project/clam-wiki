@@ -1,7 +1,7 @@
 = 1.3.0 =
 
 The CLAM team enraptured to announce the 1.3.0 release of [http://clam.iua.upf.edu CLAM, the C++ framework for audio and music],
-code name ''The binary clones factory release''. 
+code name ''The Shooting of the Flying Plugins release''. 
 
 Highlights of this release are:
 * NetworkEditor [http://clam.iua.upf.edu/wikis/clam/index.php/Image:LadspaPropertiesDialog.png automatically generates and compiles] [http://www.ladspa.org/ LADSPA plugins] from a network definition and CLAM provides a [http://iua-share.upf.edu/wikis/clam/index.php/Building_a_LADSPA_plugin new simple API to code that by hand yourself].
