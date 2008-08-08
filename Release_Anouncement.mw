@@ -18,6 +18,7 @@ Highlights of this release are:
 * Development deployment for Windows native compilation using MinGW (Wang Jun GSoC)
 
 And a lot of small nice features and fixes you will appreciate for sure.
+Source and binary packages available at the [http://clam.iua.upf.edu/download.html CLAM download page].
 
 See also: [http://clam.iua.upf.edu/wikis/clam/index.php/Development_screenshots development screenshots], the [http://iua-share.upf.edu/svn/clam/trunk/CLAM/CHANGES CHANGELOG], and the [http://iua-share.upf.edu/wikis/clam/index.php/Version_Migration_Guide version migration guide].
 
