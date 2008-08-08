@@ -2,32 +2,34 @@
 
 === Big project milestones ===
 
-* Having an application that seeks allong the song.
-* Launching the analysis whenever you change the song
-* The playback controlling the time displayed on the views
+* [[Image:Done.png]] Having an application that seeks allong the song.
+* [[Image:Done.png]] Launching the analysis whenever you change the song
+* [[Image:Done.png]] The playback controlling the time displayed on the views
 * Additional features/views
 ** ...
 
-
-
 === Tasks ===
 
-* Add a second tonnetz view sharing the same dataSource object
-* Add a second dataSource for the ChordCorrelation port and bind it to a ChordRanking view
-* Proceed with KeySpace (notice that KeySpaceMonitor limits to 24 the number of bins so you might need to provide a solution)
-* Consider a new type not being a vector<float> such as PolarPeaks
-* Build a segmentation view
-* Consider using the progress control to build a progress bar for the offline computing.
-* Make the TonalAnalysis configuration editable as settings for the application reusing NetworkEditor Configurators and storing them as QSettings or as an xml file at ~/.turnaroundrc or similar
-* Disscuss with David how these features could be generalized for other similar applications (offline computing, dumping into an in-memory storage, syncing real-time and in-memory storage...) with the goal of providing more support from the framework.
-* Help menu with an about box and a tutorial
-* Keyboard Shortcuts
-* Open recent files 
-* Saving and loading analysis data
-
-
-
-
+* Turnaround
+** [[Image:Done.png]] Add a second tonnetz view sharing the same dataSource object
+** [[Image:Done.png]] Add a second dataSource for the ChordCorrelation port
+** Bind it to a ChordRanking view
+** [[Image:Done.png]] Proceed with KeySpace (notice that KeySpaceMonitor limits to 24 the number of bins so you might need to provide a solution)
+** Consider a new type not being a vector<float> such as PolarPeaks
+** Build a segmentation view
+** Consider using the progress control to build a progress bar for the offline computing.
+** Make the TonalAnalysis configuration editable as settings for the application reusing NetworkEditor Configurators and storing them as QSettings or as an xml file at ~/.turnaroundrc or similar
+** Disscuss with David how these features could be generalized for other similar applications (offline computing, dumping into an in-memory storage, syncing real-time and in-memory storage...) with the goal of providing more support from the framework.
+** Help menu with an about box and a tutorial
+** Keyboard Shortcuts
+** Open recent files 
+** Saving and loading analysis data
+** Bugfixes
+*** Set ProgressControl position to 0 before loading song
+*** Make the interface responsive during file loading
+*** Properly unset data sources before changing them
+*** Issue an error when the configuration fails
+*** Fix wrong number of visualised frames
 * Preparation
 ** [[Image:Done.png]] Having a working sandbox
 ** [[Image:Done.png]] Having the editor configured to use tabs instead of spaces
@@ -49,9 +51,9 @@
 ** Final version (?)
 *** TDD a seek control on the mono audio file reader
 *** Extend it to the Multi channel file reader
-*** Build a Control sender with feedback (to build a progress slider)
+*** [[Image:Done.png]] Build a Control sender with feedback (to build a progress slider)
 * Widget library
-** '''splitting monitors and widgets in NetworkEditor/src/monitors'''
+** [[Image:Done.png]] splitting monitors and widgets in NetworkEditor/src/monitors
 
 == Realtime segmentation (GSoC 2007 Roman) ==
 
