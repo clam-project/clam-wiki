@@ -13,7 +13,7 @@ Highlights of this release are:
 ** Extractors can write back data (useful if the extractor is a database of webservice and needs to upload modifications)
 * New ProgressControl widget and paired AudioFileMemoryLoader processing to support seeking (Pawel Bartkiewicz GSoC)
 * A bunch of new 3D spatialization processings from [http://www.barcelonamedia.org/ CI Barcelona Media] audio research group.
-* A graphical front-end to generate a native CLAM plugin project from scractch.
+* [http://clam.iua.upf.edu/wikis/clam/index.php/Image:PluginCodeGenerator.png A graphical front-end to generate a native CLAM plugin project from scratch.]
 * [http://audiores.uint8.com.ar/blog/2008/08/03/interactive-clam-programming/ Experimental Python bindings]
 * Development deployment for Windows native compilation using MinGW (Wang Jun GSoC)
 
