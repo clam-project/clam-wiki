@@ -187,15 +187,18 @@ Authors have used successfully shell and Python scripts
 to just adapt third party extractor programs to those requirements.
 
 Commandline requirements are the following ones:
- MyExtractor [-s <''schema.sc''>] [-f <''.suffix''>] [<''song1.wav''> [<''song2.mp3''> ...]]
+ MyExtractor  [-w] [-c <''configfile''>] [-s <''schema.sc''>] [-f <''.suffix''>] [<''song1.wav''> [<''song2.mp3''> ...]]
 
 * <tt>-s <schema.sc></tt>: should write a description scheme to <tt>schema.sc</tt>
 * <tt>-f <.suffix></tt>: should use <tt>.suffix</tt> as suffix for the description files. The default should be <tt>.pool</tt>
+* <tt>-c <configfile></tt>: should take that file as configuration. If not provided the extractor should set the default configuration.
+* <tt>-w<tt>: should writting back the descriptors to backend sources instead of querying them (See bellow).
 
 You should expect on the input any format supported libsndfile (AIFF, WAV, AU, VOC...), MP3 and Ogg-Vorbis.
 And the output should match the XML format of the examples.
 
-Furthermore, you may also use the aggregation extractor to aggregate different extractors, which can be specified in the configuration file.
+When in write back mode, most extractors will simply exit with success. It is needed just if the extractor depends on a backend that must be updated with the user edited values: a database, a web service...
 
-Commandline requirements are as following:
- AggregationExtractor [-s <''schema.sc''>] [-f <''.suffix''>] [-c <''AggregatorConfig.conf''>] [<''song1.wav''> [<''song2.mp3''> ...]]
+On any error the extractor should display the error on the standard error and exit with a return value different to 0.
+
+TODO: An option to get the default configuration.
