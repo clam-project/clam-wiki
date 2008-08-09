@@ -4,7 +4,7 @@ The CLAM team enraptured to announce the 1.3.0 release of [http://clam.iua.upf.e
 code name ''The Shooting of the Flying Plugins release''. 
 
 Highlights of this release are:
-* NetworkEditor [http://clam.iua.upf.edu/wikis/clam/index.php/Image:LadspaPropertiesDialog.png automatically generates and compiles] [http://www.ladspa.org/ LADSPA plugins] from a network definition and CLAM provides a [http://iua-share.upf.edu/wikis/clam/index.php/Building_a_LADSPA_plugin new simple API to code that by hand yourself].
+* NetworkEditor [http://clam.iua.upf.edu/wikis/clam/index.php/Image:LadspaPropertiesDialog.png automatically generates and compiles] a [http://www.ladspa.org/ LADSPA plugin] containing the network you are editing. CLAM also provides a [http://iua-share.upf.edu/wikis/clam/index.php/Building_a_LADSPA_plugin new simple API to code that by hand yourself].
 * More [http://faust.grame.fr FAUST] integration into network editor: edit faust code, compile, reload, view the svg diagrams (Natanael Olaiz GSoC)
 * Lots of usability enhancements on the NetworkEditor: cut&paste, context menus to connect ports, keyboard shortcuts, default double click actions, and a processing tree filter (Natanael Olaiz GSoC)
 * Annotator has also enhanced its functionality (Wang Jun GSoC):
