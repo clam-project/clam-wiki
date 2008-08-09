@@ -2,6 +2,8 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.3.0 =
 <gallery>
+Image:Turnaround-Progress.png|Turnaround loading and analysing an audio file.
+Image:Turnaround-Views.png|Turnaround (chord analysis application) playing a file and displaying analysed data.
 Image:Modifying_a_faust_module_within NE.gif|Animated gif (400kb!) showing how you can edit, recompile and reload a faust ladspa plugin within NE. In this example an input is added to the processing.
 Image:ProcessingCodeGenerator.png|Frontend for template scripts allowing automatic generation of plugins base code.
 Image:AddingSchemaWidget.PNG|after “select a description Scheme"，add a "description schema QWidget" into the Configuration dialog.
