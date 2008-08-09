@@ -24,6 +24,7 @@
 ** Keyboard Shortcuts
 ** Open recent files 
 ** Saving and loading analysis data
+** Making pause button functional
 ** Bugfixes
 *** Set ProgressControl position to 0 before loading song
 *** Make the interface responsive during file loading
