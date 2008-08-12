@@ -9,7 +9,7 @@ As tasks get done mark them with [[Image:Done.png]]
 ** [[Image:Done.png]] Assert that all [http://clam.iua.upf.edu/testfarm testfarm clients] are green
 ** [[Image:Done.png]] Remove svn marker (see [[Devel/Changelog release policy]])
 * Generating packages
-** Src
+** [[Image:Done.png]] Src
 ** [[Image:Done.png]] Windows (testfarm)
 ** [[Image:Done.png]] Ubuntu
 ** [[Image:Done.png]] Debian
