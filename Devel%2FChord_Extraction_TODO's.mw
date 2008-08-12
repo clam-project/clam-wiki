@@ -17,7 +17,7 @@
 ** [[Image:Done.png]] Proceed with KeySpace (notice that KeySpaceMonitor limits to 24 the number of bins so you might need to provide a solution)
 ** [[Image:Done.png]] Consider a new type not being a vector<float> such as PolarPeaks
 ** Use the proper labels for the ChordRanking and the full vector (including quatriads and weird chords) copy the label generation code from the ChordRankingMonitor.
-** '''Build a segmentation view'''
+** [[Image:Done.png]] Build a segmentation view
 ** [[Image:Done.png]] Consider using the progress control to build a progress bar for the offline computing.
 ** An Spectrogram widget to display the PCP instead the vectorView
 ** Define a convenient layout
@@ -28,7 +28,8 @@
 ** Keyboard Shortcuts
 ** Open recent files 
 ** Saving and loading analysis data
-** Making pause button functional
+** [[Image:Done.png]] Make pause button functional
+*** Find better way to pause network (?)
 ** Bugfixes
 *** Set ProgressControl position to 0 before loading song
 *** Make the interface responsive during file loading
