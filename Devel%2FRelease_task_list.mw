@@ -18,7 +18,8 @@ As tasks get done mark them with [[Image:Done.png]]
 ** Update screenshots if needed
 ** Build a thumbnail screenshot for the announcement
 ** Redact announcement
-** Publish it into clamnews
+** Publish it into [http://clamnews.wordpress.com/ clamnews]
+** Add the categories 'spanish', 'catalan', 'english' to bring it to the web
 * Update doxygen
 * Spread the announcement
 ** clam, clam-devel
