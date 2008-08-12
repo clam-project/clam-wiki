@@ -329,10 +329,8 @@ Be careful that ''scons install'' will not install in the right location if You 
 * As MSVC is installed in the system, to get rid of some VC++ compiler/linker options，changed the Sconstruct where：
     clam_env = Environment( ENV=os.environ, tools=['default'], [CCFLAGS=' '])
 * Added to /MSYS/etc/profile:
-** export PATH=$PATH:/mingw/local/bin
-** export PKG_CONFIG_PATH="C:\MinGW\local\lib\pkgconfig"
-* In clam_build_helpers.py, commented the line 256:
-   #os.path.join(env["sandbox_path"],'gtk','lib','pkgconfig'),
+  export PKG_CONFIG_PATH="C:\MinGW\local\lib\pkgconfig"
+  (After adding this line, notice that the setting won't be valid immediately unless you close the MSYS and reopen it. Don't ask me why because I don't know either.)
 
 * Mingw for windows distrubutes with gcc version 3.x, while the crosscompilation mingw is gcc 4.X. gcc 3.X didn't support std::wstrings required by id3lib. You can download the 4.X version from [http://sourceforge.net/project/showfiles.php?group_id=2435 here]. Overwrite MinGW installation files with the ones on the tarball. Till now, the same version as the one precompiled the 3rd party libraries tarball gcc-4.2.1-sjlj-2, available from [http://sourceforge.net/project/showfiles.php?group_id=2435&package_id=241304 here], has been tested and approved. While overwriting MinGW installation files with the core and the g++packages of gcc-4.2.1-sjlj-2, note that the names should be changed to the original names in MinGW, eg. change g++-sjlj.exe into g++.exe, etc.
 
