@@ -43,7 +43,7 @@
 * Bug: if the schema is changed and an old pool is loaded, Annotator crashes with an Schema::Exception which should be catched and managed
 * Bug: when a second song is loaded the InstantViews don't update
 * TODO: a different check of os.access in FileMetadataSource.py for Windows
-** See [http://bugs.python.org/issue2528 python bug], this issue may have been fixed in the later version than Python2.5
+** See [http://bugs.python.org/issue2528 python bug], this issue may have been fixed in the experimental release Python2.6b2
 * Bug: there has to be some characters except a blank after the -w (the flag of writing back)
 
 === Milestones ===
