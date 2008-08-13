@@ -39,4 +39,4 @@ En fin, un monton de cosas más. Mas información en el [http://clam.iua.upf.edu
 
 === Freshmeat ultra short version ===
 
-This release provides automatic generation of Ladspa plugins and Faust programs, a lot of usability enhancements on the graphical tool, more algorithms for 3D spatialization, rhythm analysis and partial analysis, support for native development in Windows, and more flexibility on Annotator's extractors.
+This release provides automatic generation of Ladspa plugins and Faust programs, a lot of usability enhancements on the graphical tool, more algorithms for 3D spatialization, rhythm analysis and formant extraction, support for native development in Windows, and more flexibility on Annotator's extractors.
