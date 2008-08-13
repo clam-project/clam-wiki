@@ -33,7 +33,7 @@ We are very excited on what next releases promise us. Some ongoing work:
 
 === Spanish short version ===
 
-El equipo de [http://clam.iua.upf.edu CLAM, the C++ framework for audio and music] está que trina de contento de anunciar la versión 1.3 del framework, alias ''Disparando plugins voladores''. Esta versión incluye generación automatica de plugins [http://www.ladspa.org/ Ladspa] y programas [http://faust.grame.fr Faust], un monton de mejoras en la usabilidad de la herramienta gráfica, más algoritmos de espacialización 3D, extracción de tempo y extración de parciales, soporte al desarrollo nativo en Windows, extractores más flexibles para el Annotator...
+El equipo de [http://clam.iua.upf.edu CLAM, the C++ framework for audio and music] está que trina de contento de anunciar la versión 1.3 del framework, alias ''Disparando plugins voladores''. Esta versión incluye generación automatica de plugins [http://www.ladspa.org/ Ladspa] y programas [http://faust.grame.fr Faust], un monton de mejoras en la usabilidad de la herramienta gráfica, más algoritmos de espacialización 3D, extracción de tempo y extracción de formantes, soporte al desarrollo nativo en Windows, extractores más flexibles para el Annotator...
 
 En fin, un monton de cosas más. Mas información en el [http://clam.iua.upf.edu/ anuncio oficial].
 
