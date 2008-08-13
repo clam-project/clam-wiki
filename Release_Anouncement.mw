@@ -30,3 +30,13 @@ We are very excited on what next releases promise us. Some ongoing work:
 * Improved [http://opensoundcontrol.org/ OSC] support, 3D scene descriptors parametrization receivers processings and [http://www.blender.org/ Blender] exporter to the spatialization processing choreographer. (Natanael Olaiz GSoC - [http://dadaisonline.blogspot.com/search/label/blender related blogging])
 * Typed controls (Francisco Tufro GSoC)
 * A new musician-oriented standalone [http://iua-share.upf.edu/svn/clam/trunk/Turnaround/ chord extraction application] (Pawel Bartkiewicz GSoC)
+
+=== Spanish short version ===
+
+El equipo de [http://clam.iua.upf.edu CLAM, the C++ framework for audio and music] está que trina de contento de anunciar la versión 1.3 del framework, alias ''Disparando plugins voladores''. Esta versión incluye generación automatica de plugins [http://www.ladspa.org/ Ladspa] y programas [http://faust.grame.fr Faust], un monton de mejoras en la usabilidad de la herramienta gráfica, más algoritmos de espacialización 3D, extracción de tempo y extración de parciales, soporte al desarrollo nativo en Windows, extractores más flexibles para el Annotator...
+
+En fin, un monton de cosas más. Mas información en el [http://clam.iua.upf.edu/ anuncio oficial].
+
+=== Freshmeat ultra short version ===
+
+This release provides automatic generation of Ladspa plugins and Faust programs, a lot of usability enhancements on the graphical tool, more algorithms for 3D spatialization, rhythm analysis and partial analysis, support for native development in Windows, and more flexibility on Annotator's extractors.
