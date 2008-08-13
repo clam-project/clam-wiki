@@ -40,3 +40,46 @@ En fin, un monton de cosas más. Mas información en el [http://clam.iua.upf.edu
 === Freshmeat ultra short version ===
 
 This release provides automatic generation of Ladspa plugins and Faust programs, a lot of usability enhancements on the graphical tool, more algorithms for 3D spatialization, rhythm analysis and formant extraction, support for native development in Windows, and more flexibility on Annotator's extractors.
+
+
+=== Mail Version ===
+
+The CLAM team enraptured to announce the 1.3.0 release of CLAM [1], the C++ framework for audio and music, code name ''The Shooting of the Flying Plugins release''. 
+
+Highlights of this release are:
+- Automatic binary generation of LADSPA plugins containing the network you are editing in NetworkEditor. Also a new simple API to code CLAM based Ladspa by hand. See [2]
+- More FAUST integration into network editor: edit faust code, compile, reload, view the svg diagrams (Natanael Olaiz GSoC)
+- Lots of usability enhancements on the NetworkEditor: cut&paste, context menus to connect ports, keyboard shortcuts, default double click actions, and a processing tree filter (Natanael Olaiz GSoC)
+- Annotator has also enhanced its functionality (Wang Jun GSoC):
+  - You can build a project that aggregates content from several extractors
+  - Extractors may have a config file
+  - Extractors can write back data (useful if the extractor is a database of webservice and needs to upload modifications)
+- New ProgressControl widget and paired AudioFileMemoryLoader processing to support seeking (Pawel Bartkiewicz GSoC)
+- A bunch of new 3D spatialization processings from CI Barcelona Media[3] audio research group.
+- Scripts [4] and  graphical front-end [5] to generate a native CLAM plugin project from scratch.
+- Experimental Python bindings [6]
+- TickExtractor example is compiling again (many thanks to Amaury Hazan from MTG-UPF)
+- Development deployment for Windows native compilation using MinGW (Wang Jun GSoC)
+
+And a lot of small nice features and fixes you will appreciate for sure.
+Source and binary packages for different platforms are available at the CLAM download page [7]. See also: development screenshots [8], the CHANGELOG [9], and the version migration guide [10].
+
+We are also very excited on what next releases promise us. Some ongoing work:
+- Generating other types of network based plugins and programs (LV2, JACK, VST...),
+- Subnetworks (Natanael Olaiz GSoC)
+- Improved OSC support, 3D scene descriptors parametrization receivers processings and Blender exporter to the spatialization processing choreographer. (Natanael Olaiz GSoC) [11] 
+- Typed controls (Francisco Tufro GSoC)
+- A new musician-oriented standalone chord extraction application (Pawel Bartkiewicz GSoC)
+
+
+[1] http://clam.iua.upf.edu 
+[2] http://iua-share.upf.edu/wikis/clam/index.php/Building_a_LADSPA_plugin
+[3] http://www.barcelonamedia.org/ 
+[4] http://audiores.uint8.com.ar/blog/2008/07/07/clam-processing-generator-script-example-of-use/
+[5] http://clam.iua.upf.edu/wikis/clam/index.php/Image:ProcessingCodeGenerator.png
+[6] http://audiores.uint8.com.ar/blog/2008/08/03/interactive-clam-programming/
+[7] http://clam.iua.upf.edu/download.html 
+[8] http://clam.iua.upf.edu/wikis/clam/index.php/Development_screenshots
+[9] http://iua-share.upf.edu/svn/clam/trunk/CLAM/CHANGES
+[10] http://iua-share.upf.edu/wikis/clam/index.php/Version_Migration_Guide 
+[11] http://dadaisonline.blogspot.com/search/label/blender related blogging])
