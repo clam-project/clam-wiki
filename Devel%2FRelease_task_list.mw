@@ -16,10 +16,10 @@ As tasks get done mark them with [[Image:Done.png]]
 ** Mac
 * Prepare the [[Release Anouncement|announcement]]
 ** [[Image:Done.png]] Update screenshots if needed
-** Build a thumbnail screenshot for the announcement
+** [[Image:Done.png]] Build a thumbnail screenshot for the announcement
 ** [[Image:Done.png]] Redact announcement
 ** [[Image:Done.png]] Publish it into [http://clamnews.wordpress.com/ clamnews]
-** Add the categories 'spanish', 'catalan', 'english' to bring it to the web
+** [[Image:Done.png]] Add the categories 'spanish', 'catalan', 'english' to bring it to the web
 * [[Image:Done.png]] Update  [http://clam.iua.upf.edu/doc/CLAM-doxygen doxygen for stable version]
 * Spread the announcement
 ** clam, clam-devel
@@ -30,5 +30,5 @@ As tasks get done mark them with [[Image:Done.png]]
 ** STSI (La farga)
 ** Harmony-Central and Spanish musical webs
 * Preparing the next release
-** Create a new chapter on [[Version Migration Guide]] for the next release
-** Update CHANGES to get the new version for svn snapshots (see [[Devel/Changelog release policy]])
+** [[Image:Done.png]] Create a new chapter on [[Version Migration Guide]] for the next release
+** [[Image:Done.png]] Update CHANGES to get the new version for svn snapshots (see [[Devel/Changelog release policy]])
