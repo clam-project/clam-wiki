@@ -8,13 +8,12 @@ As tasks get done mark them with [[Image:Done.png]]
 ** [[Image:Done.png]] Request for pending notes in [[Version Migration Guide]]
 ** [[Image:Done.png]] Assert that all [http://clam.iua.upf.edu/testfarm testfarm clients] are green
 ** [[Image:Done.png]] Remove svn marker (see [[Devel/Changelog release policy]])
-* Generating packages
+* Generating packages tttp://clam.iua.upf.edu/download.html
 ** [[Image:Done.png]] Src
 ** [[Image:Done.png]] Windows (testfarm)
 ** [[Image:Done.png]] Ubuntu
 ** [[Image:Done.png]] Debian
 ** Mac
-** http://clam.iua.upf.edu/download.html
 * Prepare the [[Release Anouncement|announcement]]
 ** [[Image:Done.png]] Update screenshots if needed
 ** Build a thumbnail screenshot for the announcement
