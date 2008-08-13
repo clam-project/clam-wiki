@@ -43,7 +43,7 @@ This release provides automatic generation of Ladspa plugins and Faust programs,
 
 
 === Mail Version ===
-
+<pre>
 The CLAM team enraptured to announce the 1.3.0 release of CLAM [1], the C++ framework for audio and music, code name ''The Shooting of the Flying Plugins release''. 
 
 Highlights of this release are:
@@ -83,3 +83,4 @@ We are also very excited on what next releases promise us. Some ongoing work:
 [9] http://iua-share.upf.edu/svn/clam/trunk/CLAM/CHANGES
 [10] http://iua-share.upf.edu/wikis/clam/index.php/Version_Migration_Guide 
 [11] http://dadaisonline.blogspot.com/search/label/blender related blogging])
+</pre>
