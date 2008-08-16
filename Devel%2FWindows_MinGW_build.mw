@@ -325,7 +325,9 @@ Be careful that ''scons install'' will not install in the right location if You 
 
 * Installed MinGW and MSYS
 **added the MinGW and MSYS related path to the Windows PATH variable.
-* Moved the 'local' folder in the [http://clam.iua.upf.edu/download/win/svnsnapshots/clam-3rdparty-mingw-20080128.tar.gz 3rd party libraries tarball] into c:\MinGW\local
+* Install QT4.4.x
+* Moved the 'local' folder in the [http://clam.iua.upf.edu/download/win/svnsnapshots/clam-3rdparty-mingw-20080128.tar.gz 3rd party libraries tarball] into c:\MinGW\local.
+** After installed the libraries tarball, there has been several .dll files of QT in the ./local/bin path of Mingw, replace them with the ones of QT that you have installed.
 * As MSVC is installed in the system, to get rid of some VC++ compiler/linker options，changed the Sconstruct where：
     clam_env = Environment( ENV=os.environ, tools=['default'], [CCFLAGS=' '])
 * Added to /MSYS/etc/profile:
