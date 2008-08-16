@@ -14,7 +14,7 @@
 ** UpdateAnnotatorData.py use the version marker to identify already ported files
 * Review TODO's and move the significant ones here
 
-== Annotator extractor merger (Jun GSoC) ==
+== Annotator extractor aggregator (Jun GSoC) ==
 
 === Core tasks ===
 * [[Image:done.png]]Create a new extractor that does the aggregation for some fixed sources
