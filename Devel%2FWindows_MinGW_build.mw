@@ -340,3 +340,7 @@ Be careful that ''scons install'' will not install in the right location if You 
 * To solve long command line problems (in win32 scons), we added in Sconstruct a function "SetupSpawn(clam_env)", which is ugly and intends to be removed when the scons group fix the bug.
 
 *  The Aggretator script is using that python package that is not included by default for doing xpath. To use xpath, in my case of python 2.5, install the [http://platea.pntic.mec.es/~jmorilla/python/PyXML-0.8.4.win32-py2.5.exe PyXML-0.8.4.win32-py2.5]
+* Install [py2exe]
+** The runners of Annotator requires AggregationExtractor.exe rather than AggregationExtractor.py in Windows. To generate the AggregationExtractor.exe file:
+ cd path/of/the/setup.py/file
+ python setup.py py2exe
