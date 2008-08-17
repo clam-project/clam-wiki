@@ -1,4 +1,19 @@
-The creation of this page is in process, as the Blender integration on CLAM.
+This article explains the Blender integration on CLAM. You could find the needed Blender python scripts [http://iua-share.upf.edu/svn/clam/trunk/CLAM/plugins/spacialization/blender/ on the 'spacialization' plugin directory of the SVN].
+
+The following scripts uses the blender objects included in the 'AudioSources' and 'AudioSinks' groups as general convention.
+
+== Defining the Blender scene ==
+=== Adapting a previous Blender scene ===
+If you have an existing Blender scene, just create the 'AudioSources' and 'AudioSinks' groups and add the objects you want to use in them.
+=== Creating a new Blender scene ===
+If you want to start a new scene, you could import the scene_maker script and run it once. It would ask how many sources and sinks you want to use, and generate UVspheres as generic models, included on the specific groups.
+== Sending positions through OSC ==
+=== Configuring the sender ===
+=== Exporting the scene to CLAM network receivers ===
+== Exporting a choreographic sequencer file ==
+
+----
+''Previous article text:''
 
 At the moment you could access the Blender scene using OSC. Further integration is coming up. Some formats need to be defined (see [http://technocalifornia.blogspot.com/2008/06/standards-for-3d-scene-description.html Xavier post] for more info).
 
@@ -7,79 +22,6 @@ Let's see how to send OSC from blender scene and receive it on CLAM.
 
 === Blender ===
 Sending OSC messages using [https://iua-share.upf.edu/svn/clam/trunk/CLAM/plugins/osc/oscpython/OSC.py OSC.py] (OSC client module for python by stefan kersten, you have to put a copy on your home/src/liblo). You could link this script to any object. It checks for ObjectUpdate events of objects which are on GroupAudio group. The sending path is '/[http://www.jamoma.org/wiki/SpatDIFSpatialSoundDescriptionInterchangeFormat SpatDIF]/type/number/xyz', where 'type' is the type of audio object ('source' if the object exists on 'GroupSources', 'sink' if exists on 'GroupSinks') and number is the relative number within the correspondent type group.
-
-<pre>#!BPY
-"""
-Name: 'OSCSender'
-Blender: 244
-Group: 'Object'
-"""
-# use bpy module of Blender:
-from bpy import data
-from sys import path
-import Blender
-
-from os import getenv
-home=getenv("HOME")
-path.append(home+"/src/liblo")
-
-
-# use OSC client module for python - by Stefan Kersten
-from OSC import Message
-
-def existsInGroup(objectToFind, group):
-	for object in group.objects:
-		if object==objectToFind: return True
-	return False
-
-def getAudioGroupNumber(groupname,object):
-	i=0
-	for outerObject in data.groups['GroupAudio'].objects:
-		for innerObject in data.groups[groupname].objects:
-			if innerObject==outerObject:
-				i=i+1
-				if innerObject==object: return i
-	return False
-
-def main():
-	scene=data.scenes.active
-	print '-'*30
-	print 'OSCSender Called! - Event: '+Blender.event
-
-	if Blender.event=='FrameChanged':
-		frame=Blender.Get('curframe')
-		print 'frame: ' +str(frame)
-		Message("/SpatDIF/sync/FrameChanged",[frame]).sendlocal(7000)
-
-	# if the script is called by a link to an object of group 'GroupAudio'
-	if Blender.bylink==True \
-	and existsInGroup(Blender.link,data.groups['GroupAudio']):
-
-		if Blender.event=='ObjectUpdate':
-			print '-'*30
-			print 'link: ' +str(Blender.bylink)
-			print 'event: ' +str(Blender.event)
-			print 'linked from: '+str(Blender.link)
-
-			object=Blender.link
-			location=object.getLocation()
-			print object.name
-			print location
-			
-			objectNumber=getAudioGroupNumber('GroupSources',object)
-			if objectNumber!=False:
-				typeOfObject='source'
-			else:
-				typeOfObject='sink'
-				objectNumber=getAudioGroupNumber('GroupSinks',object)
-			if objectNumber==False: return
-			
-			message="/SpatDIF/"+typeOfObject+"/"+str(objectNumber)+"/xyz"
-			Message(message,location).sendlocal(7000)
-			
-# This lets you can import the script without running it
-if __name__ == '__main__':
-	main()</pre>
 
 === CLAM ===
 CLAM implements OSC as a plugin. You could compile just runing 'scons' on [https://iua-share.upf.edu/svn/clam/trunk/CLAM/plugins/osc/ trunk/CLAM/plugins/osc]. For now that compiles the LibloSource processing, which is a simple OSC server. You need to configure the port and the path:
