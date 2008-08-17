@@ -1,3 +1,5 @@
+''to be filled in short...''
+
 This article explains the Blender integration on CLAM. You could find the needed Blender python scripts [http://iua-share.upf.edu/svn/clam/trunk/CLAM/plugins/spacialization/blender/ on the 'spacialization' plugin directory of the SVN].
 
 The following scripts uses the blender objects included in the 'AudioSources' and 'AudioSinks' groups as general convention.
