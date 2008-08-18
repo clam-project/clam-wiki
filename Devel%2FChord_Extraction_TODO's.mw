@@ -16,10 +16,10 @@
 ** [[Image:Done.png]] Bind it to a ChordRanking view
 ** [[Image:Done.png]] Proceed with KeySpace (notice that KeySpaceMonitor limits to 24 the number of bins so you might need to provide a solution)
 ** [[Image:Done.png]] Consider a new type not being a vector<float> such as PolarPeaks
-** Use the proper labels for the ChordRanking and the full vector (including quatriads and weird chords) copy the label generation code from the ChordRankingMonitor.
+** '''Use the proper labels for the ChordRanking and the full vector (including quatriads and weird chords) copy the label generation code from the ChordRankingMonitor.'''
 ** [[Image:Done.png]] Build a segmentation view
 ** [[Image:Done.png]] Consider using the progress control to build a progress bar for the offline computing.
-** '''An Spectrogram widget to display the PCP instead the vectorView'''
+** [[Image:Done.png]] A Spectrogram widget to display the PCP instead the vectorView
 ** Define a convenient layout
 ** Make available the metadata information (artist, title...) somewhere (a new panel, status bar, title bar...)
 ** Make the TonalAnalysis configuration editable as settings for the application reusing NetworkEditor Configurators and storing them as QSettings or as an xml file at ~/.turnaroundrc or similar
