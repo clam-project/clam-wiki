@@ -17,13 +17,14 @@
 ** [[Image:Done.png]] Proceed with KeySpace (notice that KeySpaceMonitor limits to 24 the number of bins so you might need to provide a solution)
 ** [[Image:Done.png]] Consider a new type not being a vector<float> such as PolarPeaks
 ** [[Image:Done.png]] Use the proper labels for the ChordRanking and the full vector (including quatriads and weird chords) copy the label generation code from the ChordRankingMonitor.
-*** Restore old labels for KeySpace after separating DataSources
-** '''Store data in Storages, use DataSources only for passing data to widgets'''
+*** [[Image:Done.png]] Restore old labels for KeySpace after separating DataSources
+** [[Image:Done.png]] Store data in Storages, use DataSources only for passing data to widgets
+** [[Image:Done.png]] Add separate DataSource for KeySpace with proper offset and labels
 ** [[Image:Done.png]] Build a segmentation view
 ** [[Image:Done.png]] Consider using the progress control to build a progress bar for the offline computing.
 ** [[Image:Done.png]] A Spectrogram widget to display the PCP instead the vectorView
 ** Define a convenient layout
-** Make available the metadata information (artist, title...) somewhere (a new panel, status bar, title bar...)
+** '''Make available the metadata information (artist, title...) somewhere (a new panel, status bar, title bar...)'''
 ** Make the TonalAnalysis configuration editable as settings for the application reusing NetworkEditor Configurators and storing them as QSettings or as an xml file at ~/.turnaroundrc or similar
 ** Disscuss with David how these features could be generalized for other similar applications (offline computing, dumping into an in-memory storage, syncing real-time and in-memory storage...) with the goal of providing more support from the framework.
 ** Help menu with an about box
