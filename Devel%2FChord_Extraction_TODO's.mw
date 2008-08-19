@@ -36,9 +36,8 @@
 *** [[Image:Done.png]] Find better way to pause network
 ** Improve analysis
 ** Bugfixes
-*** Set ProgressControl position to 0 before loading song
-*** Make the interface responsive during file loading
-*** Properly unset data sources before changing them
+*** [[Image:Done.png]] Make the interface responsive during file loading
+*** [[Image:Done.png]] Properly unset data sources before changing them
 *** Issue an error when the configuration fails
 *** Fix wrong number of visualised frames
 * Preparation
