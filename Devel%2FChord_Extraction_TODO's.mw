@@ -24,12 +24,16 @@
 ** [[Image:Done.png]] Consider using the progress control to build a progress bar for the offline computing.
 ** [[Image:Done.png]] A Spectrogram widget to display the PCP instead the vectorView
 ** Define a convenient layout
-** '''Make available the metadata information (artist, title...) somewhere (a new panel, status bar, title bar...)'''
+** [[Image:Done.png]] Make available the metadata information (artist, title...) somewhere (a new panel, status bar, title bar...)
+*** Check if Utf8 is correctly supported
+*** Optionally add more information
 ** Make the TonalAnalysis configuration editable as settings for the application reusing NetworkEditor Configurators and storing them as QSettings or as an xml file at ~/.turnaroundrc or similar
 ** Disscuss with David how these features could be generalized for other similar applications (offline computing, dumping into an in-memory storage, syncing real-time and in-memory storage...) with the goal of providing more support from the framework.
 ** Help menu with an about box
 ** Tutorial
 ** Keyboard Shortcuts
+** '''Make showing/hiding views possible'''
+** Looping
 ** Open recent files 
 ** Saving and loading analysis data
 ** [[Image:Done.png]] Make pause button functional
