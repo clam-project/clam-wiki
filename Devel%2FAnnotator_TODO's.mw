@@ -45,6 +45,8 @@
 * TODO: a different check of os.access in FileMetadataSource.py for Windows
 ** See [http://bugs.python.org/issue2528 python bug], this issue may have been fixed in the experimental release Python2.6b2
 * Bug: there has to be some characters except a blank after the -w (the flag of writing back)
+* TODO: figure out why the newly added .ui file can not auto-generate the ui_ header file. Now temporarily via the method below:
+$ uic ./src/SourceEditor.ui -o ./src/generated/ui_SourceEditor.hxx
 
 === Milestones ===
 * [[Image:done.png]] Milestone: Create a new extractor that does the aggregation for some fixed sources.
