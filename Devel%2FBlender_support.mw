@@ -25,7 +25,11 @@ The 'BlenderOSCSender.py' script allows to send OSC messages the source and sink
 The script could be linked to any source or sink object, on FrameChanged events or object ObjectUpdate ones. The sending OSC path is '/[http://www.jamoma.org/wiki/SpatDIFSpatialSoundDescriptionInterchangeFormat SpatDIF]/type/number/xyz', where 'type' is the type of audio object ('source' if the object exists on 'AudioSources', 'sink' if exists on 'AudioSinks') and number is the relative number within the correspondent type group. By now, the used OSC port is fixed to 7000.
 
 === Configuring the sender ===
-You could import the BlenderOSCSender.py in your list of Text blender buffers and assign on the desired event (FrameChanged on a scene, or ObjectUpdate on a sink or a source).
+You could import the BlenderOSCSender.py in your list of Text blender buffers and assign on the desired event (FrameChanged on a scene, or ObjectUpdate on a sink or a source):
+
+[[Image:Blender link OSCSender on framechanged event.png]]
+
+[[Image:Blender link OSCSender on ObjectUpdate event.png]]
 
 === Exporting the scene to CLAM network receivers ===
 First at all, you will need to compile and install the OSC CLAM plugin, as MultiLibloSources are used to receive the OSC messages.
