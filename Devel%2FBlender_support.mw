@@ -21,7 +21,8 @@ and generate UVspheres as generic models, included on the specific groups:
 == Sending positions through OSC ==
 The 'BlenderOSCSender.py' script allows to send the source and sinks positions through OSC (using the OSC plugin implementation 'CLAM/plugins/osc/oscpython/OSC.py') on scene FrameChanged events, or link to object ObjectUpdate ones.
 === Configuring the sender ===
-You could import the BlenderOSCSender.py in your list of Text blender buffers and assign on the selected event.
+You could import the BlenderOSCSender.py in your list of Text blender buffers and assign on the desired event (FrameChanged or ObjectUpdate on a sink or a source).
+
 === Exporting the scene to CLAM network receivers ===
 To generate a CLAM network OSC monitor for that scene, you could call the 'network_scene_exporter.py' script, which is automatically called by the scene_maker, and applied to a FrameChanged scene event. It ask for a network filename:
 
