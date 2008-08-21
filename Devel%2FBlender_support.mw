@@ -13,7 +13,7 @@ It would ask how many sources and sinks you want to use:
 
 [[Image:Blender scene maker1.png]]
 
- and generate UVspheres as generic models, included on the specific groups.
+and generate UVspheres as generic models, included on the specific groups.
 [[Image:Blender scene maker2.png]]
 
 == Sending positions through OSC ==
