@@ -21,8 +21,8 @@ and generate UVspheres as generic models, included on the specific groups:
 
 == Sending positions through OSC ==
 
-The 'BlenderOSCSender.py' script allows to send OSC messages the source and sinks positions through OSC (using '[https://iua-share.upf.edu/svn/clam/trunk/CLAM/plugins/osc/oscpython/OSC.py OSC.py]' -OSC client module for python by Stefan Kersten, you have to put a copy on your home/src/liblo or blender/../../osc/oscpython-).
-The script could be linked to any source or sink object, on FrameChanged events or object ObjectUpdate ones. The sending OSC path is '/[http://www.jamoma.org/wiki/SpatDIFSpatialSoundDescriptionInterchangeFormat SpatDIF]/type/number/xyz', where 'type' is the type of audio object ('source' if the object exists on 'GroupSources', 'sink' if exists on 'GroupSinks') and number is the relative number within the correspondent type group. By now, the port is fixed to 7000.
+The 'BlenderOSCSender.py' script allows to send OSC messages the source and sinks positions through OSC using '[https://iua-share.upf.edu/svn/clam/trunk/CLAM/plugins/osc/oscpython/OSC.py OSC.py] (OSC client module for python by Stefan Kersten, you have to put a copy on your home/src/liblo or blender/../../osc/oscpython).
+The script could be linked to any source or sink object, on FrameChanged events or object ObjectUpdate ones. The sending OSC path is '/[http://www.jamoma.org/wiki/SpatDIFSpatialSoundDescriptionInterchangeFormat SpatDIF]/type/number/xyz', where 'type' is the type of audio object ('source' if the object exists on 'AudioSources', 'sink' if exists on 'AudioSinks') and number is the relative number within the correspondent type group. By now, the port is fixed to 7000.
 
 === Configuring the sender ===
 You could import the BlenderOSCSender.py in your list of Text blender buffers and assign on the desired event (FrameChanged or ObjectUpdate on a sink or a source).
