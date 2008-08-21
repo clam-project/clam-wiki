@@ -27,6 +27,10 @@ To generate a CLAM network OSC monitor for that scene, you could call the 'netwo
 
 [[Image:Blender scene maker filedialog network.png]]
 
+And you will obtain a Network like this:
+
+[[Image:Clam osc receivers for blender scene.png]]
+
 == Exporting a choreographic sequencer file ==
 
 ----
