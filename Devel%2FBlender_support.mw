@@ -24,13 +24,15 @@ The 'BlenderOSCSender.py' script allows to send the source and sinks positions t
 You could import the BlenderOSCSender.py in your list of Text blender buffers and assign on the desired event (FrameChanged or ObjectUpdate on a sink or a source).
 
 === Exporting the scene to CLAM network receivers ===
-To generate a CLAM network OSC monitor for that scene, you could call the 'network_scene_exporter.py' script, which is automatically called by the scene_maker, and applied to a FrameChanged scene event. It ask for a network filename:
+To generate a CLAM network OSC monitor for that scene, you could call the 'network_scene_exporter.py' script, which is automatically called by the scene_maker, and applied to a FrameChanged scene event. It will ask for a network filename:
 
 [[Image:Blender scene maker filedialog network.png]]
 
 And you will obtain a Network like this:
 
 [[Image:Clam osc receivers for blender scene.png]]
+
+To make it work, just run your Blender animation (alt-a), and the monitors would be updated to the objects positions, and if is called by a FrameChanged event the CLAM Network would be also show the actual frame number.
 
 == Exporting a choreographic sequencer file ==
 
