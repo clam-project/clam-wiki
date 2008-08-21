@@ -4,7 +4,8 @@ The following scripts uses the blender objects included in the 'AudioSources' an
 
 == Defining the Blender scene ==
 === Adapting a previous Blender scene ===
-If you have an existing Blender scene, just create the 'AudioSources' and 'AudioSinks' groups and add the objects you want to use in them.
+If you have an existing Blender scene, just create the 'AudioSources' and 'AudioSinks' groups and add the objects you want to use in them. Then import the script that you want to use from the following ones:
+
 === Creating a new Blender scene ===
 If you want to start a new scene, you could import the scene_maker script and run it once. Or directly, call blender with -P from the "CLAM/plugins/spacialization/blender" path:
  blender -P scene_maker.py
