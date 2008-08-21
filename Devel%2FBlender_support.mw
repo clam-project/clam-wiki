@@ -8,7 +8,7 @@ If you have an existing Blender scene, just create the 'AudioSources' and 'Audio
 === Creating a new Blender scene ===
 If you want to start a new scene, you could import the scene_maker script and run it once. Or directly, call blender with -P from the "CLAM/plugins/spacialization/blender" path:
  blender -P scene_maker.py
-It would ask how many sources and sinks you want to use:
+It would ask how many sources and sinks you want to generate:
 
 [[Image:Blender scene maker1.png]]
 
