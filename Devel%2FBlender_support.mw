@@ -42,7 +42,7 @@ To make it work, just run your Blender animation (alt-a), and the monitors would
 == Exporting a choreographic sequencer file ==
 The blender choreographic sequencer file exporter is included on the 'choreofile_exporter.py' script, and generates the choreographic sequencer file for one sink and one source selected objects, and a sequencer monitor network (using network_scene_exporter).
 
-First you will need to select '''just one''' sink '''and one''' source object, and run the script ("alt-p" on the Text Editor using choreofile_exporter). 
+First you will need to select '''just one''' sink '''and one''' source object (select with right click, add selection with shift-right click), and run the script ("alt-p" on the Text Editor using choreofile_exporter). 
 
 The script will ask for a sequencer file name:
 
