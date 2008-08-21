@@ -23,7 +23,7 @@ The 'BlenderOSCSender.py' script allows to send the source and sinks positions t
 === Configuring the sender ===
 You could import the BlenderOSCSender.py in your list of Text blender buffers and assign on the selected event.
 === Exporting the scene to CLAM network receivers ===
-To generate a CLAM network OSC monitor for that scene, you could call the 'network_scene_exporter.py' script, which is automatically called by the scene_maker. It ask for a network filename:
+To generate a CLAM network OSC monitor for that scene, you could call the 'network_scene_exporter.py' script, which is automatically called by the scene_maker, and applied to a FrameChanged scene event. It ask for a network filename:
 
 [[Image:Blender scene maker filedialog network.png]]
 
