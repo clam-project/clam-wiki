@@ -53,3 +53,8 @@ A Network with the same base name of the choreographic file will be created, wit
 [[Image:Blender generated network ChoreoSequencer.png]]
 
 [[Image:ChoreoSequencerConfig BlenderScene.png]]
+
+== A dummy animation ==
+If you know something of Blender, maybe will found the previous scripts usefuls as templates for new Blender-CLAM integrated scenes. But if you don't know how to make animations in Blender, you still could prove this scripts just calling the demo_scene_maker script from your CLAM blender scripts path:
+ blender -P demo_scene_maker.py
+That would be generate the same that scene_maker (follow the , but then will add a circular trajectories on sources. So, just play the animation with "alt-a", and test the networks!
