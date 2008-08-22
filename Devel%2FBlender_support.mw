@@ -27,10 +27,9 @@ The script could be linked to any source or sink object, on FrameChanged events 
 === Configuring the sender ===
 You could import the BlenderOSCSender.py in your list of Text blender buffers and assign on the desired event (FrameChanged on a scene, or ObjectUpdate on a sink or a source):
 
-[[Image:Blender link OSCSender on framechanged event.png]]
+[[Image:Blender link OSCSender on framechanged event.png]]  [[Image:Blender link OSCSender on ObjectUpdate event.png]]
 
-[[Image:Blender link OSCSender on ObjectUpdate event.png]]
-
+When you generate the Blender scene using the scene_maker script, the OSCSender will be automatically added to the scene FrameChanged event.
 === Exporting the scene to CLAM network receivers ===
 First at all, you will need to compile and install the OSC CLAM plugin, as MultiLibloSources are used to receive the OSC messages.
 To generate a CLAM network OSC monitor for that scene, you could call the 'network_scene_exporter.py' script, which is automatically called by the scene_maker, and applied to a FrameChanged scene event. It will ask for a network filename:
