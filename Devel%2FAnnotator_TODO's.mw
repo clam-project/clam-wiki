@@ -38,7 +38,9 @@
 * Write an upload script as an example (Boca? MusicBrainz?)
 * Address building a description from a blank sheet
 
-=== To be fixed ===
+=== TODOs ===
+* TODO: As to Aggregation Extractor, its schema file need to be reset after the configuration is edited. 
+* TODO: After the aggregation configuration is edited, what to do with the <Views> in project, in case the attributes in the <Views> are not contained any more?
 * Bug: the .dll and .def files are not installed correctly into MingW/local/bin, which is a bug of scons
 * Bug: if the schema is changed and an old pool is loaded, Annotator crashes with an Schema::Exception which should be catched and managed
 * Bug: when a second song is loaded the InstantViews don't update
