@@ -46,7 +46,7 @@
 *** Fix wrong number of visualised frames
 *** The segmentation algorithm places the segments without considering the initial window size.
 *** The cpu usage is 100% after loading even if no playback is done -> Lots of timer events are queued during analysis
-*** The cpu usage is 100% after loading even if no playback is done -> Some widget is doing things even if the current frame is not changed
+*** The cpu usage is 100% after loading during playback -> Some widget is doing things even if the current frame is not changed
 * Preparation
 ** [[Image:Done.png]] Having a working sandbox
 ** [[Image:Done.png]] Having the editor configured to use tabs instead of spaces
