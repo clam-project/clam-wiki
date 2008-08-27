@@ -13,6 +13,7 @@
 * Define a convenient layout ''(low)''
 * Check Id3 tags with encoded strings (medium)
 * Consider whether to show more information than title and artist ''(low)''
+* New spectrogram to access a 
 * Make the TonalAnalysis configuration editable as settings for the application reusing NetworkEditor Configurators and storing them as QSettings or as an xml file at ~/.turnaroundrc or similar
 * Disscuss with David how these features could be generalized for other similar applications (offline computing, dumping into an in-memory storage, syncing real-time and in-memory storage...) with the goal of providing more support from the framework.
 * Help/About -> shows an about box like the one in Network Editor
