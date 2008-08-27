@@ -8,9 +8,33 @@
 * Additional features/views
 ** ...
 
-=== Tasks ===
+=== Turnaround ===
 
 * Turnaround
+** Define a convenient layout (low)
+** Check Id3 tags with encoded strings (medium)
+** Consider whether to show more information than title and artist (low)
+** Make the TonalAnalysis configuration editable as settings for the application reusing NetworkEditor Configurators and storing them as QSettings or as an xml file at ~/.turnaroundrc or similar
+** Disscuss with David how these features could be generalized for other similar applications (offline computing, dumping into an in-memory storage, syncing real-time and in-memory storage...) with the goal of providing more support from the framework.
+** Help menu with an about box
+** Tutorial
+** Keyboard Shortcuts
+** '''Make showing/hiding views possible'''
+** Looping
+** Open recent files 
+** Saving and loading analysis data
+** Use the new file loader when available
+** Improve analysis
+** Bugfixes
+*** Issue an error when the configuration fails
+*** Fix wrong number of visualised frames
+*** The segmentation algorithm places the segments without considering the initial window size.
+*** The cpu usage is 100% after loading even if no playback is done -> Lots of timer events are queued during analysis
+*** The cpu usage is 100% after loading during playback -> Some widget is doing things even if the current frame is not changed
+*** Write a multichannel version (low)
+
+=== Done ===
+
 ** [[Image:Done.png]] Add a second tonnetz view sharing the same dataSource object
 ** [[Image:Done.png]] Add a second dataSource for the ChordCorrelation port
 ** [[Image:Done.png]] Bind it to a ChordRanking view
@@ -23,40 +47,18 @@
 ** [[Image:Done.png]] Build a segmentation view
 ** [[Image:Done.png]] Consider using the progress control to build a progress bar for the offline computing.
 ** [[Image:Done.png]] A Spectrogram widget to display the PCP instead the vectorView
-** Define a convenient layout
 ** [[Image:Done.png]] Make available the metadata information (artist, title...) somewhere (a new panel, status bar, title bar...)
-*** Check if Utf8 is correctly supported
-*** Optionally add more information
-** Make the TonalAnalysis configuration editable as settings for the application reusing NetworkEditor Configurators and storing them as QSettings or as an xml file at ~/.turnaroundrc or similar
-** Disscuss with David how these features could be generalized for other similar applications (offline computing, dumping into an in-memory storage, syncing real-time and in-memory storage...) with the goal of providing more support from the framework.
-** Help menu with an about box
-** Tutorial
-** Keyboard Shortcuts
-** '''Make showing/hiding views possible'''
-** Looping
-** Open recent files 
-** Saving and loading analysis data
 ** [[Image:Done.png]] Make pause button functional
 *** [[Image:Done.png]] Find better way to pause network
-** Improve analysis
-** Bugfixes
-*** [[Image:Done.png]] Make the interface responsive during file loading
-*** [[Image:Done.png]] Properly unset data sources before changing them
-*** Issue an error when the configuration fails
-*** Fix wrong number of visualised frames
-*** The segmentation algorithm places the segments without considering the initial window size.
-*** The cpu usage is 100% after loading even if no playback is done -> Lots of timer events are queued during analysis
-*** The cpu usage is 100% after loading during playback -> Some widget is doing things even if the current frame is not changed
 * Preparation
+** [[Image:Done.png]] Fix: Make the interface responsive during file loading
+** [[Image:Done.png]] Fix: Properly unset data sources before changing them
 ** [[Image:Done.png]] Having a working sandbox
 ** [[Image:Done.png]] Having the editor configured to use tabs instead of spaces
-** Understanding how unit tests work
+** [[Image:Done.png]] Understanding how unit tests work
 *** [[Image:Done.png]] compiling them
-*** running them
-*** adding a dummy test class
 ** [[Image:Done.png]] Take a look at the unit tests for the FileReader classes
-* Implement seeking
-** Simple hack
+* [[Image:Done.png]] Implement seeking (Simple hack)
 *** [[Image:Done.png]] Take a look at the FileReader classes
 *** [[Image:Done.png]] Write a processing which loads whole files using internal MonoAudioFileReader
 *** [[Image:Done.png]] Add internal MonoAudioFileReader error handling
@@ -64,12 +66,7 @@
 *** [[Image:Done.png]] Add output of current position to an OutControl
 *** [[Image:Done.png]] Add a position InControl to it
 *** [[Image:Done.png]] Add support for the loop option
-*** Write a multichannel version
-** Final version (?)
-*** TDD a seek control on the mono audio file reader
-*** Extend it to the Multi channel file reader
 *** [[Image:Done.png]] Build a Control sender with feedback (to build a progress slider)
-* Widget library
 ** [[Image:Done.png]] splitting monitors and widgets in NetworkEditor/src/monitors
 
 == Realtime segmentation (GSoC 2007 Roman) ==
