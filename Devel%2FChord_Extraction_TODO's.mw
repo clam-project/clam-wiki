@@ -10,16 +10,27 @@
 
 === Turnaround ===
 
+* Bugfixing
+** Issue an error when the configuration fails
+** Do not play if the processings are not configured
+** Fix wrong number of visualised frames
+** The segmentation algorithm places the segments without considering the initial window size.
+** The cpu usage is 100% after loading even if no playback is done -> Lots of timer events are queued during analysis
+** The cpu usage is 100% after loading during playback -> Some widget is doing things even if the current frame is not changed
+** Segmentations are moved forward half a window (to fix on the analysis or to kludge for the app)
+* Release task:
+** Help/About -> shows an about box like the one in Network Editor
+** Help/Tutorial -> opens the wiki tutorial
+** Write a tutorial on the wiki
+** Record a video illustrating the usage
+** Debian packages
+** Windows packages
 * Define a convenient layout ''(low)''
 * Check Id3 tags with encoded strings (medium)
 * Consider whether to show more information than title and artist ''(low)''
-* New spectrogram to access a 
+* New spectrogram to access a block of the pcp data storage
 * Make the TonalAnalysis configuration editable as settings for the application reusing NetworkEditor Configurators and storing them as QSettings or as an xml file at ~/.turnaroundrc or similar
 * Disscuss with David how these features could be generalized for other similar applications (offline computing, dumping into an in-memory storage, syncing real-time and in-memory storage...) with the goal of providing more support from the framework.
-* Help/About -> shows an about box like the one in Network Editor
-* Help/Tutorial -> opens the wiki tutorial
-* Write a tutorial on the wiki
-* Record a video illustrating the usage
 * More keyboard Shortcuts (which ones)
 * '''Enabling and disabling views'''
 * Looping the song
@@ -27,12 +38,6 @@
 * Saving and loading analysis data ''(low)''
 * Use the new file loader when available
 * Improve analysis
-* Bugfixing
-** Issue an error when the configuration fails
-** Fix wrong number of visualised frames
-** The segmentation algorithm places the segments without considering the initial window size.
-** The cpu usage is 100% after loading even if no playback is done -> Lots of timer events are queued during analysis
-** The cpu usage is 100% after loading during playback -> Some widget is doing things even if the current frame is not changed
 * Write a multichannel audioloader ''(very low)''
 * On analysis, the configuration should be sensible to the file samplerate or we should resample the input
 * On playback, the file should be adapted to the backend samplerate
