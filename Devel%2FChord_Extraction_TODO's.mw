@@ -18,6 +18,8 @@
 ** The cpu usage is 100% after loading even if no playback is done -> Lots of timer events are queued during analysis
 ** The cpu usage is 100% after loading during playback -> Some widget is doing things even if the current frame is not changed
 ** Segmentations are moved forward half a window (to fix on the analysis or to kludge for the app)
+** On analysis, the configuration should be sensible to the file samplerate or we should resample the input
+** On playback, the file should be adapted to the backend samplerate
 * Release task:
 ** Help/About -> shows an about box like the one in Network Editor
 ** Help/Tutorial -> opens the wiki tutorial
@@ -39,8 +41,6 @@
 * Use the new file loader when available
 * Improve analysis
 * Write a multichannel audioloader ''(very low)''
-* On analysis, the configuration should be sensible to the file samplerate or we should resample the input
-* On playback, the file should be adapted to the backend samplerate
 * Realtime mode ''(mid)''
 
 === Done ===
