@@ -20,6 +20,7 @@
 ** Segmentations are moved forward half a window (to fix on the analysis or to kludge for the app)
 ** On analysis, the configuration should be sensible to the file samplerate or we should resample the input
 ** On playback, the file should be adapted to the backend samplerate
+** Check Id3 tags with encoded strings
 * Release task:
 ** Help/About -> shows an about box like the one in Network Editor
 ** Help/Tutorial -> opens the wiki tutorial
@@ -27,21 +28,26 @@
 ** Record a video illustrating the usage
 ** Debian packages
 ** Windows packages
-* Define a convenient layout ''(low)''
-* Check Id3 tags with encoded strings (medium)
-* Consider whether to show more information than title and artist ''(low)''
-* New spectrogram to access a block of the pcp data storage
-* Make the TonalAnalysis configuration editable as settings for the application reusing NetworkEditor Configurators and storing them as QSettings or as an xml file at ~/.turnaroundrc or similar
-* Disscuss with David how these features could be generalized for other similar applications (offline computing, dumping into an in-memory storage, syncing real-time and in-memory storage...) with the goal of providing more support from the framework.
-* More keyboard Shortcuts (which ones)
-* '''Enabling and disabling views'''
-* Looping the song
-* Open recent files (see how NetworkEditor does that)
-* Saving and loading analysis data ''(low)''
-* Use the new file loader when available
-* Improve analysis
-* Write a multichannel audioloader ''(very low)''
-* Realtime mode ''(mid)''
+* Generalization
+** New spectrogram to access a block of the pcp data storage
+** Make the TonalAnalysis configuration editable as settings for the application reusing NetworkEditor Configurators and storing them as QSettings or as an xml file at ~/.turnaroundrc or similar
+** Disscuss with David how these features could be generalized for other similar applications (offline computing, dumping into an in-memory storage, syncing real-time and in-memory storage...) with the goal of providing more support from the framework.
+** Extract the widgets into a shared library
+** Converge Pool based data sources and array based data sources
+** Generalize storages for its use in regular networks
+* Convenience
+** '''Enabling and disabling views'''
+** Define a convenient layout ''(low)''
+** Consider whether to show more information than title and artist ''(low)''
+** More keyboard Shortcuts (which ones)
+** Looping the song
+** Open recent files (see how NetworkEditor does that)
+** Saving and loading analysis data ''(low)''
+* Future
+** Use the new file loader when available
+** Improve analysis
+** Realtime mode ''(mid)''
+** Use a multichannel audioloader ''(very low)''
 
 === Done ===
 
