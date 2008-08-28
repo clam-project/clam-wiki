@@ -35,7 +35,7 @@
 ** Extract the widgets into a shared library
 ** Converge Pool based data sources and array based data sources
 ** Generalize storages for its use in regular networks
-* Convenience
+* Convenience and usability
 ** '''Enabling and disabling views'''
 ** Define a convenient layout ''(low)''
 ** Consider whether to show more information than title and artist ''(low)''
