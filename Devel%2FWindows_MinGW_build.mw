@@ -28,7 +28,13 @@ Many thanks to both Giulio Paci and Wang Jun for experimenting with windows deve
 * Download or svn check out CLAM sources.
 * The configuration command then is:
  scons configure prefix='c:\\mingw\\local' prefix_for_packaging='c:\\mingw\\local'  sandbox_path='c:\\mingw' verbose=True xmlbackend='xmlpp' audio_backend=portaudio
-* After that you can proceed with the 'scons', 'scons install' dance first with the libraries, and then with the applications. Remember that before compiling the Annotator you have to scons on Annotator/qtvm
+ scons
+ scons install
+* After that you can proceed with the 'scons', 'scons install' dance first with the libraries, and then with the applications. For example, to have the Network Editor
+ cd NetworkEditor
+ scons prefix='c:\\mingw\\local' clam_prefix='c:\\mingw\\local' 
+ scons install
+* Remember that before compiling the Annotator you have to scons on Annotator/qtvm
 
 Other things that are to be installed
 * The Aggretator script is using a python package that is not included by default for doing xpath. To use xpath, in my case of python 2.5, install the [http://platea.pntic.mec.es/~jmorilla/python/PyXML-0.8.4.win32-py2.5.exe PyXML-0.8.4.win32-py2.5]
@@ -36,6 +42,8 @@ Other things that are to be installed
 ** The runners of Annotator requires AggregationExtractor.exe rather than AggregationExtractor.py in Windows. To generate the AggregationExtractor.exe file:
  cd path/of/the/setup.py/file
  python setup.py py2exe
+
+TODO: Installing NSIS and 'scons package'
 
 = Giulio's procedure =
 
