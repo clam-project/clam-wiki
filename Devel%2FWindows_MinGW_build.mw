@@ -5,9 +5,9 @@ You can get more information on that at [[Devel/Windows MinGW cross compile]].
 
 If you don't have access to a Linux machine, this page still contains some clues on how to compile using native Windows MinGW instead of using Linux's MinGW.
 
-At the [[#Jun_install_notes end of the page]] there is a simplified procedure that Wang Jun followed by using the precompiled [http://clam.iua.upf.edu/download/win/clam-3rdparty-mingw-20080128.tar.gz 3rd party libraries tarball] that you can find on the download web page. '''This is the recommended procedure'''.
+At the [#Jun_install_notes end of the page] there is a simplified procedure that Wang Jun followed by using the precompiled [http://clam.iua.upf.edu/download/win/clam-3rdparty-mingw-20080128.tar.gz 3rd party libraries tarball] that you can find on the download web page. '''This is the recommended procedure'''.
 
-[[In later sections]], [[User:Giuliopaci|Giulio Paci]] also explains how to get the dependencies compiled by hand in windows, althought this is not the recommended procedure, it provides a lot of insight on the problems you can find that are not documented anywhere else.
+[#Giulio.27s_procedure In later sections], [[User:Giuliopaci|Giulio Paci]] also explains how to get the dependencies compiled by hand in windows, althought this is not the recommended procedure, it provides a lot of insight on the problems you can find that are not documented anywhere else.
 
 Many thanks to both Giulio Paci and Wang Jun for experimenting with windows development setup.
 
