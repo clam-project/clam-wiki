@@ -14,12 +14,12 @@ Many thanks to both Giulio Paci and Wang Jun for experimenting with windows deve
 
 = Jun install notes =
 
-* Installed MinGW and MSYS
+* Install MinGW and MSYS into c: (if other unit is chosen, substitute it below)
 ** (I guess she refered to Giulio's procedure to get that, including Python and SCons installation not referenced anywhere else but required) -- david
 ** added the MinGW and MSYS related path to the Windows PATH variable.
 * Install QT4.4.x
-* Moved the 'local' folder in the [http://clam.iua.upf.edu/download/win/clam-3rdparty-mingw-20080128.tar.gz 3rd party libraries tarball] into c:\MinGW\local.
-** After installed the libraries tarball, there has been several .dll files of QT in the ./local/bin path of Mingw, replace them with the ones of QT that you have installed.
+* Extract the [http://clam.iua.upf.edu/download/win/clam-3rdparty-mingw-20080128.tar.gz 3rd party libraries tarball] and move the 'local' folder as c:\MinGW\local.
+* After installing the libraries tarball, there has been several .dll files of QT in the ./local/bin path of Mingw, replace them with the ones of QT that you have installed.
 * Added to /MSYS/etc/profile:
   export PKG_CONFIG_PATH="C:\MinGW\local\lib\pkgconfig"
 * After adding this line, the setting won't be valid until you close the MSYS and reopen it.
