@@ -2,9 +2,46 @@
 
 Currently, official Windows binaries are obtained crosscompiling with MinGW for Linux.
 You can get more information on that at [[Devel/Windows MinGW cross compile]].
+
 If you don't have access to a Linux machine, this page still contains some clues on how to compile using native Windows MinGW instead of using Linux's MinGW.
 
-These steps will help to get '''CLAM dependencies''' on Windows, and at least '''clam_core''', '''clam_audioio''' and '''clam_processing'''. But no other steps is described at this time.
+At the [[#Jun_install_notes end of the page]] there is a simplified procedure that Wang Jun followed by using the precompiled [http://clam.iua.upf.edu/download/win/clam-3rdparty-mingw-20080128.tar.gz 3rd party libraries tarball] that you can find on the download web page. '''This is the recommended procedure'''.
+
+[[In later sections]], [[User:Giuliopaci|Giulio Paci]] also explains how to get the dependencies compiled by hand in windows, althought this is not the recommended procedure, it provides a lot of insight on the problems you can find that are not documented anywhere else.
+
+Many thanks to both Giulio Paci and Wang Jun for experimenting with windows development setup.
+
+
+= Jun install notes =
+
+* Installed MinGW and MSYS
+** added the MinGW and MSYS related path to the Windows PATH variable.
+** (Not sure whether she followed Giulio's procedure to get that) -- david
+* Install QT4.4.x
+* (Did Jun forgot to mention python and scons installation here?) -- david
+* Moved the 'local' folder in the [http://clam.iua.upf.edu/download/win/clam-3rdparty-mingw-20080128.tar.gz 3rd party libraries tarball] into c:\MinGW\local.
+** After installed the libraries tarball, there has been several .dll files of QT in the ./local/bin path of Mingw, replace them with the ones of QT that you have installed.
+* Added to /MSYS/etc/profile:
+  export PKG_CONFIG_PATH="C:\MinGW\local\lib\pkgconfig"
+**After adding this line, notice that the setting won't be valid immediately unless you close the MSYS and reopen it. Don't ask me why because I don't know either.
+* Mingw for windows distrubutes with gcc version 3.x. Check that by issuing the command 'gcc --version'. If so you need a 4.x version. Crosscompiled libraries used gcc 4.X as gcc 3.X didn't support std::wstrings required by id3lib. You can download the 4.X version from [http://sourceforge.net/project/showfiles.php?group_id=2435 here]. Overwrite MinGW installation files with the ones on the tarball. Till now, the same version as the one precompiled the 3rd party libraries tarball gcc-4.2.1-sjlj-2, available from [http://sourceforge.net/project/showfiles.php?group_id=2435&package_id=241304 here], has been tested and approved. While overwriting MinGW installation files with the core and the g++packages of gcc-4.2.1-sjlj-2, note that the names should be changed to the original names in MinGW, eg. change g++-sjlj.exe into g++.exe, etc. 
+** '''Note:''' the latest version you can download is 4.3 which doesn't have 'sjlj' suffix, using 4.2-sjlj, the tested one, is a sure shot but adventuring to use 4.3 could work. If you do please report to the mailing list any problem or success.
+* The configuration command then is:
+ scons configure prefix='c:\\mingw\\local' prefix_for_packaging='c:\\mingw\\local'  sandbox_path='c:\\mingw' verbose=True xmlbackend='xmlpp' audio_backend=portaudio
+* After that you can proceed with the 'scons', 'scons install' dance first with the libraries, and then with the applications. Remember that before compiling the Annotator you have to scons on Annotator/qtvm
+
+Other things that are to be installed
+* The Aggretator script is using a python package that is not included by default for doing xpath. To use xpath, in my case of python 2.5, install the [http://platea.pntic.mec.es/~jmorilla/python/PyXML-0.8.4.win32-py2.5.exe PyXML-0.8.4.win32-py2.5]
+* Install [http://sourceforge.net/project/showfiles.php?group_id=15583/&abmode=1 py2exe]
+** The runners of Annotator requires AggregationExtractor.exe rather than AggregationExtractor.py in Windows. To generate the AggregationExtractor.exe file:
+ cd path/of/the/setup.py/file
+ python setup.py py2exe
+
+
+= Giulio's procedure =
+
+Note that this procedure is not the supported one. We keep it here because it contains insight on how to natively compile third party libraries in windows. The [http://clam.iua.upf.edu/download/win/clam-3rdparty-mingw-20080128.tar.gz 3rd party libraries tarball] have been crosscompiled from linux. If you follow that procedure, you should install all the 3rd party libraries in MinGW/local instead of the specified MinGW/. -- dgarcia
+
 
 == Setup a MinGW/MSYS environment ==
 
@@ -320,27 +357,3 @@ Be careful that ''scons install'' will not install in the right location if You 
 
 
 --[[User:Giuliopaci|Giulio Paci]] 12:14, 18 December 2007 (CET)
-
-= Jun install notes =
-
-* Installed MinGW and MSYS
-**added the MinGW and MSYS related path to the Windows PATH variable.
-* Install QT4.4.x
-* ( Did Jun forgot to mention python and scons installation here?) -- david
-* Moved the 'local' folder in the [http://clam.iua.upf.edu/download/win/svnsnapshots/clam-3rdparty-mingw-20080128.tar.gz 3rd party libraries tarball] into c:\MinGW\local.
-** After installed the libraries tarball, there has been several .dll files of QT in the ./local/bin path of Mingw, replace them with the ones of QT that you have installed.
-* Added to /MSYS/etc/profile:
-  export PKG_CONFIG_PATH="C:\MinGW\local\lib\pkgconfig"
-**After adding this line, notice that the setting won't be valid immediately unless you close the MSYS and reopen it. Don't ask me why because I don't know either.
-* Mingw for windows distrubutes with gcc version 3.x. Check that by issuing the command 'gcc --version'. If so you need a 4.x version. Crosscompiled libraries used gcc 4.X as gcc 3.X didn't support std::wstrings required by id3lib. You can download the 4.X version from [http://sourceforge.net/project/showfiles.php?group_id=2435 here]. Overwrite MinGW installation files with the ones on the tarball. Till now, the same version as the one precompiled the 3rd party libraries tarball gcc-4.2.1-sjlj-2, available from [http://sourceforge.net/project/showfiles.php?group_id=2435&package_id=241304 here], has been tested and approved. While overwriting MinGW installation files with the core and the g++packages of gcc-4.2.1-sjlj-2, note that the names should be changed to the original names in MinGW, eg. change g++-sjlj.exe into g++.exe, etc. 
-** '''Note:''' the latest version you can download is 4.3 which doesn't have 'sjlj' suffix, using 4.2-sjlj, the tested one, is a sure shot but adventuring to use 4.3 could work. If you do please report to the mailing list any problem or success.
-* The configuration command then is:
- scons configure prefix='c:\\mingw\\local' prefix_for_packaging='c:\\mingw\\local'  sandbox_path='c:\\mingw' verbose=True xmlbackend='xmlpp' audio_backend=portaudio
-* After that you can proceed with the 'scons', 'scons install' dance first with the libraries, and then with the applications. Remember that before compiling the Annotator you have to scons on Annotator/qtvm
-
-Other things that are to be installed
-* The Aggretator script is using a python package that is not included by default for doing xpath. To use xpath, in my case of python 2.5, install the [http://platea.pntic.mec.es/~jmorilla/python/PyXML-0.8.4.win32-py2.5.exe PyXML-0.8.4.win32-py2.5]
-* Install [http://sourceforge.net/project/showfiles.php?group_id=15583/&abmode=1 py2exe]
-** The runners of Annotator requires AggregationExtractor.exe rather than AggregationExtractor.py in Windows. To generate the AggregationExtractor.exe file:
- cd path/of/the/setup.py/file
- python setup.py py2exe
