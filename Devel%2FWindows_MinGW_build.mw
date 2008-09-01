@@ -16,7 +16,7 @@ Many thanks to both Giulio Paci and Wang Jun for experimenting with windows deve
 
 * Installed MinGW and MSYS
 ** added the MinGW and MSYS related path to the Windows PATH variable.
-** (Not sure whether she followed Giulio's procedure to get that) -- david
+** (Not sure whether she literally followed Giulio's procedure to get that) -- david
 * Install QT4.4.x
 * (Did Jun forgot to mention python and scons installation here?) -- david
 * Moved the 'local' folder in the [http://clam.iua.upf.edu/download/win/clam-3rdparty-mingw-20080128.tar.gz 3rd party libraries tarball] into c:\MinGW\local.
