@@ -15,7 +15,7 @@
 ** Do not play if the processings are not configured
 ** Fix wrong number of visualised frames
 ** The segmentation algorithm places the segments without considering the initial window size.
-** The cpu usage is 100% after loading even if no playback is done -> Lots of timer events are queued during analysis
+** The cpu usage is 100% after loading even if no playback is done -> <s>Lots of timer events are queued during analysis</s>
 ** The cpu usage is 100% after loading during playback -> Some widget is doing things even if the current frame is not changed
 ** Segmentations are moved forward half a window (to fix on the analysis or to kludge for the app)
 ** On analysis, the configuration should be sensible to the file samplerate or we should resample the input
@@ -68,6 +68,7 @@
 ** [[Image:Done.png]] Enabling and disabling views
 ** [[Image:Done.png]] "Open recent files" menu
 ** [[Image:Done.png]] Saving view visibility settings
+** [[Image:Done.png]] Starting and stopping event timer when necessary
 * Preparation
 ** [[Image:Done.png]] Fix: Make the interface responsive during file loading
 ** [[Image:Done.png]] Fix: Properly unset data sources before changing them
