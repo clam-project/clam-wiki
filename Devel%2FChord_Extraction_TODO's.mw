@@ -22,7 +22,7 @@
 ** On playback, the file should be adapted to the backend samplerate
 ** Check Id3 tags with encoded strings
 * Release task:
-** Help/About -> shows an about box like the one in Network Editor
+** '''Help/About -> shows an about box like the one in Network Editor'''
 ** Help/Tutorial -> opens the wiki tutorial
 ** Write a tutorial on the wiki
 ** Record a video illustrating the usage
@@ -40,7 +40,6 @@
 ** Consider whether to show more information than title and artist ''(low)''
 ** More keyboard Shortcuts (which ones)
 ** Looping the song
-** '''Open recent files (see how NetworkEditor does that)'''
 ** Saving and loading analysis data ''(low)''
 * Future
 ** Use the new file loader when available
@@ -66,6 +65,8 @@
 ** [[Image:Done.png]] Make pause button functional
 *** [[Image:Done.png]] Find better way to pause network
 ** [[Image:Done.png]] Enabling and disabling views
+** [[Image:Done.png]] "Open recent files" menu
+** [[Image:Done.png]] Saving view visibility settings
 * Preparation
 ** [[Image:Done.png]] Fix: Make the interface responsive during file loading
 ** [[Image:Done.png]] Fix: Properly unset data sources before changing them
