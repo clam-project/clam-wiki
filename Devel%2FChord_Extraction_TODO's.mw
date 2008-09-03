@@ -22,13 +22,12 @@
 ** On playback, the file should be adapted to the backend samplerate
 ** Check Id3 tags with encoded strings
 * Release task:
-** '''Help/About -> shows an about box like the one in Network Editor'''
-** Help/Tutorial -> opens the wiki tutorial
 ** Write a tutorial on the wiki
 ** Record a video illustrating the usage
 ** Add missing licence notices
 ** Debian packages
 ** Windows packages
+** Gentoo ebuild
 * Generalization
 ** New spectrogram to access a block of the pcp data storage
 ** Make the TonalAnalysis configuration editable as settings for the application reusing NetworkEditor Configurators and storing them as QSettings or as an xml file at ~/.turnaroundrc or similar
@@ -36,10 +35,11 @@
 ** Extract the widgets into a shared library
 ** Converge Pool based data sources and array based data sources
 ** Generalize storages for its use in regular networks
+** Add more backends (e.g. JACK)
 * Convenience and usability
 ** Define a convenient layout ''(low)''
 ** Consider whether to show more information than title and artist ''(low)''
-** More keyboard Shortcuts (which ones)
+** '''More keyboard Shortcuts (which ones)'''
 ** Looping the song
 ** Saving and loading analysis data ''(low)''
 * Future
@@ -69,6 +69,8 @@
 ** [[Image:Done.png]] "Open recent files" menu
 ** [[Image:Done.png]] Saving view visibility settings
 ** [[Image:Done.png]] Starting and stopping event timer when necessary
+** [[Image:Done.png]] Help/About -> shows an about box like the one in Network Editor
+** [[Image:Done.png]] Help/Tutorial -> opens the wiki tutorial
 * Preparation
 ** [[Image:Done.png]] Fix: Make the interface responsive during file loading
 ** [[Image:Done.png]] Fix: Properly unset data sources before changing them
