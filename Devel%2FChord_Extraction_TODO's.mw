@@ -16,7 +16,9 @@
 ** Fix wrong number of visualised frames
 ** The segmentation algorithm places the segments without considering the initial window size.
 ** The cpu usage is 100% after loading even if no playback is done -> <s>Lots of timer events are queued during analysis</s>
-** The cpu usage is 100% after loading during playback -> Some widget is doing things even if the current frame is not changed
+** The cpu usage is 100% after loading during playback -> Widgets have their own timer to update themselves that should be stoped during analysis or even when stopped.
+*** Investigate the semantics of isEnabled. Just if the semantics are suited we could reuse it for that.
+*** After any modification we should assure that the views still work well in NetworkEditor, Prototyper and Annotator.
 ** Segmentations are moved forward half a window (to fix on the analysis or to kludge for the app)
 ** On analysis, the configuration should be sensible to the file samplerate or we should resample the input
 ** On playback, the file should be adapted to the backend samplerate
