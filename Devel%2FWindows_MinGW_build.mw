@@ -16,14 +16,17 @@ Many thanks to both Giulio Paci and Wang Jun for experimenting with windows deve
 
 * Install MinGW and MSYS into c: (if other unit is chosen, substitute it below)
 ** (I guess she refered to Giulio's procedure to get that, including Python and SCons installation not referenced anywhere else but required) -- david
+** (Verified stable versions are CLAM-1.2.0.tar.gz and CLAM-1.3.0.tar.gz.)
 * add the MinGW and MSYS related path to the Windows PATH variable.
 * Install QT4.4.x
+* mkdir qt4 in MSYS and Add to /MSYS/etc/fstab:
+  D:/Qt/4.4.1 /qt4
 * Extract the [http://clam.iua.upf.edu/download/win/clam-3rdparty-mingw-20080128.tar.gz 3rd party libraries tarball] and move the 'local' folder as c:\MinGW\local.
 * After installing the libraries tarball, there has been several .dll files of QT in the ./local/bin path of Mingw, replace them with the ones of QT that you have installed.
 * Add to /MSYS/etc/profile:
   export PKG_CONFIG_PATH="C:\MinGW\local\lib\pkgconfig"
 * After adding this line, the setting won't be valid until you close the MSYS and reopen it.
-* Mingw for windows distrubutes with gcc version 3.x. Check that by issuing the command 'gcc --version'. If so you need a 4.x version. Crosscompiled libraries used gcc 4.X as gcc 3.X didn't support std::wstrings required by id3lib. You can download the 4.X version from [http://sourceforge.net/project/showfiles.php?group_id=2435 here]. Overwrite MinGW installation files with the ones on the tarball. Till now, the same version as the one precompiled the 3rd party libraries tarball gcc-4.2.1-sjlj-2, available from [http://sourceforge.net/project/showfiles.php?group_id=2435&package_id=241304 here], has been tested and approved. While overwriting MinGW installation files with the core and the g++packages of gcc-4.2.1-sjlj-2, note that the names should be changed to the original names in MinGW, eg. change g++-sjlj.exe into g++.exe, etc. 
+* Mingw for windows distrubutes with gcc version 3.x. Check that by issuing the command 'gcc --version'. If so you need a 4.x version. Crosscompiled libraries used gcc 4.X as gcc 3.X didn't support std::wstrings required by id3lib. You can download the 4.X version from [http://sourceforge.net/project/showfiles.php?group_id=2435 here]. Overwrite MinGW installation files with the ones on the tarball. Till now, the same version as the one precompiled the 3rd party libraries tarball gcc-4.2.1-sjlj-2, available from [http://sourceforge.net/project/showfiles.php?group_id=2435&package_id=241304 here], has been tested and approved. While overwriting MinGW installation files with the core and the g++packages of gcc-4.2.1-sjlj-2, note that the names should be changed to the original names in MinGW, eg. change g++-sjlj.exe into g++.exe(excluding directory), etc. 
 ** '''Note:''' the latest version you can download is 4.3 which doesn't have 'sjlj' suffix, using 4.2-sjlj, the tested one, is a sure shot but adventuring to use 4.3 could work. If you do please report to the mailing list any problem or success.
 * Download or svn check out CLAM sources.
 * The configuration command then is:
@@ -32,7 +35,8 @@ Many thanks to both Giulio Paci and Wang Jun for experimenting with windows deve
  scons install
 * After that you can proceed with the 'scons', 'scons install' dance first with the libraries, and then with the applications. For example, to have the Network Editor
  cd NetworkEditor
- scons prefix='c:\\mingw\\local' clam_prefix='c:\\mingw\\local' 
+ scons prefix='c:\\mingw\\local' clam_prefix='c:\\mingw\\local'
+ (or: scons prefix='c:\\mingw\\NetworkEditor' clam_prefix='c:\\mingw' )
  scons install
 * Remember that before compiling the Annotator you have to scons on Annotator/qtvm
 
@@ -43,7 +47,16 @@ Other things that are to be installed
  cd path/of/the/setup.py/file
  python setup.py py2exe
 
-TODO: Installing NSIS and 'scons package'
+TODO: Installing NSIS and 'scons package'(scons 1.0.1 is recommended)
+**notes:Meet problems with 'gcc-4.3.0' as below: 
+---- errors on the screen:
+Checking for C++ header file id3.h... yes
+Checking for ID3_Tag myTag in C++ library id3... no
+Could not find id3lib binaries! Please check your id3lib installation
+Check the config.log file for details
+
+** Environment variable for references::
+d:\MinGW\bin;d:\MinGW\local\bin;d:\MinGW\local\lib;d:\MinGW\local\include;d:\MinGW\include;d:\MinGW\lib;d:\msys\1.0\bin;D:\Python25\Lib\site-packages\scons-1.0.1\SCons;d:\Python25\Scripts;d:\Python25;d:\mingw\clam;D:\Qt\4.4.1\bin
 
 = Giulio's procedure =
 
