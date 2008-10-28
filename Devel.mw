@@ -44,8 +44,9 @@ To get involved with CLAM development:
 
 == Tasks ==
 
-* [[Devel/Release task list]]
-* [[Devel/Current release TODOs]] short-term tasks.
+* [[Devel/Release task list]]: Every release check list.
+* [[Devel/Current release TODOs]] tasks due for the next release.
+
 * [[Devel/Plugins TODOs]] short and mid-term tasks.
 * [[Devel/Ladspa Plugins TODOs]] short-term tasks. Mostly taken by Andreas Calvo.
 * [[Devel/Faust integration TODOs]] short-term tasks. Mostly taken by Andreas Calvo.
@@ -60,15 +61,23 @@ To get involved with CLAM development:
 
 === Hot Spots ===
 
-Things that core developers are eager to address but still not being refined in small tasks. Of course they need discussion.
+Things that core developers are eager to address but still not being refined in small tasks. Of course they might need further discussion.
 
-* Protocol allowing processings to let the network decide its (audio) port size. 
-* Parameter propagation through the data-flow
+* Split the processing library and add some plugins as libraries
 * Recursive networks
-* Static network scheduling (Maybe based on an recursive analysis starting from sinks)
-* Ease Processing writing: not make a config attribute mandatory.
+* Run-time error handling and NetworkPlayer status feedback
+* Static network scheduling (Based on Pau's Thesis)
+* Hot wiring (allowing changing the network without stoping it)
+* Parametrized networks
+* Offline networks (visual prototyping on storing and retrieving data from Pools)
+* Extend the usage of new single representation spectrums to Spectral and SMS processings.
+* Ease widget plugin creation
+* Parameter propagation through the data-flow
 * Unify Do() return semantics. One solution is do it void Do()
-* Spectrum refactoring: one class per representation (complex, mag-phase, ...)
+
+=== Hot Ideas ===
+
+* Network based music tracker (Controls being sequenced in time in a order list plus pattern way)
 
 == Prepare and apply a patch ==
 
