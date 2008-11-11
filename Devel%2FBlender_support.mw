@@ -25,11 +25,12 @@ The 'BlenderOSCSender.py' script allows to send OSC messages the sources and lis
 The script should be linked to any source or listener object to ObjectUpdate event, and to FrameChanged event from scene, to send a sync message every frame. The sending OSC path is '/[http://www.jamoma.org/wiki/SpatDIFSpatialSoundDescriptionInterchangeFormat SpatDIF]/object/number/xyz/type', where 'object' is the type of audio object ('source' or 'listener'), number is the relative number within the correspondent type group, and 'type' is rotation (azimuth/elevation/roll angles) or location (x/y/z).The default used OSC port is 7000, but you can change that adding '_pxxxx' at the end of the blender (sources/listeners) objects, where xxxx is the number of the wanted port.
 
 === Configuring the sender ===
-You could import the BlenderOSCSender.py in your list of Text blender buffers and assign on the desired event (FrameChanged on a scene, ObjectUpdate on a listene or a source):
+You could import the BlenderOSCSender.py in your list of Text blender buffers and assign on the desired event (FrameChanged on a scene, ObjectUpdate on a listener or a source):
 
 [[Image:Blender link OSCSender on framechanged event.png]]  [[Image:Blender link OSCSender on ObjectUpdate event.png]]
 
-When you generate the Blender scene using the scene_maker script, the OSCSender will be automatically added to the scene FrameChanged event.
+When you generate the Blender scene using the scene_maker script, the OSCSender will be automatically added to the propers events.
+
 === Exporting the scene to CLAM network receivers ===
 First at all, you will need to compile and install the OSC CLAM plugin, as MultiLibloSources are used to receive the OSC messages.
 To generate a CLAM network OSC monitor for that scene, you could call the 'network_scene_exporter.py' script (which is automatically called by the scene_maker, and applied to a FrameChanged scene event). It will ask for a network filename:
