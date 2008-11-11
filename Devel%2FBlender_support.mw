@@ -33,7 +33,7 @@ When you generate the Blender scene using the scene_maker script, the OSCSender 
 
 === Exporting the scene to CLAM network receivers ===
 First at all, you will need to compile and install the OSC CLAM plugin, as MultiLibloSources are used to receive the OSC messages.
-To generate a CLAM network OSC monitor for that scene, you could call the 'network_scene_exporter.py' script (which is automatically called by the scene_maker, and applied to a FrameChanged scene event). It will ask for a network filename:
+To generate a CLAM network OSC monitor for that scene, you could call the 'network_scene_exporter.py' script (which is automatically called by the scene_maker, and applied to the ObjectUpdate object and FrameChanged scene events). It will ask for a network filename:
 
 [[Image:Blender scene maker filedialog network.png]]
 
