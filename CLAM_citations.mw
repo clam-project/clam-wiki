@@ -1,23 +1,24 @@
 Here we will keep a list of external interesting papers/works citing or acknowledging CLAM in any way. If you happen to be using CLAM or citing it in a paper please let us know. By external we mean those not writen or developed at the UPF in Barcelona. If you want to see the list of CLAM related articles written by the authors please follow this [http://www.iua.upf.es/mtg/publicacions.php?lng=cat&authorid=&authorlink=&search=clam link].
 
 
-*An [http://www.pd.istc.cnr.it/FESTIVAL/home/SMS.htm italian speech synthesizer]
-*Several articles and work at McGill University (Montreal, Canada)
-**[http://www.music.mcgill.ca/~thibault/Thesis/ High-level Control of Singing Voice Timbre Transformations] by François Thibault, PhD Thesis
-**[http://ismir2005.ismir.net/proceedings/2103.pdf JAUDIO: A FEATURE EXTRACTION LIBRARY], by Daniel Mc.Ennis et al., presented at ISMIR 2005]
-**[http://www.gslis.mcgill.ca/guastavino/publis/VerfailleEtAl2005CIM05Vibrato.pdf Perceptual Evaluation of Vibrato Models] by Vincent Verfaille et al.
-*George Tzanetakis and his group at Victoria University has cited CLAM in several occasions:
-**[http://ismir2005.ismir.net/proceedings/2125.pdf Distributed audio feature extraction for music], by Stuart Bray and George Tzanetakis, presented at ISMIR 2005
-*Vegard Sandvold used CLAM for his thesis at the University of Oslo: [http://www.musikkteknologen.no/pub/Sandvold-CandScientThesis2004.pdf Percussion Descriptors, a semantic approach to music information retrieval]
-*Marcel Levy at reports the use of CLAM in his Master Thesis at the University of Nevada.[http://www.cse.unr.edu/~fredh/papers/thesis/027-levy/thesis.pdf  Ringermute: An audio data mining toolkit]
-*Matija Marolt at the University of Ljjubljana, Slovenia, reports the use of CLAM for finding melodic lines: [http://lgm.fri.uni-lj.si/~matic/clanki/dafx04_marolt.pdf ON FINDING MELODIC LINES IN AUDIO RECORDINGS]
-*The people at OFAI (The Austrian Artificial Research Institute) have used CLAM for several projects. 
-**See [http://wwwx.ofai.at/cgi-bin/get-tr?paper=oefai-tr-2004-22.pdf An Open Source Tool for Semi-Automatic Rhythmic Annotation] by Gouyon, Wack and Dixon, for instance.
-**Tim Pohle also cites CLAM in his Thesis [http://kluedo.ub.uni-kl.de/volltexte/2005/1881/pdf/diplomarbeit.pdf Extraction of Audio and their Evaluation in Music Classification Tasks]
-*A very curious one: Alexander Sotirov talks about CLAM in his thesis [http://gcc.vulncheck.org/sotirov05automatic.pdf Automatic Vulnerability Detection Using Static Source Code Analysis]
-*Robert Rowe, from the New York university cites CLAM in his article [http://homepages.nyu.edu/~rr6/spark.pdf Personal Effects: Weaning Interactive Systems from MIDI]
-*Paul Brossier and other people at Queen Mary's University of London have used CLAM in some projects [http://www.elec.qmul.ac.uk/people/juan/Documents/Brossier-ISMIR-2004.pdf Real-time segmentation of note objects in music signals]
-*Alexandre Francois, from University of Southern California, also acknowledges CLAM in his recent articles. See [http://iris.usc.edu/~afrancoi/pdf/afims-tr.pdf An Architectural Framework for Interactive Music Systems]
-*The Eyes web team at the University of Genova is looking at ways to integrate CLAM with Eyesweb: [http://www.taichi.cf.ac.uk/files/AES118paper_Final.pdf Audio Processing in a multimodal framework]
-*Stefan Büttner, University of Mannheim, Diploma Thesis "Visualization of Drum Sound Objects", stebu at gmx.de
+* An [http://www.pd.istc.cnr.it/FESTIVAL/home/SMS.htm italian speech synthesizer]
+* Several articles and work at McGill University (Montreal, Canada)
+** [http://www.music.mcgill.ca/~thibault/Thesis/ High-level Control of Singing Voice Timbre Transformations] by François Thibault, PhD Thesis
+** [http://ismir2005.ismir.net/proceedings/2103.pdf JAUDIO: A FEATURE EXTRACTION LIBRARY], by Daniel Mc.Ennis et al., presented at ISMIR 2005]
+** [http://www.gslis.mcgill.ca/guastavino/publis/VerfailleEtAl2005CIM05Vibrato.pdf Perceptual Evaluation of Vibrato Models] by Vincent Verfaille et al.
+* George Tzanetakis and his group at Victoria University has cited CLAM in several occasions:
+** [http://ismir2005.ismir.net/proceedings/2125.pdf Distributed audio feature extraction for music], by Stuart Bray and George Tzanetakis, presented at ISMIR 2005
+* Vegard Sandvold used CLAM for his thesis at the University of Oslo: [http://www.musikkteknologen.no/pub/Sandvold-CandScientThesis2004.pdf Percussion Descriptors, a semantic approach to music information retrieval]
+* Marcel Levy at reports the use of CLAM in his Master Thesis at the University of Nevada.[http://www.cse.unr.edu/~fredh/papers/thesis/027-levy/thesis.pdf  Ringermute: An audio data mining toolkit]
+* Matija Marolt at the University of Ljjubljana, Slovenia, reports the use of CLAM for finding melodic lines: [http://lgm.fri.uni-lj.si/~matic/clanki/dafx04_marolt.pdf ON FINDING MELODIC LINES IN AUDIO RECORDINGS]
+* The people at OFAI (The Austrian Artificial Research Institute) have used CLAM for several projects. 
+** See [http://wwwx.ofai.at/cgi-bin/get-tr?paper=oefai-tr-2004-22.pdf An Open Source Tool for Semi-Automatic Rhythmic Annotation] by Gouyon, Wack and Dixon, for instance.
+** Tim Pohle also cites CLAM in his Thesis [http://kluedo.ub.uni-kl.de/volltexte/2005/1881/pdf/diplomarbeit.pdf Extraction of Audio and their Evaluation in Music Classification Tasks]
+* A very curious one: Alexander Sotirov talks about CLAM in his thesis [http://gcc.vulncheck.org/sotirov05automatic.pdf Automatic Vulnerability Detection Using Static Source Code Analysis]
+* Robert Rowe, from the New York university cites CLAM in his article [http://homepages.nyu.edu/~rr6/spark.pdf Personal Effects: Weaning Interactive Systems from MIDI]
+* Paul Brossier and other people at Queen Mary's University of London have used CLAM in some projects [http://www.elec.qmul.ac.uk/people/juan/Documents/Brossier-ISMIR-2004.pdf Real-time segmentation of note objects in music signals]
+* Alexandre Francois, from University of Southern California, also acknowledges CLAM in his recent articles. See [http://iris.usc.edu/~afrancoi/pdf/afims-tr.pdf An Architectural Framework for Interactive Music Systems]
+* The Eyes web team at the University of Genova is looking at ways to integrate CLAM with Eyesweb: [http://www.taichi.cf.ac.uk/files/AES118paper_Final.pdf Audio Processing in a multimodal framework]
+* Stefan Büttner, University of Mannheim, Diploma Thesis "Visualization of Drum Sound Objects", stebu at gmx.de
 * Steve Mann, Ryan Janzen, and James Meier from the University of Toronto [http://wearcam.org/icmc2007/cr1009100279067.pdf used CLAM to implement some filters needed for their electric hydraulophone].
+* Owen Craigie Meyers, [http://web.media.mit.edu/~meyers/meyers-ms.pdf A mood-based music exploration system] (Master Thesis) uses CLAM tonal analysis to derive the song mood.
