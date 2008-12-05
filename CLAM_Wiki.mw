@@ -38,7 +38,8 @@
 ** [[Building a processing library]]
 ** [[Building a LADSPA plugin]]
 ** [[Defining a ProcessingComposite]]
-** [[Changing the port color for custom data types]]
+** [[Changing the port color for custom data types]] (or displayed type name)
+** [[Compiling CLAM with qmake]]
 * Using Faust inside CLAM (including on-the-fly Faust programming)
 ** [[Devel/Faust_support]]
 * [[Metamodel of network using a class diagram]]
