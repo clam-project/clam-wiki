@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.3.1 =
 <gallery>
+Image:ProcessingTree-tooltip.png|Processing tree shows extended information on tooltip.
 Image:TypedControls-tooltip.png|Tooltips for typed controls say the type
 Image:TypedControls-forbid.png|Different type controls are not linkable (Francisco patch).
 Image:TurnAround-colorSegments.png|Label dependant colors for segments
