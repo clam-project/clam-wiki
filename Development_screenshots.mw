@@ -6,7 +6,7 @@ Image:TypedControls-colors.png|Controls have a color that depend on the type.
 Image:ProcessingTree-tooltip.png|Processing tree shows extended information on tooltip.
 Image:TypedControls-tooltip.png|Tooltips for typed controls say the type
 Image:TypedControls-forbid.png|Different type controls are not linkable (Francisco patch).
-Image:TurnAround-colorSegments.png|SegmentView assigns a segment color to each label.
+Image:TurnAround-colorSegments.png|SegmentView assigns a color to each chord (segments with the same label).
 Image:Browsing.png|Testing an internal browser (QWebView) with a Faust diagram
 Image:Internal Browser Faust Context menu.png|An extra action on Faust processings context menu: browse diagram with internal browser
 Image:Turnaround-DisabledViews.png|Turnaround with some views disabled.
