@@ -9,7 +9,7 @@ Other methods are not guaranted to work but they should be viable with more or l
 
 Gladly, CLAM provides pkg-config files in order to get the compilation options you need.
 
-If you installed CLAM in a non-standard place, don't forget to define the 
+If you installed CLAM in a non-standard place, don't forget to define this:
  export PKG_CONFIG_PATH=/whereveryouinstalledclam/lib/pkgconfig
 
 == I am using qmake, how do I use pkg-config? ==
