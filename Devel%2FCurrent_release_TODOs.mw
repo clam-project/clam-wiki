@@ -1,9 +1,17 @@
 
 
 
-== 1.3.0 ==
+== 1.4.0 ==
 
-* [[Image:done.png]] Add GuitarEffects plugin into linux testfarm
+=== Debian packaging ===
+
+* Fill separate ITP bugs in debian for the apps
+* Find the GPLv2 only and MIT license files.
+* How to install the examples.
+* neutral (or debian) distribution in changelog
+
+=== Other ===
+
 * Incorporate resample plugin into testfarm and debian
 * Fix the zero sample on Resample
 * Build windows packages for Voice2MIDI
@@ -16,6 +24,10 @@
 * testfarm 
 ** Unify testfarm client scripts
 ** nightly execution: doxygen, release, double, snapshot up
+
+== 1.3.0 ==
+
+* [[Image:done.png]] Add GuitarEffects plugin into linux testfarm
 
 == 1.2.0 ==
 
