@@ -7,9 +7,12 @@
 
 * Fill separate ITP bugs in debian for the apps
 * Find the GPLv2 only and MIT license files.
-* [Image:done.png] How to install the examples. -> Uncompressed
-* [Image:done.png] neutral (or debian) distribution in changelog
-* [Image:done.png] Make packages non-native
+* What to do with VCS fields?
+* Man pages for the extra binaries
+* Signing the DSC files
+* [[Image:Done.png]] How to install the examples. -> Uncompressed
+* [[Image:Done.png]] neutral (or debian) distribution in changelog
+* [[Image:Done.png]] Make packages non-native
 
 === Other ===
 
