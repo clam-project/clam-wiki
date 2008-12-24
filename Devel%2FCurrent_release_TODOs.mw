@@ -7,8 +7,9 @@
 
 * Fill separate ITP bugs in debian for the apps
 * Find the GPLv2 only and MIT license files.
-* How to install the examples.
-* neutral (or debian) distribution in changelog
+* [Image:done.png] How to install the examples. -> Uncompressed
+* [Image:done.png] neutral (or debian) distribution in changelog
+* [Image:done.png] Make packages non-native
 
 === Other ===
 
