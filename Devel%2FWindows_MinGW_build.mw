@@ -31,7 +31,7 @@ Many thanks to both Giulio Paci and Wang Jun for experimenting with windows deve
 ** '''Note:''' the latest version you can download is 4.3 which doesn't have 'sjlj' suffix, using 4.2-sjlj, the tested one, is a sure shot but adventuring to use 4.3 could work. If you do please report to the mailing list any problem or success.
 * Download or svn check out CLAM sources.
 * The configuration command then is:
- scons configure prefix='c:\\mingw\\local' prefix_for_packaging='c:\\mingw\\local'  sandbox_path='c:\\mingw' verbose=True xmlbackend='xmlpp' audio_backend=portaudio
+ scons configure prefix='c:\mingw\local' prefix_for_packaging='c:\mingw\local'  sandbox_path='c:\mingw' verbose=True xmlbackend='xmlpp' audio_backend=portaudio
  scons
  scons install
 * After that you can proceed with the 'scons', 'scons install' dance first with the libraries, and then with the applications. For example, to have the Network Editor
