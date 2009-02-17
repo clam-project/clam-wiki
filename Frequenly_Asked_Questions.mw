@@ -21,7 +21,7 @@ Despite the name, CLAM is a software framework as defined by Ralph E. Johnson. C
 The project originated at 2000, as an internal project within the [http://mtg.upf.edu/ Music Technology Group] 
 at the [http://www.upf.edu Universitat Pompeu Fabra]
 with the aim of to be a lingua franca for several projects that were taking place in the group.
-The goal was that any algorithm developed in the group could be reused by anyone else,
+The goal was that any algorithm developed in the group could be easily reused by anyone else,
 and that common efforts such as audio harware, midi, GUI, and crossplatform issues were addressed just once.
 
 === Is this project free ===
