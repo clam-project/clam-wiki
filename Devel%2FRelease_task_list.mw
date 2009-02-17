@@ -6,9 +6,9 @@ As tasks get done mark them with [[Image:Done.png]]
 ** Freeze (a 'be-carefull' warning on the clam-devel list)
 ** Request for pending changes to the CHANGES file
 ** Request for pending notes in [[Version Migration Guide]]
-** Assert that all [http://clam.iua.upf.edu/testfarm testfarm clients] are green
+** Assert that all [http://clam-project.org/testfarm testfarm clients] are green
 ** Remove svn marker (see [[Devel/Changelog release policy]])
-* Generating packages http://clam.iua.upf.edu/download.html
+* Generating packages http://clam-project.org/download.html
 ** Src
 ** Windows (testfarm)
 ** Ubuntu (stable + development)
@@ -21,7 +21,7 @@ As tasks get done mark them with [[Image:Done.png]]
 ** Publish it into [http://clamnews.wordpress.com/ clamnews]
 ** Add the categories 'spanish', 'catalan', 'english' 
 ** UdateNews.py to bring it to the web
-* Update  [http://clam.iua.upf.edu/doc/CLAM-doxygen doxygen for stable version]
+* Update  [http://clam-project.org/doc/CLAM-doxygen doxygen for stable version]
 * Spread the announcement
 ** clam, clam-devel
 ** LAD,LAU,LANN
