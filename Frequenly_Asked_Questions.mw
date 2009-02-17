@@ -10,7 +10,7 @@ Also, several standalone applications are distributed with CLAM which are useful
 
 === Which example applications are distributed with CLAM? ===
 
-* Network Editor: a patching tool to design audio processing networks
+* Network Editor: a patching tool to design audio processing networks. Several interesting processing network examples are also included.
 * Prototyper: a tool to interactively run audio processing networks with appealing user interfaces
 * OfflinePlayer: a tool to run non interactive audio processing networks
 * Annotator: Launches, combines, displays and edits the results of [http://en.wikipedia.org/wiki/Music_information_retrieval music information retrieval] algorithms and services.
