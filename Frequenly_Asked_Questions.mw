@@ -16,6 +16,15 @@ CLAM is the acronym for ''C++ Library for Audio and Music'' and it is also a pun
 
 Despite the name, CLAM is a software framework as defined by Ralph E. Johnson. CLAM does not only offer a set of functionalities but also provides a conceptual metamodel or way of doing things. Read [http://www.iua.upf.es/~xamat/Thesis|X. Amatriain's PhD thesis] if you are interested on this theoretical discussion.
 
+=== Which are the origins of the project? ===
+
+The project originated at 2000, as an internal project within the [http://mtg.upf.edu/ Music Technology Group] 
+at the [htt://www.upf.edu Universitat Pompeu Fabra]
+with the aim of unifying several developments that were taking place.
+
+The project became free software during the involvement of the MTG 
+in the european project [http://www.agnula.info/ Agnula] (IST-2001-34879).
+
 === Will CLAM suit my needs? ===
 
 This is of course the million dollar question. It is difficult to be sure whether CLAM can suit your needs until you really try it out. Nevertheless, here are a few hints that may help you decide:
