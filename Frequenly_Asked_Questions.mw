@@ -90,7 +90,7 @@ In any case, CLAM presents both conceptual and practical differences with all of
 
 === Which are the supported platforms? ===
 
-Binaries are [http://clam-project.org/download.html officially released] for '''Ubuntu''' and '''Debian''' flavors of  '''Linux''', '''MacOs''' and '''Windows'''.
+Binaries are [http://clam-project.org/download.html officially released] for '''Linux''' ('''Ubuntu''' and '''Debian''' flavors), '''MacOs''' and '''Windows'''.
 MacOsX and Windows builds are not as tested as Linux based ones so expect (and please, report) problems.
 
 Also, several contributors build packages for other platforms such as SuSe, Fedora... 
