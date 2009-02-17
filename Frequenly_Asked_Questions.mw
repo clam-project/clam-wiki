@@ -87,6 +87,15 @@ And if you are looking for a framework with both analysis and synthesis capabili
 
 In any case, CLAM presents both conceptual and practical differences with all of them. If you are interested in a thorough presentation of CLAM alternatives and how they compare to our framework please refer to X. Amatriain's phd.
 
+
+=== Which are the supported platforms? ===
+
+Binaries are [http://clam-project.org/download.html officially released] for ''Ubuntu Linux'', ''Debian Linux'', ''MacOs'' and ''Windows''.
+MacOsX and Windows builds are not as tested as Linux based ones so expect (and please, report) problems.
+
+Also, several contributors build packages for other platforms such as SuSe, Fedora... 
+We provide links for those ports on the download page at request.
+
 == Documentation ==
 
 === I want to start using CLAM, how do I approach CLAM as user or as developer? ===
