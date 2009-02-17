@@ -58,7 +58,7 @@ This is of course the million dollar question. It is difficult to be sure whethe
 
 CLAM aims at offering all necessary services for building an audio and music application.
 This implies many different tools and possible requirements.
-Some of those tools already exist and, as it makes no sense implementing them from scratch.
+Some of those tools already exist and, it makes no sense implementing them from scratch.
 So, CLAM added value is offering them all under an uniform interface that eases their combination. 
 
 CLAM would be unthinkable without the great work of all those brave open source developers!
