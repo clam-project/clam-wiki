@@ -98,8 +98,7 @@ If you port CLAM to your platform let us know and we'll place a link at the down
 
 CLAM code is rather portable to any platform provided that it has a modern port of GCC
 and CLAM's dependencies are available.
-
-As we cannot have a box for each platform, or platform variant,
+But as we cannot have a box for each platform, or platform variant,
 you can help us to support yours by providing a
 [http://www.iua.upf.edu/~parumi/testfarm/ testfarm] client for CLAM in your computer.
 Contact with the developers on how to setup one.
