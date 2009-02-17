@@ -1,13 +1,16 @@
 * '''DONE''' wiki (yupi!!!)
 * '''DONE''' imported all subversions
 * '''DONE''' links old wiki to new wiki
+* wiki: close write access to non-logged 
+* wiki: see if captcha is possible
 * wiki: es1 and postgrau_pl (low prio)
-* switch clam subversions (on thursday) and "hide" old one
+* switch clam subversions (on thursday) and "hide" old one. switch means "removed commit access, sync, remove with message"
 * switch clam-related subversions.
 * Migrate web
 ** remove languages
 ** update planet scripts
 ** update old pages like About Clam. Move it to the wiki
+** copy downloads, etc.
 ** update wiki links
 ** fix broken images
 ** publish new web and redirect old web
