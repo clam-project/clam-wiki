@@ -10,9 +10,9 @@ Also, several standalone applications are distributed with CLAM which are useful
 
 === Which example applications are distributed with CLAM? ===
 
-* Network Editor: a patching tool to design audio processing
-* Prototyper: a tool to interactively run patches with appealing user interfaces
-* OfflinePlayer: a tool to run non interactive audio processing
+* Network Editor: a patching tool to design audio processing networks
+* Prototyper: a tool to interactively run audio processing networks with appealing user interfaces
+* OfflinePlayer: a tool to run non interactive audio processing networks
 * Annotator: Launch, combines, displays and edits the results of [http://en.wikipedia.org/wiki/Music_information_retrieval music information retrieval] algorithms.
 * Chordata: A tool to discover the chords of your audio files.
 * SMSTools: An audio authoring tool to apply [http://en.wikipedia.org/wiki/Spectral_Modeling_Synthesis Spectral Modeling Synthesis] based algorithms.
