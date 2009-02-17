@@ -22,7 +22,7 @@ The project originated at 2000, as an internal project within the [http://mtg.up
 at the [http://www.upf.edu Universitat Pompeu Fabra]
 with the aim of to be a lingua franca for several projects that were taking place in the group.
 The goal was that any algorithm developed within the group could be easily reused by anyone else,
-and that common efforts such as audio harware, midi, GUI, and crossplatform issues were addressed just once.
+and that common efforts such as audio hardware, MIDI, GUI, and crossplatform development were addressed just once.
 
 === Is this project free ===
 
