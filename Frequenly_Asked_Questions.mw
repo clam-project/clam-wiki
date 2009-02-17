@@ -34,7 +34,7 @@ with the aim of to be a lingua franca for several projects that were taking plac
 The goal was that any algorithm developed within the group could be easily reused by anyone else,
 and that common efforts such as audio hardware, MIDI, GUI, and crossplatform development were addressed just once.
 
-
+=== Is CLAM free? May I use CLAM in a non-free project? ===
 
 CLAM became free software during the involvement of the MTG 
 in the european project [http://www.agnula.info/ Agnula] (IST-2001-34879).
@@ -42,8 +42,6 @@ in the european project [http://www.agnula.info/ Agnula] (IST-2001-34879).
 It is licensed under [http://www.gnu.org/licenses/gpl2.html GNU General Public License version 2] or later.
 That barely means that you can use, modify, and redistribute it freely as long as 
 redistribution is done in the same terms. Read the license terms for more details.
-
-
 
 If you need to use it in a way that does not fullfull the GNU GPL license, just get in contact with us.
 We could get into an agreement by using a [http://en.wikipedia.org/wiki/Dual_license dual license scheme].
