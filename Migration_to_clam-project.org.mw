@@ -8,10 +8,13 @@
 * switch clam-related subversions.
 * Migrate web
 ** '''DONE''' remove languages
+** '''DONE''' update wiki links
 ** update planet scripts
 ** update old pages like About Clam. Move it to the wiki
 ** copy downloads, etc.
-** '''DONE''' update wiki links
 ** fix broken images
 ** publish new web and redirect old web
 ** add news about new domain etc.
+** Update wiki links on the news
+** Update svn links (CHANGES)
+** Update wiki links to relative ones once moved to the new server
