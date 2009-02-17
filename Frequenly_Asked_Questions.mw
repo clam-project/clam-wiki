@@ -20,10 +20,23 @@ Despite the name, CLAM is a software framework as defined by Ralph E. Johnson. C
 
 The project originated at 2000, as an internal project within the [http://mtg.upf.edu/ Music Technology Group] 
 at the [http://www.upf.edu Universitat Pompeu Fabra]
-with the aim of unifying several developments that were taking place.
+with the aim of to be a lingua franca for several projects that were taking place in the group.
+The goal was that any algorithm developed in the group could be reused by anyone else,
+and that common efforts such as audio harware, midi, GUI, and crossplatform issues were addressed just once.
+
+=== Is this project free ===
 
 The project became free software during the involvement of the MTG 
 in the european project [http://www.agnula.info/ Agnula] (IST-2001-34879).
+
+The project is licensed under a GNU GPLv2 (or later) license.
+Than means that you can use, modify, and redistribute it freely as long as 
+redistribution is done in the same terms.
+
+=== May I use CLAM in a non-free project? ===
+
+If you need to use it in a way that does not fullfull the GNU GPL license, just get in contact with us.
+We could get into an agreement using a [http://en.wikipedia.org/wiki/Dual_license dual license scheme].
 
 === Will CLAM suit my needs? ===
 
