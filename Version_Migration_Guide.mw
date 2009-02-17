@@ -2,7 +2,7 @@ This manual chapter gives hints on how to migrate existing code from one version
 
 == 1.3 to svn ==
 
-* In/OutControl are now In/OutControl<float> or alias FloatIn/OutControls (TODO: The refactoring is not finished on the svn but the release will be like that)
+* In/OutControl are now FloatIn/OutControls. At the release it will be an alias to In/OutControl<float>.
 * If you used InControl::GetLasValueAsBoolean/Integer you should consider using InControl<bool/unsigned>
 * If you used InControlTmpl (a control with callback), now you should use a plain FloatInControl, which now has a constructor to provide the callback.
 * Old control callbacks used to return int. Now they should return void.
