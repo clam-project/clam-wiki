@@ -97,7 +97,7 @@ Besides official releases, several contributors build packages for other platfor
 If you port CLAM to your platform let us know and we'll place a link at the download page.
 
 CLAM code should be portable to any platform having a modern port of GCC
-and other CLAM's build dependencies available.
+and having most of the build dependencies available.
 We would like to support as many as possible but
 as we cannot have a box for each platform, or platform variant,
 you can help us to support yours by providing a
