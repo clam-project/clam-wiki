@@ -6,7 +6,16 @@ CLAM is a software framework for research and application development on the aud
 
 You can use CLAM as a library to program your applications in C++ but you can also use graphical tools to build full applications without coding.
 
-Aside with CLAM, some example applications are distributed which are usefull by themselves.
+Also, several standalone applications are distributed with CLAM which are usefull by themselves.
+
+=== Which example applications are distributed with CLAM? ===
+
+* Network Editor: a patching tool to design audio processing
+* Prototyper: a tool to interactively run patches with appealing user interfaces
+* OfflinePlayer: a tool to run non interactive audio processing
+* Annotator: Launch, combines, displays and edits the results of [http://en.wikipedia.org/wiki/Music_information_retrieval music information retrieval] algorithms.
+* Chordata: A tool to discover the chords of your audio files.
+* SMSTools: An audio authoring tool to apply [http://en.wikipedia.org/wiki/Spectral_Modeling_Synthesis Spectral Modeling Synthesis] based algorithms.
 
 === What does CLAM stands for? ===
 
