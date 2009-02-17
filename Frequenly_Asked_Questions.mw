@@ -16,7 +16,7 @@ Also, several standalone applications are distributed with CLAM which are useful
 * [[Music_Annotator|Annotator]]: Launches, combines, displays and edits the results of [http://en.wikipedia.org/wiki/Music_information_retrieval music information retrieval] algorithms and services.
 * Chordata: A tool to discover the chords of your audio files.
 * Voice2Midi: A tool to convert humming into MIDI files.
-* SMSTools: An audio authoring tool to apply [http://en.wikipedia.org/wiki/Spectral_Modeling_Synthesis Spectral Modeling Synthesis] based algorithms.
+* [[SMSTools_tutorial|SMSTools]]: An audio authoring tool to apply [http://en.wikipedia.org/wiki/Spectral_Modeling_Synthesis Spectral Modeling Synthesis] based algorithms.
 
 === What does CLAM stands for? ===
 
