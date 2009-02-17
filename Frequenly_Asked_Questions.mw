@@ -95,6 +95,8 @@ Binaries are [http://clam-project.org/download.html officially released] for '''
 MacOsX and Windows builds are not as tested as Linux based ones so expect (and please, report) problems.
 Also, several contributors build packages for other platforms such as SuSe, Fedora... 
 If you port CLAM to your platform let us know and we'll place a link at the download page.
+You can also help to support your platform by providing a
+[[http://www.iua.upf.edu/~parumi/testfarm/ testfarm]] client for CLAM in your computer.
 
 == Documentation ==
 
