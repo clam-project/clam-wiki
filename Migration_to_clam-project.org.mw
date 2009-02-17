@@ -7,11 +7,11 @@
 * switch clam subversions (on thursday) and "hide" old one. switch means "removed commit access, sync, remove with message"
 * switch clam-related subversions.
 * Migrate web
-** remove languages
+** '''DONE''' remove languages
 ** update planet scripts
 ** update old pages like About Clam. Move it to the wiki
 ** copy downloads, etc.
-** update wiki links
+** '''DONE''' update wiki links
 ** fix broken images
 ** publish new web and redirect old web
 ** add news about new domain etc.
