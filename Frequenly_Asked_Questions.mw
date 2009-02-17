@@ -1,14 +1,22 @@
 == General ==
 
+=== What does CLAM stands for? ===
+
+CLAM is the acronym for ''C++ Library for Audio and Music'' and it is also a pun on the catalan word 'clam' which means ''clamor'', a [http://clam-project.org/sounds/clam.wav continuous sound] produced by a large number of people as to show approval or disapproval of a given event.
+
 === What is CLAM? ===
 
 CLAM is a software framework for research and application development on the audio and music domain. It provides means to perform complex audio signal analysis, transformations and synthesis. It also provides a uniform interface to common tasks on audio applications such as accessing audio devices and audio files, thread safe communication with the user interface and DSP algorithms recombination and scaling.
 
 You can use CLAM as a library to program your applications in C++ but you can also use graphical tools to build full applications without coding.
 
-Also, several standalone applications are distributed with CLAM which are usefull by themselves.
+=== Is CLAM a "library" or a "framework"? ===
+
+Despite the name, CLAM is a software framework as defined by Ralph E. Johnson. CLAM does not only offer a set of functionalities but also provides a conceptual metamodel or way of doing things. Read [http://www.iua.upf.es/~xamat/Thesis|X. Amatriain's PhD thesis] if you are interested on this theoretical discussion.
 
 === Which example applications are distributed with CLAM? ===
+
+Several standalone applications are distributed with CLAM which are usefull by themselves.
 
 * [[Network Editor tutorial|Network Editor]]: a patching tool to design audio processing networks. Several interesting processing network examples are also included.
 * [[Network_Editor_tutorial#Building_Prototyper_interfaces|Prototyper]]: a tool to interactively run audio processing networks with appealing user interfaces
@@ -17,14 +25,6 @@ Also, several standalone applications are distributed with CLAM which are useful
 * Chordata: A tool to discover the chords of your audio files.
 * Voice2Midi: A tool to convert humming into MIDI files.
 * [[SMSTools_tutorial|SMSTools]]: An audio authoring tool to apply [http://en.wikipedia.org/wiki/Spectral_Modeling_Synthesis Spectral Modeling Synthesis] based algorithms.
-
-=== What does CLAM stands for? ===
-
-CLAM is the acronym for ''C++ Library for Audio and Music'' and it is also a pun on the catalan word 'clam' which means ''clamor'', a [http://clam-project.org/sounds/clam.wav continuous sound] produced by a large number of people as to show approval or disapproval of a given event.
-
-=== Is CLAM a "library" or a "framework"? ===
-
-Despite the name, CLAM is a software framework as defined by Ralph E. Johnson. CLAM does not only offer a set of functionalities but also provides a conceptual metamodel or way of doing things. Read [http://www.iua.upf.es/~xamat/Thesis|X. Amatriain's PhD thesis] if you are interested on this theoretical discussion.
 
 === Which are the origins of the project? ===
 
