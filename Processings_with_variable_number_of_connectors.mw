@@ -25,7 +25,7 @@ So we can add this lines in the class declaration.
 
 == Convenience methods for Shrinking and Expanding ports ==
 
-Is very convenient to implement one method like this one:
+Is very convenient to implement one method like this one for AudioInPort:
 
  	void ResizeInPortsTo(unsigned nPorts)
  	{
@@ -36,9 +36,10 @@ Is very convenient to implement one method like this one:
  			std::ostringstream nameStream;
  			nameStream << baseName << _inports.size();
  			AudioOutPort * port = new AudioOutPort( nameStream.str(), this);
+ 			_inports.push_back( port );
+ 			// This initialization depends on the kind of connector
  			port->SetSize(BackendBufferSize()); // Just if AudioPort
  			port->SetHop( BackendBufferSize()); // Just if AudioPort
- 			_inports.push_back( port );
  		}
  		// Or Shrinking
  		for (unsigned i=nPorts; i<_inports.size(); i++)
