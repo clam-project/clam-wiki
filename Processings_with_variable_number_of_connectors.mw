@@ -54,13 +54,11 @@ In the ConcreteConfigure() method provided that you have obtained nInPorts and n
  		ResizeInPortsTo(nInPorts);
  		ResizeOutPortsTo(nOutPorts);
 
+[[image:init_1_channel.png|center|This processing has one provisional port]]
+
 In the destructor just place:
  		ResizeInPortsTo(0);
  		ResizeOutPortsTo(0);
-
-[[image:init_1_channel.png|center|This processing has one provisional port]]
-
-
 
 == Keeping the port connections ==
 
