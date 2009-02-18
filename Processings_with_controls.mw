@@ -63,7 +63,7 @@ TODO: Put here a note on ControlSource and ControlSink as soon as they are worki
 = Beyond 1.3.0, typed controls =
 
 '''Note:''' This documentation version is the one for 1.4.0 and beyond.
-The [[Migration Guide]] will help you to easily migrate from 1.3 to 1.4 typed controls.
+The [[Version Migration Guide]] will help you to easily migrate from 1.3 to 1.4 typed controls.
 
 Unlike ports, controls are not bound to the execution of the Do method.
 Controls are sent and received inmediately.
