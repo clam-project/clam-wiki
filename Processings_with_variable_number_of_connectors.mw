@@ -46,8 +46,6 @@ For removing all the ports we have to delete all the items and tell the ports th
                         delete *itOutPorts;        					            
         }
          _outports.clear();
-        // Delete ports from Processing (base class) register
-        GetOutPorts().Clear();
 
 == Keeping the port connections ==
 
