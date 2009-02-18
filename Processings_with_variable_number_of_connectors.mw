@@ -29,8 +29,8 @@ In case we decide to have at least one port, we need to initialize the vector in
 
         if(_inports.empty())
         {	AudioInPort * port = new AudioInPort( "in1", this);
-                port->SetSize(BackendBufferSize());
-                port->SetHop( BackendBufferSize());
+                port->SetSize(BackendBufferSize()); // Just if AudioPort
+                port->SetHop( BackendBufferSize()); // Just if AudioPort
                 _inports.push_back( port );
         }
 
