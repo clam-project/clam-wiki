@@ -34,7 +34,7 @@ with the aim of to be a lingua franca for several projects that were taking plac
 The goal was that any algorithm developed within the group could be easily reused by anyone else,
 and that common efforts such as audio hardware, MIDI, GUI, and crossplatform development were addressed just once.
 
-=== Which license uses CLAM? Is it free? May I use it in a non-free project? ===
+=== Which is the license for CLAM? Is it free? May I use it in a non-free project? ===
 
 CLAM became [http://en.wikipedia.org/wiki/Free_software free software] during the involvement of the MTG 
 in the european project [http://www.agnula.info/ Agnula] (IST-2001-34879).
