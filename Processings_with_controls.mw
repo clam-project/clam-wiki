@@ -148,6 +148,7 @@ In that case, the first parameter of the constructor is the identifier.
 and:
  	void MyControlCallback(unsigned controlId, const TControlData & value)
 
+TODO: Thread safety
 
 == Helper processings to manage controls ==
 
