@@ -3,7 +3,7 @@ while keeping any existing connection with other processings, as long as they st
 This is very useful for multichannel processings.
 If you just need a fixed number of ports see [[Creating a minimal processing object]].
 
-Here we use ''Connectors'' to refer both ''Ports and Controls'.
+Here we use ''Connectors'' to refer both ''Ports'' and ''Controls''.
 
 == Defining the connectors ==
 
