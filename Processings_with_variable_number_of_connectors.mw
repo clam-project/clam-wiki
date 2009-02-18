@@ -70,6 +70,9 @@ In the destructor just place:
 
 == Using them ==
 
+Accessing such ports is just a matter of accessing the vectors.
+Don't forget to Produce and Consume all ports.
+
 Within the Do method we can read or write the AudioPorts. We create a CLAM::TData* array for save the buffer of each channel. 
 
         CLAM::TData* channels[_numberChannelsOut];
