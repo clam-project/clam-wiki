@@ -60,49 +60,6 @@ In the destructor just place:
  		ResizeInPortsTo(0);
  		ResizeOutPortsTo(0);
 
-== Keeping the port connections ==
-
-If we want to increase or decrease the number of ports we can not remove all the ports because we will lose the port connections. The solution is delete
-or add the items that are completely necessary. So we have three cases.
-
-=== First case: Maintaining the same ports ===
-
-We don't have to put and remove anything.
-
-        if ( numberChannelsOut == _outports.size() )
-                return true;
-
-=== Second case: To increase the number of ports===    
-
-We have to create an AudioPort and insert it in the vector. 
-The following code shows how to create as number of AudioInPort as number of channels.
-The condition is the number of channels has to be greater than the vector size.
-
-        std::string nameOutPort = "out";
-        if ( numberChannelsOut > _outports.size() )
-        {
-                for (int i=_outports.size()+1; i<= numberChannelsOut; i++)
-                {
-                        std::ostringstream nameStream;
-                        nameStream << nameOutPort << i;
-                        AudioOutPort * port = new AudioOutPort( nameStream.str(), this);
-                        port->SetSize( BackendBufferSize()); // Just if AudioPort
-                        port->SetHop(BackendBufferSize()); // Just if AudioPort
-                        _outports.push_back( port );
-                }
-        }
-
-=== Third case: Deleting some items from the dynamic ports ===
-
-The example below shows how to decrease in number of ports. We want to get a vector that will have as number of AudioPorts as number and channels, so we will delete the remaining items. The condition is that the vector size has to be greater than the number of channels.
-
-        if ( numberChannelsOut < _outports.size() )
-        {
-                for (unsigned i= numberChannelsOut; i<_outports.size(); i++)
-                        delete _outports[i];
-                _outports.resize( numberChannelsOut );
-        }
-
 
 [[image:dynamic_ports_4_channels.png|center|This example shows the connection of two multi-port processing]]
 
