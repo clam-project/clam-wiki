@@ -97,4 +97,4 @@ TODO: Explain other used metadata (icon...)
  
 * [[Building a processing library]] If you want your processing to become part of a CLAM plugin library.
 * [[Defining a ProcessingComposite]] If you want your processing to be an aggregation of processings.
-* [[Using custom data token types]] if you want to set the port color for your custom data type.
+* [[Using custom data token types]] if you want to set the port color, type name... for your custom data type.
