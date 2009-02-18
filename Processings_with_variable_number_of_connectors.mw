@@ -30,7 +30,7 @@ Is very convenient to implement one method like this one:
  	void ResizeInPortsTo(unsigned nPorts)
  	{
  		// Expanding
-		static const std::string baseName = "in";
+ 		static const std::string baseName = "in";
  		while (_inports.size()<nPorts)
  		{
  			std::ostringstream nameStream;
