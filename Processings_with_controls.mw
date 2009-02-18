@@ -1,6 +1,8 @@
-Controls are another kind of connector for processing modules, just like ports, but
-controls are not bound to the execution of the Do method and are sent and received inmediately.
-When a processing Do gets executed it just gets the last received value.
+Controls are another kind of connector for processing modules, just like ports.
+While ports queue received data tokens and must be consumed in order when Do is run,
+controls receive data at the same time they are sent.
+A processing may setup a callback to receive them or
+just take the last received value when the Do method is eventually executed.
 
 You can define and initialize InControls and OutControls in a similar way you did with In/OutPorts but they are not templated (to the date) since they are always CLAM::TControlData which renders to float or double depending on your compilation flags.
 
@@ -65,9 +67,11 @@ TODO: Put here a note on ControlSource and ControlSink as soon as they are worki
 '''Note:''' This documentation version is the one for 1.4.0 and beyond.
 The [[Version Migration Guide]] will help you to easily migrate from 1.3 to 1.4 typed controls.
 
-Unlike ports, controls are not bound to the execution of the Do method.
-Controls are sent and received inmediately.
-When a processing Do gets executed it just gets the last received value.
+Controls are another kind of connector for processing modules, just like ports.
+While ports queue received data tokens and must be consumed in order when Do is run,
+controls receive data at the same time they are sent.
+A processing may setup a callback to receive them or
+just take the last received value when the Do method is eventually executed.
 
 Traditionally, controls in CLAM managed just floats defined as TControlData.
 Since version 1.4 this is no more and you can use any copìable and default initiable C++ object.
