@@ -60,16 +60,7 @@ In the destructor just place:
 
 [[image:init_1_channel.png|center|This processing has one provisional port]]
 
-== Removing all ports ==
 
-For removing all the ports we have to delete all the items and tell the ports that the vector of AudioPorts is clear.
-
-        if(!_outports.empty())
-        {
-                for(OutPorts::iterator itOutPorts=_outports.begin();itOutPorts!=_outports.end();itOutPorts++)
-                        delete *itOutPorts;        					            
-        }
-         _outports.clear();
 
 == Keeping the port connections ==
 
