@@ -33,7 +33,7 @@
 ** [[Creating a minimal processing object]]
 ** [[Processings with controls]]
 ** [[Processings with configuration]]
-** [[Processings with dynamic ports|Processings with dynamic number of ports]]
+** [[Processings with variable number of connectors]]
 ** [[Adding Monitors]]
 ** [[Building a processing library]]
 ** [[Building a LADSPA plugin]]
