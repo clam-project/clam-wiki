@@ -1,5 +1,5 @@
-Unlike ports, controls are not bound to the execution of the Do method.
-Controls are sent and received inmediately.
+Controls are another kind of connector for processing modules, just like ports, but
+controls are not bound to the execution of the Do method and are sent and received inmediately.
 When a processing Do gets executed it just gets the last received value.
 
 You can define and initialize InControls and OutControls in a similar way you did with In/OutPorts but they are not templated (to the date) since they are always CLAM::TControlData which renders to float or double depending on your compilation flags.
