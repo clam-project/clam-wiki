@@ -1,6 +1,6 @@
 This page explain a technique to create processings that can be configured to have a different number of ports, multichannel processings so that the number of channels can be changed at configuration time. If you just need a fixed number of ports see [[Creating a minimal processing object]].
 
-== Defining dynamic ports ==
+== Defining them ==
 
 First of all, we have to decide the class of Ports that we want to use. In this example we will use the AudioInPort and AudioOutPort classes, so it's necessary the following includes. However you can decide another port type if you want.
 
@@ -21,7 +21,6 @@ So we can add this lines in the class declaration.
         OutPorts _outports;                                <--- NEW
         InPorts _inports;                                  <--- NEW
         ...
-
 
 == Convenience methods for Shrinking and Expanding ports ==
 
