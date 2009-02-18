@@ -75,8 +75,8 @@ The condition is the number of channels has to be greater than the vector size.
                         std::ostringstream nameStream;
                         nameStream << nameOutPort << i;
                         AudioOutPort * port = new AudioOutPort( nameStream.str(), this);
-                        port->SetSize( BackendBufferSize());
-                        port->SetHop(BackendBufferSize());
+                        port->SetSize( BackendBufferSize()); // Just if AudioPort
+                        port->SetHop(BackendBufferSize()); // Just if AudioPort
                         _outports.push_back( port );
                 }
         }
