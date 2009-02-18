@@ -5,6 +5,7 @@ This page explain a technique to create processings that can be configured to ha
 First of all, we have to decide the class of Ports that we want to use. In this example we will use the AudioInPort and AudioOutPort classes, so it's necessary the following includes. However you can decide another port type if you want.
 
         ...
+        #include <vector>
         #include <CLAM/AudioInPort.hxx>
         #include <CLAM/AudioOutPort.hxx>
         ...
