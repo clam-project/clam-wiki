@@ -25,7 +25,7 @@ So we can add this lines in the class declaration.
 == Initialization == 
 
 In case we decide to have at least one port, we need to initialize the vector in the ConcreteConfigure() method.
-( This code is for _inports vector, but it's the same for the _outports vector).
+(This code is for _inports vector, but it's the same for the _outports vector).
 
         if(_inports.empty())
         {	AudioInPort * port = new AudioInPort( "in1", this);
