@@ -143,12 +143,7 @@ In that case, the first parameter of the constructor is the identifier.
 and:
  	void MyControlCallback(unsigned controlId, const TControlData & value)
 
-== Notes on non-float Controls ==
 
-Traditionally, controls in CLAM manage just floats defined as TControlData.
-Since version 1.4 this is no more and you can use any copìable and default initiable C++ object.
-Anyway you should avoid control types with expensive copy or initialization operations.
-Controls are sent in bursts.
 
 == Helper processings to manage controls ==
 
