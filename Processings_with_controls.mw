@@ -148,7 +148,7 @@ or you could use a control identifier to know which control calls the callback,
 which is particularly usefull when having [[Processings with dynamic ports|a dynamic number of controls]].
 In that case, the first parameter of the constructor is the identifier.
  		, mInControl(4, "In Control", this, &MyProcessing::MyControlCallback)
-and:
+and the callback signature should be:
  	void MyControlCallback(unsigned controlId, const TControlData & value)
 
 TODO: Thread safety
