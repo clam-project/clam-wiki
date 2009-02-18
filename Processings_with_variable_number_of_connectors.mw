@@ -61,7 +61,7 @@ In the destructor just place:
  		ResizeInPortsTo(0);
  		ResizeOutPortsTo(0);
 
-== Using the dynamic ports ==
+== Using them ==
 
 Within the Do method we can read or write the AudioPorts. We create a CLAM::TData* array for save the buffer of each channel. 
 
