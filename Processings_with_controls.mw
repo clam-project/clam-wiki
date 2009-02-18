@@ -136,7 +136,7 @@ Such callback could be executed in bursts so do not do anything expensive or rea
  		: mIn("My Input", this)
  		, mOut("My Output", this) 
  		, mInControl("In Control", this, &MyProcessing::MyControlCallback)   // <- Changed!
- 		, mOutControl("Out Control", this)  // <- New
+ 		, mOutControl("Out Control", this)
  	{
  	....
  	void MyControlCallback(const TControlData & value)
@@ -145,7 +145,7 @@ Such callback could be executed in bursts so do not do anything expensive or rea
 
 You may setup a different callback for each control,
 or you could use a control identifier to know which control calls the callback,
-which is particularly usefull when having [[Processings with dynamic ports|a dynamic number of controls]].
+which is particularly usefull when having [[Processings with variable number of ports|a dynamic number of controls]].
 In that case, the first parameter of the constructor is the identifier.
  		, mInControl(4, "In Control", this, &MyProcessing::MyControlCallback)
 and the callback signature should be:
