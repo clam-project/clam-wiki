@@ -22,17 +22,41 @@ So we can add this lines in the class declaration.
         InPorts _inports;                                  <--- NEW
         ...
 
-== Initialization == 
 
-In case we decide to have at least one port, we need to initialize the vector in the ConcreteConfigure() method.
-(This code is for _inports vector, but it's the same for the _outports vector).
+== Convenience methods for Shrinking and Expanding ports ==
 
-        if(_inports.empty())
-        {	AudioInPort * port = new AudioInPort( "in1", this);
-                port->SetSize(BackendBufferSize()); // Just if AudioPort
-                port->SetHop( BackendBufferSize()); // Just if AudioPort
-                _inports.push_back( port );
-        }
+Is very convenient to implement one method like this one:
+
+ 	void ResizeInPortsTo(unsigned nPorts)
+ 	{
+		// Expanding
+		static const std::string baseName = "in";
+ 		while (_inports.size()<nPorts)
+ 		{
+ 			std::ostringstream nameStream;
+ 			nameStream << baseName << _inports.size();
+ 			AudioOutPort * port = new AudioOutPort( nameStream.str(), this);
+ 			port->SetSize(BackendBufferSize()); // Just if AudioPort
+ 			port->SetHop( BackendBufferSize()); // Just if AudioPort
+ 			_inports.push_back( port );
+ 		}
+		// Or Shrinking
+ 		for (unsigned i=nPorts; i<_inports.size(); i++)
+ 			delete _inports[i];
+ 		if (nPorts!=_inports.size()) _inports.resize( nPorts );
+ 	}
+
+Add a similar one for Output or for each group of Ports.
+
+== Initialization and destruction == 
+
+In the ConcreteConfigure() method provided that you have obtained nInPorts and nOutPorts from the configuration parameters just do:
+ 		ResizeInPortsTo(nInPorts);
+ 		ResizeOutPortsTo(nOutPorts);
+
+In the destructor just place:
+ 		ResizeInPortsTo(0);
+ 		ResizeOutPortsTo(0);
 
 [[image:init_1_channel.png|center|This processing has one provisional port]]
 
