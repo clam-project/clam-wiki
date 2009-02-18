@@ -1,6 +1,6 @@
 == General ==
 
-=== What does CLAM stands for? ===
+=== What does CLAM stand for? ===
 
 CLAM is the acronym for ''C++ Library for Audio and Music'' and it is also a pun on the catalan word 'clam' which means ''clamor'', a [http://clam-project.org/sounds/clam.wav continuous sound] produced by a large number of people as to show approval or disapproval of a given event.
 
@@ -12,7 +12,7 @@ You can use CLAM as a library to program your applications in C++ but you can al
 
 === Is CLAM a "library" or a "framework"? ===
 
-Despite the name, CLAM is a software framework as defined by Ralph E. Johnson. CLAM does not only offer a set of functionalities but also provides a conceptual metamodel or way of doing things. Read [http://www.iua.upf.es/~xamat/Thesis|X. Amatriain's PhD thesis] if you are interested on this theoretical discussion.
+Despite the name, CLAM is not just a ''library'' but a ''software framework'' as defined by Ralph E. Johnson. CLAM does not only offer a set of functionalities but also provides a conceptual metamodel or way of doing things. Read [http://www.iua.upf.es/~xamat/Thesis|X. Amatriain's PhD thesis] if you are interested on this theoretical discussion.
 
 === Which example applications are distributed with CLAM? ===
 
