@@ -60,7 +60,9 @@ When playing with controls there are several useful processings available on the
 TODO: Put here a note on ControlSource and ControlSink as soon as they are working on the Network editor.
 
 
-= Typed controls version (beyond 1.3.0) =
+= Beyond 1.3.0, typed controls =
+
+'''Note:''' This documentation version is the one for 1.4.0 and beyond.
 
 Unlike ports, controls are not bound to the execution of the Do method.
 Controls are sent and received inmediately.
