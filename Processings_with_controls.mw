@@ -58,3 +58,106 @@ When playing with controls there are several useful processings available on the
 * ...
 
 TODO: Put here a note on ControlSource and ControlSink as soon as they are working on the Network editor.
+
+
+= Typed controls version (beyond 1.3.0) =
+
+Unlike ports, controls are not bound to the execution of the Do method.
+Controls are sent and received inmediately.
+When a processing Do gets executed it just gets the last received value.
+
+== Adding the control ==
+
+You can define and initialize InControls and OutControls in a similar way you did with In/OutPorts.
+
+First you should add the necessary includes:
+
+        #include<CLAM/InControl.hxx>
+        #include<CLAM/OutControl.hxx>
+
+Then you are ready to add your input and output controls to the class declaration:
+
+[[Image:MyProcessing-withControls.png|thumb|NetworkEditor represents controls as little squares on the top and the bottom of the processing box. Control flow is up-down.]]
+
+ 	...
+ 	CLAM::InPort<MyInputDataType> mIn;
+ 	CLAM::OutPort<MyOutputDataType> mOut;
+ 	CLAM::InControl<TControlData> mInControl;         // <- New
+ 	CLAM::OutControl<TControlData> mOutControl;       // <- New
+ 	...
+
+And at the initialization of the class:
+
+ 	MyProcessing(const Config & config=Config()) 
+ 		: mIn("My Input", this)
+ 		, mOut("My Output", this) 
+ 		, mInControl("In Control", this)   // <- New
+ 		, mOutControl("Out Control", this)  // <- New
+ 	{
+ 	....
+
+TODO: How to setup bounds
+
+== Using the control ==
+
+TODO: Correct place to set default input values: constructor, ConcreteConfigure or ConcreteStart?
+
+ 	....
+ 	mInControl.DoControl(3.1416);
+ 	....
+
+
+Within the Do method, whenever we want to read a input value just do:
+
+ 	....
+ 	CLAM::TControlData controlValue = mInControl.GetLastValue();
+ 	....
+
+And to send a value through a output control:
+
+ 	....
+ 	mOutControl.SendControl(3.1416);
+ 	....
+
+== Callback InControls ==
+
+Alternatively you can setup a callback to respond to incoming controls.
+Such callback could be executed in bursts so do not do anything expensive or realtime unsafe there.
+
+ 	MyProcessing(const Config & config=Config()) 
+ 		: mIn("My Input", this)
+ 		, mOut("My Output", this) 
+ 		, mInControl("In Control", this, &MyProcessing::MyControlCallback)   // <- Changed!
+ 		, mOutControl("Out Control", this)  // <- New
+ 	{
+ 	....
+ 	void MyControlCallback(const TControlData & value)
+ 	{
+ 		// Take value and do whatever to processing internal state.
+
+You may setup a different callback for each control,
+or you could use a control identifier to know which control calls the callback,
+which is particularly usefull when having [[Processings with dynamic ports|a dynamic number of controls]].
+In that case, the first parameter of the constructor is the identifier.
+ 		, mInControl(4, "In Control", this, &MyProcessing::MyControlCallback)
+and:
+ 	void MyControlCallback(unsigned controlId, const TControlData & value)
+
+== Notes on non-float Controls ==
+
+Traditionally, controls in CLAM manage just floats defined as TControlData.
+Since version 1.4 this is no more and you can use any copìable and default initiable C++ object.
+Anyway you should avoid control types with expensive copy or initialization operations.
+Controls are sent in bursts.
+
+== Helper processings to manage controls ==
+
+[[Image:ControlRelatedProcessings.png|thumb|Several control related processing are available on the NetworkEditor.]]
+
+When playing with controls there are several useful processings available on the NetworkEditor:
+* ControlSender: Controls a single output control with a Slider, a Knob or an Spinbox.
+* ControlSurface: Controls two output controls at a time by moving a 2D point.
+* ControlPrinter: Shows the values it gets on its input controls.
+* ...
+
+TODO: Put here a note on ControlSource and ControlSink as soon as they are working on the Network editor.
