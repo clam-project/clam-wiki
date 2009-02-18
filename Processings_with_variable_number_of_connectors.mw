@@ -1,8 +1,16 @@
-This page explain a technique to create processings that can be configured to have a different number of ports, multichannel processings so that the number of channels can be changed at configuration time. If you just need a fixed number of ports see [[Creating a minimal processing object]].
+This page explain a technique to be able to configure a processing with a variable number of connectors (ports, controls)
+while keeping any existing connection with other processings, as long as they still has sense.
+This is very useful for multichannel processings.
+If you just need a fixed number of ports see [[Creating a minimal processing object]].
 
-== Defining them ==
+Here we use ''Connectors'' to refer both ''Ports and Controls'.
 
-First of all, we have to decide the class of Ports that we want to use. In this example we will use the AudioInPort and AudioOutPort classes, so it's necessary the following includes. However you can decide another port type if you want.
+== Defining the connectors ==
+
+First of all, we have to decide the class of connectors that we want to use.
+In this example we will use the AudioInPort and AudioOutPort classes,
+so it's necessary the following includes.
+However you can decide another port type if you want.
 
         ...
         #include <vector>
@@ -10,16 +18,15 @@ First of all, we have to decide the class of Ports that we want to use. In this 
         #include <CLAM/AudioOutPort.hxx>
         ...
 
-We'll use a vector of AudioInPort (or AudioOutPort) instead of an unique AudioInPort or AudioOutPort. That's because we want to work with dynamic port and we don't know the number of ports that we will need.
+We'll use a vector of AudioInPort (or AudioOutPort) instead of an unique AudioInPort or AudioOutPort.
+That's because we want to work with variable number of ports and we don't know the number of ports that we will need.
 So we can add this lines in the class declaration. 
 
         ...
-        CLAM::AudioInPort _in;                      <--- OLD
-        CLAM::AudioOutPort _out;                  <--- OLD
-        typedef std::vector<CLAM::AudioOutPort*> OutPorts; <--- NEW
-        typedef std::vector<CLAM::AudioInPort*> InPorts;   <--- NEW
-        OutPorts _outports;                                <--- NEW
-        InPorts _inports;                                  <--- NEW
+        typedef std::vector<CLAM::AudioOutPort*> OutPorts;
+        typedef std::vector<CLAM::AudioInPort*> InPorts;
+        OutPorts _outports;
+        InPorts _inports;
         ...
 
 == Convenience methods for Shrinking and Expanding ports ==
@@ -46,7 +53,7 @@ Is very convenient to implement one method like this one for AudioInPort:
  		if (nPorts!=_inports.size()) _inports.resize( nPorts );
  	}
 
-Add a similar one for OutputPorts or for each group of Ports you want to resize independently.
+Add a similar one for OutputPorts or for each group of Connectors you want to resize independently.
 
 == Initialization and destruction == 
 
@@ -71,8 +78,8 @@ Within the Do method we can read or write the AudioPorts. We create a CLAM::TDat
 
 Then we can set the values that we want in the Audio Buffers.
 
-        const int portSize = _outports[0]->GetAudio().GetBuffer().Size();
-        for(int i=0; i< portSize; i++)
+        const unsigned portSize = _outports[0]->GetAudio().GetBuffer().Size();
+        for(unsigned i=0; i< portSize; i++)
                 for(unsigned channel = 0; channel<_numberChannelsOut; channel++)
                         channels[channel][i] = value; 
 
@@ -85,7 +92,7 @@ Finally, we have to call the Produce method for the AudioOutPorts and the Consum
 
 == Handling connector order caveats ==
 
-Connectors (Ports and Controls) are sorted as created.
+Connectors (Ports and Controls) are sorted as they are created.
 You will get a consistent connector ordering just by initializing fixed connectors
 before populating any group expanding/shrinking connectors of the same kind (In/Out, Ports/Controls).
 If you have two groups of connector of the same kind which are expanded/shrinked independently on configuration
@@ -93,5 +100,4 @@ you may end up having different connector ordering.
 
 You should avoid doing that 
 but i is possible to rearrange connector ordering afterwards.
-
-TODO: Ask the list if you need that and will post the code to handle that.
+If you still need that just ask at the mailing list.
