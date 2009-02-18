@@ -55,13 +55,11 @@ In the ConcreteConfigure() method provided that you have obtained nInPorts and n
  		ResizeOutPortsTo(nOutPorts);
 
 [[image:init_1_channel.png|center|This processing has one provisional port]]
+[[image:dynamic_ports_4_channels.png|center|This example shows the connection of two multi-port processing]]
 
 In the destructor just place:
  		ResizeInPortsTo(0);
  		ResizeOutPortsTo(0);
-
-
-[[image:dynamic_ports_4_channels.png|center|This example shows the connection of two multi-port processing]]
 
 == Using the dynamic ports ==
 
