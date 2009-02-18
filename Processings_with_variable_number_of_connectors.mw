@@ -46,7 +46,7 @@ Is very convenient to implement one method like this one:
  		if (nPorts!=_inports.size()) _inports.resize( nPorts );
  	}
 
-Add a similar one for Output or for each group of Ports.
+Add a similar one for OutputPorts or for each group of Ports you want to resize independently.
 
 == Initialization and destruction == 
 
