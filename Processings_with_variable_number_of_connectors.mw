@@ -85,9 +85,15 @@ Finally, we have to call the Produce method for the AudioOutPorts and the Consum
         for (unsigned channel=0; channel<_numChannelsIn; channel++)
                 _inports[channel]->Consume();
 
-== Caveats: Ordering ports ==
+== Handling connector order caveats ==
 
-If you combine fixed ports with variable number, you may end up having different ordering depending on when you add them by configuration.
-Ports are sorted by creation time but if you recreate them you loss any existing connection to other processings.
+Connectors (Ports and Controls) are sorted as created.
+You will get a consistent connector ordering just by initializing fixed connectors
+before populating any group expanding/shrinking connectors of the same kind (In/Out, Ports/Controls).
+If you have two groups of connector of the same kind which are expanded/shrinked independently on configuration
+you may end up having different connector ordering.
 
-TODO: Ask the list if you need that and will post the code.
+You should avoid doing that 
+but i is possible to rearrange connector ordering afterwards.
+
+TODO: Ask the list if you need that and will post the code to handle that.
