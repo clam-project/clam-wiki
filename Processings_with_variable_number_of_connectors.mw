@@ -29,7 +29,7 @@ Is very convenient to implement one method like this one:
 
  	void ResizeInPortsTo(unsigned nPorts)
  	{
-		// Expanding
+ 		// Expanding
 		static const std::string baseName = "in";
  		while (_inports.size()<nPorts)
  		{
@@ -40,7 +40,7 @@ Is very convenient to implement one method like this one:
  			port->SetHop( BackendBufferSize()); // Just if AudioPort
  			_inports.push_back( port );
  		}
-		// Or Shrinking
+ 		// Or Shrinking
  		for (unsigned i=nPorts; i<_inports.size(); i++)
  			delete _inports[i];
  		if (nPorts!=_inports.size()) _inports.resize( nPorts );
