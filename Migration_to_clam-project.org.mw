@@ -3,7 +3,7 @@
 * '''DONE''' links old wiki to new wiki
 * '''DONE''' wiki: close write access to non-logged 
 * '''DONE''' (with [http://www.mediawiki.org/wiki/Extension:ReCAPTCHA recaptcha extension]: to try it...) wiki: see if captcha is possible
-* wiki: es1 and postgrau_pl (low prio)
+* '''DONE''' wiki: es1 and postgrau_pl (low prio)
 * switch clam subversions (on thursday) and "hide" old one. switch means "removed commit access, sync, remove with message"
 * switch clam-related subversions.
 * Migrate web
