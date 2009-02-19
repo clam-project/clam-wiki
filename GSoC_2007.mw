@@ -1,6 +1,6 @@
 {{Announce}}
 
-* [http://clam.iua.upf.edu/download/misc/ Flyers] to promote students applications.
+* [http://clam-project.org/download/misc/ Flyers] to promote students applications.
 
 
 == Accepted projects ==
@@ -41,7 +41,7 @@ And see the [http://code.google.com/support/bin/answer.py?answer=60325&topic=107
 If you have any question about any of the information below please contact clam-info@iua.upf.edu or join the #clam channel at FreeNode IRC.
 
 == About CLAM ==
-[http://www.clam.iua.upf.edu CLAM](C++ Library for Audio and Music) is a project that aims at developing a full-featured application framework for Audio and Music Applications. It offers a conceptual metamodel as well as many different tools for that particular domain. One of its most relevant features is the availability of a visual building dataflow application that allows to develop rapid prototypes without writing code. The project started 6 years ago and, after winning the ACM award to the Best Open Source Multimedia Software in 2006 it is now ready to publish its 1.0 release. CLAM is mostly developed and hosted by the [http://www.upf.edu Universitat Pompeu Fabra] (Barcelona, Spain). Nevertheless, it is currently managed from the University of [http://www.ucsb.edu California Santa Barbara].
+[http://clam-project.org CLAM](C++ Library for Audio and Music) is a project that aims at developing a full-featured application framework for Audio and Music Applications. It offers a conceptual metamodel as well as many different tools for that particular domain. One of its most relevant features is the availability of a visual building dataflow application that allows to develop rapid prototypes without writing code. The project started 6 years ago and, after winning the ACM award to the Best Open Source Multimedia Software in 2006 it is now ready to publish its 1.0 release. CLAM is mostly developed and hosted by the [http://www.upf.edu Universitat Pompeu Fabra] (Barcelona, Spain). Nevertheless, it is currently managed from the University of [http://www.ucsb.edu California Santa Barbara].
 
 == Mentors ==
 Right about to publish our first 1.0 release we are very excited about the possibility of participating in Google's Summer of Code. We intend to draw a larger developer and also user base once our first milestone has been surpassed.
