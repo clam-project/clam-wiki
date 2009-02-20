@@ -75,7 +75,7 @@ So when we get the same problem in our binaries we'll know it is not our fault.
 
 Lets download Qt.
 
- $ wget -c http://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/qt-win-opensource-4.3.3-mingw.exe
+ $ wget -c ftp://ftp.trolltech.com/qt/source/qt-win-opensource-4.3.3-mingw.exe
  $ chmod a+x qt-win-opensource-4.3.3-mingw.exe
  $ ./qt-win-opensource-4.3.3-mingw.exe
 
