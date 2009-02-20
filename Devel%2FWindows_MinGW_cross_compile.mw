@@ -75,18 +75,18 @@ So when we get the same problem in our binaries we'll know it is not our fault.
 
 Lets download Qt.
 
- $ wget -c ftp://ftp.trolltech.com/qt/source/qt-win-opensource-4.3.3-mingw.exe
- $ chmod a+x qt-win-opensource-4.3.3-mingw.exe
- $ ./qt-win-opensource-4.3.3-mingw.exe
+ $ wget -c ftp://ftp.trolltech.com/qt/source/qt-win-opensource-4.4.3-mingw.exe
+ $ chmod a+x qt-win-opensource-4.4.3-mingw.exe
+ $ ./qt-win-opensource-4.4.3-mingw.exe
 
 I accepted to intall mingw32 again but in the fake windows.
-This installs by default Qt on ~/.wine/drive_c/Qt/4.3.3/, so
+This installs by default Qt on ~/.wine/drive_c/Qt/4.4.3/, so
 
- $ ~/.wine/drive_c/Qt/4.3.3/bin/designer.exe
+ $ ~/.wine/drive_c/Qt/4.4.3/bin/designer.exe
 
 [[image:Mingw32DesignerUnderWine.png|thumb|Mingw Designer running on wine]]
 
- $ export QTDIR=~/.wine/drive_c/Qt/4.3.3/
+ $ export QTDIR=~/.wine/drive_c/Qt/4.4.3/
 
 Edit the following file helloqt.cxx
 
@@ -600,7 +600,7 @@ The "z:\\CajitasDeArena\\mingw" part will vary in your case. (for example you ca
 
  export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever in your case
  mkdir -p $MINGWSANDBOX/local/bin
- cp /home/vokimon/.wine/drive_c/Qt/4.3.3/bin/*dll  $MINGWSANDBOX/local/bin
+ cp /home/vokimon/.wine/drive_c/Qt/4.4.3/bin/*dll  $MINGWSANDBOX/local/bin
  svn co http://clam-project.org/clam/trunk clam
 Comment out the 
  cd $MINGWSANDBOX/clam/CLAM
@@ -617,8 +617,8 @@ Comment out the
  cd $MINGWSANDBOX/clam/CLAM/plugins/GuitarDistortion
  scons install clam_prefix=$MINGWSANDBOX/local crossmingw=1
  cd $MINGWSANDBOX/clam/NetworkEditor
- QTDIR=~/.wine/drive_c/Qt/4.3.3/ scons clam_prefix=$MINGWSANDBOX/local prefix=$MINGWSANDBOX/local external_dll_path=$MINGWSANDBOX/local/bin crossmingw=1 package
+ QTDIR=~/.wine/drive_c/Qt/4.4.3/ scons clam_prefix=$MINGWSANDBOX/local prefix=$MINGWSANDBOX/local external_dll_path=$MINGWSANDBOX/local/bin crossmingw=1 package
  cd $MINGWSANDBOX/clam/Annotator/vmqt
- QTDIR=~/.wine/drive_c/Qt/4.3.3/ scons clam_prefix=$MINGWSANDBOX/local crossmingw=1
+ QTDIR=~/.wine/drive_c/Qt/4.4.3/ scons clam_prefix=$MINGWSANDBOX/local crossmingw=1
  cd $MINGWSANDBOX/clam/Annotator/
- QTDIR=~/.wine/drive_c/Qt/4.3.3/ scons prefix=$MINGWSANDBOX/local  clam_prefix=$MINGWSANDBOX/local external_dll_path=$MINGWSANDBOX/local/bin crossmingw=1 package
+ QTDIR=~/.wine/drive_c/Qt/4.4.3/ scons prefix=$MINGWSANDBOX/local  clam_prefix=$MINGWSANDBOX/local external_dll_path=$MINGWSANDBOX/local/bin crossmingw=1 package
