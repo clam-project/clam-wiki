@@ -13,7 +13,7 @@ Some development pages are still at the [https://iua-share.upf.es/wikis/clam_dra
 == Subversion access ==
 Subversion tree contains CLAM libs and applications: NetworkEditor, Annotator, SMSTools and Voice2MIDI.
 * Open and read-only 
- $ svn co https://iua-share.upf.edu/svn/clam/trunk clam
+ $ svn co http://clam-project.org/clam/trunk clam
 * Active CLAM developers can also obtain commit access. See [[rules for commit access]]
 
 == Getting involved ==
