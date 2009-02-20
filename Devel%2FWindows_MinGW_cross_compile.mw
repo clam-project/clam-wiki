@@ -103,8 +103,7 @@ And now lets compile it.
 
  $ i586-mingw32msvc-g++ -o helloqt.exe helloqt.cxx -L $QTDIR/lib -I $QTDIR/include -l QtCore4 -lQtGui4 
 
-Windows requires dll's to be on PATH or on the same dir.
-I don't know how to set PATH on wine so i just copied them on the binary folder.
+Windows requires dll's to be on PATH or on the same dir. You can use regedit to edit the wine PATH variable, which is located under HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment\PATH in the registry. In other case, just copy required dll's on the binary folder.
 
  $ cp $QTDIR/bin/Qt*dll .
  $ ./helloqt.exe
