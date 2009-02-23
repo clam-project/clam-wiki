@@ -68,16 +68,16 @@ We are standing on giant shoulders.
 
 CLAM has been enpowered with the work of dozens of contributors.
 For sure we are missing a lot of them so, if you are one, just reivindicate your authorship.
-Ohloh page for CLAM lists a lot of [https://www.ohloh.net/p/clam/contributors contributors],
+[https://www.ohloh.net/p/clam/contributors Ohloh page for CLAM] lists a lot of contributors,
 although several distorting factors must be considered to those stats:
 * VCS history prior to 2002 was lost in a repository switch
 * Most of the development took place in experimental branches not considered by ohloh
 * A lot of commits are just imports from other MTG projects, so the commiter is not the author, just the importer
 * The same happens with contributors before becoming commiters, patches are commited by someone else.
 
-CLAM project was started by '''Xavier Amatriain''' and '''Marteen de Boer'''.
-Many few months later '''Pau Arumí''', '''David García''', '''Enrique Robledo''' and '''Miguel Ramírez''' joined.
-Xavier Amatriain, Pau Arumí and David García are still core contributors nowadays.
+CLAM project was started by '''Xavier Amatriain''' and '''Marteen de Boer''' in 2000.
+Soon '''Pau Arumí''', '''David García''', '''Enrique Robledo''' and '''Miguel Ramírez''' joined the team.
+Xavier Amatriain, Pau Arumí and David García are still active contributors nowadays.
 CLAM also includes a lot of code contributed by MTG/UPF members such as 
 Xavier Serra, Jordi Bonada, Emilia Gomez, Oscar Mayor, Fabien Gouyon, 
 Alex Loscos, Lars Fabig, Bee Suan, Marcos Alonso, Günter Geiger...
