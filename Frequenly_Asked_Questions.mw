@@ -204,6 +204,7 @@ CLAM implements the following audio backends:
 === Which plugins systems does CLAM support as a host? ===
 
 CLAM is able to host plugins for the following standards:
+* LADSPA
 
 === Which plugins systems does CLAM generate? ===
 
