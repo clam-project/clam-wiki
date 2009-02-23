@@ -221,7 +221,7 @@ Virtually any C++ type can be comunicated by a CLAM port or control.
 Even though, some consideration must be taken for such data types.
 
 * Copy should not generate aliasing (full copy or copy on change).
-* Copy should be painless mostly for controls that may come in bursts.
+* For controls, copy should be not expensive and real-time safe as they come in bursts.
 
 === Which audio formats are supported? ===
 
