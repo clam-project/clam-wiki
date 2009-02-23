@@ -76,7 +76,7 @@ although several distorting factors must be considered to those stats:
 * The same happens with contributors before becoming commiters, patches are commited by someone else.
 
 CLAM project was started by '''Xavier Amatriain''' and '''Marteen de Boer'''.
-'''Pau Arumí''', '''David García''', '''Enrique Robledo''' and '''Miguel Ramírez''' joined at the very begining.
+Many few months later '''Pau Arumí''', '''David García''', '''Enrique Robledo''' and '''Miguel Ramírez''' joined.
 Xavier Amatriain, Pau Arumí and David García are still core contributors nowadays.
 CLAM also includes a lot of code contributed by MTG/UPF members such as 
 Xavier Serra, Jordi Bonada, Emilia Gomez, Oscar Mayor, Fabien Gouyon, 
@@ -113,6 +113,13 @@ Google Summer of Code program brought some brilliant students worldwide to the p
 ** Francisco Tufro
 ** Pawel Bartkiewicz
 ** Yushen Han
+Most of them are still active developers.
+
+Other code contributors are: 
+Antonio Pertusa (Onset extractor), 
+Chris Harte (Chord extraction algorithm), 
+Kate Noland (Chord extraction algorithm),
+...
 
 === Which other projects are using CLAM? ===
 
