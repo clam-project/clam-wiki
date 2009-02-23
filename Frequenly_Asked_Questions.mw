@@ -221,11 +221,17 @@ CLAM can receive control events using:
 * Open Sound Control (OSC): processings in the 'osc' plugin by means of the liblo library.
 * MIDI devices: Using RTMIDI
 
-=== How does CLAM deals with other languages ===
+=== How does CLAM deals with other languages? ===
 
 CLAM is a C++ library but it has ways to deal with other languages:
 * CLAM provides facilities to use and develop FAUST programs as LADSPA plugins.
 * Experimental efforts have been made to have python bindings to CLAM.
+
+=== May I develop a CLAM based program based on CLAM and GTK instead of QT? ===
+
+Of course you could, as the core and the processing part have no dependencies on QT
+and the boundaries are well defined.
+You just have to implement such boundaries and the display and control widgets you need.
 
 == Compilation ==
 
