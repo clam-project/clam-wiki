@@ -116,7 +116,7 @@ Google Summer of Code program brought some brilliant students worldwide to the p
 ** Yushen Han
 Most of them are still active developers.
 
-Other code contributors are: 
+CLAM also includes third party code not developed originally but included in CLAM on behalf of their authors:
 Antonio Pertusa (Onset extractor), 
 Chris Harte (Chord extraction algorithm), 
 Kate Noland (Chord extraction algorithm),
