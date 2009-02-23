@@ -180,6 +180,8 @@ The [[Version Migration Guide]] summarizes all the sensible changes that you wil
 
 === Why CLAM is so flexible and powerfull? ===
 
+[Image:/images/DetailedProcessingObject.png|thumb]
+
 CLAM splits the processing in '''modules''' that you can recombine at will as a network.
 Modules can send each other '''data of any C++ type''',
 so you can provide higher level abstractions than just audio signals and value controls.
