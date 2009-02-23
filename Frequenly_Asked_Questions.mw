@@ -176,6 +176,56 @@ We often advice eventual contributors to follow [[Devel#Getting_involved|those s
 
 The [[Version Migration Guide]] summarizes all the sensible changes that you will require to upgrade your code from one CLAM version to the next one.
 
+== Features ==
+
+=== Is CLAM ready for real-time? ===
+
+Yes, it is. Low latency processing is one of the main goals of the framework.
+Most of the provided examples are real-time processing.
+
+Note that not all processings modules are ready for working in real-time, but most of them do.
+
+=== Which audio formats does it support? ===
+
+CLAM can read and write [http://www.mega-nerd.com/libsndfile/#Features all the formats that libsndfile is able to],
+plus mp3 (via libmad) and ogg/vorbis files ([http://xiph.org/vorbis/ via xiph liboggvorbis libraries]).
+
+Due to patents restrictions, MP3 support is read only.
+
+=== Which audio backends does it support? ===
+
+CLAM implements the following audio backends:
+* JACK
+* Windows Multimedia by means of PortAudio
+* ASIO by means of PortAudio
+* DirectSound (tm) by means of PortAudio
+* ALSA by means of PortAudio
+
+=== Which plugins systems does CLAM support as a host? ===
+
+CLAM is able to host plugins for the following standards:
+
+=== Which plugins systems does CLAM generate? ===
+
+CLAM is able to generate plugins for the following standards:
+* VST
+* LADSPA
+
+CLAM also has its own plugin system so that you can extend the existing modules in CLAM.
+
+
+=== Which control standards does CLAM implement? ===
+
+CLAM can receive control events using:
+* Open Sound Control (OSC): processings in the 'osc' plugin by means of the liblo library.
+* MIDI devices: Using RTMIDI
+
+=== How does CLAM deals with other languages ===
+
+CLAM is a C++ library but it has ways to deal with other languages:
+* CLAM provides facilities to use and develop FAUST programs as LADSPA plugins.
+* Experimental efforts have been made to have python bindings to CLAM.
+
 == Compilation ==
 
 === Why do I get an 'Undefined Interface' error when compiling the NetworkEditor ===
