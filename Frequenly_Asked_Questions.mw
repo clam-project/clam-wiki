@@ -178,6 +178,23 @@ The [[Version Migration Guide]] summarizes all the sensible changes that you wil
 
 == Features ==
 
+=== Why CLAM is so flexible and powerfull? ===
+
+CLAM splits the processing in '''modules''' that you can recombine at will as a network.
+Modules can send each other '''data of any C++ type''',
+so you can provide higher level abstractions than just audio signals and value controls.
+You can also control the data flow by using different '''communication patterns''',
+either syncronous (ports) or asyncronous (control).
+Moreover, a network can be executed within different '''environment backends''' to get
+a real-time application (JACK, PortAudio...), 
+an audio plugin (VST, LADSPA...), 
+an offline processing application...
+You have tools to '''graphically prototyping''' your software,
+and still is very easy to integrate it in an pure code project.
+There is a huge library of existing processing modules.
+And last but not least, 
+processing modules, user interface elements, and backends can be '''extended via plugins'''.
+
 === Is CLAM ready for real-time? ===
 
 Yes, it is. Low latency processing is one of the main goals of the framework.
@@ -185,14 +202,38 @@ Most of the provided examples are real-time processing.
 
 Note that not all processings modules are ready for working in real-time, but most of them do.
 
-=== Which audio formats does it support? ===
+=== Which kinds of data flow are supported? ===
+
+Two kinds flows are implemented in CLAM networks: port data flow and control data flow.
+Port data flow queues data tokens on the input ports until the required amount is available,
+and then an algorithm step is exectued. Port data is queued until consumed and all ports
+required for executing the algorithm step are consumed at once.
+
+On the other hand, in control data flow, receiver module gets executed as soon as the sender module sends the data.
+Each control in a module has its own callback that often just copies the last sent value.
+No queuing is done and any ratio of data tokens are accepted.
+
+=== Which kind of data can be manipulated by CLAM? ===
+
+CLAM ports and control are strongly typed that means that 
+you can connect two connectors just if they share the data type to be communicated.
+Virtually any C++ type can be comunicated by a CLAM port or control.
+Even though, some consideration must be taken for such data types.
+
+* Copy should not generate aliasing (full copy or copy on change).
+* Copy should be painless mostly for controls that may come in bursts.
+
+=== Which audio formats are supported? ===
 
 CLAM can read and write [http://www.mega-nerd.com/libsndfile/#Features all the formats that libsndfile is able to],
 plus mp3 (via libmad) and ogg/vorbis files ([http://xiph.org/vorbis/ via xiph liboggvorbis libraries]).
 
 Due to patents restrictions, MP3 support is read only.
 
-=== Which audio backends does it support? ===
+Some modules encapsulate access to such files in a real-time safe way
+(independent thread with a ring buffer).
+
+=== Which audio backends are supported? ===
 
 CLAM implements the following audio backends:
 * JACK
@@ -201,19 +242,24 @@ CLAM implements the following audio backends:
 * DirectSound (tm) by means of PortAudio
 * ALSA by means of PortAudio
 
-=== Which plugins systems does CLAM support as a host? ===
+=== Which plugins systems are supported as a host? ===
 
 CLAM is able to host plugins for the following standards:
 * LADSPA
+* CLAM native
 
-=== Which plugins systems does CLAM generate? ===
+CLAM native refers plugins used to extend the module repository available in CLAM,
+not limited by the plugin standard.
+
+=== Which plugins systems can be generated? ===
 
 CLAM is able to generate plugins for the following standards:
 * VST
 * LADSPA
+* CLAM native
 
-CLAM also has its own plugin system so that you can extend the existing modules in CLAM.
-
+CLAM native refers plugins used to extend the module repository available in CLAM,
+not limited by the plugin standard.
 
 === Which control standards does CLAM implement? ===
 
