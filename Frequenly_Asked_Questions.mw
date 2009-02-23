@@ -68,7 +68,7 @@ We are standing on giant shoulders.
 
 CLAM has been enpowered with the work of dozens of contributors.
 For sure we are missing a lot of them so, if you are one, just reivindicate your authorship.
-[https://www.ohloh.net/p/clam/contributors Ohloh page for CLAM] lists a lot of contributors,
+[https://www.ohloh.net/p/clam/contributors Ohloh page for CLAM] lists most CLAM contributors,
 although several distorting factors must be considered to those stats:
 * VCS history prior to 2002 was lost in a repository switch
 * Most of the development took place in experimental branches not considered by ohloh
@@ -82,7 +82,7 @@ CLAM also includes a lot of code contributed by MTG/UPF members not directly wor
 Xavier Serra, Jordi Bonada, Emilia Gomez, Oscar Mayor, Fabien Gouyon, 
 Alex Loscos, Lars Fabig, Bee Suan, Marcos Alonso, Günter Geiger, Paul Brossier...
 
-MTG staff and UPF students doing their final career project have joined CLAM team, including:
+UPF students doing their final career project and other MTG staff have joined CLAM team, including:
 * Xavier Rubio
 * Xavier Oliver
 * Sandra Gilabert
