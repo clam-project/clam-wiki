@@ -109,8 +109,8 @@ For sure we are missing a lot of contributors so, if you are one, just reivindic
 Ohloh page for CLAM lists a lot of [https://www.ohloh.net/p/clam/contributors contributors],
 and their commiting periods.
 But don't take such stats so seriously, several distorting factors apply are to be considered:
-* CVS history prior to  was lost due to a repository switch
-* Most of the development took place in experimental branches not considered there
+* VCS history prior to 2002 was lost in a repository switch
+* Most of the development took place in experimental branches not considered by ohloh
 * A lot of commits are just imports from other MTG projects, so the commiter is not the author, just the importer
 * The same happens with contributors before becoming commiters, patches are commited by someone else.
 
