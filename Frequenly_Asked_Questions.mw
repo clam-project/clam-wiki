@@ -73,7 +73,7 @@ although several distorting factors must be considered to those stats:
 * VCS history prior to 2002 was lost in a repository switch
 * Most of the development took place in experimental branches not considered by ohloh
 * A lot of commits are just imports from other MTG projects, so the commiter is not the author, just the importer
-* The same happens with contributors before becoming commiters, patches are commited by someone else.
+* The same happens with new contributors before becoming commiters, patches are commited by someone else.
 
 CLAM project was started by '''Xavier Amatriain''' and '''Marteen de Boer''' in 2000.
 Soon '''Pau Arumí''', '''David García''', '''Enrique Robledo''' and '''Miguel Ramírez''' joined the team.
