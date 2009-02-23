@@ -66,11 +66,22 @@ We are standing on giant shoulders.
 
 === Who contributed CLAM? ===
 
-The CLAM was started by '''Xavier Amatriain''' with the help from the first stages of '''Marteen de Boer'''.
+CLAM has been enpowered with the work of dozens of contributors.
+For sure we are missing a lot of them so, if you are one, just reivindicate your authorship.
+Ohloh page for CLAM lists a lot of [https://www.ohloh.net/p/clam/contributors contributors],
+and their commiting periods.
+But don't take such stats so seriously, several distorting factors must be considered:
+* VCS history prior to 2002 was lost in a repository switch
+* Most of the development took place in experimental branches not considered by ohloh
+* A lot of commits are just imports from other MTG projects, so the commiter is not the author, just the importer
+* The same happens with contributors before becoming commiters, patches are commited by someone else.
+
+CLAM project was started by '''Xavier Amatriain''' and '''Marteen de Boer'''.
 '''Pau Arumí''', '''David García''', '''Enrique Robledo''' and '''Miguel Ramírez''' joined at the very begining.
 Xavier Amatriain, Pau Arumí and David García are still core contributors nowadays.
 CLAM also includes a lot of code contributed by MTG/UPF members such as 
-Xavier Serra, Jordi Bonada, Emilia Gomez, Oscar Mayor, Fabien Gouyon, Alex Loscos, Lars Fabig, Bee Suan...
+Xavier Serra, Jordi Bonada, Emilia Gomez, Oscar Mayor, Fabien Gouyon, 
+Alex Loscos, Lars Fabig, Bee Suan, Marcos Alonso, Günter Geiger...
 
 Several students at the UPF integrated into the project while doing their final career project:
 * Xavier Rubio
@@ -103,16 +114,6 @@ Google Summer of Code program brought some brilliant students worldwide to the p
 ** Francisco Tufro
 ** Pawel Bartkiewicz
 ** Yushen Han
-
-For sure we are missing a lot of contributors so, if you are one, just reivindicate your authorship.
-
-Ohloh page for CLAM lists a lot of [https://www.ohloh.net/p/clam/contributors contributors],
-and their commiting periods.
-But don't take such stats so seriously, several distorting factors apply are to be considered:
-* VCS history prior to 2002 was lost in a repository switch
-* Most of the development took place in experimental branches not considered by ohloh
-* A lot of commits are just imports from other MTG projects, so the commiter is not the author, just the importer
-* The same happens with contributors before becoming commiters, patches are commited by someone else.
 
 === Which other projects are using CLAM? ===
 
