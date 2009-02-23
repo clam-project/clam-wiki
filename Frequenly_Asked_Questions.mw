@@ -64,6 +64,38 @@ So, CLAM added value is offering them all under an uniform interface that eases 
 CLAM would be unthinkable without the great work of all those brave open source developers!
 We are standing on giant shoulders.
 
+
+=== Who are the authors of CLAM ===
+
+The CLAM was started by Xavier Amatriain with the help from the first stages of Marteen de Boer.
+Pau Arumí, David García, Enrique Robledo and Miguel Ramirez joined at the very begining.
+Xavier Amatriain, Pau Arumí and David García are still core contributors nowadays.
+CLAM also includes a lot of code contributed by MTG/UPF members such as 
+Xavier Serra, Jordi Bonada, Emilia Gomez, Oscar Mayor, Fabien Gouyon, ...
+and also by members of other universities: 
+
+Several students at the UPF integrated into the project while doing their final career project:
+* Xavier Rubio
+* Xavier Oliver
+* Sandra Gilabert
+* Albert Mora
+* Ismael Mosquera
+
+Also thanks to the Google Summer of Code some students worldwide have joined the project:
+* 2007
+** Hernan Ordiales
+** Andreas Calvo
+** Gregory Ryan Kellum
+** Bennet Kolasinski
+** Roman Goj
+** Ebrahim Kazemzadeh
+* 2008
+** Natanael Olaiz
+** Wang Jun
+** Francisco Tufro
+** Pawel Bartkiewicz
+** Yushen Han
+
 === Which other projects are using CLAM? ===
 
 For third party (non-UPF) scientific citations take a look at [[CLAM citations]].
