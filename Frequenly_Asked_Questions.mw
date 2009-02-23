@@ -69,8 +69,7 @@ We are standing on giant shoulders.
 CLAM has been enpowered with the work of dozens of contributors.
 For sure we are missing a lot of them so, if you are one, just reivindicate your authorship.
 Ohloh page for CLAM lists a lot of [https://www.ohloh.net/p/clam/contributors contributors],
-and their commiting periods.
-But don't take such stats so seriously, several distorting factors must be considered:
+although several distorting factors must be considered to those stats:
 * VCS history prior to 2002 was lost in a repository switch
 * Most of the development took place in experimental branches not considered by ohloh
 * A lot of commits are just imports from other MTG projects, so the commiter is not the author, just the importer
