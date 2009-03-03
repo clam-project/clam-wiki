@@ -644,4 +644,4 @@ To test the plugin you should use a vsthost.
 TODO: Last time I needed to put $MINGWSANDBOX/local/lib (expressed in a wine version) in the wine PATH environment, althought it should not be needed.
  winepath -w $MINGWSANDBOX/local/lib
  * Edit ~/.wine/system.reg
- * At {{{System\\CurrentControlSet\\Control\\Session Manager\\Environment}}} the 'PATH' key to point also to the path separating it with a ';'
+ * At 'System\\CurrentControlSet\\Control\\Session Manager\\Environment' the 'PATH' key to point also to the path separating it with a ';'
