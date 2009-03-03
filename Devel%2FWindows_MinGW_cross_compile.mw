@@ -552,9 +552,9 @@ No supported yet. Work in progress.
 
 Note: Xerces-C is available for Cygwin. Use the Cygwin "setup.exe" program (may need to try a different mirror).
 
-== libsamplerate (not used in CLAM) ==
+== libsamplerate ==
 
-This library is not a current CLAM dependency.
+This library is not a current CLAM dependency (an experimental plugin depends on it).
 This is just an experiment foreseeing an eventual use.
 
  export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever in your case
@@ -565,8 +565,6 @@ This is just an experiment foreseeing an eventual use.
  cd libsamplerate-0.1.2
  ./configure --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local CPPFLAGS=-I$MINGWSANDBOX/local/include/ PKG_CONFIG_PATH=$MINGWSANDBOX/local/lib/pkgconfig/
  make install
-
-
 
 == Py2Exe ==
 
