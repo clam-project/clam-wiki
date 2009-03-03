@@ -622,3 +622,21 @@ Comment out the
  QTDIR=~/.wine/drive_c/Qt/4.4.3/ scons clam_prefix=$MINGWSANDBOX/local crossmingw=1
  cd $MINGWSANDBOX/clam/Annotator/
  QTDIR=~/.wine/drive_c/Qt/4.4.3/ scons prefix=$MINGWSANDBOX/local  clam_prefix=$MINGWSANDBOX/local external_dll_path=$MINGWSANDBOX/local/bin crossmingw=1 package
+
+
+= VST development =
+
+* Download vst 2.4 sdk from steimberg (no direct link can be provided :-P ).
+* Unzip it in $MINGWSANDBOX/
+ cd $MINGWSANDBOX/
+ QTDIR=~/.wine/drive_c/Qt/4.4.3/ scons prefix=$MINGWSANDBOX/local clam_prefix=$MINGWSANDBOX/local external_dll_path=$MINGWSANDBOX/local/bin crossmingw=1 vstsdk_path=$MINGWSANDBOX/vstsdk2.4
+
+To test the plugin you should use a vsthost.
+'''Warning:''' this will taint your wine install with some runtime libs, take that into account if you want a clean system to try binaries installation.
+
+ cd $MINGWSANDBOX/download
+ wget http://www.hermannseib.com/programs/vsthost.zip
+ mkdir vsthost
+ cd vsthost
+ wget http://www.kegel.com/wine/winetricks
+ bash winetricks mfc42
