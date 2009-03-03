@@ -628,7 +628,7 @@ Comment out the
 
 * Download vst 2.4 sdk from steimberg (no direct link can be provided :-P ).
 * Unzip it in $MINGWSANDBOX/
- cd $MINGWSANDBOX/
+ cd $MINGWSANDBOX/clam/NetworkEditor/src/vst
  QTDIR=~/.wine/drive_c/Qt/4.4.3/ scons prefix=$MINGWSANDBOX/local clam_prefix=$MINGWSANDBOX/local external_dll_path=$MINGWSANDBOX/local/bin crossmingw=1 vstsdk_path=$MINGWSANDBOX/vstsdk2.4
 
 To test the plugin you should use a vsthost.
@@ -640,3 +640,8 @@ To test the plugin you should use a vsthost.
  cd vsthost
  wget http://www.kegel.com/wine/winetricks
  bash winetricks mfc42
+
+TODO: Last time I needed to put $MINGWSANDBOX/local/lib (expressed in a wine version) in the wine PATH environment, althought it should not be needed.
+ winepath -w $MINGWSANDBOX/local/lib
+ * Edit ~/.wine/system.reg
+ * At {{{System\\CurrentControlSet\\Control\\Session Manager\\Environment}}} the 'PATH' key to point also to the path separating it with a ';'
