@@ -73,9 +73,12 @@ Things that core developers are eager to address but still not being refined in 
 * Parameter propagation through the data-flow
 * Offline networks (visual prototyping on storing and retrieving data from Pools)
 * Extend the usage of new single representation spectrums to Spectral and SMS processings.
-* Ease widget plugin creation
+* Ease widget plugin creation (binders for plots, type managers for configurations...)
 * Unify Do() return value semantics. One solution is do it void Do()
 * Implicit Consume and Produce when using ports (flow control does it).
+* Properly manage sampling rate
+* More plugins: VST, VSTi, LV2...
+* Better qt designer integration
 
 === Hot Ideas ===
 
