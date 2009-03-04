@@ -5,14 +5,19 @@
 
 === Debian packaging ===
 
-* Fill separate ITP bugs in debian for the apps
-* Find the GPLv2 only and MIT license files.
-* What to do with VCS fields?
-* Man pages for the extra binaries
-* Signing the DSC files
 * [[Image:Done.png]] How to install the examples. -> Uncompressed
 * [[Image:Done.png]] neutral (or debian) distribution in changelog
 * [[Image:Done.png]] Make packages non-native
+* [[Image:Done.png]] Fill separate ITP bugs in debian for the NetworkEditor
+* [[Image:Done.png]] Fill separate ITP bugs in debian for the Chordata
+* Fill separate ITP bugs in debian for the clam-plugins
+* [[Image:Done.png]] Find the GPLv2 only and MIT license files.
+** Acknoledge GPLv2 code comming from zynaddsubfx in plugins/GuitarEffects
+** Acknoledge MIT like code comming from RTMIDI/Audio
+* Autors in copyright (just copyright
+* What to do with VCS fields?
+* Man pages for the extra binaries
+* Signing the DSC files
 
 === Other ===
 
