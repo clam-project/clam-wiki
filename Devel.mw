@@ -69,7 +69,7 @@ Things that core developers are eager to address but still not being refined in 
 * Run-time error handling and NetworkPlayer status feedback
 * Static network scheduling (Based on Pau's Thesis)
 * Hot wiring (allowing changing the network without stoping it)
-* Parametrized networks (Network configuration, propagated to processings)
+* Parametrized networks (Network configuration, propagated to processings' config)
 * Parameter propagation through the data-flow
 * Offline networks (visual prototyping on storing and retrieving data from Pools)
 * Extend the usage of new single representation spectrums to Spectral and SMS processings.
