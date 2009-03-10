@@ -427,7 +427,7 @@ Check the details on the [[Chord Extraction TODO's]] page.
 * Extend current Port Monitor infrastructure to generative visual algorithms or user-defined mappings between the audio analysis features and the graphics
 * Interface CLAM with GStreamer
 
-== Annotator and description data pools ==
+= Annotator and description data pools =
 
 Core CLAM developers are dedicated to real time processing issues and 
 they have interest on someone taking care of this key application.
@@ -437,7 +437,7 @@ if they build a coherent set.
 See also [[Devel/Annotator_TODO's]] for further ideas.
 
 
-=== Coretize Annotator Pool features ===
+== Coretize Annotator Pool features ==
 
 High priority on Annotator front.
 
@@ -449,7 +449,7 @@ In consequence, Annotator has an ill duplication of structures,
 and also other CLAM based applications cannot benefit of such features.
 This project would consist on merging such features in the common Pool related classes in CLAM core, refactoring the Annotator code base and enhancing/redesigning the Pool API usability.
 
-=== Annotator data type and view plugins ===
+== Annotator data type and view plugins ==
 
 High priority on Annotator front.
 
@@ -463,7 +463,7 @@ This project would consist in cleaning up the API's of each
 set of plugins and making them loadable dll's so that third party
 users can extend pool types and annotator views.
 
-=== Annotation Merger ===
+== Annotation Merger ==
 
 High priority on Annotator front.
 
@@ -487,22 +487,22 @@ so this project proposes to build:
 * A graphical interface to build merging script
 * Some extra application logic needed to launch several extractors and to mapping back pool modifications.
 
-=== VAMP plugins on the Annotator ===
+== VAMP plugins on the Annotator ==
 
 VAMP is the feature extraction plugin system used by SonicVisualizer.
 This project would consist in being able to lauch VAMP plugins within the Annotator
 and integrating its results in an Annotator data pool.
 
-=== Web services based extractors ===
+== Web services based extractors ==
 
 Building extractors that call public web services such as Lastfm, MusicBrainz, EchoNest... and wraps the results as CLAM data pool xml to be open by the Annotator.
 
-=== Pool based web services ===
+== Pool based web services ==
 
 Another possibility is offering web services that given an audio excerpt
 they return you the descriptors as an xml pool with or as any other existing format.
 
-=== Macro manipulation of descriptors with python on Annotator ===
+== Macro manipulation of descriptors with python on Annotator ==
 
 Make the annotation data accessible to python scripts
 so that one can automate repetitive descriptors manipulation.
@@ -510,7 +510,7 @@ Some use cases:
 * "I want to correct an offset that a given segment annotation adds to all segments"
 * "I want to extend a regular beat annotation and just correct when it varies"
 
-=== Enhancing Segment Editor ===
+== Enhancing Segment Editor ==
 
 * Selection and edit actions (copy, paste..)
 * Overlapping segments
@@ -518,13 +518,13 @@ Some use cases:
 * Displaying segment attributes as color
 * Using metadata: Units, intervals...
 
-=== Enhancing Annotator Views ===
+== Enhancing Annotator Views ==
 
 * Bring more CLAM monitors as instant views
 * Time evolution views for multibin frame parameters (spectrums, pcp's, chord correlation...)
 * Better frame level float editor
 
-=== Flexible auralization on Annotator ===
+== Flexible auralization on Annotator ==
 
 Annotator provides auralization for the user to check the descriptors.
 But auralization capabilities are limited to
@@ -541,7 +541,7 @@ This project consists in:
 * Provide the interface to configure auralizators for each project
 * Build several useful auralizations.
 
-=== Configuration parameters for extractors ===
+== Configuration parameters for extractors ==
 
 Currently there is no way of specifying configuration parameters to the extractors.
 Each extractor could have their own parameters so we need a system to deal with such flexibility but still being simple to define new extractors.
