@@ -10,6 +10,10 @@
 Based on Pau's Thesis. TODO: add a link
 
 
+== New standalone applications ==
+
+End user applications are interesting because they increase the user base and project visibility. Building CLAM based applications require skills on Qt.
+
 ==Network based music tracker==
 
 '''Description:''' Network based music tracker. Controls being sequenced in time in a order list plus pattern way.
@@ -20,6 +24,77 @@ Based on Pau's Thesis. TODO: add a link
 
 '''Difficulty:''': Moderate.
 
+=== Educational vowel synthesizer ===
+
+Build a educative program that would consist on:
+* synthesizing different vowels by placing a point within the [http://en.wikipedia.org/wiki/Vowel_triangle Vowel triangle],
+* and, the reverse, given an input vowel from the microphone place a dot on the triangle, so the students can check their pronunciation.  Here's a [http://sourceforge.net/project/screenshots.php?group_id=191299&ssid=54864 screenshot] of what a Vowel triangle might look like, additionally with '[http://en.wikipedia.org/wiki/Voronoi_diagram Voronoi]' regions shown - showing what the near misses are most likely to be confused with in a particular language. 
+
+This could be enhanced by:
+* displaying the mouth position for the vowel,
+* visualizing the spectral peaks so they can identify the effect,
+* changing the pitch,
+* changing the synthesized gender,
+* changing the vocal track characteristics,
+* extracting user's vocal track characteristics for synthesized sound.
+
+A teacher could limit the set of vowels to the ones used for 
+a particular language such as Catalan or English,
+so that the students just see the relevant ones for the exercise.
+
+'''Note:''' Last year a student focused on having some of the processing working. Processing still needs work but this year we will like to focus on the interface so we can say the application exists, and then enhance the processing as secondary goal.
+
+
+=== Real-time synthesizer using SMS models ===
+
+Salto is a CLAM legacy application to synthesize Saxo.
+This project consist on revamp a very simple Salto like synthesizer.
+
+It consists on:
+* Building a db of sms samples
+* Building processings to
+** process control signals
+** choose samples
+** interpolate
+** create stream flow
+** etc.
+
+=== Standalone chord extractor application ===
+
+'''Status: ''' Checkout [[http://clam-project.org/wiki/GSoC/Standalone_chord_extractor_application|chordata (former turnaround)]]
+
+'''Description''': (deprecated)
+We have the chord extraction running whithin Annotator, NetworkEditor, Offline, but none of these applications are addressed towards the real use that one can make of such technology being a guitar player.
+
+This project consists on building an application which addresses usability issues for the use case that some one want to learn the chords of a song.
+
+Some of the concrete use cases to be addressed are:
+
+* Most of user actions should consist on single key actions (no control keys) to facilitate usage with an musical instrument at hand.
+* Precomputing a song when loading it.
+* Playback
+** Preloading the song 
+** Moving fastforward and backwards
+** Playing a limited length of the song and then back
+** Replay from the same point
+** Time stretch playback
+* Display
+** A scrolling segmentation view
+** Segmentation view should have chord text displayed
+** Segmentation view should have a different color for each chord for the user to associate them. Maybe different color association per song or maybe using a color/pattern combination for Root/Mode.
+
+== Network Scalability (aka Subnetworks) ==
+
+'''Status:''' Checkout [[Network_scalability_and_Blender_integration]]
+
+'''Description:''' One compeling issue in CLAM is addressing scalability for the visual builder. That means building processings modules out of a composition of existing ones. CLAM supports that just by coding (ProcessingComposites), but one could consider sinks and sources of a network the ports and controls of a brand new processing.
+A project to address that should include:
+* Infrastructure to control the flow of recursive networks
+* Integrating user-defined networks in the component library.
+* Providing user interface on the NetworkEditor.
+* ...
+
+'''Priority:''' High
 
 == Integrating external libraries ==
 
@@ -69,66 +144,6 @@ availables on the NetworkEditor or/and making the TickExtractor example working 
 
 
 
-== New standalone applications ==
-
-End user applications are interesting because they increase the user base and project visibility. Building CLAM based applications require skills on Qt.
-
-=== Standalone chord extractor application ===
-
-We have the chord extraction running whithin Annotator, NetworkEditor, Offline, but none of these applications are addressed towards the real use that one can make of such technology being a guitar player.
-
-This project consists on building an application which addresses usability issues for the use case that some one want to learn the chords of a song.
-
-Some of the concrete use cases to be addressed are:
-
-* Most of user actions should consist on single key actions (no control keys) to facilitate usage with an musical instrument at hand.
-* Precomputing a song when loading it.
-* Playback
-** Preloading the song 
-** Moving fastforward and backwards
-** Playing a limited length of the song and then back
-** Replay from the same point
-** Time stretch playback
-* Display
-** A scrolling segmentation view
-** Segmentation view should have chord text displayed
-** Segmentation view should have a different color for each chord for the user to associate them. Maybe different color association per song or maybe using a color/pattern combination for Root/Mode.
-
-=== Educational vowel synthesizer ===
-
-Build a educative program that would consist on:
-* synthesizing different vowels by placing a point within the [http://en.wikipedia.org/wiki/Vowel_triangle Vowel triangle],
-* and, the reverse, given an input vowel from the microphone place a dot on the triangle, so the students can check their pronunciation.  Here's a [http://sourceforge.net/project/screenshots.php?group_id=191299&ssid=54864 screenshot] of what a Vowel triangle might look like, additionally with '[http://en.wikipedia.org/wiki/Voronoi_diagram Voronoi]' regions shown - showing what the near misses are most likely to be confused with in a particular language. 
-
-This could be enhanced by:
-* displaying the mouth position for the vowel,
-* visualizing the spectral peaks so they can identify the effect,
-* changing the pitch,
-* changing the synthesized gender,
-* changing the vocal track characteristics,
-* extracting user's vocal track characteristics for synthesized sound.
-
-A teacher could limit the set of vowels to the ones used for 
-a particular language such as Catalan or English,
-so that the students just see the relevant ones for the exercise.
-
-'''Note:''' Last year a student focused on having some of the processing working. Processing still needs work but this year we will like to focus on the interface so we can say the application exists, and then enhance the processing as secondary goal.
-
-
-=== Real-time synthesizer using SMS models ===
-
-Salto is a CLAM legacy application to synthesize Saxo.
-This project consist on revamp a very simple Salto like synthesizer.
-
-It consists on:
-* Building a db of sms samples
-* Building processings to
-** process control signals
-** choose samples
-** interpolate
-** create stream flow
-** etc.
-
 == Recovering from Processing errors ==
 
 Some error conditions are not available until the processings are executed.
@@ -174,25 +189,14 @@ This project has room for several projects. It also has contacts with many other
 
 == Integrate Faust with CLAM ==
 
+'''Status:''' Checkout [[Network_scalability_and_Blender_integration]] (nearly complete)
+
 FAUST http://sourceforge.net/projects/faudiostream/ is a functional language for audio processing. A faust module can be compiled as a ladspa plugin and then loaded into a clam network.
 [http://clam.iua.upf.edu/wikis/clam/index.php/Image:NetEditor-faust-svg-embedded.png Screenshot] showing SVG diagrams into CLAM NetworkEditor: 
 Thigs to be added:
 * Display faust diagrams (svg) embedded in clam processing boxes. Navigable (hierarchically) faust diagrams
 * On-the-fly compilation of faust modules
 * Faust code editing within clam networkeditor
-
-== Network Scalability (aka Subnetworks) ==
-
-One compeling issue in CLAM is addressing scalability for the visual builder.
-That means building processings modules out of a composition of existing ones.
-CLAM supports that just by coding (ProcessingComposites),
-but one could consider sinks and sources of a network the ports and controls
-of a brand new processing.
-A project to address that should include:
-* Infrastructure to control the flow of recursive networks
-* Integrating user-defined networks in the component library.
-* Providing user interface on the NetworkEditor.
-* ...
 
 == Relative configurations and network configuration ==
 
