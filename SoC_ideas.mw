@@ -5,6 +5,17 @@
 
 = Proposed ideas for the 2009 SoC =
 
+== Porting Network Canvas to Qt Graphics View ==
+
+The NetworkCanvas (the main widget for NetworkEditor) was implemented before QGraphicsView
+and implements most of the features that it provides but less efficient.
+This project consists on porting NetworkCanvas to QGraphicsView.
+Side actions to take are generalizing the widget to a general model than
+can be use, for example to connect Jack clients or other patching tools.
+
+'''Skills:'''
+* Familiarity with the QGraphicsView framework
+
 == Hot-wiring in NetworkEditor ==
 
 '''Description:''' Currently any change to the network structure such as adding or removing processings, connecting them are not realtime safe and the network playback is stopped for safety reasons. This project would enable changing connections without stopping the network. 
