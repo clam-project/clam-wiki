@@ -11,8 +11,8 @@
 === Turnaround ===
 
 * Bugfixing
-** Issue an error when the configuration fails
-** Do not play if the processings are not configured
+** [[Image:done.png]] Issue an error when the configuration fails
+** [[Image:done.png]] Do not play if the processings are not configured
 ** Fix wrong number of visualised frames
 ** The segmentation algorithm places the segments without considering the initial window size.
 ** The cpu usage is 100% after loading even if no playback is done -> <s>Lots of timer events are queued during analysis</s>
