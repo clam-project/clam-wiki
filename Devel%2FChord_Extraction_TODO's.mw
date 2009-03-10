@@ -1,3 +1,37 @@
+= TODO's =
+
+== Testing framework ==
+
+Setint up a framework to comper different implementations of segmentation algorithms:
+** write unit tests
+** allow different attributes as Segmentation (not only Chords_Harte)
+** allow different hop sizes
+** generally there's room for improvement/rethinking:
+*** http://www.music-ir.org/mirex2007/index.php?title=Audio_Chord_Detection
+*** http://en.wikipedia.org/wiki/Recall_(information_retrieval)
+*** so a clear path needs to be decided upon...
+* [[Image:Done.png]] A simple script with fixed hopsize and two pool files given at the command line
+* [[Image:Done.png]] Compute Recall and Precision
+* Get the Beatles wavesurfer files
+* Write a bash script for:
+** computing the segmentation on the songs
+** comparing with ground truth
+* Integrate into testfarm
+
+== Network editor integration ==
+
+* Make the parameters of TonalAnalysis configurable in NetworkEditor, one by one:
+** Change BinsPerOctave into BinsPerSemitone...
+*** ...first making BinsPerOctave configurable, to check if everyting works
+** Make the algorithm "change the tunning" when starting from a different minimum frequency then 98 Hz
+*** Quick (hopefully) and dirty (hopefully not) solution (hopefully) - change the reference tunning while reconfiguring TonalAnalysis
+** Find the reason of the "delete _implenentation; _implementation = new..." crash
+* Make a precomputed SparseKernel for the default configuration
+* Seperate the inner workings of TonalAnalysis into Processing Composites
+** Add a time input control to TonalAnalysis
+** Use this time input to inform ChordExtractor of the time position (if ever we use AudioFileReaders with seeking)
+** Internal time in TonalAnalysis, reset to 0 when the network starts
+
 == Chordata (old Turnaround) ==
 
 * Bugfixing
