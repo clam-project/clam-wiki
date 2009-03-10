@@ -93,7 +93,7 @@ Finally, we have to call the Produce method for the AudioOutPorts and the Consum
         for (unsigned channel=0; channel<_numChannelsIn; channel++)
                 _inports[channel]->Consume();
 
-== Handling connector order caveats ==
+== Handling connector order problems ==
 
 Connectors (Ports and Controls) are sorted as they are created.
 You will get a consistent connector ordering just by initializing fixed connectors
