@@ -75,8 +75,11 @@ Handling special events such xruns, server down,
 parameter changes such as the buffer size or the sampling rate...
 
 '''Required skills:'''
-CLAM processing execution cicle, backend technologies (portaudio, jack),
-multithread communication, Qt.
+* Proficiency in C++
+* CLAM processing execution cicle
+* Backend technologies (portaudio, jack)
+* Multithread communication
+* Qt
 
 '''Difficulty:''': Medium.
 
