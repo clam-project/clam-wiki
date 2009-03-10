@@ -5,43 +5,15 @@
 
 = Proposed ideas for the 2009 SoC =
 
-== Porting Network Canvas to Qt Graphics View ==
+''Skills'' does not refer to skills that the student should have at the moment of application
+you adquire it in sort time before the coding starts.
 
-The NetworkCanvas (the main widget for NetworkEditor) was implemented before QGraphicsView
-and implements most of the features that it provides but less efficient.
-This project consists on porting NetworkCanvas to QGraphicsView.
-Side actions to take are generalizing the widget to a general model than
-can be use, for example to connect Jack clients or other patching tools.
+''Difficulty'' stands on how deep the student should get inside CLAM core.
+Often a given project can be completed just using the framework but
+some projects needs understanding or modifying the core of the framework.
+== Core ==
 
-'''Skills:'''
-* Familiarity with the QGraphicsView framework
-
-== Hot-wiring in NetworkEditor ==
-
-'''Description:''' Currently any change to the network structure such as adding or removing processings, connecting them are not realtime safe and the network playback is stopped for safety reasons. This project would enable changing connections without stopping the network. 
-
-That means doing real-time safe changes on the network structure. Some known techniques exist to do that and mentors will provide guidance on how to address core classes.
- 
-'''Required skills:'''
-* Proficiency on C++-
-* Basic notions of threading
-* Having some knowledge on the CLAM core classes implementation would be perfect but not required.
-
-'''Difficulty:''': Medium to hard.
-
-'''Priority:''' Medium.
-
-== Qt based interfaces for CLAM Network based VST plugins ==
-
-'''Status''': see [https://llistes.projectes.lafarga.org/pipermail/clam-devel/2009/003065.html]
-
-'''Description:''' Currently the Prototyper enables wrapping network in an interface built in with Qt Designer and play them as Jack or PortAudio application.
-
-We would like to do the same with VST plugins. VST plugins have their own graphical control loop but some people succeded on using Qt on it. The key then is using such trick to run a Qt interface in several steps. First a dummy programmed qt interface. Then a xml (ui file) based interface and finally to connect it to the network.
-
-'''Priority:''' Medium+.
-
-== Static network scheduling algorithm ==
+=== Static network scheduling algorithm ===
 
 '''Description:''' 
 Current flow control algorithm on each backend callback
@@ -69,31 +41,23 @@ Medium.
 '''Priority:'''
 High
 
-== New spectrum migration ==
+=== Hot-wiring ===
 
-Old CLAM Spectrum have multiple representations inside:
-Complex array, polar array, separate magnitude and phase arrays, 
-That could seem convenient but at the end of the day
-all the processing dealing with spectrum had to deal with
-all the possible convinations of representations, and to
-synchronize the information if several of them were used.
+'''Description:'''
+ Currently any change to the network structure such as adding or removing processings, connecting them are not realtime safe and the network playback is stopped for safety reasons. This project would enable changing connections without stopping the network. 
 
-To avoid that complexity, we developed, for the spatialization plugin,
-a set of single representation spectrums, operators and converters,
-that simplified a lot the spectral processings.
+That means doing real-time safe changes on the network structure. Some known techniques exist to do that and mentors will provide guidance on how to address core classes.
+ 
+'''Required skills:'''
+* Proficiency on C++-
+* Basic notions of threading
+* Having some knowledge on the CLAM core classes implementation would be perfect but not required.
 
-This project consists on extending its use to spectrum based processings in CLAM, such as:
-* Spectral transformations
-* SMS analysis, synthesis and transformations
+'''Difficulty:''': Hard.
 
-The project should relay on b2b testing in order not to break existing code base.
+'''Priority:''' Medium.
 
-'''Skills:'''
-* C++ proficiency
-* Unit and back-to-back testing principles
-* Basic signal processing
-
-== Run-time errors handling and back-end polishing ==
+=== Run-time errors handling and back-end polishing ===
 
 '''Description:''' 
 CLAM should have a way of handling errors in the Do method.
@@ -120,25 +84,20 @@ parameter changes such as the buffer size or the sampling rate...
 
 '''Priority:''' High.
 
-== Qt widgets ==
 
-'''Description:''' 
-CLAM provides several sets of widgets to be used in applications.
-* Control widgets (sliders, knobs, surface pads...)
-* Configuration parameter editors
-* Data views (instant and time line data)
-* Data editors (segments, bpf's...)
-This project consists in developing nice set of widgets 
-so that we can build nice applications with them,
-while evolving the prototyping framework to ease their use.
+== NetworkEditor enhancements ==
 
-'''Required skills:'''
-* Qt
-* Thread safe programming
+=== Porting Network Canvas to Qt Graphics View ===
 
-'''Priority:''' High.
+The NetworkCanvas (the main widget for NetworkEditor) was implemented before QGraphicsView
+and implements most of the features that it provides but less efficient.
+This project consists on porting NetworkCanvas to QGraphicsView.
+Side actions to take are generalizing the widget to a general model than
+can be use, for example to connect Jack clients or other patching tools.
 
-'''Difficulty:''': Medium to high.
+'''Skills:'''
+* Familiarity with the QGraphicsView framework
+
 
 == Qt designer integration ==
 
@@ -160,6 +119,116 @@ or embedding the interface in the clamnetwork file.
 * Qt metaobject introspection
 
 '''Difficulty:''': High.
+
+
+=== Qt based interfaces for CLAM Network based VST plugins ===
+
+'''Status''': see 
+
+'''Description:''' Currently the Prototyper enables wrapping network in an interface built in with Qt Designer and play them as Jack or PortAudio application. We would like to do the same with VST plugins.
+The problem is that VST have their own graphical loop control instead of QT's.
+In a first [https://llistes.projectes.lafarga.org/pipermail/clam-devel/2009/003065.html spike]
+we achieved to run Qt interfaces in a VST host but still some work is needed.
+* Properly handle user events, focus, geometry...
+* Binding the interface to the CLAM network as Prototyper does
+* Providing a graphical generator from NetworkEditor
+
+'''Priority:''' High
+
+
+== Processing repository ==
+
+=== New spectrum migration ===
+
+Old CLAM Spectrum have multiple representations inside:
+Complex array, polar array, separate magnitude and phase arrays, 
+That could seem convenient but at the end of the day
+all the processing dealing with spectrum had to deal with
+all the possible convinations of representations, and to
+synchronize the information if several of them were used.
+
+To avoid that complexity, we developed, for the spatialization plugin,
+a set of single representation spectrums, operators and converters,
+that simplified a lot the spectral processings.
+
+This project consists on extending its use to spectrum based processings in CLAM, such as:
+* Spectral transformations
+* SMS analysis, synthesis and transformations
+
+The project should relay on b2b testing in order not to break existing code base.
+
+'''Skills:'''
+* C++ proficiency
+* Unit and back-to-back testing principles
+* Basic signal processing
+
+== Integrating external libraries ==
+
+Integrating one or more of those libraries could be great
+
+=== libsamplerate ===
+
+'''Description:''' Working with different samplerates is a hard problem now in CLAM. One solution could be using network configuration parameters (see [[SoC_ideas#Relative_configurations_and_network_configuration|GSoC project]]).
+still, wave file could provide different samplerates thant the Also integration with FileReaders and Writers and with Backends will be useful.
+
+This project consists in providing both a good Resampling processing and minimizing samplerate impedance between processings requiring a given samplerate, audio files and the audio backend.
+
+'''Required skills:'''
+* Basic knowledge about signal processing.
+* Experience working with third party libraries.
+
+'''Difficulty:''': Simple. May be part of a greater project (checkout [[SoC_ideas#Relative_configurations_and_network_configuration]])
+
+'''Current status:''' An existing experiment of processing exists as plugin. Still  it is not working properly and proper configuration parameters must be found.
+
+'''Priority:''' High
+
+=== Libflac and libspeex ===
+
+CLAM's AudioFileReaders/Writers use different backends for audio loading and saving.
+Such backends offers the readers and writers a common interface to several libraries.
+Current underlying libraries are
+sndfile for wav, aiff, au, and others, libmad for MP3 and liboggvorbis for ogg/vorbis.
+
+There are some other libraries developed at http://xiph.org/ which support other formats:
+* libflac supports FLAC which is a lossless compression format
+* libspeex supports speex format which is specialized on voice compression
+
+This project will consist on adding support for such libraries in CLAM.
+
+=== Aubio ===
+
+Aubio provide nice realtime onset detection algorithms.
+One project could be integrating aubio as processing(s) into clam.
+Other task to be done is to create an Annotator extractor for Aubio.
+There is an outdated example in CLAM/Example/TickExtractor 
+that did tempo tracking and meter estimation for the Annotator.
+Development on such example was discontinued during a period when aubio license was not clearly GPL.
+Now it needs some work to have it working again.
+
+This project could consist in providing processings that makes aubio features
+availables on the NetworkEditor or/and making the TickExtractor example working again.
+
+
+== Qt widgets ==
+
+'''Description:''' 
+CLAM provides several sets of widgets to be used in applications.
+* Control widgets (sliders, knobs, surface pads...)
+* Configuration parameter editors
+* Data views (instant and time line data)
+* Data editors (segments, bpf's...)
+This project consists in developing nice set of widgets 
+so that we can build nice applications with them,
+while evolving the prototyping framework to ease their use.
+
+'''Required skills:'''
+* Qt
+* Thread safe programming
+
+'''Priority:''' High.
+
+'''Difficulty:''': Medium to high.
 
 == New standalone applications ==
 
@@ -229,53 +298,6 @@ A project to address that should include:
 * ...
 
 '''Priority:''' High.
-
-== Integrating external libraries ==
-
-Integrating one or more of those libraries could be great
-
-=== libsamplerate ===
-
-'''Description:''' Working with different samplerates is a hard problem now in CLAM. One solution could be using network configuration parameters (see [[SoC_ideas#Relative_configurations_and_network_configuration|GSoC project]]).
-still, wave file could provide different samplerates thant the Also integration with FileReaders and Writers and with Backends will be useful.
-
-This project consists in providing both a good Resampling processing and minimizing samplerate impedance between processings requiring a given samplerate, audio files and the audio backend.
-
-'''Required skills:'''
-* Basic knowledge about signal processing.
-* Experience working with third party libraries.
-
-'''Difficulty:''': Simple. May be part of a greater project (checkout [[SoC_ideas#Relative_configurations_and_network_configuration]])
-
-'''Current status:''' An existing experiment of processing exists as plugin. Still  it is not working properly and proper configuration parameters must be found.
-
-'''Priority:''' High
-
-=== Libflac and libspeex ===
-
-CLAM's AudioFileReaders/Writers use different backends for audio loading and saving.
-Such backends offers the readers and writers a common interface to several libraries.
-Current underlying libraries are
-sndfile for wav, aiff, au, and others, libmad for MP3 and liboggvorbis for ogg/vorbis.
-
-There are some other libraries developed at http://xiph.org/ which support other formats:
-* libflac supports FLAC which is a lossless compression format
-* libspeex supports speex format which is specialized on voice compression
-
-This project will consist on adding support for such libraries in CLAM.
-
-=== Aubio ===
-
-Aubio provide nice realtime onset detection algorithms.
-One project could be integrating aubio as processing(s) into clam.
-Other task to be done is to create an Annotator extractor for Aubio.
-There is an outdated example in CLAM/Example/TickExtractor 
-that did tempo tracking and meter estimation for the Annotator.
-Development on such example was discontinued during a period when aubio license was not clearly GPL.
-Now it needs some work to have it working again.
-
-This project could consist in providing processings that makes aubio features
-availables on the NetworkEditor or/and making the TickExtractor example working again.
 
 == Relative configurations and network configuration ==
 
