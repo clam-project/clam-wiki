@@ -237,7 +237,7 @@ the key methods.
 
 == Scripting CLAM in Python ==
 
-* several approaches: Adhoc API or API export using SWIG, SIP or Boost.Python. See this spike: [[Interactive CLAM programming|http://audiores.uint8.com.ar/blog/2008/08/03/interactive-clam-programming/]] [[http://www.mail-archive.com/clam-devel@llistes.projectes.lafarga.org/msg02200.html|clam-devel thread]]
+* several approaches: Adhoc API or API export using SWIG, SIP or Boost.Python. See this spike: [[http://audiores.uint8.com.ar/blog/2008/08/03/interactive-clam-programming/|Interactive CLAM programming]] [[http://www.mail-archive.com/clam-devel@llistes.projectes.lafarga.org/msg02200.html|clam-devel thread]]
 * build and use a clam network with python
 * this could lead to a NetworkEditor python console with tab-completion (QPyConsole)
 * use clam processings and processing-data with python. use it to visualize data, etc.
