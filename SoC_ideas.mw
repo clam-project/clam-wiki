@@ -134,9 +134,9 @@ we achieved to run Qt interfaces in a VST host but still some work is needed.
 
 '''Priority:''' High
 
-== Processing repository ==
+= Processing repository =
 
-=== New spectrum migration ===
+== New spectrum migration ==
 
 Old CLAM Spectrum have multiple representations inside:
 Complex array, polar array, separate magnitude and phase arrays, 
