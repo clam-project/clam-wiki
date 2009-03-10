@@ -11,7 +11,13 @@ Based on Pau's Thesis. TODO: add a link
 
 ==Network based music tracker==
 
-Network based music tracker (Controls being sequenced in time in a order list plus pattern way) 
+'''Description:''' Network based music tracker. Controls being sequenced in time in a order list plus pattern way.
+
+'''Required skills:'''
+* C++ and Qt
+* Experience as user with trackers.
+
+'''Difficulty:''': Moderate.
 
 == Integrating external libraries ==
 
