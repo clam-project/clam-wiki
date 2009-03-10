@@ -597,12 +597,7 @@ Thigs to be added:
 * On-the-fly compilation of faust modules
 * Faust code editing within clam networkeditor
 
-=== Enhancing NetworkEditor Usability ===
 
-* Add undo/redo support.
-* Add the possibility of save all the controls values to have networks ready to play (like a patch).
-* Multi-wiring (drag more than a wire on multiport processings)
-* Any other feature that could enhance the usability
 
 == SMSTools ==
 
