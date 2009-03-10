@@ -113,10 +113,10 @@ parameter changes such as the buffer size or the sampling rate...
 
 '''Description:''' 
 CLAM provides several sets of widgets to be used in applications.
-* Data views (instant and time line data)
-* Data editors (segments, bpf's...)
 * Control widgets (sliders, knobs, surface pads...)
 * Configuration parameter editors
+* Data views (instant and time line data)
+* Data editors (segments, bpf's...)
 This project consists in developing nice set of widgets 
 so that we can build nice applications with them,
 while evolving the prototyping framework to ease their use.
@@ -127,7 +127,6 @@ while evolving the prototyping framework to ease their use.
 '''Priority:''' High.
 
 '''Difficulty:''': Medium to high.
-
 
 == Qt designer integration ==
 
