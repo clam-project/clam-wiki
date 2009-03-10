@@ -3,7 +3,15 @@
 = How to apply =
 '''Please see general information about how to apply here: [[GSoC 2008]]'''
 
-= Proposed ideas for the 2008 SoC =
+= Proposed ideas for the 2009 SoC =
+
+== Static network scheduling ==
+
+Based on Pau's Thesis. TODO: add a link
+
+==Network based music tracker==
+
+Network based music tracker (Controls being sequenced in time in a order list plus pattern way) 
 
 == Integrating external libraries ==
 
