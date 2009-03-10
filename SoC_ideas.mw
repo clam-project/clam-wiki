@@ -147,6 +147,26 @@ we achieved to run Qt interfaces in a VST host but still some work is needed.
 
 '''Priority:''' High
 
+== Qt widgets ==
+
+'''Description:''' 
+CLAM provides several sets of widgets to be used in applications.
+* Control widgets (sliders, knobs, surface pads...)
+* Configuration parameter editors
+* Data views (instant and time line data)
+* Data editors (segments, bpf's...)
+This project consists in developing nice set of widgets 
+so that we can build nice applications with them,
+while evolving the prototyping framework to ease their use.
+
+'''Required skills:'''
+* Qt
+* Thread safe programming
+
+'''Priority:''' High.
+
+'''Difficulty:''': Medium to high.
+
 = Processing repository =
 
 == New spectrum migration ==
