@@ -290,6 +290,8 @@ availables on the NetworkEditor or/and making the TickExtractor example working 
 
 TODO: Split that in small project packages
 
+TODO: Update current status
+
 '''Description:''' Plugin systems are both a way of extending available modules for CLAM (CLAM as a plugin host) and also a way of using CLAM networks in 3rd party contexts
 (CLAM as a development tool to build plugins).
 
