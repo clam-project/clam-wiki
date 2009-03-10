@@ -386,9 +386,6 @@ There are still several fronts regarding the chord detection.
 Due to the extend it could be split into a set of projects.
 Check the details on the [[Chord Extraction TODO's]] page.
 
-
-
-
 ==Network based music tracker==
 
 '''Description:''' Network based music tracker. Controls being sequenced in time in a order list plus pattern way.
