@@ -324,7 +324,14 @@ So, main to-do's related to this project are:
 * CLAM processing encapsulation (ports, control, configs...)
 * Understanding on audio file formats
 
+=== MIDI support revamped ===
+
+It is a [[GSoC/MIDI_Implementation_for_Network_Editor GSoC2008 project]] but still there are a lot of work to do.
+
+
 == Integrating external libraries ==
+
+TODO: shouldn't that be in the 'audio file revamped' project?
 
 Integrating one or more of those libraries could be great
 
@@ -370,8 +377,6 @@ Now it needs some work to have it working again.
 
 This project could consist in providing processings that makes aubio features
 availables on the NetworkEditor or/and making the TickExtractor example working again.
-
-
 
 = Chord detection (chordata) =
 
