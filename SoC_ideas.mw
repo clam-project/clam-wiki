@@ -83,7 +83,7 @@ multithread communication, Qt.
 
 '''Description:''' 
 CLAM provides several sets of widgets to be used in applications.
-* Data views (instant and timelines)
+* Data views (instant and time line data)
 * Data editors (segments, bpf's...)
 * Control widgets (sliders, knobs, surface pads...)
 * Configuration parameter editors
@@ -97,6 +97,24 @@ while evolving the prototyping framework to ease their use.
 '''Priority:''' High.
 
 '''Difficulty:''': Medium to high.
+
+
+== Qt designer integration ==
+
+'''Description:'''
+The current way of binding designer widgets and clam processings is by naming the widgets with a name you can copy from the network editor.
+This is practical but not that nice and error prone.
+We would like to have closer integration so that from the designer
+you can access information from a network.
+Bindings could be stored as custom properties instead
+and can be added via menus of qt extensions.
+Other integrations are to be considered such as
+designer embedding in the network editor,
+or embedding the interface in the clamnetwork file.
+
+'''Priority:''' Medium but if we find a designer expert we would like to take profit of it.
+
+'''Difficulty:''': High.
 
 = New standalone applications =
 
