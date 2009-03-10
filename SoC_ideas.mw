@@ -385,7 +385,7 @@ There are still several fronts regarding the chord detection.
 They might be joined in a single project.
 Check the details on the [[Chord Extraction TODO's]] page.
 
-== Testing framework for chord detection ===
+== Testing framework for chord detection ==
 
 Setting up a framework to compare the goodness of different implementations of a segmentation algorithms given a ground truth.
 See [[Chord_Extraction_TODO's#Testing_framework]]
