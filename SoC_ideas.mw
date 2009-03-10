@@ -14,7 +14,7 @@ Based on Pau's Thesis. TODO: add a link
 
 End user applications are interesting because they increase the user base and project visibility. Building CLAM based applications require skills on Qt.
 
-==Network based music tracker==
+===Network based music tracker===
 
 '''Description:''' Network based music tracker. Controls being sequenced in time in a order list plus pattern way.
 
