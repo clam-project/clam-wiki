@@ -10,6 +10,16 @@
 Based on Pau's Thesis. TODO: add a link
 
 
+== Hot-wiring in NetworkEditor ==
+
+'''Description:''' Currently any change to the network structure such as adding or removing processings, connecting them are not realtime safe and the network playback is stopped for safety reasons. This project would enable changing connections without stopping the network. 
+
+That means doing real-time safe changes on the network structure. Some known techniques exist to do that and mentors will provide guidance on how to address core classes.
+ 
+Proficiency on C++ and basic notions of threading are the key skills to have. Having some knowledge on the CLAM core classes implementation would be perfect but not required.
+
+'''Priority:''' Medium.
+
 == New standalone applications ==
 
 End user applications are interesting because they increase the user base and project visibility. Building CLAM based applications require skills on Qt.
@@ -227,7 +237,7 @@ the key methods.
 
 == Scripting CLAM in Python ==
 
-* several approaches: Adhoc API or API export using SWIG or SIP
+* several approaches: Adhoc API or API export using SWIG, SIP or Boost.Python. See this spike: [[Interactive CLAM programming|http://audiores.uint8.com.ar/blog/2008/08/03/interactive-clam-programming/]] [[http://www.mail-archive.com/clam-devel@llistes.projectes.lafarga.org/msg02200.html|clam-devel thread]]
 * build and use a clam network with python
 * this could lead to a NetworkEditor python console with tab-completion (QPyConsole)
 * use clam processings and processing-data with python. use it to visualize data, etc.
@@ -252,7 +262,6 @@ the key methods.
 * Metadata based widgets
 * Widgets interaction (zoom)
 * Network based transformations. The user should be able to define the transformation chain using NetworkEditor.
-
 
 
 == Enhancing chord detection algorithm for real-time usage ==
@@ -405,6 +414,15 @@ Each extractor could have their own parameters so we need a system to deal with 
 * Launching the extractor feeding the parameters
 * Offering a C++/python solution to ease the programming of extractors with configuration.
 
+
+= Continuation of past projects =
+==MIDI support==
+
+'''Status:''' Checkout [[http://clam-project.org/wiki/GSoC/MIDI_Implementation_for_Network_Editor]]
+ 
+* NetworkEditor: Realtime Input/Output using portmidi. Read/Write on files
+* Improve and update all the MIDI support of the framework
+
 == Enhancing NetworkEditor Usability ==
 
 * Add undo/redo support.
@@ -412,25 +430,6 @@ Each extractor could have their own parameters so we need a system to deal with 
 * Cut and paste.
 * Any other feature that could enhance the usability
 
-== Hot-wiring in NetworkEditor ==
-
-Currently any change to the network structure such as
-adding or removing processings, connecting them are not realtime
-safe and the network playback is stopped for safety reasons.
-This project would enable changing connections without stopping the network.
-
-That means doing real-time safe changes on the network structure.
-Some known techniques exist to do that and mentors will provide guidance
-on how to address core classes.
-
-Proficiency on C++ and basic notions of threading are the key skills to have.
-Having some knowledge on the CLAM core classes implementation would be perfect but not required.
-
-
-== MIDI support ==
-
-* NetworkEditor: Realtime Input/Output using portmidi. Read/Write on files
-* Improve and update all the MIDI support of the framework
 
 = Still not included =
 
