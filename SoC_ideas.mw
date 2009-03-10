@@ -114,6 +114,10 @@ or embedding the interface in the clamnetwork file.
 
 '''Priority:''' Medium but if we find a designer expert we would like to take profit of it.
 
+'''Required skills:'''
+* Qt designer extension plugins
+* Qt metaobject introspection
+
 '''Difficulty:''': High.
 
 = New standalone applications =
