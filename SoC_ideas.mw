@@ -195,7 +195,7 @@ The project should relay on b2b testing in order not to break existing code base
 * Unit and back-to-back testing principles
 * Basic signal processing
 
-== New audio file access ==
+== Audio file access revamped ==
 
 Current audio file access processings have several limitations, so we started an spike for new ones.
 The limitations were:
