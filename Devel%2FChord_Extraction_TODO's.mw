@@ -1,14 +1,5 @@
-== Stand alone application (GSoC Pawel) ==
-
-=== Big project milestones ===
-
-* [[Image:Done.png]] Having an application that seeks allong the song.
-* [[Image:Done.png]] Launching the analysis whenever you change the song
-* [[Image:Done.png]] The playback controlling the time displayed on the views
-* Additional features/views
-** ...
-
 === Turnaround ===
+
 
 * Bugfixing
 ** [[Image:done.png]] Issue an error when the configuration fails
@@ -24,13 +15,12 @@
 ** On playback, the file should be adapted to the backend samplerate
 ** Check Id3 tags with encoded strings
 * Release task:
+** [[Image:done.png]] Debian packages
+** [[Image:done.png]] Windows packages
 ** Write a tutorial on the wiki
 ** Record a video illustrating the usage
 ** Add missing licence notices
 ** Add missing authors
-** [[Image:done.png]] Debian packages
-** [[Image:done.png]] Windows packages
-** Gentoo ebuild
 * Generalization
 ** New spectrogram to access a block of the pcp data storage
 ** Make the TonalAnalysis configuration editable as settings for the application reusing NetworkEditor Configurators and storing them as QSettings or as an xml file at ~/.turnaroundrc or similar
@@ -50,6 +40,17 @@
 ** Improve analysis
 ** Realtime mode ''(mid)''
 ** Use a multichannel audioloader ''(very low)''
+
+
+== Stand alone application (GSoC Pawel) ==
+
+=== Big project milestones ===
+
+* [[Image:Done.png]] Having an application that seeks allong the song.
+* [[Image:Done.png]] Launching the analysis whenever you change the song
+* [[Image:Done.png]] The playback controlling the time displayed on the views
+* [[Image:Done.png]] Additional features
+
 
 === Done ===
 
