@@ -377,6 +377,18 @@ availables on the NetworkEditor or/and making the TickExtractor example working 
 
 End user applications are interesting because they increase the user base and project visibility. Building CLAM based applications require skills on Qt.
 
+== Chord detection (chordata) ==
+
+In 2007, a project addressed realtime segmentation and modularization of chord detection.
+In 2008, another one built an stand along application named chordata to easy the use of chord detection technology.
+There are still several fronts regarding the chord detection.
+
+Due to the extend it could be split into a set of projects.
+Check the details on the [[Chord Extraction TODO's]] page.
+
+
+
+
 ==Network based music tracker==
 
 '''Description:''' Network based music tracker. Controls being sequenced in time in a order list plus pattern way.
