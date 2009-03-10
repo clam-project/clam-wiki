@@ -99,7 +99,7 @@ can be use, for example to connect Jack clients or other patching tools.
 * Familiarity with the QGraphicsView framework
 
 
-== Qt designer integration ==
+=== Qt designer integration ===
 
 '''Description:'''
 The current way of binding designer widgets and clam processings is by naming the widgets with a name you can copy from the network editor.
@@ -134,7 +134,6 @@ we achieved to run Qt interfaces in a VST host but still some work is needed.
 * Providing a graphical generator from NetworkEditor
 
 '''Priority:''' High
-
 
 == Processing repository ==
 
