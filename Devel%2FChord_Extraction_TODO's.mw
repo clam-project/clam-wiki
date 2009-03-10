@@ -1,4 +1,4 @@
-=== Turnaround ===
+== Turnaround ==
 
 
 * Bugfixing
@@ -40,7 +40,6 @@
 ** Improve analysis
 ** Realtime mode ''(mid)''
 ** Use a multichannel audioloader ''(very low)''
-
 
 == Stand alone application (GSoC Pawel) ==
 
