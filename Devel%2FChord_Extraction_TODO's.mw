@@ -1,5 +1,4 @@
-== Turnaround ==
-
+== Chordata (old Turnaround) ==
 
 * Bugfixing
 ** [[Image:done.png]] Issue an error when the configuration fails
@@ -40,6 +39,53 @@
 ** Improve analysis
 ** Realtime mode ''(mid)''
 ** Use a multichannel audioloader ''(very low)''
+
+== Detection algorithm enhancements ==
+
+Several algorithm enhancements are to be considered:
+* Preprocessing
+** '''[done]''' Compute instant tunning by fasor addition on chroma peaks mapped to a semitone
+** '''[done]''' Limit the time scope of the global tunning computation (done but improvements needed)
+** Improve the limited scope tunning
+* Processing
+** Find faster and more precise algorithms than the current one	
+*** Emilia's algorithm (peak detect before folding)
+*** Wavelet based
+*** Self-Correlation based
+* Postprocessing
+** '''[done]''' Consider the None chord (all pitches) so that we can detect non chord segments and use it as reference for pitchness.
+** Symbolical analysis: Instead of correlation, analyze the pcp content using heuristic reasoning (Harte did plain filtering and some )
+** Double scope for analysis: Too large windows difuminate transitions but small ones fail to detect arpeggios based chords. We could choose depending on the number of high pitches on the PCP.
+** Onset alignment: Use realtime onset detection (aubio?) to 'quantize' the chord segments limits.
+
+== Helper information ==
+
+Enrich algorithm output so that the user may take profit of non-perfect algorithm or music that is not using recognized cords (fifths, rare chords...)
+* Diffuse guessing: Minimize false positive impact to the user by computing a confidence value for each guess.
+* Keeping several candidates so the user may view that he has more than one option.
+* Rectified guess: Do a first realtime guess and correct it later if needed as the song goes on. 
+
+== Visualization ==
+
+In parallel to enhance the algorithm to realtime some views must be developed.
+Some views ideas:
+* '''[done]''' KeySpace (Emilia and Jordi's)
+* '''[done]''' Tonnetz (pcp)
+* Add chord figures to Tonnetz
+* Chord torus (map pcp into the tonal torus space)
+* Vectors in chord torus (needed to disambiguate dim chords)
+* '''[done]''' Chord ranking: all chords displayed as sorted probability bars
+* Highlight or filter candidates on chord ranking
+* Chord candidates: just the ones before the first strong decay
+* Realtime segment construction:
+** Instant chord segment: Display segment based on the best one on each instant.
+** Delayed segment: don't display a segment until we have enough information on the future to make a post processing
+** Guessed segments: Until sure, display the guess
+* '''[done]''' Tunner displays the deviation from the central note
+* Instrument fingering suggesting several forms
+* Integrate a tunner in prototyper and chordata
+
+
 
 == Stand alone application (GSoC Pawel) ==
 
@@ -178,49 +224,3 @@ Exercise in using test with cppunit:
 ** [[Image:Done.png]] Change any occurrences of _binsPerSemitone within the class to a 1
 ** [[Image:Done.png]] Adapt user interface and user code
 ** [[Image:Done.png]] Change last two tests to use a special helper function
-
-== Detection algorithm enhancements ==
-
-Several algorithm enhancements are to be considered:
-* Preprocessing
-** '''[done]''' Compute instant tunning by fasor addition on chroma peaks mapped to a semitone
-** '''[done]''' Limit the time scope of the global tunning computation (done but improvements needed)
-** Improve the limited scope tunning
-* Processing
-** Find faster and more precise algorithms than the current one	
-*** Emilia's algorithm (peak detect before folding)
-*** Wavelet based
-*** Self-Correlation based
-* Postprocessing
-** '''[done]''' Consider the None chord (all pitches) so that we can detect non chord segments and use it as reference for pitchness.
-** Symbolical analysis: Instead of correlation, analyze the pcp content using heuristic reasoning (Harte did plain filtering and some )
-** Double scope for analysis: Too large windows difuminate transitions but small ones fail to detect arpeggios based chords. We could choose depending on the number of high pitches on the PCP.
-** Onset alignment: Use realtime onset detection (aubio?) to 'quantize' the chord segments limits.
-
-== Helper information ==
-
-Enrich algorithm output so that the user may take profit of non-perfect algorithm or music that is not using recognized cords (fifths, rare chords...)
-* Diffuse guessing: Minimize false positive impact to the user by computing a confidence value for each guess.
-* Keeping several candidates so the user may view that he has more than one option.
-* Rectified guess: Do a first realtime guess and correct it later if needed as the song goes on. 
-
-== Visualization ==
-
-In parallel to enhance the algorithm to realtime some views must be developed.
-Some views ideas:
-* '''[done]''' KeySpace (Emilia and Jordi's)
-* Augmented KeySpace (not just major and minor)
-* '''[done]''' Tonnetz (pcp)
-* Add chord figures to Tonnetz
-* Chord torus (map pcp into the tonal torus space)
-* Vectors in chord torus (needed to disambiguate dim chords)
-* '''[done]''' Chord ranking: all chords displayed as sorted probability bars
-* Highlight or filter candidates on chord ranking
-* Chord candidates: just the ones before the first strong decay
-* Realtime segment construction:
-** Instant chord segment: Display segment based on the best one on each instant.
-** Delayed segment: don't display a segment until we have enough information on the future to make a post processing
-** Guessed segments: Until sure, display the guess
-* Instrument fingering (playback suggest
-
-* Integrate a tunner
