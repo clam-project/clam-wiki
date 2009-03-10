@@ -149,11 +149,11 @@ or embedding the interface in the clamnetwork file.
 
 '''Difficulty:''': High.
 
-= New standalone applications =
+== New standalone applications ==
 
 End user applications are interesting because they increase the user base and project visibility. Building CLAM based applications require skills on Qt.
 
-===Network based music tracker===
+====Network based music tracker====
 
 '''Description:''' Network based music tracker. Controls being sequenced in time in a order list plus pattern way.
 
@@ -163,7 +163,7 @@ End user applications are interesting because they increase the user base and pr
 
 '''Difficulty:''': Moderate.
 
-=== Educational vowel synthesizer ===
+==== Educational vowel synthesizer ====
 
 '''Description:'''
 Build a educative program that would consist on:
@@ -188,19 +188,22 @@ so that the students just see the relevant ones for the exercise.
 
 '''Priority''': Medium.
 
-=== Real-time synthesizer using SMS models ===
+==== Real-time synthesizer using SMS models ====
 
 Salto is a CLAM legacy application to synthesize Saxo.
 This project consist on revamp a very simple Salto like synthesizer.
+Previous GSoC projects developed the basic technology for loading
+databases and controlling the synthesis.
+This year we should center on having 
+a final application or plugin that users may use easily 
+although it also would require refining the algorithm and databases 
+as we have them now.
 
-It consists on:
-* Building a db of sms samples
-* Building processings to
-** process control signals
-** choose samples
-** interpolate
-** create stream flow
-** etc.
+'''Skills:'''
+* Qt interfaces
+* Audio plugins development
+* XML management
+* Python
 
 == Network Scalability (aka Subnetworks) ==
 
@@ -485,7 +488,6 @@ Each extractor could have their own parameters so we need a system to deal with 
 * Implementing the interface to query such parameters depending on the extractor.
 * Launching the extractor feeding the parameters
 * Offering a C++/python solution to ease the programming of extractors with configuration.
-
 
 = Continuation of past projects =
 === MIDI support ===
