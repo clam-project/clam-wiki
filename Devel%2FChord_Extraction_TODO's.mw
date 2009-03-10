@@ -28,8 +28,8 @@
 ** Record a video illustrating the usage
 ** Add missing licence notices
 ** Add missing authors
-** Debian packages
-** Windows packages
+** [[Image:done.png]] Debian packages
+** [[Image:done.png]] Windows packages
 ** Gentoo ebuild
 * Generalization
 ** New spectrogram to access a block of the pcp data storage
