@@ -71,13 +71,15 @@ To avoid that complexity, we developed, for the spatialization plugin,
 a set of single representation spectrums, operators and converters,
 that simplified a lot the spectral processings.
 
-This project consists in extending its use to:
-* Spectral processings
-* SMS processings
+This project consists on extending its use to spectrum based processings in CLAM, such as:
+* Spectral transformations
+* SMS analysis, synthesis and transformations
+
+The project should relay on b2b testing in order not to break existing code base.
 
 '''Skills:'''
 * C++ proficiency
-* Unit and Back to back testing principles
+* Unit and back-to-back testing principles
 * Basic signal processing
 
 == Run-time errors handling and back-end polishing ==
