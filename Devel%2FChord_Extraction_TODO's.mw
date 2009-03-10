@@ -2,14 +2,15 @@
 
 == Testing framework ==
 
-Setting up a framework to comper different implementations of segmentation algorithms:
-** write unit tests
-** allow different attributes as Segmentation (not only Chords_Harte)
-** allow different hop sizes
-** generally there's room for improvement/rethinking:
-*** http://www.music-ir.org/mirex2007/index.php?title=Audio_Chord_Detection
-*** http://en.wikipedia.org/wiki/Recall_(information_retrieval)
-*** so a clear path needs to be decided upon...
+Setting up a framework to compare the goodness of different implementations of a segmentation algorithms given a ground truth.
+
+* write unit tests for the framework
+* allow different attributes as Segmentation (not only Chords_Harte)
+* allow different hop sizes
+* generally there's room for improvement/rethinking:
+** http://www.music-ir.org/mirex2007/index.php?title=Audio_Chord_Detection
+** http://en.wikipedia.org/wiki/Recall_(information_retrieval)
+** so a clear path needs to be decided upon...
 * [[Image:Done.png]] A simple script with fixed hopsize and two pool files given at the command line
 * [[Image:Done.png]] Compute Recall and Precision
 * Get the Beatles wavesurfer files
