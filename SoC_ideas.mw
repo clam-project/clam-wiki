@@ -97,17 +97,7 @@ A project to address that should include:
 
 '''Priority:''' High.
 
-== Enhancing chord detection algorithm for real-time usage ==
 
-Chord extraction on Network Editor is less precise than the one
-available on the Annotator because it is realtime and it cannot
-include the post processing Annotator does.
-This project addresses enhancements to the algorithm for realtime
-usage as well as visual representations to exploiting imprecise data 
-so that user could figure out what's going on.
-
-Due to the extend it could be split into a set of projects.
-Check the details on the [[Chord Extraction TODO's]] page.
 
 == Enhancing plugin system ==
 
