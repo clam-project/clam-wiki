@@ -135,8 +135,6 @@ or embedding the interface in the clamnetwork file.
 
 == VST plugins prototyped with CLAM and Qt ==
 
-'''Status''': see 
-
 '''Description:''' Currently the Prototyper enables wrapping network in an interface built in with Qt Designer and play them as Jack or PortAudio application. We would like to do the same with VST plugins.
 The problem is that VST have their own graphical loop control instead of QT's.
 In a first [https://llistes.projectes.lafarga.org/pipermail/clam-devel/2009/003065.html spike]
@@ -146,6 +144,10 @@ we achieved to run Qt interfaces in a VST host but still some work is needed.
 * Providing a graphical generator from NetworkEditor
 
 '''Priority:''' High
+'''Skills:'''
+* VST plugins programming
+* Qt (basic programming and event handling)
+* CLAM (Ports and controls enumeration and usage, Ladspa wrappers, VST wrapper)
 
 == Qt widgets ==
 
