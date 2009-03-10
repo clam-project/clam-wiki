@@ -373,18 +373,39 @@ availables on the NetworkEditor or/and making the TickExtractor example working 
 
 
 
-= New standalone applications =
-
-End user applications are interesting because they increase the user base and project visibility. Building CLAM based applications require skills on Qt.
-
-== Chord detection (chordata) ==
+= Chord detection (chordata) =
 
 In 2007, a project addressed realtime segmentation and modularization of chord detection.
 In 2008, another one built an stand along application named chordata to easy the use of chord detection technology.
 There are still several fronts regarding the chord detection.
-
-Due to the extend it could be split into a set of projects.
+They might be joined in a single project.
 Check the details on the [[Chord Extraction TODO's]] page.
+
+== Testing framework for chord detection ===
+
+Setting up a framework to compare the goodness of different implementations of a segmentation algorithms given a ground truth.
+See [[Chord_Extraction_TODO's#Testing_framework]]
+
+'''Skills:'''
+* Python
+* XML handling
+* [http://en.wikipedia.org/wiki/Precision_and_recall Precision/Recall theory]
+* Test automation (Unit tests...)
+
+== Algorithm enhancement ==
+
+The algorithm can be enhanced in [http://clam-project.org/wiki/Chord_Extraction_TODO's#Detection_algorithm_enhancements many ways].
+Implementing an enhancement on the algorithm will require to implement to some extent the testing framework to check whether we are progressing.
+
+== Chordata application enhancement ==
+
+The Chordata application itself needs more work.
+See the [Chord_Extraction_TODO's#Chordata_.28old_Turnaround.29 related TODO's].
+
+
+= New standalone applications =
+
+End user applications are interesting because they increase the user base and project visibility. Building CLAM based applications require skills on Qt.
 
 ==Network based music tracker==
 
