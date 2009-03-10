@@ -139,6 +139,9 @@ Some views ideas:
 *** [[Image:Done.png]] Build a Control sender with feedback (to build a progress slider)
 ** [[Image:Done.png]] splitting monitors and widgets in NetworkEditor/src/monitors
 
+
+
+
 == Realtime segmentation (GSoC 2007 Roman) ==
 
 
@@ -172,28 +175,12 @@ Some views ideas:
 *** [[Image:Done.png]] realtime
 * Realtime segmentation in chord extraction
 ** [[Image:Done.png]] Add a time output control to AudioFileReaders
-** Add a time input control to TonalAnalysis
-** Use this time input to inform ChordExtractor of the time position (if ever we use AudioFileReaders with seeking)
-** Internal time in TonalAnalysis, reset to 0 when the network starts
-** Add a new port to TonalAnalysis for the segmentation from ChordExtractor
-** Some changes to the Segmentation classes to allow use through a port
+** [[Image:Done.png]] Add a new port to TonalAnalysis for the segmentation from ChordExtractor
+** [[Image:Done.png]] Some changes to the Segmentation classes to allow use through a port
 *** [[Image:Done.png]] a constructor with no (default) parameters
 *** [[Image:Done.png]] setMaxPosition
-*** checking if any segments are out of bounds after setting maxPosition
-*** Add labels for segments
+*** [[Image:Done.png]] Add labels for segments
 
-
-
-Some other smaller/different/non-GSoC tasks:
-* Add an in control to AudioFileReaders to enable setting the time position within the file
-* Enhance the evaluation framework for comparisons between different implementations of chord extraction algorithms
-** write unit tests
-** allow different attributes as Segmentation (not only Chords_Harte)
-** allow different hop sizes
-** generally there's room for improvement/rethinking:
-*** http://www.music-ir.org/mirex2007/index.php?title=Audio_Chord_Detection
-*** http://en.wikipedia.org/wiki/Recall_(information_retrieval)
-*** so a clear path needs to be decided upon...
 
 
 Some short term goals for getting accustomed with the code:
@@ -202,14 +189,8 @@ Some short term goals for getting accustomed with the code:
 ** [[Image:Done.png]] peakWindowingEnabled
 ** [[Image:Done.png]] hopRatio
 ** [[Image:Done.png]] filter (PCPSmoother)
-** Change BinsPerOctave into BinsPerSemitone...
-*** ...first making BinsPerOctave configurable, to check if everyting works
-** Make the algorithm "change the tunning" when starting from a different minimum frequency then 98 Hz
-*** Quick (hopefully) and dirty (hopefully not) solution (hopefully) - change the reference tunning while reconfiguring TonalAnalysis
-** Find the reason of the "delete _implenentation; _implementation = new..." crash
 ** [[Image:Done.png]] fix the .clamnetwork files!
-* Make a precomputed SparseKernel for the default configuration
-* Seperate the inner workings of TonalAnalysis into Processing Composites
+
 
 
 
