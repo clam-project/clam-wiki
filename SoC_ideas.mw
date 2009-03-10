@@ -324,10 +324,9 @@ So, main to-do's related to this project are:
 * CLAM processing encapsulation (ports, control, configs...)
 * Understanding on audio file formats
 
-=== MIDI support revamped ===
+== MIDI support revamped ==
 
 It is a [[GSoC/MIDI_Implementation_for_Network_Editor GSoC2008 project]] but still there are a lot of work to do.
-
 
 == Integrating external libraries ==
 
