@@ -41,6 +41,7 @@ End user applications are interesting because they increase the user base and pr
 
 === Educational vowel synthesizer ===
 
+'''Description:'''
 Build a educative program that would consist on:
 * synthesizing different vowels by placing a point within the [http://en.wikipedia.org/wiki/Vowel_triangle Vowel triangle],
 * and, the reverse, given an input vowel from the microphone place a dot on the triangle, so the students can check their pronunciation.  Here's a [http://sourceforge.net/project/screenshots.php?group_id=191299&ssid=54864 screenshot] of what a Vowel triangle might look like, additionally with '[http://en.wikipedia.org/wiki/Voronoi_diagram Voronoi]' regions shown - showing what the near misses are most likely to be confused with in a particular language. 
@@ -59,6 +60,9 @@ so that the students just see the relevant ones for the exercise.
 
 '''Note:''' Last year a student focused on having some of the processing working. Processing still needs work but this year we will like to focus on the interface so we can say the application exists, and then enhance the processing as secondary goal.
 
+'''Difficulty:''': Moderate.
+
+'''Priority''': Medium.
 
 === Real-time synthesizer using SMS models ===
 
@@ -85,7 +89,7 @@ A project to address that should include:
 * Providing user interface on the NetworkEditor.
 * ...
 
-'''Priority:''' High
+'''Priority:''' High.
 
 == Integrating external libraries ==
 
@@ -134,23 +138,26 @@ Now it needs some work to have it working again.
 This project could consist in providing processings that makes aubio features
 availables on the NetworkEditor or/and making the TickExtractor example working again.
 
+== Relative configurations and network configuration ==
 
+'''Description:''' That is being able to configure some parameters of a module in function of other modules parameters or even network level ones.
+* Some configuration parameters should take the value from other module parameters.
+* We could consider output only parameters which are computed based on the input ones.
+* We could add network level parameters so that we can change a repeated parameter at once.
+* Network level parameters could become regular module configuration when used as a subnetwork
+* A way of setting the connections that could be some hideable control ports with a different shape and position. Other could be editable expressions.
 
-== Recovering from Processing errors ==
+== Scripting CLAM in Python ==
 
-Some error conditions are not available until the processings are executed.
-Such conditions are raised on processing thread while it should be detected
-by the application interface thread.
-
-This task (which is not a project by itself, but can complement others that are also small)
-consists in implementing  a proper method of raising such error conditions and catching
-without the application dying, just recovering the backend and stopping the player.
-
-Also graphical (qt) handler of assertion failures has been disabled because
-when the assertion is thrown from the processing thread the error message was
-even more obscure that the console message you get with the plain console handler.
-Another related task could be catching assertions and forward them to the application 
-thread by any means without AssertFailure reaching the top of the processing thread stack.
+* several approaches: Adhoc API or API export using SWIG, SIP or Boost.Python. See this spike: [http://audiores.uint8.com.ar/blog/2008/08/03/interactive-clam-programming/ Interactive CLAM programming] [http://www.mail-archive.com/clam-devel@llistes.projectes.lafarga.org/msg02200.html clam-devel thread]
+* build and use a clam network with python
+* this could lead to a NetworkEditor python console with tab-completion (QPyConsole)
+* use clam processings and processing-data with python. use it to visualize data, etc.
+* write clam processings with python
+** Related to the 'Processing editor' project
+* Network scoring
+** Sequencing changes on a network along the time
+** Configurations, connections, control sending...
 
 == Enhancing plugin system ==
 
@@ -175,17 +182,24 @@ interesting aspects to be addressed:
 
 See more here: [[Devel/Plugins TODOs]]
 
-This project has room for several projects. It also has contacts with many other projects: Subnetworks, metainformation, visual definition of processings... So if you choose this project, be specific on the set of aspects that will be addressed.
+This project has room for several projects. It also has contacts with many other projects: Subnetworks, metainformation, visual definition of processings... So if you 
+choose this project, be specific on the set of aspects that will be addressed.
 
-== Relative configurations and network configuration ==
+== Recovering from Processing errors ==
 
-That is being able to configure some parameters of a module in function
-of other modules parameters or even network level ones.
-* Some configuration parameters should take the value from other module parameters.
-* We could consider output only parameters which are computed based on the input ones.
-* We could add network level parameters so that we can change a repeated parameter at once.
-* Network level parameters could become regular module configuration when used as a subnetwork
-* A way of setting the connections that could be some hideable control ports with a different shape and position. Other could be editable expressions.
+Some error conditions are not available until the processings are executed.
+Such conditions are raised on processing thread while it should be detected
+by the application interface thread.
+
+This task (which is not a project by itself, but can complement others that are also small)
+consists in implementing  a proper method of raising such error conditions and catching
+without the application dying, just recovering the backend and stopping the player.
+
+Also graphical (qt) handler of assertion failures has been disabled because
+when the assertion is thrown from the processing thread the error message was
+even more obscure that the console message you get with the plain console handler.
+Another related task could be catching assertions and forward them to the application 
+thread by any means without AssertFailure reaching the top of the processing thread stack.
 
 == Network Editor documentation system ==
 
@@ -203,18 +217,6 @@ the key methods.
 * The system will compile it and will add it to the user's plugin library
 * It would be great to have it integrated on the NetworkEditor
 * This project could be related to the Python scripting project (see below) but we are considering C++ code here.
-
-== Scripting CLAM in Python ==
-
-* several approaches: Adhoc API or API export using SWIG, SIP or Boost.Python. See this spike: [http://audiores.uint8.com.ar/blog/2008/08/03/interactive-clam-programming/ Interactive CLAM programming] [http://www.mail-archive.com/clam-devel@llistes.projectes.lafarga.org/msg02200.html clam-devel thread]
-* build and use a clam network with python
-* this could lead to a NetworkEditor python console with tab-completion (QPyConsole)
-* use clam processings and processing-data with python. use it to visualize data, etc.
-* write clam processings with python
-** Related to the 'Processing editor' project
-* Network scoring
-** Sequencing changes on a network along the time
-** Configurations, connections, control sending...
 
 == Enhancing chord detection algorithm for real-time usage ==
 
