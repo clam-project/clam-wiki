@@ -40,7 +40,7 @@ We would like to do the same with VST plugins. VST plugins have their own graphi
 
 '''Priority:'''
 
-== New standalone applications ==
+= New standalone applications =
 
 End user applications are interesting because they increase the user base and project visibility. Building CLAM based applications require skills on Qt.
 
