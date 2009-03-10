@@ -84,9 +84,9 @@ parameter changes such as the buffer size or the sampling rate...
 
 '''Priority:''' High.
 
-== NetworkEditor enhancements ==
+= NetworkEditor enhancements =
 
-=== Porting Network Canvas to Qt Graphics View ===
+== Porting Network Canvas to Qt Graphics View ==
 
 The NetworkCanvas (the main widget for NetworkEditor) was implemented before QGraphicsView
 and implements most of the features that it provides but less efficient.
@@ -98,7 +98,7 @@ can be use, for example to connect Jack clients or other patching tools.
 * Familiarity with the QGraphicsView framework
 
 
-=== Qt designer integration ===
+== Qt designer integration ==
 
 '''Description:'''
 The current way of binding designer widgets and clam processings is by naming the widgets with a name you can copy from the network editor.
@@ -120,7 +120,7 @@ or embedding the interface in the clamnetwork file.
 '''Difficulty:''': High.
 
 
-=== Qt based interfaces for CLAM Network based VST plugins ===
+== VST plugins prototyped with CLAM and Qt ==
 
 '''Status''': see 
 
