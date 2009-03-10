@@ -590,29 +590,7 @@ Each extractor could have their own parameters so we need a system to deal with 
 = Continuation of past projects =
 
 
-=== Standalone chord extractor application ===
 
-'''Status: ''' Checkout [[GSoC/Standalone_chord_extractor_application|chordata (former turnaround)]] past gsoc project.
-
-'''Description''': (deprecated)
-We have the chord extraction running whithin Annotator, NetworkEditor, Offline, but none of these applications are addressed towards the real use that one can make of such technology being a guitar player.
-
-This project consists on building an application which addresses usability issues for the use case that some one want to learn the chords of a song.
-
-Some of the concrete use cases to be addressed are:
-
-* Most of user actions should consist on single key actions (no control keys) to facilitate usage with an musical instrument at hand.
-* Precomputing a song when loading it.
-* Playback
-** Preloading the song 
-** Moving fastforward and backwards
-** Playing a limited length of the song and then back
-** Replay from the same point
-** Time stretch playback
-* Display
-** A scrolling segmentation view
-** Segmentation view should have chord text displayed
-** Segmentation view should have a different color for each chord for the user to associate them. Maybe different color association per song or maybe using a color/pattern combination for Root/Mode.
 
 === Integrate Faust with CLAM ===
 
