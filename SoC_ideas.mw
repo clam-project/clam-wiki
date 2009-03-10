@@ -123,6 +123,7 @@ while evolving the prototyping framework to ease their use.
 
 '''Required skills:'''
 * Qt
+* Thread safe programming
 
 '''Priority:''' High.
 
