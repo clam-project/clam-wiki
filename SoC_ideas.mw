@@ -511,9 +511,8 @@ Thigs to be added:
 
 * Add undo/redo support.
 * Add the possibility of save all the controls values to have networks ready to play (like a patch).
-* Cut and paste.
+* Multi-wiring (drag more than a wire on multiport processings)
 * Any other feature that could enhance the usability
-
 
 == SMSTools ==
 
