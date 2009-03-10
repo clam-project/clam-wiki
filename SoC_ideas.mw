@@ -163,6 +163,16 @@ thread by any means without AssertFailure reaching the top of the processing thr
 
 = NetworkEditor enhancements =
 
+=== Enhancing NetworkEditor Usability ===
+
+* Add undo/redo support. (maybe using the Qt Undo framework)
+* Add the possibility of save all the controls values to have networks ready to play (like a patch).
+* Multi-wiring (drag more than a wire on multiport processings)
+* Highlight peer connectors (port/control) of a given connector.
+* Switching the backend from the graphical interface.
+* Changing things on the backend from the graphical interface.
+* Any other feature that could enhance the usability, use it and you will find many.
+
 == Porting Network Canvas to Qt Graphics View ==
 
 The NetworkCanvas (the main widget for NetworkEditor) was implemented before QGraphicsView
