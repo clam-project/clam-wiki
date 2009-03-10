@@ -47,7 +47,10 @@ and we should integrate it in C++ inside CLAM.
 TODO: add a link to Pau's Thesis
 
 '''Required skills:'''
-C++, Linear algebra (Matrices).
+* Proficiency in C++
+* Linear algebra concepts (matrices)
+* Understanding a Python script to translate current implementation
+
 
 '''Difficulty:''':
 Medium.
