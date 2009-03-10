@@ -499,7 +499,7 @@ Each extractor could have their own parameters so we need a system to deal with 
 
 === Standalone chord extractor application ===
 
-'''Status: ''' Checkout [[http://clam-project.org/wiki/GSoC/Standalone_chord_extractor_application|chordata (former turnaround)]]
+'''Status: ''' Checkout [[GSoC/Standalone_chord_extractor_application|chordata (former turnaround)]] past gsoc project.
 
 '''Description''': (deprecated)
 We have the chord extraction running whithin Annotator, NetworkEditor, Offline, but none of these applications are addressed towards the real use that one can make of such technology being a guitar player.
