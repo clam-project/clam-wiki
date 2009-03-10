@@ -32,13 +32,71 @@ We would like to do the same with VST plugins. VST plugins have their own graphi
 
 == Static network scheduling algorithm ==
 
-'''Description:''' Based on Pau's Thesis. TODO: add a link
+'''Description:''' 
+Current flow control algorithm on each backend callback
+looks to the available inputs and outputs and 
+decides which processing should be run.
+Pau's Thesis describes a new scheduling algorithm that
+given the hopsizes and windows of all the ports of all the processings,
+it can build a periodic execution plan so we can save 
+all the real-time decision making.
+
+The algorithm is currently implemented in python,
+and we should integrate it in C++ inside CLAM.
+
+TODO: add a link to Pau's Thesis
 
 '''Required skills:'''
+C++, Linear algebra (Matrices).
 
 '''Difficulty:''':
+Medium.
 
 '''Priority:'''
+High
+
+== Run-time errors handling and back-end polishing ==
+
+'''Description:''' 
+CLAM should have a way of handling errors in the Do method.
+Currently errors in configuration are allowed but
+few but important conditions are to be handled after Start().
+As the exceptions come from the audio processing thread
+but should be handled at the interface thread,
+the error should be catched by the backend and communicated
+in a thread safe way to the interface.
+
+This scheme of communication should be used also to notify
+the application of the backend status:
+Handling special events such xruns, server down,
+parameter changes such as the buffer size or the sampling rate...
+
+'''Required skills:'''
+CLAM processing execution cicle, backend technologies (portaudio, jack),
+multithread communication, Qt.
+
+'''Difficulty:''': Medium.
+
+'''Priority:''' High.
+
+== Qt widgets ==
+
+'''Description:''' 
+CLAM provides several sets of widgets to be used in applications.
+* Data views (instant and timelines)
+* Data editors (segments, bpf's...)
+* Control widgets (sliders, knobs, surface pads...)
+* Configuration parameter editors
+This project consists in developing nice set of widgets 
+so that we can build nice applications with them,
+while evolving the prototyping framework to ease their use.
+
+'''Required skills:'''
+* Qt
+
+'''Priority:''' High.
+
+'''Difficulty:''': Medium to high.
 
 = New standalone applications =
 
