@@ -2,7 +2,7 @@
 
 == Testing framework ==
 
-Setint up a framework to comper different implementations of segmentation algorithms:
+Setting up a framework to comper different implementations of segmentation algorithms:
 ** write unit tests
 ** allow different attributes as Segmentation (not only Chords_Harte)
 ** allow different hop sizes
