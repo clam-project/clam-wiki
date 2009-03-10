@@ -11,9 +11,9 @@ you adquire it in sort time before the coding starts.
 ''Difficulty'' stands on how deep the student should get inside CLAM core.
 Often a given project can be completed just using the framework but
 some projects needs understanding or modifying the core of the framework.
-== Core ==
+= Core =
 
-=== Static network scheduling algorithm ===
+== Static network scheduling algorithm ==
 
 '''Description:''' 
 Current flow control algorithm on each backend callback
@@ -41,7 +41,7 @@ Medium.
 '''Priority:'''
 High
 
-=== Hot-wiring ===
+== Hot-wiring ==
 
 '''Description:'''
  Currently any change to the network structure such as adding or removing processings, connecting them are not realtime safe and the network playback is stopped for safety reasons. This project would enable changing connections without stopping the network. 
@@ -57,7 +57,7 @@ That means doing real-time safe changes on the network structure. Some known tec
 
 '''Priority:''' Medium.
 
-=== Run-time errors handling and back-end polishing ===
+== Run-time errors handling and back-end polishing ==
 
 '''Description:''' 
 CLAM should have a way of handling errors in the Do method.
@@ -83,7 +83,6 @@ parameter changes such as the buffer size or the sampling rate...
 '''Difficulty:''': Medium.
 
 '''Priority:''' High.
-
 
 == NetworkEditor enhancements ==
 
