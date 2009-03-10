@@ -243,25 +243,7 @@ Now it needs some work to have it working again.
 This project could consist in providing processings that makes aubio features
 availables on the NetworkEditor or/and making the TickExtractor example working again.
 
-== Qt widgets ==
 
-'''Description:''' 
-CLAM provides several sets of widgets to be used in applications.
-* Control widgets (sliders, knobs, surface pads...)
-* Configuration parameter editors
-* Data views (instant and time line data)
-* Data editors (segments, bpf's...)
-This project consists in developing nice set of widgets 
-so that we can build nice applications with them,
-while evolving the prototyping framework to ease their use.
-
-'''Required skills:'''
-* Qt
-* Thread safe programming
-
-'''Priority:''' High.
-
-'''Difficulty:''': Medium to high.
 
 = New standalone applications =
 
