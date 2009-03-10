@@ -5,11 +5,6 @@
 
 = Proposed ideas for the 2009 SoC =
 
-== Static network scheduling ==
-
-Based on Pau's Thesis. TODO: add a link
-
-
 == Hot-wiring in NetworkEditor ==
 
 '''Description:''' Currently any change to the network structure such as adding or removing processings, connecting them are not realtime safe and the network playback is stopped for safety reasons. This project would enable changing connections without stopping the network. 
@@ -19,6 +14,16 @@ That means doing real-time safe changes on the network structure. Some known tec
 Proficiency on C++ and basic notions of threading are the key skills to have. Having some knowledge on the CLAM core classes implementation would be perfect but not required.
 
 '''Priority:''' Medium.
+
+== Static network scheduling algorithm ==
+
+'''Description:''' Based on Pau's Thesis. TODO: add a link
+
+'''Required skills:'''
+
+'''Difficulty:''':
+
+'''Priority:'''
 
 == New standalone applications ==
 
@@ -69,30 +74,6 @@ It consists on:
 ** create stream flow
 ** etc.
 
-=== Standalone chord extractor application ===
-
-'''Status: ''' Checkout [[http://clam-project.org/wiki/GSoC/Standalone_chord_extractor_application|chordata (former turnaround)]]
-
-'''Description''': (deprecated)
-We have the chord extraction running whithin Annotator, NetworkEditor, Offline, but none of these applications are addressed towards the real use that one can make of such technology being a guitar player.
-
-This project consists on building an application which addresses usability issues for the use case that some one want to learn the chords of a song.
-
-Some of the concrete use cases to be addressed are:
-
-* Most of user actions should consist on single key actions (no control keys) to facilitate usage with an musical instrument at hand.
-* Precomputing a song when loading it.
-* Playback
-** Preloading the song 
-** Moving fastforward and backwards
-** Playing a limited length of the song and then back
-** Replay from the same point
-** Time stretch playback
-* Display
-** A scrolling segmentation view
-** Segmentation view should have chord text displayed
-** Segmentation view should have a different color for each chord for the user to associate them. Maybe different color association per song or maybe using a color/pattern combination for Root/Mode.
-
 == Network Scalability (aka Subnetworks) ==
 
 '''Status:''' Checkout [[Network_scalability_and_Blender_integration]]
@@ -125,6 +106,8 @@ This project consists in providing both a good Resampling processing and minimiz
 
 '''Current status:''' An existing experiment of processing exists as plugin. Still  it is not working properly and proper configuration parameters must be found.
 
+'''Priority:''' High
+
 === Libflac and libspeex ===
 
 CLAM's AudioFileReaders/Writers use different backends for audio loading and saving.
@@ -153,7 +136,6 @@ availables on the NetworkEditor or/and making the TickExtractor example working 
 
 
 
-
 == Recovering from Processing errors ==
 
 Some error conditions are not available until the processings are executed.
@@ -174,9 +156,7 @@ thread by any means without AssertFailure reaching the top of the processing thr
 
 TODO: Split that in small project packages
 
-Plugin systems are both a way of extending available
-modules for CLAM (CLAM as a plugin host) 
-and also a way of using CLAM networks in 3rd party contexts
+'''Description:''' Plugin systems are both a way of extending available modules for CLAM (CLAM as a plugin host) and also a way of using CLAM networks in 3rd party contexts
 (CLAM as a development tool to build plugins).
 
 Several plugins systems exist: Ladspa, DSSI, LV2, VST, AudioUnits...
@@ -196,17 +176,6 @@ interesting aspects to be addressed:
 See more here: [[Devel/Plugins TODOs]]
 
 This project has room for several projects. It also has contacts with many other projects: Subnetworks, metainformation, visual definition of processings... So if you choose this project, be specific on the set of aspects that will be addressed.
-
-== Integrate Faust with CLAM ==
-
-'''Status:''' Checkout [[Network_scalability_and_Blender_integration]] (nearly complete)
-
-FAUST http://sourceforge.net/projects/faudiostream/ is a functional language for audio processing. A faust module can be compiled as a ladspa plugin and then loaded into a clam network.
-[http://clam.iua.upf.edu/wikis/clam/index.php/Image:NetEditor-faust-svg-embedded.png Screenshot] showing SVG diagrams into CLAM NetworkEditor: 
-Thigs to be added:
-* Display faust diagrams (svg) embedded in clam processing boxes. Navigable (hierarchically) faust diagrams
-* On-the-fly compilation of faust modules
-* Faust code editing within clam networkeditor
 
 == Relative configurations and network configuration ==
 
@@ -246,23 +215,6 @@ the key methods.
 * Network scoring
 ** Sequencing changes on a network along the time
 ** Configurations, connections, control sending...
-
-== SMSTools ==
-
-=== Improve usability of SMSTools workflow ===
-
-* Remove the files to process from the configuration and use configuration as presets
-* Data to open are just audio or analysis data
-* Object centric interaction: you apply an action (synthesis, analysis, transform) to an object
-* Minimize the provided data by using object information (sampling rate on analysis, and most of the analysis parameters embedded on the object for resynthesis)
-
-=== Convergence of SMSTools and CLAM widgets infrastructure ===
-
-* Transformation parameter automation using time-lines (ala ardour automation)
-* Metadata based widgets
-* Widgets interaction (zoom)
-* Network based transformations. The user should be able to define the transformation chain using NetworkEditor.
-
 
 == Enhancing chord detection algorithm for real-time usage ==
 
@@ -423,6 +375,42 @@ Each extractor could have their own parameters so we need a system to deal with 
 * NetworkEditor: Realtime Input/Output using portmidi. Read/Write on files
 * Improve and update all the MIDI support of the framework
 
+=== Standalone chord extractor application ===
+
+'''Status: ''' Checkout [[http://clam-project.org/wiki/GSoC/Standalone_chord_extractor_application|chordata (former turnaround)]]
+
+'''Description''': (deprecated)
+We have the chord extraction running whithin Annotator, NetworkEditor, Offline, but none of these applications are addressed towards the real use that one can make of such technology being a guitar player.
+
+This project consists on building an application which addresses usability issues for the use case that some one want to learn the chords of a song.
+
+Some of the concrete use cases to be addressed are:
+
+* Most of user actions should consist on single key actions (no control keys) to facilitate usage with an musical instrument at hand.
+* Precomputing a song when loading it.
+* Playback
+** Preloading the song 
+** Moving fastforward and backwards
+** Playing a limited length of the song and then back
+** Replay from the same point
+** Time stretch playback
+* Display
+** A scrolling segmentation view
+** Segmentation view should have chord text displayed
+** Segmentation view should have a different color for each chord for the user to associate them. Maybe different color association per song or maybe using a color/pattern combination for Root/Mode.
+
+
+== Integrate Faust with CLAM ==
+
+'''Status:''' Checkout [[Network_scalability_and_Blender_integration]] (nearly complete)
+
+FAUST http://sourceforge.net/projects/faudiostream/ is a functional language for audio processing. A faust module can be compiled as a ladspa plugin and then loaded into a clam network.
+[http://clam.iua.upf.edu/wikis/clam/index.php/Image:NetEditor-faust-svg-embedded.png Screenshot] showing SVG diagrams into CLAM NetworkEditor: 
+Thigs to be added:
+* Display faust diagrams (svg) embedded in clam processing boxes. Navigable (hierarchically) faust diagrams
+* On-the-fly compilation of faust modules
+* Faust code editing within clam networkeditor
+
 == Enhancing NetworkEditor Usability ==
 
 * Add undo/redo support.
@@ -430,6 +418,28 @@ Each extractor could have their own parameters so we need a system to deal with 
 * Cut and paste.
 * Any other feature that could enhance the usability
 
+
+== SMSTools ==
+
+=== Improve usability of SMSTools workflow ===
+
+'''Description:'''
+* Remove the files to process from the configuration and use configuration as presets
+* Data to open are just audio or analysis data
+* Object centric interaction: you apply an action (synthesis, analysis, transform) to an object
+* Minimize the provided data by using object information (sampling rate on analysis, and most of the analysis parameters embedded on the object for resynthesis)
+
+'''Priority:''' Low
+
+=== Convergence of SMSTools and CLAM widgets infrastructure ===
+
+'''Description:'''
+* Transformation parameter automation using time-lines (ala ardour automation)
+* Metadata based widgets
+* Widgets interaction (zoom)
+* Network based transformations. The user should be able to define the transformation chain using NetworkEditor.
+
+'''Priority:''' Low
 
 = Still not included =
 
