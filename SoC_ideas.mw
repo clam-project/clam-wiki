@@ -185,6 +185,7 @@ Current spike just address real-time safety and channel safety and just libsndfi
 So, main to-do's related to this project are:
 * Support formats that are currently supported by the old processings (libogg, libmad...)
 * Do implicit sample rate conversion to the backend (libsamplerate)
+* Provide seeking control and position information
 * Provide access to metadata like old processing do (libid3)
 * Optionally add support for new formats (libflac, libspeex...)
 * Migrate the current code base to the new processings
@@ -192,7 +193,7 @@ So, main to-do's related to this project are:
 '''Skills:'''
 * C++ proficiency
 * Look-free structures
-* CLAM encapsulation
+* CLAM processing encapsulation (ports, control, configs...)
 * Understanding on audio file formats
 
 == Integrating external libraries ==
