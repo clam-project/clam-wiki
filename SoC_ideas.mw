@@ -58,6 +58,28 @@ Medium.
 '''Priority:'''
 High
 
+== New spectrum migration ==
+
+Old CLAM Spectrum have multiple representations inside:
+Complex array, polar array, separate magnitude and phase arrays, 
+That could seem convenient but at the end of the day
+all the processing dealing with spectrum had to deal with
+all the possible convinations of representations, and to
+synchronize the information if several of them were used.
+
+To avoid that complexity, we developed, for the spatialization plugin,
+a set of single representation spectrums, operators and converters,
+that simplified a lot the spectral processings.
+
+This project consists in extending its use to:
+* Spectral processings
+* SMS processings
+
+'''Skills:'''
+* C++ proficiency
+* Unit and Back to back testing principles
+* Basic signal processing
+
 == Run-time errors handling and back-end polishing ==
 
 '''Description:''' 
