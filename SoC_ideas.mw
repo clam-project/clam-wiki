@@ -370,7 +370,7 @@ Each extractor could have their own parameters so we need a system to deal with 
 
 
 = Continuation of past projects =
-==MIDI support==
+=== MIDI support ===
 
 '''Status:''' Checkout [[http://clam-project.org/wiki/GSoC/MIDI_Implementation_for_Network_Editor]]
  
@@ -401,8 +401,7 @@ Some of the concrete use cases to be addressed are:
 ** Segmentation view should have chord text displayed
 ** Segmentation view should have a different color for each chord for the user to associate them. Maybe different color association per song or maybe using a color/pattern combination for Root/Mode.
 
-
-== Integrate Faust with CLAM ==
+=== Integrate Faust with CLAM ===
 
 '''Status:''' Checkout [[Network_scalability_and_Blender_integration]] (nearly complete)
 
@@ -413,7 +412,7 @@ Thigs to be added:
 * On-the-fly compilation of faust modules
 * Faust code editing within clam networkeditor
 
-== Enhancing NetworkEditor Usability ==
+=== Enhancing NetworkEditor Usability ===
 
 * Add undo/redo support.
 * Add the possibility of save all the controls values to have networks ready to play (like a patch).
