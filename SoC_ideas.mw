@@ -584,13 +584,7 @@ Each extractor could have their own parameters so we need a system to deal with 
 * Offering a C++/python solution to ease the programming of extractors with configuration.
 
 = Continuation of past projects =
-=== MIDI support ===
 
-'''Status:''' Checkout [[GSoC/MIDI_Implementation_for_Network_Editor]] past gsoc project
- 
-'''Description:'''
-* NetworkEditor: Realtime Input/Output using portmidi. Read/Write on files
-* Improve and update all the MIDI support of the framework
 
 === Standalone chord extractor application ===
 
