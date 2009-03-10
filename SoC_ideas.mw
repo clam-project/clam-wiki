@@ -173,6 +173,28 @@ The project should relay on b2b testing in order not to break existing code base
 * Unit and back-to-back testing principles
 * Basic signal processing
 
+== New audio file access ==
+
+Current audio file access processings have several limitations, so we started an spike for new ones.
+The limitations were:
+* They are not real-time safe (access to files locks the thread)
+* They are not samplerate safe (depending on the file the samplerate varies so the rest of the network cannot guess the sample rate)
+* They are not channel safe (when you change the file output channels vary and connections are lost)
+
+Current spike just address real-time safety and channel safety and just libsndfile formats are supported.
+So, main to-do's related to this project are:
+* Support formats that are currently supported by the old processings (libogg, libmad...)
+* Do implicit sample rate conversion to the backend (libsamplerate)
+* Provide access to metadata like old processing do (libid3)
+* Optionally add support for new formats (libflac, libspeex...)
+* Migrate the current code base to the new processings
+
+'''Skills:'''
+* C++ proficiency
+* Look-free structures
+* CLAM encapsulation
+* Understanding on audio file formats
+
 == Integrating external libraries ==
 
 Integrating one or more of those libraries could be great
@@ -219,7 +241,6 @@ Now it needs some work to have it working again.
 
 This project could consist in providing processings that makes aubio features
 availables on the NetworkEditor or/and making the TickExtractor example working again.
-
 
 == Qt widgets ==
 
