@@ -326,7 +326,7 @@ So, main to-do's related to this project are:
 
 == MIDI support revamped ==
 
-It is a [[GSoC/MIDI_Implementation_for_Network_Editor GSoC2008 project]] but still there are a lot of work to do.
+It is a [[GSoC/MIDI_Implementation_for_Network_Editor|GSoC2008 project]] but still there are a lot of work to do.
 
 == Integrating external libraries ==
 
