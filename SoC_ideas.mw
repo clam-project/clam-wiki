@@ -9,6 +9,7 @@
 
 Based on Pau's Thesis. TODO: add a link
 
+
 ==Network based music tracker==
 
 '''Description:''' Network based music tracker. Controls being sequenced in time in a order list plus pattern way.
@@ -19,23 +20,25 @@ Based on Pau's Thesis. TODO: add a link
 
 '''Difficulty:''': Moderate.
 
+
 == Integrating external libraries ==
 
 Integrating one or more of those libraries could be great
 
 === libsamplerate ===
 
-An existing experiment of processing exists as plugin.
-Still  it is not working properly and proper configuration parameters must be found.
+'''Description:''' Working with different samplerates is a hard problem now in CLAM. One solution could be using network configuration parameters (see GSoC project).
+still, wave file could provide different samplerates thant the Also integration with FileReaders and Writers and with Backends will be useful.
 
-Working with different samplerates is a hard problem now in CLAM.
-One solution could be using network configuration parameters (see GSoC project).
-still, wave file could provide different samplerates thant the 
-Also integration with FileReaders and Writers and with Backends will be useful.
+This project consists in providing both a good Resampling processing and minimizing samplerate impedance between processings requiring a given samplerate, audio files and the audio backend.
 
-This project consists in providing both a good Resampling processing and 
-minimizing samplerate impedance between processings requiring a given samplerate,
-audio files and the audio backend.
+'''Required skills:'''
+* Basic knowledge about signal processing.
+* Experience working with third party libraries.
+
+'''Difficulty:''': Simple. May be part of a greater project.
+
+'''Current status:''' An existing experiment of processing exists as plugin. Still  it is not working properly and proper configuration parameters must be found.
 
 === Libflac and libspeex ===
 
