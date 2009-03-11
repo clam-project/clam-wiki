@@ -163,6 +163,12 @@ thread by any means without AssertFailure reaching the top of the processing thr
 * Changing things on the backend from the graphical interface.
 * Any other feature that could enhance the usability, use it and you will find many.
 
+'''Required skills:'''
+* Qt
+
+
+'''Difficulty:''' Medium
+
 == Porting Network Canvas to Qt Graphics View ==
 
 The NetworkCanvas (the main widget for NetworkEditor) was implemented before QGraphicsView
