@@ -77,16 +77,16 @@ thread by any means without AssertFailure reaching the top of the processing thr
 * Multithread communication
 * Qt
 
-== Back-end feedback ==
+== Rich Back-ends ==
 
 '''Description:'''
-This project consists on make the backends (JACK, PortAudio, Plugin host...) 
+This project consists on making the backends (JACK, PortAudio, Plugin host...) 
 more rich for the application by providing them several features.
 
 One is a way for the Backend to communicate certain events back to the
 application, or the user interface that normally runs in a different thread.
 One tipical event is a backend not being available anymore, for example,
-JACK has stoped.
+when JACK stops our client or the server dies.
 Also events such as xruns, buffer size or sampling rate changes or
 processing errors (see previous project) which happen on the processing
 thread and must to be communicated to the interface.
@@ -94,6 +94,9 @@ thread and must to be communicated to the interface.
 Also it would be useful having a backend editor interface that will provide
 an uniform way of starting a user interface which is very dependant
 of the backend: a JACK connection tool, or a Portaudio device selector...
+
+It would be nice if that project also enhances the behaviour of the backends
+which currently is akward in some cases.
 
 '''Required skills:'''
 * Proficiency in C++
