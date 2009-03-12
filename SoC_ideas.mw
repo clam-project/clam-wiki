@@ -114,7 +114,7 @@ For each plugin system there are several things to be developed:
 ** C) Loading the plugin user interface
 * Running CLAM networks as a plugin. Implies:
 ** D) Wrapping the network as a plugin
-** E) Providing an interface in NetworkEditor to [[Building_a_LADSPA_plugin automate the plugin creation from a Network]]
+** E) Providing an interface in NetworkEditor to [[Building_a_LADSPA_plugin|automate the plugin creation from a Network]]
 ** F) Executing a qt-designer interface, if the host supports it
 
 The current status is:
