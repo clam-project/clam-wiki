@@ -179,6 +179,8 @@ Testfarm is a brother project of CLAM that we use to monitor continuous integrat
 * Familiarity with double key signing and encription technologies
 * Callgrind and YAML (for EfficiencyGuardian)
 
+'''Priority:''' High
+
 = NetworkEditor enhancements =
 
 == Enhancing NetworkEditor Usability ==
