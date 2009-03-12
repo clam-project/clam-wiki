@@ -120,7 +120,7 @@ For each plugin system there are several things to be developed:
 The current status is:
 * Native supports A,B (D and E would be the subnetworks project)
 * LADSPA supports A,B,D,E
-* VST2 supports D,F but requires more work
+* VST 2.4 supports D,F but requires more work (See specific project)
 * Not supported at all: AudioUnits, VST3/VSTi, LV2
 
 So, there are a lot of work to do. See [[Devel/Plugins TODOs]]
