@@ -101,31 +101,31 @@ A project to address that should include:
 
 == Enhancing plugin system ==
 
-TODO: Split that in small project packages
-
-TODO: Update current status
-
 '''Description:''' Plugin systems are both a way of extending available modules for CLAM (CLAM as a plugin host) and also a way of using CLAM networks in 3rd party contexts
 (CLAM as a development tool to build plugins).
 
 Several plugins systems exist: Ladspa, DSSI, LV2, VST, AudioUnits...
 Also CLAM has its own plugin system to allow native 3rd party extensions.
-After the last GSoC, CLAM supports some of them as host 
-and some other as development tool, but there is still 
-interesting aspects to be addressed:
-* Integrating other kind of plugins being CLAM the host: LV2, VST...
-* Plugin reloading and checking: one should be able to reload one kind of plugins or explicitly loading a given plugin
-* Creating plugins given a CLAM network
-** CLAM network as Ladspa/LV2 plugin
-** CLAM network as VST plugin
-** One button generation of plugins from NetworkEditor (native, LADSPA, VST...)
-* Explicit plugin (re)loading
-* Enabling Prototyper Qt interfaces in plugins systems that allow that such as VST, CoreUnits or LV2.
 
-See more here: [[Devel/Plugins TODOs]]
+For each plugin system there are several things to be developed:
+* Running plugins being CLAM a host. Implies:
+** A) Browsing the list of plugins and related metainformation
+** B) Loading the plugin, often by wrapping it in a processing
+** C) Loading the plugin user interface
+* Running CLAM networks as a plugin. Implies:
+** D) Wrapping the network as a plugin
+** E) Providing an interface in NetworkEditor to [[Building_a_LADSPA_plugin automate the plugin creation from a Network]]
+** F) Executing a qt-designer interface, if the host supports it
 
-This project has room for several projects. It also has contacts with many other projects: Subnetworks, metainformation, visual definition of processings... So if you 
-choose this project, be specific on the set of aspects that will be addressed.
+The current status is:
+* Native supports A,B (D and E would be the subnetworks project)
+* LADSPA supports A,B,D,E
+* VST2 supports D,F but requires more work
+* Not supported at all: AudioUnits, VST3/VSTi, LV2
+
+So, there are a lot of work to do. See [[Devel/Plugins TODOs]]
+There is has room for several projects. It also has contacts with many other projects: Subnetworks, metainformation, visual definition of processings, processings documentation... 
+So if you  choose this project, be specific on the set of aspects that will be addressed.
 
 == Recovering from Processing errors ==
 
