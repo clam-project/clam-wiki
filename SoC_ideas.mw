@@ -161,6 +161,24 @@ So if you  choose this project, be specific on the set of aspects that will be a
 * Extend current Port Monitor infrastructure to generative visual algorithms or user-defined mappings between the audio analysis features and the graphics
 * Interface CLAM with GStreamer
 
+== Testing framework (Testfarm and the like) ==
+
+Testfarm is a brother project of CLAM that we use to monitor continuous integration and automated testing in multiple platforms.
+* General code refactoring
+* Redefine the log format and html building to be more efficient
+* Testing the testing framework
+* Statistics gathering from code
+* Janitoring scripts for CLAM
+* Secure client connection (validating the clients)
+* Integration of EficiencyGuardian project
+
+''Skills''
+* Python
+* Web queries
+* Apache basics
+* Key pair technologies
+* Valgrind and YAML (for EfficiencyGuardian)
+
 = NetworkEditor enhancements =
 
 == Enhancing NetworkEditor Usability ==
