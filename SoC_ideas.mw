@@ -5,12 +5,15 @@
 
 = Proposed ideas for the 2009 SoC =
 
-''Skills'' does not refer to skills that the student should have at the moment of application
-you adquire it in sort time before the coding starts.
+''Skills'' does not refer to skills that the student should have at the moment of application,
+you still can adquire some of them in the sort period before the coding starts with possible guidance of the mentors.
 
 ''Difficulty'' stands on how deep the student should get inside CLAM core.
 Often a given project can be completed just using the framework but
 some projects needs understanding or modifying the core of the framework.
+
+''Priority'' tells which is the prority of having this project done for the current members of the project. You should balance project priority with the engagement you could get from that.
+
 = Core =
 
 == Static network scheduling algorithm ==
