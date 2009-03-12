@@ -57,27 +57,47 @@ That means doing real-time safe changes on the network structure. Some known tec
 
 '''Priority:''' Medium.
 
-== Run-time errors handling and back-end polishing ==
+== Recovering from Processing errors ==
 
-'''Description:''' 
-CLAM should have a way of handling errors in the Do method.
-Currently errors in configuration are allowed but
-few but important conditions are to be handled after Start().
-As the exceptions come from the audio processing thread
-but should be handled at the interface thread,
-the error should be catched by the backend and communicated
-in a thread safe way to the interface.
+Some error conditions are not available until the processings are executed.
+Such conditions are raised on processing thread while it should be detected
+by the application interface thread.
 
-This scheme of communication should be used also to notify
-the application of the backend status:
-Handling special events such xruns, server down,
-parameter changes such as the buffer size or the sampling rate...
+This task (which is not a project by itself, but can complement others that are also small)
+consists in implementing  a proper method of raising such error conditions and catching
+without the application dying, just recovering the backend and stopping the player.
+
+Also graphical (qt) handler of assertion failures has been disabled because
+when the assertion is thrown from the processing thread the error message was
+even more obscure that the console message you get with the plain console handler.
+So, a second related task could be catching assertions and forward them to the application 
+thread by any means without AssertFailure reaching the top of the processing thread stack.
+
+* CLAM processing execution cicle
+* Multithread communication
+* Qt
+
+== Back-end feedback ==
+
+'''Description:'''
+This project consists on make the backends (JACK, PortAudio, Plugin host...) 
+more rich for the application by providing them several features.
+
+One is a way for the Backend to communicate certain events back to the
+application, or the user interface that normally runs in a different thread.
+One tipical event is a backend not being available anymore, for example,
+JACK has stoped.
+Also events such as xruns, buffer size or sampling rate changes or
+processing errors (see previous project) which happen on the processing
+thread and must to be communicated to the interface.
+
+Also it would be useful having a backend editor interface that will provide
+an uniform way of starting a user interface which is very dependant
+of the backend: a JACK connection tool, or a Portaudio device selector...
 
 '''Required skills:'''
 * Proficiency in C++
-* CLAM processing execution cicle
 * Backend technologies (portaudio, jack)
-* Multithread communication
 * Qt
 
 '''Difficulty:''': Medium.
@@ -128,29 +148,12 @@ See [[Devel/Plugins TODOs]].
 It also has contacts with many other projects: Subnetworks, metainformation, visual definition of processings, processings documentation... 
 So if you  choose this project, be specific on the set of aspects that will be addressed.
 
-== Recovering from Processing errors ==
-
-Some error conditions are not available until the processings are executed.
-Such conditions are raised on processing thread while it should be detected
-by the application interface thread.
-
-This task (which is not a project by itself, but can complement others that are also small)
-consists in implementing  a proper method of raising such error conditions and catching
-without the application dying, just recovering the backend and stopping the player.
-
-Also graphical (qt) handler of assertion failures has been disabled because
-when the assertion is thrown from the processing thread the error message was
-even more obscure that the console message you get with the plain console handler.
-Another related task could be catching assertions and forward them to the application 
-thread by any means without AssertFailure reaching the top of the processing thread stack.
-
 
 == CLAM for Video ==
 
 * Add video processing/playback capabilities
 * Extend current Port Monitor infrastructure to generative visual algorithms or user-defined mappings between the audio analysis features and the graphics
 * Interface CLAM with GStreamer
-
 
 = NetworkEditor enhancements =
 
