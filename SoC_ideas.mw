@@ -123,8 +123,9 @@ The current status is:
 * VST 2.4 supports D,F but requires more work (See specific project)
 * Not supported at all: AudioUnits, VST3/VSTi, LV2
 
-So, there are a lot of work to do. See [[Devel/Plugins TODOs]]
-There is has room for several projects. It also has contacts with many other projects: Subnetworks, metainformation, visual definition of processings, processings documentation... 
+There is has room for several projects.
+See [[Devel/Plugins TODOs]].
+It also has contacts with many other projects: Subnetworks, metainformation, visual definition of processings, processings documentation... 
 So if you  choose this project, be specific on the set of aspects that will be addressed.
 
 == Recovering from Processing errors ==
