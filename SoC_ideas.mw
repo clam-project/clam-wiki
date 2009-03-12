@@ -163,7 +163,7 @@ So if you  choose this project, be specific on the set of aspects that will be a
 
 == Testing framework (Testfarm and the like) ==
 
-Testfarm is a brother project of CLAM that we use to monitor continuous integration and automated testing in multiple platforms.
+Testfarm is a brother project of CLAM that we use to monitor continuous integration and automated testing in multiple platforms. Some of the points to work on are:
 * General code refactoring
 * Redefine the log format and html building to be more efficient
 * Testing the testing framework
@@ -172,7 +172,7 @@ Testfarm is a brother project of CLAM that we use to monitor continuous integrat
 * Secure client connection (validating the clients)
 * Integration of EficiencyGuardian project
 
-''Skills''
+'''Skills:'''
 * Python
 * Web queries
 * Apache basics
