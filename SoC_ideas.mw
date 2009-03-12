@@ -173,11 +173,11 @@ Testfarm is a brother project of CLAM that we use to monitor continuous integrat
 * Integration of EficiencyGuardian project
 
 '''Skills:'''
-* Python
-* Web queries
-* Apache basics
-* Key pair technologies
-* Valgrind and YAML (for EfficiencyGuardian)
+* Python (text parsing, data structure navigation...)
+* Web queries and HTTP protocol (python-urllib)
+* Apache basics (mod_python)
+* Familiarity with double key signing and encription technologies
+* Callgrind and YAML (for EfficiencyGuardian)
 
 = NetworkEditor enhancements =
 
