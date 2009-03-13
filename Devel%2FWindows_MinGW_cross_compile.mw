@@ -557,8 +557,14 @@ Note: Xerces-C is available for Cygwin. Use the Cygwin "setup.exe" program (may 
  tar xvfz xerces-c-src_2_8_0.tar.gz
  cd xerces-c-src_2_8_0/src/xercesc
  export XERCESCROOT=$MINGWSANDBOX/download/xerces-c-src_2_8_0/
- ./runConfigure -p mingw-msys -C --host=i586-mingw32msvc
+ ./runConfigure -p mingw-msys -C  --prefix -C $MINGWSANDBOX/local/ -C --host=i586-mingw32msvc 
+
+You should edit Makefile.incl and substitute 'dllwrap' by 'i586-mingw32msvc-dllwrap'.
+
  make
+ make install
+
+TODO: Use it in CLAM
 
 == libsamplerate ==
 
