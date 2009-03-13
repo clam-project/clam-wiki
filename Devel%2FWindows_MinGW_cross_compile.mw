@@ -552,6 +552,14 @@ No supported yet. Work in progress.
 
 Note: Xerces-C is available for Cygwin. Use the Cygwin "setup.exe" program (may need to try a different mirror).
 
+ cd $MINGWSANDBOX/download
+ wget http://ftp.udc.es/apache-dist/xerces/c/2/sources/xerces-c-src_2_8_0.tar.gz
+ tar xvfz xerces-c-src_2_8_0.tar.gz
+ cd xerces-c-src_2_8_0/src/xercesc
+ export XERCESCROOT=$MINGWSANDBOX/download/xerces-c-src_2_8_0/
+ ./runConfigure -p mingw-msys -C --host=i586-mingw32msvc
+ make
+
 == libsamplerate ==
 
 This library is not a current CLAM dependency (an experimental plugin depends on it).
