@@ -588,8 +588,8 @@ Download py2exe and install it.
  wget http://switch.dl.sourceforge.net/sourceforge/py2exe/py2exe-0.6.9.win32-py2.5.exe
  wine py2exe-0.6.9.win32-py2.5.exe
 
-TODO: there is no pyxml build for python 2.5
  wget http://platea.pntic.mec.es/%7Ejmorilla/python/PyXML-0.8.4.win32-py2.5.exe
+ wine PyXML-0.8.4.win32-py2.5.exe
 
  cd clam/Annotator/SimacServicesClient
  mkdir -p build/bdist.win32/winexe/bundle-2.5
@@ -597,6 +597,12 @@ TODO: there is no pyxml build for python 2.5
  wine ~/.wine/drive_c/Python25/python.exe buildExeFromPython.py
 
 Still getting errors at this point
+
+The following packages have case problem:
+* email.Iterators
+* email.Utils
+* email.Generators
+Still missing: 'DateTime', 'Ft.Lib', 'Ft.Lib.DumpBgTuple', 'Ft.__init__', 'XPathParserc', '_pybsddb', 'bsddb3.dbutils', 'ext.IsDOMString', 'ext.SplitQName', 'xml.xslt', 'xml.xslt.ParsedPattern'
 
 = Crosscompiling CLAM =
 
