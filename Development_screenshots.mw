@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.4.0 =
 <gallery>
+Image:MIDIPianoWidget.jpg|MIDI monitor and notes generator.
 Image:vst-designer.png|VST support Step 4, loading a qt designer ui.
 Image:vst-qt.png|VST support Step 3, embeding a qt interface!!! the key was using QWidget::create
 Image:vst-qttoplevel.png|VST support Step 2.9, qt interface ignores the host provided window :-(
