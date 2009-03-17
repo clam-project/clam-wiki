@@ -568,11 +568,14 @@ High priority on Annotator front.
 
 This project consist in implementing a special extractor. Rather than extracting low-level descriptors as typical extractors do, it extracts web-based descriptors via calling web services/crawling from web. That would be useful, for example to fetch semantic-rich descriptors for users' local repository, futhermore, to combine those descriptors with low-level ones to construct MPEG-7 compatible output.
 
-During GSoC2008, SemWebExtractor, an extractor for extracting meta-data for songs that have been previously posted to online repositories. However, the supporting repositories are limited to several available OpenLink data sets for semantic web resources, including Zitgist, DBTune, MusicBrainz and Jamendo. 
+During GSoC2008, SemWebExtractor, an extractor for extracting meta-data that have been previously posted to online repositories, was implemented. However, the supporting repositories are limited to several available OpenLink data sets for semantic web resources, including [http://www.zitgist.com/ Zitgist], [http://www.dbtune.org/ DBTune], [http://www.musicbrainz.org/ MusicBrainz] and [http://dbtune.org/jamendo/ Jamendo]. 
 
-
-
-Building extractors that call public web services such as Lastfm, MusicBrainz, EchoNest... and wraps the results as CLAM data pool xml to be open by the Annotator.
+For a more powerful Web Services based extractor, this project proposes to build:
+* An extension development based on SemWebExtractor
+** to support more Web Services available now in OpenLink data sets, such as [http://dbtune.org/last-fm/ AudioScrobbler_lastfm], [http://www.magnatune.com/ Magnatune], etc.
+* A further extension to non-OpenLink Web services
+** to support non-OpenLink Web services, such as [http://www.last.fm Lastfm], [http://the.echonest.com/ EchoNest], etc.
+** to explore more interesting semantic-rich descriptors, and wrap the results as CLAM data pool xml to be open by the Annotator
 
 == Pool based web services ==
 
