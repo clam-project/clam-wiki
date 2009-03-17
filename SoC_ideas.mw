@@ -545,19 +545,17 @@ That would be useful for example to combine in a project,
 chords extracted automatically by an algorithm, with hand annotated ground truth
 while keeping both in separated files.
 
-BOCA interface was able to merge several annotation sources,
-such as extractors, databases and webservices, 
-as a unique Annotator descriptors file (data pool).
-Python scripts developed to implement that do pretty well to 
-define merges, projections and attribute renaming 
-of several annotation sources (extractors, databases, webservices...).
+During GSoC2008, Aggregator, a GUI for merging was implemented. It is able to merge several annotation sources, such as extractors, databases and webservices, as a unique Annotator descriptors file (data pool).
+Aggregator is distributed as a special extractor with the annotator.
 
-BOCA merging scripts are distributed with the annotator.
-With some knowledge you can build a python extractor that does the merge.
-But for regular users this is not that intuitive to write an script,
-so this project proposes to build:
-* A graphical interface to build merging script
-* Some extra application logic needed to launch several extractors and to mapping back pool modifications.
+For a more friendly user interface, this project proposes to build:
+* A graphical interface to configure the extractors
+** to select extractors
+** to config their related Schema& Output files
+* Some extra application logic needed to launch several extractors and to mapping back pool modifications
+** a per descriptor read-only flag in order to control which descriptor can be modified, i.e., avoiding the write back if not supported
+** a per descriptor modified flag in order to control which descriptor must be saved, i.e., avoiding the write back if not needed
+** building a description from a blank sheet, e.g., how to generate a hand annotated description pool without any extractor?
 
 == VAMP plugins on the Annotator ==
 
