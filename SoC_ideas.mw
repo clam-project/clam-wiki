@@ -579,8 +579,13 @@ For a more powerful Web Services based extractor, this project proposes to build
 
 == Pool based web services ==
 
-Another possibility is offering web services that given an audio excerpt
-they return you the descriptors as an xml pool with or as any other existing format.
+Another possibility is offering web services that given an audio excerpt they return you the descriptors as an xml pool with or as any other existing format.
+
+Currently CLAM Annotator can be utilized for aggregating multi-level descriptors for songs, and also allow those descriptors be edited inside the tool, for example, to correct errors. 
+
+Consequently, a development of web services based on Annotator pool could be important, for example, to allow users contributing their computation resources or manual annotation efforts, especially the latter.
+* to build an interface of the web service
+* to link back to the fore-mentioned [http://esw.w3.org/topic/SweoIG/TaskForces/CommunityProjects/LinkingOpenData OpenLinkData] as a new open resource
 
 == Macro manipulation of descriptors with python on Annotator ==
 
