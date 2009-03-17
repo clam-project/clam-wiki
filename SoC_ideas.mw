@@ -572,7 +572,7 @@ During GSoC2008, SemWebExtractor, an extractor for extracting meta-data that hav
 
 For a more powerful Web Services based extractor, this project proposes to build:
 * An extension development based on SemWebExtractor
-** to support more Web Services available now in OpenLink data sets, such as [http://dbtune.org/last-fm/ AudioScrobbler_lastfm], [http://www.magnatune.com/ Magnatune], etc.
+** to support more Web Services available now in [http://esw.w3.org/topic/SweoIG/TaskForces/CommunityProjects/LinkingOpenData OpenLinkData] sets, such as [http://dbtune.org/last-fm/ AudioScrobbler_lastfm], [http://www.magnatune.com/ Magnatune], etc.
 * A further extension to non-OpenLink Web services
 ** to support non-OpenLink Web services, such as [http://www.last.fm Lastfm], [http://the.echonest.com/ EchoNest], etc.
 ** to explore more interesting semantic-rich descriptors, and wrap the results as CLAM data pool xml to be open by the Annotator
