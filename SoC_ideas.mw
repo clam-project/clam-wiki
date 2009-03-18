@@ -538,7 +538,7 @@ This project would consist in cleaning up the API's of each
 set of plugins and making them loadable dll's so that third party
 users can extend pool types and annotator views.
 
-== Annotation Merger ==
+== Annotation Merger Interface ==
 
 High priority on Annotator front.
 
@@ -554,7 +554,7 @@ Aggregator is distributed as a special extractor with the annotator.
 For a more friendly user interface, this project proposes to build:
 * A graphical interface to configure the extractors
 ** to select extractors
-** to config their related Schema& Output files
+** to configure them (see related project below)
 * Some extra application logic needed to launch several extractors and to mapping back pool modifications
 ** a per descriptor read-only flag in order to control which descriptor can be modified, i.e., avoiding the write back if not supported
 ** a per descriptor modified flag in order to control which descriptor must be saved, i.e., avoiding the write back if not needed
