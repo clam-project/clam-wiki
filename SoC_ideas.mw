@@ -516,7 +516,7 @@ High priority on Annotator front.
 Parts of this project can be added to another Annotator based project to add priority bonus or it can be a project by itself if you are a refactoring fanatic.
 
 Annotator schemas have some features that are implemented in
-specific classes not in the core CLAM Pool related classes.
+specific classes not in the core CLAM Pool related classes (schema, validators, segmentations...).
 In consequence, Annotator has an ill duplication of structures, 
 and also other CLAM based applications cannot benefit of such features.
 This project would consist on merging such features in the common Pool related classes in CLAM core, refactoring the Annotator code base and enhancing/redesigning the Pool API usability.
