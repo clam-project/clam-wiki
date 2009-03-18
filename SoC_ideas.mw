@@ -574,7 +574,7 @@ This project consist in implementing a special extractor. Rather than extracting
 During GSoC2008, SemWebExtractor, an extractor for extracting meta-data that have been previously posted to online repositories, was implemented. However, the supporting repositories are limited to several available OpenLink data sets for semantic web resources, including [http://www.zitgist.com/ Zitgist], [http://www.dbtune.org/ DBTune], [http://www.musicbrainz.org/ MusicBrainz] and [http://dbtune.org/jamendo/ Jamendo]. 
 
 For a more powerful Web Services based extractor, this project proposes to build:
-* An extension development based on SemWebExtractor
+* Providing a more rich schema for those descriptors (currently they all are downloaded as free text)* An extension development based on SemWebExtractor
 ** to support more Web Services available now in [http://esw.w3.org/topic/SweoIG/TaskForces/CommunityProjects/LinkingOpenData OpenLinkData] sets, such as [http://dbtune.org/last-fm/ AudioScrobbler_lastfm], [http://www.magnatune.com/ Magnatune], etc.
 * A further extension to non-OpenLink Web services
 ** to support non-OpenLink Web services, such as [http://www.last.fm Lastfm], [http://the.echonest.com/ EchoNest], etc.
