@@ -598,6 +598,8 @@ Some use cases:
 * "I want to correct an offset that a given segment annotation adds to all segments"
 * "I want to extend a regular beat annotation and just correct when it varies"
 
+Some scripts on this line are already provided in Annotator/scripts.
+
 == Enhancing Segment Editor ==
 
 * Selection and edit actions (copy, paste..)
