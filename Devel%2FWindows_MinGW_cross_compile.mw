@@ -112,6 +112,8 @@ Windows requires dll's to be on PATH or on the same dir. You can use regedit to 
 
 == NSIS ==
 
+TODO: Investigate if we can just use existing packages for NSIS in debian/ubuntu
+
 Download the Installer and install it with wine:
  export MINGWSANDBOX=~/CajitasDeArena/mingw # Or whatever in your system
  cd $MINGWSANDBOX/download
