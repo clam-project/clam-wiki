@@ -62,7 +62,7 @@ Setting up a framework to compare the goodness of different implementations of a
 ** Extract the widgets into a shared library
 ** Converge Pool based data sources and array based data sources
 ** Generalize storages for its use in regular networks
-** Add more backends (e.g. JACK)
+** [[Image:done.png]] Add more backends (e.g. JACK)
 * Convenience and usability
 ** Define a convenient layout ''(low)''
 ** Consider whether to show more information than title and artist ''(low)''
