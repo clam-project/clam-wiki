@@ -270,7 +270,7 @@ not limited by the plugin standard.
 === Which plugins systems can be generated? ===
 
 CLAM is able to generate plugins for the following standards:
-* VST
+* VST (experimental)
 * LADSPA
 * CLAM native
 
