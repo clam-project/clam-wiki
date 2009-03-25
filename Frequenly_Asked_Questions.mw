@@ -316,7 +316,15 @@ When considering a full song we are looking for the 'key'.
 When considering short time periods of the song we are looking for the 'chord'.
 CLAM provides SMS based tonal analysis from the MTG and 'constant Q' based approach from QMUL.
 
+==== Rhythm analysis and manipulation ====
+
+CLAM provides tools to extract the tick, the meter, the tempo and the swing ratio.
+By combining tick tracking and SMS based time stretching we can speed up and speed down a song and even modify the swing.
+
 ==== MPEG7 Descriptors ====
+
+CLAM supports extraction of MPEG7 compliant low level audio descriptors.
+
 ==== LPC, MFCC ====
 ==== Low Latency Convolution ====
 ==== Spatial (3D) Sound ====
