@@ -309,7 +309,13 @@ that are not achievable by simple spectral processing,
 including pitch shifting, time stretch, voice gender change, morphing,
 sampler interpolation...
 
-==== Tonal analysis (QMUL) ====
+==== Tonal analysis (SMS and QMUL) ====
+
+Tonal analysis consists in getting information of which set of notes are playing in a polyphonic music excerpt.
+When considering a full song we are looking for the 'key'.
+When considering short time periods of the song we are looking for the 'chord'.
+CLAM provides SMS based tonal analysis from the MTG and 'constant Q' based approach from QMUL.
+
 ==== MPEG7 Descriptors ====
 ==== LPC, MFCC ====
 ==== Low Latency Convolution ====
