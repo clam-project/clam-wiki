@@ -329,6 +329,17 @@ CLAM supports extraction of MPEG7 compliant low level audio descriptors.
 ==== Low Latency Convolution ====
 ==== Spatial (3D) Sound ====
 
+CLAM spacialization plugin provides algorithms to render 3D sound in several 
+* 3D scenario rendering based on point to point impulse response databases and realtime raytracing simulation
+* Mono to ambisonics encoding
+* Ambisonics to periphonic speaker array decoding
+* Ambisonics to binaural decoding (HRTF simulation of array decoding)
+* Mono to binaural decoding (HRTF)
+* Mono to speaker array (VBAP-3D)
+
+
+==== Voice formant tracking ====
+
 === How does CLAM deals with other languages? ===
 
 CLAM is a C++ library but it has ways to deal with other languages:
