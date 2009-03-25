@@ -162,6 +162,20 @@ you can help us to support yours by providing a
 remote client for CLAM in your computer.
 Contact the developers for help on how to setup one.
 
+=== Which version scheme uses CLAM? ===
+
+CLAM uses a three numbers version scheme: M.m.r
+* M: major release which implies a full rework of the platform
+* m: minor release that implies an new features and ABI change
+* r: revision which implies a bug fix or a change that doesn't imply changes
+
+Libraries use Mn as soname. So 1.3.2 version will append '13' to the soname.
+
+Subversion snapshots append a ~svnNNNNN sufix to the target release version.
+That means that 1.3.2~svn23423 is an svn snapshot toward the 1.3.2 release
+and thus 1.3.2 is newer than 1.3.2~svn23423.
+This is compliant with debian versioning scripts.
+
 == Documentation ==
 
 === I want to start using CLAM, how do I approach CLAM as user or as developer? ===
