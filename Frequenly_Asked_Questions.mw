@@ -283,6 +283,38 @@ CLAM can receive control events using:
 * Open Sound Control (OSC): processings in the 'osc' plugin by means of the liblo library.
 * MIDI devices: Using RTMIDI
 
+
+=== Which algorithms does the processing repository include? ===
+
+CLAM comes with a huge set of processing modules we can group them in the following groups:
+
+TODO: This list is far from complete!
+
+==== Spectral processing ====
+
+Those modules deal with tokens being elements of a [http://en.wikipedia.org/wiki/Short-time_Fourier_transform|short-time fourier transforms].
+That means that each token is an spectrum containing the fourier transform of consecutive and maybe overlaped windowed chunks of audio.
+Such representation enables frequency domain alteration and you can resynthesize to a regular time domain signal.
+
+==== Spectral Modeling (SMS) ====
+
+[http://en.wikipedia.org/wiki/Spectral_Modeling_Synthesis Spectral Modeling Synthesis]
+is a set of technologies that consider sound a two fold of harmonic content
+represented by a set of spectral peaks,
+and noisy content, modeled by an spectral envelope by substracting the harmonic content to the original signal.
+
+Best target for SMS algorithms are voice and monophonic instruments.
+Being able to modify both representation independently leads to a number of interesting effects
+that are not achievable by simple spectral processing,
+including pitch shifting, time stretch, voice gender change, morphing,
+sampler interpolation...
+
+==== Tonal analysis (QMUL) ====
+==== MPEG7 Descriptors ====
+==== LPC, MFCC ====
+==== Low Latency Convolution ====
+==== Spatial (3D) Sound ====
+
 === How does CLAM deals with other languages? ===
 
 CLAM is a C++ library but it has ways to deal with other languages:
