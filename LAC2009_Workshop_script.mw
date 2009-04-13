@@ -1,9 +1,9 @@
 <pre>
 Presenting CLAM project:
 	Framework for application development and research on audio and music
-	Presentation yesterday on 3D audio capabilities
+	Recall presentation yesterday on 3D audio capabilities
 	Showed integration with LADSPA, JACK, OSC, Blender, Ardour...
-	CLAM allowed a fast project integration
+	CLAM enabled a fast project integration
 		Short path from prototypes to actual applications
 	Common tasks (external communication, interface, configuration...)
 	Common interface eases recombination
@@ -43,6 +43,9 @@ Application prototyping:
 	We want to get an stand alone app with network+interface
 	Prototyper does that. Launch it.
 	We could choose backends
+Algorithms demo:
+	TODO: decide which ones to show up
+	TODO: What about show about 3D
 Plugin prototyping:
 	Backends are a very powerfull notion in CLAM
 	A backend could be a plugin platform
@@ -54,23 +57,23 @@ Plugin prototyping:
 	What about VST?
 		Same applies
 		Just need a crosscompiled CLAM
-	Faust. Nael?
+	TODO: Faust. Nael?
 	More comming: LV2, AudioUnits, VSTi...
 Building networks:
-	
+	TODO: Close to the tutorial but using new usability features
 Processing algorithms:
-	TODO: Choose the ones and order
+	TODO: Choose the ones to show and order
+	3D audio (room acoustics, hrtfs, vbap, ambisonics, hoa)
 	Spectral analysis
 	LPC/MFCC analysis
 	SMS analysis
 	Tonal analysis
 	Rhythm analysis
-
 	Spectral transforms
 	SMS Transforms (Voice, monophonic music)
 Extending clam:
-	Programming processings
-	(No) Programming backends
-	(No) Programming monitors/controllers
+	TODO: Programming processings
+	(X) Programming backends
+	(X) Programming monitors/controllers
 	
 </pre>
