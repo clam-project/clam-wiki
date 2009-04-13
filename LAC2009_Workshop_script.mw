@@ -14,7 +14,10 @@ Presenting CLAM project:
 		Collaborates with existing FLOSS projects
 	Welcome new hands to the project
 	http://clam-project.org
-	Wiki contains a road map to documentation and goal oriented recipes
+	Wiki contains 
+		road map to documentation
+		tutorials for apps
+		goal oriented recipes for programmers
 Application prototyping:
 	Open an existing network (SMSTranspose?)
 	Show the backend indicator
