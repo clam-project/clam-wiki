@@ -16,7 +16,23 @@
 
 == Annotator extractor aggregator (Jun GSoC) ==
 
+== Current task focus (David) ==
+
+* Project Editor supporting aggregator
+** [[Image:done.png]] Editing a name -> bolding it
+** [[Image:done.png]] Bug: Removing source has no effect
+** [[Image:done.png]] Bug: Renaming dismisses the map
+** Better: Consider attach the map to each extractor to remove name integrity problems
+** When creating choosing a unexisting numbered name
+** Check for equal source names before accepting the dialog
+** Check for empty or equal suffix before accepting the dialog
+** Better: make a -o options to specify the output file instead the -f suffix and use temp files to dump intermediates
+** Final check on the extractor
+** Optimization: Do not use the aggregator if there is just one extractor
+** Optimization: Rationalize the queries for the schema
+
 === Core tasks ===
+
 * [[Image:done.png]]Create a new extractor that does the aggregation for some fixed sources
 * [[Image:done.png]]Figure out which is the varying information when changing the sources and how to feed the variable information from the Annotator and the script.
 * Give users a documentation of the warnings about the aggregator configuration content
