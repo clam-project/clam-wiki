@@ -14,22 +14,33 @@
 ** UpdateAnnotatorData.py use the version marker to identify already ported files
 * Review TODO's and move the significant ones here
 
-== Annotator extractor aggregator (Jun GSoC) ==
-
-== Current task focus (David) ==
+== Current task focus for WWW (David) ==
 
 * Project Editor supporting aggregator
+** Write a guide for Xavi on aggregation
+** [[Image:done.png]] Make the Aggregator work in linux
+** [[Image:done.png]] Embed the aggregation definition into the project
+** [[Image:done.png]] Adapt the project editor interface to edit it
 ** [[Image:done.png]] Editing a name -> bolding it
 ** [[Image:done.png]] Bug: Removing source has no effect
 ** [[Image:done.png]] Bug: Renaming dismisses the map
 ** Better: Consider attach the map to each extractor to remove name integrity problems
 ** When creating choosing a unexisting numbered name
-** Check for equal source names before accepting the dialog
-** Check for empty or equal suffix before accepting the dialog
-** Better: make a -o options to specify the output file instead the -f suffix and use temp files to dump intermediates
+** Complaint on duplicated source names before accepting the dialog
+** Complaint on duplicated or empty suffixes before accepting the dialog
+** Better: define a -o options to specify the output file instead the -f suffix and use temp files to dump intermediates
 ** Final check on the extractor
 ** Optimization: Do not use the aggregator if there is just one extractor
 ** Optimization: Rationalize the queries for the schema
+* Make the SemWeb extractor work
+** Remove Windowsims
+** Check needed python libs and arrange execution environment
+** Adapt project
+** Check run with example data
+** Write a guide for Xavi
+
+
+== Annotator extractor aggregator (Jun GSoC) ==
 
 === Core tasks ===
 
