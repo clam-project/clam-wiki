@@ -479,15 +479,20 @@ Don't worry if it seems to freeze when you add it to the canvas
 as it has some heavy initialization.
 That processing provides different bits of information at the ports:
 
-ChromaPeaks are the spectral peaks detected folded within an octave. It can be visualized by a PolarChromaPeaks view.
+
+The algorithm starts by doing a [http://en.wikipedia.org/wiki/Constant_Q_transform|Constant Q transform] so that we get three bins per semitone.
+All the octaves are folded (added one to one) into a single octave.
+Then all the peaks of that circular spectrum are detected.
+What we get is the ChromaPeaks outport. It can be visualized by a PolarChromaPeaks view.
 
 [[Image:Tonal-ChromaPeaks.png|center]]
 
-After folding ChromaPeaks again but now within a semitone, presenting them in polar coordinates and summing them as vectors, we get the tunning vector, which tell us how far are we from a A-440 pitch. The tuning vector can be visualized using 
+After folding ChromaPeaks again but now within a semitone, presenting them in polar coordinates and summing them as vectors, we get the tunning vector, that tells us how far are we from a A-440 pitch. The module gives a magnitude on how pitched is the sound while the orientation tells us how tuned is that pitch. The tuning vector can be visualized using the Tunner view.
 
 [[Image:Tonal-Tunner.png|center]]
 
-Once the peaks are corrected to the standard tune, a Pitch Profile is built
+Then, the Choma peaks are corrected to the standard tunning
+and a Pitch Profile is built
 containing the amount of energy for each pitch note.
 We can display this with the VectorView which is a plane BarGraph,
 but two other visualization are provided: Spectrogram, that
@@ -530,3 +535,5 @@ The output of this post processing is the Segmentation which has its own visuali
 
 [[Image:CLAMTonalAnalysis.png|thumb|TonalAnalysis prototype. (real time computation)]]
 All those views are available in the CLAM plugin for Qt Designer so you can assemble a prototype similar to Chordata but working on realtime taking the mic as input.
+
+The original algorithm was defined by Chris Harte. In David Garcia Master Thesis one can find further discussion on implementation details and differences with the original Harte's algorithm.
