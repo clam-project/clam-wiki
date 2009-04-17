@@ -215,14 +215,27 @@ Here you have a screenshot of the three configurations (SpectralAnalysis, Spectr
 
 == Convenience tools ==
 
-TODO: Explain and illustrate new usability features
-* Control+Space -> add processing dialog with completition
-* Cut & Paste
-* Type coloring of ports, ports type on tooltips
-* Port context menu: Connect to existing compatible ports
-* Port context menu: Add connected source/sink
-* Port context menu: Add connected compatible data monitor
-* Control context menu: Add connected slider with proper range configured
+There is a number of convenience tools the NetworkEditor has added lately
+to enhance the usage. One is the quick processing add shortcut.
+By pressing Ctrl+Space you get an small dialog you can type the
+processing name in with completition. 
+Very usefull once you start knowing the processing repository.
+
+[[Image:AddProcessingCompleter.png|center]]
+
+Also now the ports and control provide a colouring code
+to highlight the token type of the port, and if you hover them
+you get extra type information on the tooltype.
+
+[[Image:NetEditor-PortHintWithType.gif|center]]
+
+The port context menu provides some shortcuts to link common processings:
+* Sources and sinks
+* Monitors
+* Whichever compatible port already in the network
+
+In the case of controls, by double clicking them we will obtain a
+control sender, with the proper bounds configured, if available.
 
 = Building Prototyper interfaces =
 
