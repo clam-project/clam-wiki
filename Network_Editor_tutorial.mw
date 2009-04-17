@@ -485,7 +485,7 @@ Don't worry about that.
 
 That processing provides different bits of information at the ports:
 
-The algorithm starts by doing a [http://en.wikipedia.org/wiki/Constant_Q_transform|Constant Q transform] so that we get three bins per semitone.
+The algorithm starts by doing a [http://en.wikipedia.org/wiki/Constant_Q_transform Constant Q transform] so that we get three bins per semitone.
 All the octaves are folded (added one to one) into a single octave.
 Then all the peaks of that circular spectrum are detected.
 What we get is the ChromaPeaks outport. It can be visualized by a PolarChromaPeaks view.
