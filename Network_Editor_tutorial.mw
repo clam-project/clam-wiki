@@ -461,3 +461,61 @@ to get the output of each binaural signal, left and right.
 Besides the regular STFT (Phase Vocoder) implementation, CLAM also has implemented the Sinusoidal plus Residual Model (a.k.a. SMS). That model identifies the sinusoids (the tonal part) on the spectral representation and substract them to get residual (the noisy part). By doing so, we can process both components separatelly so even more interesting transformations can be implemented with that model.
 
 == TODO: Tonal Analysis ==
+
+Tonal Analysis is a module and a set of visualizations that provide information
+about the tonality of a song, including 'instant tonality', meaning the chord.
+Chordata is a full application distributed with CLAM that uses it, but
+you can use the components to build your own.
+
+A processing named 'TonalAnalysis' is provided which does all the processing.
+Don't worry if it seems to freeze when you add it to the canvas 
+as it has some heavy initialization.
+That processing provides different bits of information at the ports:
+
+ChromaPeaks are the spectral peaks detected folded within an octave. It can be visualized by a PolarChromaPeaks view.
+
+[[Image:Tonal-ChromaPeaks.png|center]]
+
+After folding ChromaPeaks again but now within a semitone, presenting them in polar coordinates and summing them as vectors, we get the tunning vector, which tell us how far are we from a A-440 pitch. The tuning vector can be visualized using 
+
+[[Image:Tonal-Tunner.png|center]]
+
+Once the peaks are corrected to the standard tune, a Pitch Profile is built
+containing the amount of energy for each pitch note.
+We can display this with the VectorView which is a plane BarGraph,
+but two other visualization are provided: Spectrogram, that
+applied to the pitch profiles provides nice time evolving plots 
+and the Tonnetz view which display tonal compatible pitches together
+so that common chords modes have characteristic shapes.
+
+[[Image:Tonal-VectorView.png|center]]
+[[Image:Tonal-Tonnetz.png|center]]
+
+The next output we can take from the analysis is the chord correlation.
+This is built by adding the pitch by pitch product of 
+the resulting pitch profile with a collection
+of ideal profiles for the different chords we want to try.
+This gives us, for each chord the probability of being the one sounding
+in a given instant.
+
+We can display that using several views: The keyspace view arranges major
+and minor chords in a torus so that chords with sharing pitches are together.
+This view gives you a nice picture on how the pitches evolves.
+
+[[Image:Tonal-KeySpace.png|center]]
+
+
+The other view we can use to display the Chord Correlation is the Chord ranking.
+It is a bar graph with the chords sorted by probability.
+It is more noisy than the KeySpace but it provides two bits of information KeySpace doesn't.
+First, shown chords are not limited to major and minor, and second, you can easily see
+how clear the most probable chord is versus the other near options.
+
+[[Image:Tonal-ChordRanking.png|center]]
+
+All the previous views were computing taking into account just the information in a single frame.
+This information is not as steady as it should to get an idea of which is the played chord.
+Some post processing must be done to get some long lasting segments.
+The output of this post processing is the Segmentation which has its own visualization too.
+
+[[Image:Tonal-Segmentation.png|center]]
