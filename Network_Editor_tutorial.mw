@@ -149,7 +149,7 @@ This file specifies all the Processings, connections and configurations.
 ** ...
 
 For example, the following command sets the Filename of the previous network:
- scripts/clamrefactor.py -c "setConfig MonoAudioFileReader_0 SourceFile MyAudio.ogg" borrame.clamnetwork
+ scripts/clamrefactor.py -c "setConfig MonoAudioFileReader_0 SourceFile MyAudio.ogg" mynetwork.clamnetwork
 
 ==The Spectral Domain==
 
