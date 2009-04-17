@@ -479,7 +479,7 @@ Don't worry if it seems to freeze when you add it to the canvas
 as it has some heavy initialization.
 That processing provides different bits of information at the ports:
 
-[[Image:Tonal-HiddenProcessings.png|center|Hidden processings within the TonnalAnalysis]
+[[Image:Tonal-HiddenProcessings.png|center|Hidden processings within the TonnalAnalysis]]
 
 The algorithm starts by doing a [http://en.wikipedia.org/wiki/Constant_Q_transform|Constant Q transform] so that we get three bins per semitone.
 All the octaves are folded (added one to one) into a single octave.
