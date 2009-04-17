@@ -495,8 +495,9 @@ applied to the pitch profiles provides nice time evolving plots
 and the Tonnetz view which display tonal compatible pitches together
 so that common chords modes have characteristic shapes.
 
-[[Image:Tonal-VectorView.png|center]]
-[[Image:Tonal-Tonnetz.png|center]]
+[[Image:Tonal-VectorView.png]]
+[[Image:Tonal-Tonnetz.png]]
+[[Image:Tonal-PCPGram.png]]
 
 The next output we can take from the analysis is the chord correlation.
 This is built by adding the pitch by pitch product of 
