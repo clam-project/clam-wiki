@@ -467,6 +467,8 @@ about the tonality of a song, including 'instant tonality', meaning the chord.
 Chordata is a full application distributed with CLAM that uses it, but
 you can use the components to build your own.
 
+[[Image:TurnAround-colorSegments.png|thumb|Chordata standalone application]]
+
 A processing named 'TonalAnalysis' is provided which does all the processing.
 Don't worry if it seems to freeze when you add it to the canvas 
 as it has some heavy initialization.
