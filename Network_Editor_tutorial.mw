@@ -140,6 +140,17 @@ This file specifies all the Processings, connections and configurations.
 
 *If you feel adventurous you can go ahead and edit some of the values and then load the xml from the NetworkEditor.
 
+* If you want to do batch editions of a network, you could process the XML files directly, but CLAM provides a Python script 'clamrefactor.py' to safely perform high level operations such: 
+** setting configuration values
+** processings renaming,
+** class renaming,
+** configuration parameters renaming and reordering,
+** connectors renames,
+** ...
+
+For example, the following command sets the Filename of the previous network:
+ scripts/clamrefactor.py -c "setConfig MonoAudioFileReader_0 SourceFile MyAudio.ogg" borrame.clamnetwork
+
 ==The Spectral Domain==
 
 * In order to do more interesting things we will now turn into the spectral domain. We can analyze the audio signal to obtain an spectrum, a frequency domain representation of the signal. The spectrum can be modified in a wiser way than time domain audio signal and then resynthesized back.
