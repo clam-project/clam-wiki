@@ -527,5 +527,5 @@ The output of this post processing is the Segmentation which has its own visuali
 
 [[Image:Tonal-Segmentation.png|center]]
 
-All those views are available in the CLAM plugin for Qt Designer.
 [[Image:CLAMTonalAnalysis.png|thumb|TonalAnalysis prototype. (real time computation)]]
+All those views are available in the CLAM plugin for Qt Designer so you can assemble a prototype similar to Chordata but working on realtime taking the mic as input.
