@@ -472,7 +472,7 @@ very few code is needed to add extra logic make this work, for example,
 as a exploration tool where the data does not come from a RT process but
 from a dumped data repository. 
 
-[[Image:TurnAround-colorSegments.png|thumb|Chordata standalone application]]
+[[Image:TurnAround-colorSegments.png|thumb|Chordata standalone application (offline computation, realtime navigation)]]
 
 A processing named 'TonalAnalysis' is provided which does all the processing.
 Don't worry if it seems to freeze when you add it to the canvas 
@@ -526,3 +526,6 @@ Some post processing must be done to get some long lasting segments.
 The output of this post processing is the Segmentation which has its own visualization too.
 
 [[Image:Tonal-Segmentation.png|center]]
+
+All those views are available in the CLAM plugin for Qt Designer.
+[[Image:CLAMTonalAnalysis.png|thumb|TonalAnalysis prototype. (real time computation)]]
