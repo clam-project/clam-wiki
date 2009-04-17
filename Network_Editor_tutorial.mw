@@ -466,6 +466,11 @@ Tonal Analysis is a module and a set of visualizations that provide information
 about the tonality of a song, including 'instant tonality', meaning the chord.
 Chordata is a full application distributed with CLAM that uses it, but
 you can use the components to build your own.
+Chordata demonstates that although Prototyper is limited to realtime appliations
+once you prototyped a real-time application,
+very few code is needed to add extra logic make this work, for example,
+as a exploration tool where the data does not come from a RT process but
+from a dumped data repository. 
 
 [[Image:TurnAround-colorSegments.png|thumb|Chordata standalone application]]
 
