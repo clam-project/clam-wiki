@@ -475,11 +475,15 @@ from a dumped data repository.
 [[Image:TurnAround-colorSegments.png|thumb|Chordata standalone application (offline computation, realtime navigation)]]
 
 A processing named 'TonalAnalysis' is provided which does all the processing.
-Don't worry if it seems to freeze when you add it to the canvas 
-as it has some heavy initialization.
-That processing provides different bits of information at the ports:
+It hides a more complex network shown in this figure:
 
 [[Image:Tonal-HiddenProcessings.png|center|Hidden processings within the TonnalAnalysis]]
+
+When you drop a 'TonalAnalysis' to the canvas, 
+It might freeze for a moment due to its heavy load initialization.
+Don't worry about that.
+
+That processing provides different bits of information at the ports:
 
 The algorithm starts by doing a [http://en.wikipedia.org/wiki/Constant_Q_transform|Constant Q transform] so that we get three bins per semitone.
 All the octaves are folded (added one to one) into a single octave.
