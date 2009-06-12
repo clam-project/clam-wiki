@@ -2,7 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.4.0 =
 <gallery>
-Image:NetworkDescriptionUnicode.png|And using unicode. Apologizes if any bad word appear in the japanese text, as it was taken from spam mails. 
+Image:NetworkDescriptionUnicode.png|And using unicode. Japanese text taken from spam mails, so apologizes if it says something inconvenient.
 Image:NetworkDescriptionRich.png|And set some rich text (Angelo's work too)
 Image:NetworkDescription.png|Now we can add description to network.
 Image:SeekingOgg.png|MonoAudioFileReader now seeks PCM's and OGGs (MP3 ignores seeks by now). Several position outputs (ms, frames and progress)
