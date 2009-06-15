@@ -292,7 +292,7 @@ TODO: This list is far from complete!
 
 ==== Spectral processing ====
 
-Those modules deal with tokens being elements of a [http://en.wikipedia.org/wiki/Short-time_Fourier_transform|short-time fourier transforms].
+Those modules deal with tokens being elements of a [http://en.wikipedia.org/wiki/Short-time_Fourier_transform short-time fourier transforms].
 That means that each token is an spectrum containing the fourier transform of consecutive and maybe overlaped windowed chunks of audio.
 Such representation enables frequency domain alteration and you can resynthesize to a regular time domain signal.
 
