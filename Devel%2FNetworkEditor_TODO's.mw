@@ -139,6 +139,18 @@ processings/ports/controls crashes.
 
 = Design thoughts =
 
+== Interaction testing checklist ==
+
+* When hovering an unconfigured processing config error displays
+* When hovering a port the port is highlighted in yellow and the tooltip shows with name and type
+* When hovering a control the control is highlighted in yellow and the tooltip shows with name, type and bounds info
+* When hovering the resize handle the cursor changes to a resize arrow
+* (Not required) When resizing, wiring or moving, other hovers also work
+* When dragging a wire to a connection it is highlighted in red or green depending on the feasibility of the connection
+
+
+
+
 == Model-Widget interface ==
 
  * Widget actions with implications on the network and things to check afterwards
