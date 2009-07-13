@@ -4,8 +4,8 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 <gallery>
 Image:GraphicsViewMigration3.png|Reaction in processingsBox by moviment mouse
 Image:GraphicsViewMigration2.png|Some ProcessingBox selected by QGV's events.
-Image:GraphicsViewMigration1.png|ProcessingBox selected by QGV's events.
-Image:GraphicsViewMigration.png|we are working in the intermediate stages of migration towards GraphicsView.
+Image:GraphicsViewMigration1.png|ProcessingBox selected by QGV's events (double drawing in QGV and old canvas with a little offset.
+Image:GraphicsViewMigration.png|NetworkEditor GraphicsView migration: the boxes are drawn using QGV.
 Image:NetworkDescriptionRich3.png|We now have better tools for rich text.
 Image:NetworkDescriptionRich2.png|Description in an existing network.
 Image:NetworkDescriptionUnicode.png|And using unicode. Japanese text taken from spam mails, so apologizes if it says something inconvenient.
