@@ -156,6 +156,12 @@ processings/ports/controls crashes.
 ** Click on name selected: No change (rationale: if we are moving a group of selected has no sense to clear that selection)
 ** Click on unselected: clear and select that one (move can start on that one)
 ** Ctrl-Click: swaps selection on that one (group or single moving starts just if the swap results in selection of that one)
+* Double click
+** Double click on title to allow renaming.
+** Double click on Ports creates AudioSource or AudioSink accordingly.
+* Embed
+** Embedding processing within a widget.
+** Review embedding widget after resize.
 
 == Model-Widget interface ==
 
