@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.4.0 =
 <gallery>
+Image:GraphicsViewMigration4.png|Now, we can view embed widget within the new processingBox!
 Image:GraphicsViewMigration3.png|Reaction in processingsBox by moviment mouse
 Image:GraphicsViewMigration2.png|Some ProcessingBox selected by QGV's events.
 Image:GraphicsViewMigration1.png|ProcessingBox selected by QGV's events (double drawing in QGV and old canvas with a little offset.
