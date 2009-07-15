@@ -162,6 +162,13 @@ processings/ports/controls crashes.
 * Embed
 ** Embedding processing within a widget.
 ** Review embedding widget after resize.
+* Context-Event
+** right click on name
+** right click on ports
+** right click area without processing
+** check processing overlapped with right click
+* Raise
+** After selecting processing is in front of others
 
 == Model-Widget interface ==
 
