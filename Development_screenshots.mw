@@ -2,6 +2,9 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.4.0 =
 <gallery>
+Image:GraphicsViewMigration7.png|Now manage the "context-event" by QGV! (click on ports)
+Image:GraphicsViewMigration6.png|Now manage the "context-event" by QGV! (click on name)
+Image:GraphicsViewMigration5.png|We now have a way to superimpose selected processing using QGV .
 Image:GraphicsViewMigration4.png|Now, we can view embed widget within the new processingBox!
 Image:GraphicsViewMigration3.png|Reaction in processingsBox by moviment mouse
 Image:GraphicsViewMigration2.png|Some ProcessingBox selected by QGV's events.
