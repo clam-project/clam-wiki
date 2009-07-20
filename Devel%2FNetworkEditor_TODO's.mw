@@ -169,6 +169,17 @@ processings/ports/controls crashes.
 ** check processing overlapped with right click
 * Raise
 ** After selecting processing is in front of others
+* Wires
+** connect two ports of input and output
+** connect two input ports and output ports ... then disconnect
+** connect an output port to multiple output ports
+** repeat steps for processing scaled
+* Tooltips
+** tooltip position when it is caused by the right margin (move left)
+** tooltip position when it is due to the lower margin (move up)
+** tooltip position when it is due to the lower margin and right margin (move up and left)
+* Drag and Drop
+** When you drop the processing is put into the desired position
 
 == Model-Widget interface ==
 
