@@ -2,6 +2,10 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.4.0 =
 <gallery>
+Image:ProblemsWithQGV3.png|Selected text is not displayed because of the transparent background.
+Image:ProblemsWithQGV2.png|Selected text is not displayed because of the transparent background.
+Image:ProblemsWithQGV1.png|Pop-ups using the background color of NetworkCanvas, but this is transparent.
+Image:GraphicsViewMigration8.png|Now the NetworkEditor can to connect processings using the QGV methods!
 Image:GraphicsViewMigration8.png|Now the NetworkEditor can to connect processings using the QGV methods!
 Image:GraphicsViewMigration7.png|Now it manage the "context-event" by QGV! (click on ports)
 Image:GraphicsViewMigration6.png|Now it manage the "context-event" by QGV! (click on name)
