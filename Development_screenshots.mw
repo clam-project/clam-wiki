@@ -2,6 +2,8 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.4.0 =
 <gallery>
+Image:embededWidget2.png|There is a problem with the embeded-widget more complex.
+Image:embededWidget1.png|The embeded-widget can now overlap one another.
 Image:beforeMerge2.png|The problem with the background was solved!
 Image:beforeMerge1.png|The problem with the background was solved!
 Image:ProblemsWithQGV3.png|Selected text is not displayed because the transparent background.
