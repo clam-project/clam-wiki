@@ -2,17 +2,17 @@ This is the development page of the NetworkEditor port to Qt4.
 
 == Tasks ==
 
-* Porting NetworkCanvas to QGraphicsView framework
+* [[Image:Done.png]] Porting NetworkCanvas to QGraphicsView framework
 * [david] Abstract NetworkCanvas from CLAM dependencies
 * Implement a Jack based NetworkCanvas
-* Filtering the processing tree (like Amarok playlist)
+* [[Image:Done.png]] Filtering the processing tree (like Amarok playlist)
 * Adding processing documentation (doc widget or tab?)
 * Evaluate whether processing configurators as DockWidget is feasible and useful.
 * Implement the check that all inports are connected before play
 * Solve code duplication on play prevention code (unconfigured, unconnected, empty, no blocking processing...) for Prototyper a Network editor
 * Solve code duplication on backend selection that exists in Prototyper and NetworkEditor
 * Solve code duplication on commandline processing that exists in Prototyper and NetworkEditor
-* Offlineplayer: Check that processings are configured. In the case they are not, print configuration errors and exit.
+* [[Image:Done.png]] Offlineplayer: Check that processings are configured. In the case they are not, print configuration errors and exit.
 * Binder by properties (now that Qt allows arbitrary properties)
 ** Add the properties to clam widgets
 ** Adapt the binder
