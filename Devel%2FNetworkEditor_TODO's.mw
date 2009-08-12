@@ -19,7 +19,9 @@ This is the development page of the NetworkEditor port to Qt4.
 ** Designer plugin to add such properties from the menu to acceptable processings
 * Control senders clean up
 ** [[Image:Done.png]] Different control sender widgets (or else limit the configuration)
-** Refactor: not updating the embeded widget geometry on every repaint
+** [[Image:Done.png]] Refactor: not updating the embeded widget geometry on every repaint
+** Update widget geometry on zoom and scrolling
+** Turn them into QGVProxies
 ** Use a thread safe way of sending controls from GUI
 * Refactor connection loading code in NetworkCanvas
 * Select (suggest) the audio backend on command line
@@ -30,10 +32,9 @@ This is the development page of the NetworkEditor port to Qt4.
 * Review 'Changed' flag check list (see checklist bellow )
 ** Both in dummy and clam mode
 * Review loading error check list (bellow)
-* Review tooltip logic
+* [[Image:Done.png]] Review tooltip logic 
 ** [[Image:Done.png]] Fix: Big tooltips jumps out the area when pass the border
 ** Fix: Zoom is not considered when considering the border
-* Keep the offset of the viewport when moving boxes to < (0,0)
 * Solve the MIDIManager hack (still not done in qt4)
 * Move new colors to canvas as methods
 * Checks on renaming
