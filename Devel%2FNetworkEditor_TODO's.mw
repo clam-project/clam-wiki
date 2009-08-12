@@ -141,34 +141,36 @@ processings/ports/controls crashes.
 
 == Interaction testing checklist ==
 
+List of interactive features that should work on the network canvas:
+
 * When hovering an unconfigured processing config error displays
 * When hovering a port the port is highlighted in yellow and the tooltip shows with name and type
 * When hovering a control the control is highlighted in yellow and the tooltip shows with name, type and bounds info
 * When hovering the resize handle the cursor changes to a resize arrow
 * (Not required) When resizing, wiring or moving, other hovers also work
 * When dragging a wire to a connection it is highlighted in red or green depending on the feasibility of the connection
+* When dragging a wire to a connection the tooltip for the connection should be displayed
 * Raise processing on clicking
 * Clicking on name and draggin move the object
 ** Pitfall: Zooming
 ** Exiting the window
 * Selection
-** Click on body selected: clear and select that one
-** Click on name selected: No change (rationale: if we are moving a group of selected has no sense to clear that selection)
-** Click on unselected: clear and select that one (move can start on that one)
-** Ctrl-Click: swaps selection on that one (group or single moving starts just if the swap results in selection of that one)
+** Click on body selected: clear and select that one (no move starts)
+** Click on name selected: No selection change, move starts (rationale: eases the move of a group of already selected boxes, no ctrl is needed)
+** Click on unselected: clear and select that one, move starts on that one
+** Ctrl-Click: swaps selection on that one, group or single moving starts just if the swap results in selection of that one)
 * Double click
 ** Double click on title to allow renaming.
 ** Double click on Ports creates AudioSource or AudioSink accordingly.
 * Embed
 ** Embedding processing within a widget.
 ** Review embedding widget after resize.
+** Resize should respect minimum widget size (Which is the better widget to try this)
 * Context-Event
 ** right click on name
 ** right click on ports
 ** right click area without processing
 ** check processing overlapped with right click
-* Raise
-** After selecting processing is in front of others
 * Wires
 ** connect two ports of input and output
 ** connect two input ports and output ports ... then disconnect
