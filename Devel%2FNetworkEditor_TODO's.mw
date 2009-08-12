@@ -69,7 +69,7 @@ processings/ports/controls crashes.
 * Abstract meta information such as units, scale, ranges, labels, circularity... as DataSource interface.
 * Unify widgets thanks to this abstraction
 * Push data abstraction to the Pools and to the Ports.
-* Copy & paste processings (or xml's?)
+* [[Image:Done.png]] [Nael] Copy & paste processings (or xml's?)
 
 = Feature proposals =
 
