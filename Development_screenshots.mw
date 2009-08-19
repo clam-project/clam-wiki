@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.4.0 =
 <gallery>
+Image:QGWPBugs.png|Background artifacts are back when trying to set the transparent background now using QGraphicsProxyWidget.
 Image:descriptionButton.png|Now NetworkEditor has a button to see the description of networks.
 Image:embededWidget2.png|There is a problem with the embeded-widget more complex.
 Image:embededWidget1.png|The embeded-widget can now overlap one another.
