@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.4.0 =
 <gallery>
+Image:textBoxExample.jpg| The text boxes into the network.
 Image:FilterByCoefExample.jpg|Example of a FIR band pass filter defined by direct form coefficients. Using Filter Processing as child processing. 
 Image:FilterExample-LP-HP.jpg|Filter processing example. WhiteNoise as input. Very simple LP (x[n]+x[n-1])/2 and HP (x[n]-x[n-1])/2 filters.
 Image:ThreeBandFilterOutputWithWhiteNoiseAsInput.jpg|Testing ThreeBandFilter output with gaussian white noise as input.
