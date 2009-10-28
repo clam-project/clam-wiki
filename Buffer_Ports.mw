@@ -1,0 +1,26 @@
+= CLAM Buffer Ports TODOs =
+
+== HoaEncoder ==
+
+* '''DONE''' Transform the input port (AudioInPort)  into input port (InPort<Audio>)
+* '''DONE''' Transform the output ports (AudioOutPort) into output ports (OutPort<Audio>)
+
+== Vbap3D ==
+
+* Transform the input port (AudioInPort)  into input port (InPort<Audio>)
+* Transform the output ports (AudioOutPort) into output ports (OutPort<Audio>)
+
+== General Tasks ==
+
+* Test the BackendBufferSize to demostrate the correct function.
+* To create AudioSink with Buffer.
+* To create AudioSource with Buffer.
+* Stream2Buffer and Buffer2Stream using the BackendBufferSize.
+* Allow connecting multiple channel into the single conection in AudioSink. 
+** Ex. 15 channels (like Hoa) to single conection (AudioSink)
+* Look and testing the Host/Backendwhen when change the BufferSize in runtime.
+* Solve the memory problem, when resize buffer in the method "Do".
+
+== Benchmark ==
+   
+* Using ''callgrind'' compare the efficiency with the buffer implementation.
