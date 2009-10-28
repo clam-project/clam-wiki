@@ -23,4 +23,4 @@
 
 == Benchmark ==
    
-* Using ''callgrind'' compare the efficiency with the buffer implementation.
+* Using ''callgrind'' to compare the efficiency with the buffer implementation.
