@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.4.0 =
 <gallery>
+Media:NetEditor-BooleanDisplay.png‎|A binary counter with a boolean control display. Typed controls in use.
 Image:NetEditor-WireHighlight.png‎|Hovering on port highlights also connected wires.
 Image:NetEditor-BusWiring.png|Dragging with control key drags many connectors at once.
 Image:NetEditor-SoYouWantIcons.png| So you want icons for the processing boxes... Double clicking configures, hovering shows type info.
