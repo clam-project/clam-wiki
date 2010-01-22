@@ -548,6 +548,13 @@ Then:
  make install
  cp src/cppunit/.libs/libcppunit-1-12-0.dll ../../dlls
 
+
+=== Ladspa ===
+
+Just copy the ladspa header from your linux installation to the mingw sandbox:
+
+ cp /usr/include/ladspa.h $MINGWSANDBOX/local/include/
+
 == Xerces-C ==
 
  cd $MINGWSANDBOX/download
