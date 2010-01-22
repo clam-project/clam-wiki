@@ -347,12 +347,6 @@ and replace it with
 
 Now You have DirectX suitable for CLAM compilation.
 
-=== Ladspa ===
-
-Just copy the ladspa header to 
-
- cp /usr/include/ladspa.h $mingw/local/include/
-
 
 
 == Compile and install CLAM Framework ==
