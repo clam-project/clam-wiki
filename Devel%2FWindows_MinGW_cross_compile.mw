@@ -206,6 +206,8 @@ ${BIN} : $(OBJS)
 
 === DirectX ===
 
+Mingw now provides directx compatible headers so this should not be needed anymore.
+
  export MINGWSANDBOX=~/CajitasDeArena/mingw
  cd $MINGWSANDBOX/download
  wget http://www.g-productions.net/files/devpak/DirectX90c.DevPak
