@@ -551,7 +551,7 @@ Then:
  cp src/cppunit/.libs/libcppunit-1-12-0.dll ../../dlls
 
 
-=== Ladspa ===
+== Ladspa ==
 
 Just copy the ladspa header from your linux installation to the mingw sandbox:
 
