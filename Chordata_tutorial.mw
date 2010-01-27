@@ -1,10 +1,11 @@
-Chordata is an application built over the CLAM framework 
+Chordata is an easy to use application, built using the CLAM framework,
 to analyze the tonal features (harmony, chords...) of your digital music
 and explore them by navigating along the song using different useful views.
 It is addressed to amateur musicians who want to know the chords of their favorite songs
 but it is also very useful to get insight of the music itself.
 
 [[Image:chordata.png|center]]
+
 
 == Selecting a song ==
 
@@ -30,7 +31,16 @@ But if you are playing an instrument while looking at the application keyboard b
 * You can stop the song by using the Escape key
 * You can move back and forward by using the left and right cursor keys.
 * You can move back and forward faster by using the PgUp and PgDown keys.
-* You can go to the end and to the begining by using the Home and End keys.
+* You can go to the end and to the beginning by using the Home and End keys.
 
 
 == Understanding the views ==
+
+
+== Due Credit ==
+
+* The application itself was developed a [http://code.google.com/soc/|Google Summer of Code] project by Pawel Bartkiewicz.
+* Processing algorithm inside the chord detection is based on Christopher Harte work.
+* Realtime algorithm enhancements and visualizations by Roman Goj (Summer of Code) and David García Garzón.
+* Algorithm c++ port by Kate Noland and David García Garzón.
+* KeySpace visualization is based on Emilia Gómez and Jordi Bonada code.
