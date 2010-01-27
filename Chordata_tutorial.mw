@@ -1,0 +1,36 @@
+Chordata is an application built over the CLAM framework 
+to analyze the tonal features (harmony, chords...) of your digital music
+and explore them by navigating along the song using different useful views.
+It is addressed to amateur musicians who want to know the chords of their favorite songs
+but it is also very useful to get insight of the music itself.
+
+[[Image:chordata.png|center]]
+
+== Selecting a song ==
+
+By clicking on the 'Open' icon ([[Image:Open.png]), a window will pop up.
+You can choose any audio file in your hard drive.
+The application supports many formats: ogg, wav, mp3, flac, aiff... but not wma, 
+
+Once you select the song, the application will start to analyze it.
+Depending on your machine and your operating system that could last a couple of minutes or some few seconds.
+
+[[Image:chordata-analyzing.png|center]]
+
+As soon as the analysis ends the song starts playing and the views start moving.
+
+== Navigating along the song ==
+
+
+The usage of the buttons to play [[Image:Icon-Play.png]], pause [[Image:Icon-Pause.png]] and stop [[Image:Icon-Stop.png]] should be obvious
+as well as the use of the progress slider to move along the song.
+
+But if you are playing an instrument while looking at the application keyboard bindings would be more useful than handling the mouse.
+* You can play and pause using the space bar. 
+* You can stop the song by using the Escape key
+* You can move back and forward by using the left and right cursor keys.
+* You can move back and forward faster by using the PgUp and PgDown keys.
+* You can go to the end and to the begining by using the Home and End keys.
+
+
+== Understanding the views ==
