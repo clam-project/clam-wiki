@@ -2,6 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 = Upcoming 1.4.0 =
 <gallery>
+Image:NetEditor-WireHighlightOnTop.png| Occluded wires pop up on top of any processing when you highlight its connectors.
 Image:NetEditor-ControlGate.png‎|ControlGate: Sends boolean controls depending on the input level being beyond threshold. You can add hysteresis.
 Image:NetEditor-BoolControlSender.png‎|BoolControlSender: a processing to send bool controls.
 Image:NetEditor-BooleanDisplay.png‎|A binary counter with a boolean control display. Typed controls in use.
