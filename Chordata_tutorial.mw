@@ -62,8 +62,8 @@ They are arranged in the view so that the ones containing with similar notes are
 A color spot is drop depending on the likelyhood of each chord being played.
 When a clear major or minor chord plays, you will see a color spot surronding its position.
 
-Not dealing with other chords modes than major and minor makes this view less noisy than the segmentation
-if the song does not have any other chord mode (7th, dim..).
+If the song is not playing other kind of chords than major and minor chords, 
+this view introduces much less noise than the others which consider 7th, dim...
 
 === Pitchgramma ===
 
