@@ -22,7 +22,7 @@ Several standalone applications are distributed with CLAM which are usefull by t
 * [[Network_Editor_tutorial#Building_Prototyper_interfaces|Prototyper]]: a tool to interactively run audio processing networks with appealing user interfaces
 * OfflinePlayer: a tool to run non interactive audio processing networks
 * [[Music_Annotator|Annotator]]: Launches, combines, displays and edits the results of [http://en.wikipedia.org/wiki/Music_information_retrieval music information retrieval] algorithms and services.
-* Chordata: A tool to discover the chords of your audio files.
+* [[Chordata tutorial|Chordata]]: A tool to discover the chords of your audio files.
 * Voice2Midi: A tool to convert humming into MIDI files.
 * [[SMSTools_tutorial|SMSTools]]: An audio authoring tool to apply [http://en.wikipedia.org/wiki/Spectral_Modeling_Synthesis Spectral Modeling Synthesis] based algorithms.
 
