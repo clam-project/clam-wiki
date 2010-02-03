@@ -74,7 +74,7 @@ In this view you can easily view chord progressions or arpeggios that build the 
 
 === Tonnetz ===
 
-[[Image:chordata-tonnetz.png|center]]
+[[Image:Annotator-TonnetzDetail.png|center]]
 
 The tonnetz view also displays the pitch likelihood but they are arranged so spacial and tonal relations match.
 The neighbors of each pitch cells correspond to different tonal intervals:
@@ -85,7 +85,6 @@ The neighbors of each pitch cells correspond to different tonal intervals:
 This way common chord modes have common cell group shapes:
 
 [[Image:tonnetzShapes.png|center]]
-
 
 === Polar Peaks ===
 
