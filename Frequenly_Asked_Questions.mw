@@ -270,9 +270,11 @@ not limited by the plugin standard.
 === Which plugins systems can be generated? ===
 
 CLAM is able to generate plugins for the following standards:
-* VST (experimental)
-* LADSPA
 * CLAM native
+* LADSPA
+* VST (experimental)
+* LV2 (experimental)
+* AudioUnits (experimental)
 
 CLAM native refers plugins used to extend the module repository available in CLAM,
 not limited by the plugin standard.
