@@ -1,17 +1,24 @@
 = CLAM Buffer Ports TODOs =
 
-* Use audio-buffers whenever possible
-** Convert processings
-*** Use audio-buffer ports
-*** Use audio-buffer policy
-** Remove duplicated processings
-** Adapt networks that combine audio-buffer and audio-stream ports (using Buffer2Stream, etc)
-*** Test them in dynamic buffer-size hosts (like ardour/ladspa)
+=== Use audio-buffers whenever possible ===
+* Convert processings
+** Use audio-buffer ports
+** Use audio-buffer policy
+* Remove duplicated processings
+* Adapt networks that combine audio-buffer and audio-stream ports (using Buffer2Stream, etc)
+** Test them in dynamic buffer-size hosts (like ardour/ladspa)
 
-* Audio-buffer pool: reallocate a pool of audio buffers at Config time to avoid allocating memory at runtime, which is non realtime safe.
+* Port LadspaWrapper to audio buffer ports (instead of audio stream ports)
+** Duplicate
+** Test in dynamic buffer-size host
+** Eliminate stream-port version
 
-* Optimize Backends copies
-** To Be Discussed
+=== Optimize Backends copies ===
+* AudioSources and Sinks should map the memory of the host
+
+=== Audio-buffer pool ===
+* reallocate a pool of audio buffers at Config time to avoid allocating memory at runtime, which is non realtime safe.
+
  
 === Audio-buffer Processing policy ===
 # Do not call port.SetSize(1) and portSetHop(1), since it is the default behavior.
