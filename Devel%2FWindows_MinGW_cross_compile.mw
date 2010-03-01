@@ -652,6 +652,10 @@ Comment out the
 
 * Download vst 2.4 sdk from steimberg (no direct link can be provided :-P ).
 * Unzip it in $MINGWSANDBOX/
+* Edit $MINGWSANDBOX/vstsdk2.4/pluginterfaces/vst2.x/aeffect.h +97
+ < #ifdef WIN32
+ > #ifdef _MSC_VER
+* Run:
  cd $MINGWSANDBOX/clam/NetworkEditor/src/vst
  QTDIR=~/.wine/drive_c/Qt/4.4.3/ scons prefix=$MINGWSANDBOX/local clam_prefix=$MINGWSANDBOX/local external_dll_path=$MINGWSANDBOX/local/bin crossmingw=1 vstsdk_path=$MINGWSANDBOX/vstsdk2.4
 
