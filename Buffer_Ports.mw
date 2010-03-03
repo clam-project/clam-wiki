@@ -6,10 +6,10 @@
 ** Use audio-buffer policy
 * Remove duplicated processings
 * Adapt networks that combine audio-buffer and audio-stream ports (using Buffer2Stream, etc)
-** Test them in dynamic buffer-size hosts (like ardour/ladspa)
+** Test them in dynamic buffer-size hosts (like ardour/ladspa) [done]
 
 * Port LadspaWrapper to audio buffer ports (instead of audio stream ports)
-** Duplicate
+** Duplicate [done]
 ** Test in dynamic buffer-size host
 ** Eliminate stream-port version
 
