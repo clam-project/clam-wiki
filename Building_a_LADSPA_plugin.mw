@@ -57,9 +57,10 @@ Networks require that you specify more metadata than for a single processing: th
 
  #include <CLAM/LadspaNetworkExporter.hxx>
  #include <CLAM/LadspaLibrary.hxx> 
+ #include <CLAM/EmbeddedFile.hxx> 
  
  static CLAM::LadspaLibrary library;
- CLAM_EXTERNAL_FILE_DATA(wire,"wire.clamnetwork")
+ CLAM_EMBEDDED_FILE(wire,"wire.clamnetwork")
  extern "C" const LADSPA_Descriptor * ladspa_descriptor(unsigned long index)
  {
  	static CLAM::LadspaNetworkExporter n(library, wire, 3004,
