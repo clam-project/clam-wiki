@@ -79,11 +79,12 @@ You can pack more than one plugin in a given dll. Not by duplicating the ladspa_
  #include <CLAM/LadspaNetworkExporter.hxx>
  #include <CLAM/LadspaProcessingExporter.hxx>
  #include <CLAM/LadspaLibrary.hxx> 
+ #include <CLAM/EmbeddedFile.hxx> 
  
  static CLAM::LadspaLibrary library;
  
- CLAM_EXTERNAL_FILE_DATA(genderChange,"genderChange.clamnetwork")
- CLAM_EXTERNAL_FILE_DATA(wire,"wire.clamnetwork")
+ CLAM_EMBEDDED_FILE(genderChange,"genderChange.clamnetwork")
+ CLAM_EMBEDDED_FILE(wire,"wire.clamnetwork")
  
  extern "C" const LADSPA_Descriptor * ladspa_descriptor(unsigned long index)
  {
