@@ -243,6 +243,8 @@ Other convenience tool is the multi-wire dragging which is activated
 by pressing the control key while dragging a port. This is very useful
 when connecting processing with many ports.
 
+[[Image:NetEditor-BusWiring.png|center]]
+
 = Building Prototyper interfaces =
 
 As we saw at the beginning of the tutorial,
