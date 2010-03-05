@@ -12,7 +12,7 @@ architectural enhancements such as '''typed controls''';
 nice '''usability''' features for the NetworkEditor interface;
 convenience tools and scripts to make CLAM experience better;
 enhanced building of LADSPA plugins and new support for '''LV2 and VST''' plugin building;
-many optimizations, bug fixing and code clean ups.
+a new easy to use application to explore songs chords called '''Chordata'''; many optimizations, bug fixing and code clean ups.
 
 Some highlights of the release:
 
