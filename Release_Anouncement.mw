@@ -6,38 +6,27 @@ code name ''3D molluscs in the space''.
 
 
 In summary, this long term release 
-includes a lot of new spacialization modules for 3D audio,
-and MIDI, OSC and guitar effects modules, 
-architecture enhancements such as typed controls, and 
-nice usability features for the NetworkEditor interface,
-and convenience tools and scripts to make CLAM experience better.
-Many optimizations, bug fixing and code clean ups.
+includes a lot of new spacialization modules for 3D audio;
+MIDI, OSC and guitar effects modules;
+architectural enhancements such as typed controls;
+nice usability features for the NetworkEditor interface;
+convenience tools and scripts to make CLAM experience better;
+enhanced building of LADSPA plugins and new support for LV2 and VST plugin building;
+many optimizations, bug fixing and code clean ups.
 
-A new application named Chordata is released in parallel to the framework.
-It offers a user friendly way to explore the chords of your favourite songs,
-using already existing technology in the CLAM framework but with a much simpler interface.
-See the video at [[TODO video]]
+Some topics which deserve extra attention are:
 
-Typed controls extend CLAM with the ability to use whichever C++ type as the message for a control. 
-So bools, enums, integers, or envelopes can be sent as asynchronous controls and not just floats.
-Examples on boolean and MIDI controls are provided.
+* A new application named '''Chordata''' is released in parallel to the framework. It offers a user friendly way to explore the chords of your favourite songs, using already existing technology in the CLAM framework but with a much simpler interface. See the video at [[TODO video]]
 
-The spacialization module and helper tools, contributed by [http://barcelonamedia.org Barcelona Media] 
-audio group, turn CLAM in tandem with Blender and Ardour, 
-into a powerful 3D audio authoring and exhibition platform.
-Here you can see some related [TODO videos and papers].
+* The spacialization module and helper tools, contributed by [http://barcelonamedia.org Barcelona Media] 
+audio group, turn CLAM in tandem with Blender and Ardour, into a powerful 3D audio authoring and exhibition platform. Here you can see some related [TODO videos and papers].
 
-NetworkEditor has been ported to the [http://doc.trolltech.com/latest/qgraphicsview.html QGraphicsView] framework.
-Dealing with heavy networks such the [[ones]] used in Barcelona Media have pushed
-many usability enhancements into its interface:
-multi-wire dragging, wire highlighting, default port and control actions,
-network and in-canvas documentation...
-See them in action in this [[TODO video]]
+* Typed controls extend CLAM with the ability to use whichever C++ type as the message for a control. So bools, enums, integers, or envelopes can be sent as asynchronous controls and not just floats. Examples on boolean and MIDI controls are provided.
 
-It also made necessary to provide a tool such clamrefactor.py to perform
-batch high level changes to clam network XML files such as 
-renaming processing types, ports, or configuration parameters,
-changing configuration values, duplicating sets of processings, connecting them...
+* NetworkEditor has been ported to the [http://doc.trolltech.com/latest/qgraphicsview.html QGraphicsView] framework. Dealing with heavy networks such the [[ones]] used in Barcelona Media have pushed 
+many usability enhancements into its interface: multi-wire dragging, wire highlighting, default port and control actions, network and in-canvas documentation... See them in action in this [[TODO video]]
+
+* It also made necessary to provide a tool such clamrefactor.py to perform batch high level changes to clam network XML files such as renaming processing types, ports, or configuration parameters, changing configuration values, duplicating sets of processings, connecting them...
 
 Starting with this version, CLAM supports networks as Ladspa, LV2 and VST plugins.
 
