@@ -6,12 +6,12 @@ code name ''3D molluscs in the space''.
 
 
 In summary, this long term release 
-includes a lot of new spacialization modules for 3D audio;
-MIDI, OSC and guitar effects modules;
-architectural enhancements such as typed controls;
-nice usability features for the NetworkEditor interface;
+includes a lot of new spacialization modules for '''3D audio''';
+'''MIDI''', '''OSC''' and '''guitar effects''' modules;
+architectural enhancements such as '''typed controls''';
+nice '''usability''' features for the NetworkEditor interface;
 convenience tools and scripts to make CLAM experience better;
-enhanced building of LADSPA plugins and new support for LV2 and VST plugin building;
+enhanced building of LADSPA plugins and new support for '''LV2 and VST''' plugin building;
 many optimizations, bug fixing and code clean ups.
 
 Some highlights of the release:
