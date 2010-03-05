@@ -39,7 +39,7 @@ See also: [http://clam-project.org/wiki/Development_screenshots development scre
 
 === Chordata 1.0.0 ===
 
-Chordata is a simple but powerful application that analyses the chords of any music file in your computer. You can use it to travel back and forward the song while watching insightful visualizations of the tonal features of the song. This program is mostly aimed to learning musicians that want to know which are the actual chords of a given song.
+Chordata is a simple but powerful application that analyses the chords of any music file in your computer. You can use it to travel back and forward the song while watching insightful visualizations of the tonal features of the song. Key bindings and mouse interactions for song navigation are designed thinking in a musician with an instrument at hands. Don't miss the demo video.
 
 = 1.3.0, 'Shooting flying plugins' =
 
