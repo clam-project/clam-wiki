@@ -16,7 +16,7 @@ a new easy to use application to explore songs chords called '''Chordata'''; man
 
 Some highlights of the release:
 
-* A new application named '''Chordata''' is released in parallel to the framework. It offers a user friendly way to explore the chords of your favourite songs, using already existing technology in the CLAM framework but with a much simpler interface. See the video at [[TODO video]]
+* '''Chordata''' is a new CLAM application which offers a user friendly way to explore the chords of your favourite songs, using already existing technology in the CLAM framework but with a much simpler interface. See the video at [[TODO video]]
 
 * The spacialization module and helper tools, contributed by [http://barcelonamedia.org Barcelona Media] audio group, turn CLAM in tandem with Blender and Ardour, into a powerful 3D audio authoring and exhibition platform. Here you can see some related [TODO videos and papers].
 
