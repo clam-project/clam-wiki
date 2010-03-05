@@ -22,8 +22,10 @@ Typed controls extend CLAM with the ability to use whichever C++ type as the mes
 So bools, enums, integers, or envelopes can be sent as asynchronous controls and not just floats.
 Examples on boolean and MIDI controls are provided.
 
-The spacialization module has many tools which turns CLAM in tandem
-with Blender and Ardour, the base for a powerful 3D audio authoring and exhibition tool.
+The spacialization module and helper tools, contributed by [http://barcelonamedia.org Barcelona Media] 
+audio group, turn CLAM in tandem with Blender and Ardour, 
+into a powerful 3D audio authoring and exhibition platform.
+Here you can see some related [TODO videos and papers].
 
 NetworkEditor has been ported to the [http://doc.trolltech.com/latest/qgraphicsview.html QGraphicsView] framework.
 Dealing with heavy networks such the [[ones]] used in Barcelona Media have pushed
@@ -46,8 +48,6 @@ You can download it as
 Contributed binaries for other platforms are welcome.
 
 See also: [http://clam-project.org/wiki/Development_screenshots development screenshots], the [http://clam-project.org/clam/trunk/CLAM/CHANGES CHANGELOG], and the [http://clam-project.org/wiki/Version_Migration_Guide version migration guide].
-
-
 
 = 1.3.0, 'Shooting flying plugins' =
 
