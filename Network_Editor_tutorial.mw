@@ -234,8 +234,14 @@ The port context menu provides some shortcuts to link common processings:
 * Monitors
 * Whichever compatible port already in the network
 
-In the case of controls, by double clicking them we will obtain a
-control sender, with the proper bounds configured, if available.
+Also, double clicking a control or a port you get a connected default processing.
+In the case of controls, it is a control sender for the in controls and 
+control display/printers for the outputs.
+By double clicking a port you will get the proper source or sink.
+
+Other convenience tool is the multi-wire dragging which is activated 
+by pressing the control key while dragging a port. This is very useful
+when connecting processing with many ports.
 
 = Building Prototyper interfaces =
 
