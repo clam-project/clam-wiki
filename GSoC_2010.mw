@@ -22,7 +22,7 @@ And see the [http://code.google.com/intl/es-AR/opensource/gsoc/2009/faqs.html#0_
 If you have any question about any of the information below please contact clam-info@iua.upf.edu or join the #clam channel at FreeNode IRC.
 
 == About CLAM ==
-[http://www.clam.iua.upf.edu CLAM](C++ Library for Audio and Music) is a project that aims at developing a full-featured application framework for Audio and Music Applications. It offers a conceptual metamodel as well as many different tools for that particular domain. One of its most relevant features is the availability of a visual building dataflow application that allows to develop rapid prototypes without writing code. The project started 7 years ago and, among other highlights, it won the ACM award to the Best Open Source Multimedia Software in 2006. The framework just published its release 1.2. CLAM is coordinated and hosted at the Universitat Pompeu Fabra (Barcelona, Spain). 
+[http://clam-project.org CLAM](C++ Library for Audio and Music) is a project that aims at developing a full-featured application framework for Audio and Music Applications. It offers a conceptual metamodel as well as many different tools for that particular domain. One of its most relevant features is the availability of a visual building dataflow application that allows to develop rapid prototypes without writing code. The project started 7 years ago and, among other highlights, it won the ACM award to the Best Open Source Multimedia Software in 2006. The framework just published its release 1.2. CLAM is coordinated and hosted at the Universitat Pompeu Fabra (Barcelona, Spain).
 
 == Mentors ==
 
