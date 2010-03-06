@@ -1,0 +1,128 @@
+{{Announce}}
+
+<!--== Accepted projects ==-->
+
+== How to apply ==
+
+* Google's SoC's [http://socghop.appspot.com/document/show/program/google/gsoc2009/faqs frequently asked questions] and [http://socghop.appspot.com/document/show/program/google/gsoc2009/userguideuser guide].
+* Check [http://code.google.com/intl/es-AR/opensource/gsoc/2009/faqs.html#0_1_eligibility_83343977761348_13148542340972003 Google's Summer of Code eligibility page]. 
+* You must also provide a project proposal in your SoC application. Please see the [[SoC ideas]] for potential projects. Fill the questionary in this page and get in direct contact with us.
+* Direct link to Google's [http://groups.google.com/group/google-summer-of-code-announce/web/guide-to-the-gsoc-web-app-for-student-applicants application page]. And the main Google's [http://code.google.com/soc/ SoC page].
+
+== TODO Important Dates ==
+* March 18: List of accepted mentoring organizations published on code.google.com
+* March 23: Student application opens.
+* April 3: Student application deadline.
+* April 20: List of accepted student applications published on [http://code.google.com/soc/2008/ Google Summer of Code home page]
+* May 23: Students begin coding for their GSoC projects; Google begins issuing initial student payments
+
+And see the [http://code.google.com/intl/es-AR/opensource/gsoc/2009/faqs.html#0_1_timeline_5354032302481437_ program timeline] ([http://www.google.com/calendar/ical/gsummerofcode%40gmail.com/public/basic.ics iCal], [http://www.google.com/calendar/feeds/gsummerofcode%40gmail.com/public/basic XML], [http://www.google.com/calendar/hosted/google.com/embed?src=gsummerofcode%40gmail.com&ctz=America/Los_Angeles HTML] )
+
+== Contact ==
+If you have any question about any of the information below please contact clam-info@iua.upf.edu or join the #clam channel at FreeNode IRC.
+
+== About CLAM ==
+[http://www.clam.iua.upf.edu CLAM](C++ Library for Audio and Music) is a project that aims at developing a full-featured application framework for Audio and Music Applications. It offers a conceptual metamodel as well as many different tools for that particular domain. One of its most relevant features is the availability of a visual building dataflow application that allows to develop rapid prototypes without writing code. The project started 7 years ago and, among other highlights, it won the ACM award to the Best Open Source Multimedia Software in 2006. The framework just published its release 1.2. CLAM is coordinated and hosted at the Universitat Pompeu Fabra (Barcelona, Spain). 
+
+== Mentors ==
+
+We are very excited about the possibility of participating in Google's Summer of Code again (see [[GSoC_2007]] and [[GSoC_2008]] pages). We intend to draw a larger developer and also user base once our first milestones has been surpassed.
+
+For SoC we are offering five mentors (Xavier Amatriain, Pau Arumi, David Garcia, Hernán Ordiales and Natanael Olaiz) that are currently CLAM's main developers and have an extensive background in audio and software development. We hope to offer an enjoyable working atmosphere with a large, growing community and very exciting goals.
+
+We look forward for your participation!
+
+== Potential projects ==
+
+See [[SoC ideas]]
+
+= For your SoC Application =
+
+These are the questions we would like you to address in your application. Besides the content of it we will evaluate community involvement and (irc/mail) talks with mentors and community members.
+A badly sized or badly focused project can be fixed in this way.
+
+'''So, please, after filling the application, get in contact with us.'''
+
+== Motivation ==
+
+* What do you expect to get from the program?
+* Why did you chose CLAM?
+* Which is your current academic situation and topic?
+* Why do you think you are elegible? What are your biggest strengths/weaknesses?
+
+== Dedication and availability ==
+
+It is very important to set a working plan for your project.
+You need to be aware of the time you have is the key to size your project goals.
+Also, you need a very close relation with your mentor 
+who might be in a very different point in the world and not always available.
+So having the following information will help us a lot.
+
+* How many hours a week (mean dedication) do you plan for the project?
+* Please, tell us whether, during the GSoC program, you will have any other ocupation, or you will be taking any days off (trips, exams...), or you will be GSoCing but not online.
+* Which are/will be your normal UTC asleep-and-online hours?
+
+== Previous CLAM involvement ==
+
+We will value previous experience or involvement with CLAM and its community.
+So highlight in your application experiences and involvement you already had. Such as:
+* "I have used XXX CLAM based applications for doing XXX"
+* "I have compiled library/applications from sources"
+* "I have already coded my own project using CLAM which consist in..."
+* "I reported bugs to the mailinglist/bug tracking system/irc"
+* "I sent patches to the CLAM list (which ones)"
+* "I helped other CLAM users"/"I was helped by other CLAM users"
+* "I did commits on the svn as XXX svn user"
+* "I took conversations on the IRC channels with CLAM developers as [nick} regarding [topic]"
+* I sent mails to CLAM related mailing lists (email, topics)
+* I have met CLAM developers (some reference we could remember)
+
+It's a normal situation that students do not have any previous involvement.
+But you can  [http://clam.iua.upf.edu/wikis/clam/index.php/Devel#Getting_involved increase your involvement] '''until the day we choose the students'''. Get sure we know you did, so we can value that.
+
+== Technological background ==
+
+* Which are your main working platforms?
+* Which is your experience regarding open source as user, developer, supporter or within a given open source community?
+* Briefly explain your experience with the following technologies:
+** Signal processing
+** Audio computer subsystems (hardware, jack, portaudio, osc, ladspa, vst...)
+** SVN/CVS
+** C++/GCC
+** Python
+** Qt
+** CppUnit or similar, and test driven development
+** Any technology not listed here being related to the project you choose
+
+== Aditional information ==
+
+* Any URL that could give us more information on you (technical-content blog, vitae, web page)
+* Something we missed you find important
+
+== Project proposal ==
+
+* Which project(s) look(s) interesting to you
+* How far do you expect to go with it
+* An approximate planning
+
+If you are not familiar with CLAM, we recommend take a talk with some of the current  developers before filling that, and, well, getting familiar.
+
+= Maximizing elegibility =
+
+* When choosing a project, think about what could benefit CLAM
+* The project should engage you (both, project usefulness and joy should be balanced)
+* Projects from the ideas page are in the developers road map
+* Before chosing a project not in the ideas page, read again the previous point. If it still in doubt, discuss it with a mentor and get his feeling
+* In general we like simple final user apps that mostly assemble existing bits, maturing the infrastruture and polishing existing apps.
+* We have less interest in incorporating new algorithms and exploring new complex apps (we like them but is hard to fit them in GSoC schedule).
+* In any case, ask mentors for feedback
+* Propose several projects as alternative when other student ask for the same one. Balance number of alternatives and their deepness, and sort your preferences.
+* Follow the steps in [[Devel#Getting_involved|Getting involved]], the more steps you did, the more elegibility.
+* Be clear on the goal and scope of you project
+* Your proposal should demonstrate that you know which are the problems to face
+* Sizing the project incorrectly means you have not a clear idea on what is to be done. Size it within schedule.
+* Define which elements are core and which ones are extras you may reach or not. Under size a little core tasks and oversize a litle core tasks + extra tasks
+* Proposal submision is not a dead-line for getting involved in CLAM, enhancing your skills, refining your proposal or having mentor's feedback. You have time until students selection dead-line but make mentors know.
+* If you are not selected this year, keep being involved and increase your chances for next year. Students with less learning time are better.
+
+[[Category:GSoC2010]]
