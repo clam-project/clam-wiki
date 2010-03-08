@@ -18,7 +18,7 @@ Some highlights of the release:
 
 * '''Chordata''' is a new CLAM application which offers a user friendly way to explore the chords of your favourite songs, using already existing technology in the CLAM framework but with a much simpler interface.  [http://www.youtube.com/watch?v=xVmkIznjUPE Video]
 
-* The spacialization module and helper tools, contributed by [http://barcelonamedia.org Barcelona Media] audio group, turn CLAM in tandem with Blender and Ardour, into a powerful 3D audio authoring and exhibition platform. Here you can see some related http://www.youtube.com/watch?v=KSfqJUIAiXk[ Video1].
+* The spacialization module and helper tools, contributed by [http://barcelonamedia.org Barcelona Media] audio group, turn CLAM in tandem with Blender and Ardour, into a powerful 3D audio authoring and exhibition platform. Here you can see some related [http://www.youtube.com/watch?v=KSfqJUIAiXk Video].
 
 * Typed controls extend CLAM with the ability to use whichever C++ type as the message for a control. So, not just floats, but also bools, enums, integers, or envelopes can be sent as asynchronous controls. Examples on boolean and MIDI controls are provided.
 
