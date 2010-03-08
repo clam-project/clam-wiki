@@ -2,36 +2,36 @@
 
 As tasks get done mark them with [[Image:Done.png]] 
 
-* Closing the release
-** Freeze (a 'be-carefull' warning on the clam-devel list)
-** Request for pending changes to the CHANGES file
-** Request for pending notes in [[Version Migration Guide]]
-** Assert that all [http://clam-project.org/testfarm testfarm clients] are green
-** Remove svn marker (see [[Devel/Changelog release policy]])
+* [[Image:Done.png]] Closing the release
+** [[Image:Done.png]] Freeze (a 'be-carefull' warning on the clam-devel list)
+** [[Image:Done.png]] Request for pending changes to the CHANGES file
+** [[Image:Done.png]] Request for pending notes in [[Version Migration Guide]]
+** [[Image:Done.png]] Assert that all [http://clam-project.org/testfarm testfarm clients] are green
+** [[Image:Done.png]] Remove svn marker (see [[Devel/Changelog release policy]])
 * Generating packages http://clam-project.org/download.html
-** Src
-** Windows (testfarm)
-** Ubuntu (stable + development)
-** Debian sid
+** [[Image:Done.png]] Src
+** [[Image:Done.png]] Windows (testfarm)
+** [[Image:Done.png]] Ubuntu (stable + development)
+** [[Image:Done.png]] Debian sid
 ** Mac (powerpc + intel)
 * Prepare the [[Release Anouncement|announcement]]
-** Update screenshots if needed
-** Build a thumbnail screenshot for the announcement
-** Redact announcement
-** Publish it into [http://clamnews.wordpress.com/ clamnews]
-** Add the categories 'spanish', 'catalan', 'english' 
-** UdateNews.py to bring it to the web
+** [[Image:Done.png]] Update screenshots if needed
+** [[Image:Done.png]] Build a thumbnail screenshot for the announcement
+** [[Image:Done.png]] Redact announcement
+** [[Image:Done.png]] Publish it into [http://clamnews.wordpress.com/ clamnews]
+** [[Image:Done.png]] Add the category 'english' 
+** [[Image:Done.png]] UdateNews.py to bring it to the web
 * Update  [http://clam-project.org/doc/CLAM-doxygen doxygen for stable version]
 * Spread the announcement
-** clam, clam-devel
-** LAD,LAU,LANN
-** Freshmeat
+** [[Image:Done.png]] clam, clam-devel
+** [[Image:Done.png]] LAD,LAU,LANN
+** [[Image:Done.png]] Freshmeat
 ** Barrapunto
 ** IUA news
 ** Ubuntu-cat
 ** STSI (La farga)
 ** Harmony-Central and Spanish musical webs
-** Meneame
+** Meneame http://meneame.com
 * Preparing the next release
-** Create a new chapter on [[Version Migration Guide]] for the next release
-** Update CHANGES to get the new version for svn snapshots (see [[Devel/Changelog release policy]])
+** [[Image:Done.png]] Create a new chapter on [[Version Migration Guide]] for the next release
+** [[Image:Done.png]] Update CHANGES to get the new version for svn snapshots (see [[Devel/Changelog release policy]])
