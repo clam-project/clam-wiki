@@ -11,6 +11,7 @@ This manual chapter gives hints on how to migrate existing code from one version
 * Old control callbacks used to return int. Now they should return void.
 * Processing interface to iterate ports and controls has moved from iterator based to an index based access. For example, before we used GetInControls which returned an stl container, now we can use  GetNInControl() and GetInControl(i), note that GetInControl(i) is overloaded with GetInControl(name). Also you can access a connector name with GetInControlName(i).
 * CLAM_EXTERNAL_FILE_DATA is deprecated in favor of CLAM_EMBEDDED_FILE
+* Many processings have changed their class name or their configuration. From this release we are providing a way to update the networks to this kind of change. The python program (CLAM/scripts/clamrefactor.py) which takes as input a list of changes to be made. The migration script for CLAM 1.4.0 is in CLAM/plugins/spacialization/migrationScript, not the proper place, sorry for the inconvenience.
 
 == 1.2 to 1.3 ==
 * Controls will change some behaviour in the future, see [[Control_Migration_Guide|this]] to enable your code to be compatible with next CLAM modifications.
