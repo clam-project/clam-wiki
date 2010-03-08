@@ -23,7 +23,7 @@ As soon as the analysis ends the song starts playing and the views start moving.
 == Navigating along the song ==
 
 
-The usage of the buttons to play [[Image:Icon-Play.png]], pause [[Image:Icon-Pause.png]] and stop [[Image:Icon-Stop.png]] should be obvious
+The usage of the buttons to play [[Image:Icon-Play.png]], pause [[Image:Icon-Pause.png|24px]] and stop [[Image:Icon-Stop.png]] should be obvious
 as well as the use of the progress slider to move along the song.
 
 But if you are playing an instrument while looking at the application keyboard bindings would be more useful than handling the mouse.
@@ -32,7 +32,6 @@ But if you are playing an instrument while looking at the application keyboard b
 * You can move back and forward by using the left and right cursor keys.
 * You can move back and forward faster by using the PgUp and PgDown keys.
 * You can go to the end and to the beginning by using the Home and End keys.
-
 
 == Understanding the views ==
 
