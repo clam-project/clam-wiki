@@ -57,7 +57,7 @@ The chord ranking [[Image:Icon-ChordRanking.png]] displays a sorted list of bars
 
 [[Image:Annotator-KeySpaceDetail.png|center]]
 
-The key space just displays major (uppercase) and minor (lowercase) chords. 
+The key space [[Image:Icon-KeySpace.png]] just displays major (uppercase) and minor (lowercase) chords. 
 They are arranged in the view so that the ones containing with similar notes are in closer positions.
 A color spot is drop depending on the likelyhood of each chord being played.
 When a clear major or minor chord plays, you will see a color spot surronding its position.
