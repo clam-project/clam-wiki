@@ -47,6 +47,48 @@ Chordata is a simple but powerful application that analyses the chords of any mu
 
 Downloat it at clam-project.org
 
+=== Mail version ===
+
+ The CLAM project[1] is delighted to announce the long awaited 1.4.0 release of the C++ framework for Audio and Music, code name '3D molluscs in the space'.
+ 
+ [1] http://clam-project.org
+ 
+ In summary, this long term release includes a lot of new spacialization modules for 3D audio; MIDI, OSC and guitar effects modules; architectural enhancements such as typed controls; nice usability features for the NetworkEditor interface; convenience tools and scripts to make CLAM experience better; enhanced building of LADSPA plugins and new support for LV2 and VST plugin building; a new easy to use application to explore songs chords called Chordata; many optimizations, bug fixing and code clean ups.
+ 
+ Some highlights of the release:
+ 
+ * Chordata is a new CLAM application which offers a user friendly way to explore the chords of your favourite songs, using already existing technology in the CLAM framework but with a much simpler interface. [2]
+ 
+ [2] http://www.youtube.com/watch?v=xVmkIznjUPE
+ 
+ * The spacialization module and helper tools, contributed by Barcelona Media [3] audio group, turn CLAM in tandem with Blender and Ardour, into a powerful 3D audio authoring and exhibition platform.[4] 
+ 
+ [3] http://barcelonamedia.org 
+ [4] http://www.youtube.com/watch?v=KSfqJUIAiXk
+ 
+ * Typed controls extend CLAM with the ability to use whichever C++ type as the message for a control. So, not just floats, but also bools, enums, integers, or envelopes can be sent as asynchronous controls. Examples on boolean and MIDI controls are provided.
+ 
+ * NetworkEditor has been ported to the QGraphicsView [5] framework. Dealing with heavy networks such the big ones used in Barcelona Media have pushed many usability enhancements into its interface: multi-wire dragging, wire highlighting, default port and control actions, network and in-canvas documentation... [6]
+ 
+ [5] http://doc.trolltech.com/latest/qgraphicsview.html
+ [6] http://www.youtube.com/watch?v=0kt0WDmvMwo
+ 
+ * It also made necessary to provide a tool such clamrefactor.py to perform batch high level changes to clam network XML files such as renaming processing types, ports, or configuration parameters, changing configuration values, duplicating sets of processings, connecting them...
+ 
+ * Music Annotator application now is designed to aggregate several sources of descriptors and update them after edit. Descriptors are mapped to a work description schema that can be graphically defined. Also semantic web descriptor sources to access webservices such as MusicBrainz have been implemented.
+ 
+ You can download sources, windows, debian and ubuntu packages from the download page[7]. Contributed binaries for other platforms are welcome.
+ 
+ [7] http://clam-project.org/download/ 
+ 
+ See also:
+ Screenshots: http://clam-project.org/wiki/Development_screenshots
+ Detailed changelog: http://clam-project.org/clam/trunk/CLAM/CHANGES
+ Version migration guide: http://clam-project.org/wiki/Version_Migration_Guide
+ Youtube channel: http://www.youtube.com/group/clamproject
+ 
+ Many thanks to the people who contributed to this release, including but not limited to the GSoC 2008 students and all the crew at Barcelona Media's Audio Group.
+
 = 1.3.0, 'Shooting flying plugins' =
 
 [[Image:release13.png|thumb]]
