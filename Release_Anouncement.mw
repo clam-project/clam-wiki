@@ -16,17 +16,17 @@ a new easy to use application to explore songs chords called '''Chordata'''; man
 
 Some highlights of the release:
 
-* '''Chordata''' is a new CLAM application which offers a user friendly way to explore the chords of your favourite songs, using already existing technology in the CLAM framework but with a much simpler interface.  [[http://www.youtube.com/watch?v=xVmkIznjUPE Video]]
+* '''Chordata''' is a new CLAM application which offers a user friendly way to explore the chords of your favourite songs, using already existing technology in the CLAM framework but with a much simpler interface.  [http://www.youtube.com/watch?v=xVmkIznjUPE Video]
 
 * The spacialization module and helper tools, contributed by [http://barcelonamedia.org Barcelona Media] audio group, turn CLAM in tandem with Blender and Ardour, into a powerful 3D audio authoring and exhibition platform. Here you can see some related [ videos and papers].
 
 * Typed controls extend CLAM with the ability to use whichever C++ type as the message for a control. So, not just floats, but also bools, enums, integers, or envelopes can be sent as asynchronous controls. Examples on boolean and MIDI controls are provided.
 
-* NetworkEditor has been ported to the [http://doc.trolltech.com/latest/qgraphicsview.html QGraphicsView] framework. Dealing with heavy networks such the [[ones]] used in Barcelona Media have pushed many usability enhancements into its interface: multi-wire dragging, wire highlighting, default port and control actions, network and in-canvas documentation... See them in action in this [[http://www.youtube.com/watch?v=0kt0WDmvMwo video]]
+* NetworkEditor has been ported to the [http://doc.trolltech.com/latest/qgraphicsview.html QGraphicsView] framework. Dealing with heavy networks such the [[ones]] used in Barcelona Media have pushed many usability enhancements into its interface: multi-wire dragging, wire highlighting, default port and control actions, network and in-canvas documentation... ([http://www.youtube.com/watch?v=0kt0WDmvMwo Video])
 
 * It also made necessary to provide a tool such clamrefactor.py to perform batch high level changes to clam network XML files such as renaming processing types, ports, or configuration parameters, changing configuration values, duplicating sets of processings, connecting them...
 
-* Music Annotator application now is designed to aggregate several sources of descriptors and update them after edit. Descriptors are mapped to a work description schema that can be graphically defined. Also semantic web descriptor sources to access webservices such as MusicBrainz have been implemented. [[ Video1]]
+* Music Annotator application now is designed to aggregate several sources of descriptors and update them after edit. Descriptors are mapped to a work description schema that can be graphically defined. Also semantic web descriptor sources to access webservices such as MusicBrainz have been implemented.
 
 You can download it as 
 [http://clam-project.org/download/src/ source code], 
