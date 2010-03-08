@@ -41,7 +41,7 @@ But if you are playing an instrument while looking at the application keyboard b
 
 [[Image:chordata-segments.png|center]]
 
-The chord segment view shows a guess of which are the periods of time while a given chord is playing.
+The chord segment view [[Image:Icon-Segmentation.png]] shows a guess of which are the periods of time while a given chord is playing.
 The red bar in the middle shows which is the current time position.
 Each chord type picks a different color so that you can easily spot the chord sequence.
 
