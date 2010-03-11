@@ -48,9 +48,17 @@ If the algorithm managed to pick up the chords, this view would suffice to know 
 but you will notice that, depending on the song, the guess is not very much fiable.
 This is why chordata offers other views so you can decide yourself.
 
+Chord segments is the nicer visualization in an ideal situation. Many things can lead to errors:
+fast transitions, slow arpeggios, or other elements that make the
+chord less detectable such as voice decorations, vibratos, slides, distorsion...
+In most cases the chords are filter out or a chord that is not the proper one pops up.
+
+
 === Chord Ranking ===
 
 The chord ranking [[Image:Icon-ChordRanking.png|24px]] displays a sorted list of bars for the likelihood of each chord at each moment.
+This view is more instantaneous so it will show fast transitions better.
+Also when the segmentation has assigned the wrong chord, normally the correct one is in the top of the rank so you can see it.
 
 === Key Space ===
 
