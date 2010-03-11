@@ -48,11 +48,13 @@ If the algorithm managed to pick up the chords, this view would suffice to know 
 but you will notice that, depending on the song, the guess is not very much fiable.
 This is why chordata offers other views so you can decide yourself.
 
-Chord segments is the nicer visualization in an ideal situation. Many things can lead to errors:
+Chord segments is the nicest visualization in an ideal case. 
+But many things can lead to errors:
 fast transitions, slow arpeggios, or other elements that make the
 chord less detectable such as voice decorations, vibratos, slides, distorsion...
 In most cases the chords are filter out or a chord that is not the proper one pops up.
 
+In such cases the other views help to complement the information.
 
 === Chord Ranking ===
 
