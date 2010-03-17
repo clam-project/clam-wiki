@@ -90,6 +90,11 @@ The neighbors of each pitch cells correspond to different tonal intervals:
 * to the right: a fifth up
 * up and right:  a major third
 * down and right:  a minor third
+* to the left: a fourth
+* up and left: a major sixth
+* down and left: a minor sixth
+And the minor and major seconds and sevenths are on the four diagonals.
+
 
 This way common chord modes have common cell group shapes just by transporting it from C to the root note:
 
