@@ -147,13 +147,13 @@ The current status is:
 * Native supports A,B (D and E would be the subnetworks project)
 * LADSPA supports A,B,D,E
 * VST 2.4 supports D,F but requires more work (See specific project)
-* Not supported at all: AudioUnits, VST3/VSTi, LV2
+* LV2 supports D (TODO: A,B,C,E,F)
+* Not supported at all: AudioUnits, VST3/VSTi
 
 There is has room for several projects.
 See [[Devel/Plugins TODOs]].
 It also has contacts with many other projects: Subnetworks, metainformation, visual definition of processings, processings documentation... 
 So if you  choose this project, be specific on the set of aspects that will be addressed.
-
 
 == CLAM for Video ==
 
