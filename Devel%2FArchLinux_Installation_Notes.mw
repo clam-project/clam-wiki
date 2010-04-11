@@ -7,3 +7,54 @@ After installing these via 'pacman -S [package name]', make a directory into whi
 Run 'scons', which will compile CLAM. After this completes, you should run 'scons install', which will copy the files you just compiled into /usr/local/include and /usr/local/lib. CLAM is now installed.
 
 '''Network Editor tutorial coming soon'''
+
+
+=Guide for clam and network editor  1.4.0=
+
+CLAM lib: Maybe you need to use xmlpp backend instead of xerces
+
+Network Editor:
+* export QTDIR
+* modify some includes (qt widgets related) or fix scons script
+Generating metaobjects for src/clamWidgetsPlugin/KeySpacePlugin.hxx
+src/clamWidgetsPlugin/KeySpacePlugin.hxx:33: Error: Undefined interface
+scons: *** [src/clamWidgetsPlugin/generated/moc_KeySpacePlugin.cxx] Error 1
+scons: building terminated because of errors.
+
+[http://www.mail-archive.com/clam@iua.upf.es/msg00274.html Re: [CLAM] Clam-NetworkEditor compilation problems (ArchLinux)]
+
+===# CLAM 1.4.0===
+
+dependencies:
+scons
+libxml++
+id3lib
+fftw
+ladspa
+libmad
+libogg
+libvorbis
+libxi
+
+portaudio? on the other hand use with_portaudio=0
+alsa-lib?
+
+> scons configure release=1 with-fftw3=1 prefix=/home/san/clam/ xmlbackend='xmlpp'
+
+=== # Network Editor 1.4.0 ===
+dependencies:
+qt
+
+# Replace some .hxx (or fix SConscript)
+ sed  -i 's|#include <QtDesigner/|#include <|' *.hxx 
+(at src/clamWidgetsPlugin)
+
+ export QTDIR=/usr/lib/qt
+[san@abulafia NetworkEditor-1.4.0]$ scons install
+prefix=/home/san/clam clam_prefix=/home/san/clam
+qt_plugins_install_path=/usr/lib/qt/plugins/designer/
+
+
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/san/clam/lib" #to run it at home
+
+to run it go to bin directory
