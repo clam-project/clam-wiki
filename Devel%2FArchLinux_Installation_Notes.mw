@@ -11,50 +11,37 @@ Run 'scons', which will compile CLAM. After this completes, you should run 'scon
 
 =Guide for clam and network editor  1.4.0=
 
-CLAM lib: Maybe you need to use xmlpp backend instead of xerces
-
-Network Editor:
-* export QTDIR
-* modify some includes (qt widgets related) or fix scons script
-Generating metaobjects for src/clamWidgetsPlugin/KeySpacePlugin.hxx
-src/clamWidgetsPlugin/KeySpacePlugin.hxx:33: Error: Undefined interface
-scons: *** [src/clamWidgetsPlugin/generated/moc_KeySpacePlugin.cxx] Error 1
-scons: building terminated because of errors.
-
-[http://www.mail-archive.com/clam@iua.upf.es/msg00274.html Re: [CLAM] Clam-NetworkEditor compilation problems (ArchLinux)]
-
 ===# CLAM 1.4.0===
+Compiling CLAM is straightforward using xmlpp as XML backend.
 
-dependencies:
-scons
-libxml++
-id3lib
-fftw
-ladspa
-libmad
-libogg
-libvorbis
-libxi
+Dependencies: scons gcc fftw libxml++ id3lib ladspa libmad libogg libvorbis libxi libsndfile portaudio jack
 
-portaudio? on the other hand use with_portaudio=0
-alsa-lib?
+Download and unpack the sources [http://www.clam-project.org/download/src/CLAM-1.4.0.tar.gz]
+cd into and
+ > scons configure release=1 with-fftw3=1 prefix=/usr xmlbackend='xmlpp'
+ > scons
+ > sudo scons install 
 
-> scons configure release=1 with-fftw3=1 prefix=/home/san/clam/ xmlbackend='xmlpp'
+====Notes====
+* If you want to install in another place just change the prefix.
+* The default XML backend is xerces. The problem with xerces is that in arch the default version in arch is 3 and the version needed to compile is 2.So you need to install version 2 of xerces (xerces-c-2) and then patch some files to indicate the scons to find the library in the /opt directory. If you want to go this way take a look here [http://aur.archlinux.org/packages.php?ID=7216 AUR CLAM 1.3 package]
 
+ 
 === # Network Editor 1.4.0 ===
-dependencies:
-qt
+Network editor needs that you install qt (and CLAM obviously).
 
-# Replace some .hxx (or fix SConscript)
- sed  -i 's|#include <QtDesigner/|#include <|' *.hxx 
-(at src/clamWidgetsPlugin)
+Download and unpack the sources [http://www.clam-project.org/download/src/NetworkEditor-1.4.0.tar.gz] and cd into.
+You must add two lines to the SConstruct file just before the last line.
+It should see as
 
- export QTDIR=/usr/lib/qt
-[san@abulafia NetworkEditor-1.4.0]$ scons install
-prefix=/home/san/clam clam_prefix=/home/san/clam
-qt_plugins_install_path=/usr/lib/qt/plugins/designer/
+ env.Alias('install', installTargets )
+ 
+ env.Append(SHCXXFLAGS=["-I/usr/include"]) # ADDED
+ env.Append(QT4_MOC=["-I/usr/include"])    # ADDED
+ 
+ env.Default(programs, translations, qtplugin, qtmonitorLocal)
 
-
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/san/clam/lib" #to run it at home
-
-to run it go to bin directory
+now 
+ > export QTDIR=/usr/lib/qt
+and then compile and install with
+ > sudo scons install prefix=/usr clam_prefix=/usr qt_plugins_install_path=/usr/lib/qt/plugins/designer
