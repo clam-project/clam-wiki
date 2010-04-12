@@ -45,3 +45,12 @@ now
  > export QTDIR=/usr/lib/qt
 and then compile and install with
  > sudo scons install prefix=/usr clam_prefix=/usr qt_plugins_install_path=/usr/lib/qt/plugins/designer
+
+=== # Chordata 1.0.0 ===
+If you have installed Network Editor 1.4.0 then you only need to download and unpack the sources [http://www.clam-project.org/download/src/chordata-1.0.0.tar.gz]
+cd into and then
+ > export QTDIR=/usr/lib/qt
+ > sudo scons install prefix=/usr clam_prefix=/usr  qt_plugins_install_path=/usr/lib/qt/plugins/designer
+
+====Note====
+If you dont have Network Editor installed i think you only need to install qt.
