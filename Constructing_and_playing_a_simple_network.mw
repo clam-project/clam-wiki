@@ -34,7 +34,7 @@ To compile this example you can use this [[Minimal SConstruct to build with CLAM
  
   	// Add an audio sink and connect its input to the reader's output
  	std::string sink = network.AddProcessing("AudioSink");
- 	network.ConnectPorts(reader+".Samples Read", sink+".AudioIn");
+ 	network.ConnectPorts(reader+".Samples Read", sink+".1");
  
  	// Set the audio backend to PortAudio
  	network.SetPlayer(new CLAM::PANetworkPlayer);
