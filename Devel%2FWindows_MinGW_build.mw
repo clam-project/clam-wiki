@@ -16,6 +16,7 @@ Many thanks to both Giulio Paci and Wang Jun for experimenting with windows deve
 
 * Install MinGW and MSYS into c: (if other unit is chosen, substitute it below)
 ** (I guess she refered to Giulio's procedure to get that, including Python and SCons installation not referenced anywhere else but required) -- david
+*** You are right. Just checked that python 2.5 works well yet python 2.6 meets problems. --Jun
 ** (Verified stable versions are CLAM-1.2.0.tar.gz and CLAM-1.3.0.tar.gz.)
 * add the MinGW and MSYS related path to the Windows PATH variable.
 * Install QT4.4.x
