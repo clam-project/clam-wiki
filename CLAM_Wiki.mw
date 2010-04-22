@@ -19,12 +19,15 @@
 = Documentation =
 
 * [[Approaching CLAM]], where to start
+
 * [[Frequenly Asked Questions]]
+
 * Application Tutorials
 ** [[SMSTools tutorial|SMSTools tutorial]]
 ** [[Network Editor tutorial|Network Editor tutorial]]
 ** [[Chordata tutorial|Chordata tutorial]]
 ** [[Manual_Annotator|Annotator tutorial]]
+
 * Installation notes
 ** For general information check the [http://iua-share.upf.edu/svn/clam/trunk/CLAM/INSTALL INSTALL] file.
 ** [[Devel/Mac OSX build]]
@@ -33,23 +36,30 @@
 ** [[Devel/ArchLinux Installation Notes]]
 ** [[Devel/Windows MinGW build]]
 ** [[Devel/Windows build]] (Visual support was dropped)
+
 * Programming with CLAM
-** [[Minimal SConstruct to build with CLAM and Qt4]]
-** [[Constructing and playing a simple network]]
-** [[Loading and playing a simple network]]
 ** [[Creating a minimal processing object]]
-** [[Processings with controls]]
-** [[Processings with configuration]]
-** [[Processings with variable number of connectors]]
-** [[Adding Monitors]]
-** [[Building a processing library]]
-** [[Building a LADSPA plugin]]
-** [[Defining a ProcessingComposite]]
-** [[Changing the port color for custom data types]] (or displayed type name)
-** [[Compiling with CLAM without SCons]] (qmake, plain make...)
+*** [[Processings with controls]]
+*** [[Processings with configuration]]
+*** [[Processings with variable number of connectors]]
+** Plugins
+*** [[Building a processing library]]
+*** [[Building a LADSPA plugin]]
+** Networks
+*** [[Constructing and playing a simple network]]
+*** [[Loading and playing a simple network]]
+** Build examples
+*** [[Minimal SConstruct to build with CLAM and Qt4]]
+*** [[Compiling with CLAM without SCons]] (qmake, plain make...)
+** Other
+*** [[Adding Monitors]]
+*** [[Changing the port color for custom data types]] (or displayed type name)
+*** [[Defining a ProcessingComposite]]
+
 * Using Faust inside CLAM (including on-the-fly Faust programming)
 ** [[Devel/Faust_support]]
-* [[Metamodel of network using a class diagram]]
+* Metamodel
+** [[Metamodel of network using a class diagram]]
 * [[Version Migration Guide]]
 
 * Old: [[DeprecatedDoc/CLAMUserManual|documentation index]] (deprecated documentation dumped from the old manual)
