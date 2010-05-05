@@ -21,9 +21,9 @@ Subversion tree contains CLAM libs and applications: NetworkEditor, Annotator, S
 == Getting involved ==
 
 To get involved with CLAM development:
-* Subscribe to the [https://llistes.projectes.lafarga.org/cgi-bin/mailman/listinfo/clam-devel clam development mailing list].
+* Subscribe to the [http://lists.clam-project.org/listinfo.cgi/clam-devel-clam-project.org clam development mailing list].
 * Contact other CLAM developers at the #clam channel of the FreeNode IRC network.
-* Blog (occasionally) about CLAM and syndicate your feed in the [http://clam.iua.upf.edu/planet clam planet].
+* Blog (occasionally) about CLAM and syndicate your feed in the [http://clam-project.org/planet clam planet].
 * Fill bugs in our [http://clam.iua.upf.edu/bugreporting.html bug tracking tool].
 * Fix bugs and send a [[#Prepare and apply a patch|patch]] ;-)
 * Send some good patches and get [[Rules_for_commit access|svn commit access]]
