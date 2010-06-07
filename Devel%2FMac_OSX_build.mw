@@ -57,7 +57,7 @@
 == CLAM sources ==
 
 You can choose either download a source tarball from the clam website:
-: http://clam.iua.upf.edu//download-source.html
+: http://clam-project.org/download-source.html
 
 or get the latest version of subversion. In this case you'll also need to install subversion macport:
    $ sudo port install subversion
