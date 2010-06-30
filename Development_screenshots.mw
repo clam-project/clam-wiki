@@ -40,6 +40,9 @@ Image:NetworkDescriptionUnicode.png|And using unicode. Japanese text taken from 
 Image:NetworkDescriptionRich.png|And set some rich text (Angelo's work too)
 Image:NetworkDescription.png|Now we can add description to network.
 Image:SeekingOgg.png|MonoAudioFileReader now seeks PCM's and OGGs (MP3 ignores seeks by now). Several position outputs (ms, frames and progress)
+Image:NetEditor-NetworkFileVersionOlderThanNetEditor.png|NetworkEditor now detects conflicts between NetworEditor and network files versions.
+Image:NetEditor-FeatureNotImplemented.png|Pressing the 'Yes' button in the previous dialog will show this warning.
+Image:NetEditor-NetworkFileVersionNewerThanNetEditor.png|In this case the file was created with a newer version of NetworkEditor.
 Image:AnnotatorProjectEditorSingleConfiguration.png|Simplified Annotator project editor dialog. Will have a short life.
 Image:Chordata-pianowidget.jpg|Piano monitor widget in Chordata.
 Image:MIDIPianoWidget.jpg|MIDI monitor and notes generator.
