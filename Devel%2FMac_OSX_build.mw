@@ -66,7 +66,6 @@ or get the latest version of subversion. In this case you'll also need to instal
 == CLAM build ==
 
 Note that you need to disable LADSPA support when building for Mac. Read the CLAM/INSTALL file if you're not familiar with the clam scons build sequence. Basically it's this:
-(You may need to disable the XML backend as well and set the prefix somewhere else than /usr/local)
 
   $ DEV_PFX=~/proj/clamdev # insert your chioice
   $ mkdir -p $DEV_PFX
@@ -74,6 +73,9 @@ Note that you need to disable LADSPA support when building for Mac. Read the CLA
   $ scons
   $ sudo scons install
  
+
+* You may need to disable the XML backend as well and set the prefix somewhere else than /usr/local as indicated above
+
 * In case you are interested in building the Annotator app, you must build Annotator/vmqt first.
 
 * All applications should build and run. Inform clam-devel for any problem  
