@@ -74,7 +74,7 @@ CLAM/scons/libs/core may not recognize this. You may want to apply the following
  
   if not env.has_key('with_ladspa') or env['with_ladspa'] == False:
           blacklist.append( 'Ladspa.+' )
-+        blacklist.append( 'RunTimeFaustLibraryLoader.+')
+ +        blacklist.append( 'RunTimeFaustLibraryLoader.+')
 
 
 Read the CLAM/INSTALL file if you're not familiar with the clam scons build sequence. Basically it's this:
