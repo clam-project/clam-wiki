@@ -1,6 +1,13 @@
 This page hosts screenshots galleries of the ongoing development of CLAM and its applications.
+= Upcoming release (1.5.0) =
 
-= Upcoming 1.4.0 =
+<gallery>
+Image:Lv2qtinterface.png| An LV2 plugin using Qt interface using (XEmbed)
+</gallery>
+
+
+= 1.4.0 =
+
 <gallery>
 Image:NetEditor-WireHighlightOnTop.png| Occluded wires pop up on top of any processing when you highlight its connectors.
 Image:NetEditor-ControlGate.png‎|ControlGate: Sends boolean controls depending on the input level being beyond threshold. You can add hysteresis.
