@@ -3,6 +3,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 
 <gallery>
 Image:Lv2qtinterface.png| An LV2 plugin using Qt interface with XEmbed
+Image:Lv2qtinterface-designer.png| A Qt Designer ui as LV2 interface
 </gallery>
 
 = 1.4.0 =
