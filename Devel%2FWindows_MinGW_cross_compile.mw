@@ -529,7 +529,7 @@ Substitue in liblo.pc.in
  - Libs: -L${libdir} -llo -lpthread
  + Libs: @LDFLAGS@ -L${libdir} @LIBS@ -llo
 Then:
- ./autogen.sh  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/liblo LDFLAGS=-L$MINGWSANDBOX/pthreads/lib/ CPPFLAGS="-I$MINGWSANDBOX/pthreads/include/ -D_WIN32_WINNT=0x0501" LIBS=-lws2_32
+ ./autogen.sh  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local LDFLAGS=-L$MINGWSANDBOX/local/lib/ CPPFLAGS="-I$MINGWSANDBOX/local/include/ -D_WIN32_WINNT=0x0501" LIBS=-lws2_32
  make install
 
 It complaints about a redefined function <tt>gai_strerrorA</tt> in <tt>src/server.c</tt>. Just comment the function out.
