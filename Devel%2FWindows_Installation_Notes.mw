@@ -5,7 +5,7 @@ There are several ways of having the CLAM framework and your apps working on win
 
 You can find packages in the [http://clam-project.org/download-windows.html download page for Windows]. Those include
 * Aplication installers for main CLAM applications
-* Compressed files for mingw development including either:
+* (Experimental) Compressed files for mingw development including either:
 ** Just the 3rd party dependencies in order to develop CLAM itself
 ** 3rd party dependencies and CLAM binaries, to develop your own project using CLAM.
 
