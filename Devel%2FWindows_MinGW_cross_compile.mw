@@ -1,21 +1,44 @@
 This page explains '''how to cross compile CLAM for Windows in an Ubuntu Linux'''.
 
-= Status =
+= Introduction =
 
-Supported:
-* Building most external dependencies
-* Building CLAM libraries
-* Building Network Editor and Annotator installers ([http://clam.iua.upf.edu/download/win/svnsnapshots/ here the results])
-* Building CLAM plugins (integrated into NetworkEditor installer)
-* Packaged thid party libraries [http://clam.iua.upf.edu/download/win/svnsnapshots/clam-3rdparty-mingw-20080128.tar.gz clam-3rdparty-mingw-20080128.tar.gz]
-* Packaged precompiled CLAM development files [http://clam.iua.upf.edu/download/win/svnsnapshots/clam-mingw-1.1.1~svn11119.tar.gz first version]
+== Purpose ==
+
+Most CLAM developers work with Linux, and, because of that, Windows platform tends to break.
+To minimize that, we have explored the feasibility of building and testing Windows binaries 
+from Linux, by means of the mingw32 cross-compiler and other cute tools like Wine.
+
+The procedure combines several sources of software:
+
+* Debian packages which provide minimal tools for cross-compilation: wine, mingw, nsis...
+* Windows installers run by means of Wine. They are quite convenient for big dependencies such as Qt and Gtk, and for some other tools, not available in Linux
+* Dependency packages compiled from sources. This is currently handled by the installation script.
+* Privative SDK's such as ASIO, VST which cannot be provided in a convenient way due to licence restrictions.
+
+This method is currently used for windows automated testing in 
+[http://clam-project.org/testfarm/ testfarm] and to
+generate the [http://clam-project.org/download/win/ published windows binaries].
+
+== Status ==
+
+NOTICE: Due to some dependencies introduced lately (mainly python and boost), some parts of clam that depend on them still lack of a repeatable procedure to be built for Windows. 
+You can help here.
+
+Also note that instructions in this page are not fully up to date.
+Those instructions materialized into a script
+which contains the current state of the art. 
+You can find the script and related files in the
+[http://clam-project.org/clam/trunk/CLAM/scripts/mingw-cross/ clam subversion repository]
 
 
-Not suported yet (meaning 'any help is welcome'):
+The goals for the future are:
+* Supporting new dependencies: python and boost
+* Producing a precompiled CLAM SDK package, for Windows native development. [http://clam-project.org/download/win/svnsnapshots/clam-mingw-1.1.1~svn11119.tar.gz an old experiment]
+* Having the dependencies building under control of testfarm
+* Allow flexible targets and actions in the script with dependency checking, version pinning and the like.
+
+Other smaller TODO's:
 * Make the precompiled development package to compile apps in native windows.
-* Building some dependencies:
-** xerces (libxml alternative works but fails xml based B2B tests because XML's differ)
-** ...
 * Building SMSTools
 * Passing unit tests
 * Passing functional tests
