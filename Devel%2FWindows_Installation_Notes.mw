@@ -29,7 +29,7 @@ Feel free to enhance the document if you want to help the project.
 In any case, using precompiled packages in the first section is recomended.
 
 
-== Natively compiling with MS Visual ==
+== Natively compiling with MS Visual C ==
 
 [[Devel/Windows build]]
 
