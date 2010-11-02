@@ -1,0 +1,38 @@
+
+There are several ways of having the CLAM framework and your apps working on windows.
+
+== Using prepackaged binaries ==
+
+You can find packages in the [http://clam-project.org/download-windows.html download page for Windows]. Those include
+* Aplication installers for main CLAM applications
+* Compressed files for mingw development including either:
+** Just the 3rd party dependencies in order to develop CLAM itself
+** 3rd party dependencies and CLAM binaries, to develop your own project using CLAM.
+
+== Crosscompiling with Mingw from Linux ==
+
+
+[[Devel/Windows_MinGW_cross_compile]]
+
+This is the way the windows port is officially maintained.
+And the one more likely to work at a given moment.
+
+
+== Natively compiling with Mingw from Windows ==
+
+[[Devel/Windows MinGW build]]
+
+Those are user contributed methods to build it from Windows itself.
+Currently the document has many paths and has some dark zones.
+Feel free to enhance the document if you want to help the project.
+
+In any case, using precompiled packages in the first section is recomended.
+
+
+== Natively compiling with MS Visual ==
+
+[[Devel/Windows build]]
+
+MS-VisualC support was dropped from CLAM many years ago.
+The documentation is kept here just for historical reasons.
+No problem if someone tries to bring it back.
