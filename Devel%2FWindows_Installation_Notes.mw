@@ -3,12 +3,11 @@ There are several ways of having the CLAM framework and your apps working on win
 
 == Using prepackaged binaries ==
 
-You can find packages in the [http://clam-project.org/download-windows.html download page for Windows]. Those include
-* Aplication installers for main CLAM applications
-** The recommended path if you just need to run NetworkEditor, Chordata or Annotator use them.
-* (Experimental) Compressed files for mingw development including either:
-** Just the 3rd party dependencies in order to develop CLAM itself
-** 3rd party dependencies and CLAM binaries, to develop your own project using CLAM.
+You can find packages in the [http://clam-project.org/download-windows.html download page for Windows]. Those include aplication installers for main CLAM applications: NetworkEditor, Chordata or Annotator. The next-next-next way.
+
+For developers, there are some (experimental) packages containing:
+* Just the 3rd party dependencies in order to develop CLAM itself
+* 3rd party dependencies and CLAM binaries, to develop your own project using CLAM.
 
 == Crosscompiling with Mingw from Linux ==
 
