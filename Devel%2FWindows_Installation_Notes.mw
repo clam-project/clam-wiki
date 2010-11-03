@@ -29,9 +29,9 @@ Feel free to enhance the document if you want to help the project.
 In any case, using precompiled packages in the first section is recomended.
 
 
-== Natively compiling with MS Visual C ==
+== Natively compiling with MS Visual C (Obsolete) ==
 
-[[Devel/Windows build]] (Obsolete)
+[[Devel/Windows build]]
 
 MS-VisualC support was dropped from CLAM many years ago.
 The documentation is kept here just for historical reasons.
