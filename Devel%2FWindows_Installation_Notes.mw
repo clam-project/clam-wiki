@@ -14,9 +14,8 @@ For developers, there are some (experimental) precompiled packages containing ei
 
 [[Devel/Windows_MinGW_cross_compile]]
 
-This is the way the windows port is officially maintained.
+This is the method we use to generate windows binaries and run the unattended tests.
 And the one more likely to work at a given moment.
-
 
 == Natively compiling with Mingw from Windows ==
 
