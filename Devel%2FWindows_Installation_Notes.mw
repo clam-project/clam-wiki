@@ -34,5 +34,6 @@ In any case, using precompiled packages in the first section is recomended.
 [[Devel/Windows build]]
 
 MS-VisualC support was dropped from CLAM many years ago.
-The documentation is kept here just for historical reasons
-and just in case someone tries to bring it back.
+The documentation is kept here 
+just in case someone tries to bring it back,
+but it is all quite obsolete.
