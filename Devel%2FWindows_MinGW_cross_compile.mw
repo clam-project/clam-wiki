@@ -21,12 +21,12 @@ generate the [http://clam-project.org/download/win/ published windows binaries].
 
 == Status ==
 
-NOTICE: Due to some dependencies introduced lately (mainly python and boost), some parts of clam that depend on them still lack of a repeatable procedure to be built for Windows. 
-You can help here.
+'''NOTICE: Due to some dependencies introduced lately (mainly python and boost), some parts of clam that depend on them still lack of a repeatable procedure to be built for Windows. 
+You can help here.'''
 
-Also note that instructions in this page are not fully up to date.
+'''Also note that instructions in this page are not fully up to date.
 Those instructions materialized into a script
-which contains the current state of the art. 
+which contains the current state of the art. '''
 You can find the script and related files in the
 [http://clam-project.org/clam/trunk/CLAM/scripts/mingw-cross/ clam subversion repository]
 
