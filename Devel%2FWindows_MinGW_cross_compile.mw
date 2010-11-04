@@ -26,10 +26,9 @@ You can help here.'''
 
 '''Also note that instructions in this page are not fully up to date.
 Those instructions materialized into a script
-which contains the current state of the art. '''
+which contains the current state of the art.
 You can find the script and related files in the
-[http://clam-project.org/clam/trunk/CLAM/scripts/mingw-cross/ clam subversion repository]
-
+[http://clam-project.org/clam/trunk/CLAM/scripts/mingw-cross/ clam subversion repository] '''
 
 The goals for the future are:
 * Supporting new dependencies: python and boost
