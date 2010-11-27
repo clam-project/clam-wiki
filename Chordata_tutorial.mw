@@ -87,7 +87,7 @@ In this view you can easily view chord progressions or arpeggios that build the 
 
 [[Image:Annotator-TonnetzDetail.png|center]]
 
-The tonnetz view also displays the pitch likelihood but they are arranged so spacial and tonal relations match.
+The tonnetz view also displays the pitch likelihood but here pitches are arranged according to tonal relations.
 The neighbors of each pitch cells correspond to different tonal intervals:
 * to the right: a fifth up
 * up and right:  a major third
@@ -97,8 +97,8 @@ The neighbors of each pitch cells correspond to different tonal intervals:
 * down and left: a minor sixth
 And the minor and major seconds and sevenths are on the four diagonals.
 
-
-This way common chord modes have common cell group shapes just by transporting it from C to the root note:
+This arrangement maps chords modes to shapes relative to their root note.
+The following table shows most common chord shapes with C as root.
 
 [[Image:TonnetzChordShapes.png|center]]
 
