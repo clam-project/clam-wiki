@@ -71,8 +71,10 @@ They are arranged in the view so that the ones containing with similar notes are
 A color spot is drop depending on the likelyhood of each chord being played.
 When a clear major or minor chord plays, you will see a color spot surronding its position.
 
-If the song is not playing other kind of chords than major and minor chords, 
+If the song is playing jsut major and minor chords, 
 this view introduces much less noise than the others which consider 7th, dim...
+
+Other strength of this view is that it maps tonal progressions to spatial movement and such visual association is quite helpful in ear training.
 
 === Pitchgramma ===
 
