@@ -38,24 +38,23 @@
 ** [[Devel/Windows Installation Notes]]
 
 * Programming with CLAM (or how to ...)
-** [[Creating a minimal processing object]]
+** Setting up your project
+*** [[Minimal SConstruct to build with CLAM and Qt4]]
+*** [[Compiling with CLAM without SCons]] (qmake, plain make...)
+*** [[Building a processing library]]
+*** [[Building a LADSPA plugin]]
+** Using networks of processings in your code
+*** [[Constructing and playing a simple network]]
+*** [[Loading and playing a simple network]]
+** Creating your own Processings
+*** [[Creating a minimal processing object]]
 *** [[Processings with controls]]
 *** [[Processings with configuration]]
 *** [[Processings with variable number of connectors]]
-** Plugins
-*** [[Building a processing library]]
-*** [[Building a LADSPA plugin]]
-** Networks
-*** [[Constructing and playing a simple network]]
-*** [[Loading and playing a simple network]]
-** Build examples
-*** [[Minimal SConstruct to build with CLAM and Qt4]]
-*** [[Compiling with CLAM without SCons]] (qmake, plain make...)
+*** [[Defining a ProcessingComposite]]
 ** Other
 *** [[Adding Monitors]]
 *** [[Changing the port color for custom data types]] (or displayed type name)
-*** [[Defining a ProcessingComposite]]
-
 * Using Faust inside CLAM (including on-the-fly Faust programming)
 ** [[Devel/Faust_support]]
 * CLAM Metamodel
