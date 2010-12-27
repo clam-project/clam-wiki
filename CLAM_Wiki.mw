@@ -44,8 +44,8 @@
 *** [[Building a processing library]]
 *** [[Building a LADSPA plugin]]
 ** Using networks of processings in your code
-*** [[Constructing and playing a simple network]]
-*** [[Loading and playing a simple network]]
+*** [[Loading and playing a simple network]] (from an xml definition)
+*** [[Constructing and playing a simple network]] (directly using the network interface to add and connect processings)
 ** Creating your own Processings
 *** [[Creating a minimal processing object]]
 *** [[Processings with controls]]
