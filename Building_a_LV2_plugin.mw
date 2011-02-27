@@ -1,4 +1,8 @@
-[http://lv2plug.in/ LV2] is an standard for audio plugins succesor of [http://ladspa.org LADSPA]. LV2 support in CLAM is still experimental, so expect changes in the way plugins are built. Because of that this page is quite poor. Until it becomes stable the better and most updated reference is at the example you can find [http://clam-project.org/clam/trunk/CLAM/examples/PluginExamples/Lv2PluginExample/ here] and in the [http://clam-project.org/clam/trunk/CLAM/scripts/clam_lv2_generator.1 man page for clam_lv2_generator program] which is used in the example to generate most files required by the plugin.
+[http://lv2plug.in/ LV2] is an standard for audio plugins succesor of [http://ladspa.org LADSPA]. LV2 support in CLAM is still experimental, so expect changes in the way plugins are built. 
+
+Because of that this page is quite poor. Until it becomes stable the better and most updated reference is at the example you can find [http://clam-project.org/clam/trunk/CLAM/examples/PluginExamples/Lv2PluginExample/ here] which wraps a couple of networks as plugins in a single lv2 bundle.
+
+You can also find useful information at the [http://clam-project.org/clam/trunk/CLAM/scripts/clam_lv2_generator.1 man page for clam_lv2_generator program] which is used in the example to generate most files required by the plugin.
 
 == UI support ==
 
