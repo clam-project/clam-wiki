@@ -5,7 +5,7 @@ In any case, until the procedure becomes stable the better and most updated docu
 
 That example use the clam_lv2_generator program whose [http://clam-project.org/clam/trunk/CLAM/scripts/clam_lv2_generator.1 man page] also provides some insight.
 
-== UI support ==
+== LV2 ui support ==
 
 UI support is quite experimental and adhoc. The goal is supporting three use cases:
 # Automated Qt ui generation given the properties of the network
