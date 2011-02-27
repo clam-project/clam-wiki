@@ -6,4 +6,6 @@ No documentation on this issue is available but this [http://clam-project.org/cl
 
 == VST GUI ==
 
-We are starting to get some Qt based guis for VST so expect Prototyper like interfaces to be quite usable for building VST GUI's. Anyway this part of the development is quite stuck so any pushing patches are very welcome.
+The former example also contains the grassroots of an implementation for Qt based guis for VST, so future development lines will focus on getting Prototyper interfaces working as VST GUI plugins.
+
+Anyway this part of the development is quite stuck because the dificulty of setting the crosscompiling environment so any pushing patches are very welcome.
