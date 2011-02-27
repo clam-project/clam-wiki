@@ -6,4 +6,4 @@ No documentation on this issue is available but this [http://clam-project.org/cl
 
 == VST GUI ==
 
-The former example also contains the grassroots of an implementation for Qt based guis for VST, so future development lines will focus on getting Prototyper interfaces working as VST GUI plugins.
+There is no working VST GUI support in CLAM but the former example contains the grassroots of an implementation for Qt based guis for VST, so future development lines will focus on getting Prototyper interfaces working as VST GUI plugins. Do you want to help us getting it working? Ask the development list.
