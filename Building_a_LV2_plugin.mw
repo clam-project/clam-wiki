@@ -1,9 +1,9 @@
 [http://lv2plug.in/ LV2] is an standard for free software audio plugins, and the succesor of [http://ladspa.org LADSPA]. CLAM is able to generate LV2 plugins based on CLAM networks. Audio and float control streams are currently well supported and there is some primitive support for generation or/and binding of Qt UIs.
 
 Because LV2 support is not mature yet, you should expect changes on the way of LV2 plugins are generated, but, also because it is quite cheap this should not be a big deal.
-In any case, until the procedure becomes stable the better and most updated reference is at the example you can find [http://clam-project.org/clam/trunk/CLAM/examples/PluginExamples/Lv2PluginExample/ here] which wraps a couple of networks as plugins in a single lv2 bundle.
+In any case, until the procedure becomes stable the better and most updated documentation is at the example you can find [http://clam-project.org/clam/trunk/CLAM/examples/PluginExamples/Lv2PluginExample/ here] which wraps a couple of networks as plugins in a single lv2 bundle.
 
-That example use the clam_lv2_generator program whose [http://clam-project.org/clam/trunk/CLAM/scripts/clam_lv2_generator.1 man page] also provides useful informaton.
+That example use the clam_lv2_generator program whose [http://clam-project.org/clam/trunk/CLAM/scripts/clam_lv2_generator.1 man page] also provides some insight.
 
 == UI support ==
 
