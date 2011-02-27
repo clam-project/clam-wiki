@@ -25,7 +25,7 @@
 
 * Application Tutorials
 ** [[SMSTools tutorial|SMSTools tutorial]]
-** [[Network Editor tutorial|Network Editor tutorial]]
+** [[Network Editor tutorial|Network Editor tutorial]] (Recomended!)
 ** [[Chordata tutorial|Chordata tutorial]]
 ** [[Manual_Annotator|Annotator tutorial]]
 
@@ -43,6 +43,8 @@
 *** [[Compiling with CLAM without SCons]] (qmake, plain make...)
 *** [[Building a processing library]]
 *** [[Building a LADSPA plugin]]
+*** [[Building a LV2 plugin]]
+*** [[Building a VST plugin]]
 ** Using networks of processings in your code
 *** [[Loading and playing a simple network]] (from an xml definition)
 *** [[Constructing and playing a simple network]] (directly using the network interface to add and connect processings)
