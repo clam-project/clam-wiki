@@ -342,11 +342,13 @@ CLAM spacialization plugin provides algorithms to render 3D sound in several
 
 ==== Voice formant tracking ====
 
-=== How does CLAM deals with other languages? ===
+=== How does CLAM deals with other programming languages? ===
 
-CLAM is a C++ library but it has ways to deal with other languages:
-* CLAM provides facilities to use and develop FAUST programs as LADSPA plugins.
-* Experimental efforts have been made to have python bindings to CLAM.
+Despite being a C++ library, CLAM provides ways to deal with other languages:
+* Faust: CLAM provides facilities to use and develop FAUST programs as LADSPA plugins.
+* Python support is available in two flavors:
+** pyclam: Python bindings to the whole API is available at the repository as PyClam 
+** ipyclam: More pythonic bindings for just the network manipulation API, with emphasis in interactivity
 
 === May I develop a CLAM based program based on CLAM and GTK instead of QT? ===
 
