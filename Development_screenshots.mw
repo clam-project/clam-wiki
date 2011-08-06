@@ -2,7 +2,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 = Upcoming release (1.5.0) =
 
 <gallery>
-Image:Prototyper-ConfiguratorBinder.png| Prototyper example using different ways of launching a Configuration Dialog for a processing in the network.
+Image:Prototyper-ConfiguratorBinder.png| Prototyper example: binding a configuration dialog for a processing.
 Image:Lv2qtinterface.png| An LV2 plugin using Qt interface with XEmbed
 Image:Lv2qtinterface-designer.png| A Qt Designer ui as LV2 interface
 </gallery>
