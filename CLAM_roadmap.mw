@@ -11,7 +11,7 @@
 ** Update Fedora Core packages (insist on existing planet-ccrma spec file)
 ** Inclusion to debian (insist piem) and ubuntu (contact motu people) repositories
 
-=== 1.x CLAM release series (Current Development) ===
+=== 1.x CLAM series (Current Development) ===
 * Release Dates:
 ** CLAM Version 1.0.0 - 2007-03-20
 ** CLAM Version 1.1.0 - 2007-06-11
