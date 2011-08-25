@@ -1,7 +1,6 @@
 == CLAM Roadmap ==
 
-=== 1.0 CLAM release (very short term) ===
-* Due by the first or second week of February
+=== 1.0 CLAM release (2007-03-20) ===
 * Main goals: installers for the three platforms (lin, mac, win); get clam applications and libs included in major linux distributions (ubuntu and debian, at least. Maybe fedora core); provide usage videos and announce the release widely. At least two quick and minor release will happen before 1.0 to get more users feedback.
 * Tasks:
 ** Bug hunting session.
