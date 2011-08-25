@@ -13,15 +13,17 @@
 
 === 1.x CLAM release series (Current Development) ===
 * Release Dates:
-** 1.0.0	2007-03-20
-** 1.1.0	2007-06-11
-** 1.2.0	2008-02-07
-** 1.3.0	2008-08-12
-** 1.4.0	2010-03-05
+** CLAM Version 1.0.0 - 2007-03-20
+** CLAM Version 1.1.0 - 2007-06-11
+** CLAM Version 1.2.0 - 2008-02-07
+** CLAM Version 1.3.0 - 2008-08-12
+** CLAM Version 1.4.0 - 2010-03-05
+
 * Main goals: 
 ** code clean-up
 ** improve clam extensibility mechanisms
 ** add (many) useful examples for a wider user base.
+
 * Tasks: (Some of these may have been completed, some may not)
 ** Incorporate the work of Andreas (pfc student) on clam plugins.
 ** Remove unneeded modules (vmfltk, move vmqt to smstools, etc.)
