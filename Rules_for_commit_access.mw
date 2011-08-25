@@ -1,6 +1,8 @@
 == Who can get commit access? ==
 
-Any active Clam developer can get a SVN account. Normally one is considered an 'active' developer after sending several patches to the mailing lists for review and getting them accepted.
+Any active Clam developer can get a SVN account. Normally one is considered an 'active' developer after sending several patches to the mailing lists for review and getting them accepted. If you do so, usually core developers will ask you if you want commit access. That is a user and a password to commit into the svn.
+
+If you get that point, remember to follow the following guidelines on your first commits.
 
 == When to directly commit? ==
 
