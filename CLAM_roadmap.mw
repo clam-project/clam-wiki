@@ -35,5 +35,7 @@
 ** Develop a suite of alsa and vst plugins with user-interface (maybe audio-unit also)
 ** Do some videos (screencast) of plugins usage and announce widely
 
-=== Further development ===
-There are lots and lots of ideas on features for CLAM 2.0. A long-term roadmap will be defined during 1.x development.Of course, feedback from the users will be very important.
+=== 2.0 CLAM release (Future development)  ===
+* There are lots and lots of feature ideas floating around for CLAM 2.0. Feel free to add yours here.
+* A long-term roadmap will be defined during 1.x development.
+* Feedback here is highly appreciated.
