@@ -25,10 +25,3 @@ For any commit check that:
 * When the change is larger and effect existing code (maybe client code not in SVN). In this case the patch *must* be send to clam-devel list for a previous review of a core developer. Check that tests pass and apps build before sending patches.
 
 When a first patch has been approved the rules for follow-up patches in a discussed and agreed direction are slightly relaxed.
-
-== Repository ==
-
-The normal one with https access: 
- $ svn co https://iua-share.upf.edu/svn/clam/trunk clam
-* In case your SVN username does not coincide with your local user add the --username option to the commit command (see also svn ci --help)
-* Passwords get automatically stored in local.
