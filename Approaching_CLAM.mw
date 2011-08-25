@@ -4,7 +4,7 @@ This page gives advice on how to approach to CLAM.
 
 Binary packages are available for major platforms, so check out the [http://clam-project.org/download.html download page] before spending your time compiling from the source code.
 
-When building from source code, look first of all the [http://iua-share.upf.edu/svn/clam/trunk/CLAM/INSTALL INSTALL] files distributed with the source code. CLAM applications also have an INSTALL file themselves.
+When building from source code, look first of all the [http://clam-project.org/clam/trunk/CLAM/INSTALL INSTALL] files distributed with the source code. CLAM applications also have an INSTALL file themselves.
 
 Some platform specific issues are documented by the user community on the [[Main Page|wiki]] (Installation notes on the main page).
 
