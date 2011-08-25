@@ -30,6 +30,3 @@ The normal one with https access:
  $ svn co https://iua-share.upf.edu/svn/clam/trunk clam
 * In case your SVN username does not coincide with your local user add the --username option to the commit command (see also svn ci --help)
 * Passwords get automatically stored in local.
-
-Or, in case you have an account at iua-share (this method is likely to be deprecated)
- $ svn co svn+ssh://<usrname>@iua-share.upf.edu/mnt/svn/clam/trunk clam
