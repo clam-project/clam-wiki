@@ -2,10 +2,8 @@ This is the CLAM development wiki.
 
 ''Please, prepend 'Devel/' to any development pages you create here.''
 
-Some development pages are still at the [https://iua-share.upf.es/wikis/clam_draft| old CLAM development wiki].
-
 * [[Development screenshots]] show last achievements on CLAM development branch.
-* [http://clam.iua.upf.edu/testfarm Testfarm web] shows the last commits and build and tests status in different platforms in real-time.
+* [http://clam-project.org/testfarm Testfarm web] shows the last commits and build and tests status in different platforms in real-time.
 * [[GSoC 2007]] Google Summer of Code 2007 pages
 * [http://cia.vc/stats/project/clam Cia.vc, log of commits]
 * [http://www.ohloh.net/projects/clam Ohloh, project and developer stats]
