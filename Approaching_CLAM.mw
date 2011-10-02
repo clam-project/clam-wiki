@@ -6,7 +6,7 @@ Binary packages are available for major platforms, so check out the [http://clam
 
 When building from source code, look first of all the [http://clam-project.org/clam/trunk/CLAM/INSTALL INSTALL] files distributed with the source code. CLAM applications also have an INSTALL file themselves.
 
-Some platform specific issues are documented by the user community on the [[Main Page|wiki]] (Installation notes on the main page).
+Some platform specific issues are documented by the user community on the [[Main Page#Documentation|Documentation]] section (See Installation notes).
 
 == Using the applications ==
 
