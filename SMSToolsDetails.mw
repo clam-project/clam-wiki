@@ -1,8 +1,10 @@
-The application analyzes, transforms and synthesizes back a given sound. For doing so, it uses the Sinusoidal plus Residual model (sometimes referred to as SMS but also known as HILN in the context of MPEG4). Next picture depicts the analysis algorithm:
+The application analyzes, transforms and synthesizes back a given sound. For doing so, it uses the Sinusoidal plus Residual model (sometimes referred to as SMS but also known as HILN in the context of MPEG4). 
 
-[[Image:http://www.clam.iua.upf.edu/doc/ReleaseDocumentation-html/images/smsanalysis.png]]
+For SMS analysis and synthesis block diagrams, see [http://xavier.amatriain.net/Thesis/html/node125.html#fig:SMS-Tools-block-diagram]
 
-If you need more information about the signal processing details involved in the process you may want to visit the [[http://www.iua.upf.es/~sms| SMS]] webpage.
+For more information on SMS, see [http://mtg.upf.edu/node/251]
+
+If you need more information about the signal processing details involved in the process you may want to visit the [[http://mtg.upf.edu/technologies/sms| SMS]] webpage.
 
 ==Introduction==
 
