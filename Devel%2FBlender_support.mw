@@ -1,4 +1,4 @@
-This article explains the Blender integration on CLAM. You could find the needed Blender python scripts [http://iua-share.upf.edu/svn/clam/trunk/CLAM/plugins/spacialization/blender/ on the 'spacialization' plugin directory of the SVN].
+This article explains the Blender integration on CLAM. You could find the needed Blender python scripts [http://clam-project.org/clam/trunk/CLAM/plugins/spacialization/blender/ on the 'spacialization' plugin directory of the SVN].
 
 The following scripts uses the blender objects included in the 'AudioSources' and 'AudioSinks' groups as general convention.
 
@@ -21,7 +21,7 @@ and generate UVspheres as generic models, included on the specific groups:
 
 == Sending positions through OSC ==
 
-The 'BlenderOSCSender.py' script allows to send OSC messages the sources and listeners positions/rotatios through OSC using '[https://iua-share.upf.edu/svn/clam/trunk/CLAM/plugins/osc/oscpython/OSC.py OSC.py] (OSC client module for python by Stefan Kersten, you have to put a copy on your home/src/liblo or have it on relative path ../../osc/oscpython).
+The 'BlenderOSCSender.py' script allows to send OSC messages the sources and listeners positions/rotatios through OSC using '[http://clam-project.org/clam/trunk/CLAM/plugins/osc/oscpython/OSC.py OSC.py] (OSC client module for python by Stefan Kersten, you have to put a copy on your home/src/liblo or have it on relative path ../../osc/oscpython).
 The script should be linked to any source or listener object to ObjectUpdate event, and to FrameChanged event from scene, to send a sync message every frame. The sending OSC path is '/[http://www.jamoma.org/wiki/SpatDIFSpatialSoundDescriptionInterchangeFormat SpatDIF]/object/number/xyz/type', where 'object' is the type of audio object ('source' or 'listener'), number is the relative number within the correspondent type group, and 'type' is rotation (azimuth/elevation/roll angles) or location (x/y/z).The default used OSC port is 7000, but you can change that adding '_pxxxx' at the end of the blender (sources/listeners) objects, where xxxx is the number of the wanted port.
 
 === Configuring the sender ===
