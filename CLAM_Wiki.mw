@@ -1,11 +1,11 @@
 {{Announce}}
 
-= Home Pages =
+== Home Pages ==
 * [http://clam-project.org CLAM] Home Page
 * [[Music Annotator]] Home Page
 * [[Devel|Development pages]]
 
-= Screenshots and Screencasts =
+== Screenshots and Screencasts ==
 *Screenshots
 ** [[Development screenshots]] --you probably want to see these.
 ** [http://clam-project.org/screenshots.html CLAM web screenshots]
@@ -15,7 +15,7 @@
 ** [http://clam-project.org/videos Hosted videos]
 ** [http://www.youtube.com/group/clamproject CLAM group on youtube].
 
-= Documentation =
+== Documentation ==
 
 * [[Approaching CLAM]], where to start
 
@@ -69,7 +69,7 @@
 * [http://www.teachingopensource.org/index.php/Help_Wanted:_CLAM_Project Looking for mentorship quick guide] (students and educators)
 * [[CLAM roadmap]] (outdated)
 
-= Other =
+== Other ==
 
 * Scientific [[CLAM citations]]
 * [[3rd Party Projects Using CLAM]]
