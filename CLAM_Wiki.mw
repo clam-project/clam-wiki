@@ -53,6 +53,7 @@
 *** [[Processings with variable number of connectors]]
 *** [[Defining a ProcessingComposite]]
 ** Other
+*** [[ipyclam]] The python module to manipulate and run CLAM networks.
 *** [[Adding Monitors]]
 *** [[Changing the port color for custom data types]] (or displayed type name)
 * Using Faust inside CLAM (including on-the-fly Faust programming)
