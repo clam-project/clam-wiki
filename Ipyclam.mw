@@ -33,25 +33,6 @@ And if you want to bind QT interface to display an oscilloscope:
  n.play()
 
 
-You can also load an UI file and bind it simultaneously..
-
- w2 = n.loadUi("myui.ui")
- w2.show()
- n.stop()
- n.bindUi(w2)
- n.play()
-
-Adding a tonal analysis and some related views
-
- n.stop()
- n.tonal = n.types.TonalAnalysis
- n.file > n.tonal
- w3 = n.createWidget("CLAM::VM::KeySpace")
- w3.setProperty("clamOutPort", "tonal.Chord Correlation")
- n.bindUi(w3)
- w3.show()
- n.play()
-
 The following sections describe in detail ipyclam API.
 The API is ruled by the following principle:
 to provide the most convinient API of doing things,
@@ -176,6 +157,25 @@ The following example will connect even ports to ports starting at the second on
 
 TODO
 
-== Binding an interface ==
+== Binding a Qt interface ==
 
 TODO
+
+You can also load an UI file and bind it simultaneously..
+
+ w2 = n.loadUi("myui.ui")
+ w2.show()
+ n.stop()
+ n.bindUi(w2)
+ n.play()
+
+Adding a tonal analysis and some related views
+
+ n.stop()
+ n.tonal = n.types.TonalAnalysis
+ n.file > n.tonal
+ w3 = n.createWidget("CLAM::VM::KeySpace")
+ w3.setProperty("clamOutPort", "tonal.Chord Correlation")
+ n.bindUi(w3)
+ w3.show()
+ n.play()
