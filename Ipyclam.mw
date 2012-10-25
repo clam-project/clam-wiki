@@ -4,3 +4,93 @@
 
 
 '''ipyclam''' is a python module that wraps CLAM by providing the interface to do the same actions you could do with the NetworkEditor by connecting several CLAM modules playing them and like you would do with the Prototyper, connect them to a PyQt/PySide interface. Thus it enpowers the kind of prototypes you could build with such tools.
+
+
+For example, let's play a file in a loop with ipyclam:
+
+ import ipyclam
+ n=ipyclam.Network()
+ n.file = n.types.MonoAudioFileReader
+ n.out = n.types.AudioSink
+ n.file.Loop = 1
+ n.file.SourceFile = "jaume-voice.mp3"
+ n.file > n.out
+ 
+ n.backend="PortAudio"
+ n.play()
+
+And if you want to bind QT interface to display an oscilloscope:
+
+ from PyQt4 import QtCore, QtGui
+ a=QtGui.QApplication([])
+ 
+ w=n.createWidget("Oscilloscope")
+ w.show()
+ w.setProperty("clamOutPort", "file.Samples Read")
+ 
+ n.stop()
+ n.bindUi(w)
+ n.play()
+
+
+You can also load an UI file and bind it simultaneously..
+
+ w2 = n.loadUi("myui.ui")
+ w2.show()
+ n.stop()
+ n.bindUi(w2)
+ n.play()
+
+Adding a tonal analysis and some related views
+
+ n.stop()
+ n.tonal = n.types.TonalAnalysis
+ n.file > n.tonal
+ w3 = n.createWidget("CLAM::VM::KeySpace")
+ w3.setProperty("clamOutPort", "tonal.Chord Correlation")
+ n.bindUi(w3)
+ w3.show()
+ n.play()
+
+You could figure out most of the features from these examples.
+The following sections describe in detail which 
+
+The principle in the ipyclam API design is:
+provide the most convinient API of doing things,
+even if there is cases where that API is not enough,
+for example because it is ambiguous or not feasible with the language,
+provide an additional less convinient but more generally usable API.
+
+So there are several ways of doing things, like accessing connectors, connectiong or configuring processings.
+The following sections provide a summary of the API for several operations.
+
+== Creating processing modules ==
+
+Given a network:
+
+ n = ipyclam.Network()
+
+you can create the network by assigning a property to a string:
+
+ n.myprocessing = "AudioSink"
+
+In this case ''myprocessing'' is the name of the module in the network.
+What if I want to name the processing with spaces such 'My Processing 2'?
+In this case we can use the subscript interface, which is more verbose but can deal with spaces.
+
+ n['My Processing 2'] = "AudioSink"
+
+Subscript interface is also the solution when you deal with attributes and methods that are already in the network.
+To name some of them: xml, load, save, play, stop, inports, outports....
+Use dir(n) to see all of them.
+
+If you are using an interactive python such as ipython or bpython,
+you can explore the network with the tab key.
+
+ n.[tab]
+
+And you will see the attributes and methods available included the processing you already added to the network.
+
+These principle extends to other levels.
+* You can explore a processing for ports, cotrols and configuration parameters.
+* You can access them as attributes or if there is some collision or the name is not a valid identifier, you can use the subscript interface.
