@@ -94,3 +94,16 @@ And you will see the attributes and methods available included the processing yo
 These principle extends to other levels.
 * You can explore a processing for ports, cotrols and configuration parameters.
 * You can access them as attributes or if there is some collision or the name is not a valid identifier, you can use the subscript interface.
+
+Going back to processing creation, besides the string, 
+you can also use the 'types' network attribute which contains all the types as attributes:
+
+ n.myprocessin3 = n.types.AudioSink
+
+So you can also explore the available types in interactive mode by doing:
+
+ n.types.[tab]
+
+== Configuring a processing ==
+
+TODO
