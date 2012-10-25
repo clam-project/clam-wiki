@@ -87,25 +87,90 @@ In this case we can use the subscript interface, which is more verbose but can d
 Subscript interface is also the solution when you deal with attributes and methods that are already in the network
 such as 'xml' and 'code'. Use dir(n) to see all of them.
 
+These principle extends to other levels.
+* You can explore a processing for ports, cotrols and configuration parameters.
+* You can access them as attributes or if there is some collision or the name is not a valid identifier, you can use the subscript interface.
+
+Besides a string with the type name, 
+you can also use the 'types' network attribute which contains all the types as attributes:
+
+ n.myprocessin3 = n.types.AudioSink
+
+The 'types' attribute is convenient when you are in an interactive python interpret such IPython or BPython,
+because you can use tab completion to see the available types.
+
+ n.types.[tab]
+
+But there is more that tab completion offers you.
+
+== Interactive network exploration ==
+
 If you are using an interactive python interpret such as ipython or bpython,
 you can explore the network with the tab key.
 
  n.[tab]
 
-And you will see the attributes and methods available included the processing you already added to the network.
+And, besides common attributes and methods, you will the processing you already added to the network as attribute.
 
-These principle extends to other levels.
-* You can explore a processing for ports, cotrols and configuration parameters.
-* You can access them as attributes or if there is some collision or the name is not a valid identifier, you can use the subscript interface.
+If you write or choose the processing:
+ n.myprocessing.[tab]
 
-Going back to processing creation, besides the string, 
-you can also use the 'types' network attribute which contains all the types as attributes:
+Beside processing module methods and attributes, you will see in and out ports and controls and configuration parameters.
 
- n.myprocessin3 = n.types.AudioSink
+They could be named the same so to avoid collisions, several attributes are provided to isolate them:
+ n.myprocessing.config.[tab]
+ n.myprocessing.inports.[tab]
+ n.myprocessing.outports.[tab]
+ n.myprocessing.incontrols.[tab]
+ n.myprocessing.outcontrols.[tab]
 
-This also implies that you can explore the available types in interactive mode by doing:
+== Configuring processings ==
 
- n.types.[tab]
+Processing configuration can be set by setting the config parameter attribute of a processing.
+
+ n.myprocessing.NSinks = 3
+ n.myprocessing['NSinks'] = 3 # equivalent with subscript api
+ n.myprocessing.inports.[tab]
+
+And you will see 3 inputs. Those inputs are named '1','2' and '3', so they are invalid identifiers.
+Eventhough the interactive python offers them as completion for attribute you should use them via subscript.
+
+ipyclam reconfigures the whole processing for each attribute setting.
+This can be inconvenient if you have several attributes to set and configuration is expensive.
+In this cases we can hold and latter apply the config attribute to configure it just once.
+
+ n.myprocessing.config.hold()
+ n.myprocessing.NSinks = 3
+ # set many more attributes
+ n.myprocessing.config.apply()
+
+Parameters which are optional are set to None when they are not present.
+
+== Connecting ==
+
+Inequality operators < and > are used as connector operator because its expressiveness.
+You can also use the 'connect' method available in processings and connectors.
+
+If you connect two processings without specifying port or control names,
+ipyclam will connect ports and control one to one.
+ # Three ways of saying the same
+ n.source.connect(n.sink)
+ n.source > n.sink
+ n.sink < n.source
+
+You can constrain that by specifying a kind of connector
+
+ n.source > n.sink.incontrols
+
+Connecting a port to a processing, will broadcast one to many
+ n.source['1'] > n.sink
+
+And of course you can specify both ends:
+ n.source['1'] > n.sink['3']
+
+You can also use slices.
+The following example will connect even ports to ports starting at the second one:
+ n.source.outports[::2] > n.sink.inports[1:]
 
 == Configuring a processing ==
 
