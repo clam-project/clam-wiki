@@ -71,17 +71,23 @@ you can create the network by assigning a property to a string:
 
  n.myprocessing = "AudioSink"
 
-In this case ''myprocessing'' is the name of the module in the network.
+In this case ''myprocessing'' is the name of the created module and 'AudioSink' the type.
+
+You can see the xml version of this module:
+ n.xml()
+
+Or you can dump python code to build it again:
+ n.code()
+
 What if I want to name the processing with spaces such 'My Processing 2'?
 In this case we can use the subscript interface, which is more verbose but can deal with spaces.
 
  n['My Processing 2'] = "AudioSink"
 
-Subscript interface is also the solution when you deal with attributes and methods that are already in the network.
-To name some of them: xml, load, save, play, stop, inports, outports....
-Use dir(n) to see all of them.
+Subscript interface is also the solution when you deal with attributes and methods that are already in the network
+such as 'xml' and 'code'. Use dir(n) to see all of them.
 
-If you are using an interactive python such as ipython or bpython,
+If you are using an interactive python interpret such as ipython or bpython,
 you can explore the network with the tab key.
 
  n.[tab]
@@ -97,7 +103,7 @@ you can also use the 'types' network attribute which contains all the types as a
 
  n.myprocessin3 = n.types.AudioSink
 
-So you can also explore the available types in interactive mode by doing:
+This also implies that you can explore the available types in interactive mode by doing:
 
  n.types.[tab]
 
