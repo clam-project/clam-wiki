@@ -2,11 +2,11 @@
 
 '''Python''' is a popular language. Flexible, expressive and fast for development. But by its nature it is not appropiate for doing real-time processing. Eventhough, you can use real-time ready modules in fast and real-time safe C++ and combine them using Python expressiveness.
 
+'''ipyclam''' is a python module that wraps CLAM by providing the interface to do the same actions you could do with the NetworkEditor by connecting several CLAM modules playing them. It also provides means for binding Qt interfaces, like you would do with the Prototyper, but with the addition of being able to build and add python logic by means of PyQt or PySide.
+So ipyclam enpowers the kind of prototypes you could build with NetworEditor/Prototyper.
 
-'''ipyclam''' is a python module that wraps CLAM by providing the interface to do the same actions you could do with the NetworkEditor by connecting several CLAM modules playing them and like you would do with the Prototyper, connect them to a PyQt/PySide interface. Thus it enpowers the kind of prototypes you could build with such tools.
-
-
-For example, let's play a file in a loop with ipyclam:
+To get a feeling of the kind of things you can do with ipyclam lets see some examples.
+To play a file in a loop with ipyclam:
 
  import ipyclam
  n=ipyclam.Network()
@@ -52,14 +52,11 @@ Adding a tonal analysis and some related views
  w3.show()
  n.play()
 
-You could figure out most of the features from these examples.
-The following sections describe in detail which 
-
-The principle in the ipyclam API design is:
-provide the most convinient API of doing things,
-even if there is cases where that API is not enough,
-for example because it is ambiguous or not feasible with the language,
-provide an additional less convinient but more generally usable API.
+The following sections describe in detail ipyclam API.
+The API is ruled by the following principle:
+to provide the most convinient API of doing things,
+even if it is not general enough to express every case,
+but then, provide a less convenient but more general API that can be used for those specific cases.
 
 So there are several ways of doing things, like accessing connectors, connectiong or configuring processings.
 The following sections provide a summary of the API for several operations.
