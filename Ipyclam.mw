@@ -172,6 +172,10 @@ You can also use slices.
 The following example will connect even ports to ports starting at the second one:
  n.source.outports[::2] > n.sink.inports[1:]
 
-== Configuring a processing ==
+== Setting the backend and playing ==
+
+TODO
+
+== Binding an interface ==
 
 TODO
