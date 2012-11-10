@@ -5,6 +5,7 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 Image:Prototyper-ConfiguratorBinder.png| Prototyper example: binding a configuration dialog for a processing.
 Image:Lv2qtinterface.png| An LV2 plugin using Qt interface with XEmbed
 Image:Lv2qtinterface-designer.png| A Qt Designer ui as LV2 interface
+Image:ipyclam_sms_qt_demo.png| A Qt UI file augmented with PyQt/PySide, ipyclam build the network, binds it and it can reconfigure inner networks in runtime.
 </gallery>
 
 = 1.4.0 =
