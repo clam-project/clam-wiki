@@ -6,6 +6,7 @@ Image:Prototyper-ConfiguratorBinder.png| Prototyper example: binding a configura
 Image:Lv2qtinterface.png| An LV2 plugin using Qt interface with XEmbed
 Image:Lv2qtinterface-designer.png| A Qt Designer ui as LV2 interface
 Image:Ipyclam_sms_qt_demo.png| A Qt UI file augmented with PyQt/PySide, ipyclam build and binds a network. Python can use network information and manipulate it.
+Image:Ipyclam_embeded_noupdate.png| ipyclam console manipulating a NetworkEditor object (without updates on the view).
 </gallery>
 
 = 1.4.0 =
