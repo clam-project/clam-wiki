@@ -2,11 +2,12 @@ This page hosts screenshots galleries of the ongoing development of CLAM and its
 = Upcoming release (1.5.0) =
 
 <gallery>
-Image:Prototyper-ConfiguratorBinder.png| Prototyper example: binding a configuration dialog for a processing.
+File:ipyclam_jack_engine.png| JACK engine for ipyclam: monitoring and handling jack connections with interactive Python.
+File:Ipyclam_embeded_noupdate.png| ipyclam console manipulating a NetworkEditor object (without updates on the view).
+Image:Ipyclam_sms_qt_demo.png| A Qt UI file augmented with PyQt/PySide, ipyclam build and binds a network. Python can use network information and manipulate it.
 Image:Lv2qtinterface.png| An LV2 plugin using Qt interface with XEmbed
 Image:Lv2qtinterface-designer.png| A Qt Designer ui as LV2 interface
-Image:Ipyclam_sms_qt_demo.png| A Qt UI file augmented with PyQt/PySide, ipyclam build and binds a network. Python can use network information and manipulate it.
-File:Ipyclam_embeded_noupdate.png| ipyclam console manipulating a NetworkEditor object (without updates on the view).
+Image:Prototyper-ConfiguratorBinder.png| Prototyper example: binding a configuration dialog for a processing.
 </gallery>
 
 = 1.4.0 =
