@@ -42,7 +42,7 @@ to provide the most convinient API of doing things,
 even if it is not general enough to express every case,
 but then, provide a less convenient but more general API that can be used for those specific cases.
 
-So there are several ways of doing things, like accessing connectors, connectiong or configuring processings.
+So there are several ways of doing things, like accessing connectors, connecting or configuring processings.
 The following sections provide a summary of the API for several operations.
 
 == Creating processing modules ==
