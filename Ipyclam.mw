@@ -186,3 +186,14 @@ Adding a tonal analysis and some related views
 
 You can use PySide instead of PyQt4 by importing ipyclam.ui.PySide instead.
 The rest of the code can be left untouched.
+
+== Controling JACK ==
+
+You can use ipyclam to control JACK connections with other apps.
+
+ jack = ipyclam.Network(ipyclam.Jack_Engine())
+
+This creates a object with the same API than the one explained here.
+So, you can do connections and explore it as it was a CLAM network.
+Of course, limitations apply.
+You cannot create, remove or rename processing units, and no configuration and no controls are available.
