@@ -165,11 +165,10 @@ or
 
 == Binding a Qt interface ==
 
-TODO
-
 You can also load an UI file and bind it simultaneously..
 
- w2 = n.loadUi("myui.ui")
+ import ipyclam.ui.PyQt4 as ui
+ w2 = ui.loadUi("myui.ui")
  w2.show()
  n.stop()
  n.bindUi(w2)
@@ -180,7 +179,7 @@ Adding a tonal analysis and some related views
  n.stop()
  n.tonal = n.types.TonalAnalysis
  n.file > n.tonal
- w3 = n.createWidget("CLAM::VM::KeySpace")
+ w3 = ui.createWidget("CLAM::VM::KeySpace")
  w3.setProperty("clamOutPort", "tonal.Chord Correlation")
  n.bindUi(w3)
  w3.show()
