@@ -120,10 +120,9 @@ ipyclam reconfigures the whole processing for each attribute setting.
 This can be inconvenient if you have several attributes to set and configuration is expensive.
 In this cases we can hold and latter apply the config attribute to configure it just once.
 
- n.myprocessing.config.hold()
- n.myprocessing.NSinks = 3
- # set many more attributes
- n.myprocessing.config.apply()
+ with n.myprocessing.config as c
+   c.Parameter1 = 3
+   c.Parameter2 = "Value"
 
 Parameters which are optional are set to None when they are not present.
 
