@@ -155,7 +155,13 @@ The following example will connect even ports to ports starting at the second on
 
 == Setting the backend and playing ==
 
-TODO
+Changing the audio backend is that easy as assigning the special 'backend' attribute:
+
+ net.backend = "PortAudio"
+
+or
+
+ net.backend = "JACK"
 
 == Binding a Qt interface ==
 
