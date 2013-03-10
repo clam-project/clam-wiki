@@ -22,15 +22,18 @@ To play a file in a loop with ipyclam:
 And if you want to bind QT interface to display an oscilloscope:
 
  from PyQt4 import QtCore, QtGui
+ import ipyclam.ui.PyQt4 as ui
  a=QtGui.QApplication([])
  
- w=n.createWidget("Oscilloscope")
+ w = ui.createWidget("Oscilloscope")
  w.show()
  w.setProperty("clamOutPort", "file.Samples Read")
  
  n.stop()
  n.bindUi(w)
  n.play()
+ 
+ a.exec_()
 
 
 The following sections describe in detail ipyclam API.
