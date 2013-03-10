@@ -184,3 +184,6 @@ Adding a tonal analysis and some related views
  n.bindUi(w3)
  w3.show()
  n.play()
+
+You can use PySide instead of PyQt4 by importing ipyclam.ui.PySide instead.
+The rest of the code can be left untouched.
