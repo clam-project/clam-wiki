@@ -1,0 +1,33 @@
+How to insert variables in a clam assert message? (which is something extremely useful)
+---------------------------------------------------------------------------------------
+
+`if ( error-condition )`
+`{`
+`  std::ostringstream os;`
+`  os`
+`    << "err message: "`
+`    << "some var: " << var`
+`    << std::flush;`
+`  CLAM_ASSERT(false, os.str().c_str());`
+`}`
+
+How to plot any kind of data for debugging purposes?
+----------------------------------------------------
+
+In short, write out the data to standard output and then use python with pylab to plot it.
+
+Now, in detail: In your code, typically in a loop, put cout's like this:
+
+`std::cout << data << std::endl;`
+
+Then execute the program piping to a file
+
+`./OfflinePlayer mynetwork.clamnetwork > debug.plot`
+
+Install python-matplotlib package if not already installed. Open a python shell an use plot and show commands of pylab. Like in this example (note the [:-1] is to remove the last empty line)
+
+`import pylab`
+`pylab.plot( file("debug.plot").readlines()[:-1] )`
+`pylab.show()`
+
+Of course you can draw many kinds of plots. Check out this [matplotlib tutorial](http://matplotlib.sourceforge.net/tutorial.html)

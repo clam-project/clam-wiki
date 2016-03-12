@@ -1,0 +1,112 @@
+What is Faust?
+--------------
+
+FAUST (Functional AUdio STream) is a compiled language for real-time audio signal processing. It allows to easily describe a DSP flow with a algebraic type syntax<sup>[1]</sup> and generate an optimized fast code to compile to different platforms.
+
+### What Faust can do?
+
+With Faust you can design and implement easily DSP audio algorithms and compile it for several environments (Pd, LADSPA, SuperCollider, etc). Plus, you can export the design to visualize it internal diagram functional blocks (with browseables SVGs) and to analyze its response exporting to Octave.
+
+### What is the actual support of Faust in CLAM?
+
+CLAM in Linux is can load LADSPA plugins as processings inside its networks, so every FAUST compiled LADSPA plugin will be able to be loaded and used whithin a CLAM network. The development version of NetworkEditor allows to compile and import the plugins and its block diagrams, and also edit the faust code with an external editor.
+
+How?
+----
+
+### LADSPA support in CLAM
+
+First you have to check that CLAM was compiled with LADSPA support. To compile it, you will need the LADSPA API (ladspa-sdk dependency on Debian/Ubuntu, alsa-devel on RH/Fedora). The SConstruct configuration parameter for compile CLAM with LADSPA support is 'with\_ladspa=yes'. If you compile CLAM under linux without crosscompiling, is enabled by default.
+
+### FAUST
+
+You need Faust installed on your system. You can search for a Faust package for your GNU/Linux distribution (at the moment the CLAM Faust support is limited to LADSPA plugins), or download the sources and compile by yourself (http://sourceforge.net/projects/faudiostream/). In any case, you need the compiler binary 'faust' and the library file 'ladspa.cpp' on system paths (usually one is on '/usr/bin' and the other on '/usr/lib/faust').
+
+#### Preparing and defining a writable location for faust compilation
+
+CLAM will search for the Faust 'examples' directory on the user home '.faust' dir (i.e.: '\~/.faust/examples'), or 'CLAM\_FAUST\_PATH' environment variable path ('\$CLAM\_FAUST\_PATH/examples'), to grant write permissions when running the makefiles. You can found the Faust 'examples' dir into the root of the sources package, or usually into '/usr/share/doc/faust/examples' if you installed it from a distribution package. Note that the distribution packages may change the default libraries path (for instance, put them on the local examples dir), so please copy the 'examples' dir from your correspondent installation source.
+
+If you want to add new faust plugins, just copy the .dsp source files in this user 'examples' directory.
+
+-   **Option 1: using 'CLAM\_FAUST\_PATH' environment variable**
+
+  
+For instance, imagine you have the examples directory on the '\~/src/faust-0.9.9.4'. You need to define the CLAM\_FAUST\_PATH environment var:
+
+:
+
+    :$ export CLAM_FAUST_PATH=~/src/faust-0.9.9.4
+
+  
+If you don't want to have to define it everytime you run a session you can add it on your default shell init script -for instance, "\~/.bashrc"- or make a script which says "export CLAM\_FAUST\_PATH=\~/src/faust-0.9.9.4; NetworkEditor" (with faust installed in "\~/src/faust-0.9.9.4")
+
+-   **Option 2: linking '\~/.faust**'
+
+  
+If you have the faust 'examples' dir on your "\~/.faust" dir you don't have to define 'CLAM\_FAUST\_PATH'. So, if you have the Faust examples directory on a writable path, you could make just a simbolic link once. For instance, having '\~/src/faust-0.9.9.4/examples':
+
+:
+
+    :$ mkdir ~/.faust
+    :$ ln -s ~/src/faust-0.9.9.4/examples ~/.faust/examples
+
+That's it!
+
+Faust on NetworkEditor
+----------------------
+
+Execute the NetworkEditor. If you already compiled the ladspa plugins within the examples directory, you will see them on the FAUST Category of the [processing tree toolbox](:Image:Processing_Tree_Toolbox_With_Faust.png "wikilink"). If you don't have compiled the plugins you can do it within NE.
+
+### 'Interface' Faust submenu
+
+In the Interface item from the main menu on NE, you should see the faust submenu enabled:
+
+![Faust support available actions and options from the Network Editor main menu](Main Window NE Faust SubMenu_newicon.png "Faust support available actions and options from the Network Editor main menu")
+
+The items:
+
+-   **Recompile Faust modules:**
+
+  
+recompile all the .dsp source files found at the examples dir, generating and importing the ladspa plugin and svg diagrams.
+
+-   **Reload Faust modules:**
+
+  
+if you add/change and recompile the Faust modules from outside the Network Editor while is running and you don't want to restart it, call this. It will update the plugins, diagrams and source files (not the actual used widgets).
+
+-   **Embed SVG diagrams on new processings:**
+
+  
+bool option to embed (or not) the diagrams onto the new faust processings boxes.
+
+**Recompiling the modules:**
+
+![](Compiling_faust.png "Compiling_faust.png")
+
+### Using Faust plugins
+
+If all were good, after the compilation you will be able to see the FAUST category inside the [processings Tool Box Tree](:Image:Processing_Tree_Toolbox_With_Faust.png "wikilink").
+
+You can use any compiled faust plugin as every other clam processing: ![Faust plugin on canvas with embedding diagrams enabled](Faust Plugin On Canvas.png "fig:Faust plugin on canvas with embedding diagrams enabled")
+
+You can see there how faust diagrams could be embedded on the widget.
+
+### Processing boxes context menues
+
+The Faust compiled plugins will have two extra items on their processing boxes context menues:
+
+![](Faust_Processing_Box_Context_Menu.png "Faust_Processing_Box_Context_Menu.png")
+
+Image:Open\_SVG\_Diagram\_with\_Konqueror.png|Open diagram with browser (Konqueror) Image:Open\_DSP\_Source\_with\_Kate.png|Open source with editor (Kate<sup>[2]</sup>)
+
+References and notes
+--------------------
+
+<sup>[1]</sup> Orlarey, Y., Fober, D., & Letz, S. (2002). *An algebraic approach to block diagram constructions*. Paper presented at Actes des Journées d'Informatique Musicale, Marseille - GMEM.
+
+Orlarey, Y., Fober, D., & Letz, S. (2002). *An algebra for block diagram languages*. Paper presented at International Computer Music Conference.
+
+Orlarey, Y., Fober, D., & Letz, S. (2004). *Syntactical and semantical aspects of faust*. Paper presented at Soft Computing, Lyon, France.
+
+<sup>[2]</sup> Tip: In screenshot of Kate is used the syntax-highlighting included in Faust package.

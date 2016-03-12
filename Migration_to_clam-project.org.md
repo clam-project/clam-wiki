@@ -1,0 +1,26 @@
+-   **DONE** wiki (yupi!!!)
+-   **DONE** imported all subversions
+-   **DONE** links old wiki to new wiki
+-   **DONE** wiki: close write access to non-logged
+-   **DONE** (with [recaptcha extension](http://www.mediawiki.org/wiki/Extension:ReCAPTCHA): to try it...) wiki: see if captcha is possible
+-   **DONE** wiki: es1 and postgrau\_pl (low prio)
+-   **DONE** switch clam subversions (on thursday) and "hide" old one. switch means "removed commit access, sync, remove with message"
+-   **DONE** switch clam-related subversions.
+-   Migrate web
+    -   **DONE** remove languages
+    -   **DONE** update wiki links
+    -   **DONE** fix broken images (most were wiki links, others are external images)
+    -   **DONE** update planet scripts
+    -   update old pages like About Clam. Move it to the wiki
+    -   **DONE** copy non svn web files:
+        -   **DONE** downloads
+        -   **DONE** videos
+        -   **DONE** doc
+        -   **DONE** testfarm
+        -   **DONE** testfarm\_ES1
+    -   redirect old web to the new one
+    -   add news about new domain
+    -   Update wiki links on the news
+    -   **DONE** Update svn links (Locally done but not commited until we move)
+    -   Update wiki links to relative ones once moved to the new server
+

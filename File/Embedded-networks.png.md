@@ -1,0 +1,1 @@
+This image shows how an EmbeddedNetwork processing component embeds a CLAM network inside of it. Further development will allow passing audio and other data in and out of such components, allowing libraries of re-usable networks to be built.

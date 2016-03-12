@@ -1,0 +1,136 @@
+Application Information
+=======================
+
+**Title:** [Real-time Synthesizer Using SMS Models for a Woodwind Instrument](http://code.google.com/soc/2008/clam/appinfo.html?csaid=1902AE4E77AA7A08)
+
+**Mentor:** [Pau Arumí Albó](http://parumi.wordpress.com/)
+
+**License:** [GNU General Public License (GPL)](http://creativecommons.org/licenses/GPL/2.0/)
+
+**Abstract:**
+
+Details
+=======
+
+Milestones
+==========
+
+*Add here pointers to another more general clam devel pages with TODO's*
+
+*(optional)* Blogging
+=====================
+
+June 30 2008 Yushen Han
+
+(Just like many other things, I hope that I had this in the first day when I started to work on this project. Now it sounds like a mid-term report..)
+
+SimpleOboeSynthesizer and continuousExcitationSynthesizer
+
+This synthesizer for a woodwind (oboe) instrument is a further development of Greg's continuousExcitationSynthesizer, a real-time synthesizer for an ebow-driven string instrument in SoC 2007.
+
+I decided to keep his design, especially the management of the metadata (in XML) of musical samples in SDIF. So I can experiment with and gradually change the synthesizing guts..
+
+Here is the link:
+
+Let's start from (my understanding in) how it works. [I give my comments inside square brackets] {I will put the changes that I've made or would make inside braces.}
+
+1. Platform It is supposed to work either as a plugin in Network Editor or as a command line tool. For users to add the musical samples, a tool called Wav2SDIF is available in the console. Also, loopMaker can convert any wave with a definite pitch to SDIF and find the loop point's by Earth Mover's distance. {I only work with the command line tools so far, which is enough for me, but maybe not for end-users.}
+
+2. Input from the instrument It could take OSC or read the score files offline Rather than musical notation, the "score" file is actually a sequence of frequency-velocity frames, which is all the expression that the instrument could have. The frequency is given in Hertz and the velocity, brightness in Greg's word, is a float between 0 and 1. In this implementation, each frame has 1024 samples with HOP size 256 at sampling rate 44100Hz.
+
+[The fundamental question is: how much control could an oboist have over the oboe? When I am thinking of a MIDI breath controller, this two-column "score" seem to be reasonable to me. However, how the "velocity" reflects the dynamic of the sound is still open to me.]
+
+{A minor problem in reading the text score is that Greg's code looked for "\\r" as a delimiting symbol. It was for CR in Mac as a line break but does not work for Linux '\\n' or window \\r\\n as a line break. I tried to make it working in 3 different platforms but did not test in windows.}
+
+3.Sound Samples A database of 6 notes (C5, D5, E5, F\#5, G\#5, C6) is used to synthesize the string instrument. Essentially, the database gives the distribution of the spectral peaks ( and residue) for each note. It is further transformed by SMS to cover all the pitches in the score. The residue part is not used in Greg's version.
+
+[Here the question is: how representative a note of a curtain pitch/dynamic could be in terms of the shape of its spectral peaks, which is a key factor in the pitch-shifting operation in SMS. To answer this question, in my experiment I used classical multidimensional scaling (CMDS) to embed 72 oboe note samples that span 2 octave in 3 dynamics (ff, mf, pp) into a 2 dimensional space. The distance between any 2 notes is measure by the sum of the squared difference between the first 10 normalized spectral peaks of each note. As a result, the pitch seems to play a more important role in determining the distances between notes. The 2 dimensional picture explain only half of the variation though, it suggested that we would cover the all the pitches in the scale. For each pitch, 3 dynamics are given. Somehow my database <http://theremin.music.uiowa.edu/MIS.html> seems to be down at the moment. 72 oboes notes recorded in isolation are all I have at hand. Some of the note of dynamics pp are not very good.]
+
+{Instead of using Greg's earth mover's distance, I looked for the loop points using an external program R to detect the best zero crossing points. The samples are all 16-bit [-32768,32767] and I set the tolerance to be within [-2,2]. It is easy for me to write a script in R to do this but I should make this available as an executable.}
+
+(I will finish the rest part when I overcome the sleepiness caused by the painkiller :-)
+
+4. Synthesis
+
+The synthesizer will find and index all the SDIF files and associated XML files in a given fold as the material. For each sound sample stored in SDIF with XML, an associated "reader" will be loaded into memory in the initialization. Then the program read the frequency-brightness couple from the score and makes a decision on which reader sample file to use in realtime. Each reader has a queue of buffered frames loaded in advance. Newly synthesized frames will be added to the queue of the selected frame reader. A minimal number of frames (5) should be kept so the program will not stall when it is proceeding. The frames stored in the SDIF will undergo a pitch transformation by SMS before it is directed to the audio core of CLAM.
+
+(Fortunately Greg has complete SDIF file conversion and good metadata management. I reused his code with little difficulty.)
+
+4.1 Voice By the monophonic nature of this woodwind instrument (oboe), The input frequency-brightness frames, in a somewhat musical sense, could be viewed as streams of voices. The purpose of having voices is to encapsulate the input sequences of frames into musical "notes", each of which consists an attack stage and steady state. If the difference in frequency between two consecutive input frame is above a certain threshold, a new voice will be issued.
+
+4.2 Stages of a note and loop After the sound samples are pre-analyzed by SMS, an attack region is identified ( by hand ) and the middle part of the note is considered steady state, in which loop points are found. Note that the attack region is fixed in a sample and a new voice is always starting from the attack. However, a sample can have, desirably, more than one loop in order to avoid the monotone of repeating the same loop over and over again. The duration of loops could partially overlap, which is desirable too. If two loops are overlapping, it is easy to switch from one loop to the other. e.g. suppose that we have 4 loops in the sample loop1 (100,350), loop2 (200,450), loop3 (300, 550), loop4 (400, 650) By default the program will alway go with the first loop after it finishes the attack (0,100). After it finishes loop1 when the first 350+ frames have been loaded into memory, it will select loop2 or loop3 since the starting frames of loop2 and loop3 are within loop1. Loop1 is skipped (to avoid repeating) while loop4 will not be selected either because its starting frame 400 is not loaded at the moment loop1 is finished.
+
+[I realized that if the first loop is not overlapping with the other loops, sometimes it does not go back to the start frame of the first loop and hence causes a runtime error. According to Greg's comments since no candidate other than the first loop itself could be selected. It works for Greg because when his loopMaker will always find overlapping loops, which may not be true in my case.]
+
+I was confused at Greg's comment below and did not know why we need to choose a loop in the middle of nowhere (1413).
+
+`   // suppose that the current frame number is 1413. If we have a list of possible`
+`   // loops whose start and end points are (580, 1163), (850, 2100), and (982, 2310)`
+`   // we can only choose the second two loops, because the end point of the first`
+`   // is before the current frame position.`
+`   // but if we've only loaded 2200 frames into memory, then actually only the middle`
+`   // loop is valid.`
+`   // so here we look for valid loops that pass these two tests.`
+
+One case that I think is illunimating: we have loop1(16,62) and loop2(88,132) When it finished the first loop, the size of the buffer is 68 and current buffer position is 61, it chose to switch to loop2(88,132) ( whose frames had not been loaded yet ) and started from frame 16 until it reached 132.
+
+In one word, choosing a loop is about making a compromise between using loops as different as possible and creating buffers as less as possible.
+
+4.3 Frame preloading and buffering Greg preloaded the frames from the beginning of the attack to the end of the first loop for each reader. To push the limit, I tried to preload frames as many as the musical sample has. It was not a problem since my oboe notes are usually 1-2 second long.
+
+When the buffer of the activated reader is less than a threshold (5), the reader will read more frames from the SDIF file sequencially. This is very important for a realtime application. In my experiment, 5 frames are enough for switching loops within one voice. However, jumping between different voices (readers) could be a problem.
+
+[My idea is to apply a filter over the frequency value of the most recent frames. This is to identify the "false" voice that did not really have an attack and a steady state. But I need to know the physical constrain of the oboe.]
+
+[Greg has a different number of frames for the frame is being loading on a new thread. I did not observe the behavior of a thread in his code nor did I explicitly create any thread in my program. I did not try much of multi-thread programming before but I would like to know about this.]
+
+4.4 Cross fading
+
+When the current frame is quite near the end loop point (within 100 frames in Greg's implementation), crossfading in the spectra. In fact, the currect frame is fading out while the first frame of the loop is fading in. I assumed that Greg's implementation always went back to the first frame of the loop after a loop is finished. I think it is a good idea if the loop points are not zero cross points in the musical sample. [Here I have a problem of making use of the zero-cross (or closely zero-cross) points in sample since I did not know how to specify a sample. I can only be as precise as a million sec. Is that true? I applied the cross-fading as Greg did in my implementation. I tried to use a frame that is not the first frame of the loop and it did not sound much different. I wonder how he came up with this idea. Is that a standard thing to do for our synthesizer?]
+
+4.5 Sound quality - dynamics, loudness, and brightness { to be continued }
+
+The sound quality is the no.1 issue at the point. The sound of my digital oboe strikes me as an string instrument with its continuous pitch-shifting. It does whatever the score indicates, which is good, but whether the frequency deviation in the score is physically possible for an oboe is another question.
+
+I must miss some of the quality in the oboe samples in the articulation as well. An experiment was to replace all my oboes sound with samples of other instruments. As I tried with McGill Master Samples, my "oboe" was making similar sound with good pitch but dubious sound quality. ......
+
+(16 July)
+
+During the past week, I was talking to Prof. Don Byrd who is a veteran of digital sound synthesizer and Prof. Chris Raphael who is also a good oboist. From those conversations, I was convinced:
+
+(1) The technique of a digital synthesizer did not dramatically improve over years. However, the capacity of the computer really changed, especially memory - so I really should take the advantage of it - to include more samples. Cross-fading is a common way to deal with transition. But I may make some new here...
+
+(2) I should have the information from the score to give the note on time and pitch explicitly. If I had to "guess" a new note from the frequency sequence, I will have only about 10ms of time.
+
+(3) For a note of a pitch, there are different ways to play (in terms of the pipe) but there is usually one certain way to play in practice. It is a good approximation to couple the brightness with the loudness.
+
+(4) More samples that involve the transition between notes of different pitches are needed for me to observe the sound property in note transition behaviors.
+
+My response:
+
+(1) (3) To expand my samples. I will do principle component analysis on the first few spectral peaks to associate the brightness/loudness to a certain samples.
+
+(2) On top of Prof. Raphael's score-following technique, I just made a pitch tracker to follow extract the pitch in Hz over frames in a voice. It could identify the most observable harmonics of a certain voice (oboe solo) in a concerto where the oboe and the orchestra are playing together. The point is to get not only realistic score that is extracted from a real performance, but also explicit note onset time.
+
+Tonight I applied it to Bellini's oboe concerto in Eb. I got something like
+
+frameIndex freq(Hz) amplitude
+
+new note pitch == 75 0 645.878174 0.000051 1 639.528870 0.000523 2 632.872620 0.001930 3 630.824402 0.001946 ......
+
+158 791.396118 0.005913 new note pitch == 79 159 804.301086 0.000579 160 795.698975 0.001821 161 795.698853 0.003279 ......
+
+(4) I made an arrangement to get an oboist from School of Music to make a recording that involves the transition between 2 notes of different pitches. I need to make a plan of the range of pitches / intervals / dynamics that would be recorded.
+
+*(optional)* Selected posts
+---------------------------
+
+*The most relevant ones related with the project*
+
+Tasks prior to the coding period
+================================
+
+Related links
+=============
+
+<Category:GSoC2008>

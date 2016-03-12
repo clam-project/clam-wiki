@@ -1,0 +1,36 @@
+-   <image:done.png> Configurators for processing in plugins
+-   Solving parameter propagation problem
+-   <image:done.png> Complex-\>AudioBuffer IFFT
+-   <image:done.png> AudioBuffer-\>AudioStream OverlapAndAdd (named AudioBuffer2Stream)
+-   AudioBuffer2Stream: Provide its own configuration, now taking AudioWindowingConfig
+-   AudioBuffer2Stream: solve the gain problem
+-   Why window size is windowSize+1?
+-   Assert accepting strings (or formatting)
+-   <image:done.png> Profile new spectrum processings
+    -   <image:done.png> Why the mixer is taking all the time!?? -\> accessing sample by sample to GetData(sample)
+    -   Forbid the port.GetData(sample) interface
+    -   <image:done.png> Prepoint to buffers.
+    -   <image:done.png> Optimize Sources and Sinks by no accessing the dynamictype accessor on the inner loop
+
+Mingw testfarm
+--------------
+
+-   <image:done.png> Enabling testfarm for mingw
+-   Enable again testfarm for mingw
+-   Enabling Tests crosscompile (not ported to use crossmingw)
+-   Enabling SMSTools (missing qt3)
+-   Read the dictionary from a file
+-   Making the dictionary substitution an inner testfarm
+-   Reduce the delta on linux and packaging
+-   Add configuration options for crosscompiling (currently taking off testfarm configuration)
+
+Audio File IO
+-------------
+
+-   Add Encoding and Endianess fields to writer's configs
+-   Add TextDescriptors to writer's configs
+-   Abstract accessors to reader's Header (or to its fields) and to TextDescriptors and remove AudioFile accessor
+-   Simplify AudioFile hierarchy
+-   Simplify writer and reader Processings inner code
+-   Do sample rate conversion
+

@@ -1,0 +1,71 @@
+This document explains how to modify the CHANGES file on a release.
+
+The versioning in CLAM and applications is fully controlled by the CHANGES files. This file is used to generate version info in credits, and packaging names.
+
+In between releases
+-------------------
+
+-   CHANGE files for CLAM should look like that
+
+`00-00-2007 CLAM 1.0 SVN $Revision: 09999 $`
+`'The release i want to release'`
+` * Change 1`
+` * Change 2`
+`00-00-2006 CLAM 0.99.99`
+`'The past released release'`
+`* Revision 08888`
+`* Change 3`
+
+-   And for applications:
+
+`00-00-2007 NetworkEditor 0.4.6 SVN $Revision: 09999 $`
+`'The release i want to release'`
+` * Using CLAM 1.0`
+` * Change 1`
+` * Change 2`
+`00-00-2006 NetworkEditor 0.99.99`
+`'The past released release'`
+`* Revision 08888`
+`* Using CLAM 0.99.99`
+`* Change 3`
+
+-   This way the long version will be 1.0\~svn09999
+-   **The svn number is the revision of the last CHANGE not the overall repository revision, so modify the CHANGES files to get it updated.**
+
+About to release
+----------------
+
+-   Remove the SVN addition to the release id
+-   Put a '\$REVISION\$' to as a change entry
+
+`00-00-2007 CLAM 1.0`
+`'The release i want to release'`
+` * $Revision$`
+` * Change 1`
+` * Change 2`
+
+-   After commit and update it will look like this
+
+`00-00-2007 CLAM 1.0`
+`'The release i want to release'`
+` * $Revision: 10000 $`
+` * Change 1`
+` * Change 2`
+
+-   This will generate a short and log version '1.0'
+-   Generate all the packaging
+-   **If you do changes while packaging do also a commit on CHANGES to update the revision**
+
+After release
+-------------
+
+-   Remove the \$ signs around the Revision so the revision gets freeze
+-   Add the new version ending with the 'SVN \$Revision\$'
+
+`??-??-2007 CLAM 1.1 SVN $Revision$`
+`'The target release after this release'`
+`00-00-2007 CLAM 1.0`
+`'The release i want to release'`
+` * Revision: 10000`
+` * Change 1`
+` * Change 2`

@@ -1,0 +1,307 @@
+General
+-------
+
+### What does CLAM stand for?
+
+CLAM is the acronym for *C++ Library for Audio and Music* and it is also a pun on the catalan word 'clam' which means *clamor*, a [continuous sound](http://clam-project.org/sounds/clam.wav) produced by a large number of people as to show approval or disapproval of a given event.
+
+### What is CLAM?
+
+CLAM is a software framework for research and application development on the audio and music domain. It provides means to perform complex audio signal analysis, transformations and synthesis. It also provides a uniform interface to common tasks on audio applications such as accessing audio devices and audio files, thread safe communication with the user interface and DSP algorithms recombination and scaling.
+
+You can use CLAM as a library to program your applications in C++ but you can also use [graphical tools](Network Editor tutorial "wikilink") to build full applications without coding.
+
+### Is CLAM a "library" or a "framework"?
+
+Despite the name, CLAM is not just a *library* but a *software framework* as defined by Ralph E. Johnson. CLAM does not only offer a set of functionalities but also provides a conceptual metamodel or way of doing things. Read [[http://www.iua.upf.es/\~xamat/Thesis|X](http://www.iua.upf.es/~xamat/Thesis|X). Amatriain's PhD thesis] if you are interested on this theoretical discussion.
+
+### Which example applications are distributed with CLAM?
+
+Several standalone applications are distributed with CLAM which are usefull by themselves.
+
+-   [Network Editor](Network Editor tutorial "wikilink"): a patching tool to design audio processing networks. Several interesting processing network examples are also included.
+-   [Prototyper](Network_Editor_tutorial#Building_Prototyper_interfaces "wikilink"): a tool to interactively run audio processing networks with appealing user interfaces
+-   OfflinePlayer: a tool to run non interactive audio processing networks
+-   [Annotator](Music_Annotator "wikilink"): Launches, combines, displays and edits the results of [music information retrieval](http://en.wikipedia.org/wiki/Music_information_retrieval) algorithms and services.
+-   [Chordata](Chordata tutorial "wikilink"): A tool to discover the chords of your audio files.
+-   Voice2Midi: A tool to convert humming into MIDI files.
+-   [SMSTools](SMSTools_tutorial "wikilink"): An audio authoring tool to apply [Spectral Modeling Synthesis](http://en.wikipedia.org/wiki/Spectral_Modeling_Synthesis) based algorithms.
+
+### Which are the origins of the project?
+
+The project originated at 2000, as an internal project within the [Music Technology Group](http://mtg.upf.edu/) at the [Universitat Pompeu Fabra](http://www.upf.edu) with the aim of to be a lingua franca for several projects that were taking place in the group. The goal was that any algorithm developed within the group could be easily reused by anyone else, and that common efforts such as audio hardware, MIDI, GUI, and crossplatform development were addressed just once.
+
+### Which is the license for CLAM? Is it free? May I use it in a non-free project?
+
+CLAM became [free software](http://en.wikipedia.org/wiki/Free_software) during the involvement of the MTG in the european project [Agnula](http://www.agnula.info/) (IST-2001-34879).
+
+It is licensed under [GNU General Public License version 2](http://www.gnu.org/licenses/gpl2.html) or later. That barely means that you can use, modify, and redistribute it freely as long as redistribution is done in the same terms. Read the license terms for more details.
+
+If you need to use it in a way that does not fullfull the GNU GPL license, just get in contact with us. We could get into an agreement by using a [dual license scheme](http://en.wikipedia.org/wiki/Dual_license).
+
+### Will CLAM suit my needs?
+
+This is of course the million dollar question. It is difficult to be sure whether CLAM can suit your needs until you really try it out. Nevertheless, here are a few hints that may help you decide:
+
+-   CLAM can be used for audio analysis and synthesis It is specially well-suited for spectral analysis/synthesis
+-   It includes features that make it suitable for Music Information Retrieval
+-   It can be used to build real-time, efficient applications
+-   In any case you should keep on reading the rest of this FAQ as well as any other CLAM documentation that can help you out in the decision.
+
+### Why does CLAM depend on so many 3rd party libraries?
+
+CLAM aims at offering all necessary services for building an audio and music application. This implies many different tools and possible requirements. Some of those tools already exist and, it makes no sense implementing them from scratch. So, CLAM added value is offering them all under an uniform interface that eases their combination.
+
+CLAM would be unthinkable without the great work of all those brave open source developers! We are standing on giant shoulders.
+
+### Who has contributed to CLAM?
+
+CLAM has been enpowered with the work of dozens of contributors. For sure we are missing a lot of them so, if you are one, just reivindicate your authorship. [Ohloh page for CLAM](https://www.ohloh.net/p/clam/contributors) lists most CLAM contributors, although several distorting factors must be considered to those stats:
+
+-   VCS history prior to 2002 was lost in a repository switch
+-   Most of the development took place in experimental branches not considered by ohloh
+-   A lot of commits are just imports from other MTG projects, so the commiter is not the author, just the importer
+-   The same happens with new contributors before becoming commiters, patches are commited by someone else.
+
+CLAM project was started by **Xavier Amatriain** and **Maarten de Boer** in 2000. Soon **Pau Arumí**, **David García**, **Enrique Robledo** and **Miguel Ramírez** joined the team. Xavier Amatriain, Pau Arumí and David García are still active contributors nowadays.
+
+UPF students doing their final career project and other MTG staff have joined CLAM team, including:
+
+-   Xavier Rubio
+-   Xavier Oliver
+-   Sandra Gilabert
+-   Albert Mora
+-   Nir Lipovetzky
+-   Ferran Orriols
+-   Andreas Calvo
+-   Ismael Mosquera
+-   Jordi Massaguer
+-   Sam Roig
+-   Merlin Blaauw
+-   Eduard Aylon
+
+CLAM also contains a lot of code contributed by MTG/UPF members not directly working for the project including but not limiting to Emilia Gomez, Fabien Gouyon, Jordi Bonada, Alex Loscos, Oscar Mayor, Joachim Haas, Lars Fabig, Bee Suan, Marcos Alonso, Günter Geiger, Paul Brossier...
+
+After ending the project funding from the MTG, Google Summer of Code program also brought some brilliant students worldwide to the project:
+
+-   2007
+    -   Hernan Ordiales
+    -   Andreas Calvo
+    -   Gregory Ryan Kellum
+    -   Bennet Kolasinski
+    -   Roman Goj
+    -   Ebrahim Kazemzadeh
+-   2008
+    -   Natanael Olaiz
+    -   Wang Jun
+    -   Francisco Tufro
+    -   Pawel Bartkiewicz
+    -   Yushen Han
+
+Most of them have become steady commiters after their GSoC project ended.
+
+CLAM also includes third party code not developed originally but included in CLAM on behalf of their authors: Antonio Pertusa (Onset extractor), Chris Harte (Chord extraction algorithm), Kate Noland (Chord extraction algorithm), ...
+
+### Which other projects are using CLAM?
+
+For third party (non-UPF) scientific citations take a look at [CLAM citations](CLAM citations "wikilink").
+
+For third party (non-UPF) software projects take a look at [3rd Party Projects Using CLAM](3rd Party Projects Using CLAM "wikilink").
+
+### Are there any similar frameworks?
+
+There are a few frameworks that overlap with CLAM's goals.
+
+If you are only interested in audio analysis and feature extraction you should check:
+
+-   [Marsyas](http://marsyas.sourceforge.net/)
+-   [Maaate](http://cmis.csiro.au/maaate)
+
+If you are interested only in audio synthesis you should check:
+
+-   [STK](http://ccrma.stanford.edu/software/stk)
+-   [Open Sound World](http://www.cnmat.berkeley.edu/OSW)
+-   [Aura](http://www-2.cs.cmu.edu/aura)
+
+And if you are looking for a framework with both analysis and synthesis capabilities check:
+
+-   [CSL](http://www.create.ucsb.edu/CSL)
+-   [SndObj](http://www.may.ie/academic/music/musictec/SndObj/main.html)
+
+In any case, CLAM presents both conceptual and practical differences with all of them. If you are interested in a thorough presentation of CLAM alternatives and how they compare to our framework please refer to X. Amatriain's PhD thesis.
+
+### Does CLAM work in my platform?
+
+Binaries are [officially released](http://clam-project.org/download.html) for **Linux** (**Ubuntu** and **Debian** flavors), **MacOs** and **Windows**. MacOsX and Windows builds are not as tested as Linux based ones so expect (and please, report) problems.
+
+Besides official releases, several contributors build packages for other platforms such as SuSe, Fedora... If you port CLAM to your platform let us know and we'll place a link at the download page.
+
+CLAM code should be portable to any platform having a modern port of GCC and having most of the build dependencies available. We would like to support as many platform and platform variants as possible, but, as we cannot afford a box for each one, you can help us to support yours by providing a [testfarm](http://www.iua.upf.edu/~parumi/testfarm/) remote client for CLAM in your computer. Ask for help on the developers mailing list for help on how to setup one.
+
+### Which version scheme uses CLAM?
+
+CLAM uses a three numbers version scheme: M.m.r
+
+-   M: major release which implies a full rework of the platform
+-   m: minor release that implies an new features and ABI change
+-   r: revision which implies a bug fix or a change that doesn't imply changes
+
+Libraries use Mn as soname. So 1.3.2 version will append '13' to the soname.
+
+Subversion snapshots append a \~svnNNNNN sufix to the target release version. That means that 1.3.2\~svn23423 is an svn snapshot toward the 1.3.2 release and thus 1.3.2 is newer than 1.3.2\~svn23423. This is compliant with debian versioning scripts.
+
+Documentation
+-------------
+
+### I want to start using CLAM, how do I approach CLAM as user or as developer?
+
+The guide "[Approaching CLAM](Approaching CLAM "wikilink")" will advice you the proper steps to take depending on your goals and level of expertise.
+
+### I want to get involved with CLAM project, which steps should I take?
+
+We often advice eventual contributors to follow [those steps](Devel#Getting_involved "wikilink")
+
+### I want to upgrade my code to a new CLAM version, what should I change?
+
+The [Version Migration Guide](Version Migration Guide "wikilink") summarizes all the sensible changes that you will require to upgrade your code from one CLAM version to the next one.
+
+Features
+--------
+
+### Why CLAM is so flexible and powerfull?
+
+![A CLAM processing object](DetailedProcessingObject.png "A CLAM processing object")
+
+CLAM splits the processing in **modules** that you can recombine at will as a network. Modules can send each other **data of any C++ type**, so you can provide higher level abstractions than just audio signals and value controls. You can also control the data flow by using different **communication patterns**, either syncronous (ports) or asyncronous (control). Moreover, a network can be executed within different **environment backends** to get a real-time application (JACK, PortAudio...), an audio plugin (VST, LADSPA...), an offline processing application... You have tools to **graphically prototyping** your software, and still is very easy to integrate it in an pure code project. There is a huge library of existing processing modules. And last but not least, processing modules, user interface elements, and backends can be **extended via plugins**.
+
+### Is CLAM ready for real-time?
+
+Yes, it is. Low latency processing is one of the main goals of the framework. Most of the provided examples are real-time processing.
+
+Note that not all processings modules are ready for working in real-time, but most of them do.
+
+### Which kinds of data flow are supported?
+
+Two kinds flows are implemented in CLAM networks: port data flow and control data flow. Port data flow queues data tokens on the input ports until the required amount is available, and then an algorithm step is exectued. Port data is queued until consumed and all ports required for executing the algorithm step are consumed at once.
+
+On the other hand, in control data flow, receiver module gets executed as soon as the sender module sends the data. Each control in a module has its own callback that often just copies the last sent value. No queuing is done and any ratio of data tokens are accepted.
+
+### Which kind of data can be manipulated by CLAM?
+
+CLAM ports and control are strongly typed that means that you can connect two connectors just if they share the data type to be communicated. Virtually any C++ type can be comunicated by a CLAM port or control. Even though, some consideration must be taken for such data types.
+
+-   Copy should not generate aliasing (full copy or copy on change).
+-   For controls, copy should be not expensive and real-time safe as they come in bursts.
+
+### Which audio formats are supported?
+
+CLAM can read and write [all the formats that libsndfile is able to](http://www.mega-nerd.com/libsndfile/#Features), plus mp3 (via libmad) and ogg/vorbis files ([via xiph liboggvorbis libraries](http://xiph.org/vorbis/)).
+
+Due to patents restrictions, MP3 support is read only.
+
+Some modules encapsulate access to such files in a real-time safe way (independent thread with a ring buffer).
+
+### Which audio backends are supported?
+
+CLAM implements the following audio backends:
+
+-   JACK
+-   Windows Multimedia by means of PortAudio
+-   ASIO by means of PortAudio
+-   DirectSound (tm) by means of PortAudio
+-   ALSA by means of PortAudio
+
+### Which plugins systems are supported as a host?
+
+CLAM is able to host plugins for the following standards:
+
+-   LADSPA
+-   CLAM native
+
+CLAM native refers plugins used to extend the module repository available in CLAM, not limited by the plugin standard.
+
+### Which plugins systems can be generated?
+
+CLAM is able to generate plugins for the following standards:
+
+-   CLAM native
+-   LADSPA
+-   VST (experimental)
+-   LV2 (experimental)
+-   AudioUnits (experimental)
+
+CLAM native refers plugins used to extend the module repository available in CLAM, not limited by the plugin standard.
+
+### Which control standards does CLAM implement?
+
+CLAM can receive control events using:
+
+-   Open Sound Control (OSC): processings in the 'osc' plugin by means of the liblo library.
+-   MIDI devices: Using RTMIDI
+
+### Which algorithms does the processing repository include?
+
+CLAM comes with a huge set of processing modules we can group them in the following groups:
+
+TODO: This list is far from complete!
+
+#### Spectral processing
+
+Those modules deal with tokens being elements of a [short-time fourier transforms](http://en.wikipedia.org/wiki/Short-time_Fourier_transform). That means that each token is an spectrum containing the fourier transform of consecutive and maybe overlaped windowed chunks of audio. Such representation enables frequency domain alteration and you can resynthesize to a regular time domain signal.
+
+#### Spectral Modeling (SMS)
+
+[Spectral Modeling Synthesis](http://en.wikipedia.org/wiki/Spectral_Modeling_Synthesis) is a set of technologies that consider sound a two fold of harmonic content represented by a set of spectral peaks, and noisy content, modeled by an spectral envelope by substracting the harmonic content to the original signal.
+
+Best target for SMS algorithms are voice and monophonic instruments. Being able to modify both representation independently leads to a number of interesting effects that are not achievable by simple spectral processing, including pitch shifting, time stretch, voice gender change, morphing, sampler interpolation...
+
+#### Tonal analysis (SMS and QMUL)
+
+Tonal analysis consists in getting information of which set of notes are playing in a polyphonic music excerpt. When considering a full song we are looking for the 'key'. When considering short time periods of the song we are looking for the 'chord'. CLAM provides SMS based tonal analysis from the MTG and 'constant Q' based approach from QMUL.
+
+#### Rhythm analysis and manipulation
+
+CLAM provides tools to extract the tick, the meter, the tempo and the swing ratio. By combining tick tracking and SMS based time stretching we can speed up and speed down a song and even modify the swing.
+
+#### MPEG7 Descriptors
+
+CLAM supports extraction of MPEG7 compliant low level audio descriptors.
+
+#### LPC, MFCC
+
+#### Low Latency Convolution
+
+#### Spatial (3D) Sound
+
+CLAM spacialization plugin provides algorithms to render 3D sound in several
+
+-   3D scenario rendering based on point to point impulse response databases and realtime raytracing simulation
+-   Mono to ambisonics encoding
+-   Ambisonics to periphonic speaker array decoding
+-   Ambisonics to binaural decoding (HRTF simulation of array decoding)
+-   Mono to binaural decoding (HRTF)
+-   Mono to speaker array (VBAP-3D)
+
+#### Voice formant tracking
+
+### How does CLAM work with other programming languages?
+
+Despite being a C++ library, CLAM provides ways to deal with other languages:
+
+-   Faust: CLAM provides facilities to use and develop FAUST programs as LADSPA plugins.
+-   Python support is available in two flavors:
+    -   pyclam: Python bindings to the whole API is available at the repository as PyClam
+    -   ipyclam: More pythonic bindings for just the network manipulation API, with emphasis in interactivity
+
+### May I develop a CLAM based program based on CLAM and GTK instead of QT?
+
+Of course you could, as the core and the processing part have no dependencies on QT and the boundaries are well defined. You just have to implement such boundaries and the display and control widgets you need.
+
+Compilation
+-----------
+
+### Why do I get an 'Undefined Interface' error when compiling the NetworkEditor
+
+This error is normally caused because the moc command does not receive the proper '-I' option pointing to the path of Qt4's QtDesigner includes.
+
+Often this error is due to a missconfiguration of the QTDIR environment path. But this problem is solved in a distinct way depending on the platform. Check the INSTALL file and the user contributed platform specific installation guides on the wiki.

@@ -1,0 +1,192 @@
+Introduction
+------------
+
+**Python** is a popular language. Flexible, expressive and fast for development. But by its nature it is not appropiate for doing real-time processing. Eventhough, you can use real-time ready modules in fast and real-time safe C++ and combine them using Python expressiveness.
+
+**ipyclam** is a python module that wraps CLAM by providing the interface to do the same actions you could do with the NetworkEditor by connecting several CLAM modules playing them. It also provides means for binding Qt interfaces, like you would do with the Prototyper, but with the addition of being able to build and add python logic by means of PyQt or PySide. So ipyclam enpowers the kind of prototypes you could build with NetworEditor/Prototyper.
+
+To get a feeling of the kind of things you can do with ipyclam lets see some examples. To play a file in a loop with ipyclam:
+
+`import ipyclam`
+`n=ipyclam.Network()`
+`n.file = n.types.MonoAudioFileReader`
+`n.out = n.types.AudioSink`
+`n.file.Loop = 1`
+`n.file.SourceFile = "jaume-voice.mp3"`
+`n.file > n.out`
+`n.backend="PortAudio"`
+`n.play()`
+
+And if you want to bind QT interface to display an oscilloscope:
+
+`from PyQt4 import QtCore, QtGui`
+`import ipyclam.ui.PyQt4 as ui`
+`a=QtGui.QApplication([])`
+`w = ui.createWidget("Oscilloscope")`
+`w.show()`
+`w.setProperty("clamOutPort", "file.Samples Read")`
+`n.stop()`
+`n.bindUi(w)`
+`n.play()`
+`a.exec_()`
+
+The following sections describe in detail ipyclam API. The API is ruled by the following principle: to provide the most convinient API of doing things, even if it is not general enough to express every case, but then, provide a less convenient but more general API that can be used for those specific cases.
+
+So there are several ways of doing things, like accessing connectors, connecting or configuring processings. The following sections provide a summary of the API for several operations.
+
+Creating processing modules
+---------------------------
+
+Given a network:
+
+`n = ipyclam.Network()`
+
+you can create the network by assigning a property to a string:
+
+`n.myprocessing = "AudioSink"`
+
+In this case *myprocessing* is the name of the created module and 'AudioSink' the type.
+
+You can see the xml version of this module:
+
+`n.xml()`
+
+Or you can dump python code to build it again:
+
+`n.code()`
+
+What if I want to name the processing with spaces such 'My Processing 2'? In this case we can use the subscript interface, which is more verbose but can deal with spaces.
+
+`n['My Processing 2'] = "AudioSink"`
+
+Subscript interface is also the solution when you deal with attributes and methods that are already in the network such as 'xml' and 'code'. Use dir(n) to see all of them.
+
+These principle extends to other levels.
+
+-   You can explore a processing for ports, cotrols and configuration parameters.
+-   You can access them as attributes or if there is some collision or the name is not a valid identifier, you can use the subscript interface.
+
+Besides a string with the type name, you can also use the 'types' network attribute which contains all the types as attributes:
+
+`n.myprocessin3 = n.types.AudioSink`
+
+The 'types' attribute is convenient when you are in an interactive python interpret such IPython or BPython, because you can use tab completion to see the available types.
+
+`n.types.[tab]`
+
+But there is more that tab completion offers you.
+
+Interactive network exploration
+-------------------------------
+
+If you are using an interactive python interpret such as ipython or bpython, you can explore the network with the tab key.
+
+`n.[tab]`
+
+And, besides common attributes and methods, you will the processing you already added to the network as attribute.
+
+If you write or choose the processing:
+
+`n.myprocessing.[tab]`
+
+Beside processing module methods and attributes, you will see in and out ports and controls and configuration parameters.
+
+They could be named the same so to avoid collisions, several attributes are provided to isolate them:
+
+`n.myprocessing.config.[tab]`
+`n.myprocessing.inports.[tab]`
+`n.myprocessing.outports.[tab]`
+`n.myprocessing.incontrols.[tab]`
+`n.myprocessing.outcontrols.[tab]`
+
+Configuring processings
+-----------------------
+
+Processing configuration can be set by setting the config parameter attribute of a processing.
+
+`n.myprocessing.NSinks = 3`
+`n.myprocessing['NSinks'] = 3 # equivalent with subscript api`
+`n.myprocessing.inports.[tab]`
+
+And you will see 3 inputs. Those inputs are named '1','2' and '3', so they are invalid identifiers. Eventhough the interactive python offers them as completion for attribute you should use them via subscript.
+
+ipyclam reconfigures the whole processing for each attribute setting. This can be inconvenient if you have several attributes to set and configuration is expensive. In this cases we can hold and latter apply the config attribute to configure it just once.
+
+`with n.myprocessing.config as c`
+`  c.Parameter1 = 3`
+`  c.Parameter2 = "Value"`
+
+Parameters which are optional are set to None when they are not present.
+
+Connecting
+----------
+
+Inequality operators \< and \> are used as connector operator because its expressiveness. You can also use the 'connect' method available in processings and connectors.
+
+If you connect two processings without specifying port or control names, ipyclam will connect ports and control one to one.
+
+`# Three ways of saying the same`
+`n.source.connect(n.sink)`
+`n.source > n.sink`
+`n.sink < n.source`
+
+You can constrain that by specifying a kind of connector
+
+`n.source > n.sink.incontrols`
+
+Connecting a port to a processing, will broadcast one to many
+
+`n.source['1'] > n.sink`
+
+And of course you can specify both ends:
+
+`n.source['1'] > n.sink['3']`
+
+You can also use slices. The following example will connect even ports to ports starting at the second one:
+
+`n.source.outports[::2] > n.sink.inports[1:]`
+
+Setting the backend and playing
+-------------------------------
+
+Changing the audio backend is that easy as assigning the special 'backend' attribute:
+
+`net.backend = "PortAudio"`
+
+or
+
+`net.backend = "JACK"`
+
+Binding a Qt interface
+----------------------
+
+You can also load an UI file and bind it simultaneously..
+
+`import ipyclam.ui.PyQt4 as ui`
+`w2 = ui.loadUi("myui.ui")`
+`w2.show()`
+`n.stop()`
+`n.bindUi(w2)`
+`n.play()`
+
+Adding a tonal analysis and some related views
+
+`n.stop()`
+`n.tonal = n.types.TonalAnalysis`
+`n.file > n.tonal`
+`w3 = ui.createWidget("CLAM::VM::KeySpace")`
+`w3.setProperty("clamOutPort", "tonal.Chord Correlation")`
+`n.bindUi(w3)`
+`w3.show()`
+`n.play()`
+
+You can use PySide instead of PyQt4 by importing ipyclam.ui.PySide instead. The rest of the code can be left untouched.
+
+Controling JACK
+---------------
+
+You can use ipyclam to control JACK connections with other apps.
+
+`jack = ipyclam.Network(ipyclam.Jack_Engine())`
+
+This creates a object with the same API than the one explained here. So, you can do connections and explore it as it was a CLAM network. Of course, limitations apply. You cannot create, remove or rename processing units, and no configuration and no controls are available.

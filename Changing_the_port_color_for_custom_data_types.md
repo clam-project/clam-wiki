@@ -1,0 +1,30 @@
+Which token types does CLAM allow
+---------------------------------
+
+Virtually any type of token can be communicated through processing ports, provided that they are copyable and default constructable and they behave in a sane way.
+
+Every port is bound to a given token type and can be connected just to complementary ports of the same token type.
+
+Registering a color for a token type
+------------------------------------
+
+Since version 1.2, CLAM also provides a way to color the ports on the NetworkEditor depending on the type. Registering token type color is not necessary to use such a token type on CLAM neither on the NetworkEditor. If you don't, you'll just get the default color for ports. But if you want, you can specify such color by defining the following object on any cxx file linked with CLAM libs, a plugins or any application:
+
+`#include `<CLAM/ProcessingDataPlugin.hxx>
+`static CLAM::ProcessingDataPlugin::Registrator`<MyDataType>` registrator("fucsia");`
+
+Being fucsia the color to use for the ports that communicate MyDataType.
+
+The color is any string representing a color specified on the [svg color names](http://www.december.com/html/spec/colorsvg.html) or colors in the form "\#RGB", "\#RRGGBB", "\#RRRGGGBBB".
+
+`static CLAM::ProcessingDataPlugin::Registrator`<MyDataType>` registrator("#FF0000"); // Pure red`
+
+Changing the display name for the type
+--------------------------------------
+
+By default, CLAM shows the C++ demangled type for example, to describe on the port tooltip. This is sane for most cases but for very single cases this is not appropiate. For example, full name STL structures such as std::vector and std::string include allocator declarations and other default template parameters that just represents noise to the user handling such type names.
+
+A second parameter can be used to manually indicate the type. For example:
+
+`static CLAM::ProcessingDataPlugin::Registrator`<std::vector<Spectrum>` >`
+`   registrator("fucsia", "std::vector`<Spectrums>`");`

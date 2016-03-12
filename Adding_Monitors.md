@@ -1,0 +1,80 @@
+This document describes the current steps to have a new graphical monitor working. The number of steps is large and we are in the process of reducing it so this is subject to change.
+
+Getting the monitor working on the NetworkEditor
+------------------------------------------------
+
+-   Create a Monitor class (MyViewMonitor) with double inheritance from:
+    -   PortMonitor templated by the port data (MyToken):
+        -   provides input ports of the proper class, and
+        -   offers thread safe access to the data from the GUI thread.
+    -   XXXXDataSource:
+        -   abstract interface to be used by the visualization to get data and metadata (units, sizes, limits...)
+            -   one must reimplement such interface to map MyToken into a DSP agnostic type
+            -   reusing an existing data source will increase the usability of the port
+            -   some interfaces examples: sampled functions (float arrays), point defined envelopes, list of placed values, segmentations...
+    -   See examples at NetworkEditor/src/monitors
+    -   The implementation should implement XXXXDataSource interface to map DSP data to visualization, and metadata (units, sizes, limits...)
+    -   Such implementation should access the data using the PortMonitor thread safe interface (freeze and release).
+    -   Be carefull with the freeze and release policy:
+        -   Every call do not get data more than once by keep references or copying it
+        -   Don't forget to release data before exiting the function.
+        -   Don't release if you didn't get it.
+        -   Do not use reference after release, copy data to thread if you want to.
+
+-   Create a view widget (MyView) which uses the XXXXDataSource interface
+    -   See examples at NetworkEditor/src/monitors
+    -   The widget should freeze the Monitor and use/copy the data
+    -   Use QDESIGNER\_WIDGET\_EXPORT macro after 'class' keyword:
+
+`      #include `<QtDesigner/QDesignerExportWidget>
+`      class QDESIGNER_WIDGET_EXPORT Oscilloscope : public QWidget`
+
+-   -   Don't forget the Q\_OBJECT macro for the widget.
+    -   Define as Q\_PROPERTY the editable attributes from designer
+
+`      `[`http://doc.trolltech.com/latest/properties.html`](http://doc.trolltech.com/latest/properties.html)
+
+-   -   If you use the QGLWidget remember to undefine GetClassName for Windows(tm) glory
+    -   Define a constructor passing a datasource as parameter default to null pointer
+    -   When null pointer it's being called by Designer so make it point to an static dummy data source with dummy data which is useful for dummy display on designer.
+
+-   Register in the factory the monitor with the name of the view (Why?)
+    -   The GetClassName for the PortMonitor should match the view name too. (Why?)
+-   Add the PortMonitor to the ProcessingTree (indeed the view name).
+
+-   Add an entry on the embededWidgetFor() function at ProcessingBox.cxx which on the given name creates the view and relates to the monitor.
+
+`   if (className=="MyView")`
+`       return new MyView(canvas, dynamic_cast`<MyViewMonitor*>`(processing));`
+
+Getting the Monitor working on Qt Designer
+------------------------------------------
+
+Once you have it working on NetworkEditor let's plugin:
+
+-   Create a plugin file such the ones in src/clamWidgetsPlugins
+    -   Copy an example in src/clamWidgetsPlugins and adapt the class names to the one of the Widget
+    -   If the view has a namespace you should use it as part of the name (why?)
+    -   Don't forget to change the example name on the doXml and the icon which are lowercase
+    -   Add an icon on the images.qrc file and refer it on the icon() method and change it
+
+-   Include the plugin on the aggregated plugin at CLAMWidgets.cxx.
+
+-   Add the widget source into the plugin sources on the SConstruct
+
+`    pluginsources.append(os.path.join('src','chordWidgets','MyView.cxx'))`
+
+Getting the Monitor working on Prototyper
+-----------------------------------------
+
+-   On PrototypeLoader::ConnectWithNetwork() add a line with:
+
+`   ConnectWidgetsWithPorts`<CLAM::VM::MyView,MyViewMonitor>
+`       ("OutPort__.*", "CLAM::VM::MyView");`
+
+-   And of course the needed includes
+
+How it is gonna change?
+-----------------------
+
+See the development notes on the process rewrite: [Devel/Adding Monitors Simplification](Devel/Adding Monitors Simplification "wikilink")

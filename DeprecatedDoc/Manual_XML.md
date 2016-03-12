@@ -1,0 +1,307 @@
+[Back to Index](DeprecatedDoc/CLAMUserManual "wikilink")
+
+Scope
+=====
+
+This section is addresed to anyone who wants to get an already implemented CLAM object and passivate it as XML or to activate such a CLAM object from a previous passivated XML document.
+
+If you want to provide XML support to your own classes or you want to customize the default XML output that any DynamicType has, you may also refer to the other XML related sections on the developer's part of this document.
+
+Brief introduction to XML
+=========================
+
+XML is a text based format to represent hierarchical data. XML uses named tags enclosed between angle brackets to mark the begin and the end of the hierarchical organizators, the XML elements. Elements contains other elements, attributes and plain content. Let's see a sample XML document:
+
+<?xml version='1.0' encoding='ISO-8859-15' ?> <mainElement>
+
+`       `<subelement1 attribute1="atribute Content">
+`               plain content here`
+`               `<subsubelement>`plain content`</subsubelement>
+`               plain content here`
+`       `</subelement1>
+`       `<subelement2 attribute2="atribute Content">
+`               `<subsubelement>`plain content`</subsubelement>
+`               `<subsubelement>`plain content`</subsubelement>
+`               `<subsubelement>`plain content`</subsubelement>
+`       `</subelement2>
+`       `<emptyelement attribute="foo" />
+
+</mainElement>
+
+Both attributes and plain content are simple text data. The main different between them is that an attribute is named and plain content is not. Elements also have a name. Names for attributes must be unique inside its hierarchic context, though this restriction doesn't apply to elements' name.
+
+The power of XML is that you can adapt your own tags (elements) and tag attributes (attributes) in order to describe your own data.
+
+For more information on XML, visit W3 Consortium XML page. There is also a MTG report about XML related standards and API's.
+
+Storing components
+==================
+
+A very fast example on how to store a Component (that means DynamicTypes, ProcessingData, ProcessingConfig... and any other instance of any Component subclass) would be:
+
+MyComponent comp;
+
+// Here you modify your component // ...
+
+XMLStorage::Dump(comp, "MyComponent", std::cout);
+
+The first parameter of the Dump method is the object to be stored, the second one the name of the XML document root, and the last one is the std::ostream that you want the XML be written to. You can use std::cout or any other std::ostream like std::ofstream, std::stringstream or any other you specialize.
+
+`std::ofstream out("mycomponent.xml");`
+`XMLStorage::Dump(comp, "MyComponent", out);`
+
+For short, instead of an open stream you may specify the file name and will also work:
+
+`XMLStorage::Dump(comp, "MyComponent", "mycomponent.xml");`
+
+(TODO: Update this piece documentation to the last changes) By default, XMLStorages uses no indentation. That means that all any output is done in one single line without tabulators. If you want to pretty format it you should use the UseIndentation method like this:
+
+`storage.UseIndentation(true);`
+
+Loading components
+==================
+
+The inverse way is nearly the same.
+
+`// An unmodified default constructed object!!!`
+`MyComponent comp;`
+
+`XMLStorage::Restore(comp, "mycomponent.xml");`
+`// or alternatively`
+`std::ofstream in("mycomponent.xml");`
+`XMLStorage::Restore(comp, in);`
+
+Attention: Loading methods suppose that the objects are default constructed and unmodified. If not, weird things can happen.
+
+Detailed step interface
+=======================
+
+The XMLStorage static methods used above provide shortcuts for the widely used funcionalities. But you may want to do something special like:
+
+`   * storing optimally the same object it onto two different streams,`
+`   * updating an existing xml by adding some objects to it,`
+`   * extracting an object from a part of a document,`
+`   * writing a document fragment`
+`   * ...`
+
+Static methods are not enough, but you still can instantiate an XMLStorage object and use the non-static methods with it. Non-static methods implements smaller steps than static methods do. and you can combine them in order to obtain some concrete behaviour.
+
+The non-static methods that XMLStorage provides are:
+
+`   * Create: Creates an Empty DOM document.`
+`   * Read: Creates a DOM document from the XML that comps from an istream.`
+`   * WriteDocument: Writes on a stream the whole document`
+`   * Select: Changes the selected node (by default the root is selected)`
+`   * WriteSelection: Writes on a stream the selected target`
+`   * DumpObject: Dumps the CLAM object on the selected DOM node`
+`   * RestoreObject: Restores the CLAM object from the selected DOM node`
+
+For example, if you want to update an xml document by adding an object on XPath /Doc/element/subElement, you can use the sequence Read-Select-DumpObject-WriteDocument.
+
+Check the Doxygen documentation for more information on the usage of those methods.
+
+Components and XML
+==================
+
+Any Component must implement two virtual methods related to storage stuff:
+
+`void MyComponent::StoreOn(Storage & s) const;`
+`void MyComponent::LoadFrom(Storage & s);`
+
+Those methods are suposed to store and load onto/from the storage all the inner members by the component.
+
+When is this StoreOn/LoadFrom method used? When a component is stored/loaded onto/from an storage, the storage detects that this object is also a Component and then calls StoreOn/LoadFrom method in order to allow the component to also store its childs.
+
+Imagine the following scenario:
+
+`   * o1, Component containing o2, o3 and o4`
+`   * o2, Component containing o5`
+`   * o3, Component containing no subcomponent`
+`   * o4, Non Component`
+`   * o5, Non Component`
+
+The process of storing o1 on a Storage could be the one depicted here:
+
+![|300px](XML-OutputCascade.png "|300px")
+
+The load process is the same. You can check the return value for the Storage::Load function in order to know if the object was present or not in the Storage.
+
+XML Adapters
+============
+
+Both methods, Storage::Load and Storage::Store receive an MTG::Storable as parameter. Moreover, this parameter will be ignored if it doesn't fulfills the concrete Storable interface for the format of the concrete Storage interface. For the MTG::XMLStorage, the Storable interface is MTG::XMLable.
+
+![|300px](XML-StorageHierarchy.png "|300px")
+
+![|300px](XML-StorableHierarchy.png "|300px")
+
+Just in order you don't have to derive every object from that interface, a pool of adapters are available in order to make your objects fullfill the MTG::XMLable interface.
+
+In short, your implementation of StoreOn and LoadFrom methods will consist on selecting the suited XML adapter to wrap each subpart of your Component and call Storage::Store or Storage::Load having it as parameter.
+
+As a general rule, adapters take several parameters. Former parameters describe the adaptee (for example a reference to it), and later parameters adds the format dependent information.
+
+For XML, the format dependent information is the name and a boolean.
+
+`   * If the name is a NULL pointer, the adapters is considered plain text content. (Both, attributes and elements, must have names)`
+`   * If not, the boolean determines whether is an element or not (thus, it is an attribute)`
+
+Those parameters have default values to NULL and false respectively so a tipical Adapter constructor definition would be:
+
+MyAdapterClass( /\* Here goes the adaptee info \*/ , char \* name = NULL, bool beElement = false );
+
+Important: The adapter only copies the pointer to the the null-terminated string, not a copy of it. So it is dangerous to delete or modify this string until the adapter has been stored on the Storage.
+
+The whole set of adapter classes is shown in the following UML class diagram:
+
+![|300px](XML-AdaptersHierarchy.png "|300px")
+
+Simple types adapters
+---------------------
+
+We consider a simple type that one that implements the insertion operator (\<\<) and the extraction operator (\>\>) to a C++ ostream. Most basic C types define it (int, float, char, char\* ...).
+
+Also user classes and structures can define its own insertion operator. Because simple type adapters are based on such operator to extract the XML content, they are useable with a large amount of objects not being MTG specific.
+
+You also need to instantiate a CLAM::TypeInfo<T> for this type, having StoreAsLeaf typedef defined as StaticTrue. You can simply instantiate this using the macro statement:
+
+`CLAM_TYPEINFOGROUP(CLAM::BasicCTypeInfo, YourClass)`
+
+For any 'simple type' in this sense, you may adapt it with a XMLAdapter<T> where T is the type.
+
+`class MyComponent : public CLAM::Component {`
+`  int i;`
+`  double d;`
+`  char c;`
+`  std::string s;`
+`public:`
+`  MyComponent()`
+`  {`
+`     i = 3;`
+`     d = 3.5;`
+`     c = 'a';`
+`     s = "Hello";`
+`  }`
+
+`  void StoreOn(CLAM::Storage & storer) const`
+`  {`
+`     // Storing an integer as plain content`
+`     XMLAdapter`<int>` intAdapter(i);`
+`     storer.Store(intAdapter);`
+`     // Storing a double as an attribute`
+`     XMLAdapter`<double>` doubleAdapter(d, "myDouble");`
+`     storer.Store(doubleAdapter);`
+`     // Storing a char as a element`
+`     XMLAdapter`<char>` charAdapter(c, "myChar", true);`
+`     storer.Store(charAdapter);`
+`     // Storing an standard library string as an attribute`
+`     XMLAdapter`<std::string>`(s, "myString");`
+`     storer.Store(strAdapter);`
+`  }`
+`  void LoadFrom(CLAM::Storage & storer)`
+`  {`
+`     // Storing an integer as plain content`
+`     XMLAdapter`<int>` intAdapter(i);`
+`     storer.Load(intAdapter);`
+`     // Storing a double as an attribute`
+`     XMLAdapter`<double>` doubleAdapter(d, "myDouble");`
+`     storer.Load(doubleAdapter);`
+`     // Storing a char as a element`
+`     XMLAdapter`<char>` charAdapter(c, "myChar", true);`
+`     storer.Load(charAdapter);`
+`     // Storing an standard library string as an attribute`
+`     XMLAdapter`<std::string>`(s, "myString");`
+`     storer.Load(strAdapter);`
+`  }`
+`};`
+
+The result of storing this component would be:
+
+`  `<Document myChar='a' myString='Hello'>
+`     3`
+`  `<myDouble>`3.5`</myDouble>
+`  `</Document>
+
+Notes:
+
+`   * We are using std::string and not a char pointer. Char pointer is limited to having a buffer limit that can be surpassed when loading an arbitrary content. std::string is safe.`
+`   * std::string and char* extraction operator reads only a word while insertion operator writes every word it finds in the string. In order to be loaded properly, string cannot contain any space in C sense (spaces, tabs, returns...)`
+`   * If your string must contain such space caracters, you can use the CLAM::Text class instead std::string which feeds all the available content incluiding spaces.`
+
+Simple type C array adapters
+----------------------------
+
+This adapter (XMLArrayAdapter) adapts dinamically an array of simple type objects. The content is generated concatenating of the individual objects separated by an space.
+
+The XML array adapter constructor is declared this way:
+
+`XMLArrayAdapter(T* adaptee, unsigned size, char * name = NULL, bool beElement = false );`
+
+See the following example of the XMLArrayAdapter usage:
+
+`// Supose that MyComponent has as fields mSize and mBuffer`
+`void MyComponent::StoreOn(CLAM::Storage & storer) const`
+`{`
+`  XMLAdapter`<int>` sizeAdapter(mSize, "Size", false );`
+`  storer.Store(intAdapter);`
+`  XMLArrayAdapter`<double>` doubleAdapter(mBuffer, mSize, "Buffer", true);`
+`  storer.Store(doubleAdapter);`
+`}`
+
+`void MyComponent::LoadFrom(CLAM::Storage & storer) {`
+`  XMLAdapter`<int>` sizeAdapter(mSize, "Size", false );`
+`  storer.Load(intAdapter);`
+`  if (mBuffer) delete [] mBuffer;`
+`  mBuffer = new double[mSize];`
+`  XMLArrayAdapter`<double>` doubleAdapter(mBuffer, mSize, "Buffer", true);`
+`  storer.Load(doubleAdapter);`
+`}`
+
+Component adapters
+------------------
+
+Previous adapters only adapts XML data with trivial structure. In order to have a more structured data, Components are needed. Although you can adapt a Component with a XML adapter, the XMLStorage only sees that the adapter is not a Component and then it doesn't look for subitems.
+
+![|300px](XML-StoreOnNotes.png "|300px")
+
+A XMLComponentAdapter is an adapter that it is itself a Component and adapts a Component. So, when the storage confirms that the Adapter is a Component and executes the StoreOn method, the adapter forward the calling to its adaptee.
+
+XMLComponentAdapter usage is very similar to other adapters usage. You may obtain very variated behaviours:
+
+When you store a component as element, element tags with the name are written and all its subitems will be placed inside.
+
+<theParent aSibblingAsAtrib="aSibbling">
+`  `<aSibbling>`sibbling`</aSibbling>
+`  `<theComponent aSubitemAsAtrib="subitem">
+`     theContent`
+`     subitemAsPlainContent`
+`     `<aSubitemAsElem>`subitem`</aSubitemAsElem>
+`  `</theComponent>
+</theParent>
+
+When you store a component as plain content, its subitems will be placed on the same level than the component would be.
+
+<theParent aSibblingAsAtrib="aSibbling" aSubitemAsAtrib="subitem">
+`  `<aSibbling>`sibbling`</aSibbling>
+`  theContent`
+`  subitemAsPlainContent`
+`  `<aSubitemAsElem>`subitem`</aSubitemAsElem>
+</theParent>
+
+If you store a component as an XML attribute the XMLStorage will not recurse to subitems as it does with elements and plain content.
+
+<theParent aSibblingAsAtrib="aSibbling" theElement="theContent">
+`  `<aSibbling>`sibbling`</aSibbling>
+</theParent>
+
+Loading Considerations
+----------------------
+
+Keep in mind those considerations related on how to make things deserialized back to the system:
+
+`   * If you use the insertion operator provide a complementary extraction operator that would not consume extra input and test that it works with generated output.`
+`   * Extraction operator must manage stream error flags.`
+`   * Strings with spaces: Don't store strings containing spaces. When parsing them, the standard C++ library >> operator gets only the first word: Use the CLAM::Text class instead!`
+`   * CLAM::Text loading will consume all the contiguous content left, so, if you store it as a XML content, don't put XML content sibblings afterwards.`
+`   * Contiguous plain content: Several contiguous plain content nodes are separated with spaces.`
+`   * If you need them, you can give hints from the StoreOn to the LoadFrom, for example, inserting in the XML the number of elements for a variable length collection of subitems, telling which subitems are instanciated or no or not.`

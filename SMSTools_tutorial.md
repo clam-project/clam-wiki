@@ -1,0 +1,191 @@
+What you read here is a short and practical introduction to the SMSTools, for more insights and details, please read the [ detailed reference](SMSToolsDetails "wikilink").
+
+The application analyzes, transforms and synthesizes back a given sound. For doing so, it uses the Sinusoidal plus Residual model (sometimes referred to as SMS but also known as HILN in the context of MPEG4). Next picture depicts the analysis algorithm:
+
+![](smsanalysis.png "smsanalysis.png")
+
+If you need more information about the signal processing details involved in the process you may want to visit the [ SMS](http://mtg.upf.edu/technologies/sms "wikilink") webpage.
+
+An SMSTools walkthrough
+-----------------------
+
+Once you have installed the Application you may follow the steps below to both get a first impression of the application capabilities and check that everything is right:
+
+-   Once you open the application, you will encounter a blank screen just like the following one:
+
+![](SMSTools_Blank.png "SMSTools_Blank.png")
+
+-   First you need to configure the workspace. Go to File-\>Configuration-\>New. A new window like the following will pop up:
+
+![](SMSTools_NewConfiguration.png "SMSTools_NewConfiguration.png")
+
+-   There are many fields you can edit and modify (see Section on Configuration File) but for the sake of simplicity, let us just select an input sound file (.wav, .ogg) by clicking on the button next to the InputSoundFile field. For your convenience we have added some sample wave files that you will find in the working folder in Windows and in /usr/share/smstools/example-data in Linux. You can also choose any other sound file you have at hand as long as it is mono (and it should be monophonic and harmonic for best results also). Click on OK and select a place to store this new configuration when prompted. For future sessions you will be able to load the configuration instead of editing it from scratch.
+
+-   Now you will see the input audio and your interface should look like:
+
+![](SMSTools_OriginalAudio.png "SMSTools_OriginalAudio.png")
+
+-   You can zoom in and out using the lenses on both the horizontal and vertical axis and use the scroll bars to center the view.
+
+-   You can also listen to the audio by clicking the play button on the bottom of the screen.
+
+-   If the sound file name you entered is correct, we are now in the position to continue and analyze the sound. Click on SMSAnalysis-\>Analyze and wait for the progress bar to finish.
+
+-   Once the sound is analyzed, we are ready to look at the analysis results. In the View menu you will see all the available data: original sound, sinusoidal tracks, fundamental frequency, sonogram, and frame related data (sinusoidal spectrum and peaks and residual spectrum).
+
+-   Select FrameData-\>Spectrum and Peaks. Your interface should now look somehow like this:
+
+![](SMSTools_SpectrumAndPeaks.png "SMSTools_SpectrumAndPeaks.png")
+
+-   Note that when you select a frame related view, you can browse through the different frames by clicking on any of the non-frame views (e.g. the audio) or by using the frame browser at the bottom of the interface (the one showing 47 in our example).
+
+-   So in the current view you can browse through the instantaneous spectrums for each frame and see what are the detected spectral peaks (those peaks respond to the configuration parameters but we will get to that later).
+
+-   Now select View-\>Sinusoidal Tracks. You will get something like:
+
+![](SMSTools_SpectrumPeaksTracks.png "SMSTools_SpectrumPeaksTracks.png")
+
+-   The spectral Tracks are showing the temporal evolution of the different peaks as arranged in tracks. The vertical axis is frequency an the horizontal is time. The amplitude is mapped to colors. This view can give you an idea of how the sound can be recreated using additive synthesis with a bank of time-varying oscillators.
+
+-   You may want to change the color scheme to colour over white if you want to use a screenshot as a Figure for a publication. You can do that by visiting View-\>Scheme. This is how the previous screen looks with a white background:
+
+![](SMSTools_WhiteBackground.png "SMSTools_WhiteBackground.png")
+
+-   At any time you can remove particular views from the current workspace by simply selecting an active view from the View menu. This is how our example looks if we concentrate on only the Sinusoidal Tracks and we zoom in:
+
+![](SMSTools_Tracks.png "SMSTools_Tracks.png")
+
+-   Other interesting analysis views are the Fundamental Frequency view and the Sonogram (see below):
+
+![](SMSTools_FundFreq.png "SMSTools_FundFreq.png")
+
+![](SMSTools_Sonogram.png "SMSTools_Sonogram.png")
+
+-   Apart from displaying, the result of the analysis can be stored for later uses. It can be stored in xml format or sdif format. Xml is a textual tagged format that can be convenient for debugging and studying results of some analysis but it is very verbose and slow (you should expect an xml file 4 times the size of the original audio). On the other hand SDIF is a binary format that for most uses will be much more convenient. For storing the result of the analysis, choose File-\>SMS Analysis-\>Store Analysis File. The application will switch from SDIF format to XML depending on the file extension you choose.
+
+(Note that the result of an analysis can be later loaded selecting File-\>SMS Analysis-\>Load Analysis Data)
+
+-   We can now synthesize the resulting sound. Select SMSSynthesis-\>Synthesize. Now visit the View menu again and select the output component you want to display and listen to: Output Sound, Output Sinusoidal and Output Residual. Note that when you listen to any of the components the original sound is also panned on the right channel of the stereo. In the following screenshot you see all the possible sounds active.
+
+![](SMSTools_SynthesizedAudios.png "SMSTools_SynthesizedAudios.png")
+
+-   You can also store the results of the synthesis as a wave file by choosing File-\>SMS Synthesis-\>Save...
+
+Transformations
+---------------
+
+The interest of synthesizing the different components of your sound without any change is relatively low. But SMSTools has many built-in transformations for you to play with.
+
+-   To transform your sound you first have to load an xml transformation score or use the graphical transformation editor available in SMSTools. It is strongly recommended that you use the graphical interface in order to generate the transformation chain you want to apply to your sound. Click on File-\>SMS Transformation-\>New Score. A new dialog like the one depicted in the next figure will pop-up.
+
+![](SMSTools_TransformationScore.png "SMSTools_TransformationScore.png")
+
+-   On the left you have a list of available SMS transformations. By clicking on any of them you will get a brief description on the right panel. This description is just intended to give you a very concise explanation on how the transformation works. (If you should need a more detailed explanation the recommended source is the book DAFX - Digital Audio Effects, edited by Udo Zoelzer and published by Wiley and Sons Ltd.)
+
+-   Once you have decided what transformation you want to use you have click on the "Add Transformation to Score" button. The transformation will be added to the central panel, where the list of used transformations is located. Also the "Parameters" tab for that particular transformation will become visible on the right-hand panel. See the following screenshot:
+
+![](SMSTools_EditingTransformation.png "SMSTools_EditingTransformation.png")
+
+-   Although some transformations have simpler controls, most of them are configured using a break-point-function (or envelope-like) control like the one shown in the previous picture. Note that this break point funtion may represent an evolution over time or an spectral envelope, depending on the type of transformation.
+
+-   On the bpf grid, click to select and move and Insert+click to add a point. In order to delete a pre-existing point press the Delete key, wait for a cross to appear on the mouse pointer and then left-click the point to delete. You can also move points by simply selecting them with the mouse and dragging them. Note that you can select a black background if that is more convenient for you.
+
+-   Once you have edited a transformation, you can repeat the previous steps to add a new transformations. You may add as many transformations as you need (even more than one instance of the same transformation). Note though that the way the transformations are sorted affects the output (i.e. it is not the same to apply a pitch shift and then a spectral shape shift than doing it the other way around).
+
+-   When you are finished with the process click on OK, save the new transformation score for later use and click on SMSTransformation-\>Apply. Before you can actually hear the result you have to now synthesize by clicking on SMSSynthesis-\>Synthesize.
+
+-   Have fun with the transformations and the nice thing is that adding a new transformation to the CLAM framework wiht your own code is not so difficult. But we will deal with that in another tutorial.
+
+Configuration
+-------------
+
+In order to get the best results out of a particular sound you might have to load a new xml configuration or edit the default one through the graphical interface. This configuration includes all the different parameters for the analysis/synthesis process. If you load an xml file that includes non-valid parameter values (like a path to a non-existing input sound file), the analysis process will remain disabled. (Note: if you try to load an xml file that does not comply to the Configuration schema, the result is unpredictable and may even produce a program crash).
+
+Here is an example of a valid xml configuration:
+
+<SMSAnalysisSynthesisConfig>
+
+`   `<Name />
+`   `<InputSoundFile>`c:/1_brief.wav`</InputSoundFile>
+`   `<OutputSoundFile>`c:/1_out.wav`</OutputSoundFile>
+`   `<OutputAnalysisFile>`c:/analysis.sdif`</OutputAnalysisFile>
+`   `<InputAnalysisFile>`c:/analysis.xml`</InputAnalysisFile>
+`   `<AnalysisWindowSize>`513`</AnalysisWindowSize>
+`   `<AnalysisHopSize>`256`</AnalysisHopSize>
+`   `<AnalysisWindowType>`Hamming`</AnalysisWindowType>
+`   `<ResAnalysisWindowSize>`513`</ResAnalysisWindowSize>
+`   `<ResAnalysisWindowType>`BlackmanHarris92`</ResAnalysisWindowType>
+`   `<AnalysisZeroPaddingFactor>`0`</AnalysisZeroPaddingFactor>
+`   `<AnalysisPeakDetectMagThreshold>`-120`</AnalysisPeakDetectMagThreshold>
+`   `<AnalysisPeakDetectMaxFreq>`-120`</AnalysisPeakDetectMaxFreq>
+`   `<AnalysisSinTrackingFreqDeviation>`20`</AnalysisSinTrackingFreqDeviation>
+`   `<AnalysisReferenceFundFreq>`1000`</AnalysisReferenceFundFreq>
+`   `<AnalysisLowestFundFreq>`40`</AnalysisLowestFundFreq>
+`   `<AnalysisHighestFundFreq>`6000`</AnalysisHighestFundFreq>
+`   `<AnalysisMaxFundCandidates>`50`</AnalysisMaxFundCandidates>
+`   `<AnalysisHarmonic>`0`</AnalysisHarmonic>
+`   `<DoCleanTracks>`0`</DoCleanTracks>
+`   `<SynthesisFrameSize>`256`</SynthesisFrameSize>
+`   `<SynthesisWindowType>`Triangular`</SynthesisWindowType>
+`   `<SynthesisHopSize>`-1`</SynthesisHopSize>
+`   `<SynthesisZeroPaddingFactor>`0`</SynthesisZeroPaddingFactor>
+
+</SMSAnalysisSynthesisConfig>
+
+Let us comment the different parameters involved both in the xml file and in the graphical interface:
+
+### Global Parameters:
+
+<Name>: Particular name you want to give to your configuration file. Not used for anything except the xml parsing.
+
+<InputSoundFile>: path and name of the input sound file you want to analyze (depending if you are running the application in GNU/Linux or Windows that will be a unix path or an msdos path).
+
+<OutputSoundFile>: path and name of where you want to have your output synthesized sound file. The application will add a "\_sin.wav" termination to the Sinusoidal component and a "\_res.wav" termination the residual file name. In the graphical version of the program (SMSTools) though, this parameter is not used as when the output sound is to be stored, a file browser dialog pops-up.
+
+<OutputAnalysisFile>: path and name of where you want your output analysis data to be stored. The extension of the file can be .xml or .sdif. The application will choose the correct format depending on the extension you give.Not used in the GUI version as it is obtained from the dialog.
+
+<InputAnalysisFile>: path and name of where you want your input analysis data to be loaded from. Not used in the GUI version as it is obtained from the dialog.
+
+(Note to users of previous versions: Sampling Rate is no longer used as it is automatically extracted from the input sound file).
+
+### Analysis Parameters
+
+<AnalysisWindowSize>: window size in number of samples for the analysis of the sinusoidal component. (Note: if the value entered is not odd, the program will internally add +1 to it)
+
+<ResAnalysisWindowSize>: window size in number of samples for the analysis of the residual component. (Note: if the value entered is not odd, the program will internally add +1 to it)
+
+<AnalysisWindowType>: type of window used for the sinusoidal analysis. Available: Hamming, Triangular, BlackmannHarris62, BlackmannHarris70, BlackmannHarris74, BlackmannHarris92, KaisserBessel17, KaisserBessel18, KaisserBessel19, KaisserBessel20, KaisserBessel25, KaisserBessel30, KaisserBessel35.
+
+<ResAnalysisWindowType>: type of window used for the residual analysis. Available: Same as in sinusoidal. Recommended: as sinusoidal spectrum is synthesized using the transform of the BlackmannHarris 92dB, it is necessary to use that window in the analysis of the residual component in order to get good results.
+
+<AnalysisHopSize>: hop size in number of samples. It is the same both for the sinusoidal and residual component. If this parameter is set to -1 (which means default), it is taken as half the residual window size. Recommended values range from half to a quarter of the residual window size.
+
+<AnalysisZeroPaddingFactor> Zero padding factor applied to both components. 0 means that zeros will be added to the input audio frame till it reaches the next power of two, 1 means that zeros will be added to the next power of two etc...
+
+<AnalysisPeakDetectMagThreshold>: magnitude threshold in dB's in order to say that a given peak is valid or not. Recommended: depending on the window type and the main-to-secondary lobe relation and the characteristics of the input sound, a good value for this parameter may range between -80 to -150 dB.
+
+<AnalysisPeakDetectMaxFreq>: Frequency of the highest sinusoid to be tracked. This parameter can be adjusted, for example, if you are anlyzing a sound that you know only has harmonics up to a certain frequency. Recommended: It depends on the input sound but, in general, a sensible value is 8000 to 10000 Hz.
+
+<AnalysisSinTrackingFreqDeviation>: maximum deviation in hertz for a sinusoidal track.
+
+<AnalyisReferenceFundFreq>: in hertz, reference fundamental.
+
+<AnalyisLowestFundFreq>: in hertz, lowest fundamental frequency to be acknowledged.
+
+<AnalyisHighestFundFreq>: in hertz, highest fundamental frequency to be acknowledged.
+
+<AnalyisMaxFundFreqError>: maximum error in hertz for the fundamental detection algorithm.
+
+<AnalyisMaxFundCandidates>: maximum number of candidate frequencies for the fundamental detection algorithm.
+
+<AnalysisHarmonic>: if 1, harmonic analysis is performed on all segments that have a valid pitch. In those segments the track number assigned to each peak corresponds to the harmonic number. On unvoiced segments, inharmonic analysis is still performed. Set to 1 if the type of transformation you want to perform depends on this harmonic characteristic. It is highly recommended that if you use harmonic analysis you set a low threshold for AnalysisPeakDetectMagThreshold\> (i.e. -120). This means that many peaks (more than necessary) will be detected in the peak detection process but will then be removed in the harmonic tracking process.
+
+### Synthesis Parameters
+
+<SynthesisFrameSize>: in number of samples, size of the synthesis frame. If set to -1, it is computed as (ResAnalysisWindowSize-1)/2. If any other number is used you are bound to get synthesis artefacts.
+
+<SynthesisWindowType>: type of window used for the residual analysis. Available: Same as in sinusoidal.
+
+Morph Parameters
+
+<MorphSoundFile>: Optional name of the second file to do a morph on. Only necessary if you want to do a morphing transformation afterwards. Note that the file to morph will be analyzed with the same parameters as the input sound file and that it must have the same sampling rate.

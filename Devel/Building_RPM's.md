@@ -1,0 +1,74 @@
+The fast dirty way
+------------------
+
+If you just want to build the packages for your own distribution state, and you don't care about build dependencies and having an up-to-date system. Do the following:
+
+-   If fedora is not your native platform chroot to the fedora partition.
+
+`export FEDORA_ROOT=/media/sda5`
+`sudo mount /dev $FEDORA_ROOT/dev --bind`
+`sudo mount /home $FEDORA_ROOT/home --bind`
+`sudo mount /proc $FEDORA_ROOT/proc --bind`
+`sudo mount /sys $FEDORA_ROOT/sys --bind`
+`df`
+`sudo chroot $FEDORA_ROOT`
+
+-   TODO: Install dependencies
+-   install the rpmbuild package
+
+`yum install rpm-build`
+
+-   Create a \~/.rpmmacros with those lines
+
+`%packager      CLAM Team `<clam@iua.upf.edu>
+`%vendor        Universitat Pompeu Fabra`
+`%_topdir       /home/testfarm/rpmbuild`
+
+-   Create the needed folders
+
+`mkdir -p ~/rpmbuild/{BUILD,RPMS,RPMS/i386,SOURCES,SPECS,SRPMS}`
+
+-   run the clam/CLAM/scripts/doSrcTarball.sh and move the tarballs to \~/rpmbuild/SOURCES
+-   Do a symbolic link to the spec file
+
+`ln -s clam/CLAM/scons/libs/clam.spec ~/rpmbuild/SPECS`
+
+-   Execute the script
+
+`rpmbuild -ba /home/testfarm/rpmbuild/SPECS/clam-0.X.X.spec`
+
+-   -   It will build a source rpm in \~/rpmbuild/SRPMS containing the tarball and the SPEC file
+    -   It will decompress the tarball into \~/rpmbuild/BUILD
+    -   It will call the build section from \~/rpmbuild/BUILD
+    -   It will call the install section with the specified BUILDROOT /var/tmp/CLAM-buildroot
+    -   It will build the binary rpm packages into \~/rpmbuild/RPMS
+
+`exit`
+`sudo umount $FEDORA_ROOT/dev`
+`sudo umount $FEDORA_ROOT/home`
+`sudo umount $FEDORA_ROOT/proc`
+`sudo umount $FEDORA_ROOT/sys`
+
+The proper way
+--------------
+
+**In progress**
+
+Using mock to compile with up-to-date packages, different distributions and assure dependencies correctness.
+
+-   Init the chroot (you need to do this just once)
+
+`mock --debug -r fedora-6-i386-core init`
+
+-   Add additional sources to the mock configuration at /etc/mock/fedora-6-i386-core.cfg
+
+`[livna]`
+`name=Livna.org Fedora Compatible Packages (stable)`
+`baseurl=`[`http://rpm.livna.org/fedora/6/i386/`](http://rpm.livna.org/fedora/6/i386/)
+`        `[`http://livna.cat.pdx.edu/fedora/6/i386/`](http://livna.cat.pdx.edu/fedora/6/i386/)
+`enabled=1`
+`gpgcheck=0`
+
+-   Later builds, just need to update it
+
+`mock --debug -r fedora-6-i386-core chroot yum update`

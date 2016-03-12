@@ -1,0 +1,82 @@
+This page compiles a set of good (and mental sanity) practices for Qt code in CLAM. You can find a lot of code in CLAM that doesn't follow those guidelines. That's because we learned those guidelines by feeling in our forehead what happens if you don't follow them. Help us to remove rogue code and not adding more. ;-)
+
+Method (and signals and slots) naming conventions
+-------------------------------------------------
+
+CLAM uses FirstLetterUpperCase names for methods (although there is a underground trend to change that ;-) ) but when dealing with widgets and qt code adhere to the qt naming conventions for methods and use firstLetterLowerCase.
+
+Also, in CLAM, we use GetAttribute() and SetAttribute(val) convention for accessors, while Qt uses attribute() and setAttribute(). Again, when creating widgets use the Qt convention, not CLAM's.
+
+In general the conventions for slots and signals are:
+
+-   Signals: `somethingHappened()` (using past)
+-   Slots: `doThatThing` (imperative, just like a regular method)
+
+so that when you connect you can read: *When emmiter somethingHappened receiver doThatThing*
+
+Reserve the onSomethingHappened method names for [implicitly connected slots](http://doc.trolltech.com/4.4/designer-using-a-component.html#automatic-connections|ui) which follow qt naming conventions: `on_uiObjectName_signalName()` Defining such a method saves you writting that connection code:
+
+`connect(_ui->uiObjectName, SIGNAL(signalName()), this, SLOT(on_uiObjectName_signalName()))`
+
+Deciding whether to use signals slots or not
+--------------------------------------------
+
+The signal/slot mechanism is powerful but can turn your code a jungle. **Don't over use it.**
+
+-   has less compile time checks: connecting to not-existing slots, not proper parameters...
+-   adds signal resolution overhead
+-   and, above all, **makes execution harder to trace**.
+
+When to add a signal? When the widget you are programming is generating events that will be catched by **widgets that the emitting widget doesn't know**.
+
+A clear bad smell for this is the case of programming a widget and having:
+
+`connect(this, signal, knownWidget, slot)`
+
+and some other method doing:
+
+`emit signal()`
+
+The emision should become simply:
+
+`knownWidget->slot()`
+
+and the connection could removed.
+
+If 'knownWidget' is 'this', well, there is something ill in your mind, man.
+
+Also, by the 'avoid sigslot' principle, this also means that you should want to know the widgets that would receive a signal in order to call a method instead. So **keep pointers to receiver widgets instead of setting connections**.
+
+When to use designer and when to use code?
+------------------------------------------
+
+Use the designer for **main window** but just to include **actions, menus, toolbars and resources (images)**. **Avoid inserting widgets** or controling the layout. Previous developments using the ui as base for the layout of the widgets in main window has rendered in a hardly mantainable code.
+
+In the case of dialogs, use the designer freely as long as the dialog content is not dynamic.
+
+Using designer
+--------------
+
+### Keep default property values
+
+When experimenting with properties, if you let a property as it was at first, click on the red tick button on the right to set it to default (not in bold). Default property values are not writen to the xml file so that if the property changes in future Qt versions, you don't get in ui porting troubles.
+
+### Choose a container layout
+
+Always set the container layout by clicking on the container and selecting a layout. If you don't the container won't adapt to children, even if children have been set in a layout (red box).
+
+Whenever you change the inner layout you have to break also the container one. Remember to set it again later.
+
+### Name carefully widgets that are referenced in code
+
+Some widgets defined in the ui can be accessed from the code. Widgets adopt the name that you give them in designer, and by default they are given awfull such as 'slider3'. If you are to reference an ui element assure that it has a nice name so that we all understand the widget role.
+
+Icons
+-----
+
+-   In a given application, place the icons in src/images/
+-   Include them in a src/images.qrc file in the :/icons/ path
+-   SVG format is preferred over PNG, mostly with non stock icons.
+-   For stock icons use the crystalsvg theme
+-   Write down the path of copied stock icons in src/images/origin.txt so that they could be updated as a whole when we change/update the theme.
+

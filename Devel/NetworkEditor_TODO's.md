@@ -1,0 +1,241 @@
+This is the development page of the NetworkEditor port to Qt4.
+
+Tasks
+-----
+
+-   ![](Done.png "fig:Done.png") Porting NetworkCanvas to QGraphicsView framework
+-   [david] Abstract NetworkCanvas from CLAM dependencies
+-   Implement a Jack based NetworkCanvas
+-   ![](Done.png "fig:Done.png") Filtering the processing tree (like Amarok playlist)
+-   Adding processing documentation (doc widget or tab?)
+-   Evaluate whether processing configurators as DockWidget is feasible and useful.
+-   Implement the check that all inports are connected before play
+-   Solve code duplication on play prevention code (unconfigured, unconnected, empty, no blocking processing...) for Prototyper a Network editor
+-   Solve code duplication on backend selection that exists in Prototyper and NetworkEditor
+-   Solve code duplication on commandline processing that exists in Prototyper and NetworkEditor
+-   ![](Done.png "fig:Done.png") Offlineplayer: Check that processings are configured. In the case they are not, print configuration errors and exit.
+-   Binder by properties (now that Qt allows arbitrary properties)
+    -   Add the properties to clam widgets
+    -   Adapt the binder
+    -   Designer plugin to add such properties from the menu to acceptable processings
+-   Control senders clean up
+    -   ![](Done.png "fig:Done.png") Different control sender widgets (or else limit the configuration)
+    -   ![](Done.png "fig:Done.png") Refactor: not updating the embeded widget geometry on every repaint
+    -   Update widget geometry on zoom and scrolling
+    -   Turn them into QGVProxies
+    -   Use a thread safe way of sending controls from GUI
+-   Refactor connection loading code in NetworkCanvas
+-   Select (suggest) the audio backend on command line
+-   Select (suggest) the audio device on command line
+-   ![](Done.png "fig:Done.png") Unify External (Source/Sink) and explicit (AudioIn/Out) audio inputs and outputs so a network will work whatever the mode (jack, alsa, protaudio, embeded into a network...)
+-   Saving/Loading dummy networks
+-   Undo feature
+-   Review 'Changed' flag check list (see checklist bellow )
+    -   Both in dummy and clam mode
+-   Review loading error check list (bellow)
+-   ![](Done.png "fig:Done.png") Review tooltip logic
+    -   ![](Done.png "fig:Done.png") Fix: Big tooltips jumps out the area when pass the border
+    -   Fix: Zoom is not considered when considering the border
+-   Solve the MIDIManager hack (still not done in qt4)
+-   Move new colors to canvas as methods
+-   Checks on renaming
+    -   Which processing names are valids?
+    -   '.' should not be valid \<- is used as connector full name separator Processing.Connector
+    -   '\_\_' (two or more underlines) should not be valid \<- is used in prototyper name as place holder for space and separator between the processing and the connector
+
+processings/ports/controls crashes.
+
+-   Box selection to take int account just the body (not the connectors)
+
+-   ![](Done.png "fig:Done.png") Coloring ports by token type
+-   ![](Done.png "fig:Done.png") Investigate how not having to register the configurations
+-   ![](Done.png "fig:Done.png") Processing selection
+    -   ![](Done.png "fig:Done.png") Add a 'selected' state to ProcessingBoxes
+    -   ![](Done.png "fig:Done.png") Add a visual cue to the selected state
+    -   ![](Done.png "fig:Done.png") Make the canvas control the selection changes on click
+    -   ![](Done.png "fig:Done.png") Enable the control key to multiple selection.
+    -   ![](Done.png "fig:Done.png") Enable a drag mode for the selection box
+    -   ![](Done.png "fig:Done.png") Select all action
+    -   ![](Done.png "fig:Done.png") Deselect all action
+    -   ![](Done.png "fig:Done.png") Click on canvas deselects all when no ctrl pressed
+    -   Implement selection actions
+        -   ![](Done.png "fig:Done.png") Remove
+        -   ![](Done.png "fig:Done.png") Move
+-   Monitors:
+    -   ![](Done.png "fig:Done.png") Make Chroma peaks available for the Prototyper
+    -   New ones:
+        -   ![](Done.png "fig:Done.png") Tunning needle
+        -   ConstantQ view
+        -   ![](Done.png "fig:Done.png") Chords rank (to see other than m and M chords)
+        -   Chromagram
+        -   ![](Done.png "fig:Done.png") Spectrogram
+        -   Sinusoidal tracks
+-   Abstract meta information such as units, scale, ranges, labels, circularity... as DataSource interface.
+-   Unify widgets thanks to this abstraction
+-   Push data abstraction to the Pools and to the Ports.
+-   ![](Done.png "fig:Done.png") [Nael] Copy & paste processings (or xml's?)
+
+Feature proposals
+=================
+
+-   Undo
+-   Dropping a wire over a processing body connects to any suitable connector
+    -   Hover should not work through an overlapping processing.
+
+Testing Check Lists
+===================
+
+Changed flag
+------------
+
+-   Set it on every change
+    -   Proc added from context menu
+        -   No when user cancelled the name dialog
+        -   No when the type does not exists
+    -   Proc added by drag
+        -   No when the type does not exists
+    -   Proc removed
+    -   Proc reconfigured
+        -   No when user cancelled the config dialog
+    -   Proc renamed
+        -   No when user cancelled the name dialog
+    -   Connection
+        -   No when the connection was discarded as illegal
+    -   Disconnection
+        -   No when no wire is involved with port
+    -   Move?
+    -   Resize?
+    -   Both in dummy and clam mode
+-   Reset it on:
+    -   new
+    -   load
+    -   save/save as
+
+Network loading errors
+----------------------
+
+`* XML Error`
+`* Bad processing definition`
+`  * Type not available`
+`  * Name already exists in network`
+`  * Invalid name (dots or whatever)`
+`* Bad processing configuration`
+`  * Wrong configuration parameter name`
+`* Bad port/control connection definition`
+`  * Source processing not in network`
+`  * Source connector not in processing`
+`  * Target processing not in network`
+`  * Target connector not in processing`
+`  * Non connectable peers`
+`    * Incompatible types`
+`    * Already connected peers`
+`    * Other connection present (just for InPorts)`
+
+Play-disturbing actions
+-----------------------
+
+`* Should be reviewed in which cases they disturb and which ones they doesn't`
+`  * Adding a wire`
+`  * Removing a wire`
+`  * Adding a processing`
+`  * Removing a processing`
+`  * Configuring a processing`
+`  * Load/Clear the network`
+`  * More?`
+
+Design thoughts
+===============
+
+Interaction testing checklist
+-----------------------------
+
+List of interactive features that should work on the network canvas:
+
+-   When hovering an unconfigured processing config error displays
+-   When hovering a port the port is highlighted in yellow and the tooltip shows with name and type
+-   When hovering a control the control is highlighted in yellow and the tooltip shows with name, type and bounds info
+-   When hovering the resize handle the cursor changes to a resize arrow
+-   (Not required) When resizing, wiring or moving, other hovers also work
+-   When dragging a wire to a connection it is highlighted in red or green depending on the feasibility of the connection
+-   When dragging a wire to a connection the tooltip for the connection should be displayed
+-   Raise processing on clicking
+-   Clicking on name and draggin move the object
+    -   Pitfall: Zooming
+    -   Exiting the window
+-   Selection
+    -   Click on body selected: clear and select that one (no move starts)
+    -   Click on name selected: No selection change, move starts (rationale: eases the move of a group of already selected boxes, no ctrl is needed)
+    -   Click on unselected: clear and select that one, move starts on that one
+    -   Ctrl-Click: swaps selection on that one, group or single moving starts just if the swap results in selection of that one)
+-   Double click
+    -   Double click on title to allow renaming.
+    -   Double click on Ports creates AudioSource or AudioSink accordingly.
+-   Embed
+    -   Embedding processing within a widget.
+    -   Review embedding widget after resize.
+    -   Resize should respect minimum widget size (Which is the better widget to try this)
+-   Context-Event
+    -   right click on name
+    -   right click on ports
+    -   right click area without processing
+    -   check processing overlapped with right click
+-   Wires
+    -   connect two ports of input and output
+    -   connect two input ports and output ports ... then disconnect
+    -   connect an output port to multiple output ports
+    -   repeat steps for processing scaled
+-   Tooltips
+    -   tooltip position when it is caused by the right margin (move left)
+    -   tooltip position when it is due to the lower margin (move up)
+    -   tooltip position when it is due to the lower margin and right margin (move up and left)
+-   Drag and Drop
+    -   When you drop the processing is put into the desired position
+
+Model-Widget interface
+----------------------
+
+`* Widget actions with implications on the network and things to check afterwards`
+`  * Add a processing of a given class`
+`    * Was it possible?`
+`    * Name?`
+`  * Connect ports/controls`
+`    * Was it possible?`
+`  * Remove wires connected to a given port/control`
+`    * (?)`
+`  * Remove a processing and related wires`
+`    * (?)`
+`  * Configure a processing`
+`    * Configuration status?`
+`    * Ports/Connections changed?`
+`  * Rename a processing`
+`    * Was it possible (valid and unique)?`
+`* Widget required information`
+`  * The name of a created processing`
+`  * The number of ports/controls`
+`  * The name of a port/control by index`
+`  * The processing status`
+`  * Whether two connectors are connectable`
+`* Things to be checked`
+`  * Network status changes: It is playing?`
+`  * Processing status changes: Are they configured?`
+`  * Could we get the list of processings for the processing toolbox?`
+`  * Can we rely on the processing name to index model objects?`
+`  * Is any one, appart from canvas and new/load actions, modifiying the model?`
+`* Full update (on new/load) alternatives`
+`  * Push: the model manipulates the canvas`
+`  * Pull: canvas ask the model all the information`
+
+Notes about the interface on the Qt3 version:
+
+`* ProcessingController`
+`  * slots`
+`     * send control -> does it directly`
+`     * name changed -> bypass, emits the same`
+`     * configure processing -> agh, sync-signals a lot of things Configure, then change state. If running, starts and stops the processing (just that processing!!) and if it changes the connectors it removes connections and updates the connectors on the presentation`
+`* NetworkController`
+
+To ask:
+
+`* stoping just the processing being configured instead the full network is the proper thing to do?`
+` `
+`  stop the whole network. or else the flowcontrol will assert (or fire a unready processing). Note that this could be done transparently to the user. I mean, the user can perceive that the network is playing all the time. `*`--pau`*

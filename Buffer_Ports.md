@@ -1,0 +1,51 @@
+CLAM Buffer Ports TODOs
+=======================
+
+### Use audio-buffers whenever possible
+
+-   Convert processings
+    -   Use audio-buffer ports
+    -   Use audio-buffer policy
+-   Remove duplicated processings
+-   Adapt networks that combine audio-buffer and audio-stream ports (using Buffer2Stream, etc)
+    -   Test them in dynamic buffer-size hosts (like ardour/ladspa)
+
+-   Port LadspaWrapper to audio buffer ports (instead of audio stream ports)
+    -   Duplicate **[done]**
+    -   Test in dynamic buffer-size host
+    -   Eliminate stream-port version
+
+### Optimize Backends copies
+
+-   AudioSources and Sinks should map the memory of the host
+-   Check that all the hosts (Jack, Ladspa, Portaudio) use 4 bytes floats
+-   Force clam audio samples format to floats
+
+### Audio-buffer pool
+
+-   reallocate a pool of audio buffers at Config time to avoid allocating memory at runtime, which is non realtime safe.
+
+### Audio-buffer Processing policy
+
+1.  Do not call port.SetSize(1) and portSetHop(1), since it is the default behavior.
+2.  Do not allocate audio buffers in ConcreteConfigure (since the connections could not exist)
+3.  Do an implicit allocation of output audios in the Do (that means that will allocate only once): `outbuffer.SetSize( inbuffer.GetSize() )  where outbuffer and inbuffer are the port.GetData() `
+    1.  This will change by using a pre-allocated audio-buffer pool
+
+Benchmark
+---------
+
+-   Using *callgrind* to compare the efficiency with the buffer implementation.
+
+DONE
+----
+
+-   Test the BackendBufferSize to demostrate the correct function.
+-   Create AudioSink with Buffer.
+-   Create AudioSource with Buffer.
+-   Stream2Buffer and Buffer2Stream using the BackendBufferSize.
+-   (David) NetworkEditor: Allow connecting multiple channel into the single conection in AudioSink.
+    -   Ex. 15 channels (like Hoa) to single conection (AudioSink)
+-   Allow the hosts/backends to change its buffers size at runtime.
+-   optimization: do not reallocate audio buffers in Do() when resizing to smaller size.
+

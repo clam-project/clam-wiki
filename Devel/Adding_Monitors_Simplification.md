@@ -1,0 +1,40 @@
+Domain
+======
+
+-   We want to visualize data on the outports
+-   Each outport is binded to a single DSP datatype.
+    -   Ex. The FFT outport data is an Spectrum
+-   Each DSP datatype may have different aspect suitable to be visualized.
+    -   Ex. We could visualize the log or linear magnitude, the complex values, the phase...
+-   PortMonitor input port is also binded to a DSP datatype while his output is a data source interface
+-   The PortMonitor maps an aspect to a visualization datatype.
+-   Visualization datatype is abstracted as a datasource interface
+-   The widget reads a given datasource
+-   A widget could have several data sources
+
+Processing -(Port Interface)-\> Port Monitor -(Data source Interface)-\> Widget
+
+We would like also to reuse Widgets and abstract data source interfaces for the non-realtime version (Annotator, SMSTools).
+
+DataPool -(Data source Interface)-\> Widget
+
+Use cases
+=========
+
+Prototyper Binding
+------------------
+
+The Prototyper detects a widget related to a processing port. It has to find the monitor processing which bridges the dsp type of the port and the datasource of the widget.
+
+PortMonitor instantiation on NetworkEditor
+------------------------------------------
+
+The NetworkEditor user should be able to attach any view appliable to the data of a port.
+
+Currently se are using the Monitor type name to chose a widget and to embed on monitor's ProcessingBox.
+
+Annotator instant view
+----------------------
+
+Annotator temporal view
+-----------------------

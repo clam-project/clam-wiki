@@ -1,0 +1,14 @@
+-   **DONE** Change the devel tab to point to the Devel space on the wiki
+-   **DONE** Fix: Devel Wiki open in a frame redirects the full page. Make it a direct link.
+-   **DONE** Added direct wiki link.
+-   Add a link on the Doc tab to the wiki
+-   Merge links to external dependencies (on 'Links') as an entry on the faq
+    -   **DONE** momentarily in docs
+-   Merge links to similar projects (on 'Links') as an entry on the faq
+    -   **DONE** momentarily in docs
+-   **DONE** Remove the Links tab on the web
+-   Merge developers and past developers to an entry on the FAQ
+-   Merge about description as an entry on the FAQ
+-   Remove the About tab on the web
+-   Add an icon to "extern" web links (planet, wiki, bugs...) like this [:](http://somewhere.com)
+

@@ -1,0 +1,39 @@
+This simple program just plays a file specified by command line to the audio output.
+
+Check the [Network Editor tutorial](Network Editor tutorial "wikilink") to see how to do that with a patching visual interface.
+
+To compile this example you can use this [SConstruct file](Minimal SConstruct to build with CLAM and Qt4 "wikilink")
+
+main.cxx
+--------
+
+`// Updated to 1.1 (svn)`
+`#include `<CLAM/Network.hxx>
+`#include `<CLAM/PANetworkPlayer.hxx>
+`#include `<CLAM/MonoAudioFileReader.hxx>
+`int error(const std::string & msg)`
+`{`
+`   std::cerr << msg << std::endl;`
+`   return -1;`
+`}`
+`int main(int argc, char ** argv)`
+`{`
+`   if (argc!=2) return error ("needs a filename.");`
+`   CLAM::Network network;`
+` `
+`   std::string reader = network.AddProcessing("MonoAudioFileReader");`
+`   // Configure the reader`
+`   CLAM::MonoAudioFileReaderConfig cfg;`
+`   cfg.SetSourceFile(argv[1]);`
+`   if (!network.ConfigureProcessing(reader, cfg))`
+`        return error("Could not open the file");`
+`   int length = ((CLAM::MonoAudioFileReader &) network.GetProcessing(reader)).GetHeader().GetLength()/1000;`
+`   // Add an audio sink and connect its input to the reader's output`
+`   std::string sink = network.AddProcessing("AudioSink");`
+`   network.ConnectPorts(reader+".Samples Read", sink+".1");`
+`   // Set the audio backend to PortAudio`
+`   network.SetPlayer(new CLAM::PANetworkPlayer);`
+`   network.Start();`
+`   sleep(length);`
+`   network.Stop();`
+`}`

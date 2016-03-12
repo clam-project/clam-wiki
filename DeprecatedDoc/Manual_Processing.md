@@ -1,0 +1,330 @@
+[Back to Index](DeprecatedDoc/CLAMUserManual "wikilink")
+
+Introduction
+------------
+
+This chapter gives a short introduction to CLAM library development issues to those who intend to write a new processing class. The chapter assumes certain familiarity with the use of the library, so if you are completely new to it, you might want to read the usage tutorial first.
+
+The rest of this section will give an overview to the library class hierarchies. Section 37 gives a brief overview of the main tasks you will need to perform while implementing a processing class. In section 38 the construction and configuration interface of processing classes will be described. Section 39 will describe their execution interface. Finally, the following sections will summarize some implementation details to keep in mind while writing a processing class, especially exception handling and code testing.
+
+Class hierarchies
+-----------------
+
+When making a new processing class, it is important to be familiar from the beginning with the Processing and the ProcessingConfig classes hierarchies shown in figure f 5. This figure shows a small collection of the available processing classes, and their related configuration classes.
+
+[300px](image:ProcessingHierarchy.gif "wikilink")
+
+Figure: Processing and Configuration classes hierarchy
+
+As you can see in the figure, there is a base Processing class from which all other processing classes must derive. This class provides an abstract interface for processing classes. The class is defined in the following source file:
+
+\$(TOP)/src/Processing/Processing.hxx
+
+You should also be familiar with ProcessingData classes, at least with the fundamental ones. They are described in a different chapter of this document.
+
+You may never need to create a new ProcessingData class, but you will have to know how to use them in order to write a new Processing class.
+
+Coding style and philosophy
+---------------------------
+
+If your class will be part of the CLAM library, you should write it keeping in mind these objectives, in suggested order of priority.
+
+Safety.
+
+Your class should work as expected, contain as few bugs as possible, and should detect as often as possible when it is not being used properly. More about this in section 43 and section 44 .
+
+Clarity.
+
+Your code should be easy to understand. Reading it should give a clear idea of the algorithms that are being used.
+
+Efficiency.
+
+Your class should work fast. This is, after all, why are we using C++ instead of a more sane language.
+
+Once you have chosen an efficient algorithm, it is usually not a good idea to think too much about code efficiency while you are writing your class. It is usually hard to figure out what will be the real bottleneck in your code until you run a profile on it, and you can not do that until it is finished and working correctly.
+
+Also, clearly written code is easier to modify later, and thus to optimize. If you obfuscate your code trying to avoid some imaginary efficiency problem, and you later find that efficiency problems are caused by a different reason, it will be harder to fix the problem. If your code is clear, optimizing it later will usually be an easy task.
+
+Overview of the processing class implementation tasks
+=====================================================
+
+The mayor tasks you need to undertake when writing a new processing class are briefly described below. All of them will be further described in the next sections.
+
+Declaring the processing interface attributes
+---------------------------------------------
+
+Ports
+
+  
+Your processing class will have a set of inputs and outputs. You should declare the related Port attributes in it.
+
+Warning: Ports, although recommended, are still not mandatory so you may find classes in the repository that still make no use of Ports. These classes though will necessarily be re-factored soon when the Ports interface becomes mandatory
+
+Controls
+
+  
+If your class is to have input or output Controls, you also have to declare the related Control attributes in it (section 40). Note that you must declare as a control any attribute that is supposed to be modified while the Processing object is running.
+
+Implementing the construction mechanism
+---------------------------------------
+
+This requires writing a helper configuration class and writing your processing class constructors, in which all the non-configuration related initialization can be performed.
+
+Implementing the configuration mechanism
+----------------------------------------
+
+Processing objects reconfiguration is performed using the Configure() method provided in the Processing base class. You don't have to write this method. But you do need to write a ConcreteConfigure() method that will be called from the Configure() method in the base class (more in section 38.3). This method must do all the initialization stuff dependent on configuration parameters.
+
+Implementing the execution methods
+----------------------------------
+
+You have to provide a Do() method that reads the data in the ports and runs a processing \`\`cycle'' on it (section 39.2).
+
+You may also write a Do(...) method with the data arguments specific to your processing class. This is usually the method where the actual processing algorithm is implemented.
+
+Implementing other optional standard methods
+--------------------------------------------
+
+Processing object execution state (section 39.1) is controlled using the Start() and Stop() methods implemented in the Processing base class. You can not overload these methods.
+
+If objects of your class need to perform any special operations at start or stop time, you can overload the ConcreteStart() and ConcreteStop() methods, which will be called from the base class Start() and Stop() methods when the user calls them. See section 40.3 to see what kind of operations need to be done in your ConcreteStart and ConcreteStop methods.
+
+Writing the tests
+-----------------
+
+You should always write a \`\`class test'' program for your processing class, the why and how are explained in section XX.
+
+Object execution interface
+==========================
+
+Execution states
+----------------
+
+Processing objects are in a certain execution state at any moment. This is best shown in a state diagram, figure f 6. The object is initially in the Unconfigured state.
+
+Processing states
+
+[300px](image:ProcessingStates.png "wikilink")
+
+Figure: Processing Objects execution states.
+
+All the methods shown in the state diagram, except the Do() method are implemented in the Processing base class. These are briefly described below. Note that all the state transitions are done via these methods; the state variable is also kept in the base class, so you do not need to worry about execution state management when implementing a new processing class.
+
+`   * bool Configure(ProcessingCofig&) This puts the object in ready mode, if configuration is correct. See section 38.3 for more details.`
+`   * bool Start(void) This puts the object in execution mode. This method must be called before the first call to any Do() method. Calling Do() before calling Start() may throw an exception.`
+`     Once the object is running (i.e. in execution mode), it can not be reconfigured. Calling Configure() in execution mode will throw an exception.`
+`   * bool Stop(void) This puts the object out of execution mode.`
+`   * ExecState GetExecState(). This method returns the current execution state of the object. This may be used for debugging or to keep tack of the object state in the application.`
+
+You may need to perform some specific operations in your class at certain state transitions. There are several virtual methods that you can override to do so, and which are described in the following table:
+
+` concrete method   called from     mandatory`
+` ConcreteConfigure(ProcessingConfig&)  Configure(ProcessingConfig&)    yes`
+` ConcreteStart()   Start()     no`
+` ConcreteStop()    Stop()  no`
+
+Note that the last two methods are very tied to supervised mode operation.
+
+Execution methods
+-----------------
+
+The main execution methods are the Do methods. They are the ones which actually perform the processing action.
+
+There are two different kinds of Do methods:
+
+`   * A Do(void) method, with no arguments. This operation is declared in the Processing base class and is therefore called "generic" Do. In future releases of CLAM this will become the standard way of using processing objects. This method is related to the input and output ports that have been previously declared. As already commented although you may still find some Processing classes in the repository that do not declare Ports and therefore provide an empty implementation of this method, you are encouraged to provide one so your Processing class can be used from within a Network.`
+`   * Do(...) methods taking data objects as arguments and called "concrete" Do's. They will have some input data arguments first, and then some output data arguments. A typical processing class will need a single Do method of this kind. These methods are discussed in section 39.3`
+
+Both kinds of Do() operations work in the same way: they read a certain number of data objects from each of the inputs, and write a certain number of data objects to each of the outputs. The difference is that the concrete Do() method takes this data objects as arguments (and therefore does not use ports), while the generic Do() operation has no arguments, and accesses the Data through the Ports objects.
+
+The following figure shows a sequence diagram for the execution of a processing object with a single input and a single output.
+
+[300px](image:ExecutionSequence.png "wikilink")
+
+Figure 7: Execution sequence
+
+Object execution not using ports
+--------------------------------
+
+Processing objects must provide a Do method which takes the input and the output objects as its arguments. You may provide several Do methods for different object configurations (such as different sets of active inputs and outputs).
+
+You should carefully check that the dynamic attributes you need are instantiated in the input and output objects passed to a Do.
+
+A good approach to this is having some kind of prototype state variable which is updated when SetPrototypes is called. Your Do methods can then use a switch statement to choose the processing code to execute.
+
+You can, for example, do a fast execution when the inputs and the outputs have the attributes most convenient for your computations, and a slow execution for other cases, in which you perform previous and subsequent data conversions.
+
+In this slow cases, if the data classes you are handling provide attribute conversion routines, you can usually just add the attribute you need to the data object, and call a proper conversion routine to update it. See the FFT\_rfftw code for an example of this.
+
+### Do method argument conventions
+
+`  1. You should clearly document the Do methods arguments. You should use Java-Doc comments in your code for this.`
+`  2. Inputs go first and should be "const", outputs go last.`
+`  3. By default, it is assumed that a Processing can process inplace, thus it is possible to pass the same reference to input and output (of course, if the data type is the same). If the Processing you implement cannot process inplace you should override the CanProcessInplace method, return false and document this fact.`
+`  4. You should take both input and outputs as references whenever it is possible.`
+`  5. Inside a Processing, you should never assume ownership of objects passed as inputs. You should not delete them.`
+`  6. You should avoid passing as outputs data objects which you have created. If you do so, document it clearly, explaining why you do so, and how to handle them, specially their lifetime, or who should destroy them.`
+`  7. Variable number of arguments must be handled passing a reference to an array of pointers (typically as a reference to a pointer). You can implement an extra Do method which takes a reference to an array of objects instead, to avoid dereferences (you must anyway provide the pointers version, because the user may not always have an array of objects handy).`
+`  8. If the number of arguments is variable, you must clearly document this fact, and provide methods to get this number.`
+
+Internal object state
+=====================
+
+\`\`Object state'' usually refers to the specific values that the attributes of this object have in a given moment of time.
+
+For processing objects, it is useful to consider two different kinds of attributes, and thus two different kinds of \`\`state'':
+
+`   * Configuration related attributes.`
+`   * Execution related attributes.`
+
+Initialization, usage and destruction of these attributes should be done in different ways, as described below.
+
+Configuration related attributes
+--------------------------------
+
+The first ones would be attributes which may only change when the processing object configuration is changed (i.e., when the Configure() method is called).
+
+For example, if your configuration class includes an attribute which defines the size of some internal buffers in your processing objects, you should create or resize these internal buffers when the ConcreteConfigure() method is called, instead of doing so directly in the class constructors.
+
+Execution related attributes
+----------------------------
+
+Some processing classes may need to keep internal computed values between different calls to Do methods. This is usually done using normal private class members.
+
+Some examples of this are:
+
+`   * Keeping track of time,`
+`   * Performing some kind of integration/accumulation of the input.`
+`   * Performing some kind of differential operation for which values from previous execution calls are needed.`
+
+Sometimes it may be a good idea to provide a public accessor (getter) method to some of these internal values, so that applications using the class can easily implement some run time debugging. But it is usually a better idea to provide this access in the form of input or output Controls.
+
+### Initialization
+
+The initialization of internal state attributes related to object execution (such as execution counts, accumulated values, time references, etc) must be performed in the ConcreteStart() method.
+
+Also, if you want to liberate some resources when the object stops being run, you can implement this in the ConcreteStop() method.
+
+Processing Composite
+====================
+
+Sometimes you need to write a large processing object which uses other processing objects internally to perform some parts of the algorithm.
+
+There is a standard way to do this:
+
+`  1. You should derive your class from ProcessingComposite instead of deriving it directly from Processing.`
+`  2. You should configure your children processing objects, calling their Configure method in the ConcreteConfigure method.`
+
+See the file examples/POCompositeExample.cxx for more details.
+
+Exception Handling
+==================
+
+Your classes may some times throw exceptions. This will usually happen in two circumstances:
+
+`  1. When some consistency checks inside your code fails (section 77.3).`
+`  2. When some external run time problem happen (a file which does not exist, a device which refuses to be opened, etc). This is discussed in section 79.2.`
+
+Assertions
+----------
+
+As you probably remember from section 36.2, one of the main self imposed requirements in the CLAM library is code safety.
+
+One of the best tools to achieve this is using \`\`assertions'' (condition checks) in your code to check that things are like they are supposed to be.
+
+Assertions are a general mechanism inside the CLAM library, and are thus also discussed elsewhere. But it is worth making some comments about how they should be used in processing classes.
+
+### Where to use assertions
+
+There are mainly two kinds of assertions:
+
+`  1. Internal consistency checks about the state of your class. These are usually conditions which should NEVER fail, and which would mean that something is really wrong in your class. They are useful for you as a developer, to find bugs in your own code.`
+```   2. External precondition checks. Class methods usually expect some restrictions in they arguments, or in the order in which they will be called. These restrictions should be documented, but someone using your class may make a mistake and misuse your class. ``External'' assertions make checks on the values of arguments provided by the user, or check if the internal state of the class is adequate to perform an operation requested by the user. ```
+
+A clear example of this kind of check is testing the value of an index provided by the user to see if fits the size of a data array.
+
+### How to make assertions
+
+Easy. Just use the CLAM\_ASSERT macro. This will usually be fine for you. If not, the assertions mechanism is fully described in a different section of this document.
+
+In some circumstances, you may want to make a check while debugging, and remove it later for efficiency reasons. An example of this is checking the value of an index in the Array<T> class indexing operators. For this kind of check, you can use the CLAM\_DEBUG\_ASSERT macro. The checks made using this macro will be disabled when compiling the library in \`\`release'' mode.
+
+Run time problems
+-----------------
+
+These may rise when you are performing some operation which may fail, such as trying to open a file, trying to allocate some memory, trying to start an input/output system device, etc.
+
+These are not assertions, in the sense that even if the program is absolutely correct, these conditions may fail.
+
+The behavior when you find one of these problems depends on the context where you find it:
+
+`  1. You should not throw an exception from your ConcreteConfigure() method. You should return a false value instead, and maybe add a textual explanation to the mStatus member. This will leave the object in an unconfigured state, and allow the user to fix the problem. If he does not, the Start() method will complain for you.`
+`  2. You should throw an exception elsewhere, and you should clearly explain the fact in the documentation of the methods in your class from where this exception may come out.`
+
+If you have this kind of situation in your code, you should use one of the standard exception classes defined in CLAM library. See the src/Errors/ directory for the collection of available exception classes. If no one fits your needs, it may be a good time to write a new exception class, but you can always throw the base CLAM::Err class meanwhile.
+
+Writing tests for your classes
+==============================
+
+Why?
+----
+
+Mainly for two reasons:
+
+`  1. This way you will be able to find trivial run time errors easily and as soon as possible. Otherwise, if you find them when you are using your class in a bigger system with many other classes, it will sure be much more difficult to trace the problem.`
+`  2. This way, once the class is finished, it will be really easy to introduce further changes, and check that everything keeps working as expected.`
+
+A non-trivial bug may take just a minute to detect, understand and fix if you run a test program often while you are coding, because you will always be almost sure that the problem belongs to the latest changes you have made.
+
+It will usually take you more than ten times longer (say, 10 minutes) if you first encounter this bug when you are using your class in a larger system, after making many modifications without testing hard.
+
+If it is someone else who runs into this bug while using your class in a bigger program, it can take him a hundred more times (say, a couple of hours) to trace the problem and fix it (or ask you for a fix).
+
+Some argue that you should write the class test even before you start programming your class, so that you already have a program against which you can try it all along the process of coding.
+
+How?
+----
+
+You should definitely have a look around the tests/ directory in CLAM sources to take a feeling of how the test thing goes. There you can find a test file \`\`skeleton'' (TestSkeleton.cxx) to take as starting point, but you usually have complete freedom in the way to implement a test. Anyway, it should follow a standard convention to communicate its results:
+
+`   * Your test program should know when things are working fine, and when they are not.`
+`   * The main() function in your program should return 0 when everything has worked as expected.`
+`   * It should return a non-zero value when some error is found, such as an exception being thrown somewhere, or output values from your class containing incorrect data.`
+`   * Of course, it is usually nice to have some output written when something fails, explaining the details of the failure.`
+
+Helper classes
+==============
+
+Enumeration classes
+-------------------
+
+In the situations where you would normally use a standard C++ enum type, you should consider using a CLAM Enum class instead.
+
+CLAM Enums are much like C++ enums, with the advantage that they have storage capabilities built in. In run-time, C++ enums only provide the integral value, CLAM::Enum's also use the symbolic value (the string). See the src/Standard/Enum.hxx class Doxygen documentation for more information.
+
+Flags classes
+-------------
+
+CLAM::Flags<N> also provides symbolic usage and storage capabilities to the std::bitset<N> class. You should use the Flags CLAM class, instead of a std::bitset, or instead of an integer plus bit-mask mechanism. That way you gain storage capabilities.
+
+See the src/Standard/Flags.hxx Doxygen documentation for more information. 46 Prototypes
+
+NOTE1: In previous CLAM releases the Prototype interface was included in the Processing base class and was indeed a recommended way of working. Experience has demonstrated that this feature is only necessay in very specific cases and has therefore been removed from the base class interface. Nevertheless, some particular classes such as the FFT still keep this functionality, which can indeed improve efficiency. Only read the following paragraphs if you are really worried about efficiency issues and have the suspicion that the use of prototypes at the input/output of your processing may help
+
+NOTE2: This section discusses some concepts related to dynamic types. If you are not familiar with them, you should read some relevant documentation on the issue.
+
+The processing data objects used as inputs and outputs for a processing object can sometimes have multiple alternative dynamic attributes, which are often different representations of the same data. In other words, they can have different dynamic prototypes. An example of such multiplicity is the Spectrum class.
+
+Trying to read a dynamic attribute that is not instantiated is a run-time error, so it should never happen. One should use the Has...() dynamic method to check if a certain attribute is instantiated before using it.
+
+Some structural parameters of the data objects must also be checked before using them. Buffers size, for example, is often stored as a dynamic attribute in the data object. One can not assume these values, they must be checked for each data object before relying on them.
+
+If the processing data classes you are handling do not have such kind of prototype alternatives or structural parameters, you don't need to provide the SetPrototypes() method.
+
+Otherwise, processing classes must be ready to handle this attribute diversity. Instances of a well written processing class should be able to cope with every valid prototype at its inputs, probably with different performance in different cases.
+
+In normal cases all of the above requires quite a few checks, which may degrade the performance of the execution method.
+
+The SetPrototypes functions can be used to avoid this performance problem. When the application (or the flow control) calls a SetPrototypes method, the object can assume that subsequent calls to the execution method will pass data objects with the same prototypes and structural parameters as the ones specified with SetPrototypes, until a new call to SetPrototypes is made, or until the UnSetPrototypes method is called.
+
+These methods are just informative; the object is not required to perform any specific action. It can safely ignore these calls. If you want to take advantage of them, you will typically do an exhaustive prototype checking, and set some internal state attribute in your processing object according to what you find in the data. This state variable can be checked with a single switch statement in your Do method.

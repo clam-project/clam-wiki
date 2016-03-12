@@ -1,0 +1,724 @@
+This page explains **how to cross compile CLAM for Windows in an Ubuntu Linux**.
+
+Introduction
+============
+
+Purpose
+-------
+
+Most CLAM developers work with Linux, and, because of that, Windows platform tends to break. To minimize that, we have explored the feasibility of building and testing Windows binaries from Linux, by means of the mingw32 cross-compiler and other cute tools like Wine.
+
+The procedure combines several sources of software:
+
+-   Debian packages which provide minimal tools for cross-compilation: wine, mingw, nsis...
+-   Windows installers run by means of Wine. They are quite convenient for big dependencies such as Qt and Gtk, and for some other tools, not available in Linux
+-   Dependency packages compiled from sources. This is currently handled by the installation script.
+-   Privative SDK's such as ASIO, VST which cannot be provided in a convenient way due to licence restrictions.
+
+This method is currently used for windows automated testing in [testfarm](http://clam-project.org/testfarm/) and to generate the [published windows binaries](http://clam-project.org/download/win/).
+
+Status
+------
+
+**NOTICE: Due to some dependencies introduced lately (mainly python and boost), some parts of clam that depend on them still lack of a repeatable procedure to be built for Windows. You can help here.**
+
+'''Also note that instructions in this page are not fully up to date. Those instructions materialized into a script which contains the current state of the art. You can find the script and related files in the [clam subversion repository](http://clam-project.org/clam/trunk/CLAM/scripts/mingw-cross/) '''
+
+The goals for the future are:
+
+-   Supporting new dependencies: python and boost
+-   Producing a precompiled CLAM SDK package, for Windows native development. [an old experiment](http://clam-project.org/download/win/svnsnapshots/clam-mingw-1.1.1~svn11119.tar.gz)
+-   Having the dependencies building under control of testfarm
+-   Allow flexible targets and actions in the script with dependency checking, version pinning and the like.
+
+Other smaller TODO's:
+
+-   Make the precompiled development package to compile apps in native windows.
+-   Building SMSTools
+-   Passing unit tests
+-   Passing functional tests
+-   Compiling examples
+-   Py2Exe binaries for Annotator helper apps
+-   Executing Qt + OpenGl based programs in wine.
+
+Installing Tools
+================
+
+Installing mingw32 and Wine in ubuntu
+-------------------------------------
+
+`sudo apt-get install mingw32`
+`sudo apt-get install wine`
+
+You can test such programs work by doing:
+
+`$ cat > hello.cxx <`<EOF
+ #include <iostream>
+`int main()`
+`{`
+`        std::cout << "Hello world"  << std::endl;`
+`}`
+`EOF`
+`$ i586-mingw32msvc-g++ hello.cxx`
+`$ file a.exe`
+`a.exe: MS-DOS executable PE  for MS Windows (console) Intel 80386 32-bit`
+`$ ./a.exe`
+`Hello world`
+
+So it works! We are building and executing a windows binary.
+
+Does wine run current Visual based CLAM release?
+------------------------------------------------
+
+Let check whether Wine is able to run existing CLAM binaries.
+
+-   Download the latest version of CLAM NetworkEditor for Windows.
+-   Install any or all wine audio backend (esd, alsa, jack...)
+-   Run winecfg and set the desired audio backend (i chose ALSA)
+-   Obtain a missing DLL **THIS IS A PACKAGING BUG on the former MSVC based binaries!!!** <http://www.dlldump.com/download-dll-files_new.php/dllfiles/M/MSVCIRT.DLL/7.0.2600.2180/download.html>
+-   Run it with Wine
+
+[center|Wine running the NetworkEditor compiled with VisualC](image:WineRunningNetworkEditorVC.png "wikilink")
+
+It runs with a lot of underruns but it works so we can check goodness of the build procces on mingw can be tested.
+
+Well not all works as desired. OpenGl Based views doesn't work properly because Qt OpenGl and Wine. (Precompiled Qt examples doesn't work either)
+
+[center|As you introduce an OpenGl view, the interface framebuffer gets messed](image:WineRunningNetworkEditorVC-OpenGlBug.png "wikilink")
+
+Precompiled Qt examples which use OpenGL have the same problem. So when we get the same problem in our binaries we'll know it is not our fault.
+
+Crosscompiling with Qt
+----------------------
+
+Lets download Qt.
+
+`$ wget -c `[`ftp://ftp.trolltech.com/qt/source/qt-win-opensource-4.4.3-mingw.exe`](ftp://ftp.trolltech.com/qt/source/qt-win-opensource-4.4.3-mingw.exe)
+`$ chmod a+x qt-win-opensource-4.4.3-mingw.exe`
+`$ ./qt-win-opensource-4.4.3-mingw.exe`
+
+I accepted to intall mingw32 again but in the fake windows. This installs by default Qt on \~/.wine/drive\_c/Qt/4.4.3/, so
+
+`$ ~/.wine/drive_c/Qt/4.4.3/bin/designer.exe`
+
+[thumb|Mingw Designer running on wine](image:Mingw32DesignerUnderWine.png "wikilink")
+
+`$ export QTDIR=~/.wine/drive_c/Qt/4.4.3/`
+
+Edit the following file helloqt.cxx
+
+`#include `<QtGui/QApplication>
+`#include `<QtGui/QMessageBox>
+`int main(int argc, char** argv)`
+`{`
+`        QApplication app(argc,argv);`
+`        QMessageBox::warning(0,"Warning","Windows is about to be deprecated as development platform!");`
+`}`
+
+And now lets compile it.
+
+`$ i586-mingw32msvc-g++ -o helloqt.exe helloqt.cxx -L $QTDIR/lib -I $QTDIR/include -l QtCore4 -lQtGui4 `
+
+Windows requires dll's to be on PATH or on the same dir. You can use regedit to edit the wine PATH variable, which is located under HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\Control\\Session Manager\\Environment\\PATH in the registry. In other case, just copy required dll's on the binary folder.
+
+`$ cp $QTDIR/bin/Qt*dll .`
+`$ ./helloqt.exe`
+
+[center|Our fist crosscompiled Qt app](image:Mingw32WineHelloQt.png "wikilink")
+
+NSIS
+----
+
+TODO: Investigate if we can just use existing packages for NSIS in debian/ubuntu
+
+Download the Installer and install it with wine:
+
+`export MINGWSANDBOX=~/CajitasDeArena/mingw # Or whatever in your system`
+`cd $MINGWSANDBOX/download`
+`wget `[`http://mesh.dl.sourceforge.net/sourceforge/nsis/nsis-2.31-setup.exe`](http://mesh.dl.sourceforge.net/sourceforge/nsis/nsis-2.31-setup.exe)
+`chmod u+x nsis-2.31-setup.exe`
+`./nsis-2.31-setup.exe`
+
+When asking for install location put this:
+
+`C:\Program Files\NSIS`
+
+Despite whatever localized name you have for 'Program Files' ('Archivos de Programa' or whatever)
+
+TODO: Make this a parameter for the CLAM application package building
+
+GtK/Gtkmm (for libxml++ and pkg-config)
+---------------------------------------
+
+There are precompiled binaries are this page:
+
+`export MINGWSANDBOX=~/CajitasDeArena/mingw # Or whatever in your system`
+`cd $MINGWSANDBOX/download`
+`wget `[`http://ftp.gnome.org/pub/gnome/binaries/win32/gtkmm/2.10/gtkmm-win32-devel-2.10.11-1.exe`](http://ftp.gnome.org/pub/gnome/binaries/win32/gtkmm/2.10/gtkmm-win32-devel-2.10.11-1.exe)
+`chmod u+x gtkmm-win32-devel-2.10.11-1.exe`
+`./gtkmm-win32-devel-2.10.11-1.exe`
+
+Agree to install gtk, all options by default, then all options for gtkmm by default.
+
+`mkdir -p $MINGWSANDBOX/local`
+`` cp -r `winepath -u 'c:\\GTK'`/{include,lib,bin} $MINGWSANDBOX/local ``
+
+Using precompiled library dependencies
+======================================
+
+Once you have installed precompiled NSIS, Qt and Gtk binaries, you can follow the next chapters on building the rest of 3rd party libraries by hand or you can download a precompiled tarball and jump to [CLAM compilation](#Crosscompiling_CLAM "wikilink"). To use the precompiled tarball do the following:
+
+`export MINGWSANDBOX=~/CajitasDeArena/mingw # Or whatever in your system`
+`cd $MINGWSANDBOX/download`
+`wget `[`http://clam.iua.upf.edu/download/win/svnsnapshots/clam-3rdparty-mingw-20080128.tar.gz`](http://clam.iua.upf.edu/download/win/svnsnapshots/clam-3rdparty-mingw-20080128.tar.gz)
+`cd $MINGWSANDBOX`
+`tar xvfz download/clam-3rdparty-mingw-20080128.tar.gz # this will create or populate local/`
+
+Compiling library dependencies
+==============================
+
+Crosscompiling PortAudio
+------------------------
+
+Port audio has some dependencies. So let's provide them.
+
+### Asio
+
+Download [Asio SDK](http://www.steinberg.net/329+M52087573ab0.html).
+
+`$ unzip asiosdk2.2.zip`
+`$ mv ASIOSDK2 asiosdk2`
+
+It just provides a .dsp file to build. I managed to have a Makefile to crosscompile with mingw.
+
+    # Be careful when cut and pasting, ALL INDENTATIONS MUST BE TAB'S!!
+    CXX=i586-mingw32msvc-g++
+    AR=i586-mingw32msvc-ar
+    BIN=asiosdk2.a
+    SOURCES:= \
+        common/asio.cpp \
+        common/combase.cpp \
+        common/debugmessage.cpp \
+        common/register.cpp \
+        host/ASIOConvertSamples.cpp \
+        host/asiodrivers.cpp \
+        host/pc/asiolist.cpp \
+    #   host/sample/hostsample.cpp \
+        host/mac/asioshlib.cpp \
+        host/mac/codefragments.cpp \
+        driver/asiosample/makesamp.cpp \
+        driver/asiosample/asiosmpl.cpp \
+        driver/asiosample/wintimer.cpp \
+        driver/asiosample/macnanosecs.cpp \
+        driver/asiosample/mactimer.cpp \
+        common/asiodrvr.cpp \
+        common/dllentry.cpp \
+
+    OBJS:=$(SOURCES:.cpp=.o)
+    CFLAGS=-Icommon -Ihost -Ihost/pc/
+    LDFLAGS=-lkernel32 -luser32 -lgdi32 -lshell32 -luuid -lole32 -lwinmm
+
+
+    ${BIN} : $(OBJS)
+        ${AR} rcs $(BIN) $(OBJS)
+
+    %.o: %.cpp
+        ${CXX} ${CFLAGS} -c $< -o $@
+
+### DirectX
+
+Mingw now provides directx compatible headers so this should not be needed anymore.
+
+`export MINGWSANDBOX=~/CajitasDeArena/mingw`
+`cd $MINGWSANDBOX/download`
+`wget `[`http://www.g-productions.net/files/devpak/DirectX90c.DevPak`](http://www.g-productions.net/files/devpak/DirectX90c.DevPak)
+`tar xvfj DirectX90c.DevPak`
+`rmdir DirectX90c\\*  # To delete some created windows style dirs`
+`mv DirectX90c ../directx`
+
+**Deprecated procedure for older version directx 8**
+
+The Allegro project has a binary for all the DX versions compiled with mingw.
+
+`$ cd download`
+`$ wget -c `[`http://alleg.sourceforge.net/files/dx80_mgw.zip`](http://alleg.sourceforge.net/files/dx80_mgw.zip)
+`$ cd ..`
+`$ mkdir directx`
+`$ cd directx`
+`$ unzip ../download/dx80_mgw.zip`
+
+The zip just has a 'lib' and 'include' folders, so previous commands create a directory named 'directx' and unzip there.
+
+### Portaudio
+
+Once the dependencies are available let's compile portaudio.
+
+`wget -c `[`http://www.portaudio.com/archives/pa_stable_v19_061121.tar.gz`](http://www.portaudio.com/archives/pa_stable_v19_061121.tar.gz)
+`tar xvfz pa_snapshot_v19.tar.gz`
+`cd portaudio`
+`cat > SConstruct.crossmingw`
+
+    #!/usr/bin/python
+    import glob,os
+    env=Environment()
+    env.Tool('crossmingw', toolpath=['.'])
+    prefix = ARGUMENTS.get('prefix','/usr/local')
+
+    env.AppendUnique(CPPPATH=[
+            '../asiosdk2',
+            '../asiosdk2/common',
+            '../asiosdk2/host',
+            '../asiosdk2/host/pc',
+            '../directx/include',
+            'src/common',
+            'src/os/win',
+            'include',
+    ])
+    env.AppendUnique(LDFLAGS = [
+            '-fmessage-length=0',
+            '--add-stdcall-alias',
+    ])
+
+    env.AppendUnique(LIBS=[
+            'kernel32',
+            'user32',
+            'gdi32',
+            'shell32',
+            'ole32',
+            'uuid',
+            'winmm',
+            'setupapi',
+    ])
+
+    env.AppendUnique(CXXFLAGS=['-O3','-s','-Wall'])
+    env.AppendUnique(CPPDEFINES=[
+            ('BUILDING_DLL','1'),
+    ])
+
+    sourcePaths = [
+            'src/common',
+            'src/os/win',
+            'src/hostapi/asio',
+            'src/hostapi/dsound',
+            'src/hostapi/wmme',
+            'src/hostapi/wasapi',
+            'src/hostapi/wdmks',
+    ]
+    blacklist = [
+            'src/os/win/pa_x86_plain_converters.c',
+    ]
+    sources=[]
+    for sourcePath in sourcePaths :
+            sources += glob.glob(sourcePath+"/*.cpp")
+            sources += glob.glob(sourcePath+"/*.c")
+    for blacksheep in blacklist:
+            sources.remove(blacksheep)
+
+    lib=env.SharedLibrary("portaudio",sources+["../asiosdk2/asiosdk2.a"])
+    install= [
+        env.Install(os.path.join(prefix,'lib'),lib),
+        env.Install(os.path.join(prefix,'bin'),lib[0]),
+        env.Install(os.path.join(prefix,'include'),glob.glob('include/*')),
+    ]
+
+    env.Alias('install',install)
+
+-   Comment out the function PaUtil\_DebugPrint in src/common/pa\_front.c
+-   Change the file portaudio/src/hostapi/dsound/pa\_win\_ds\_dynlink.h
+
+<!-- -->
+
+    63c63
+    < #include <DSound.h>
+    ---
+    > #include <dsound.h>
+
+`wget `[`http://iua-share.upf.edu/svn/clam/trunk/CLAM/scons/sconstools/crossmingw.py`](http://iua-share.upf.edu/svn/clam/trunk/CLAM/scons/sconstools/crossmingw.py)
+`scons -f SConstruct.crossmingw install prefix=$MINGWSANDBOX/local`
+
+To test it just issue this command from the build/dev-cpp folder (change the wire example if you want).
+
+`i586-mingw32msvc-c++ test/patest_sine.c portaudio.dll -I include/`
+`./a.exe`
+
+fftw3
+-----
+
+You can crosscompile it:
+
+`export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever in your case`
+`cd $MINGWSANDBOX/download`
+`wget `[`http://www.fftw.org/fftw-3.1.2.tar.gz`](http://www.fftw.org/fftw-3.1.2.tar.gz)
+`tar xvfz fftw-3.1.2.tar.gz`
+`cd fftw-3.1.2`
+`autoconf`
+`./configure --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local`
+`make install`
+
+Alternatively you can install a precompiled mingw binary:
+
+`export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever in your case`
+`cd $MINGWSANDBOX/download`
+`wget `[`ftp://ftp.fftw.org/pub/fftw/fftw-3.1.2-dll.zip`](ftp://ftp.fftw.org/pub/fftw/fftw-3.1.2-dll.zip)
+`mkdir fftw3-bin`
+`cd fftw3-bin`
+`unzip fftw-3.1.2-dll.zip`
+`mkdir -p $MINGWSANDBOX/local/{lib,include,bin}`
+`cp *dll *def $MINGWSANDBOX/local/lib`
+`cp lib/libfftw3-3.dll $MINGWSANDBOX/local/bin`
+`cp fftw3.h fftw3.f $MINGWSANDBOX/local/include`
+
+libmad
+------
+
+`export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever  `
+`cd $MINGWSANDBOX`
+`cd download`
+`wget `[`http://kent.dl.sourceforge.net/sourceforge/mad/libmad-0.15.1b.tar.gz`](http://kent.dl.sourceforge.net/sourceforge/mad/libmad-0.15.1b.tar.gz)
+`wget `[`http://osdir.com/ml/audio.mad.devel/2004-08/txtRb6wKMmabF.txt`](http://osdir.com/ml/audio.mad.devel/2004-08/txtRb6wKMmabF.txt)` -O libmad-0.15.1b-pkgconfig.patch`
+`tar xvfz libmad-0.15.1b.tar.gz`
+`cd libmad-0.15.1b`
+`patch -p1 < ../libmad-0.15.1b-pkgconfig.patch`
+`aclocal`
+`automake`
+`autoconf`
+`./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local`
+`make install`
+
+The patch is to create a pkg-config file. We are not using it but it will be good to have in the future. See <http://www.mars.org/mailman/public/mad-dev/2004-August/001066.html>
+
+id3lib
+------
+
+Trying to crosscompile
+
+`export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever  `
+`cd $MINGWSANDBOX`
+`cd download`
+`wget `[`http://ovh.dl.sourceforge.net/sourceforge/id3lib/id3lib-3.8.3.zip`](http://ovh.dl.sourceforge.net/sourceforge/id3lib/id3lib-3.8.3.zip)
+`unzip id3lib-3.8.3.zip`
+`cd id3lib-3.8.3`
+
+i had to comment out some lines on the configure.in (line 251)
+
+`C_CHECK_FUNCS(mkstemp)`
+`#AC_CHECK_FUNCS(`
+`#  truncate                      \`
+`#  ,,AC_MSG_ERROR([Missing a vital function for id3lib])`
+`#)`
+`dnl Checks for typedefs, structures, and compiler characteristics.`
+
+Edit include/id3/globals.h line 44
+
+`< #ifdef WIN32`
+`--`
+`> #ifdef __MSVC_VER`
+
+And then follow:
+
+`autoconf`
+`./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local`
+`make install`
+
+libsndfile
+----------
+
+Note that we couldn't get working the precompiled binary on its web.
+
+<http://www.mega-nerd.com/libsndfile/libsndfile-1_0_17.zip>
+
+So we are crosscompiling it ourselves from the sources.
+
+`export MINGWSANDBOX=~/CajitasDeArena/mingw # Or whatever you want`
+`cd $MINGWSANDBOX`
+`cd download`
+`wget `[`http://www.mega-nerd.com/libsndfile/libsndfile-1.0.17.tar.gz`](http://www.mega-nerd.com/libsndfile/libsndfile-1.0.17.tar.gz)
+`tar xvfz libsndfile-1.0.17.tar.gz`
+`cd libsndfile-1.0.17`
+`./configure mingw32 --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/libsndfile --disable-sqlite`
+`make install`
+
+If it fails, apply this patch:
+
+`diff -r libsndfile-1.0.17/tests/utils.h libsndfile-1.0.17-modified/tests/utils.h`
+`35a36,38`
+`> #if (defined (WIN32) || defined (_WIN32))`
+`> #define SIGNED_SIZEOF(x)      ((int) (sizeof (x)))`
+`> #else`
+`36a40`
+`> #endif`
+
+Old steps:
+
+`CXX=i586-mingw32msvc-g++ RANLIB=i586-mingw32msvc-ranlib AR=i586-mingw32msvc-ar CC=i586-mingw32msvc-gcc ./configure mingw32 --prefix=$MINGWSANDBOX/libsndfile --disable-sqlite`
+`make`
+`mkdir -p ../libsndfile/{lib,include,bin}`
+`cp src/.libs/libsndfile-1.dll ../dlls`
+`cp src/.libs/libsndfile-1.dll ../libsndfile/lib/`
+`cp src/.libs/libsndfile.dll.a ../libsndfile/lib/libsndfile.lib`
+`cp src/libsndfile.la ../libsndfile/lib/`
+`cp src/libsndfile.def ../libsndfile/lib/`
+`cp src/sndfile.h ../libsndfile/include/`
+
+libogg and libvorbis
+--------------------
+
+Currently CLAM just uses libogg and libvorbis, so you can ignore flac and speex by now.
+
+### libogg
+
+`cd $MINGWSANDBOX/downloads`
+`wget `[`http://downloads.xiph.org/releases/ogg/libogg-1.1.3.tar.gz`](http://downloads.xiph.org/releases/ogg/libogg-1.1.3.tar.gz)
+`tar xvfz libogg-1.1.3.tar.gz`
+`cd  libogg-1.1.3`
+
+Edit configure.in after each
+
+`#include `<sys/types.h>
+
+Append
+
+`#include `<stdint.h>
+
+And continue:
+
+`autoconf`
+`./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local --disable-shared`
+`make install`
+
+### libvorbis
+
+`cd $MINGWSANDBOX/downloads`
+`wget `[`http://downloads.xiph.org/releases/vorbis/libvorbis-1.2.0.tar.gz`](http://downloads.xiph.org/releases/vorbis/libvorbis-1.2.0.tar.gz)
+`tar xvfz libvorbis-1.2.0.tar.gz`
+`cd libvorbis-1.2.0`
+`./autogen.sh  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local/ PKG_CONFIG_PATH=$MINGWSANDBOX/local/lib/pkgconfig --disable-shared`
+`make install`
+
+### libflac (not used in CLAM)
+
+`cd $MINGWSANDBOX/downloads`
+`wget `[`http://downloads.xiph.org/releases/flac/flac-1.2.1.tar.gz`](http://downloads.xiph.org/releases/flac/flac-1.2.1.tar.gz)
+`tar xvfz flac-1.2.1.tar.gz`
+`cd ../flac-1.2.1`
+
+Apply this patch:
+
+`--- include/share/alloc.h.old   2008-01-27 18:03:00.000000000 +0100`
+`+++ include/share/alloc.h       2008-01-27 18:03:39.000000000 +0100`
+`@@ -28,7 +28,7 @@`
+`  */`
+` #include `<limits.h>` /* for SIZE_MAX */`
+`+#if !defined _MSC_VER && !defined __EMX__`
+`-#if !defined _MSC_VER && !defined __MINGW32__ && !defined __EMX__`
+` #include `<stdint.h>` /* for SIZE_MAX in case limits.h didn't get it */`
+` #endif`
+` #include `<stdlib.h>` /* for size_t, malloc(), etc */`
+
+`./autogen.sh  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local/  PKG_CONFIG_PATH=$MINGWSANDBOX/local/lib/pkgconfig --disable-shared --disable-xmms-plugin`
+`make install`
+
+### libspeex (not used in CLAM)
+
+`cd $MINGWSANDBOX/downloads`
+`wget `[`http://downloads.xiph.org/releases/speex/speex-1.0.5.tar.gz`](http://downloads.xiph.org/releases/speex/speex-1.0.5.tar.gz)
+`tar xvfz speex-1.0.5.tar.gz`
+`cd speex-1.0.5`
+`PKG_CONFIG='wine pkg-config' ./configure  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local/  PKG_CONFIG_PATH=$MINGWSANDBOX/local/lib/pkgconfig --disable-shared --with-ogg-dir=$MINGWSANDBOX/local/`
+`make install`
+
+It will complaint while compiling the examples, but the library should be installed at that point. Currently working on that, not needed for CLAM though, not even the library. PKG\_CONFIG is needed in order autoconf not detecting linux version of ogg. I don't know why this is needed here and not in other libraries.
+
+pthreads
+--------
+
+`cd $MINGWSANDBOX/download`
+`wget '`[`http://www.mirrorservice.org/sites/sourceware.org/pub/pthreads-win32/pthreads-w32-2-8-0-release.tar.gz`](http://www.mirrorservice.org/sites/sourceware.org/pub/pthreads-win32/pthreads-w32-2-8-0-release.tar.gz)`'`
+`tar xvfz pthreads-w32-2-8-0-release.tar.gz`
+`cd pthreads-w32-2-8-0-release`
+`make CROSS=i586-mingw32msvc- GC-inlined`
+`mkdir -p $MINGWSANDBOX/local/{include,lib,bin}`
+`cp libpthreadGC2.a $MINGWSANDBOX/local/lib`
+`cp *.h $MINGWSANDBOX/local/include`
+`cp pthreadGC2.dll $MINGWSANDBOX/local/bin`
+`ln -s libpthreadGC2.a $MINGWSANDBOX/local/lib/libpthread.a`
+
+The last step is needed for libraries such as liblo that look for -lpthread
+
+liblo
+-----
+
+Needed to compile the osc plugin. Assure you did all the steps with pthread in order to have a link named pthreads/lib/libpthread.a pointing to libpthreadGC2.a.
+
+`export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever in your case`
+`cd $MINGWSANDBOX/download`
+`wget '`[`http://downloads.sourceforge.net/liblo/liblo-0.24.tar.gz`](http://downloads.sourceforge.net/liblo/liblo-0.24.tar.gz)`'`
+`tar xvfz liblo-0.24.tar.gz`
+`cd liblo-0.24`
+
+Substitue in liblo.pc.in
+
+`- Libs: -L${libdir} -llo -lpthread`
+`+ Libs: @LDFLAGS@ -L${libdir} @LIBS@ -llo`
+
+Then:
+
+`./autogen.sh  --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local LDFLAGS=-L$MINGWSANDBOX/local/lib/ CPPFLAGS="-I$MINGWSANDBOX/local/include/ -D_WIN32_WINNT=0x0501" LIBS=-lws2_32`
+`make install`
+
+It complaints about a redefined function `gai_strerrorA` in `src/server.c`. Just comment the function out.
+
+cppunit
+-------
+
+To get some extra autoconf macros and libtool do:
+
+`sudo apt-get install autoconf-archive libtool automake`
+
+Then:
+
+`cd download `
+`cvs -z3 -d:pserver:anonymous@cppunit.cvs.sourceforge.net:/cvsroot/cppunit co -P -d cppunit-cvs cppunit`
+`cd cppunit-cvs`
+`./autogen.sh`
+`./configure --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local --enable-doxygen=no`
+`make`
+`make install`
+`cp src/cppunit/.libs/libcppunit-1-12-0.dll ../../dlls`
+
+Ladspa
+------
+
+Just copy the ladspa header from your linux installation to the mingw sandbox:
+
+`cp /usr/include/ladspa.h $MINGWSANDBOX/local/include/`
+
+Xerces-C
+--------
+
+`cd $MINGWSANDBOX/download`
+`wget `[`http://ftp.udc.es/apache-dist/xerces/c/2/sources/xerces-c-src_2_8_0.tar.gz`](http://ftp.udc.es/apache-dist/xerces/c/2/sources/xerces-c-src_2_8_0.tar.gz)
+`tar xvfz xerces-c-src_2_8_0.tar.gz`
+`cd xerces-c-src_2_8_0/src/xercesc`
+`export XERCESCROOT=$MINGWSANDBOX/download/xerces-c-src_2_8_0/`
+`./runConfigure -p mingw-msys -C  --prefix -C $MINGWSANDBOX/local/ -C --host=i586-mingw32msvc `
+
+You should edit Makefile.incl and substitute 'dllwrap' by 'i586-mingw32msvc-dllwrap'.
+
+`make`
+`make install`
+
+libsamplerate
+-------------
+
+This library is not a current CLAM dependency (an experimental plugin depends on it). This is just an experiment foreseeing an eventual use.
+
+`export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever in your case`
+`cd $MINGWSANDBOX/download`
+`cd downloads`
+`wget `[`http://www.mega-nerd.com/SRC/libsamplerate-0.1.2.tar.gz`](http://www.mega-nerd.com/SRC/libsamplerate-0.1.2.tar.gz)
+`tar xvfz libsamplerate-0.1.2.tar.gz`
+`cd libsamplerate-0.1.2`
+`./configure --host=i586-mingw32msvc --prefix=$MINGWSANDBOX/local CPPFLAGS=-I$MINGWSANDBOX/local/include/ PKG_CONFIG_PATH=$MINGWSANDBOX/local/lib/pkgconfig/`
+`make install`
+
+Py2Exe
+------
+
+[py2exe](http://www.py2exe.org/) is needed to add Annotator's support for Boca tasks.
+
+Download and install python
+
+`wget `[`http://python.org/ftp/python/2.5.4/python-2.5.4.msi`](http://python.org/ftp/python/2.5.4/python-2.5.4.msi)
+`msiexec /i python-2.5.4.msi`
+
+Note: Newest Python is: <http://www.python.org/ftp/python/2.6.1/python-2.5.4.msi>
+
+Download py2exe and install it.
+
+`wget `[`http://switch.dl.sourceforge.net/sourceforge/py2exe/py2exe-0.6.9.win32-py2.5.exe`](http://switch.dl.sourceforge.net/sourceforge/py2exe/py2exe-0.6.9.win32-py2.5.exe)
+`wine py2exe-0.6.9.win32-py2.5.exe`
+
+`wget `[`http://platea.pntic.mec.es/%7Ejmorilla/python/PyXML-0.8.4.win32-py2.5.exe`](http://platea.pntic.mec.es/%7Ejmorilla/python/PyXML-0.8.4.win32-py2.5.exe)
+`wine PyXML-0.8.4.win32-py2.5.exe`
+
+`cd clam/Annotator/SimacServicesClient`
+`mkdir -p build/bdist.win32/winexe/bundle-2.5`
+`cp ~/.wine/drive_c/Windows/System/python25.dll build/bdist.win32/winexe/bundle-2.5`
+`wine ~/.wine/drive_c/Python25/python.exe buildExeFromPython.py`
+
+Still getting errors at this point
+
+The following packages have case problem:
+
+-   email.Iterators
+-   email.Utils
+-   email.Generators
+
+Still missing: 'DateTime', 'Ft.Lib', 'Ft.Lib.DumpBgTuple', 'Ft.\_\_init\_\_', 'XPathParserc', '\_pybsddb', 'bsddb3.dbutils', 'ext.IsDOMString', 'ext.SplitQName', 'xml.xslt', 'xml.xslt.ParsedPattern'
+
+Crosscompiling CLAM
+===================
+
+Add the dll path to the \~/.wine/system.reg Section [System\\\\CurrentControlSet\\\\Control\\\\Session Manager\\\\Environment], Key PATH
+
+`"PATH"="c:\\windows\\system32;c:\\windows;z:\\CajitasDeArena\\mingw\\local\\bin"`
+
+The "z:\\\\CajitasDeArena\\\\mingw" part will vary in your case. (for example you can find the correct drive letter with the 'winecfg' app)
+
+`export MINGWSANDBOX=~/CajitasDeArena/mingw # or whatever in your case`
+`mkdir -p $MINGWSANDBOX/local/bin`
+`cp /home/vokimon/.wine/drive_c/Qt/4.4.3/bin/*dll  $MINGWSANDBOX/local/bin`
+`svn co `[`http://clam-project.org/clam/trunk`](http://clam-project.org/clam/trunk)` clam`
+
+Comment out the
+
+`cd $MINGWSANDBOX/clam/CLAM`
+`scons configure with_fftw3=1 audio_backend=portaudio xmlbackend=xmlpp prefix=$MINGWSANDBOX/local sandbox_path=$MINGWSANDBOX crossmingw=1`
+`scons install`
+`cd $MINGWSANDBOX/clam/CLAM/plugins/continuousExcitationSynthesizer`
+`scons install clam_prefix=$MINGWSANDBOX/local crossmingw=1`
+`cd $MINGWSANDBOX/clam/CLAM/plugins/spacialization`
+`scons install clam_prefix=$MINGWSANDBOX/local crossmingw=1`
+`cd $MINGWSANDBOX/clam/CLAM/plugins/speech`
+`scons install clam_prefix=$MINGWSANDBOX/local crossmingw=1`
+`cd $MINGWSANDBOX/clam/CLAM/plugins/osc`
+`scons install clam_prefix=$MINGWSANDBOX/local crossmingw=1 sandbox_path=$MINGWSANDBOX`
+`cd $MINGWSANDBOX/clam/CLAM/plugins/GuitarDistortion`
+`scons install clam_prefix=$MINGWSANDBOX/local crossmingw=1`
+`cd $MINGWSANDBOX/clam/NetworkEditor`
+`QTDIR=~/.wine/drive_c/Qt/4.4.3/ scons clam_prefix=$MINGWSANDBOX/local prefix=$MINGWSANDBOX/local external_dll_path=$MINGWSANDBOX/local/bin crossmingw=1 package`
+`cd $MINGWSANDBOX/clam/Annotator/vmqt`
+`QTDIR=~/.wine/drive_c/Qt/4.4.3/ scons clam_prefix=$MINGWSANDBOX/local crossmingw=1`
+`cd $MINGWSANDBOX/clam/Annotator/`
+`QTDIR=~/.wine/drive_c/Qt/4.4.3/ scons prefix=$MINGWSANDBOX/local  clam_prefix=$MINGWSANDBOX/local external_dll_path=$MINGWSANDBOX/local/bin crossmingw=1 package`
+
+VST development
+===============
+
+-   Download vst 2.4 sdk from steimberg (no direct link can be provided :-P ).
+-   Unzip it in \$MINGWSANDBOX/
+-   Edit \$MINGWSANDBOX/vstsdk2.4/pluginterfaces/vst2.x/aeffect.h +97
+
+`< #ifdef WIN32`
+`> #ifdef _MSC_VER`
+
+-   Run:
+
+`cd $MINGWSANDBOX/clam/NetworkEditor/src/vst`
+`QTDIR=~/.wine/drive_c/Qt/4.4.3/ scons prefix=$MINGWSANDBOX/local clam_prefix=$MINGWSANDBOX/local external_dll_path=$MINGWSANDBOX/local/bin crossmingw=1 vstsdk_path=$MINGWSANDBOX/vstsdk2.4`
+
+To test the plugin you should use a vsthost. **Warning:** this will taint your wine install with some runtime libs, take that into account if you want a clean system to try binaries installation.
+
+`cd $MINGWSANDBOX/download`
+`wget `[`http://www.hermannseib.com/programs/vsthost.zip`](http://www.hermannseib.com/programs/vsthost.zip)
+`mkdir vsthost`
+`cd vsthost`
+`wget `[`http://www.kegel.com/wine/winetricks`](http://www.kegel.com/wine/winetricks)
+`bash winetricks mfc42`
+
+TODO: Last time I needed to put \$MINGWSANDBOX/local/lib (expressed in a wine version) in the wine PATH environment, althought it should not be needed.
+
+`winepath -w $MINGWSANDBOX/local/lib`
+`* Edit ~/.wine/system.reg`
+`* At 'System\\CurrentControlSet\\Control\\Session Manager\\Environment' the 'PATH' key to point also to the path separating it with a ';'`

@@ -1,0 +1,77 @@
+    Presenting CLAM project:
+        Framework for application development and research on audio and music
+        Recall presentation yesterday on 3D audio capabilities
+        Showed integration with LADSPA, JACK, OSC, Blender, Ardour...
+        CLAM enabled a fast project integration
+            Short path from prototypes to actual applications
+        Common tasks (external communication, interface, configuration...)
+        Common interface eases recombination
+        Our intention is CLAM to be a nice guy in the LAD community
+            Knows lingui franci: OSC, JACK, LADSPA, VST...
+            Talks with everybody
+            Reuses existing projects
+            Collaborates with existing FLOSS projects
+        Welcome new hands to the project
+        http://clam-project.org
+        Wiki contains 
+            road map to documentation
+            tutorials for apps
+            goal oriented recipes for programmers
+    Application prototyping:
+        Open an existing network (SMSTranspose?)
+        Show the backend indicator
+        Play
+        Launch qjackctl and connect inputs and outputs
+        Play, talk and stop
+        Explain: kind of tokens not just audio
+            Those are spectrums and spectral peaks
+            Different colors for different
+            Not limited to a given set of types
+            Extendable by plugins to any well behaved C++ class
+            Two different flows ports and control
+        That's the processing core of our application
+        To get a full application we need some interface
+        Don't reinvent the wheel, use qt designer
+        CLAM provides Qt plugins with useful widgets
+            to display data
+            to send and receive controls
+        Open the related interface
+        Show how the names relate to the network
+        How to obtain this encoded name? Context menu in NE ports
+        So we have two XML files, the network and the interface
+        We want to get an stand alone app with network+interface
+        Prototyper does that. Launch it.
+        We could choose backends
+    Algorithms demo:
+        TODO: decide which ones to show up
+        TODO: What about show about 3D
+    Plugin prototyping:
+        Backends are a very powerfull notion in CLAM
+        A backend could be a plugin platform
+        Making ladspa plugins? Ladspa button
+            Asks the metadata and builds a dll with the network
+            Generates the code and builds it
+            Of course, CLAM load LADSPA, so we can use a network as LADSPA
+            Hate generated code? Take a look at it, compact, do it yourself
+        What about VST?
+            Same applies
+            Just need a crosscompiled CLAM
+        TODO: Faust. Nael?
+        More comming: LV2, AudioUnits, VSTi...
+    Building networks:
+        TODO: Close to the tutorial but using new usability features
+    Processing algorithms:
+        TODO: Choose the ones to show and order
+        3D audio (room acoustics, hrtfs, vbap, ambisonics, hoa)
+        Spectral analysis
+        LPC/MFCC analysis
+        SMS analysis
+        Tonal analysis
+        Rhythm analysis
+        Spectral transforms
+        SMS Transforms (Voice, monophonic music)
+    Extending clam:
+        TODO: Programming processings
+        (X) Programming backends
+        (X) Programming monitors/controllers
+        

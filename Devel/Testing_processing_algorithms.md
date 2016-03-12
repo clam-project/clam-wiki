@@ -1,0 +1,33 @@
+For most infrastructure things in CLAM we provide regular unit tests. But testing a processing algorithm is not something trivial. This page includes some approaches we take when testing/developing processing algorithms in order to have some quality assurance.
+
+Direct review
+-------------
+
+Compare the algorithm implementation to bibliographic sources. This includes contrasting sources when more than one is available. The bibliographic sources and divergences are 'doxygenated'.
+
+Singularities handling and unit testing
+---------------------------------------
+
+An explicit search within the algorithm should be checked against numerical singularities (e.g. 0/0, x/0, -x1/2, ln(-x)). If singularities exist, they are documented and automatically checked unit tests are provided.
+
+In the case of descriptors, a comparable number is provided which has sense on the singularity limits, in order to not distort (or invalidate) statistics.
+
+White box unit testing
+----------------------
+
+Find inputs so that the output can be theoretically predicted without computation. Such input test signals are usually non-realistic but quick and simple to generate and check. Examples include: silences, Dirac deltas, pulses, sounds from synthetic sources, etc. Known bug cases can be provided as automatically-checked unit tests.
+
+Back to back testing
+--------------------
+
+For more realistic cases First we produce “ground truth” output data from any reference implementation: e.g. a Matlab implementation when we are porting to C++ or the original program, when we are implementing a third party algorithm. Then, this ground truth is used to compare against the output of the ported algorithm (back to back testing). Differences are highlighted and, when possible, corrected. Changes detected by the 'back-to-back' procedure that are not due to implementation errors need to be evaluated using a qualitative criteria to be deemed acceptable or not. When the changes have been validated by other means, the back-to-back tests should be updated to the new value.
+
+Accuracy checks and testing
+---------------------------
+
+Use a quality measure so that whenever differences appear on the back-to-back testing, we could check whether the results are within a tolerance window of performance. Purpose-made signals and manual annotations (e.g. a sequence of pitches on a test signal, annotated beat, chords, etc) are often used for these quality measurements (e.g. detection accuracy, distortion rate, interference rate, etc). Alternatively, when no automated quality measure can be given, manual guidelines could be provided to allow implementers to validate a changed result (e.g. an expected harmonic structure, a decomposition of the signals into parts that sound in a particular way, etc).
+
+Janitors
+--------
+
+Janitors are scripts that detect bad coding practices: bad formatting and naming conventions, absence of license or doxygen documentation...

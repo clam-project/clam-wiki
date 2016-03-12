@@ -1,0 +1,134 @@
+[Back to Index](DeprecatedDoc/CLAMUserManual "wikilink")
+
+License of this document
+========================
+
+Copyright (c) Music Technology Group (MTG), Universitat Pompeu Fabra (UPF).
+
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.1 or any later version published by the Free Software Foundation; with the Invariant sections being this 'Introduction', with the Front-Cover Texts being the one herein included, and with no Back-Cover Texts. A copy of the license is available at <http://www.fsf.org/licenses/fdl.txt>.
+
+What is CLAM?
+=============
+
+CLAM is a Free Software framework licensed under GNU-GPL that allows to fully develop multiplatform audio applications in C++ using advanced processing algorithms. It is not limited to the processing part of your application; it can help you providing multiplatform solutions for most problems that an audio application should face:
+
+`   * accessing audio and MIDI devices,`
+`   * managing threads,`
+`   * serializing objects in formats such XML and SDIF,`
+`   * displaying and controlling your application data,`
+`   * integrating visualization using several multiplatform graphical toolkits,`
+`   * interconecting your application modules in a decoupled way`
+`   * ...`
+
+CLAM is able to do complex audio processing involving:
+
+`   * Management of heterogeneous signal data: not only samples but also spectral data, symbols, structured data...`
+`   * Complex data flows: with asyncronous events (controls), diferent rates of data feeding...`
+`   * Scaling up by composition of smaller processings.`
+`   * Dynamic creation and interconnection of processing networks.`
+
+And last but not least, it comprises a big repository of already done algorithms concerning areas such as:
+
+`   * Spectral modeling and transformations`
+`   * Feature extraction`
+`   * Classification`
+`   * ...`
+
+What does 'CLAM' mean?
+======================
+
+CLAM stands for C++ Library for Audio and Music and in Catalan means something like 'a continuous sound produced by a large number of people as to show approval or disapproval of a given event'. It is the best name we could find after long discussions and it is certainly much better than its original name (MTG-Classes).
+
+Historical background
+=====================
+
+CLAM was formerly developed as an internal project on the Music Technology Group at UPF named MTG-Classes. The aim of the project was to create a foundation of C++ classes to be used by all the research projects at the MTG. Literally (from the first written draft) the goal was: 'To offer a complete, flexible and platform independent Sound Analysis/Synthesis C++ platform to meet current and future needs of all MTG projects.'
+
+The three main axes of these goals were defined as:
+
+`   * Complete: should include all utilities needed in a Sound Processing Project (input/output, processing, storage, display...)`
+`   * Flexible: Easy to use and adapt to any kind of need.`
+`   * Platform Independent: Compile under UNIX, Windows and Mac platforms.`
+
+These initial objectives have slightly changed since then mainly to accommodate to the fact that the library is no longer seen as an internal tool for the MTG but as a library that is made public under the GNU-GPL in the course of the Agnula IST European Project. 6 Supported platforms
+
+CLAM code is standard ISO/ANSI C++. It uses multiplatform libraries to abstract platform dependant issues. Non portable code and even library dependant code is very localized and isolated. This makes it easier to port CLAM to whatever platform.
+
+Currently, the following platforms are supported: Linux gcc 2.95 Fully supported gcc 3.X Fully supported Windows VisualC++ 6 (SP5) Supported until release 0.6.1, not currently supported any longer VisualC++ 7.1 Fully Suported MacOSX gcc 3.X Fully Supported
+
+Reports on CLAM ports to any other platform will be appreciated.
+
+Recommended previous skills
+===========================
+
+Althought CLAM goes toward a visual environment, currently, this "visual builder" (quoting R.E. Johnson) is in beta stage and CLAM functionalities are only accessible by doing your own programs. Thus, a good level in object oriented C++ programming experience is needed, although we have tried our best to keep interfaces as simple as possible.
+
+Of course, CLAM is a framework for audio and music processing so some knowledge in those areas (as well as some DSP basis) is also recommended. 8 Basic principles
+
+The CLAM framework is built on top of some architectural basic elements that are used as building blocks and should therefore be mastered. Most of this document is about them but, just to have a first impression, these are the basic principles used in CLAM:
+
+Processing architecture
+-----------------------
+
+A CLAM based system can be viewed as a set of Processing objects deployed as an interconnected network. Each Processing can retrieve ProcessingData tokens and modify them acording to some algorithm.
+
+Programmers can keep control over the ProcessingData flow between Processing or they can delegate this task to one of the many automated FlowControl schedulers.
+
+A set of Processings can be arranged to form a new processing. Thus you can use that new processing to abstract what the full bunch of Processings does and then scale up to a more complex system. Processings can be arranged on compile-time (ProcessingComposites), or dinamically on run-time (Networks).
+
+![](Basic4MPS.png "Basic4MPS.png")
+
+Figure 1: CLAM Network
+
+Networks allow to build a CLAM system without no C++ knowledge, using only the graphical interface. They can be also used to build up rapid prototypes of a later optimized system. The prototyping environment is still some how limited.
+
+Processing classes
+------------------
+
+The Processing classes are the main building blocks of the CLAM framework. All processing in the CLAM must be performed inside a Processing class.
+
+Interaction between Processings follows a very bounded but flexible interface. This way, CLAM can manage Processing in a very general way and it boosts the reusability of Processings between different CLAM systems.
+
+All the Processing configuration process is done by giving it a configuration object before the Processing object is on the running state. While the Processing is running, the processing algoritm will be executed every time the Do() method is called at the processing execution rate.
+
+While the Processings is running receive and emits two kinds of output:
+
+`   * Continuous data: That will be fed from and by the Ports every time a Do method is called. Basically they consist on ProcessingData.`
+`   * Asyncronous data: Fed from and by the Controls whenever an event happens. They usually changes the internal state/mode of the algorithm`
+
+When no automated FlowControl is involved, you can also overload the Do() method to pass as parameters the ProcessingData that would be otherwise accessible from the ports. This way of implementing Processing is now deprecated but still used.
+
+The following figure illustrates all the different components of a Processing class.
+
+[[Image:ProcessingObject.png||300px] Figure 2: Processing Object Representation
+
+`   * See chapter VII and others.`
+`   * See also section chapter VIII for information on ProcessingData classes.`
+`   * Controls are explained in section 40`
+
+Visualization Module
+--------------------
+
+The CLAM Visualization Module fullfills two different developers needs. The first one is to inspect graphically CLAM objects as a debugging aid. The other one is to build a complete GUI based application that can be used in interaction with the Processing part of a CLAM system.
+
+CLAM-VM has been designed in a very decoupled way so that it can be fully removed harmlessly from a CLAM system. It provides some general services that are toolkit independent such as thread safe data caching, model-view comunication and sincronization...
+
+That CLAM-VM infrastructure can be used with any toolkit such as Qt, Fltk... In fact, it provides already done widgets, the toolkit dependant part. They are mostly implemented using FLTK and OpenGL but next releases will provide more support on Qt.
+
+(See chapter XIV)
+
+System utilities
+----------------
+
+CLAM provides integrated and platform independent support for system dependant tasks. For example:
+
+`   * Threading`
+`   * Midi devices access`
+`   * Audio devices access`
+`   * Audio files I/O`
+`   * SDIF I/O`
+
+Further Information
+===================
+
+There are different sources of CLAM related information. All of them, though, are linked and updated at CLAM's website at www.clam.iua.upf.es .

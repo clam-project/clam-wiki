@@ -1,0 +1,97 @@
+This page explain a technique to be able to configure a processing with a variable number of connectors (ports, controls) while keeping any existing connection with other processings, as long as they still has sense. This is very useful for multichannel processings. If you just need a fixed number of ports see [Creating a minimal processing object](Creating a minimal processing object "wikilink").
+
+Here we use *Connectors* to refer both *Ports* and *Controls*.
+
+Defining the connectors
+-----------------------
+
+First of all, we have to decide the class of connectors that we want to use. In this example we will use the AudioInPort and AudioOutPort classes, so it's necessary the following includes. However you can decide another port type if you want.
+
+`       ...`
+`       #include `<vector>
+`       #include `<CLAM/AudioInPort.hxx>
+`       #include `<CLAM/AudioOutPort.hxx>
+`       ...`
+
+We'll use a vector of AudioInPort (or AudioOutPort) instead of an unique AudioInPort or AudioOutPort. That's because we want to work with variable number of ports and we don't know the number of ports that we will need. So we can add this lines in the class declaration.
+
+`       ...`
+`       typedef std::vector`<CLAM::AudioOutPort*>` OutPorts;`
+`       typedef std::vector`<CLAM::AudioInPort*>` InPorts;`
+`       OutPorts _outports;`
+`       InPorts _inports;`
+`       ...`
+
+Convenience methods for Shrinking and Expanding ports
+-----------------------------------------------------
+
+Is very convenient to implement one method like this one for AudioInPort:
+
+`   void ResizeInPortsTo(unsigned nPorts)`
+`   {`
+`       // Expanding`
+`       static const std::string baseName = "in";`
+`       while (_inports.size()`<nPorts)
+        {
+            std::ostringstream nameStream;
+            nameStream << baseName << _inports.size();
+            AudioOutPort * port = new AudioOutPort( nameStream.str(), this);
+            _inports.push_back( port );
+            // This initialization depends on the kind of connector
+            port->`SetSize(BackendBufferSize()); // Just if AudioPort`
+`           port->SetHop( BackendBufferSize()); // Just if AudioPort`
+`       }`
+`       // Or Shrinking`
+`       for (unsigned i=nPorts; i<_inports.size(); i++)`
+`           delete _inports[i];`
+`       if (nPorts!=_inports.size()) _inports.resize( nPorts );`
+`   }`
+
+Add a similar one for OutputPorts or for each group of Connectors you want to resize independently.
+
+Initialization and destruction
+------------------------------
+
+In the ConcreteConfigure() method provided that you have obtained nInPorts and nOutPorts from the configuration parameters just do:
+
+`       ResizeInPortsTo(nInPorts);`
+`       ResizeOutPortsTo(nOutPorts);`
+
+[center|This processing has one provisional port](image:init_1_channel.png "wikilink") [center|This example shows the connection of two multi-port processing](image:dynamic_ports_4_channels.png "wikilink")
+
+In the destructor just place:
+
+`       ResizeInPortsTo(0);`
+`       ResizeOutPortsTo(0);`
+
+Using them
+----------
+
+Accessing such ports is just a matter of accessing the vectors. Don't forget to Produce and Consume all ports.
+
+Within the Do method we can read or write the AudioPorts. We create a CLAM::TData\* array for save the buffer of each channel.
+
+`       CLAM::TData* channels[_numberChannelsOut];`
+`       for (unsigned channel=0; channel<_numberChannelsOut; channel++)`
+`               channels[channel] = &_outports[channel]->GetAudio().GetBuffer()[0];`
+
+Then we can set the values that we want in the Audio Buffers.
+
+`       const unsigned portSize = _outports[0]->GetAudio().GetBuffer().Size();`
+`       for(unsigned i=0; i< portSize; i++)`
+`               for(unsigned channel = 0; channel<_numberChannelsOut; channel++)`
+`                       channels[channel][i] = value; `
+
+Finally, we have to call the Produce method for the AudioOutPorts and the Consume method for the AudioInPorts.
+
+`       for (unsigned channel=0; channel<_numberChannelsOut; channel++)`
+`               _outports[channel]->Produce();`
+`       for (unsigned channel=0; channel<_numChannelsIn; channel++)`
+`               _inports[channel]->Consume();`
+
+Handling connector order problems
+---------------------------------
+
+Connectors (Ports and Controls) are sorted as they are created. You will get a consistent connector ordering just by initializing fixed connectors before populating any group expanding/shrinking connectors of the same kind (In/Out, Ports/Controls). If you have two groups of connector of the same kind which are expanded/shrinked independently on configuration you may end up having different connector ordering.
+
+You should avoid doing that but i is possible to rearrange connector ordering afterwards. If you still need that just ask at the mailing list.

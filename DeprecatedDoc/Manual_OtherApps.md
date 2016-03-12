@@ -1,0 +1,81 @@
+SALTO
+=====
+
+SALTO is an SMS synthesizer that is designed to synthesize high quality Sax and Trumpet sounds. Here you can see a schematic representation of the application:
+
+![](SALTOBlock.gif "SALTOBlock.gif")
+
+In order to make it work you need to download the SALTO database from the CLAM [i5] website (www.iua.upf.es/mtg/clam). This database is a set of SDIF files that contain the result of previous SMS analysis. To put it in short, these SDIF files contain spectral analysis samples for the steady part of some notes, the residual and the attack part of the notes. If you want to look at these files you can use the SDIF Display application included with CLAM. If you want to synthesize them one by one and even add some transformations, you can use the Analysis/Synthesis Example application.
+
+Apart from this SDIF input, SALTO has three other inputs: MIDI, an XML Melody, and the GUI. Using MIDI as an input you can use SALTO as a regular MIDI synthesizer on real-time. SALTO is prepared to accept incoming MIDI messages coming from a regular MIDI keyboard or a MIDI breathcontroller.
+
+If you use an XML melody as an input you will be able to synthesize it back. It is the easiest way to try that SALTO is working correctly. You can use the melody included in the CLAM repository, write your own one following the same structure or use the Analysis/Synthesis Example application to generate one from an input sound.
+
+Finally, the GUI is still under development and can be basically used to control the way the synthesis is going to work.
+
+![](SALTOGUI.gif "SALTOGUI.gif")
+
+As seen in the previous screenshot, the most important part of the interface is on the lower left: the buttons to select what part of the sound you would like to synthesize. The upper part of the interface is just a graphical display of the output. On the right there are two buttons for loading and playing an xml melody. Finally, the central part is designed to manage the database but is not functional at this moment.
+
+Spectral Delay
+==============
+
+SpectralDelay is also known as CLAM's Dummy Test. In this application it is no important to actually implement an impressive application but rather to show what can be accomplished using the CLAM framework. Especial care has been taken on the way things are done and why they are done.
+
+The SpectralDelay implements a delay in the spectral domain. What that basically means is that you can divide your input audio signal in three bands and delay them separately, obtaining interesting or weird effects. Here you can see a block diagram of the process.
+
+![](SpectralBlock.gif "SpectralBlock.gif")
+
+As you can see, the basic of the processing is an STFT (Spectral Analysis) that performs the analysis of the input signal and converts it to the spectral domain. This processing composite contains a bunch of other processing (i.e. WindowGenerator or FFT, see AnalysisSynthesis UML diagram). The signal is synthesized using a SpectralSynthesis Processing that implements the inverse process. It is thus transformed, in between these two steps, in the spectral domain.
+
+The output data of the SpectralAnalysis is read by three AudioMultiplier Processings that also take as input the spectral transform function of a pre-defined filter. As a matter of fact we apply three different filters: a low-pass, a band-pass and a high-pass. We then have the signal divided into three different bands. Each of them is delayed with a different delay time. Finally, and before the synthesis, these three bands are summed up again.
+
+The graphical interface controls the frequency cut-offs and gains of the filters and the delay times of the delays.
+
+Rappid
+======
+
+Rappid is a testing workbench for the CLAM framework in high demanding situations. The first version of Rappid implements a quite simple time-domain amplitude modulation algorithm. Any other CLAM based algorithm, though, can be used in its place. Next picture illustrate the basic diagrams of the application.
+
+![](RapiddBlock.gif "RapiddBlock.gif")
+
+The most interesting thing about Rappid is the way that multithreading issues are handled, using a watchdog mechanism. The current implementation works only under GNU/Linux.
+
+Rappid has been tested in a live-concert situation. Gabriel Brinic used Rappid as a essential part of his composition for harp, viola and tape, presented at the Multiphonies 2002 cicle of concerts in Paris.
+
+Combining CLAM with LADSPA plugins
+==================================
+
+The LADSPA Toolkit and CLAM, a brief introduction
+-------------------------------------------------
+
+LADSPA (Linux Audio Developer's Simple Plugin) is a sound API that aims at giving an easy interface to program audio plugins for GNU/Linux. These plugins are designed to be used as shared objects inside any host programs that knows its interface.
+
+The API is written in C, although there are some wrappers to C++ (like the Computer Music Toolkit by Richard Furse). In this way,it allows to use LADSPA plugins inside C or C++ host applications.
+
+Seeing its purpose, is logical to think about the possibility of using CLAM to develop LADSPA plugins.
+
+Using CLAM Processings as LADSPA plugins
+----------------------------------------
+
+The only code you need to implement in order to create a ladspa shared object using CLAM are these lines:
+
+`#include "Oscillator.hxx"`
+`#include "LADSPA_ProcessingBridge.hxx"`
+
+`LADSPABridge* Instance(void)`
+`{`
+`       int id = 3000;`
+`       return LADSPABridgeTmpl`<CLAM::SimpleOscillator>`::Create(id);`
+`}`
+
+As you can see, we declare a function called Instance that returns a pointer to an object of the class LADSPABridge. This class is, as its name says, a bridge between CLAM C++ Processing Objects and LADSPA C Plugins Instances. You need to call the "Create" method of this class templatized by the processing you want to use as LADSPA plugin. Next stage is dedicated to create the settings.cfg of the project, in order to create a shared object. To do it, just put the next line in settings.cfg:
+
+`IS_LIBRARY = 1`
+
+The other lines of the config file are the same as any other CLAM project files. You can see some examples of them in build/Examples/CLAM-LADSPA\_Toolkit/ (the source is in examples/CLT/).
+
+Using LADSPA Plugins as CLAM Processings
+----------------------------------------
+
+There is also the possibility of using LADSPA shared objects inside CLAM, as if they were normal Processings. In order to acomplish this task, we provide the user with a CLAM Processing class called LadspaLoader. This processing has a Filename type attribute in its configuration, where you can assign which shared object you want to use. Another attribute is the index of the plugin ladspa you want to load from this shared object. After setting the correct values to its config, the LadspaLoader will create a correct interface for this plugin (with its ports and controls). This processing only works with a supervised version of Do (without parameters and using ports), and will use the algorithm encapsulated in the plugin to process its input.

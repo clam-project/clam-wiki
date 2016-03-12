@@ -1,0 +1,226 @@
+TODO's
+======
+
+Testing framework
+-----------------
+
+Setting up a framework to compare the goodness of different implementations of a segmentation algorithms given a ground truth.
+
+-   write unit tests for the framework
+-   allow different attributes as Segmentation (not only Chords\_Harte)
+-   allow different hop sizes
+-   generally there's room for improvement/rethinking:
+    -   <http://www.music-ir.org/mirex2007/index.php?title=Audio_Chord_Detection>
+    -   <http://en.wikipedia.org/wiki/Recall_(information_retrieval)>
+    -   so a clear path needs to be decided upon...
+-   ![](Done.png "fig:Done.png") A simple script with fixed hopsize and two pool files given at the command line
+-   ![](Done.png "fig:Done.png") Compute Recall and Precision
+-   Get the Beatles wavesurfer files
+-   Write a bash script for:
+    -   computing the segmentation on the songs
+    -   comparing with ground truth
+-   Integrate into testfarm
+
+Network editor integration
+--------------------------
+
+-   Make the parameters of TonalAnalysis configurable in NetworkEditor, one by one:
+    -   Change BinsPerOctave into BinsPerSemitone...
+        -   ...first making BinsPerOctave configurable, to check if everyting works
+    -   Make the algorithm "change the tunning" when starting from a different minimum frequency then 98 Hz
+        -   Quick (hopefully) and dirty (hopefully not) solution (hopefully) - change the reference tunning while reconfiguring TonalAnalysis
+    -   Find the reason of the "delete \_implenentation; \_implementation = new..." crash
+-   Make a precomputed SparseKernel for the default configuration
+-   Seperate the inner workings of TonalAnalysis into Processing Composites
+    -   Add a time input control to TonalAnalysis
+    -   Use this time input to inform ChordExtractor of the time position (if ever we use AudioFileReaders with seeking)
+    -   Internal time in TonalAnalysis, reset to 0 when the network starts
+
+Chordata (old Turnaround)
+-------------------------
+
+-   Bugfixing
+    -   ![](done.png "fig:done.png") Issue an error when the configuration fails
+    -   ![](done.png "fig:done.png") Do not play if the processings are not configured
+    -   Fix wrong number of visualised frames
+    -   The segmentation algorithm places the segments without considering the initial window size.
+    -   The cpu usage is 100% after loading even if no playback is done -\> <s>Lots of timer events are queued during analysis</s>
+    -   The cpu usage is 100% after loading during playback -\> Widgets have their own timer to update themselves that should be stoped during analysis or even when stopped.
+        -   Investigate the semantics of isEnabled. Just if the semantics are suited we could reuse it for that.
+        -   After any modification we should assure that the views still work well in NetworkEditor, Prototyper and Annotator.
+    -   Segmentations are moved forward half a window (to fix on the analysis or to kludge for the app)
+    -   On analysis, the configuration should be sensible to the file samplerate or we should resample the input
+    -   On playback, the file should be adapted to the backend samplerate
+    -   Check Id3 tags with encoded strings
+-   Release task:
+    -   ![](done.png "fig:done.png") Debian packages
+    -   ![](done.png "fig:done.png") Windows packages
+    -   Write a tutorial on the wiki
+    -   Record a video illustrating the usage
+    -   Add missing licence notices
+    -   Add missing authors
+-   Generalization
+    -   New spectrogram to access a block of the pcp data storage
+    -   Make the TonalAnalysis configuration editable as settings for the application reusing NetworkEditor Configurators and storing them as QSettings or as an xml file at \~/.turnaroundrc or similar
+    -   Disscuss with David how these features could be generalized for other similar applications (offline computing, dumping into an in-memory storage, syncing real-time and in-memory storage...) with the goal of providing more support from the framework.
+    -   Extract the widgets into a shared library
+    -   Converge Pool based data sources and array based data sources
+    -   Generalize storages for its use in regular networks
+    -   ![](done.png "fig:done.png") Add more backends (e.g. JACK)
+-   Convenience and usability
+    -   Define a convenient layout *(low)*
+    -   Consider whether to show more information than title and artist *(low)*
+    -   **More keyboard Shortcuts (which ones)**
+    -   Looping the song
+    -   Saving and loading analysis data *(low)*
+-   Future
+    -   Use the new file loader when available
+    -   Improve analysis
+    -   Realtime mode *(mid)*
+    -   Use a multichannel audioloader *(very low)*
+
+Detection algorithm enhancements
+--------------------------------
+
+Several algorithm enhancements are to be considered:
+
+-   Preprocessing
+    -   **[done]** Compute instant tunning by fasor addition on chroma peaks mapped to a semitone
+    -   **[done]** Limit the time scope of the global tunning computation (done but improvements needed)
+    -   Improve the limited scope tunning
+-   Processing
+    -   Find faster and more precise algorithms than the current one
+        -   Emilia's algorithm (peak detect before folding)
+        -   Wavelet based
+        -   Self-Correlation based
+-   Postprocessing
+    -   **[done]** Consider the None chord (all pitches) so that we can detect non chord segments and use it as reference for pitchness.
+    -   Symbolical analysis: Instead of correlation, analyze the pcp content using heuristic reasoning (Harte did plain filtering and some )
+    -   Double scope for analysis: Too large windows difuminate transitions but small ones fail to detect arpeggios based chords. We could choose depending on the number of high pitches on the PCP.
+    -   Onset alignment: Use realtime onset detection (aubio?) to 'quantize' the chord segments limits.
+
+Helper information
+------------------
+
+Enrich algorithm output so that the user may take profit of non-perfect algorithm or music that is not using recognized cords (fifths, rare chords...)
+
+-   Diffuse guessing: Minimize false positive impact to the user by computing a confidence value for each guess.
+-   Keeping several candidates so the user may view that he has more than one option.
+-   Rectified guess: Do a first realtime guess and correct it later if needed as the song goes on.
+
+Visualization
+-------------
+
+In parallel to enhance the algorithm to realtime some views must be developed. Some views ideas:
+
+-   **[done]** KeySpace (Emilia and Jordi's)
+-   **[done]** Tonnetz (pcp)
+-   Add chord figures to Tonnetz
+-   Chord torus (map pcp into the tonal torus space)
+-   Vectors in chord torus (needed to disambiguate dim chords)
+-   **[done]** Chord ranking: all chords displayed as sorted probability bars
+-   Highlight or filter candidates on chord ranking
+-   Chord candidates: just the ones before the first strong decay
+-   Realtime segment construction:
+    -   Instant chord segment: Display segment based on the best one on each instant.
+    -   Delayed segment: don't display a segment until we have enough information on the future to make a post processing
+    -   Guessed segments: Until sure, display the guess
+-   **[done]** Tunner displays the deviation from the central note
+-   Instrument fingering suggesting several forms
+-   Integrate a tunner in prototyper and chordata
+
+Stand alone application (GSoC Pawel)
+------------------------------------
+
+### Big project milestones
+
+-   ![](Done.png "fig:Done.png") Having an application that seeks allong the song.
+-   ![](Done.png "fig:Done.png") Launching the analysis whenever you change the song
+-   ![](Done.png "fig:Done.png") The playback controlling the time displayed on the views
+-   ![](Done.png "fig:Done.png") Additional features
+
+### Done
+
+-   -   ![](Done.png "fig:Done.png") Add a second tonnetz view sharing the same dataSource object
+    -   ![](Done.png "fig:Done.png") Add a second dataSource for the ChordCorrelation port
+    -   ![](Done.png "fig:Done.png") Bind it to a ChordRanking view
+    -   ![](Done.png "fig:Done.png") Proceed with KeySpace (notice that KeySpaceMonitor limits to 24 the number of bins so you might need to provide a solution)
+    -   ![](Done.png "fig:Done.png") Consider a new type not being a vector<float> such as PolarPeaks
+    -   ![](Done.png "fig:Done.png") Use the proper labels for the ChordRanking and the full vector (including quatriads and weird chords) copy the label generation code from the ChordRankingMonitor.
+        -   ![](Done.png "fig:Done.png") Restore old labels for KeySpace after separating DataSources
+    -   ![](Done.png "fig:Done.png") Store data in Storages, use DataSources only for passing data to widgets
+    -   ![](Done.png "fig:Done.png") Add separate DataSource for KeySpace with proper offset and labels
+    -   ![](Done.png "fig:Done.png") Build a segmentation view
+    -   ![](Done.png "fig:Done.png") Consider using the progress control to build a progress bar for the offline computing.
+    -   ![](Done.png "fig:Done.png") A Spectrogram widget to display the PCP instead the vectorView
+    -   ![](Done.png "fig:Done.png") Make available the metadata information (artist, title...) somewhere (a new panel, status bar, title bar...)
+    -   ![](Done.png "fig:Done.png") Make pause button functional
+        -   ![](Done.png "fig:Done.png") Find better way to pause network
+    -   ![](Done.png "fig:Done.png") Enabling and disabling views
+    -   ![](Done.png "fig:Done.png") "Open recent files" menu
+    -   ![](Done.png "fig:Done.png") Saving view visibility settings
+    -   ![](Done.png "fig:Done.png") Starting and stopping event timer when necessary
+    -   ![](Done.png "fig:Done.png") Help/About -\> shows an about box like the one in Network Editor
+    -   ![](Done.png "fig:Done.png") Help/Tutorial -\> opens the wiki tutorial
+
+Realtime segmentation (GSoC 2007 Roman)
+---------------------------------------
+
+-   Improve segmantation in ChordExtractor
+    -   ![](Done.png "fig:Done.png") Extract the code responsible for segmentation and make a separate class out of it
+        -   ![](Done.png "fig:Done.png") Make it possible to declare the class as a member of the dumper
+        -   ![](Done.png "fig:Done.png") Remove reference to the pool and extractor from the class
+        -   ![](Done.png "fig:Done.png") Change output into a Segmentation object
+        -   ![](Done.png "fig:Done.png") Use the class from within ChordExtractor
+    -   Setup framework for comparisons between different implementation of segmentation algorithms
+        -   ![](Done.png "fig:Done.png") Learn Python ;-)
+        -   ![](Done.png "fig:Done.png") A simple script with fixed hopsize and two pool files given at the command line
+        -   ![](Done.png "fig:Done.png") Compute Recall and Precision
+        -   Get the Beatles wavesurfer files
+        -   Write a bash script for:
+            -   computing the segmentation on the songs
+            -   comparing with ground truth
+    -   ![](Done.png "fig:Done.png") Decide on a method for allowing use of different chord extraction algorithms
+        -   ![](Done.png "fig:Done.png") Implement (not necessarily the right order of "Done"...)
+        -   ![](Done.png "fig:Done.png") Enable choice in the ChordExtractor exec
+        -   ![](Done.png "fig:Done.png") Enable configuration in the TonalAnalysis processing
+    -   A chord similarity based implementation
+        -   ![](Done.png "fig:Done.png") Experiments, tests, fun, and some extremely ugly hacking
+        -   ![](Done.png "fig:Done.png") Clean, code, commit the changes from the previous "take no prisoners an' burn all of 'em bridges" hacking
+        -   Improve some more...
+    -   Removing small segments
+        -   ![](Done.png "fig:Done.png") offline
+        -   realtime
+    -   Joining segments with identical chords
+        -   ![](Done.png "fig:Done.png") offline
+        -   ![](Done.png "fig:Done.png") realtime
+-   Realtime segmentation in chord extraction
+    -   ![](Done.png "fig:Done.png") Add a time output control to AudioFileReaders
+    -   ![](Done.png "fig:Done.png") Add a new port to TonalAnalysis for the segmentation from ChordExtractor
+    -   ![](Done.png "fig:Done.png") Some changes to the Segmentation classes to allow use through a port
+        -   ![](Done.png "fig:Done.png") a constructor with no (default) parameters
+        -   ![](Done.png "fig:Done.png") setMaxPosition
+        -   ![](Done.png "fig:Done.png") Add labels for segments
+
+Some short term goals for getting accustomed with the code:
+
+-   Make the parameters of TonalAnalysis configurable in NetworkEditor, one by one:
+    -   ![](Done.png "fig:Done.png") tunningEnabled
+    -   ![](Done.png "fig:Done.png") peakWindowingEnabled
+    -   ![](Done.png "fig:Done.png") hopRatio
+    -   ![](Done.png "fig:Done.png") filter (PCPSmoother)
+    -   ![](Done.png "fig:Done.png") fix the .clamnetwork files!
+
+### Old Done Tasks
+
+Exercise in using test with cppunit:
+
+-   ![](Done.png "fig:Done.png") Adapt InstantTunningEstimator's tests to the changes in the class
+    -   ![](Done.png "fig:Done.png") Change assertFoundCenterIs to use the vector<pair> interface
+    -   ![](Done.png "fig:Done.png") Divide any position (positions and expectedCenter) by 3 and pass 1 as the second constructor parameter
+    -   ![](Done.png "fig:Done.png") Adapt the last two tests to use the vector<pair> interface
+    -   ![](Done.png "fig:Done.png") Remove the useless doIt
+    -   ![](Done.png "fig:Done.png") Change any occurrences of \_binsPerSemitone within the class to a 1
+    -   ![](Done.png "fig:Done.png") Adapt user interface and user code
+    -   ![](Done.png "fig:Done.png") Change last two tests to use a special helper function
+

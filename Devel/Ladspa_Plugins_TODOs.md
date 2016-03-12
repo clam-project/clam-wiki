@@ -1,0 +1,98 @@
+ToDo
+----
+
+### High
+
+-   Add plugin functionality (ladspa, clam) to OfflinePlayer. Or any NetworkPlayer class actually.
+    -   '''this is super quick. just see ProcessingTree.cxx.
+-   load lv2 plugins
+-   Hierarchic categories
+    -   **new one: it will allow better organization inside each architecture (clam, ladspas, lv2s...) --pau**
+-   show info on hover in a processing of PT
+    -   '''high, this would need either 1)a new metadata field "doc" or 2)show all existing attributes
+
+### Med
+
+-   load lv2 midi plugins
+    -   **after gsoc**
+-   Windows Ladspas (crosscompiled with mingw)
+    -   Compile some ladspa suites (the ones in ardour.org for example)
+-   search in PT. similar to quick-silver
+-   completion in Add Processing
+    -   ''' similar to the Amarok search '''
+-   ladspa and lv3 creation classes. needs reorganization (plugin folder) and doc
+-   loading and re/loading libs on the fly. needed for faust
+-   fix destruction of the Processings (valgrind on NetworkEditor)
+-   save controls state with network (to discuss)
+
+### Low
+
+-   open ladspa libs bug
+    -   *' low*'
+
+### Done
+
+-   Mac Ladspas
+-   Refactor RuntimeLibraryLoader to separate Ladspa and clam plugins. Use hollywood (template method) pattern. (Pau)
+
+-   Factory refactoring: unify two registry maps (creator and metadata)
+-   Change static metadata classes to Registrator char\* constructor for the spacialization plugin
+-   The same for (some) clam processings (not plugins)
+-   NE/ProcessingTree use some category attribute to construct the tree
+-   **'Milestone: get rid of the char\* processingClasses[] hardcoded tree.**
+
+-   (high) add examples to example-data
+
+-   Registrator constructor with a static array of char\* for metadata
+-   Registrator refactoring: pull up Registrator to base Factory class
+-   Unify RunTimeLibraryLoader and LadspaExplorer
+-   Factory:
+    -   refactoring: clam creators being objects not functions
+    -   unify clam and ladspa factory
+-   (**not needed**) make LadspaFactory.hxx non-coupled with ladspa headers. so uses of LFactory don't need \#ifdef USE\_LADSPA. use Pimpl C++ idiom in LFactory.
+
+-   "extensible processings" refactoring: change NetworkEditor processing loading logic
+    -   1. put all info about processings in the factory
+    -   2. build QTree from factory data.
+    -   3. query list of processings of a given category to the factory.
+    -   add new columns to the associative data-structure: category, description.
+
+-   (must change interaction?) automatic in-control sliders in networkeditor
+-   (med) more verbose keys for LadspaFactory. at least including "ladspa"
+-   use the real value (get rid of the fixed-value hack)
+-   clamp values outside the range
+-   (med) load plugins from LADSPA\_PATH plus standard paths
+-   (med) check for non-valid directory
+-   update LadspaFactoryTest with "real" classes
+-   don't use a Config in LWrapper. Use NullConfig instead.
+-   (med) Network: catch FactoryError
+-   load plugins from .so
+-   look out OM for Plugin and PluginLibrary
+-   check for empty LADSPA\_PATH
+-   wrapper a plugin
+-   early support for libraries (through map and list)
+-   complementary data in the QTreeWidgetItem
+-   ID for ladspa tokenized with '|'
+    -   could be useful to include the UID that provides Ladspa (instead of the full plugin name)
+-   first steps to instantiate using NetworkCanvas::addProcessing
+-   created LadspaPluginsExplorer (structure to hold Ladspa information)
+-   pass LadspaFactoryTest
+-   created LadspaFactory
+-   DummyLadspa to LadspaWrapper
+-   created LadspaWrapperCreator
+-   (med) comment out non-necessary functions
+-   (med) refactor: extract ladspa specific to new files
+-   (med) wrapper any plugin in the three
+
+### Dropped
+
+-   -   compile agains RunTime(Ladsap)Loader.cxx
+        -   **remove this. it is not done this way (decision taken during last refactoring) --pau**
+
+-   Use some attribute to distinguish LADSPA and CLAM (and...) =\> so processing tree does not know about ladspa
+    -   **this can be removed, we resolve ladspas vs clam with categories --pau**
+
+-   (med) extract implementation in file LadspaFactory.cxx
+-   (low) add Ladspa tree and order it by cat
+    -   (low) check for \# of plugins to make a branch in the tree
+

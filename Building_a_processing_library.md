@@ -1,0 +1,79 @@
+Scenario
+--------
+
+This page explains how to develop your own library of processings, to be used with the NetworkEditor/Prototyper tandem or any other CLAM based application.
+
+Some examples can be found in the source directory CLAM/plugins
+
+A sample SConstruct file
+------------------------
+
+You can use this simple SConstruct file to compile all the processings found in a folder and create a dynamic library with them.
+
+**Don't forget to change the 'libraryName' variable to your own library name**
+
+`import os, glob, sys`
+`libraryName='myclamlib'`
+`def scanFiles(pattern, paths) :`
+`   files = []`
+`   for path in paths :`
+`       files+=glob.glob(os.path.join(path,pattern))`
+`   return files`
+`def recursiveDirs(root) :`
+`   return filter( (lambda a : a.rfind( ".svn")==-1 ),  [ a[0] for a in os.walk(root)]  )`
+`options = Options('options.cache', ARGUMENTS)`
+`options.Add(PathOption('clam_prefix', 'The prefix where CLAM was installed', '/bad/path'))`
+`if sys.platform=='linux2' :`
+`   options.Add(BoolOption('crossmingw', 'Activates the MinGW Windows crosscompiling mode', 'no'))`
+`env = Environment(ENV=os.environ, options=options)`
+`options.Save('options.cache', env)`
+`Help(options.GenerateHelpText(env))`
+`env.SConsignFile() # Single signature file`
+`CLAMInstallDir = env['clam_prefix']`
+`clam_sconstoolspath = os.path.join(CLAMInstallDir,'share','clam','sconstools')`
+`if env['crossmingw'] :`
+`   env.Tool('crossmingw', toolpath=[clam_sconstoolspath])`
+`env.Tool('clam', toolpath=[clam_sconstoolspath])`
+`env.EnableClamModules([`
+`   'clam_core',`
+`   'clam_audioio',`
+`   'clam_processing',`
+`   ] , CLAMInstallDir)`
+`sourcePaths = recursiveDirs(".")`
+`sources = scanFiles('*.cxx', sourcePaths)`
+`sources = dict.fromkeys(sources).keys()`
+`if sys.platform=='linux2' :`
+`   env.Append( CCFLAGS=['-g','-O3','-Wall'] )`
+`libraries = [`
+`   env.SharedLibrary(target=libraryName, source = sources),`
+`   ]`
+`install = env.Install(os.path.join(CLAMInstallDir,'lib','clam'), libraries)`
+`env.Alias('install', install)`
+`env.Default(libraries)`
+
+Build the library by doing:
+
+`$ scons clam_prefix=path/to/installed/clam/prefix`
+
+Install it the same place you have CLAM by issuing:
+
+`$ scons install`
+
+Usage: Run time mode
+--------------------
+
+As for CLAM 1.2.0 we can load processing plugins on runtime, just by placing the library in a given directory:
+
+-   One of the colon/semicolon separated paths on CLAM\_PLUGIN\_PATH environment variable
+-   \~/.clam/plugins
+-   /opt/lib/clam
+-   /usr/local/lib/clam
+-   /usr/lib/clam
+
+The former SConstruct script install the library at \$clam\_prefix/lib/clam when you issue:
+
+`$ scons install`
+
+Considering your prefix is at \~/local you could run the NetworkEditor or any CLAM based application this way:
+
+`$ CLAM_PLUGIN_PATH=~/local/lib/clam NetworkEditor`

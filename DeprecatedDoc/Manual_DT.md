@@ -1,0 +1,561 @@
+[Back to Index](DeprecatedDoc/CLAMUserManual "wikilink")
+
+Scope
+=====
+
+This section is addressed to the users that want to learn the basics aspects and usage of Dynamic Types (DTs for short). You may also find a section devoted to Dynamic Types in the "Developers" part of this document. This latter is aimed to explain how to create new classes that derive from the base DT, and goes into some details regarding their functionality.
+
+Why Dynamic Types ?
+===================
+
+Though it might be a quite controversial issue, there are three main reasons for the decision of implementing and using DTs in CLAM.
+
+`  1. There is a need in some core classes of the library, of working with types with a large number of attributes, i.e.: the descriptors of audio segments, that in some cases only a small subset is needed, and so could represent a waste of space if its memory is always allocated. DT can instantiate and de-instantiate attributes at run-time, and do it in such a way that its interface is the same as if they where C++ normal attributes.`
+`  2. We want support for working with hierarchic or tree structures. That means not only composition of DTs but also aggregates of them (lists, vectors, etc. of DTs). With such compositions of DTs, we can use assignation, and two clone member functions: ShallowCopy () and DeepCopy(), the good thing is that they come free; we don't need to write these members in none of the DT concrete classes.`
+`  3. We obtain introspection of each DT object. That is the ability to know the name and type of each dynamic attribute, to iterate through theses attributes, of having some type specific handlers for each. One clear application of introspection is storage support for loading from, and storing to a file, of a tree of DTs. Of course all this is implemented generically, so appears transparent to the user. At this point we have XML support implemented. Other profits we take from introspection in DT are debugging aids.`
+
+Where can DT be found within the CLAM library?
+==============================================
+
+All classes deriving from ProcessingData base class are DT. The concrete ProcessingConfig classes as well as the ProcessingDataConfig classes are also DT.
+
+Declaring a DT
+==============
+
+When we say that dynamic attributes can be instantiated at run time, we mean that we can do so with the previously declared dynamic attributes. Let's see an example. Imagine we want to model a musical note with a DT. We declare it like this:
+
+` class Note : public DynamicType`
+` {`
+` public:`
+`  DYNAMIC_TYPE     (Note, 5)`
+`  DYN_ATTRIBUTE    (0, public,  float,   Pitch)`
+`  DYN_ATTRIBUTE    (1, public,  unsigned,    NSines)`
+`  DYN_ATTRIBUTE    (2, public,  ADSR,        Envolvent)`
+`  DYN_CONTAINER_ATTRIBUTE (3, public, std::list`<Sine>`, Sines,                  `
+`                            harmonic)`
+`  DYN_ATTRIBUTE    (4, private,     Audio,   Wave) `
+` };`
+
+This is a macro-based declaration, right now there are three different macros: DYNAMIC\_TYPE for expanding the concrete DT constructors, DYN\_ATTRIBUTE for declaring each dynamic attribute and DYN\_CONTAINER\_ATTRIBUTE for declaring any STL interface compliant container.
+
+We will now explain these three more in depth:
+
+1. DYNAMIC\_TYPE this macro expands the default constructor of the concrete DT being declared. The first parameter is the total number of dynamic attributes, and the second one the class name.
+
+If the writer of a DT derived class sees the need of writing a customized default constructor or other constructors it can be done using the initializers. See section 82.
+
+2. DYN\_ATTRIBUTE it is used to declare a dynamic attribute. It has four parameters, the first one is the attribute order (needed for technical reasons of the DT implementation), the second one is the accessibility (public, protected or private) the third one is the type: it can be any C++ valid type including typedef definitions but not references (& finished) or pointers (\* finished). If you still think you need pointers as dynamic attributes then read the pointers section (section 85).
+
+The forth and last parameter is the attribute name, it is important to begin in upper-case because this name (let's call it XXX) will be used to form the attribute accessors GetXXX() and SetXXX(.), thus the XXX must start in upper-case, following the coding style of the library (See chapter XVI)
+
+Returning to the example above, each DYN\_ATTRIBUTE macro will expand a set of usable methods:
+
+`float& GetPitch(), void SetPitch(const float&),`
+`void AddPitch(), void RemovePitch(), bool HasPitch()`
+`void StorePitch(Storage&) const, bool LoadPitch(Storage&) `
+
+Of course GetPitch and SetPitch are the usual accessors to the data. AddPitch and RemovePitch, combined with UpdateData that will be explained latter on, will instantiate and de-instantiate the attribute. HasPitch returns whether Pitch is instantiated at this moment. Finally StorePitch and LoadPitch are for storage purposes, and will be explained in section 35
+
+3. DYN\_CONTAINER\_ATTR: The purpose of this macro is to give storage (only XML by now) support to attributes declared as containers of objects. For providing this service, we need that container to fulfill the STL container interface, so all the STL collection of containers is usable. This macro has five parameters, one more that DYN\_ATTRIBUTE: the attribute numeration, accessibility, the type, the name of the attribute and finally the new one: the label of each contained element that will be stored. 33 Basic usage
+
+Once, the concrete DT Note has been declared, we can use it like this:
+
+`Note myNote; // create an instance of the DT Note`
+`Now myNote, have no attribute instanciate. We can activate attributes this way:`
+`myNote.AddPitch(); myNote.AddNSines(); myNote.AddSines();`
+
+Or in the case that we want all of them, it is better to use AddAll. (This method is not macro generated as AddPitch, but is a DT member available in any concrete DT. )
+
+` myNote.AddAll();`
+
+As this kind of operations require memory management, we want to update the data, with its possible reallocations only once for every modification of the DT shape or structure (which can imply many individual adds and removes). We'll use the DynamicType UpdateData operation for that purpose:
+
+` std::cout << myNote.HasPitch() // writes out: 'false'`
+` myNote.UpdateData();`
+` std::cout << myNote.HasPitch() // writes out: 'true'`
+
+And now all the instantiated attributes can be accessed as usual, using the accessors GetXXX and SetXXX. For example:
+
+` myNote.SetNSines(10);`
+` myNote.SetPitch(440);`
+` // lets use some std::list operations:`
+` myNote.GetSines().push_back(440).push_back(440*2);`
+` myNote.GetSines().push_back(440*3).push_back(440*4); // etc.`
+` int i=myNote.GetPitch();   // error! GetPitch() returns float`
+` int j=myNote.GetNSines();  // ok.`
+
+More about adding, removing and updating attributes:
+
+It is important to learn the exact behaviour of adding and removing DT attributes. It can be summed up to three ideas:
+
+• GetXXX and SetXXX operations over non-instantiated attributes will rise an exception ErrDynamicType. So these operations should be protected with an if (HasXXX()) clause in places of the code where there is no safety about the presence of XXX.
+
+• Besides, AddXXX and RemoveXXX can be used safely (don't rise any exception). Basically what they do is set and unset internal flags. For example, if the attribute Pitch exists and we do RemovePitch() it will be marked as "removed" (waiting for the UpdateData() to perform the actual removal). Now, if before updating data we call AddPitch(), then it detects the mark and the effect is just to unset this flag. If we insist with another AddPitch() it will have no effect (and no flag will be set), because it is allready instantiated. The case of adding a non-instantiated attribute is symmetric as the case of removing an instantiated one.
+
+• UpdateData() is a safe and efficient operation: with safe what we mean is that it has no effect (and doesn't rise exceptions) in case that the DT needs no memory update, and it is efficient in the sense that the checking for changes in the dynamic shape doesn't involve any traversal of the attributes but only cheking a global flag. Moreover, UpdataData() returns a boolean that says if it has been necessary to update the data. Sometimes it is very useful do things such as :
+
+` // here we don't know if Pitch exist.`
+` myNote.AddPitch();`
+` if (myNote.UpdateData()) {`
+`  // yes, it existed`
+`  // ...`
+` } `
+` else {`
+`  // no, it didn't was there till now.`
+`  // ...`
+` }`
+
+Prototypes and copy constructors
+================================
+
+It's been said that a the dynamic shape of a DT is the set of instantiated attributes. The description of this shape is stored in a table and can be shared between various DTs. Thus this brings us to the idea of prototypes and creating objects by cloning the dynamic shape of others, this is exactly how the default copy constructor works.
+
+Note n1(myNote), n2(myNote), n3(myNote), n4(myNote);
+
+Now n1, n2, n3 and n4 all share both static information of their type and the dynamic shape information, and we say that myNote is their prototype, or that they all share the same prototype. It is important to notice that this happens even if the prototype (myNote) doesn't have its data updated. If we decide to change the shape of one of these objects, i.e. we want to add new attributes to n4, this operation will automatically create a new prototype and so a new dynamic shape as the next figure shows:
+
+[300px](image:DynTypeNote.png "wikilink")
+
+Of course, the copy constructor also copies the data of each instantiated attribute from the source object into the new object. This copy is made using the corresponding copy constructor. This means that the copy constructor makes a so-called "deep copy" (that means recursives copies of its sub-elements) of any composition of DT and aggregates (i.e. using STL containers) of DTs.
+
+More on copy constructors (i.e. with the shareMemory flag) can be learnt directly from the javadoc source documentation.
+
+Storing and Loading DTs
+=======================
+
+This section only explores a feature that is particular to the Dynamic Types: debug-time information. If you should need more details about how to store and load DT from and to XML please refer to chapter IX.
+
+How to explore a DT at debug time
+---------------------------------
+
+Since the dynamic data of a DT is not stored as regular C++ attributes, it might be difficult to explore in the usual way from the debugger. Thus we have provided the DT base class with a Debug() method that can be called from the debugger environment and basically does two things:
+
+`   * writes information regarding internal parameters and the dynamic shape of the object to the standard output, and`
+
+`   * writes out a 'Debug.xml' file (placed at the working directory) with the XML content of the object.`
+
+Note that the XML load and store, including storing the debug file, will only work if the CLAM macro CLAM\_USE\_XML was set when compiling.
+
+DTs that derive from an interface class
+=======================================
+
+Implementing such dynamic behavior and load/stores methods by default, just by deriving from a base class, and declaring attributes using macros, requires a null efford to the user but leads, of course, to certain limitations. The most important is the inheritance constraint, that can be expressed this way: dynamic attributes can only be declared in a class that derives directelly from the DT base class. That means: if we want to create a MyDynamicType class this must derive directly from DynamicType and if we want to extend it, actually we can, but we cannot declare new dynamic attributes in the lower class.
+
+Anyway we found very interesting to give the ability of placing an interface class between the concrete DT and the DT base class. This can be done using a new (and long) macro, for example:
+
+` class Audio: public ProcessingData {`
+` public:`
+`   DYNAMIC_TYPE_USING_INTERFACE (Audio, 4, ProcessingData);`
+`   DYN_ATTRIBUTE (0, public, TData, SampleRate);`
+`   // . . .`
+` }`
+
+In this example, ProcessingData is an interface or pure abstract class. It is basically usefull for: i) organizing concretes DTs, ii) forcing the existence of certain dynamic attribute XXX, by means of declaring a virtual method GetXXX, and iii) forcing all derived classes to be DTs.
+
+In the unlikely case of having to declare new interface classes, it is just matter of following the pattern given by this example:
+
+` class ProcessingData : public DynamicType`
+` {`
+` public:`
+`  /** Constructor of an object that will contain the number of `
+`  *  attributes passed by parameter  */`
+`  ProcessingData(const int n) : DynamicType(n) {};`
+
+`  /** Copy constructor of a ProcessingData object  */`
+`  ProcessingData(const ProcessingData& prototype, `
+`     bool shareData=false, bool    deep=true) : `
+`     DynamicType(prototype, shareData, deep){};`
+
+`  virtual ~ProcessingData(){};`
+` };`
+
+Typical Errors
+==============
+
+Detected errors at compile time
+-------------------------------
+
+Lukily enough, we can detect a number of basic errors at compile time. This is possible by means of an implementation with extensive use of template and function overloading techniques. Lets see these detected errors with an example:
+
+### Constructor errors
+
+Here we will show two examples of typical errors related to the concrete DT constructor:
+
+` class Note : public DynamicType {`
+`  public:`
+`     DYNAMIC_TYPE     (CNote, 5)`
+` // ... `
+
+The compiler will report that the constructor name CNote doesn't match with the class name Note.
+
+` class Note : public DynamicType {`
+`   DYNAMIC_TYPE     (Note, 5)`
+` // ... `
+
+Here we have left the public: keyword before the DYNAMIC\_TYPE macro, this will cause a compilation error when it tries to instantiate an object of the type Note.
+
+### Attribute position out of bounds
+
+`class Note : public DynamicType`
+`{`
+`public:`
+`  DYNAMIC_TYPE     (Note, 4)`
+`  DYN_ATTRIBUTE    (0, public,  float,   Pitch)`
+`  DYN_ATTRIBUTE    (1, public,  unsigned,    NSines)`
+`  DYN_ATTRIBUTE    (2, public,  ADSR,        Envolvent)`
+`  DYN_CONTAINER_ATTRIBUTE (3, public, std::list`<Sine>`, Sines,                                  harmonic)`
+`  DYN_ATTRIBUTE    (4, private,     Audio,   Wave)`
+`};`
+
+Here we have a too big identifier the compiler will complain saying that the following symbol is undefined:
+
+` CLAM::MyDT::AttributePosition<6>::CompilationError_AttributePositionOutOfBounds`
+
+### Attribute not defined
+
+` class Note : public DynamicType {`
+` public:`
+`  DYNAMIC_TYPE     (Note, 5)`
+`  DYN_ATTRIBUTE    (0, public,  float,       Pitch)`
+`  DYN_ATTRIBUTE    (2,  public,  unsigned,    NSines)`
+`  // ...`
+
+Now we've left an empty position and it will complain about this symbol:
+
+` CLAM::MyDT::AttributePosition<1>::CompilationError_AttributeNotDefined`
+
+### Duplicated attributes
+
+` class Note : public DynamicType {`
+` public:`
+`  DYNAMIC_TYPE     (Note, 5)`
+`  DYN_ATTRIBUTE    (0, public,  float,       Pitch)`
+`  DYN_ATTRIBUTE    (0,  public,  unsigned,    NSines)`
+`  // ...`
+
+In this case we will get an error of duplicated methods that recive parameters of type: AttributePosition\<0\>.
+
+Morover, we'll get this message if we define DYN\_ATTRIBUTE(5,.). Yes, it shoud be an Attribute position out of bounds error, but we couldn't manage to do so.
+
+Detected errors at run time
+---------------------------
+
+Within the CLAM library we have established two compilation macros that gives us a way of choosing the degree of verifications to be done at run time. Of course going deeper into this issue is not done in this section. You can find it at chapter XVII.
+
+The important thing to know is which kind errors will be catch in run-time depending on the compilation option choosen:
+
+### Compiling in debug mode (the macro \_DEBUG defined )
+
+In this mode, when adding an attribute for the first time, an assert will stop the execution if a dynamic attribute name has been repeated, as in this example:
+
+` class Note : public DynamicType {`
+` public:`
+`  DYNAMIC_TYPE     (Note, 5)`
+`  DYN_ATTRIBUTE    (0, public,  float,       Pitch)`
+`  DYN_ATTRIBUTE    (1,  public,  unsigned,    Pitch)`
+`  // ...`
+
+### Compiling in a non debug (release) mode
+
+we stay safe in this kind of things: the use of GetXXX or SetXXX of not instantiated attributes will throw an assert exception.
+
+### Compiling for the best run-time efficency
+
+For reaching the best run-time efficiency we compile in release mode and we must set the compilation flag: CLAM\_DISABLE\_CHECKS.
+
+In this case if the code calls a GetXXX or SetXXX where XXX is not instantiated we'll get a segmentation fault (if we are lucky!)
+
+Non detected errors
+-------------------
+
+Furthermore, there is a kind of errors that can not be detected even in debug mode: they are caused by inconsistency of a reference to a dynamic attribute. It is very important, when writing a DT, to keep in mind that any UpdateData() can cause a movement of every dynamic attribute, and so references (pointers) to these attributes can turn out inconsistent. The first rule of thumb would be: never keep references to dynamic attributes. But if this is really necessary, then we can take profit of the copy constructor of the dynamic attribute, because all these movements are done calling this constructor. So is a duty for the dynamic attribute copy constructor to keep the references to itself consistent.
+
+There is another version of this error that is much more subtle: Imagine that we have a DT class MyDynamicType with an attribute A. Now, myDT is an instance of this class, and the attribute A have a method DoMess() : what it does is an UpdateData() of its parent (that is: the object myDT). This can be catastrophic because this UpdateData can move the attribute A, invalidating the this pointer of the method DoMess() in the middle of its execution. Ugly, indeed! If we need such object coupling wetween a dynamic types an its attributes then the flag SetPreAllocateAllAttributes() should be used. see section 83
+
+Constructors and initializers
+=============================
+
+This section addresses the issue of where to place initialization code for DTs and how to write new constructors.
+
+Basically what makes a DT different from a normal C++ class is that the first needs, at construction time, initializing some static table (for type description information) in the case of being the first instance of its class. And, of course, this job cannot be done at the DT base class instead.
+
+The DYNAMIC\_TYPE macro expands two constructors : the default one (without arguments) and the default copy constructor (with argument of the same concrete type).
+
+So what we have done is, in these automatically written constructors, is let them call an initialization function, that will be written by the user. They are DefaultInit() and CopyInit(), and are represented in the next class diagram. Notice that they are virtual and implemented in the base, though they do nothing.
+
+![](DTClass.gif "DTClass.gif")
+
+On the other hand, the macro writes a concrete (not virtual) method MandatoryInit() that contains all the static table initializations. This is the sequence diagram for a normal DT constructor:
+
+![](DTInitseq.gif "DTInitseq.gif")
+
+In the case of the copy constructor, the DefaultInit() won't be called, but the CopyInit() will instead. In some cases we could want the same behavior for both initializators, then we could implement the first and let the second call the first. In the next sequence diagram you can notice also that the MandatoryInit() is not called, that's only an implementation detail: when a copy constructor occurs we are certain that at least one instance exist of the current concrete DT.
+
+![](DTInitSeq2.gif "DTInitSeq2.gif")
+
+We can go further with the customization of our DTs: writing new constructors, (i.e. passing a configuration object as parameter). Here we have to be very carefull following these steps:
+
+Call the super constructor with a parameter N, where N is the number of dynamic attributes. (this way: MyDynamicType() : DynamicType(N) { . } or otherwise using the interface class, if this exist. An example of this can be found at this source file: src/Data/Spectrum.hxx)
+
+Call the macro-expanded MandatoryInit()
+
+You may also want to call the user writed DefaultInit().
+
+This next figure illustrates the calling sequence of such a constructor. Notice that unlike the previous ones, here almost all code is unpainted, and so meaning: written by the user.
+
+![](DTInitSeq3.gif "DTInitSeq3.gif")
+
+Tuning a DT
+===========
+
+In some ocasions the force of not moving dynamic attributes is stronger than the force of optimizing the dynamic memory. This is specially true in cases of attributes that are large buffers (i.e. using Array, std::vector.) or large composition structures. In other words: the innocent action of adding a new attribute and updating data in some classes might carry a huge copy of buffers and tree structures, thus making dynamic operations (adds and removes) extremelly inneficient.
+
+That is the reason for introducing a global flag in the DT class that can be set with this method:
+
+SetPreAllocateAllAttributes(). When this flag is set the next UpdateData() will perform the last reallocation (if necessary) of the DT object life. From this point, the maximum data memory is allocated and all dynamic attributes offsets are fixed and even further dynamic shape changes (adds and removes) will not produce dynamic attributes movements.
+
+Then, this kind of classes with 'heavy attributes' should call SetPreAllocateAllAttributes() in its DefaultInit().
+
+Notice that, by now, this flag cannot be unset: that is just because we couldn't find a single use to allow it.
+
+Debugging aids and compilation flags
+====================================
+
+As it has been explained in section 35, the DT base class implements a Debug() method which will display some internal information as well as will write a 'Debug.xml' file with its xml content (only when compiling with the flag CLAM\_USE\_XML).
+
+The next example of console dump shows for each attribute features like its size in bytes, name, and its current pointer. At the left side of each attribute information we can read '--' or with some dash substituted with an 'A' or 'R'. This are the added and removed flags, meaning that its attribute will need memory update in the next UpdateData(). Is important to note that when an attribute XXX is marked in one or other way, HasXXX() will return false.
+
+` Class Name: Dyn at: 0012FEB4`
+` [#attr.], dyn offs, name, type, {comp,dynType,ptr,strble}, exist, size, memPos`
+` -------------------------------------------------------------------`
+` { size, allocatedSize } = { 28 , 0 }`
+`  -R [0] 0 , Int , int , {0,0,0,0} , 1 , 4 , 00892F38`
+`  A- [1] 4 , MyA , CompWithBasics8 , {0,0,0,0} , 1 , 24 , 00892F3C`
+`  . . .`
+
+Apart from CLAM\_DIABLE\_CHECKS that will increase a lot the run-time performance of DTs, exists another one: CLAM\_EXTRA\_CHECKS\_ON\_DT that will do exactly the opposite, but at least will automatically check the DT invariant in every DT operation (adds, update data, etc). This can be very usefull if we are getting paranoids about some possible bug in the DTs and for finding it, if this is the case (hopefully not).
+
+Pointers as dynamic attributes
+==============================
+
+This is an easy point, right now: pointers as dynamic attributes are not supported. Anyway we have foreseen the use of pointers in two scenarios: as references to the same hierarchic structure and for holding polimorphic types. This will involve the introduction of a couple of new macros, and these changes are scheduled for a near future.
+
+Copies of DTs
+=============
+
+There are several ways of getting DTs copies, all of them implemented at the DT base class:
+
+DeepCopy() : this method is declared in the Component abstract class, so it returns a Component type and a cast can be necessary. As its name says, it behaves deeply or in a recursive way. It's done following these rules:
+
+Copying each attribute that is Components (i.e. DTs) calling its DeepCopy().
+
+`   * Copying the rest of non-Component attributes using its copy-constructor.`
+
+The CopyInit(const DynamicType&) method is called for non-dynamic attributes copies. This method can be overrided in the concrete class, see section 89 for more details about this.
+
+Copy constructor : it just calls the DT DeepCopy() method.
+
+ShallowCopy(): it calls the ShallowCopy() for each Component attribute and the copy- constructor for the rest. The CopyInit() is also called. 87 DTs and XML 87.1 The default XML Implementation for DynamicTypes
+
+Any Dynamic Type has a default XML implementation. By default, all the dynamic attributes are stored as XML elements with the attribute name as tag name and following the order specified in their declaration. If a dynamic attribute is not instantiated, it is not stored.
+
+On loading, first all dynamic attributes are instantiated, and, then, each one are tried to be load. Those attributes that are not in the XML source are marked as removed.
+
+XML aware dynamic attributes
+----------------------------
+
+Every dynamic attribute is stored as element but the way the attribute content is stored depends on the kind of object.
+
+Dynamic attributes that are components have direct XML support and are stored recursively.
+
+Basic objects like C primitive types and some others (std::string, CLAM::Complex<TData>, CLAM::Polar<TData>, CLAM::Point<TData>...) use their extraction and insertion operator to generate plain content.
+
+You can define any class, for example MyBasicType, to be used in XML as a basic type doing the following:
+
+`   * defining their extraction (>>) and insertion (<<) operators over std::streams`
+`   * and using the following macro call at namespace level:`
+
+`     CLAM_TYPEINFOGROUP(CLAM::BasicCTypeInfo, MyBascType);`
+
+About the insertion and extractor operators, you must be careful to choose a parseable format that will allow not to waste with the extractor more input than the necessary from the stream.
+
+Although char\* has been defined as a basic type to easily inserting string literals, do not use it to load because it may lead to buffers overflows. Use the std::string class and then extract a char\* from it if you need it.
+
+Neither char\* nor std::string works loads correctly with strings containing spaces, because their extraction operators only loads the first word. Use CLAM::Text which supports multiword strings.
+
+STL compliant containers have XML support if they are declared as DYN\_CONTAINER\_ATTRIBUTE.
+
+When the contained class is a component, then each of the contained objects are stored as elements inside the container element. The fourth macro parameter is for the subitems tag name. So:
+
+DYN\_CONTAINER\_ATTRIBUTE(1, public, std::list<MyComponent>, ComponentList, AComponent);
+
+will look like
+
+<ComponentList size='10'>
+`  `<AComponent>` ...  `</AComponent>
+`  `<AComponent>` ...  `</AComponent>
+`     ...`
+`  `<AComponent>` ...  `</AComponent>
+</ComponentList>
+
+And when the contained class is a basic type, all the container items will be stored in a single XML element separated by spaces.
+
+`DYN_CONTAINER_ATTRIBUTE(1, public, std::vector`<double>`, LeafList, Ignored);`
+
+will look like
+
+<LeafList size='256'>`342.243 2342.252 .... 0.234 0 0`</LeafList>
+
+Note that in this case the last macro parameter is ignored.
+
+Customization basics
+--------------------
+
+Let see a sample Dynamic Type class:
+
+`class ConcreteDT : public CLAM::DynamicType`
+`{`
+`public:`
+`  DYNAMIC_TYPE(ConcreteDT, 5);`
+`  DYN_ATTRIBUTE      (0, public, DummyComponent, MyComponent);`
+`  DYN_ATTRIBUTE      (1, public, Array`<Complex>`, MyArray);`
+`  DYN_ATTRIBUTE      (2, public, FooDTClass, MyDynType);`
+`  DYN_CONTAINER_ATTRIBUTE(3, public, std::list`<int>`, MyList);`
+`  DYN_ATTRIBUTE      (4, public, int, MyInt);`
+`  public:`
+`     virtual ~ConcreteDT() {}`
+`  protected:`
+`     void DefaultInit()`
+`     {`
+`        AddMyDyn();`
+`        AddMyA();`
+`        UpdateData();`
+`     }`
+`  // Some non dynamic attributes`
+`  private:`
+`     FooComponent mExtraNonDynamicAttribute;`
+`};`
+
+This Dynamic Type, as is, will generate default XML. In order to customize it we have to redefine two storage related methods:
+
+` void MyDyn::StoreOn(Storage & s);`
+` void MyDyn::LoadFrom(Storage & s);`
+
+When a MyDyn is stored/loaded on/from a Storage, and the Storage detects that it is a component, it calls those functions in order to store/load all meaningful MyDyn subparts if it has any.
+
+So by redefining those functions we will change its XML representation.
+
+Reordering and skipping
+-----------------------
+
+Dynamic Types macros expand some useful methods that allow simplifying the customization.
+
+For each dynamic attribute named XXX, dynamic type macros expand the methods:
+
+` void ConcreteDT::StoreXXX(Storage & s);`
+` void ConcreteDT::LoadXXX(Storage & s);`
+
+Using such methods you can easily store/load a concrete dynamic attribute separately. Be careful, LoadXXX requires the attribute XXX to be instantiated before calling it and it will mark it automatically as removed if the attribute is not present in the XML file. It is important to store the attributes in the same order you load them.
+
+The following example will store and load its attributes in the inverse order to the default one, and skips the third attribute (MyDynType).
+
+`void ConcreteDT::StoreOn(CLAM::Storage & storage) {`
+`  StoreMyInt(storage);`
+`  StoreMyList(storage);`
+`  // MyDynType is not stored`
+`  StoreMyArray(storage);`
+`  StoreMyDummyComponent(storage);`
+`}`
+
+`void ConcreteDT::LoadOn(CLAM::Storage & storage) {`
+`  // First of all asure that all attributes are instantiated`
+`  AddAll()`
+`  UpdateData();`
+`  // Then load them`
+`  LoadMyInt(storage);`
+`  LoadMyList(storage);`
+`  // MyDynType is not loaded`
+`  LoadMyArray(storage);`
+`  LoadMyDummyComponent(storage);`
+`}`
+
+Recalling the default implementation
+------------------------------------
+
+StoreAllDynAttributes() and LoadAllDynamicAttributes() are another macro expanded methods. They are called from the default StoreOn and LoadFrom implementation. So, by calling them we can reproduce them and it is easy to add non dynamic subparts before or after them or forcing some attributes to be or not present before them. The first step of LoadAllDynamicAttributes() is to instantiate all the dynamic attributes that will be marked as erased if they are not in the XML document.
+
+Adding content not from dynamic attributes
+------------------------------------------
+
+If you simply want to add a non dynamic attribute to the XML representation, you may call those expanded functions and then using a suited XML adapter for the attribute and store it. Refer on how to define the XML format for a normal (non DynamicType) Component to know about those adaptators and how they are used.
+
+The following example stores two extra items on the XML. An existing member of the class (mExtraNonDynamicAttribute) and a literal string as an XML attribute (the false value).
+
+`void ConcreteDT::StoreOn(CLAM::Storage & storage) {`
+`  // Store a temporary object in the first place`
+`  CLAM::XMLAdapter`<char*>` adapter1("Addedcontent", "Added", false);`
+`  storage.Store(&adapter1);`
+`  // Call the default implementation`
+`  StoreAllDynAttributes();`
+`  // Store a non dynamic attribute member`
+`  CLAM::XMLComponentAdapter adapter2(mExtraNonDynamicAttribute,`
+`      "ExtraNonDynamic", true);`
+`  storage.Store(&adapter2);`
+`}`
+
+`void ConcreteDT::LoadOn(CLAM::Storage & storage) {`
+`  // std::string is not vulnerable to buffer overflows on loading`
+`  std::string foo; // A temp`
+`  CLAM::XMLAdapter`<std::string>` adapter1(foo, "Added", false);`
+`  storage.Load(&adapter1);`
+`  LoadAllDynAttributes();`
+`  CLAM::XMLComponentAdapter adapter2(mExtraNonDynamicAttribute,`
+`     , "ExtraNonDynamic", true);`
+`  storage.Load(&adapter2);`
+`} `
+
+Storing not as XML elements or changing the tag name
+----------------------------------------------------
+
+Of course, we can also use Adapters with the dynamic attributes instead of using StoreXXX and LoadXXX. This is useful to store a dynamic attribute as XML attribute or XML plain content or to change the name from the one the attribute has. Again, refer to the XML developer guide.
+
+When using adapters with dynamic attributes you must take care of some dynamic attributes tasks:
+
+`   * When storing a dynamic attribute XXX you must check that it is instantiated using the function HasXXX.`
+`   * When loading you must check that the Storage::Load returns true. When it returns false it is advisable to mark it as removed.`
+
+`void ConcreteDT::StoreOn(CLAM::Storage & storage) {`
+`  StoreMyDummyComponent(storage);`
+`  StoreMyArray(storage);`
+`  StoreMyDynType(storage);`
+`  StoreMyList(storage);`
+`  // MyInt is stored as an attribute (the default is element`
+`  // and with a different name ('Size').`
+`  if (HasMyInt()) {`
+`     CLAM::XMLAdapter`<int>` adapter(GetMyInt(), "Size", false);`
+`     storage.Store(&adapter);`
+`  }`
+`}`
+`void ConcreteDT::LoadOn(CLAM::Storage & storage) {`
+`  // First of all asure that all attributes are instantiated`
+`  AddAll()`
+`  UpdateData();`
+`  // Then load them`
+`  LoadMyDummyComponent(storage);`
+`  LoadMyArray(storage);`
+`  LoadMyDynType(storage);`
+`  LoadMyList(storage);`
+`  // MyInt is loaded as an attribute (the default is element`
+`  // and with a different name ('Size').`
+`  CLAM::XMLAdapter`<int>` adapter(GetMyInt(), "Size", false);`
+`  if (!storage.Load(&adapter)) {`
+`     RemoveMyInt();`
+`  }`
+`}`
+
+Keeping several alternative XML formats
+---------------------------------------
+
+Normally you will define the storage customization on the same concrete dynamic type class. But sometimes, you want to keep the default implementation o several customized implementations.
+
+A good way of doing this is by subclassing the concrete Dynamic Type and redefining the storage related methods as above but in the subclasses.

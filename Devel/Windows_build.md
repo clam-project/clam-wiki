@@ -1,0 +1,86 @@
+**MSVC support has been dropped. See MinGW [Devel/Windows MinGW build](Devel/Windows MinGW build "wikilink") instead**
+
+This is work on progress. Do not use this instructions till its finished.
+
+build tools
+-----------
+
+-   Download MS Visual Studio 2005 Cpp Express Edition (free as free beer)
+
+  
+<http://msdn.microsoft.com/vstudio/express/downloads/>
+
+-   Download and install cygwin
+
+  
+<http://www.cygwin.com>
+
+Install the following packages: From Devel: cvs, subversion, make, open-ssh client. Do **not** install python cygwin package.
+
+recommended: xorg-x11-bin, gvim, wget
+
+-   Download and install python (2.5) and scons (0.96.1) Windows native versions. (I couldn't find a cygwin scons package)
+
+  
+These are direct download links for the versions I used, but prefere later versions if available.
+
+<http://www.python.org/ftp/python/2.5/python-2.5.msi>
+
+<http://belnet.dl.sourceforge.net/sourceforge/scons/scons-0.96.96.win32.exe>
+
+-   Update PATH environment var to point to python. Go to properties window of "My Computer" under the "Advanced" tab.
+    -   In my case I had to add this:
+            ;C:\Python25
+
+    -   from cygwin console use *scons.bat* from cmd console, just *scons*
+
+Dependent libraris
+------------------
+
+-   download this tarball: <http://clam.iua.upf.edu/download/win/other/windows-external-libs.tar.gz>
+-   create a 'dlls' directory where to copy the needed .dlls
+    -   add this path to the PATH environment var, as done for python.
+-   <http://sources.redhat.com/pthreads-win32/>
+
+  
+you can use the one provided by clam tarball.
+
+-   copy the following dlls into the dll dir (or somewhere else in the PATH)
+    -   pthreadVCE.dll
+    -   xerces\_c\_2\_3\_0.dll
+    -   libsndfile.dll
+    -   download and install Microsof DirectX SDK
+
+  
+  
+<http://msdn2.microsoft.com/en-us/xna/aa937788.aspx> (400 MB! why?)
+
+-   fftw2 and fftw3
+    -   <http://claymore.engineer.gvsu.edu/~steriana/FFTW2.1.3.Win32.zip>
+    -   <ftp://ftp.fftw.org/pub/fftw/fftw-3.1.2-dll.zip>
+-   install platform sdk (necessary?)
+-   portaudio
+    -   <http://www.portaudio.com/archives/pa_stable_v19_061121.tar.gz>
+
+  
+  
+<http://msdn.microsoft.com/vstudio/express/visualc/usingpsdk/>
+
+Install
+-------
+
+-   open a console
+
+  
+\>"c:\\Program files\\Microsoft Visual Studio 8\\VC\\vcvarsall.bat"
+
+TODO
+----
+
+-   option sandbox\_path necessary?
+
+Others
+------
+
+-   xchat for windows
+

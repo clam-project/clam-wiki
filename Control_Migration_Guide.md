@@ -1,0 +1,50 @@
+Control migration guide
+-----------------------
+
+Since we're implementing typed controls some interface will change in the future.
+
+The most important change is that Get\*Controls will return a Typed\*ControlRegistry filled with BaseTyped\*Controls, and BaseTyped\*Controls will have only part of the interface that \*Controls have now.
+
+Get\*Control will return a BaseTyped\*Control, so we are in the same situation.
+
+For those who were using GetInControl and GetInControls to retrieve controls from a processing and doing a SendControl/DoControl/GetLastValue we have implemented the following functions:
+
+-   SendFloatToInControl
+-   SendFloatToOutControl
+-   GetFloatFromInControl
+
+Ex:
+
+1) this:
+
+`   proc.GetInControls().GetByNumber(1).DoControl(100);`
+
+should be now rewriten like this:
+
+`   SendFloatToInControl(proc, 1, 100);`
+
+2) this:
+
+`   proc.GetInControls().Get("MyInControl").DoControl(100);`
+
+should be now rewriten like this:
+
+`   SendFloatToInControl(proc, "MyInControl", 100);`
+
+3) this:
+
+`   proc.GetOutControls().Get("OutControl 1").SendControl(100);`
+
+should be now rewriten like this:
+
+`   SendFloatToOutControl(proc, "OutControl 1", 100);`
+
+4) this:
+
+`   value = proc.GetInControls().Get("MyInControl").GetLastValue();`
+
+should be now rewriten like this:
+
+`   value = GetFloatFromInControl(proc, "MyInControl");`
+
+Note that the three functions have both by name and by number interfaces.

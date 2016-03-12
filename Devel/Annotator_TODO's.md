@@ -1,0 +1,326 @@
+Release TODO's
+--------------
+
+-   Step-by-step guide on how to setup an aggregation extractor at the end of the [Music Annotator tutorial](Music Annotator tutorial "wikilink") (writting down on the TODO's user inconveniences of the process to be considered for further iterations)
+-   Update installation
+    -   What to do with python scripts in Windows installation
+    -   What to do with python scripts in Debian installation
+    -   Incorporate new binaries
+    -   Solve the calling of the scripts
+-   ![](done.png "fig:done.png")What to do with SilenceExtractor? Remove? Disable? Finnish? --Removed
+-   Segmentation format
+    -   Actually use the new segmentation format
+    -   Add a version marker on the pool
+    -   Throw an error when pool version marker does not match
+    -   UpdateAnnotatorData.py use the version marker to identify already ported files
+-   Review TODO's and move the significant ones here
+
+Current task focus for WWW (David)
+----------------------------------
+
+-   Project Editor supporting aggregator
+    -   Write a guide for Xavi on aggregation
+    -   ![](done.png "fig:done.png") Make the Aggregator work in linux
+    -   ![](done.png "fig:done.png") Embed the aggregation definition into the project
+    -   ![](done.png "fig:done.png") Adapt the project editor interface to edit it
+    -   ![](done.png "fig:done.png") Editing a name -\> bolding it
+    -   ![](done.png "fig:done.png") Bug: Removing source has no effect
+    -   ![](done.png "fig:done.png") Bug: Renaming dismisses the map
+    -   Better: Consider attach the map to each extractor to remove name integrity problems
+    -   When creating choosing a unexisting numbered name
+    -   Complaint on duplicated source names before accepting the dialog
+    -   Complaint on duplicated or empty suffixes before accepting the dialog
+    -   Better: define a -o options to specify the output file instead the -f suffix and use temp files to dump intermediates
+    -   Final check on the extractor
+    -   Optimization: Do not use the aggregator if there is just one extractor
+    -   Optimization: Rationalize the queries for the schema
+-   Make the SemWeb extractor work
+    -   Remove Windowsims
+    -   Check needed python libs and arrange execution environment
+    -   Adapt project
+    -   Check run with example data
+    -   Write a guide for Xavi
+
+Annotator extractor aggregator (Jun GSoC)
+-----------------------------------------
+
+### Core tasks
+
+-   ![](done.png "fig:done.png")Create a new extractor that does the aggregation for some fixed sources
+-   ![](done.png "fig:done.png")Figure out which is the varying information when changing the sources and how to feed the variable information from the Annotator and the script.
+-   Give users a documentation of the warnings about the aggregator configuration content
+-   Design an interface to configure them besides the "Extractor" field of the Project.
+    -   ![](done.png "fig:done.png")Add configuration to the python script
+    -   ![](done.png "fig:done.png")Add the option for the extractor configuration file, say [-c <configfile>]
+        -   Update the Annotator manual documentation with the changes of the API
+    -   ![](done.png "fig:done.png")Add the project a parameter for the extractor configuration file
+        -   ![](done.png "fig:done.png")Add the 'configuration' field, make it editable from the interface
+    -   Implement means to store such configuration into the project
+    -   Do a second iteration on the configuration
+        -   level-1: Be able to edit the sources and mappings graphically
+        -   level-2: Be able to configure parameters on the extractors graphically
+    -   Do a write-back path, ie. writting back the descriptors to the origin
+        -   A per descriptor read-only flag in order to control which descriptor can be modified (ie. avoid the write back if not supported)
+        -   A per descriptor modified flag in order to control which descriptor must be saved (ie. avoid the write back if not needed)
+
+-   Add extractors (MusicBrainz)
+-   Write an upload script as an example (Boca? MusicBrainz?)
+-   Address building a description from a blank sheet
+
+### TODOs
+
+-   TODO: As to Aggregation Extractor, its schema file need to be reset after the configuration is edited.
+-   TODO: After the aggregation configuration is edited, what to do with the <Views> in project, in case the attributes in the <Views> are not contained any more?
+-   Bug: the .dll and .def files are not installed correctly into MingW/local/bin, which is a bug of scons
+-   Bug: if the schema is changed and an old pool is loaded, Annotator crashes with an Schema::Exception which should be catched and managed
+-   Bug: when a second song is loaded the InstantViews don't update
+-   TODO: a different check of os.access in FileMetadataSource.py for Windows
+    -   See [python bug](http://bugs.python.org/issue2528), this issue may have been fixed in the experimental release Python2.6b2
+-   Bug: there has to be some characters except a blank after the -w (the flag of writing back)
+-   TODO:(fixed after "Scons" if the ui\_XX file has been included) figure out why the newly added .ui file can not auto-generate the ui\_ header file. Now temporarily via the method below:
+
+`  $ uic ./src/SourceEditor.ui -o ./src/generated/ui_SourceEditor.hxx`
+
+### Milestones
+
+-   ![](done.png "fig:done.png") Milestone: Create a new extractor that does the aggregation for some fixed sources.
+-   ![](done.png "fig:done.png") Milestone: Make the aggregator editable with the Annotator.
+-   MileStone: Make the aggreagtor graphically editable with the Annotator.
+
+Widget related tasks
+--------------------
+
+-   Make always visible playhead an option
+-   Option to display the playhead always on the center while playing (piano roll mode)
+
+-   Draggable handle for play position on the rulers
+-   Shared time ruler and time scrollbar for all views
+-   Jump on click on rulers
+-   NetEditor scrolling segmentation view for Roman's chord extraction
+-   Spectrogram view on the Annotator
+-   Improve segmentEditor usability (better key bindings)
+-   complete the segmenteditor modes
+    -   overlapping: not even implemented
+    -   unsized: added but not really tested
+    -   continuous/discontinuous: check adding at the end bug
+-   Adding attributes to the segments on the segment editor
+    -   Labels
+    -   Heights
+    -   Colors
+    -   Fill Patterns
+
+-   Investigate factoring plugins out of InstantViewPlugin.cxx or adding helper methods to reduce code repetition
+
+Scheduled tasks
+---------------
+
+-   When no pool can be loaded do something. What?
+    -   Allow starting a pool from scratch
+-   When a song is deleted, go to no-song state: unselect songs and clear its descriptors
+-   Check schema loading when editing it on project properties
+-   Dump back the edited segmentation on the proper way depending on the kind of segmentation
+-   Initialize to the first segmentation after new schema
+-   Handle no segmentation after new schema
+-   Initialize to no song after project loading
+-   Allow not selecting any song.
+-   (?) Initialize to the first frame attribute after new schema
+-   (?) When no frame attributes, hide the frame level attribute pannel
+-   (?) When no segmentation, hide the segmentation pannel
+-   Bug: Source Aggregator should rename the child scopes accordingly
+-   Bug: Display message instead of crashing when incorrect segmentation points read
+-   Bug: Display message instead of crashing when an attribute is missing
+-   Bug: Ignore (not crashing) an unsupported attribute
+-   Option: Playhead always visible
+-   Feature: Key bindings for segment edition
+-   Feature: Current segment always visible
+-   The vertical rulers on the bpf editor are not displayed until a vertical resize
+-   Synchronize zooms and scrolling among plot widgets
+-   Support for <List> tag inside multiple item attributes (currently xoliver's annotations have to be checked to avoid the usage of this tag)
+
+Unscheduled tasks
+-----------------
+
+-   (Low priority) Strong dragging a bound (next and previous bounds are also moved)
+    -   Reproduce the previous behaviour but the limitation on previous and end bound
+    -   Dragging beyond next bounds move them
+    -   Dragging beyond next bounds move them limit lenght
+    -   Dragging beyond previous bounds move them
+    -   Dragging beyond previous bounds move them limits to 0
+-   (low priority) Body dragging
+-   (low priority) Body strong dragging
+-   (low priority) Fix: ContinuousPolicy: When more than two onsets gets colapsed, you can't drag them. Solution: When picking when several onsets have the same value, the nearest one depends on the side you are clicking by index order.
+-   Make Pool XML related errors being exceptions instead failed assertions
+-   Change Onsets/Offsets into Beginnings Endings
+-   Handling of attributes pending of annotation (have no data)
+-   Error conditions on inserting and deleting on pools:
+    -   Error inserting outside range
+    -   Error inserting on non instanciated
+    -   Error remove outside range
+    -   Error remove on non instanciated
+    -   Test XML still works fine
+    -   Dealing with zero size scopes
+-   TDD Implementation of SizelessSegmentation (??? is it the same as "UnsizedSegmentation")
+-   TDD Implementation of OverlapingSegmentation
+-   Corrections on XML dumping
+    -   **[DONE]** Simplify the RestrictedString XML
+    -   **[DONE]** Rename RestrictedString to Enumerated
+    -   Make the Enumerated be a CLAM Enum
+    -   Bound Text elements to allow using them on multielement scopes, not just the song one.
+-   Updating changes on the annotation
+    -   Dump old data on the pool when changing the annotation
+    -   When segmentation moved change the underlying pool attribute
+        -   Option 1: Whenever it changes?
+        -   Option 2: On leave semgentation?
+    -   What to do with half edited attributes
+    -   Review that every edit marks the descriptors as changed.
+-   Error/Warning message on segmentation errors when loading it
+-   **[Done]** Not crashing so miserably when the click fails loading
+-   (high priority) Reliable application flow
+    -   Viable project from scratch
+        -   'New project' action choses a path for the project
+        -   **[DONE]** 'New project' action choses an schema
+        -   What to do when adding a file that has no pool?
+    -   [david] Reliable project file content
+    -   Make the file paths relative to the project dir location instead of the working dir
+        -   **[DONE]** Change the song files
+        -   **[DONE]** Change the schema files
+        -   **[DONE]** Fix: Not adding project path to absolute paths
+        -   Refactor the code to centralize path related operations
+    -   Convert filenames to backslashes in windows. Needed??
+    -   Consider independent pool and wave filenames.
+-   Documentation into the Schema Browser
+    -   Adding an attribute on the description schema with the url or the xml
+    -   Make this documentation available to the schema browser
+-   Heights
+    -   Clarify some aspects:
+        -   How to choose the attribute that is height controlled
+        -   How to feed the attribute to the editor
+        -   Which pool update policy
+        -   Mapping units and limits
+    -   Pick function (just in segmentation)
+    -   Drag function (just in segmentation)
+    -   Visual height hovering
+        -   Highlight
+        -   Tooltip 'Attribute: X units', pe. 'MaxFreq: 240Hz'
+    -   Visual height dragging
+        -   Add state for dragging heights
+        -   Entering and exiting the state
+        -   Comunicate drags
+    -   Cross updating table attributes and heights
+-   (low priority) Colors by value
+    -   Clarify some aspects:
+        -   How to map attributes to colors?
+        -   Can the choosing method for height be used also for colors?
+        -   Should we force to be the same attribute for color and height?
+        -   Adding a thicker lower bar will illustrate better the color?
+
+Global Goals for Simac
+----------------------
+
+-   Numeric attributes does not get changed until you exit the cell
+-   Descriptor Table Plugin for Chords
+-   Frame view: Spectrum, Peaks
+-   Segment modes: Unsized, Continuous... (Cal decidir prioritaris)
+-   **[Done]** Segment display: Semitransparent box with opaque borders
+-   Mapping segment pool attributes to segment colors
+-   Mapping segment pool attributes to segment height
+-   Tooltip: Height handle, Time handles & Body
+-   Current Segment and keyboard segment navigation
+-   Changing enums attributes with keys maps
+-   Changing enums attributes with contextual menus
+-   Defining the (keyboard, mouse) user interaction as a whole to be coherent
+
+Done Tasks
+----------
+
+-   **[Done]** Rework the validation of segmentations
+-   **[Done]** Assure that the segmentations are well generated by the ClamExtractorExample
+-   **[Done]** When no current audio set the plot range into positive
+-   **[Done]** Implementation of Unsized segmentation
+-   **[Done]** Encapsulate BPF's, limits, units, intervals inside EquidistantPointsFunction
+-   **[Done]** Fix: Continuous segmentation fails loading. -\> Due to zero onset being implicit
+-   **[Done]** Format for saved segmentations depending on the kind of segmentation
+-   **[Done]** Fix: Inserted segment attributes need to be initialized
+-   **[Done]** Delete/Insert/Move segment -\> Mark song as modified
+-   **[Done]** Explicit descriptors save
+-   **[Done]** Behave ok when no song selected
+-   **[Done]** New project dialog
+-   **[Done]** Editing project properties
+-   **[Done]** Initialize the bpf if any lld was selected before song load.
+-   **[Done]** Initialize the segmentation if any was selected before song load.
+-   **[Done]** Bug: double free of project properties when edited
+-   **[Done]** Fix: Clearing the song list after new project
+-   **[Done]** Edit extractor on the lineedit affects the project
+-   **[Done]** Opening boca files
+    -   **[Done]** Downloading/Uploading descriptors from services
+-   **[Done]** Schema browser (or editor), and integrated descriptors documentation (or annotation instructions)
+
+### Done (Bennet GSoC)
+
+(All being addressed as part of [Bennett's GSoC work](http://iua-share.upf.edu/wikis/clam/index.php/GSoC/Enhancing_Clam%27s_Widgets) unless otherwise noted)
+
+-   ![](done.png "fig:done.png")Add Properties to Attributes
+    -   ![](done.png "fig:done.png")update ClamExtractorExample
+    -   ![](done.png "fig:done.png") On BuildSchema, add a call to add 'Frame::SpectrumMagnitude', guess or invent the bin gap and offset.
+    -   ![](done.png "fig:done.png") On MFCC2Pool get the write pool for such attribute and fill it.
+    -   ![](done.png "fig:done.png") Regenerate the example pool data
+    -   ![](done.png "fig:done.png")add properties to the FloatArray type on the schema
+    -   ![](done.png "fig:done.png")use such properties to fill the FloatArrayDataSource interface
+    -   ![](done.png "fig:done.png") PFADS::nBins() should be taken from the new attribute property NBins if available, if not, from the labels size as it is done now.
+    -   ![](done.png "fig:done.png") PFADS::getLabel should return:
+        -   ![](done.png "fig:done.png") The binLabel if bin\<\_binLabel size.
+        -   ![](done.png "fig:done.png") A numeric representation if the needed attribute properties is available
+        -   ![](done.png "fig:done.png") Empty string or 'ERR' if not
+
+-   ![](done.png "fig:done.png") Update InstantViewPlugin
+    -   ![](done.png "fig:done.png") For BarGraph filter FloatArrays without binLabels AND without NBins
+    -   ![](done.png "fig:done.png") Adapt all the InstantViewPlugins to use the NBins when available.
+    -   ![](done.png "fig:done.png") Run the Annotator, add a BarGraph for SpectrumMagnitude and send adevelopment screenshot to the wiki ;-)
+
+-   ![](done.png "fig:done.png") Add Scrolling Spectrogram View to NetworkEditor
+    -   tweaks:
+    -   ![](done.png "fig:done.png")remove var duplication on value and colorindex- the real colorindex is cidx
+    -   ![](done.png "fig:done.png")remove duped lines
+    -   ![](done.png "fig:done.png") make QT Designer plugin
+        -   ![](done.png "fig:done.png") add NetworkEditor/clamWidgetsPlugin/SpectrogramPlugin.\*xx
+        -   ![](done.png "fig:done.png") update NetworkEditor/clamWidgetsPlugin/ClamWidgets.cxx
+    -   ![](done.png "fig:done.png") provide option to turn scrolling on or off similar to smoothing
+    -   ![](done.png "fig:done.png") investigate texture limit problem- connect Spectrogram to chordCorrelation port
+    -   ![](done.png "fig:done.png") Make the widget work on the Prototyper
+    -   Time accurate scrolling spectrogram
+
+-   ![](done.png "fig:done.png") Refactor Low Level Descriptors Pane class to clean up Annotator and allow for multiple LLD panes
+
+-   ![](done.png "fig:done.png") Synchronize views zoom
+-   ![](done.png "fig:done.png") Synchronize views position
+-   ![](done.png "fig:done.png") Fix scroll bar sincronization
+-   ![](done.png "fig:done.png") Always visible playhead
+
+### Done (Jun GSoC)
+
+-   Native windows compilation
+    -   ![](done.png "fig:done.png") Compiling the libraries
+    -   ![](done.png "fig:done.png") Compiling NetworkEditor
+    -   ![](done.png "fig:done.png") Compiling Annotator/vmqt
+    -   ![](done.png "fig:done.png") Compiling Annotator
+    -   ![](done.png "fig:done.png") Compiling the plugins (not required)
+    -   ![](done.png "fig:done.png") Compiling Voice2Midi (not required)
+    -   Update the [native mingw compile wiki](Devel/Windows_MinGW_build "wikilink")
+
+-   Training tasks:
+    -   Take a look to the Pool related classes
+    -   Build a simple extractor (c++)
+        -   ![](done.png "fig:done.png") Adapt the build system to compile the new binary
+            -   copied the SchemaAttribute.XXX and TypePlugin.XXX to the directory src/SilenceDetector, which is ugly and needs a modification
+        -   ![](done.png "fig:done.png")Code a simple schema with a segmentation and no attribute
+        -   ![](done.png "fig:done.png")Create a pool according to the schema
+        -   ![](done.png "fig:done.png")Populate the pool with dummy data
+        -   Add to the TODO list the shortcommings found in the existing infrastructure during the session
+        -   Implement the command line options
+        -   Process the actual wave file
+    -   Build a pool to lab converter (python)
+        -   Add the Version Maker
+    -   ![](done.png "fig:done.png")build a script to update the annotator data (python)
+        -   ![](done.png "fig:done.png")Locating the segmentation attributes
+        -   ![](done.png "fig:done.png")Inserting the new attributes and moving the content into the deeper level
+

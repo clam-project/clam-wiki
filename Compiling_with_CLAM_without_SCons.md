@@ -1,0 +1,29 @@
+Why not using SConstruct
+------------------------
+
+The recommended build system for compiling applications and plugins using CLAM is SConstruct. See [Minimal SConstruct to build with CLAM and Qt4](Minimal SConstruct to build with CLAM and Qt4 "wikilink") for an example on how to do that. That is the build method CLAM community will be able to help you the more. Other methods are not guaranted to work but they should be viable with more or less work.
+
+No SCons? So, use pkg-config
+----------------------------
+
+Gladly, CLAM provides pkg-config files in order to get the compilation options you need.
+
+If you installed CLAM in a non-standard place, don't forget to define this:
+
+`export PKG_CONFIG_PATH=/whereveryouinstalledclam/lib/pkgconfig`
+
+To get the flags to compile against core and audioio modules:
+
+`pkg-config --cflags clam_core clam_audioio`
+
+To get the flags to link against core and audioio modules:
+
+`pkg-config --libs clam_core clam_audioio`
+
+I am using qmake, how do I use pkg-config?
+------------------------------------------
+
+Just add the following two lines to the project file:
+
+`CONFIG += link_pkgconfig`
+`PKGCONFIG += clam_core clam_processing clam_audioio`

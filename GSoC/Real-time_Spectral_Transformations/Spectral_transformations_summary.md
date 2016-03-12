@@ -1,0 +1,13 @@
+-   **Frequency Shift**: not real-time yet? check
+-   **Gender Change**: real-time (to improve residual)
+-   **Harmonizer**: real-time
+-   **Morph**: real-time (to improve results)
+-   **Odd/Even Harmonic Ratio**: ?
+-   **Pitch Discretization**: real-time
+-   **Pitch Shift**: real-time (fix some new artifacts)
+-   **Residual Gain**: real-time
+-   **Sine Filter**: ?
+-   **Sinusoidal Gain**: real-time
+-   **Spectral Shape Shift**: ?
+-   **Time Stretch**: not real-time yet (**important**) (porting already started)
+

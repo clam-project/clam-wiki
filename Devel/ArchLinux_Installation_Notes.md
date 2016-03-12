@@ -1,0 +1,59 @@
+[ArchLinux](http://www.archlinux.org) is a lightweight, i686 optimized GNU/Linux distribution. To install CLAM, you must first install all of the dependencies. Almost all of these can be found in the "Extra" or "Community" repositories, although you may need to compile a few from source.
+
+After installing these via 'pacman -S [package name]', make a directory into which you will download the CLAM [source tarball](http://www.clam.iua.upf.edu/download/src/CLAM-1.2.0.tar.gz). Extract the CLAM-1.2.0.tar.gz by running 'tar -xvzf CLAM-1.2.0.tar.gz'.
+
+'cd' into the CLAM-1.2.0 folder, and you'll see a list of source files. At this point, you must run 'scons configure' to ensure all dependencies are available and generate a makefile. By default, CLAM installs to /usr/local. If you prefer a different directory, specify it in the SConstruct file. Next, run 'export QTDIR=/usr.'
+
+Run 'scons', which will compile CLAM. After this completes, you should run 'scons install', which will copy the files you just compiled into /usr/local/include and /usr/local/lib. CLAM is now installed.
+
+**Network Editor tutorial coming soon**
+
+Guide for clam and network editor 1.4.0
+=======================================
+
+### \# CLAM 1.4.0
+
+Compiling CLAM is straightforward using xmlpp as XML backend.
+
+Dependencies: scons gcc fftw libxml++ id3lib ladspa libmad libogg libvorbis libxi libsndfile portaudio jack
+
+Download and unpack the sources [1](http://www.clam-project.org/download/src/CLAM-1.4.0.tar.gz) cd into and
+
+`> scons configure release=1 with-fftw3=1 prefix=/usr xmlbackend='xmlpp'`
+`> scons`
+`> sudo scons install `
+
+#### Notes
+
+-   If you want to install in another place just change the prefix.
+-   The default XML backend is xerces. The problem with xerces is that in arch the default version in arch is 3 and the version needed to compile is 2.So you need to install version 2 of xerces (xerces-c-2) and then patch some files to indicate the scons to find the library in the /opt directory. If you want to go this way take a look here [AUR CLAM 1.3 package](http://aur.archlinux.org/packages.php?ID=7216)
+
+### \# Network Editor 1.4.0
+
+Network editor needs that you install qt (and CLAM obviously).
+
+Download and unpack the sources [2](http://www.clam-project.org/download/src/NetworkEditor-1.4.0.tar.gz) and cd into. You must add two lines to the SConstruct file just before the last line. It should see as
+
+`env.Alias('install', installTargets )`
+`env.Append(SHCXXFLAGS=["-I/usr/include"]) # ADDED`
+`env.Append(QT4_MOC=["-I/usr/include"])    # ADDED`
+`env.Default(programs, translations, qtplugin, qtmonitorLocal)`
+
+now
+
+`> export QTDIR=/usr/lib/qt`
+
+and then compile and install with
+
+`> sudo scons install prefix=/usr clam_prefix=/usr qt_plugins_install_path=/usr/lib/qt/plugins/designer`
+
+### \# Chordata 1.0.0
+
+If you have installed Network Editor 1.4.0 then you only need to download and unpack the sources [3](http://www.clam-project.org/download/src/chordata-1.0.0.tar.gz) cd into and then
+
+`> export QTDIR=/usr/lib/qt`
+`> sudo scons install prefix=/usr clam_prefix=/usr  qt_plugins_install_path=/usr/lib/qt/plugins/designer`
+
+#### Note
+
+If you dont have Network Editor installed i think you only need to install qt.

@@ -1,0 +1,9 @@
+On my Gentoo Desktop
+--------------------
+
+For the main clam libraries, trunk/CLAM compiling is usually simple: \`scons\` and \`sudo scons install\` . Since the configuration is already done, I haven't posted this part, which is slightly more complicated. There doesn't seem to be any need for QT, so that makes it much easier than the other clam directors
+
+On my Ubuntu Laptop
+-------------------
+
+I'll post more when I use it, but I don't usually have any problems w/ it.

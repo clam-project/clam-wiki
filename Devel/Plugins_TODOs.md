@@ -1,0 +1,58 @@
+improve clam general infrastructure
+-----------------------------------
+
+-   enhance network flow-control (we are currently working on it). flow-control is a plugable entity in charge of scheduling processing execution. not an obvious thing to do since clam processing allow any port (buffer) size.
+
+-   dynamically load processings (like as if they where just typical plugins)
+
+improve clam plugins-host infrastructure
+----------------------------------------
+
+-   better organization (using meta-data) of NetworkEditor processing-tree. the processing-tree includes all the loadable plugins [work in progress: andreas]
+
+-   extend current factory in order to have **homogeneous plugin instantiation interface** [work in progress: andreas]
+
+### new plugins-hosts
+
+-   host ladspa in mac (we should be ready for that)
+-   host ladspa in windows (see if someone have already compiled ladspas as dlls)
+-   host lv2 [andreas]
+    -   osc extension
+    -   midi extension
+    -   gui extension?
+-   vst
+-   au
+
+### embedded networks
+
+-   clam networks (xml files) seen as plugins. Integrated in the processing tree.
+-   publish not only audio-ports but any-type ports (and controls, of course)
+-   Make NetworkEditor able to edit sub-networks
+
+improve plugins creation infrastructure
+---------------------------------------
+
+-   refactor network-player-back-ends (such as jack, portaudio, ladpsa) classes to avoid code repetition. now we have a subclass for each back-end.
+    -   david thinks the could would be cleaner and more usable having a single network-player class with plugable back-ends.
+    -   the refactoring include better class naming and move sources at an appropriate dir.
+
+-   better SConstruct for compiling network-players into plugins (.dll, .so)
+    -   improve the way to specify and install the clamnetwork file
+
+-   allow plugin creation from NetworkEditor (choose plugin architecture, etc)
+
+### new plugins architectures
+
+-   vst (license issue)
+-   generate vsts with clam-prototyped gui [work in progress: pol]
+-   vst for mac
+-   dssi with clam-prototyped gui
+-   others?
+
+DONE
+====
+
+-   experimental ladspa host in linux
+-   generation of ladspa plugins under linux (needs some refactor)
+-   generation of non-gui vst under windows (needs some refactor)
+

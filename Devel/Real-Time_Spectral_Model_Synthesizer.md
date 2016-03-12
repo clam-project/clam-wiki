@@ -1,0 +1,16 @@
+**TODO**
+
+DONE \* Create simple network to loop an audio file with limited real-time control
+
+-   Construct the database of ebow recordings to use for the engine
+
+` -- Write code for loading SDIF files`
+` -- Write code for selecting the proper file(s) given a set of parameters`
+` -- Write code for preloading / caching the first spectral frames`
+
+-   Implementation of OSC to control the synthesis parameters of the engine
+-   Resynthesis
+
+` -- Write code for interpolating between frames (?)`
+` -- Write code for interpolating between actual source data and the desired fundamental frequency, amplitude, etc`
+` -- Write code for adjusting the timbre of the source sound data`

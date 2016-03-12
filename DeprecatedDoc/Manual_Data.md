@@ -1,0 +1,402 @@
+[Back to Index](DeprecatedDoc/CLAMUserManual "wikilink")
+
+Scope
+=====
+
+This section is written having in mind average CLAM users. In the "Developer" part of this document you will also find a chapter on Processing Data that is mainly addressed to developers who want to implement a new Processing Data class.
+
+Introduction
+============
+
+In CLAM terminology, a Processing Data (PD for short) class is a class designed for storing all sort of data that will be used in the processing process. All Processing Objects have Processing Data objects as inputs/outputs (therefore all arguments of the concrete Do() method must be Processing Data). Examples of Processing Data classes include Spectrum, Audio, SpectralPeakArray, Fundamental, Segment, Frame.
+
+Basic structural aspects
+========================
+
+Any PD class is in fact a concrete Dynamic Type Class (it derives from abstract ProcessingData class, which itself derives from DynamicType). Therefore most of the PD attributes are macro-derived dynamic attributes. For example, in the declaration of the class you will see something like DYN\_ATTRIBUTE(1,public, Spectrum, ResidualSpectrum), which means that the given class has a public dynamic attribute called ResidualSpectrum that is an object of the Spectrum class.
+
+All dynamic attributes have associated automatically derived Setters and Getters that may be used from outside the class. Furthermore, attributes can be Added and Removed at run-time (please refer to Dynamic Type's chapter if you need further explanation on these issues).
+
+Some classes have private dynamic attributes that cannot be accessed directly but offer an alternative public interface. If you encounter a private or protected attribute with a name starting with the 'pr' prefix (i.e. prSize) you should look for its associated public interface (i.e. GetSize() and SetSize()).
+
+Very rarely, some PD class have an attribute that is not dynamic. In that case, you should be granted the corresponding Set/Get interface so its usage will not be different. 50 Efficiency Issues
+
+Most PD classes offer convenient shortcuts for accessing and setting elements in their buffers that should be very useful in a developing stage but should be avoided if seeking efficiency in a given algorithm.
+
+Ex:
+
+The Spectrum class has a MagBuffer and a PhaseBuffer for storing spectrums in a magnitude-phase manner. It also offers shortcut methods for accessing and setting both phase and magnitude of a given bin. Let's take a look at the code of the GetMag() method.
+
+` TData Spectrum::GetMag(TIndex pos)`
+` {`
+`  SpecTypeFlags tmpFlags; `
+`  GetType(tmpFlags);`
+`  if(tmpFlags.bMagPhase)`
+`     return GetMagBuffer()[pos];`
+`  else if (tmpFlags.bMagPhaseBPF)`
+`     return GetMagBPF().GetValueFromIndex(pos);`
+`  else if (tmpFlags.bPolar)`
+`     return GetPolarArray()[pos].Mag();`
+`  else if (tmpFlags.bComplex)`
+`     return GetComplexArray()[pos].Mag();`
+`  else`
+`     throw Err("Spectrum::GetMag: Spectrum no initialized");`
+`}`
+
+The main advantage of this shortcut is its flexibility and the fact that the memory layout of the data is transparent to the user. But it is not a very 'efficient' method!
+
+Let's now suppose that we have an algorithm that computes the average of the magnitude in the spectrum. We could think of doing something like:
+
+`TData ComputeAverage(const Spectrum& spec)`
+`{ `
+`  int i;`
+`  TData sum=0;`
+`  for (i=0;i`<spec.GetSize();i++)
+      sum+=spec.GetMag(i);
+   return sum/spec.GetSize();
+ }
+
+This method could be made much more efficient if the usage of the shortcut was avoided. In that case, the code would become something like:
+
+ TData ComputeAverage(const Spectrum& spec)
+ {
+   int i;
+   TData sum=0;
+   DataArray mag = spec.GetMagBuffer();
+   for (i=0;i<spec.GetSize();i++)
+      sum+=mag[i];
+   return sum/spec.GetSize();
+ }
+
+Another consideration about the algorithm that needs clarification is the fact that the GetSize() method is being called in every step of the loop! That is not a very efficient way to go either. The finally optimized ComputeAverage() method should look somewhat like:
+
+ TData ComputeAverage(const Spectrum& spec)
+ {
+   int i;
+   TData sum=0;
+   DataArray mag = spec.GetMagBuffer();
+   int size= spec.GetSize();
+   for (i=0;i<size;i++)
+      sum+=mag[i];
+   return sum/size;
+ }
+
+Finally, let's think of a method that instead of computing the average out of a given spectrum, sets the magnitude to twice the original one. If we tried to follow the previous example we would come up with the following code:
+
+ void DoubleMagnitude(const Spectrum& spec)
+ {
+   int i;
+   TData sum=0;
+   DataArray mag = spec.GetMagBuffer();
+   int size= spec.GetSize();
+   for (i=0;i<size;i++)
+      mag[i]*=2;
+ }
+
+The previous code would not work. The reason is that when we are calling the GetMagBuffer() method and assigning the result to our mag variable, we are actually doing a copy of the Array. All modifications that are done afterwards to the mag array are only done on the local copy. Then, what is the solution? The following code gives you the right way to deal with this case (assigning the result to a DataArray reference):
+
+ void DoubleMagnitude(const Spectrum& spec)
+ {
+   int i;
+   TData sum=0;
+   DataArray& mag = spec.GetMagBuffer();
+   int size= spec.GetSize();
+   for (i=0;i<size;i++)
+      mag[i]*=2;
+ }
+
+Note: Due to the nature of Dynamic Types, it is very error-prone to Add/Remove dynamic attributes from a Dynamic object after a reference has been assigned. The following are examples of code likely to fail:
+
+  Spectrum& spec=myFrame.GetSpectrum();
+  myFrame.GetSpectrum().AddComplexArray():
+  myFrame.GetSpectum().UpdateData();
+  //Do something with spec: error, reference may be lost!!
+  Spectrum& spec=myFrame.GetSpectrum();
+  spec.AddAll();
+  spec.UpdateData();
+
+  //Error, reference may be lost!!
+  Spectum& spec=myFrame.GetSpectrum();
+  spec.SetType(myFlags);
+  /*Error, reference may be lost!! SetType operation may add/remove attributes to Dynamic Object*/
+
+= Introduction to CLAM`s Core PD classes =
+
+In this section, a brief overview of the Processing Data included in CLAM's core is given. If more details are needed, it is better to refer yourself to the code or the DOXYGEN generated documentation.
+
+== Audio ==
+
+Attributes
+
+In short, the Audio class has three basic attributes (SampleRate, BeginTime, and Size), one buffer (Buffer) and associated descriptors (Descriptors). All of them have associated Getters and Setters. The Size attribute is, in fact, a structural attribute. Thus, a change in its value implies a change in the existing buffer. On the other hand, the BeginTime and SampleRate attributes are purely informative and thus, a change in their value only implies a change in the attributes but not on the buffer.
+
+Additional interface
+
+The Audio class has some additional interface for working with time tags instead of indices or sizes. The Getters/Setters for EndTime and Duration do not belong to an associated attribute but are rather different ways of changing the size of the Audio.
+
+There is also an additional interface for working with audio chunks and slices. An audio chunk is defined as another Audio object that has a copy of a subset of the data in a given Audio. On the other hand, an sudio slice is defined as an Audio object that has a reference to a subset of the samples in a larger Audio object. Therefore the difference is that while in asking for an audio chunk you are getting an actual copy of the data in the audio, an audio slice will have the same effect but without actually copying the data but rather referencing the original one. In an audio slice if the original audio is deleted the audio slice will be left with no valid audio data.
+
+== Spectrum ==
+
+The Spectrum is possibly the most complex PD class in the CLAM repository. It is a fundamental class for the library's purposes and some 'extra' care and effort have been put into it.
+
+A Spectrum can be represented in one of the following formats: array of complex numbers, array of polar numbers, a pair of magnitude/phase arrays, and a pair of magnitude/phase BPF's (Break Point Function). The Spectrum class is designed in such a way so as to be able to keep consistency of the data in its different representations. This is accomplished through the SetTypeSynchronize and the SynchronizeTo methods and some conversion routines (which are private and cannot be accessed directly). Note though, that the SetType method does not perform this sort of data consistency check and only instantiates the necessary attributes with the existing Size.
+
+There is an accessory interface for accessing/setting Magnitude and Phase regardless its internal representation. These methods are not efficient but help in keeping consistency between different representations.
+
+The spectrum also has two different sizes: Size and BPFSize. We won't go into many details about the reasons for being so but if you feel you need to understand this difference maybe it is time you just take a look at the code and Doxygen documentation and look at the BPF class.
+
+The Spectrum class is right now the only PD class that has an associated configuration. This configuration is used for initialization purposes and a local copy is not kept in the object. Whenever the GetConfig(SpectrumConfig& c) method is called, the argument passed and used as output of the method is synchronized with the internal structure of the spectrum.
+
+If the previous explanation did not seem enough or you are still left with many doubts about this class we strongly recommend that you take a look at the SpectrumExample in the CLAM repository.
+
+== SpectralPeak and SpectralPeakArray ==
+
+A SpectralPeak is a simple storage PD class that has the following dynamic attributes: Scale, Freq, Mag, Phase, BinPos, and BinWidth. By default, only frequency, magnitude and scale are instantiated, all others, if needed, must be added by hand. It has also a couple of operators like product, distance and log/linear scale converting routines. By itself it is seldom used and should be preferably used through the SpectralPeakArray class.
+
+The SpectralPeakArray is not, as its name may imply, just a simple array of SpectralPeaks. As a matter of fact, the SpectralPeakArray class does not hold SpectralPeak's inside but rather a set of buffers containing magnitude, frequency, phase, bin position, bin width and index. By default only the MagBuffer and FreqBuffer are instantiated, all others must be added by hand. Apart from these, it includes other non-array attributes such as Scale, nPeaks (number of peaks currently available) and nMaxPeaks (maximum number of peaks allowed). By default all these dynamic attributes are instantiated.
+
+Even though the most efficient way to deal with a PeakArray is to work directly on the buffers (see section 50), two accessory interfaces are offered: first, you can access/modify any of the attributes of a given peak by using the interface offered by methods like GetMag()or SetPhase(); but also, you can use an interface using SpectralPeak objects through the GetSpectralPeak() and SetSpectralPeak() methods. Note that these methods do not return a pre-existing peak but rather construct the peak object on the fly. Therefore, they are far from efficient.
+
+Another particularity that needs mention is the IndexArray. It is a multi-purpose array of indices. Currently it is used for fundamental detection, peak continuation and track assigning. It is sometimes indeed a very convenient way of dealing with many insertions/deletions of peaks into the array as they can be substituted by a simple change in index (having the negative values mean that the particular peak is not valid, for instance). An accessory interface (consisting of several methods) is also offered for working through indices.
+
+== Fundamental ==
+
+The Fundamental class is a basic storage PD class used for storing the result of a fundamental (pitch) detection algorithm: a set of candidate frequencies and the computed estimation error if present. It has two integer dynamic attributes that hold the current number of candidates and the maximum allowed and two arrays: one of frequencies and the other one containing the errors. All the dynamic attributes are instantiated by default.
+
+== Frame ==
+
+A Frame class has two time related attributes that are instantiated by default: CenterTime and Duration. Apart from that, it has 'a bunch' of other attributes that belong to one of the PD classes explained in the previous sections. Namely, we have: two Spectrum (one for the general spectrum and the other for the residual component), a SpectralPeakArray, a Fundamental and an Audio attribute that is usually used for storing the windowed audio chunk that has been used for generating the other data.
+
+All other methods are just shortcuts for the getters and setters of the previous attributes and may come in handy for some applications that do not bear efficiency requirements.
+
+== Segment ==
+
+A Segment consists basically of an audio frame (Audio dynamic attribute) and an aggregate of Frames. This aggregate is implemented as an CLAM::List so as to favor fast insertions and deletions and supposing that access is usually going to be sequential. This list of frames can be searched upon, using its begin time as the sorting criteria. Apart from this, the Segment follows a composite pattern so a segment can in turn hold an aggregate of other Segments (which are known as children and thus stored in the Children dynamic attribute). In the composite structure, only the root segment may hold data (frames and audio) but this data may be accessed from a child located at any level. For doing so, all children have a pointer to their parent. (This member is not a dynamic attribute and will not therefore be stored if doing an XML dump). In order to know if the Segment holds data or not, a structural attribute is included: prHoldsData, which may be accessed through the GetHoldsData/SetHoldsData interface. The SetHoldsData method is not just an accessor, if set to true, the child will actually detach itself from its parent and copy the data that corresponds to its time interval. If set to false the child will remove the data attributes (frames and audio). Note that you should do a SetpParent afterwards in order to keep that segment consistent.
+
+A Segment also has a couple of informative attributes: BeginTime and End Time and a set of associated descriptors (SegmentDescriptors).
+
+The following UML class diagram illustrates the inner structure of the Segment class and its associates:
+
+[[Image:PDClassUML.gif|300px]]
+
+== Descriptors ==
+
+Descriptors are a special kind of ProcessingData that are always bound to another ProcessingData class. They describe numerical attributes that are usually computed from the data in the PD object using 'basic' statistical computations. At the time being the Descriptor functionality is being completely refactored. If you feel that you cannot wait you can take a look at the DescriptorComputationExample in the repository or at the development documents at the CLAM webpage to get a grasp of what will be very soon offered.
+
+= Basic XML support =
+
+As all PD classes are concrete Dynamic Type classes have automatically built-in XML support. At this moment XML input/output is fully supported. Please refer to chapter XXX for more details.
+
+
+= Basic structural aspects II =
+
+A data storage class derives publicly from ProcessingData. Thus, it is a concrete Dynamic Type class and must use the DYNAMIC_TYPE_USING_INTERFACE macro.
+
+Ex:
+
+ class SpectralPeak: public ProcessingData
+ {
+ public:
+   DYNAMIC_TYPE_USING_INTERFACE (SpectralPeak, 6, ProcessingData);
+   DYN_ATTRIBUTE (0, public, EScale, Scale);
+   DYN_ATTRIBUTE (1, public, TData, Freq);
+   DYN_ATTRIBUTE (2, public, TData, Mag);
+   DYN_ATTRIBUTE (3, public, TData, BinPos);
+   DYN_ATTRIBUTE (4, public, TData, Phase);
+   DYN_ATTRIBUTE (5, public, int, BinWidth);
+  (.)
+
+Remember that all attributes registered using the DYN_ATTRIBUTE macro are granted associated Getters and Setters.
+
+= Constructors and initializers =
+
+Apart from the default constructor (already available as a result of the Dynamic Types macros), other constructors may be implemented. All these constructors must call the constructor of the Processing Data base class using the member initialisation syntax and passing the number of Dynamic Attributes as parameter.
+
+ Ex:
+ Segment::Segment(const SegmentConfig &newConfig):ProcessingData(6)
+ {
+ (.)
+
+Apart from that, these constructors must call a macro-derived method called MandatoryInit(), which is in charge of initialising concrete Dynamic Type's internal structure.
+
+Another initializer that is often useful is the DefaultInit() method. This method has to be implemented by the developer and is in charge of initializing default attributes and values. This method is automatically called from the Processing Data's default constructor and may also be called from all other constructors.
+
+The most usual non-default constructors that a Processing Data class is bound to have are the Copy constructor and the Configuration constructor. The former is already implemented in the Processing Data base class and this implementation is sufficient as long as all attributes of the concrete class are Dynamic and require no initialisation. If not (for example if the class has a non Dynamic member), the developer may make use of the CopyInit() method. This method has to be implemented by hand, but is automatically called from the macro derived Copy constructor.
+
+ Ex:
+  The Segment PD class has a non-dynamic member called pParent. Thus, the copy initializer is implemented as:
+ void Segment::CopyInit(const Segment& prototype)
+ {
+   pParent=prototype.pParent;
+ }
+
+The configuration constructor is sometimes desirable for constructing a Processing Data out of its associated configuration object or out of some sort of initial value (flags, size.). In this case the constructor must explicitly call the MandatoryInit() method and then call any other necessary configuration methods.
+
+ Ex:
+ Spectrum(const SpectrumConfig &newConfig) : ProcessingData(12)
+ {
+   MandatoryInit();
+   Configure(newConfig);
+ }
+ 
+
+= Private members with public interface =
+
+In many cases, it is desirable to keep some members private and offer an accessory public interface for modifying their value. This is especially so if the member is related to some structural aspect of the processing data and a modification in its value implies a re-structuring of the object itself. Imagine, for example a Size attribute that is related to the size of the buffers in a PD class. If the user modifies this attribute, we want to keep the size of the buffers consistent.
+
+In that case, it is recommended you keep the member as private and declare it adding the prefix ‘pr' before its common name.
+
+ Ex:
+ class Spectrum : public ProcessingData
+ {
+ public:
+   DYNAMIC_TYPE_USING_INTERFACE (Spectrum, 12, ProcessingData);
+   ...
+ private:
+   DYNAMIC_ATTRIBUTE (2, private, int , prSize);
+   ...
+
+Then you need to offer the public interface implementing by hand the appropriate Setter and Getter.
+
+ Ex:
+  In the previous example, that of the spectrum, the public interface is offered through the GetSize() and SetSize() methods, implemented as follows (see how    consistency is always kept between prSize member and size of all existing buffers:
+ int Spectrum::GetSize() const
+ {
+   int size= GetprSize();
+   CLAM_BEGIN_CHECK
+   if(HasMagBuffer() && GetMagBuffer().Size())
+      CLAM_ASSERT(GetMagBuffer().Size() == size,
+         "Spectrum::GetSize(): Mag size and Size mismatch.");
+   if(HasPhaseBuffer() && GetPhaseBuffer().Size())
+      CLAM_ASSERT(GetPhaseBuffer().Size() == size,
+         "Spectrum::GetSize(): Phase size and Size mismatch.");
+   if(HasComplexArray() && GetComplexArray().Size())
+      CLAM_ASSERT(GetComplexArray().Size() == size,
+         "Spectrum::GetSize(): Complex size and Size mismatch.");
+   if(HasPolarArray() && GetPolarArray().Size())
+      CLAM_ASSERT(GetPolarArray().Size() == size,
+         "Spectrum::GetSize(): Polar size and Size mismatch.");
+   if (HasprBPFSize()) {
+      if(HasMagBPF() && GetMagBPF().Size())
+         CLAM_ASSERT(GetMagBPF().Size() == size,
+            "Spectrum::GetSize(): MagBPF size and Size mismatch.");
+      if(HasPhaseBPF() && GetPhaseBPF().Size())
+         CLAM_ASSERT(GetPhaseBPF().Size() == size,
+            "Spectrum::GetSize():PhaseBPF size and Size mismatch.");
+   }
+   CLAM_END_CHECK
+   return size;
+ }
+
+ void Spectrum::SetSize(int newSize)
+ {
+   SetprSize(newSize);
+   if(HasMagBuffer()) {
+      GetMagBuffer().Resize(newSize);
+      GetMagBuffer().SetSize(newSize); }
+   if(HasPhaseBuffer()) {
+      GetPhaseBuffer().Resize(newSize);
+      GetPhaseBuffer().SetSize(newSize); }
+   if (HasPolarArray()) {
+      GetPolarArray().Resize(newSize);
+      GetPolarArray().SetSize(newSize); }
+   if (HasComplexArray()) {
+      GetComplexArray().Resize(newSize);
+      GetComplexArray().SetSize(newSize); }
+   if (!HasprBPFSize()) {
+      if (HasMagBPF()) {
+         GetMagBPF().Resize(newSize);
+         GetMagBPF().SetSize(newSize); }
+      if (HasPhaseBPF()) {
+         GetPhaseBPF().Resize(newSize);
+         GetPhaseBPF().SetSize(newSize); }
+   }
+ }
+
+= Configurations =
+ 
+PD classes may also use associated configuration classes in a similar way to the Processing Objects. As it has been shown up until now, both informative and structural attributes of a PD class can be added as regular attributes. The only need for offering an associated configuration class is if a PD class has too many of these attribute to handle them one by one and it becomes more 'friendly' to use a configuration wrapper. As a rule of thumb, you can say that if more than one non-default constructor needs to be implemented for a PD class you should start thinking of implementing an associated Configuration. Thus, configurations are only seen as initialization shorthands and should therefore never be stored inside a PD class.
+
+Configuration classes derive from the ProcessingDataClass.
+
+ Ex:
+ class SpectrumConfig : public ProcessingDataConfig
+ {
+ public:
+   DYN_CLASS_TABLE_USING_INTERFACE(SpectrumConfig, 5, ProcessingDataConfig);
+   DYN_ATTRIBUTE (0, public, EScale, Scale);
+   DYN_ATTRIBUTE (1, public, TData, SpectralRange);
+   DYN_ATTRIBUTE (2, public, int, Size);
+   DYN_ATTRIBUTE (3, public, SpecTypeFlags, Type);
+   DYN_ATTRIBUTE (4, public, int, BPFSize);
+   protected:
+   void DefaultInit();
+   void DefaultValues();
+ };
+ 
+
+= Customizing XML output =
+ 
+If you want to have a specific XML output that does not exactly match the one automatically derived and mentioned in 43 you have two options:
+
+1) If the class you are dumping is not part of the CLAM core you may override the StoreOn() method and implement it by hand.
+
+2) Otherwise you are suggested to write another PD class that fits your needs and acts as an adapter of the real data you have on the existing PD class and the desired output.
+
+= Specific attributes: flags and enums =
+
+When implementing a PD class it is common that you need to implement an associated enumeration or flag. If you use a standard C++ enum or std::bitset you will get no more than a meaningless integer representation. CLAM::Enum and CLAM::Flags<N>` will give you a proper string representation. See, Doxygen documentation for these base classes.`
+
+It is far beyond the scope of this document to go into the implementation details of both classes and the developer is suggested to implement his own Enum or Flag class departing from an existing class. For the case of Enums, let's see the EInterpolation class:
+
+`Ex:`
+
+The following code is included in the .hxx file:
+
+`class EInterpolation: public Enum`
+`{`
+`public:`
+`  static tEnumValue sEnumValues[];`
+`  static tValue sDefault;`
+`  EInterpolation() : Enum(sEnumValues, sDefault) {}`
+`  EInterpolation(tValue v) : Enum(sEnumValues, v) {};`
+`  EInterpolation(std::string s) : Enum(sEnumValues, s) {};`
+
+`  typedef enum {`
+`     eStep,`
+`     eRound,`
+`     eLinear,`
+`     eSpline,`
+`     ePolynomial2,`
+`     ePolynomial3,`
+`     ePolynomial4,`
+`     ePolynomial5,`
+`     ePolynomialn`
+`  } tEnum;`
+
+`  virtual Component* Species() const`
+`  {`
+`     return (Component*) new EInterpolation;`
+`  };`
+`};`
+
+and the following in the .cxx:
+
+`Enum::tEnumValue EInterpolation::sEnumValues[] = {`
+`  {EInterpolation::eStep,"Step"},`
+`  {EInterpolation::eRound,"Round"},`
+`  {EInterpolation::eLinear,"Linear"},`
+`  {EInterpolation::eSpline,"Spline"},`
+`  {EInterpolation::ePolynomial2,"2ond_order_Polynomial"},`
+`  {EInterpolation::ePolynomial3,"3rd_order_Polynomial"},`
+`  {EInterpolation::ePolynomial4,"4th_order_Polynomial"},`
+`  {EInterpolation::ePolynomial5,"5th_order_Polynomial"},`
+`  {EInterpolation::ePolynomialn,"nth_order_Polynomial"},`
+`  {0,NULL}`
+`};`
+`Enum::tValue EInterpolation::sDefault = EInterpolation::eLinear;`
+
+Deprecated: since the flags application is not available. Meanwhile, see the doxygen documentation for an example.
+
+For the case of flags, the easiest way of writing your own class is making use of the flag generation script available at mtg150.upf.es/flags.

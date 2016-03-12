@@ -1,0 +1,289 @@
+Application Information
+=======================
+
+**Title:** [Network scalability and Blender integration](http://code.google.com/soc/2008/clam/appinfo.html?csaid=71A942BB97FDC948)
+
+**Mentor:** [Pau Arumí Albó](http://parumi.wordpress.com/)
+
+**License:** [GNU General Public License (GPL)](http://creativecommons.org/licenses/GPL/2.0/)
+
+**Abstract:**
+
+:\***Network Scalability**:
+
+  
+  
+The CLAM NetworkEditor is a powerful tool to easily make complex audio processing units ("networks") without need to write a single line of code. But if you want to do a big network with many processing boxes, even if it's a simple process could be difficult to understand the signals flows. The use of subnetworks allows to group the processing boxes by levels, allowing not only to simplify the reading of signals flows, but also allowing the users to improve their designs in an object-oriented way, making new processing units connecting and grouping previous ones.
+
+That is the main idea of the network scalability proposal.
+
+Details
+=======
+
+This proposal cover two main areas. The first one claims to improve the connections and processes into the NetworkEditor interface, and the second to integrate 3D objects functionality to the CLAM network. The tasks of each area are quite independent, so I think to work on both at the same time.
+
+Network Interface
+-----------------
+
+**For the NetworkEditor interface, these are some proposed chronologically ordered tasks:**
+
+-   normalize processing boxes descriptors keys (add missings keys in some objects, improve the factory class key implementation to manage the key missing errors without generating segmentation faults) ![](Done.png "fig:Done.png")
+
+  
+  
+bool CLAM::Factory::AttributeExists (const std::string& key, const std::string& attribute)
+
+//returns true if attribute exists in list "key".
+
+-   improve the user interface to interconnect signals of the same type. Make contextual menus showing compatible type pair to connect to (implemented now only with the port monitors type).
+
+  
+  
+Discussing about the interface. Specific things to define:
+
+-   Kind of interface to simplify cable connections between processings
+-   ToolTips, messages boxes, and error management
+
+-   Implement sending/receiving named processing boxes, for every control and signal types (allowing to make "wireless" connections).
+
+  
+  
+In process.
+
+-   improve NE GUI processing boxes manipulation. Allow the user to group/lock a group of processing boxes, and operate with them as a unique object (for copy/paste/duplicate/move/etc).
+
+  
+  
+Done copy / cut and paste. Added canvas geometries to the network XML store/load management. Still needs refactoring and be sure of the format to use, since it then will be improved to manage subnetworks.
+
+-   improve the grouping implementation to a new instance, allowing the user to save a group as a network, and load it as a closed processing box into a network ("subnetwork"). Derivate the sending/receiving processing boxes to manage subnetworks inputs/outputs.
+
+  
+  
+In process.
+
+-   improve the subnetwork support to allow the user to "enter" in the subnetworks (if possible when playing, to allow manage subnetworks controls in RT)
+
+Blender-CLAM integration
+------------------------
+
+**The main goals for the Blender-CLAM integration are:**
+
+-   Allow Blender to export scenes objects parameters on intermediate files (with cameras-listeners and objects-sound sources positions over time) make them readable into CLAM, and use as offline spatialization choreography.
+-   Allow Blender to send the previous point parameters in RT over OSC, and CLAM to use them onto networks. Adapt the spatialization networks examples to use them, and make new ones.
+
+  
+  
+-successfuly first python script to send scene parameters using osc to a receiver osc clam plugins ![](Done.png "fig:Done.png")
+
+-needs refactoring on sender code and improvements on OSC clam receiver. Make specifics spatializer parameters receiver processings (using SpatDIF?).
+
+-   Improve the Vector Based Amplitude Panning related processing boxes to manage distances (with variable delay lines and optional filters) and different speakers configurations. Allow the spatial speaker's configuration importing blender scene objects.
+-   Make new VBAP alike processing boxes to enconde/decode Ambisonics (externals LADSPA/VST plugins can be used too)
+-   Make a simple OpenGL monitor to display the 3D scene within NE.
+-   Make a network prototype which can manage multiple sound sources and:
+
+:\* allow the definition of sound sources emition directivity
+
+:\* spatialize them taking care of objects sound oclussions (and emition direct.)
+
+-   Make a processing box doing the work of the previous prototype network (at this point an intermediate task could be to make a subnetwork, using the proposed scalabilities improves).
+
+**Firsts tasks needed on this area:**
+
+-   in Blender
+
+:\* implement an intermediate scene description file format. SpatDIF over SDIF?
+
+:\* implement Open Sound Control sender on python scripts
+
+:\* implement some 3D scene description format over OSC. SpatDIF?
+
+-   in CLAM:
+
+:\* implement the Blender intermediate used formats (SpatDIF over OSC/SDIF?)
+
+:\* make an earlier simple OpenGL monitor
+
+**Optional:**
+
+-   Improve the scene description management to allow X3D/VRML/MPEG4/BIFS use.
+
+Milestones
+==========
+
+-   Milestone 1 (**for Blender Integration**):
+    -   place a source and a listener object in blender. ![](Done.png "fig:Done.png")
+    -   when source/listener moves an osc is sent to clam ![](Done.png "fig:Done.png")
+    -   clam receives an audio source (by jack), and source/listener positions by OSC. Then processes this controls and convolves the audio using HRTF and distance gain compensation.
+
+  
+To be done:
+
+-   -   The OSC receiver, adapting from the existing processing
+    -   The osc-\>azimuth/elevation conversion
+    -   If it's needed, extend the HRTF database processing.
+
+-   **Subnetwork implementation milestones:**
+    -   Milestone 1:
+        -   Decouple MainWindow and Canvas (NE, basically) from Network using an abstract BaseNetwork class (aka interface). Rename Network to FlattenedNetwork
+        -   Improve the "graph getter" interface (used by Canvas and FlowControl)
+        -   Refactor FLowControl so it have a unique GraphChanged() method
+    -   Milestone 2:
+        -   Create a new class Network and duplicate the graph model, using IDs that refers to the flattened network. Eacy graph change is automatically sync with the flattened network.
+    -   Milestone 3:
+        -   introduce subnetworks with a Composite (truly Composite) pattern. Thoroughly unit tested
+    -   Milestone 4:
+        -   User Interface, and complex workflows (like create subnetwork)
+
+* * * * *
+
+Related TODOs pages:
+
+-   [Devel/Plugins\_TODOs](Devel/Plugins_TODOs "wikilink")
+
+:\*[Embedded Networks](Devel/Plugins_TODOs#embedded_networks "wikilink")
+
+-   [Devel/NetworkEditor TODO's](Devel/NetworkEditor TODO's "wikilink")
+
+Pending tasks, proposed features and improvements
+-------------------------------------------------
+
+-   Define subnetworks implementation:
+
+:\* Pau's proposal ([see discussion](Talk:GSoC/Network_scalability_and_Blender_integration#Pau's_proposal "wikilink"))
+
+  
+Related tasks:
+
+  
+- do group managements on canvas. Load and Save groups from files.
+
+- implement several opened networks management on canvas. ?
+
+- do the ports and controls sinks/sources and send/receivers
+
+- define the semantics and hierarchy for subnetworks management
+
+-   Pau proposed refactoring:
+
+  
+change actual (CLAM::Network):
+
+  
+typedef std::map\< std::string, Processing\* \> ProcessingsMap;
+
+for:
+
+  
+struct ProcessingInfo { Processing\* p, Geometry g};
+
+typedef std::map\< std::string, ProcessingInfo \> ProcessingsMap;
+
+to merge processings and geometries maps getting on canvas.
+
+-   Change and simplify "connect to" context menues
+-   (Low-Priority) Improve embedded Faust diagrams displaying ([antecedents](:Image:NetEditor-faust-svg-embedded.png "wikilink"))
+
+*(optional)* Blogging
+=====================
+
+*(optional)* Selected posts
+---------------------------
+
+*The most relevant ones related with the project*
+
+Tasks prior to the coding period
+================================
+
+Related links
+=============
+
+-   CLAM:
+
+:\* Wiki:
+
+::\* [Documentation](Main_Page#Documentation "wikilink")
+
+::\* [Devel](Devel "wikilink")
+
+::\* [Metamodel of network using a class diagram](Metamodel of network using a class diagram "wikilink")
+
+::\* [Network\_Editor\_tutorial\#3D\_Spacialization](Network_Editor_tutorial#3D_Spacialization "wikilink")
+
+:\* [3D Audio and CLAM @ Pau Arumi’s blog](http://parumi.wordpress.com/2008/01/25/3d-audio-and-clam/)
+
+:\* [Devel doxygen](http://clam.iua.upf.edu/doc/CLAM-devel-doxygen/)
+
+:\* [Tracker](https://projectes.lafarga.cat/tracker/?group_id=24)
+
+:\* [CLAM on AudioResearchBlog](http://audiores.uint8.com.ar/blog/?cat=37)
+
+-   C++
+
+-   Python
+
+-   Blender:
+
+:\* [Development](http://www.blender.org/development/)
+
+::\* [Architecture](http://www.blender.org/development/architecture/)
+
+::\* [Coding Guides](http://www.blender.org/development/coding-guides/)
+
+:\* [Game Engine Module Hierarchy](http://www.blender.org/documentation/pydoc_gameengine/PyDoc-Gameengine-2.34/trees.html)
+
+:\* [Scripts in Blender](http://wiki.blender.org/index.php/Scripts) (wiki)
+
+::\* [Scripts User Manual](http://wiki.blender.org/index.php/Scripts/Manual): Information & Catalog index
+
+:::\* [The Blender Python API Reference (Blender 2.45)](http://www.blender.org/documentation/245PythonDoc/)
+
+:::\* [Python Scripting](http://wiki.blender.org/index.php/Manual/Python_Scripting) A great reference for Script Usage & Python Scripting Language use within Blender.
+
+:::\* [Modelling Scripts](http://wiki.blender.org/index.php/Manual/Modelling_Scripts)
+
+:::\* [Bundled Scripts](http://wiki.blender.org/index.php/Manual/Bundled_Scripts) This is older list I found. It links back here. It does still hold some relevant information.
+
+::\* [Catalog](http://wiki.blender.org/index.php/Scripts/Catalog): a large listing of scripts, grouped by function, one page per script.
+
+:\* [Release Notes/Notes243/Python Scripts](http://wiki.blender.org/index.php/Release_Notes/Notes243/Python_Scripts)
+
+:\* [Download Python Scripts](http://www.blender.org/download/python-scripts/)
+
+:\* [Blender Artists](http://blenderartists.org) forums:
+
+::\* [*Python & Plugins*](http://blenderartists.org/forum/forumdisplay.php?s=b00ff078ceaf214ca0e7e86fc22cd2b6&f=11)
+
+::\* [*Game Engine*](http://blenderartists.org/forum/forumdisplay.php?f=34)
+
+:\* [SVN](https://svn.blender.org/svnroot/bf-blender/trunk/blender)
+
+:\* [Bug Tracking](http://projects.blender.org/tracker/?atid=269&group_id=63&func=browse)
+
+  
+Sctructures, formats & protocols:
+
+-   [Python Script X3D Exporter](http://www.bitbucket.ca/~acheater/blender/)
+
+:\* [X3D on wikipedia](http://en.wikipedia.org/wiki/X3D)
+
+:\* [X3D Specifications](http://www.web3d.org/x3d/specifications/)
+
+-   [SpatDIF (Spatial Sound Description Interchange Format)](http://www.jamoma.org/wiki/SpatDIFSpatialSoundDescriptionInterchangeFormat)
+-   [OSC (Open Sound Control)](http://opensoundcontrol.org/)
+
+  
+Acoustics:
+
+-   [Laboratory of Acoustics and Audio Signal Processing @ Helsinki University of Technology](http://www.acoustics.hut.fi/)
+
+:\* [Ville Pulkki (HUT Acoustics researcher) page](http://www.acoustics.hut.fi/~ville/)
+
+:\* [Real and Virtual acoustics @ TKK Acoustics Laboratory](http://www.acoustics.hut.fi/research/cat/RVac/)
+
+:\* [TKK Akustiikka / TKK Acoustics Laboratory / Research teams](http://www.acoustics.hut.fi/research/teams.html)
+
+:\* [Vector base amplitude panning](http://www.acoustics.hut.fi/research/cat/vbap/)
+
+<Category:GSoC2008>

@@ -1,0 +1,94 @@
+Application Information
+=======================
+
+**Title:** [Enhancing Annotator Widgets](http://code.google.com/soc/clam/appinfo.html?csaid=329AA0BD89715E67)
+
+**Mentor:** [David García Garzón](http://vokicodder.blogspot.com/)
+
+**License:** [GNU General Public License (GPL)](http://creativecommons.org/licenses/GPL/2.0/)
+
+**Abstract:**
+I will deliver a number of usability and implementation enhancements to Annotator views. For one, enhance Annotator's InstantViews system so they're synchronized with NetworkEditor's views. Also, interesting InstantViews and EvolutionViews will be ported from NetworkEditor or implemented from scratch.
+
+There are also a number of Mac-specific issues that hinder Annotator's usability such as crashes and interface anomalies that I will address throughout the project.
+
+Details
+=======
+
+Milestones
+----------
+
+Weeks 1&2:
+
+-   ![](done.png "fig:done.png") Synchronize Annotator's KeySpace / Tonnetz / DataSource implementations with NetworkEditor's more up-to-date implementations
+-   ![](done.png "fig:done.png") Port BarGraph to Annotator InstantView
+
+To follow (in order):
+
+-   (IN PROGRESS NOW) Add Properties to Attributes
+-   Add Vector evolution view to Annotator (weeks 3&4?)
+-   clean up vmqt & lower vmqt complexity (weeks 4&5)
+-   Add Spectrum instant view to Annotator
+-   Add option to synchronize scrolling / zooming and to follow playback cursor
+
+Task list
+---------
+
+[Devel/Annotator\_TODO's](Devel/Annotator_TODO's "wikilink")
+
+TODOs
+-----
+
+-   Add Properties to Attributes
+    -   ![](done.png "fig:done.png")add properties to the example schemas
+    -   ![](done.png "fig:done.png")add properties to the FloatArray type on the schema
+    -   use such properties to fill the FloatArrayDataSource interface
+    -   modify ClamExtractorExample to demonstrate / test properties
+
+### Open Fronts on Widgets
+
+Those are the open fronts on the widget arena -- dgarcia
+
+-   Conciliate and clean DataSource and KeySpace/Tonnetz views
+-   Migrate new InstantViews from NetEditor: BarGraph, Peak views, Polar peak views...
+-   Lower vmqt complexity
+-   Consider layers on the Instant Views
+-   Vector evolution view
+-   Tracks view
+-   Time synchronization of views
+-   Consider evolution views on the NetEditor
+-   Adding multiple temporal evolution views
+-   Clean up the plugin system
+-   Segment editor
+    -   Assign Height/Color to segment data
+    -   Implement pending segment editor modes
+    -   Time scrolling
+
+Ideas
+-----
+
+Add the following instant views to Annotator:
+
+-   Peak
+-   RMS
+-   Spectrum
+-   (still considering) perceived loudness i.e. Bark/Sone view
+
+Deliver the following usability enhancements to Annotator:
+
+-   Add option to color-code segments based on segment value
+    -   something like MATLAB colormap ?
+-   Synchronize zooms and scrolling among plot widgets ([Devel/Annotator TODO's](Devel/Annotator TODO's "wikilink"))
+-   Option to synchronize scrolling to playhead ([Devel/Annotator TODO's](Devel/Annotator TODO's "wikilink"))
+
+Mac-specific Caveats
+--------------------
+
+-   extractors are bundled within Annotator.app, so for a project to see them the path the the extractors need to be passed to the app-- not just the extractor name. i.e. /Applications/Annotator.app/Contents/MacOS/ChordExtractor instead of simply 'ChordExtractor'. (using CLAM\_Annotator-0.3.9\~svn10111-powerpc.dmg, 15 May build)
+-   Annotator crashes when ClamExtractorExample is loaded (CLAM\_Annotator-0.3.9\~svn10111-powerpc.dmg, 15 May build)
+
+Blog
+----
+
+Links
+-----

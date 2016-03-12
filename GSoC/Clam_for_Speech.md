@@ -1,0 +1,161 @@
+First tries
+-----------
+
+Installing with ubuntu fiesty was relatively easy. The biggest problems were not related to clam: getting the nvidia to work and I also had a mysterious problem with the audio that seemed to go away by itself one day. I also tried installing clam on my Gentoo desktop, but I didn't get it working. It could be due to the fact that I tried to install qt4 instead of just the libraries (gentoo doesn't like having more than one version of a given program at the same time) due to not reading the directions closely. The next step in getting it working was figuring out what jack is used for...
+
+Playing with the vowel synthesizer
+----------------------------------
+
+(May 21) Meeting Xavier last week was very helpful. I found out that my idea to use glottal pulses as an input for the vowel synthesizer was easier than I thought. I didn't need to write any code and most of what I needed was already in the experimental vowel synthesizer made by David Garcia. Learning how to use Jack was the missing link that let me play the electroglottogram data (http://sail.usc.edu/\~kazemzad/EGG/only\_source/ , this is a measurement of the opening and closing of the vocal folds from the USC phonetics lab) in Xmms and route it to the tweaked vowel synthesizer (http://sail.usc.edu/\~kazemzad/EGG/clam/experimentalVowelSynth\_from\_EGG.clamnetwork , here I disconnected the harmonic peak generator and rerouted the peaks from the SMSAnalysisCore0 processing to the vowel resonator). It sounds a bit more natural than the original, but this may be more b/c of the natural pitch and timing than the actual glottal pulse info (the EGG records the opening and closing, not the actual sound input to the vocal resonator).
+
+Another thought for a possible improvement would be to reorient the f1 f2 space so it matches the typical vowel diagram (and maybe put such a diagram in the background). This will probably involve real programming...
+
+Installing clam on Gentoo
+-------------------------
+
+(May 28) I finally got clam working on my desktop. Using Ubuntu on my desktop was easy, but with my desktop has given me some problems. One problem was that I already had qt3 installed and the portage package manager didn't like trying to install two versions of a program. I down loaded qt4 to install manually in a separate location and I had trouble building it. It turns out there was some kind of typo in one of the defines in qglframebufferobject.cpp (cf. <http://lists.kde.org/?l=kde-devel&m=115260405432346&w=2> ) . Luckily, I found this kde mailing list post instead of having to figure it out myself. Then I added /usr/local/Trolltech/Qt-4.2.3/lib to the PKG\_CONFIG\_PATH environment variable in \~/.bash\_profile. Also, I changed the QTDIR env var to /usr/local/Trolltech/Qt-4.2.3. So far I've tested Annotator and NetworkEditor. There is still some problems with audio playback but I'm not sure what it is... could be jack or sound card. It seems to occur when there is a lot of load on the cpu.
+
+Compiling Commands on my various computers
+------------------------------------------
+
+Here I'm putting the compiling commands that I use so that I dont' forget them:
+
+[CLAM](CLAM "wikilink")
+
+[NetworkEditor](NetworkEditor "wikilink")
+
+[Annotator](Annotator "wikilink")
+
+[SMSTools](SMSTools "wikilink")
+
+[Voice2MIDI](Voice2MIDI "wikilink")
+
+Project Planning, Milestones, and Notes
+---------------------------------------
+
+### Week 1-2 (May 28 to Jun 11)
+
+I decided to start working on a formant recognizer/extractor. It seems that this could be used as a precursor to several other things, so it seems like a good place to start. For one, it could be used with the vowel synthesizer as a kind of analysis/synthesis loop. A further step could be to make a special formant recognizer for singing voice. Another aspect that is close to my interest is user specific modeling of formants (b/c people have different formant locations based on their anatomy, native language/dialect, etc, even though perceptually we can distinguish which vowel is being said). This could be applied to the gender change network since one of the main factors in formant variation is male/female. (cf a paper, Robust Gender Dependent Acoustic Phonetic Modelling in Continuous Speech Recognition based on a new Automatic Male/Female Classification by Vergin, Farhat, and O'Shaughnessy: approximately 90% accuracy automatically predicting male/female using f1 and f2).
+
+#### todo
+
+-   check out some existing implementations (difficulty: 3, importance: 7)
+    -   wavesurfer/snack/etropic xwaves,
+    -   praat,
+    -   Sandra Gilaberts thesis,
+    -   matlab speech tools, and
+    -   Rabiner's notes
+    -   Xavier's chapter 10 in DAFX
+
+-   figure out how to create a processing (difficulty: 5, importance: 10 )
+
+-   implement best candidate from above existing implementations (difficulty: 7, importance: 10)
+    -   get something working as soon as possible and submit it for review
+    -   do detailed review of David's vowel synth code.
+
+#### notes
+
+In the past two weeks I've refreshed my knowledge about the basics of the LPC method for formant extraction. The books that I've looked into are Rabiner and Juang, Quatieri, Xavier's chapter in DAFX, and "Speech Processing and Synthesis Toolboxes" by D.G. Childers. The last reference was one that I found in the bookshelf at my lab and it turned out to be the most helpful (chapter 5 on linear prediction). The main part that was hard to dig out of the other books what was the relation between the LPC coefficients and the formant bandwidths. I mainly focused on understanding the LPC model in detail, but reading ch. 10 in DAFX gave me some other ideas that start with the fft instead of LPC/autocorrelation. Another idea is to have a complementary processing that uses a tube model to synthesize vowels (since the LPC formant extraction is based on a tube model interpretation of the vocal tract). Sandra Gilabert's thesis was helpful, but it would have been more helpful in English :) It didn't go into the formant bandwidth measurement, like many of the other books I looked at. This turned out to be fairly simple (probably intuitive to those who have a strong signal processing background). The frequency of the formant is of course the arg of the complex conjugate LPC pole location (times 1/2\*pi\*samplingPeriod to convert to Hz) and the bandwidth is the absolute log of the LPC magnitude (times 1/pi\*samplingPeriod). I'd like to post a full derivation of all this stuff on the blog/rss feed so check back later if you're interested...
+
+The example programs (trunk/CLAM/examples) helped a lot getting started, esp the LPCAnalysis\_example. I guess this hasn't been ported to qt4 yet but I think it should provide a good starting point to get the formant locations/bandwidths.
+
+I got a standalone program that reads an audio file and performs lpc working by figure out the DYN\_ATTRIBUTE way of accessing the LPC coefficients and then printing the lpc coefficients. To actually get the formants, I'll need to get the complex roots of the equation defined by these coefficients (I think...).
+
+### Week 3-4 (Jun 11 to Jun 25)
+
+I was able to get an initial program to extract the LPC coefficients from a wave file. To accomplish the goal of formant extraction, I still need to get the complex roots of the coefficients in order to get the formant locations and bandwidths, so this will be my primary goal for the next two weeks. It involves a knowledge goal of verifying that I'm correct with these ideas about the LPC and then figuring out how to get the roots. Then I should program it into my simple initial program. After I'll verify that the formants match the output of some accepted program (wavesurfer/snack) and perhaps put the formant extraction (or maybe just the lpc root extraction) into the CLAM::LPModel class. Further goals are to add tracking and smoothing and to integrate it with the network editor and annotator.
+
+#### To do
+
+-   finish the formant extraction:
+    -   figure out how to get roots
+    -   tracking and smoothing
+-   figure out incorporation into clam applications
+    -   Network Editor
+    -   Annotator
+    -   do I need a special visualization for formants? (ideally a scrolling window)
+
+#### Notes
+
+While waiting to see Sandra's code I looked into some linear algebra books about finding roots. Kind of interesting change of pace. Since the numerical methods are by definition approximations, I was thinking about having the root finding and formant tracking/smoothing combined. Seems like this would be good, but also would be a distraction from other things. Let's see how efficient the formant tracking is and if its necessary or not. Also, I've been thinking about a poster to the list who asked about an application that DTW would be good for. Pau expressed interest on the list (Subject: Re: [CLAM] request), so I have been thinking about possibilities for this. Actually, I still feel a bit of a newbie still b/c it's kind of hard to think of how DTW can be incorporated into clam. One idea is to have two similar files in network editor and blend them together using DTW to find the best alignment of the two. This however might not have realtime performance b/c the distance matrix would have to be constructed (and the path found) prior to playback. So this aspect seems to indicate annotator, but annotator only has one file per annotation. I'll think it over some more and then post back to the list to see what Pau had in mind...
+
+I've tested out one root finding algorithm that I found online (http://perso.orange.fr/jean-pierre.moreau/Cplus/tnewton\_cpp.txt ). I got the lpc coefficients that from clam and plugged it into the algorithm to see if it worked. One thing that I realized is that the rule of thumb for \~ 10 lpc coefficients (2 \* \# of formants +2, or something like that) is intended for 8k/telephone quality recordings. I think that it should be higher for higher sampling rates. After I get the formant extractor working I want to look into making the default be decided by the sampling rate of the input audio. I also need to check my speech processing class notes b/c I remember seeing a formula for ideal lpc order, given the \# of formants desired and the sampling rate.
+
+I read the first paper that Xavier sent and it gave me a better idea of the mathematics behind solving the roots of the LPC coefficients. I think I need to read it again b/c I need to relearn the math of complex analysis. The other ones look good too to refine the algorithm, but I want to get something working before I start thinking about how to improve it...
+
+I looked into the libraries that Xavier recommended and I installed lapack++, which depends on blas. I installed the latest version, which is actually a fork of the original, which wasn't being actively developed. I haven't tried it out yet b/c I wanted to try the root finding program that I found which was a simple, one-source program. By plotting the formants as poles in the z-plane on a piece of graph paper, I verified that the formants were in the right places. It only worked when I was using 8kHz sampling rate. Using a 44.1 kHz sampling rate, the formants were too sparse (\~4 poles per 22kHz). As a side note, the program I found online uses a slew of goto statements, so it will be a lot of fun figuring out how it works...
+
+Another thing I noticed was that there doesn't seem to be preemphasis being done before the LPC. I'm not sure how much this matters, but it seems to be a common first step in the sources I've looked at.
+
+### Week 5-6 (Jun 25 to Jul 9)
+
+Last weeks, I found algorithms that work solving the roots of the LP coefficients. It uses a Hessenberg companion matrix. These coming two weeks I will implement this into clam. My approach is to incorporate it into the LP model first. Then I think it might deserve it's own class, or perhaps be put into the matrix class.
+
+#### todo
+
+-   Finish root solving algorithm
+-   Tracking and smoothing
+-   Incorporation into clam tools/visualizations
+-   testing
+-   ask about how to best incorporate the code (in which class)
+
+#### notes
+
+it took me a while to figure out the matrix class code. Perhaps I can submit a version with more comments. there are also some areas with @todo's marked. One other point of uncertainty is that there are matrix classes in src/... and also in scons/... . I should verify that my code is using the right pragmatics for Matrix and Complex b/c those are the ones I'm most unsure about.
+
+The algorithm I implemented makes use of epsilon for checking if matrix elements are smaller than rounding errors. I grepped thru clam and it seems like there is some epsilon used in some assert statements, but I couldn't find where it was defined or how to use it.
+
+I wanted to ask about where to put the code I've been working on, but I think it will be clearer if I pick a place. That way I'll be able to submit a patch and it will be clearer what the code does. My idea is to create a class for polynomial in src/standard/. This is kind of like how Sandra Gilabert did it except for now, I'm putting everything in this class. This class will have the solveRoots function. I think for now, I'll put the matrix stuff in there and ask about where is the best place to put it. The matrixTmplDec had some stubs for eigenvalues so that might be a good place to put it, but I think that the algorithm I'm using is only for upper (and maybe just real) Hessenberg matrices, so it might need to go in a derived class.
+
+### Week 7-8 (Jul 9 to Jul 23)
+
+-   mid term evaluation
+
+These weeks I got the formant extraction working. The major changes to the previous work was using std::vector instead of CLAM::Matrix, using float.h to include the value for epsilon, and incorporation into the Network Editor. The incorporation into the network editor used spectral peaks to output the formants. So far it doesn't sound to good.
+
+I also started working on making small changes to the vowel synthesizer. Some ideas I had are adding a 3rd formant, stepping thru the cardinal vowels, and controlling vowel synthesis using the shape of the tube resonator. Also, Xavier gave me the idea of having the duration of vowels fired off using an amplitude envelope.
+
+One major problem I had was that the CLAM/test directory wasn't building, most likely because of cppunit. I'm not too familiar with it, so I spent a lot of time installing different versions and trying to configure it differently.
+
+#### To Do
+
+-   Send in patches for the formant extraction and make any revisions if necessary
+    -   look into sampling rate changes to ensure the right LPC order
+    -   add tests
+-   Vowel synth additions (in order)
+    -   add third formant
+    -   amplitude envelope
+    -   ( cardinal vowels and tube model for later iteration)
+
+### Week 9 (Jul 23 to Jul 30)
+
+-   Added 3rd formant to vowel resonator
+-   read up on ADSR
+
+### Week 10 (Jul 30 to Aug 6)
+
+### Week 11 (Aug 6 to Aug 13)
+
+-   work on ADSR and CardinalVowel control
+
+### Week 12 (Aug 13 to Aug 20)
+
+-   CardinalVowel Control
+    -   Finished first iteration
+    -   TODO: implement steps to make discrete vowels
+
+-   ADSR
+    -   Construct networks to get a feel of ADSR
+    -   LADSPA ADSR seems more functional than clam's
+
+### Week 13 + (Aug 20 +)
+
+-   final evaluation
+-   define continuing work
+
+(c.f. final report)
+
+Final Report
+------------
+
+[Abe's GSoC final report](Abe's GSoC final report "wikilink")

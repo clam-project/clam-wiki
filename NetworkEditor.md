@@ -1,0 +1,15 @@
+On my Gentoo Desktop
+--------------------
+
+Since I have both qt3 and qt4, I think there might be some conflicts. The command that I just used is \` scons prefix=/usr/local clam\_prefix=/usr/local qt\_plugins\_install\_path=/usr/local/Trolltech/Qt-4.2.3/plugins/designer/\` after changing the \$QTDIR variable to /usr/local/Trolltech/Qt-4.2.3 .
+
+For the scons install phase, I have troubles b/c I think that the root user doesn't have the same environment (though the CLAM directory works fine). Digging around, I find that since I manually installed QT4 (Gentoo didn't like haveing multiple versions), I need to put the QT4 programs on the PATH. Here are the following lines from my .bash\_profile from the abe user.
+
+PATH=/usr/local/Trolltech/Qt-4.2.3/bin:\$PATH export PATH LD\_LIBRARY\_PATH=/usr/local/Trolltech/Qt-4.2.3/lib:\$LD\_LIBRARY\_PATH export LD\_LIBRARY\_PATH export PKG\_CONFIG\_PATH=/usr/local/Trolltech/Qt-4.2.3/lib:/usr/local/lib/pkgconfig
+
+anyways, that didn't solve my problem, but actually it doesn't matter b/c I always just call the NetworkEditor from the directory where it is.... I will post back more when I get around to digging deeper.
+
+On my Ubuntu Laptop
+-------------------
+
+More later, but I usually don't have problems with it...

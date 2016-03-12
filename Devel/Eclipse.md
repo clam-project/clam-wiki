@@ -1,0 +1,37 @@
+Working with Eclipse and CLAM is pretty immediate. If you are used to working with IDE's (XCode, VisualStudio...) but want something that integrates well with CLAM (through SCons), is cross-platform, and Open Source... Eclipse should be your choice.
+
+Installation
+------------
+
+You should install the core Eclipse development environment either through the [Eclipse Webpage](http://www.eclipse.org/) or through any of the packages you will find for any major distribution.
+
+Apart from the main Eclipse package you need to install [CDT](http://www.eclipse.org/cdt/) for C/C++ development. This turns the otherwise java-centered environment into a real front-end for GNU tools like gcc or gdb.
+
+Finally (and here comes the trick ;) you should install the SCons plugin for Eclipse. You have to install this through the Eclipse Update Manager so the best you can do is follow the instructions at the [Plugin's web](http://nic-nac-project.de/~lothar/eclipse/update/SConsBuilderPlugin.html).
+
+Setting up your workspace
+-------------------------
+
+If you haven't worked with Eclipse before you might become very annoyed at first as it tends to be very intrusive unless you know how to tell it not to be. For instance, in the "default" mode it will copy all your sources to wherever you set your workspace (i.e. /home/xavier/workspace). To avoid this, in order to create a new project simply go to File-\>New-\>Project, select C/C++ category, select Standard Make Project and (VERY IMPORTANT) de-select the "use default location" checkbox and browse for your local CLAM sandbox (i.e. /home/Xavier/Sandbox/trunk/CLAM). Give a name to your project and you are almost set.
+
+Setting the project to work with SCons and the CLAM build environment
+---------------------------------------------------------------------
+
+First thing you need to do is convert the Standard Make project to Scons by going to File-\>New-\>Other and selecting C/C++, and Convert project to Scons.
+
+Once you do that, the environment will start compiling on its own as chances are that you have the "Build Automatically" option active. You can change that in the Project menu but I usually find it very handy.
+
+Unless you have compiled before you will have to set the scons flags by hand. In order to do that go to Project-\>Properties-\>Scons Build, Additional commandline args, and enter: force\_avoid\_configure=1 and the path for clam\_prefix and install\_prefix if necessary
+
+Finally, you might want to set a new "install" configuration in that same page that deploys the compiled libs in the path.
+
+Note: Do not mess with any of the other SCons settings in this section as they will most surely mess up your CLAM-provided SConstruct file! But if you do, just do *svn revert SConstruct* to revert the changes by eclipse.
+
+Compiling and Running the Network Editor
+----------------------------------------
+
+Once you have generated the CLAM libraries you can compile one of the Apps like Network Editor. Simply create a new project following the exact same instructions as before, convert it to SCons project and enter the flags. You should be all set.
+
+If you want to execute/debug the application all you need to to is define the path to the executable in the Run menu option Run...
+
+[300px](image:EclipseCLAM.png "wikilink")

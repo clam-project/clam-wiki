@@ -1,0 +1,50 @@
+Application Information
+=======================
+
+**Title:** [Plugin system for a dynamically extensible framework](http://code.google.com/soc/clam/appinfo.html?csaid=5B3C30CF27F845BC)
+
+**Mentor:** [Pau Arumí Albó](http://parumi.wordpress.com/)
+
+**License:** [GNU General Public License (GPL)](http://creativecommons.org/licenses/GPL/2.0/)
+
+**Abstract:** This projects aims to bring together some audio plugin standards that exists in the present and make them available for the CLAM networks. And also to provide the ability to treat a CLAM network as a standard plugin. Moreover, it also will provide a generic interface for all kind of plugins in order to manage and provide more detailed information of them.
+
+Details
+=======
+
+Description
+-----------
+
+Introduction The field of audio analysis and synthesis has need always some plugin architecture to handle different functions. Nowadays, there are a bunch of API's that provides a way to create and manage host and plugins for audio. The aim of this project is to provide a dynamically extensible plugin framework for CLAM that can support not only existing API's, but future development in this field.
+
+LADSPA Since LADSPA has been for some years the most accepted API, CLAM has support for it since version 1.0. It now can act as a LADSPA host and load LADSPA plugins. Those are shown in the NetworkEditor processing-tree, under the LADSPA branch. Recent functionality has been added that generates automatically the sliders for the control ports. It remains, though, to load the metadata associated to them, improving the classification in the NetworkEditor processing-tree.
+
+plugin-host infrastructure It is needed to refactor and recode based in the support of LADSPA to be able to create an homogeneous interface for a plugin instatiation. That involves creating and structure to handle abstract plugin, and use some wrappers for every specific implementation. As a side effect, all existing CLAM processing will be moved under the new definition.
+
+new plugins-hosts The successor of LADSPA, known as LV2, will also be included under this new definition. But, since it is a little bit different from it's predecessor, it has a core and extensions. The most significant in a first approach would be the OSC, MIDI and GUI extensions.
+
+embedded networks Current development in CLAM goes to include sub-networks inside an other network. That will make possible to see current set up of networks (stored in xml files) as plugins from NetworkEditor. That would lead to be able to have and edit multiple networks from NetworkEditor at the same time.
+
+TODOs
+-----
+
+[Devel/Ladspa\_Plugins\_TODOs](Devel/Ladspa_Plugins_TODOs "wikilink")
+
+[Devel/Faust\_integration\_TODOs](Devel/Faust_integration_TODOs "wikilink")
+
+Milestones
+----------
+
+Notes
+-----
+
+[Discussion about LV2](http://lalists.stanford.edu/lad/2007/05/0061.html)
+
+Links
+=====
+
+[FAUST](http://faust.grame.fr/)
+
+[LADSPA](http://www.ladspa.org/)
+
+[LV2](http://lv2plug.in/)

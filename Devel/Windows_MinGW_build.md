@@ -1,0 +1,341 @@
+**Warning: building CLAM on Windows is not very well tested.**
+
+Currently, official Windows binaries are obtained crosscompiling with MinGW for Linux. You can get more information on that at [Devel/Windows MinGW cross compile](Devel/Windows MinGW cross compile "wikilink").
+
+If you don't have access to a Linux machine, this page still contains some clues on how to compile using native Windows MinGW instead of using Linux's MinGW.
+
+The [first section](#Jun_install_notes "wikilink") is a simplified procedure that Wang Jun followed by using the precompiled [3rd party libraries tarball](http://clam.iua.upf.edu/download/win/clam-3rdparty-mingw-20080128.tar.gz) that you can find on the download web page. **This is the recommended procedure**.
+
+[In later sections](#Giulio.27s_procedure "wikilink"), [Giulio Paci](User:Giuliopaci "wikilink") also explains how to get the dependencies compiled by hand in windows, althought this is not the recommended procedure, it provides a lot of insight on the problems you can find that are not documented anywhere else.
+
+Many thanks to both Giulio Paci and Wang Jun for experimenting with windows development setup.
+
+Jun install notes
+=================
+
+-   Install MinGW and MSYS into c: (if other unit is chosen, substitute it below)
+    -   (I guess she refered to Giulio's procedure to get that, including Python and SCons installation not referenced anywhere else but required) -- david
+        -   Yes, Python, Scons, PyWin32...etc. For short, follow Giulio's precedure except for the 3rd party tarball generation. Besides, just checked that python 2.5 works well yet python 2.6 meets problems. --Jun
+    -   (Verified stable versions are CLAM-1.2.0.tar.gz and CLAM-1.3.0.tar.gz.)
+-   add the MinGW and MSYS related path to the Windows PATH variable.
+-   Install QT4.4.x
+-   mkdir qt4 in MSYS and Add to /MSYS/etc/fstab:
+
+` D:/Qt/4.4.1 /qt4`
+
+-   Extract the [3rd party libraries tarball](http://clam.iua.upf.edu/download/win/clam-3rdparty-mingw-20080128.tar.gz) and move the 'local' folder as c:\\MinGW\\local.
+-   After installing the libraries tarball, there has been several .dll files of QT in the ./local/bin path of Mingw, replace them with the ones of QT that you have installed.
+-   Add to /MSYS/etc/profile:
+
+` export PKG_CONFIG_PATH="C:\MinGW\local\lib\pkgconfig"`
+` export QTDIR="D:\Qt\4.4.1"`
+
+-   After adding this line, the setting won't be valid until you close the MSYS and reopen it.
+-   Mingw for windows distrubutes with gcc version 3.x. Check that by issuing the command 'gcc --version'. If so you need a 4.x version. Crosscompiled libraries used gcc 4.X as gcc 3.X didn't support std::wstrings required by id3lib. You can download the 4.X version from [here](http://sourceforge.net/project/showfiles.php?group_id=2435). Overwrite MinGW installation files with the ones on the tarball. Till now, the same version as the one precompiled the 3rd party libraries tarball gcc-4.2.1-sjlj-2, available from [here](http://sourceforge.net/project/showfiles.php?group_id=2435&package_id=241304), has been tested and approved. While overwriting MinGW installation files with the core and the g++packages of gcc-4.2.1-sjlj-2, note that the names should be changed to the original names in MinGW, eg. change g++-sjlj.exe into g++.exe(excluding directory), etc.
+    -   **Note:** the latest version you can download is 4.3 which doesn't have 'sjlj' suffix, using 4.2-sjlj, the tested one, is a sure shot but adventuring to use 4.3 could work. If you do please report to the mailing list any problem or success.
+-   Download or svn check out CLAM sources.
+-   The configuration command then is:
+
+`scons configure prefix='c:\mingw\local' prefix_for_packaging='c:\mingw\local'  sandbox_path='c:\mingw' verbose=True xmlbackend='xmlpp' audio_backend=portaudio`
+`scons`
+`scons install`
+
+-   After that you can proceed with the 'scons', 'scons install' dance first with the libraries, and then with the applications. For example, to have the Network Editor
+
+`cd NetworkEditor`
+`scons prefix='c:\\mingw\\local' clam_prefix='c:\\mingw\\local'`
+`(or: scons prefix='c:\\mingw\\NetworkEditor' clam_prefix='c:\\mingw' )`
+`scons install`
+
+-   Remember that before compiling the Annotator you have to scons on Annotator/qtvm
+
+Other things that are to be installed
+
+-   The Aggretator script is using a python package that is not included by default for doing xpath. To use xpath, in my case of python 2.5, install the [PyXML-0.8.4.win32-py2.5](http://platea.pntic.mec.es/~jmorilla/python/PyXML-0.8.4.win32-py2.5.exe)
+-   Install [py2exe](http://sourceforge.net/project/showfiles.php?group_id=15583/&abmode=1)
+    -   The runners of Annotator requires AggregationExtractor.exe rather than AggregationExtractor.py in Windows. To generate the AggregationExtractor.exe file:
+
+`cd path/of/the/setup.py/file`
+`python setup.py py2exe`
+
+TODO: Installing NSIS and 'scons package'(scons 1.0.1 is recommended)
+
+-   -   <notes:Meet> problems with 'gcc-4.3.0' as below:
+
+---- errors on the screen: Checking for C++ header file id3.h... yes Checking for ID3\_Tag myTag in C++ library id3... no Could not find id3lib binaries! Please check your id3lib installation Check the config.log file for details
+
+-   -   Environment variable for references::
+
+d:\\MinGW\\bin;d:\\MinGW\\local\\bin;d:\\MinGW\\local\\lib;d:\\MinGW\\local\\include;d:\\MinGW\\include;d:\\MinGW\\lib;d:\\msys\\1.0\\bin;D:\\Python25\\Lib\\site-packages\\scons-1.0.1\\SCons;d:\\Python25\\Scripts;d:\\Python25;d:\\mingw\\clam;D:\\Qt\\4.4.1\\bin
+
+Giulio's procedure
+==================
+
+Note that this procedure is not the supported one. We keep it here because it contains insight on how to natively compile third party libraries in windows. The [3rd party libraries tarball](http://clam.iua.upf.edu/download/win/clam-3rdparty-mingw-20080128.tar.gz) have been crosscompiled from linux. If you follow that procedure, you should install all the 3rd party libraries in MinGW/local instead of the specified MinGW/. -- dgarcia
+
+Setup a MinGW/MSYS environment
+------------------------------
+
+In order to compile CLAM framework on Windows 2000/XP, You will need [scons](http://www.scons.org/). Scons is a python script that help developers to build their project. So You will need [Python](http://www.python.org/) too. Windows's Python implementation has a limitation on the length of the command line it can execute, so, in order to remove this limitation You will need also [pywin32](https://sourceforge.net/projects/pywin32/).
+
+Once that Python, pywin32 and scons are installed on Your system, You're ready to install [MSYS](http://www.mingw.org/) and [MinGW](http://www.mingw.org/). MSYS is a minimal Unix-like environment for Windows and can (not too much) easily be replaced by any other similar tool. MinGW is a gcc based compiler and a set of utilities able to build pure Windows binaries. MSYS/MinGW distribution is mainly packaged in tar.gz form. They have also some installers, but they are a bit outdated, so it is better to install .tar.gz packages by hand. All MSYS and MinGW files can be retrieved from [this page](http://sf.net/project/showfiles.php?group_id=2435).
+
+A good choice to extract packages is [7-zip](http://www.7-zip.org) a powerful opensource file archiver.
+
+### Install the MSYS environment
+
+Install first the *MSYS Base System*. I prefer 1.0.11 version, since it has more updated tools. You will need almost all non source packages, so it's better to download them all. You need to extract first msysCORE and MSYS. These are needed to have a very minimal shell. Once extracted, start msys.bat and continue to extract packages from this shell. This is a required since the only tool I've found that is able to extract correctly these packages is MSYS tar (With other tools You will have a lot of empty file). You may need to extract some packages with an external archiver, such as the one containing updated packages for tar, bzip2, bash: You're still using Windows, so You will not be able to replace a file/program in use.
+
+To extract packages with tar, issue one of these command:
+
+`tar jxvf foo.tar.bz2`
+
+or
+
+`tar zxvf foo.tar.gz`
+
+You need the first to extract bzipped tar files, You need the other to extract gzipped tar files.
+
+Be careful to extract the packages in a location that doesn't contain spaces (i.e.: **NOT** inside *C:\\Documents and Settings\\User\\MinGW\\*.) or the msys.bat and a lot of other tools later, will not work. I Usually choose something like *C:\\Programs\\GNU\\msys\\* as installation base dierectory for MSYS/MinGW.
+
+Once the *MSYS Base System* is installed You need to install the packages inside *MSYS Supplementary Tools* too. Once again You will need almost all non source packages, but be careful 'cause some of them will conflicts with later steps. At this time I needed to exclude from installation *gettext-0.16.1-1-bin*, *gettext-0.16.1-MSYS-1.0.11*, *gettext-devel-0.16.1-MSYS-1.0.11*, *libiconv-1.11-1-bin*, *libiconv-1.11-MSYS-1.0.11*, *zlib-1.2.3-MSYS-1.0.11*. Once again perform the installation from the MSYS shell.
+
+Once all the packages are extracted You will find a lot of directory in the MSYS installation. Some package will extract in their own directory, so You need to manually move their content (usually bin/, man/, info/ etc.) outside that directory. On most Unix-like system documentation goes inside the share directory, so I usually move man/, info/ and doc/ inside share/, after the package extraction.
+
+### Configure the MSYS environment
+
+On a Unix-like system, configuration goes into files inside /etc/. The main configuration for MSYS is handled by */etc/fstab* and */etc/profile*. In the first file You can specify mount points. In the other You can specify options common to all users.
+
+#### /etc/fstab
+
+If You are not used with mount points You can think a mount point like a link to a directory in Your system. This is misleading, but may help You to make an idea of what You are trying to setup.
+
+Once You start MSYS shell, You have two methods of calling a path: the one used by unix-like system (*/path/to/file*) and the one used by Windows (*DISK\_LETTER:\\path\\to\\file*).
+
+The unix-like path will be usually converted in a path where */* is the MSYS installation directory, with a few exception (*/usr* will coincide with */*, */DISK\_LETTER/* will coincide with *DISK\_LETTER:\\*).
+
+You can put some directories outside from the MSYS installation, by editing the */etc/fstab* file. This is often useful with */mingw/* or */home/* directories.
+
+I used to make MSYS homes and Windows home to coincide, by editing the fstab file and adding a line like this
+
+`C:/DOCUME~1/       /home/`
+
+Where I've used the short name of *Document and Settings* 'cause I cannot use space in fstab.
+
+Now I've prefer editing *msys.bat* file and add *HOME* environment variable (that is used by MSYS to detect user's home) with a line like this:
+
+`set HOME=%USERPROFILE%`
+
+This is not the same thing, as it will not change */home/* location, but is much closer to the target I want to achieve.
+
+#### /etc/profile
+
+Here You can define ENVIRONMENT variables, command alias and other useful things common to all MSYS users. The PATH variable is inherited by the user Windows PATH, so I often choose to put some programs in Windows PATH, instead of MSYS PATH. The main example is for **Python** and **scons**. Where You will need to add *F:\\Programmi\\Python25* and *F:\\Programmi\\Python25\\Scripts* to it. I will suggest You to do so, but if You don't like this idea, You can add a line like this to the end of /etc/profile:
+
+`PATH=$PATH:/f/Programmi/Python25:/f/Programmi/Python25/Scripts`
+
+and the results will be quite the same. Later You will need **pkg-config**, a tool that helps compiling programs. pkg-config usually stores its configuration files inside */usr/lib/pkgconfig*, but with MSYS/MinGW, You usually want that it will read them from */mingw/lib/pkgconfig*. You can obtain this by setting this environment variable in the /etc/profile:
+
+`PKG_CONFIG_PATH=/mingw/lib/pkgconfig`
+
+### Install MinGW
+
+To install MinGW You simply need to extract the packages You want inside mingw/ directory (The one that You have created while configuring MSYS).
+
+You will need at least the following packages: *GNU Binutils*, *MinGW API for MS-Windows*, *MinGW Runtime*, *GCC*. I'm used to install latest available package for everything except GCC where I usually install gcc 3.4.5.
+
+Obtaining CLAM dependencies
+---------------------------
+
+The CLAM framework on a lot of libraries (directly or not). Here we are going to setup an environment that will permit CLAM compilation. This is not exactly the same environment that is described in [Devel/Windows MinGW cross compile](Devel/Windows MinGW cross compile "wikilink"), so, if You have special needs, You will find useful information there.
+
+### Install pkg-config, gettext, glib
+
+One of the main tools not included in MSYS/MinGW distribution is pkg-config. This tool is largely used by many big projects like [Gnome](http://www.gnome.org/). One of the most used libraries from Gnome that works on Windows is [Gtk+](http://www.gtk.org/). The *official* Windows page for Gtk is [Tor Lillqvist Gtk page](http://www.gimp.org/~tml/gimp/win32/). Here You will find precompiled packages for *pkg-config*, *gettext* and *glib*, as a lot of other useful tools. You can extract them directly in /mingw directory. I'm used to install Gtk and all the other dependencies too, as I need them for other projects, but these are not required to build CLAM.
+
+### Basics of compiling with MinGW
+
+Most of the libraries we will need to compile is packaged by autoconf. When a tool is packaged with autoconf, usually its source are in compressed tar form. And its filename is something like *package\_name-version\_numbers.tar.gz*. When You extract the archive a *package\_name-version\_numbers* directory will be created. In that directory You will find a *configure* script, that will help You to give informations in order to setup compilation and installation steps.
+
+There are two way to give information to configure script: ENVIRONMENT variables and arguments. The command
+
+`./configure --help`
+
+will give You some hints about what variables and what arguments You can set to obtain what You need.
+
+The main configure's option is *--prefix* which permits to set the base of the installation. Its default is */usr/local/* and You can leave as it is, but if You intend to build a binary MinGW package You usually want to set it to */mingw*
+
+Building C/C++ programs You will always have CFLAGS, CXXFLAGS, CC, CXX variables that You can change to pass preprocessor flags and compilers' names, if needed.
+
+Usually CFLAGS and CXXFLAGS will use the same values. Usually on MinGW You want to have some sort of compatibility with MSVC C-libraries, so that You can use them with both the compilers: to achieve this You need to provide *-mms-bitfields* to the compiler.
+
+In a Bourne Shell (the one that You're using when You launch MSYS) You can pass ENVIRONMENT variables to a specific program, without setting them system-wide, by setting them on the same line where You call the program.
+
+So on MinGW, in general, You will be able to compile a program or a library by issuing these commands:
+
+`tar zxvf package_name-version_numbers.tar.gz`
+`cd package_name-version_numbers/`
+`CFLAGS=-mms-bitfields CXXFLAGS=$CFLAGS ./configure --prefix=/mingw`
+`make`
+
+You will be able to install it by giving the command
+
+`make install`
+
+You will be able to package it with
+
+`DESTDIR=$(pwd)/packaging/ make install`
+`cd packaging/mingw/`
+`tar zcvf package_name-version_numbers-bin.tar.gz *`
+
+### Install pthreads and glut
+
+You can find precompiled packages for these libraries suitable of use with Mingw at [pthreads-win32 page](http://sources.redhat.com/pthreads-win32/) and [Nate Robins GLUT page](http://www.xmission.com/~nate/glut.html). I don't know if glut is needed by any CLAM project, but I need it for other reason. Note that is not required that You install pthread now, because in general it's not needed by CLAM's dependencies. A lot of them will use it, anyway, if You install now. The main drawback of it is that Your builds will depends on pthread.
+
+These binary packages are not ready to install in MinGW directory. You should excract them somewhere, create directories (mainly *include/*, *lib/* and *bin/*) and put all the files in the right location. If You have any doubt, check the content of */mingw/* directories to make an idea of what it should contain.
+
+### Install zlib
+
+Many libraries has zlib support, so You will need it in order to compile them. I found out only two methods to get things work: retrieve sources from [zlib homepage](http://www.zlib.net/) and compile in standard way (Note, however, that *make install* is not suitable for packaging), or to get it through MinGW ports (This is the better, but harder way. Take a look to [MinGW homepage](http://www.mingw.org/) for information). *Important:* if You need packages from [Tor Lillqvist Gtk page](http://www.gimp.org/~tml/gimp/win32/) other than pkg-config, You probably (sure with Gtk or libtiff) need the zlib binary on that page too. If this is the case, remember that the zlib dll should be put in */mingw/bin/*, and You should move it there, as the official zip package put it outside *bin/* directory.
+
+### Install libxml, sigc++, glibmm and libxml++-2.6
+
+CLAM largely depends on an XML parser. You can choose between libxml++-2.6 or xerces-c. I prefer libxml++-2.6 (which is part of the Gnome project) because I manage projects which depends on libxml and because it works without any tweak in my environment. Anyway You should get zlib and pkg-config, before attempt to compile this library. If You want to use xerces-c refers to [Devel/Windows MinGW cross compile](Devel/Windows MinGW cross compile "wikilink"). You can get these packages, in source form, from: [libxml homepage](http://xmlsoft.org/), [libsigc homepage](http://libsigc.sourceforge.net/), [Gtkmm homepage](http://www.gtkmm.org/) and [lilbxml++ homepage](http://libxmlplusplus.sourceforge.net/). With the general instruction above, I've successfully built libsigc++-2.0.18, glibmm-2.14.2, libxml2-2.6.30 and libxml++-2.20.
+
+### Install cppunit
+
+Download from [cppunit homepage](http://cppunit.sourceforge.net/). This compiles without any tweak.
+
+### Install fftw3
+
+Download from [fftw homepage](http://www.fftw.org/). This compiles without any tweak, but I usually configure with the following command.
+
+`CFLAGS=-mms-bitfields ./configure --with-our-malloc16 --with-windows-f77-mangling --enable-portable-binary --prefix=/mingw`
+
+### Install libvorbis and libogg
+
+First You need to download libvorbis and libogg sources from [their homepage](http://www.xiph.org/). You need to compile *libogg* first. Once libogg is compiled and installed, You can try to compile *libvorbis*. I've successfully compiled version 1.2.0 of libvorbis, but I needed to patch its *lib/Makefile.am*:
+
+From
+
+`libvorbisfile_la_LIBADD = libvorbis.la`
+
+To
+
+`libvorbisfile_la_LIBADD = @OGG_LIBS@ @VORBIS_LIBS@ libvorbis.la`
+
+From
+
+`libvorbisenc_la_LIBADD = libvorbis.la`
+
+To
+
+`libvorbisenc_la_LIBADD = @OGG_LIBS@ @VORBIS_LIBS@ libvorbis.la`
+
+Once applyied the changes, You need to run the *autogen.sh* script (try *sh autogen.sh*). You will need at least *automake*, *autoconf*, *libtool* installed (but You should already have these tools if You have followed these instructions from the beginning). When You're done You can compile in the standard way.
+
+### Install id3lib and libmad
+
+You need to download sources from [id3lib homepage](http://id3lib.sourceforge.net/) and from [libmad homepage](http://www.underbit.com/products/mad/).
+
+I needed to patch two files with id3lib version 3.8.3:
+
+In *configure.in* comment out the following lines from
+
+`AC_CHECK_FUNCS(`
+`  truncate`
+`  ,,AC_MSG_ERROR([Missing a vital function for id3lib])`
+`)`
+
+To
+
+`dnl AC_CHECK_FUNCS(`
+`dnl   truncate`
+`dnl   ,,AC_MSG_ERROR([Missing a vital function for id3lib])`
+`dnl )`
+
+In *include/id3/globals.h* change the first occurrence of the following line from
+
+`#ifdef WIN32`
+
+to
+
+`#ifdef __MSVC_VER`
+
+Once applyied the changes You need to run *autoconf*.
+
+Once You're done, You can compile both id3lib and libmad in the standard way.
+
+### Install portaudio
+
+You can download portaudio from [portaudio homepage](http://www.portaudio.com/). I was able to compile only *pa\_stable\_061121*, snapshots or *pa\_stable\_20071207* didn't work for me. I've not tried to compile with directx or asio support, but only with wmme.
+
+Anyway *pa\_stable\_061121* with wmme compiled using the standard way.
+
+### Install libsndfile
+
+Download libsndfile from [libsndfile homepage](http://www.mega-nerd.com/libsndfile/). You need to add the following line
+
+`#include `<stdint.h>
+
+to *tests/utils.c* and to *tests/virtual\_io\_test.c* files, then You can compile in the standard way.
+
+### Install DirectX
+
+DirectX SDK is distributed by Microsoft in binary form at [DirectX SDK homepage](http://www.microsoft.com/directx/). These binaries are built for MSVC and so should be converted in order to use them with standard MinGW tools. You can find information about this task at [MinGW homepage](http://www.mingw.org/).
+
+The quickest way to setup DirectX SDK for use with MinGW is finding someone that has already done the job for You. You can find converted DirectX SDK binaries at [allegro files download section](http://alleg.sourceforge.net/files/) (versions 7.0 and 8.0) or at [DevPack DirectX SDK page](http://devpaks.org/details.php?devpak=136) or [Another download place](http://www.g-productions.net/page.php?id=23)(version 9.0).
+
+At this time I'm using DirectX SDK 9.0c.
+
+A DevPack file is a compressed tar archive. You can extract its content from the command line with the command
+
+`tar jxvf DirectX90c.DevPak`
+
+this will extract a DirectX90c/ directory. Now You should move files from *DirectX90c/DLL/* to */mingw/bin/*, from *DirectX90c/include/* to */mingw/include/* and from *DirectX90c/lib/* to */mingw/lib/*.
+
+`mv DirectX90c/DLL/* /mingw/bin/`
+`mv DirectX90c/include/* /mingw/include/`
+`mv DirectX90c/lib/* /mingw/lib/`
+
+gcc is less permissive than MSVC with *\#define* and *typedef*, so You cannot define two time the same thing or it will complain (and abort the compilation). CLAM uses *dsound.h* header which defines two times the type *LPDIRECTSOUNDFULLDUPLEX* when You are using DirectX 8.0 and later. In order to fix this issue, search the last occurrence of the line
+
+`typedef struct IDirectSoundFullDuplex *LPDIRECTSOUNDFULLDUPLEX;`
+
+and replace it with
+
+`#if DIRECTSOUND_VERSION < 0x0800`
+`typedef struct IDirectSoundFullDuplex *LPDIRECTSOUNDFULLDUPLEX;`
+`#endif`
+
+Now You have DirectX suitable for CLAM compilation.
+
+Compile and install CLAM Framework
+----------------------------------
+
+Get CLAM Framwork source from [clam homepage](http://clam.iua.upf.edu/).
+
+My favourite way to get CLAM Framework is through its subversion repository, 'cause I'd like to keep my projects in sync with latest CLAM snapshot. There are a lot of Subversion's clients out there (i.e.: [Tortoise SVN](http://tortoisesvn.tigris.org/)), just pick up one and check out a working copy of CLAM Framework. Have a look at [Devel\#Subversion access](Devel#Subversion_access "wikilink") for further information.
+
+Choose a patch appropriate from [SPFD-ISTC](https://svn.pd.istc.cnr.it:592/svn/sms/trunk/clam/) for the revision closer to the one You're checking out.
+
+NOTE: <https://svn.pd.istc.cnr.it:592/svn/sms/trunk/clam/> is 404! (Plus there is a problem with the site's Security Certificate)
+
+Since CLAM repository is changing faster, if the patch is not exactly for the revision You're checking out, maybe You should need to modify something in order to be able to complete the task.
+
+Once You get the base directory of clam, You can patch the sources. You can do it with Tortoise SVN, by issuing the *Apply patch* command, or with the command line: entering in the clam source base directory and give this command:
+
+`patch -p0 < filename.patch`
+
+Where *filename.patch* is the file name of the patch You've downloaded.
+
+If everything is ok, from the clam source base directory You need only the following commands to complete the job:
+
+`cd CLAM`
+`scons configure prefix=//mingw prefix_for_packaging=/mingw xmlbackend=xmlpp`
+`scons`
+`scons install`
+
+Be careful that *scons install* will not install in the right location if You don't provide the configure step as described in this document.
+
+--[Giulio Paci](User:Giuliopaci "wikilink") 12:14, 18 December 2007 (CET)

@@ -1,0 +1,625 @@
+How to apply
+============
+
+**Please see general information about how to apply here: [GSoC\_2010](GSoC_2010 "wikilink")**
+
+Proposed ideas for the SoC
+==========================
+
+Those ideas are just a guide. When defining a project you can get elements from different ideas or choosing a subset of them.
+
+*Skills* does not refer to skills that the student should have at the moment of application, you still can adquire some of them in the sort period before the coding starts with possible guidance of the mentors.
+
+*Difficulty* stands on how deep the student should get inside CLAM core. Often a given project can be completed just using the framework but some projects needs understanding or modifying the core of the framework.
+
+*Priority* tells which is the prority of having this project done for the current members of the project. You should balance project priority with the engagement you could get from that.
+
+Core
+====
+
+Static network scheduling algorithm
+-----------------------------------
+
+**Description:** Current flow control algorithm on each backend callback looks to the available inputs and outputs and decides which processing should be run. Pau's Thesis describes a new scheduling algorithm that given the hopsizes and windows of all the ports of all the processings, it can build a periodic execution plan so we can save all the real-time decision making.
+
+The algorithm is currently implemented in python, and we should integrate it in C++ inside CLAM.
+
+TODO: add a link to Pau's Thesis
+
+**Required skills:**
+
+-   Proficiency in C++
+-   Linear algebra concepts (matrices)
+-   Understanding a Python script to translate current implementation
+
+**Difficulty:**: Medium.
+
+**Priority:** High
+
+Hot-wiring
+----------
+
+**Description:** Currently any change to the network structure such as adding or removing processings, connecting them are not realtime safe and the network playback is stopped for safety reasons. This project would enable changing connections without stopping the network.
+
+That means doing real-time safe changes on the network structure. Some known techniques exist to do that and mentors will provide guidance on how to address core classes.
+
+**Required skills:**
+
+-   Proficiency on C++-
+-   Basic notions of threading
+-   Having some knowledge on the CLAM core classes implementation would be perfect but not required.
+
+**Difficulty:**: Hard.
+
+**Priority:** Medium.
+
+Recovering from Processing errors
+---------------------------------
+
+Some error conditions are not available until the processings are executed. Such conditions are raised on processing thread while it should be detected by the application interface thread.
+
+This task (which is not a project by itself, but can complement others that are also small) consists in implementing a proper method of raising such error conditions and catching without the application dying, just recovering the backend and stopping the player.
+
+Also graphical (qt) handler of assertion failures has been disabled because when the assertion is thrown from the processing thread the error message was even more obscure that the console message you get with the plain console handler. So, a second related task could be catching assertions and forward them to the application thread by any means without AssertFailure reaching the top of the processing thread stack.
+
+-   CLAM processing execution cicle
+-   Multithread communication
+-   Qt
+
+Rich Back-ends
+--------------
+
+**Description:** This project consists on making the backends (JACK, PortAudio, Plugin host...) more rich for the application by providing them several features.
+
+One is a way for the Backend to communicate certain events back to the application, or the user interface that normally runs in a different thread. One tipical event is a backend not being available anymore, for example, when JACK stops our client or the server dies. Also events such as xruns, buffer size or sampling rate changes or processing errors (see previous project) which happen on the processing thread and must to be communicated to the interface.
+
+Also it would be useful having a backend editor interface that will provide an uniform way of starting a user interface which is very dependant of the backend: a JACK connection tool, or a Portaudio device selector...
+
+It would be nice if that project also enhances the behaviour of the backends which currently is akward in some cases.
+
+**Required skills:**
+
+-   Proficiency in C++
+-   Backend technologies (portaudio, jack)
+-   Qt
+
+**Difficulty:**: Medium.
+
+**Priority:** High.
+
+Network Scalability (aka Subnetworks)
+-------------------------------------
+
+**Status:** Checkout [GSoC/Network\_scalability\_and\_Blender\_integration](GSoC/Network_scalability_and_Blender_integration "wikilink")
+
+**Description:** One compeling issue in CLAM is addressing scalability for the visual builder. That means building processings modules out of a composition of existing ones. CLAM supports that just by coding (ProcessingComposites), but one could consider sinks and sources of a network the ports and controls of a brand new processing. A project to address that should include:
+
+-   Infrastructure to control the flow of recursive networks
+-   Integrating user-defined networks in the component library.
+-   Providing user interface on the NetworkEditor.
+-   ...
+
+**Priority:** High.
+
+Enhancing plugin system
+-----------------------
+
+**Description:** Plugin systems are both a way of extending available modules for CLAM (CLAM as a plugin host) and also a way of using CLAM networks in 3rd party contexts (CLAM as a development tool to build plugins).
+
+Several plugins systems exist: Ladspa, DSSI, LV2, VST, AudioUnits... Also CLAM has its own plugin system to allow native 3rd party extensions.
+
+For each plugin system there are several things to be developed:
+
+-   Running plugins being CLAM a host. Implies:
+    -   A) Browsing the list of plugins and related metainformation
+    -   B) Loading the plugin, often by wrapping it in a processing
+    -   C) Loading the plugin user interface
+-   Running CLAM networks as a plugin. Implies:
+    -   D) Wrapping the network as a plugin
+    -   E) Providing an interface in NetworkEditor to [automate the plugin creation from a Network](Building_a_LADSPA_plugin "wikilink")
+    -   F) Executing a qt-designer interface, if the host supports it
+
+The current status is:
+
+-   Native supports A,B (D and E would be the subnetworks project)
+-   LADSPA supports A,B,D,E
+-   VST 2.4 supports D,F but requires more work (See specific project)
+-   LV2 supports D (TODO: A,B,C,E,F)
+-   Not supported at all: AudioUnits, VST3/VSTi
+
+There is has room for several projects. See [Devel/Plugins TODOs](Devel/Plugins TODOs "wikilink"). It also has contacts with many other projects: Subnetworks, metainformation, visual definition of processings, processings documentation... So if you choose this project, be specific on the set of aspects that will be addressed.
+
+CLAM for Video
+--------------
+
+-   Add video processing/playback capabilities
+-   Extend current Port Monitor infrastructure to generative visual algorithms or user-defined mappings between the audio analysis features and the graphics
+-   Interface CLAM with GStreamer
+
+Testing framework (Testfarm and the like)
+-----------------------------------------
+
+Testfarm is a brother project of CLAM that we use to monitor continuous integration and automated testing in multiple platforms. Some of the points to work on are:
+
+-   General code refactoring
+-   Redefine the log format and html building to be more efficient
+-   Testing the testing framework
+-   Statistics gathering from code
+-   Janitoring scripts for CLAM
+-   Secure client connection (validating the clients)
+-   Integration of EficiencyGuardian project
+
+**Skills:**
+
+-   Python (text parsing, data structure navigation...)
+-   Web queries and HTTP protocol (python-urllib)
+-   Apache basics (mod\_python)
+-   Familiarity with double key signing and encription technologies
+-   Callgrind and YAML (for EfficiencyGuardian)
+
+**Priority:** High
+
+NetworkEditor enhancements
+==========================
+
+Enhancing NetworkEditor Usability
+---------------------------------
+
+-   Add undo/redo support. (maybe using the Qt Undo framework)
+-   Add the possibility of save all the controls values to have networks ready to play (like a patch).
+-   Multi-wiring (drag more than a wire on multiport processings)
+-   Highlight peer connectors (port/control) of a given connector.
+-   Switching the backend from the graphical interface.
+-   Changing things on the backend from the graphical interface: Jack wiring, port audio devices, parameters such sampling rate and buffer size...
+-   Any other feature that could enhance the usability, use it and you will find many.
+
+**Required skills:**
+
+-   Qt
+
+**Difficulty:** Medium
+
+Porting Network Canvas to Qt Graphics View
+------------------------------------------
+
+The NetworkCanvas (the main widget for NetworkEditor) was implemented before QGraphicsView and implements most of the features that it provides but less efficient. This project consists on porting NetworkCanvas to QGraphicsView. Side actions to take are generalizing the widget to a general model than can be use, for example to connect Jack clients or other patching tools.
+
+**Skills:**
+
+-   Familiarity with the QGraphicsView framework
+
+Qt designer integration
+-----------------------
+
+**Description:** The current way of binding designer widgets and clam processings is by naming the widgets with a name you can copy from the network editor. This is practical but not that nice and error prone. We would like to have closer integration so that from the designer you can access information from a network. Bindings could be stored as custom properties instead and can be added via menus of qt extensions. Other integrations are to be considered such as designer embedding in the network editor, or embedding the interface in the clamnetwork file.
+
+**Priority:** Medium but if we find a designer expert we would like to take profit of it.
+
+**Required skills:**
+
+-   Qt designer extension plugins
+-   Qt metaobject introspection
+
+**Difficulty:**: High.
+
+VST plugins prototyped with CLAM and Qt
+---------------------------------------
+
+**Description:** Currently the Prototyper enables wrapping network in an interface built in with Qt Designer and play them as Jack or PortAudio application. We would like to do the same with VST plugins. The problem is that VST have their own graphical loop control instead of QT's. In a first [spike](https://llistes.projectes.lafarga.org/pipermail/clam-devel/2009/003065.html) we achieved to run Qt interfaces in a VST host but still some work is needed.
+
+-   Properly handle user events, focus, geometry...
+-   Binding the interface to the CLAM network as Prototyper does
+-   Providing a graphical generator from NetworkEditor
+
+**Priority:** High **Skills:**
+
+-   VST plugins programming
+-   Qt (basic programming and event handling)
+-   CLAM (Ports and controls enumeration and usage, Ladspa wrappers, VST wrapper)
+
+Qt widgets
+----------
+
+**Description:** CLAM provides several sets of widgets to be used in applications.
+
+-   Control widgets (sliders, knobs, surface pads...)
+-   Configuration parameter editors
+-   Data views (instant and time line data)
+-   Data editors (segments, bpf's...)
+
+This project consists in developing nice set of widgets so that we can build nice applications with them, while evolving the prototyping framework to ease their use.
+
+**Required skills:**
+
+-   Qt
+-   Thread safe programming
+
+**Priority:** High.
+
+**Difficulty:**: Medium to high.
+
+Relative configurations and network configuration
+-------------------------------------------------
+
+**Description:** That is being able to configure some parameters of a module in function of other modules parameters or even network level ones.
+
+-   Some configuration parameters should take the value from other module parameters.
+-   We could consider output only parameters which are computed based on the input ones.
+-   We could add network level parameters so that we can change a repeated parameter at once.
+-   Network level parameters could become regular module configuration when used as a subnetwork
+-   A way of setting the connections that could be some hideable control ports with a different shape and position. Other could be editable expressions.
+
+Network Editor documentation system
+-----------------------------------
+
+The idea is providing networks and processing modules of documentation which can be browsable and navigable from the network editor interface. This project would include the interface and a system to obtain metadata (web, webservice or just compiled information).
+
+Scripting CLAM in Python
+------------------------
+
+-   several approaches: Adhoc API or API export using SWIG, SIP or Boost.Python. See this spike: [Interactive CLAM programming](http://audiores.uint8.com.ar/blog/2008/08/03/interactive-clam-programming/) [clam-devel thread](http://www.mail-archive.com/clam-devel@llistes.projectes.lafarga.org/msg02200.html)
+-   build and use a clam network with python
+-   this could lead to a NetworkEditor python console with tab-completion ([QPyConsole](http://qconsole.sourceforge.net/))
+-   use clam processings and processing-data with python. use it to visualize data, etc.
+-   write clam processings with python
+    -   Related to the 'Processing editor' project
+-   Network scoring
+    -   Sequencing changes on a network along the time
+    -   Configurations, connections, control sending...
+
+Processing Editor
+-----------------
+
+The idea is that one could build new compiled processing modules from the interface by graphically defining the structure of the module and coding with an editor the key methods.
+
+-   Defining a new processing just by defining the ports and the code in the Do method
+-   The system will compile it and will add it to the user's plugin library
+-   It would be great to have it integrated on the NetworkEditor
+-   This project could be related to the Python scripting project but we are considering C++ code here.
+
+Some spikes have been done on an interface to generate CLAM code from templates. But this project consists more on having and maintaining a model of the processing than generating c++ code and forget.
+
+Processing repository
+=====================
+
+New spectrum migration
+----------------------
+
+Old CLAM Spectrum have multiple representations inside: Complex array, polar array, separate magnitude and phase arrays, That could seem convenient but at the end of the day all the processing dealing with spectrum had to deal with all the possible convinations of representations, and to synchronize the information if several of them were used.
+
+To avoid that complexity, we developed, for the spatialization plugin, a set of single representation spectrums, operators and converters, that simplified a lot the spectral processings.
+
+This project consists on extending its use to spectrum based processings in CLAM, such as:
+
+-   Spectral transformations
+-   SMS analysis, synthesis and transformations
+
+The project should relay on b2b testing in order not to break existing code base.
+
+**Skills:**
+
+-   C++ proficiency
+-   Unit and back-to-back testing principles
+-   Basic signal processing
+
+Audio file access revamped
+--------------------------
+
+Current audio file access processings have several limitations, so we started an spike for new ones. The limitations were:
+
+-   They are not real-time safe (access to files locks the thread)
+-   They are not samplerate safe (depending on the file the samplerate varies so the rest of the network cannot guess the sample rate)
+-   They are not channel safe (when you change the file output channels vary and connections are lost)
+
+Current spike just address real-time safety and channel safety and just libsndfile formats are supported. So, main to-do's related to this project are:
+
+-   Support formats that are currently supported by the old processings (libogg, libmad...)
+-   Do implicit sample rate conversion to the backend (libsamplerate)
+-   Provide seeking control and position information
+-   Provide access to metadata like old processing do (libid3)
+-   Optionally add support for new formats (libflac, libspeex...)
+-   Migrate the current code base to the new processings
+
+**Skills:**
+
+-   C++ proficiency
+-   Look-free structures
+-   CLAM processing encapsulation (ports, control, configs...)
+-   Understanding on audio file formats
+
+MIDI support revamped
+---------------------
+
+It is a [GSoC2008 project](GSoC/MIDI_Implementation_for_Network_Editor "wikilink") but still there are a lot of work to do.
+
+Integrating external libraries
+------------------------------
+
+TODO: shouldn't that be in the 'audio file revamped' project?
+
+Integrating one or more of those libraries could be great
+
+### libsamplerate
+
+**Description:** Working with different samplerates is a hard problem now in CLAM. One solution could be using network configuration parameters (see [GSoC project](SoC_ideas#Relative_configurations_and_network_configuration "wikilink")). still, wave file could provide different samplerates thant the Also integration with FileReaders and Writers and with Backends will be useful.
+
+This project consists in providing both a good Resampling processing and minimizing samplerate impedance between processings requiring a given samplerate, audio files and the audio backend.
+
+**Required skills:**
+
+-   Basic knowledge about signal processing.
+-   Experience working with third party libraries.
+
+**Difficulty:**: Simple. May be part of a greater project (checkout [SoC\_ideas\#Relative\_configurations\_and\_network\_configuration](SoC_ideas#Relative_configurations_and_network_configuration "wikilink"))
+
+**Current status:** An existing experiment of processing exists as plugin. Still it is not working properly and proper configuration parameters must be found.
+
+**Priority:** High
+
+### Libflac and libspeex
+
+CLAM's AudioFileReaders/Writers use different backends for audio loading and saving. Such backends offers the readers and writers a common interface to several libraries. Current underlying libraries are sndfile for wav, aiff, au, and others, libmad for MP3 and liboggvorbis for ogg/vorbis.
+
+There are some other libraries developed at <http://xiph.org/> which support other formats:
+
+-   libflac supports FLAC which is a lossless compression format
+-   libspeex supports speex format which is specialized on voice compression
+
+This project will consist on adding support for such libraries in CLAM.
+
+### Aubio
+
+Aubio provide nice realtime onset detection algorithms. One project could be integrating aubio as processing(s) into clam. Other task to be done is to create an Annotator extractor for Aubio. There is an outdated example in CLAM/Example/TickExtractor that did tempo tracking and meter estimation for the Annotator. Development on such example was discontinued during a period when aubio license was not clearly GPL. Now it needs some work to have it working again.
+
+This project could consist in providing processings that makes aubio features availables on the NetworkEditor or/and making the TickExtractor example working again.
+
+Chord detection (chordata)
+==========================
+
+In 2007, a project addressed realtime segmentation and modularization of chord detection. In 2008, another one built an stand along application named chordata to easy the use of chord detection technology. There are still several fronts regarding the chord detection. They might be joined in a single project. Check the details on the [Chord Extraction TODO's](Chord Extraction TODO's "wikilink") page.
+
+Testing framework for chord detection
+-------------------------------------
+
+Setting up a framework to compare the goodness of different implementations of a segmentation algorithms given a ground truth. See [Chord\_Extraction\_TODO's\#Testing\_framework](Chord_Extraction_TODO's#Testing_framework "wikilink")
+
+**Skills:**
+
+-   Python
+-   XML handling
+-   [Precision/Recall theory](http://en.wikipedia.org/wiki/Precision_and_recall)
+-   Test automation (Unit tests...)
+
+Algorithm enhancement
+---------------------
+
+The algorithm can be enhanced in [many ways](http://clam-project.org/wiki/Chord_Extraction_TODO's#Detection_algorithm_enhancements). Implementing an enhancement on the algorithm will require to implement to some extent the testing framework to check whether we are progressing.
+
+Chordata application enhancement
+--------------------------------
+
+The Chordata application itself needs more work. See the [Chord\_Extraction\_TODO's\#Chordata\_.28old\_Turnaround.29 related TODO's].
+
+New standalone applications
+===========================
+
+End user applications are interesting because they increase the user base and project visibility. Building CLAM based applications require skills on Qt.
+
+Network based music tracker
+---------------------------
+
+**Description:** Network based music tracker. Controls being sequenced in time in a order list plus pattern way.
+
+**Required skills:**
+
+-   C++ and Qt
+-   Experience as user with trackers.
+
+**Difficulty:**: Moderate.
+
+Educational vowel synthesizer
+-----------------------------
+
+**Description:** Build a educative program that would consist on:
+
+-   synthesizing different vowels by placing a point within the [Vowel triangle](http://en.wikipedia.org/wiki/Vowel_triangle),
+-   and, the reverse, given an input vowel from the microphone place a dot on the triangle, so the students can check their pronunciation. Here's a [screenshot](http://sourceforge.net/project/screenshots.php?group_id=191299&ssid=54864) of what a Vowel triangle might look like, additionally with '[Voronoi](http://en.wikipedia.org/wiki/Voronoi_diagram)' regions shown - showing what the near misses are most likely to be confused with in a particular language.
+
+This could be enhanced by:
+
+-   displaying the mouth position for the vowel,
+-   visualizing the spectral peaks so they can identify the effect,
+-   changing the pitch,
+-   changing the synthesized gender,
+-   changing the vocal track characteristics,
+-   extracting user's vocal track characteristics for synthesized sound.
+
+A teacher could limit the set of vowels to the ones used for a particular language such as Catalan or English, so that the students just see the relevant ones for the exercise.
+
+**Note:** Last year a student focused on having some of the processing working. Processing still needs work but this year we will like to focus on the interface so we can say the application exists, and then enhance the processing as secondary goal.
+
+**Difficulty:**: Moderate.
+
+**Priority**: Medium.
+
+Real-time synthesizer using SMS models
+--------------------------------------
+
+Salto is a CLAM legacy application to synthesize Saxo. This project consist on revamp a very simple Salto like synthesizer. Previous GSoC projects developed the basic technology for loading databases and controlling the synthesis. This year we should center on having a final application or plugin that users may use easily although it also would require refining the algorithm and databases as we have them now.
+
+**Skills:**
+
+-   Qt interfaces
+-   Audio plugins development
+-   XML management
+-   Python
+
+Annotator and description data pools
+====================================
+
+Core CLAM developers are dedicated to real time processing issues and they have interest on someone taking care of this key application. Tasks of the following proposals can be mixed up in a single proposal if they build a coherent set.
+
+See also [Devel/Annotator\_TODO's](Devel/Annotator_TODO's "wikilink") for further ideas.
+
+Coretize Annotator Pool features
+--------------------------------
+
+High priority on Annotator front.
+
+Parts of this project can be added to another Annotator based project to add priority bonus or it can be a project by itself if you are a refactoring fanatic.
+
+Annotator schemas have some features that are implemented in specific classes not in the core CLAM Pool related classes (schema, validators, segmentations...). In consequence, Annotator has an ill duplication of structures, and also other CLAM based applications cannot benefit of such features. This project would consist on merging such features in the common Pool related classes in CLAM core, refactoring the Annotator code base and enhancing/redesigning the Pool API usability.
+
+Already coretized features are documented in [semantic analysis module](http://clam-project.org/doc/CLAM-doxygen/group__SemanticalAnalysis.html|doxygen). Missing features are in Annotator code.
+
+Annotator data type and view plugins
+------------------------------------
+
+High priority on Annotator front.
+
+Many parts of the annotator are defined as plugin based: Type management, type dependant table editors, instant views, time evolution views and auralization. Those plugins are not real plugins as they are not loaded dlls, but clam already has solved multiplatform dll loading for plugins.
+
+This project would consist in cleaning up the API's of each set of plugins and making them loadable dll's so that third party users can extend pool types and annotator views.
+
+Annotation Merger Interface
+---------------------------
+
+High priority on Annotator front.
+
+This project consist in implementing an interface in the Annotator to merge and select the outputs of different existing extractors into a single project. That would be useful for example to combine in a project, chords extracted automatically by an algorithm, with hand annotated ground truth while keeping both in separated files.
+
+During GSoC2008, Aggregator, a GUI for merging was implemented. It is able to merge several annotation sources, such as extractors, databases and webservices, as a unique Annotator descriptors file (data pool). Aggregator is distributed as a special extractor with the annotator.
+
+For a more friendly user interface, this project proposes to build:
+
+-   A graphical interface to configure the extractors
+    -   to select extractors
+    -   to configure them (see related project below)
+-   Some extra application logic needed to launch several extractors and to mapping back pool modifications
+    -   a per descriptor read-only flag in order to control which descriptor can be modified, i.e., avoiding the write back if not supported
+    -   a per descriptor modified flag in order to control which descriptor must be saved, i.e., avoiding the write back if not needed
+    -   building a description from a blank sheet, e.g., how to generate a hand annotated description pool without any extractor?
+
+VAMP plugins on the Annotator
+-----------------------------
+
+VAMP is the feature extraction plugin system used by SonicVisualizer. This project would consist in being able to lauch VAMP plugins within the Annotator and integrating its results in an Annotator data pool.
+
+Web services based extractors
+-----------------------------
+
+High priority on Annotator front.
+
+This project consist in implementing a special extractor. Rather than extracting low-level descriptors as typical extractors do, it extracts web-based descriptors via calling web services/crawling from web. That would be useful, for example to fetch semantic-rich descriptors for users' local repository, futhermore, to combine those descriptors with low-level ones to construct MPEG-7 compatible output.
+
+During GSoC2008, SemWebExtractor, an extractor for extracting meta-data that have been previously posted to online repositories, was implemented. However, the supporting repositories are limited to several available OpenLink data sets for semantic web resources, including [Zitgist](http://www.zitgist.com/), [DBTune](http://www.dbtune.org/), [MusicBrainz](http://www.musicbrainz.org/) and [Jamendo](http://dbtune.org/jamendo/).
+
+For a more powerful Web Services based extractor, this project proposes to build:
+
+-   Providing a more rich schema for those descriptors (currently they all are downloaded as free text)\* An extension development based on SemWebExtractor
+    -   to support more Web Services available now in [OpenLinkData](http://esw.w3.org/topic/SweoIG/TaskForces/CommunityProjects/LinkingOpenData) sets, such as [AudioScrobbler\_lastfm](http://dbtune.org/last-fm/), [Magnatune](http://www.magnatune.com/), etc.
+-   A further extension to non-OpenLink Web services
+    -   to support non-OpenLink Web services, such as [Lastfm](http://www.last.fm), [EchoNest](http://the.echonest.com/), etc.
+    -   to explore more interesting semantic-rich descriptors, and wrap the results as CLAM data pool xml to be open by the Annotator
+
+Pool based web services
+-----------------------
+
+Another possibility is offering web services that given an audio excerpt they return you the descriptors as an xml pool with or as any other existing format.
+
+Currently CLAM Annotator can be utilized for aggregating multi-level descriptors for songs, and also allow those descriptors be edited inside the tool, for example, to correct errors.
+
+Consequently, a development of web services based on Annotator pool could be important, for example, to allow users contributing their computation resources or manual annotation efforts, especially the latter.
+
+-   to build an interface of the web service
+-   to link back to the fore-mentioned [OpenLinkData](http://esw.w3.org/topic/SweoIG/TaskForces/CommunityProjects/LinkingOpenData) as a new open resource
+
+Macro manipulation of descriptors with python on Annotator
+----------------------------------------------------------
+
+Make the annotation data accessible to python scripts so that one can automate repetitive descriptors manipulation. Some use cases:
+
+-   "I want to correct an offset that a given segment annotation adds to all segments"
+-   "I want to extend a regular beat annotation and just correct when it varies"
+
+Some scripts on this line are already provided in Annotator/scripts.
+
+Enhancing Segment Editor
+------------------------
+
+-   Selection and edit actions (copy, paste..)
+-   Overlapping segments
+-   Displaying segment attributes as height
+-   Displaying segment attributes as color
+-   Using metadata: Units, intervals...
+
+Enhancing Annotator Views
+-------------------------
+
+-   Bring more CLAM monitors as instant views
+-   Time evolution views for multibin frame parameters (spectrums, pcp's, chord correlation...)
+-   Better frame level float editor
+
+Flexible auralization on Annotator
+----------------------------------
+
+Annotator provides auralization for the user to check the descriptors. But auralization capabilities are limited to playing a click on segment onset and float value frame level descriptors controlling the pitch of an oscillator. By adding a general way to convert descriptors to control signals they can be used to control an arbitrary synthesizer set by the user. Possible solutions for that could be a CLAM network with selected hooks for descriptors or generating OSC or MIDI to control a synthesizer.
+
+This project consists in:
+
+-   Define controllers that can take attributes on the pool data to control a network
+-   Recode Annotator auralizer to use networks and to feed in control values
+-   Provide the interface to configure auralizators for each project
+-   Build several useful auralizations.
+
+Configuration parameters for extractors
+---------------------------------------
+
+Currently there is no way of specifying configuration parameters to the extractors. Each extractor could have their own parameters so we need a system to deal with such flexibility but still being simple to define new extractors.
+
+-   Defining a special extractor option to query the parameters (name, type, range, defaults...) as the one we have to query the output data schema.
+-   Implementing the interface to query such parameters depending on the extractor.
+-   Launching the extractor feeding the parameters
+-   Offering a C++/python solution to ease the programming of extractors with configuration.
+
+SMSTools
+========
+
+### Improve usability of SMSTools workflow
+
+**Description:**
+
+-   Remove the files to process from the configuration and use configuration as presets
+-   Data to open are just audio or analysis data
+-   Object centric interaction: you apply an action (synthesis, analysis, transform) to an object
+-   Minimize the provided data by using object information (sampling rate on analysis, and most of the analysis parameters embedded on the object for resynthesis)
+
+**Priority:** Low
+
+### Convergence of SMSTools and CLAM widgets infrastructure
+
+**Description:**
+
+-   Transformation parameter automation using time-lines (ala ardour automation)
+-   Metadata based widgets
+-   Widgets interaction (zoom)
+-   Network based transformations. The user should be able to define the transformation chain using NetworkEditor.
+
+**Priority:** Low
+
+Still not included
+==================
+
+Those ideas were discarded to be offered as SoC project but if you are still interested, just ask.
+
+CLAM documentation
+------------------
+
+-   Document CLAM's examples and review tutorials
+-   Ideal project for non-expert first timers
+
+CLAM web browser plug-in
+------------------------
+
+-   Develop a plugin for basic CLAM Network edition through a web browser.
+
