@@ -5,14 +5,14 @@
 Using NetworkEditor to generate LADSPA
 --------------------------------------
 
-![The NetworkEditor dialog to query LADSPA options](LadspaPropertiesDialog.png "fig:The NetworkEditor dialog to query LADSPA options") [CLAM NetworkEditor](Network Editor tutorial "wikilink") has a new menu command to generate a LADSPA plugin ![](GenerateLadspa.png "fig:GenerateLadspa.png") given a network definition. We recommend to use it unless you need to provide the source files, not just the final binary. You might also need to wrap just a processing object instead a network or to join several plugins in a single library.
+![The NetworkEditor dialog to query LADSPA options](LadspaPropertiesDialog.png "fig:The NetworkEditor dialog to query LADSPA options") [CLAM NetworkEditor](Network Editor tutorial) has a new menu command to generate a LADSPA plugin ![](GenerateLadspa.png "fig:GenerateLadspa.png") given a network definition. We recommend to use it unless you need to provide the source files, not just the final binary. You might also need to wrap just a processing object instead a network or to join several plugins in a single library.
 
 The techniques explained below are the ones used by the NetworkEditor that you can do by hand.
 
 SConstruct
 ----------
 
-All the examples here can be built by using the same template of SConstruct file that is presented in [Building a processing library](Building a processing library "wikilink") section just by changing the line:
+All the examples here can be built by using the same template of SConstruct file that is presented in [Building a processing library](Building a processing library) section just by changing the line:
 
 `install = env.Install(os.path.join(CLAMInstallDir,'lib','clam'), libraries)`
 

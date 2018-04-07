@@ -1,4 +1,4 @@
-This page explain a technique to be able to configure a processing with a variable number of connectors (ports, controls) while keeping any existing connection with other processings, as long as they still has sense. This is very useful for multichannel processings. If you just need a fixed number of ports see [Creating a minimal processing object](Creating a minimal processing object "wikilink").
+This page explain a technique to be able to configure a processing with a variable number of connectors (ports, controls) while keeping any existing connection with other processings, as long as they still has sense. This is very useful for multichannel processings. If you just need a fixed number of ports see [Creating a minimal processing object](Creating a minimal processing object).
 
 Here we use *Connectors* to refer both *Ports* and *Controls*.
 
@@ -57,7 +57,7 @@ In the ConcreteConfigure() method provided that you have obtained nInPorts and n
 `       ResizeInPortsTo(nInPorts);`
 `       ResizeOutPortsTo(nOutPorts);`
 
-[center|This processing has one provisional port](image:init_1_channel.png "wikilink") [center|This example shows the connection of two multi-port processing](image:dynamic_ports_4_channels.png "wikilink")
+[center|This processing has one provisional port](image:init_1_channel.png) [center|This example shows the connection of two multi-port processing](image:dynamic_ports_4_channels.png)
 
 In the destructor just place:
 

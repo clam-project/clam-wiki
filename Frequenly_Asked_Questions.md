@@ -9,7 +9,7 @@ CLAM is the acronym for *C++ Library for Audio and Music* and it is also a pun o
 
 CLAM is a software framework for research and application development on the audio and music domain. It provides means to perform complex audio signal analysis, transformations and synthesis. It also provides a uniform interface to common tasks on audio applications such as accessing audio devices and audio files, thread safe communication with the user interface and DSP algorithms recombination and scaling.
 
-You can use CLAM as a library to program your applications in C++ but you can also use [graphical tools](Network Editor tutorial "wikilink") to build full applications without coding.
+You can use CLAM as a library to program your applications in C++ but you can also use [graphical tools](Network Editor tutorial) to build full applications without coding.
 
 ### Is CLAM a "library" or a "framework"?
 
@@ -19,13 +19,13 @@ Despite the name, CLAM is not just a *library* but a *software framework* as def
 
 Several standalone applications are distributed with CLAM which are usefull by themselves.
 
--   [Network Editor](Network Editor tutorial "wikilink"): a patching tool to design audio processing networks. Several interesting processing network examples are also included.
--   [Prototyper](Network_Editor_tutorial#Building_Prototyper_interfaces "wikilink"): a tool to interactively run audio processing networks with appealing user interfaces
+-   [Network Editor](Network Editor tutorial): a patching tool to design audio processing networks. Several interesting processing network examples are also included.
+-   [Prototyper](Network_Editor_tutorial#Building_Prototyper_interfaces): a tool to interactively run audio processing networks with appealing user interfaces
 -   OfflinePlayer: a tool to run non interactive audio processing networks
--   [Annotator](Music_Annotator "wikilink"): Launches, combines, displays and edits the results of [music information retrieval](http://en.wikipedia.org/wiki/Music_information_retrieval) algorithms and services.
--   [Chordata](Chordata tutorial "wikilink"): A tool to discover the chords of your audio files.
+-   [Annotator](Music_Annotator): Launches, combines, displays and edits the results of [music information retrieval](http://en.wikipedia.org/wiki/Music_information_retrieval) algorithms and services.
+-   [Chordata](Chordata tutorial): A tool to discover the chords of your audio files.
 -   Voice2Midi: A tool to convert humming into MIDI files.
--   [SMSTools](SMSTools_tutorial "wikilink"): An audio authoring tool to apply [Spectral Modeling Synthesis](http://en.wikipedia.org/wiki/Spectral_Modeling_Synthesis) based algorithms.
+-   [SMSTools](SMSTools_tutorial): An audio authoring tool to apply [Spectral Modeling Synthesis](http://en.wikipedia.org/wiki/Spectral_Modeling_Synthesis) based algorithms.
 
 ### Which are the origins of the project?
 
@@ -104,9 +104,9 @@ CLAM also includes third party code not developed originally but included in CLA
 
 ### Which other projects are using CLAM?
 
-For third party (non-UPF) scientific citations take a look at [CLAM citations](CLAM citations "wikilink").
+For third party (non-UPF) scientific citations take a look at [CLAM citations](CLAM citations).
 
-For third party (non-UPF) software projects take a look at [3rd Party Projects Using CLAM](3rd Party Projects Using CLAM "wikilink").
+For third party (non-UPF) software projects take a look at [3rd Party Projects Using CLAM](3rd Party Projects Using CLAM).
 
 ### Are there any similar frameworks?
 
@@ -155,15 +155,15 @@ Documentation
 
 ### I want to start using CLAM, how do I approach CLAM as user or as developer?
 
-The guide "[Approaching CLAM](Approaching CLAM "wikilink")" will advice you the proper steps to take depending on your goals and level of expertise.
+The guide "[Approaching CLAM](Approaching CLAM)" will advice you the proper steps to take depending on your goals and level of expertise.
 
 ### I want to get involved with CLAM project, which steps should I take?
 
-We often advice eventual contributors to follow [those steps](Devel#Getting_involved "wikilink")
+We often advice eventual contributors to follow [those steps](Devel#Getting_involved)
 
 ### I want to upgrade my code to a new CLAM version, what should I change?
 
-The [Version Migration Guide](Version Migration Guide "wikilink") summarizes all the sensible changes that you will require to upgrade your code from one CLAM version to the next one.
+The [Version Migration Guide](Version Migration Guide) summarizes all the sensible changes that you will require to upgrade your code from one CLAM version to the next one.
 
 Features
 --------

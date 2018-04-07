@@ -77,4 +77,4 @@ Getting the Monitor working on Prototyper
 How it is gonna change?
 -----------------------
 
-See the development notes on the process rewrite: [Devel/Adding Monitors Simplification](Devel/Adding Monitors Simplification "wikilink")
+See the development notes on the process rewrite: [Devel/Adding Monitors Simplification](Devel/Adding Monitors Simplification)

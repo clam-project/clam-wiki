@@ -1,7 +1,7 @@
 Why not using SConstruct
 ------------------------
 
-The recommended build system for compiling applications and plugins using CLAM is SConstruct. See [Minimal SConstruct to build with CLAM and Qt4](Minimal SConstruct to build with CLAM and Qt4 "wikilink") for an example on how to do that. That is the build method CLAM community will be able to help you the more. Other methods are not guaranted to work but they should be viable with more or less work.
+The recommended build system for compiling applications and plugins using CLAM is SConstruct. See [Minimal SConstruct to build with CLAM and Qt4](Minimal SConstruct to build with CLAM and Qt4) for an example on how to do that. That is the build method CLAM community will be able to help you the more. Other methods are not guaranted to work but they should be viable with more or less work.
 
 No SCons? So, use pkg-config
 ----------------------------

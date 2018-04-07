@@ -1,10 +1,10 @@
-What you read here is a short and practical introduction to the SMSTools, for more insights and details, please read the [ detailed reference](SMSToolsDetails "wikilink").
+What you read here is a short and practical introduction to the SMSTools, for more insights and details, please read the [ detailed reference](SMSToolsDetails).
 
 The application analyzes, transforms and synthesizes back a given sound. For doing so, it uses the Sinusoidal plus Residual model (sometimes referred to as SMS but also known as HILN in the context of MPEG4). Next picture depicts the analysis algorithm:
 
 ![](smsanalysis.png "smsanalysis.png")
 
-If you need more information about the signal processing details involved in the process you may want to visit the [ SMS](http://mtg.upf.edu/technologies/sms "wikilink") webpage.
+If you need more information about the signal processing details involved in the process you may want to visit the [ SMS](http://mtg.upf.edu/technologies/sms) webpage.
 
 An SMSTools walkthrough
 -----------------------

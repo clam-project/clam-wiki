@@ -42,21 +42,21 @@ Other key features are:
 -   Included Extractors
     -   CLAM based low level features extractor
     -   QMUL chord extraction
-    -   (see [\#Included Extractors](#Included_Extractors "wikilink") for details)
+    -   (see [\#Included Extractors](#Included_Extractors) for details)
 
 Screenshots and videos
 ----------------------
 
-See the [Annotator screenshots](Annotator screenshots "wikilink") gallery.
+See the [Annotator screenshots](Annotator screenshots) gallery.
 
-See also the [Music Annotator videos](Music Annotator videos "wikilink")
+See also the [Music Annotator videos](Music Annotator videos)
 
 Download
 --------
 
 Check out the last release at the [CLAM download page](http://clam.iua.upf.edu/download.html).
 
-You may be interested to read those [First steps with annotator](First steps with annotator "wikilink"). It explains how to get the chord extraction working. You can also read the [ Annotator Tutorial](Manual Annotator "wikilink")
+You may be interested to read those [First steps with annotator](First steps with annotator). It explains how to get the chord extraction working. You can also read the [ Annotator Tutorial](Manual Annotator)
 
 Read the [Music Annotator Changelog](http://clam-project.org/clam/trunk/Annotator/CHANGES) for changes on the new release.
 

@@ -1,4 +1,4 @@
-You can [build a CLAM network by hand](Constructing and playing a simple network "wikilink") but you can also load an XML definition.
+You can [build a CLAM network by hand](Constructing and playing a simple network) but you can also load an XML definition.
 
 The XML definition of a network contains which processings are on the network, their configurations and how are they connected. Such definition could be built using the NetworkEditor or building one by hand, by doing:
 

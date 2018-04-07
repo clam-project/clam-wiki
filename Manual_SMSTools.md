@@ -1,2 +1,2 @@
-1.  redirect [SMSTools tutorial](SMSTools tutorial "wikilink")
+1.  redirect [SMSTools tutorial](SMSTools tutorial)
 

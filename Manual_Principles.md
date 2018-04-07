@@ -1,1 +1,1 @@
-Related deprecated doc: [DeprecatedDoc/Manual Principles](DeprecatedDoc/Manual Principles "wikilink")
+Related deprecated doc: [DeprecatedDoc/Manual Principles](DeprecatedDoc/Manual Principles)

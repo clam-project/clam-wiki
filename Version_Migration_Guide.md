@@ -26,15 +26,15 @@ This manual chapter gives hints on how to migrate existing code from one version
 1.2 to 1.3
 ----------
 
--   Controls will change some behaviour in the future, see [this](Control_Migration_Guide "wikilink") to enable your code to be compatible with next CLAM modifications.
+-   Controls will change some behaviour in the future, see [this](Control_Migration_Guide) to enable your code to be compatible with next CLAM modifications.
 -   The API for creating LADSPA plugins from CLAM processings and networks has changed. See this [tutorial](http://iua-share.upf.edu/wikis/clam/index.php/Building_a_LADSPA_plugin)
 -   AudioFileIn/Out, which were deprecated since 0.98, have been removed. See previous notes on how to migrate.
 
 1.1 to 1.2
 ----------
 
--   The way processing are registered into the factory has changed to add metadata. More information in this [howto](Creating_a_minimal_processing_object#MyProcessing.cxx "wikilink")
--   Although no explicit statement is mandatory to be able to use a custom data type, providing a ProcessingDataPlugin for such types is recommended, to have ports with different colors for each type. See [this page](Changing_the_port_color_for_custom_data_types "wikilink").
+-   The way processing are registered into the factory has changed to add metadata. More information in this [howto](Creating_a_minimal_processing_object#MyProcessing.cxx)
+-   Although no explicit statement is mandatory to be able to use a custom data type, providing a ProcessingDataPlugin for such types is recommended, to have ports with different colors for each type. See [this page](Changing_the_port_color_for_custom_data_types).
 -   Processing::GetExecState() has been removed. Use Processing::IsRunning() and Processing::IsConfigured() which lead to more readable code.
 -   {Mono|MultiChannel}AudioFileReader::GetAudioFile() method has been removed. If you want to access the header or the text descriptors just use the {Mono|MultiChannel}AudioFileReader::GetHeader() and {Mono|MultiChannel}AudioFileReader::GetTextDescriptors()
 

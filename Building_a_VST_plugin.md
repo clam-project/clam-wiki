@@ -1,6 +1,6 @@
 [Virtual Studio Technology](http://en.wikipedia.org/wiki/Virtual_Studio_Technology) (VST) is a plugin system introduced by [Steinberg](http://steinberg.net) which is mainly used in Windows and Mac.
 
-You can embed a CLAM network, like the ones edited with the [Network Editor](Network Editor tutorial "wikilink"), and create a VST plugin for Windows.
+You can embed a CLAM network, like the ones edited with the [Network Editor](Network Editor tutorial), and create a VST plugin for Windows.
 
 No documentation on this issue is available but this [example](http://clam-project.org/clam/trunk/CLAM/examples/PluginExamples/VstPluginExample/).
 

@@ -60,7 +60,7 @@ TODO: Put here a note on ControlSource and ControlSink as soon as they are worki
 Beyond 1.3.0, typed controls
 ============================
 
-**Note:** This documentation version is the one for 1.4.0 and beyond. The [Version Migration Guide](Version Migration Guide "wikilink") will help you to easily migrate from 1.3 to 1.4 typed controls.
+**Note:** This documentation version is the one for 1.4.0 and beyond. The [Version Migration Guide](Version Migration Guide) will help you to easily migrate from 1.3 to 1.4 typed controls.
 
 Controls are another kind of connector for processing modules, just like ports. While ports queue received data tokens and must be consumed in order when Do is run, controls receive data at the same time they are sent. A processing may setup a callback to receive them or just take the last received value when the Do method is eventually executed.
 
@@ -136,7 +136,7 @@ Alternatively you can setup a callback to respond to incoming controls. Such cal
 `   {`
 `       // Take value and do whatever to processing internal state.`
 
-You may setup a different callback for each control, or you could use a control identifier to know which control calls the callback, which is particularly usefull when having [a dynamic number of controls](Processings with variable number of ports "wikilink"). In that case, the first parameter of the constructor is the identifier.
+You may setup a different callback for each control, or you could use a control identifier to know which control calls the callback, which is particularly usefull when having [a dynamic number of controls](Processings with variable number of ports). In that case, the first parameter of the constructor is the identifier.
 
 `       , mInControl(4, "In Control", this, &MyProcessing::MyControlCallback)`
 

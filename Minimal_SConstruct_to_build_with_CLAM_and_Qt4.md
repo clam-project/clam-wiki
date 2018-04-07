@@ -73,4 +73,4 @@ SConstruct (for your own project)
 `   for program, main in mainSources.items()]`
 `env.Default(programs)`
 
-You can try this SConstruct with the main available in [Constructing and playing a simple network](Constructing and playing a simple network "wikilink").
+You can try this SConstruct with the main available in [Constructing and playing a simple network](Constructing and playing a simple network).

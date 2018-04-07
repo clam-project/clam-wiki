@@ -1,7 +1,7 @@
 How to apply
 ============
 
-**Please see general information about how to apply here: [GSoC\_2010](GSoC_2010 "wikilink")**
+**Please see general information about how to apply here: [GSoC\_2010](GSoC_2010)**
 
 Proposed ideas for the SoC
 ==========================
@@ -90,7 +90,7 @@ It would be nice if that project also enhances the behaviour of the backends whi
 Network Scalability (aka Subnetworks)
 -------------------------------------
 
-**Status:** Checkout [GSoC/Network\_scalability\_and\_Blender\_integration](GSoC/Network_scalability_and_Blender_integration "wikilink")
+**Status:** Checkout [GSoC/Network\_scalability\_and\_Blender\_integration](GSoC/Network_scalability_and_Blender_integration)
 
 **Description:** One compeling issue in CLAM is addressing scalability for the visual builder. That means building processings modules out of a composition of existing ones. CLAM supports that just by coding (ProcessingComposites), but one could consider sinks and sources of a network the ports and controls of a brand new processing. A project to address that should include:
 
@@ -116,7 +116,7 @@ For each plugin system there are several things to be developed:
     -   C) Loading the plugin user interface
 -   Running CLAM networks as a plugin. Implies:
     -   D) Wrapping the network as a plugin
-    -   E) Providing an interface in NetworkEditor to [automate the plugin creation from a Network](Building_a_LADSPA_plugin "wikilink")
+    -   E) Providing an interface in NetworkEditor to [automate the plugin creation from a Network](Building_a_LADSPA_plugin)
     -   F) Executing a qt-designer interface, if the host supports it
 
 The current status is:
@@ -127,7 +127,7 @@ The current status is:
 -   LV2 supports D (TODO: A,B,C,E,F)
 -   Not supported at all: AudioUnits, VST3/VSTi
 
-There is has room for several projects. See [Devel/Plugins TODOs](Devel/Plugins TODOs "wikilink"). It also has contacts with many other projects: Subnetworks, metainformation, visual definition of processings, processings documentation... So if you choose this project, be specific on the set of aspects that will be addressed.
+There is has room for several projects. See [Devel/Plugins TODOs](Devel/Plugins TODOs). It also has contacts with many other projects: Subnetworks, metainformation, visual definition of processings, processings documentation... So if you choose this project, be specific on the set of aspects that will be addressed.
 
 CLAM for Video
 --------------
@@ -330,7 +330,7 @@ Current spike just address real-time safety and channel safety and just libsndfi
 MIDI support revamped
 ---------------------
 
-It is a [GSoC2008 project](GSoC/MIDI_Implementation_for_Network_Editor "wikilink") but still there are a lot of work to do.
+It is a [GSoC2008 project](GSoC/MIDI_Implementation_for_Network_Editor) but still there are a lot of work to do.
 
 Integrating external libraries
 ------------------------------
@@ -341,7 +341,7 @@ Integrating one or more of those libraries could be great
 
 ### libsamplerate
 
-**Description:** Working with different samplerates is a hard problem now in CLAM. One solution could be using network configuration parameters (see [GSoC project](SoC_ideas#Relative_configurations_and_network_configuration "wikilink")). still, wave file could provide different samplerates thant the Also integration with FileReaders and Writers and with Backends will be useful.
+**Description:** Working with different samplerates is a hard problem now in CLAM. One solution could be using network configuration parameters (see [GSoC project](SoC_ideas#Relative_configurations_and_network_configuration)). still, wave file could provide different samplerates thant the Also integration with FileReaders and Writers and with Backends will be useful.
 
 This project consists in providing both a good Resampling processing and minimizing samplerate impedance between processings requiring a given samplerate, audio files and the audio backend.
 
@@ -350,7 +350,7 @@ This project consists in providing both a good Resampling processing and minimiz
 -   Basic knowledge about signal processing.
 -   Experience working with third party libraries.
 
-**Difficulty:**: Simple. May be part of a greater project (checkout [SoC\_ideas\#Relative\_configurations\_and\_network\_configuration](SoC_ideas#Relative_configurations_and_network_configuration "wikilink"))
+**Difficulty:**: Simple. May be part of a greater project (checkout [SoC\_ideas\#Relative\_configurations\_and\_network\_configuration](SoC_ideas#Relative_configurations_and_network_configuration))
 
 **Current status:** An existing experiment of processing exists as plugin. Still it is not working properly and proper configuration parameters must be found.
 
@@ -376,12 +376,12 @@ This project could consist in providing processings that makes aubio features av
 Chord detection (chordata)
 ==========================
 
-In 2007, a project addressed realtime segmentation and modularization of chord detection. In 2008, another one built an stand along application named chordata to easy the use of chord detection technology. There are still several fronts regarding the chord detection. They might be joined in a single project. Check the details on the [Chord Extraction TODO's](Chord Extraction TODO's "wikilink") page.
+In 2007, a project addressed realtime segmentation and modularization of chord detection. In 2008, another one built an stand along application named chordata to easy the use of chord detection technology. There are still several fronts regarding the chord detection. They might be joined in a single project. Check the details on the [Chord Extraction TODO's](Chord Extraction TODO's) page.
 
 Testing framework for chord detection
 -------------------------------------
 
-Setting up a framework to compare the goodness of different implementations of a segmentation algorithms given a ground truth. See [Chord\_Extraction\_TODO's\#Testing\_framework](Chord_Extraction_TODO's#Testing_framework "wikilink")
+Setting up a framework to compare the goodness of different implementations of a segmentation algorithms given a ground truth. See [Chord\_Extraction\_TODO's\#Testing\_framework](Chord_Extraction_TODO's#Testing_framework)
 
 **Skills:**
 
@@ -459,7 +459,7 @@ Annotator and description data pools
 
 Core CLAM developers are dedicated to real time processing issues and they have interest on someone taking care of this key application. Tasks of the following proposals can be mixed up in a single proposal if they build a coherent set.
 
-See also [Devel/Annotator\_TODO's](Devel/Annotator_TODO's "wikilink") for further ideas.
+See also [Devel/Annotator\_TODO's](Devel/Annotator_TODO's) for further ideas.
 
 Coretize Annotator Pool features
 --------------------------------

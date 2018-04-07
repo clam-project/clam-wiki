@@ -1,2 +1,2 @@
-1.  redirect [Using custom data token types](Using custom data token types "wikilink")
+1.  redirect [Using custom data token types](Using custom data token types)
 

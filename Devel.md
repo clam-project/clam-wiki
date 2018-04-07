@@ -2,9 +2,9 @@ This is the CLAM development wiki.
 
 *Please, prepend 'Devel/' to any development pages you create here.*
 
--   [Development screenshots](Development screenshots "wikilink") show last achievements on CLAM development branch.
+-   [Development screenshots](Development screenshots) show last achievements on CLAM development branch.
 -   [Testfarm web](http://clam-project.org/testfarm) shows the last commits and build and tests status in different platforms in real-time.
--   [GSoC 2007](GSoC 2007 "wikilink") [GSoC 2008](GSoC 2008 "wikilink") [GSoC 2009](GSoC 2009 "wikilink")
+-   [GSoC 2007](GSoC 2007) [GSoC 2008](GSoC 2008) [GSoC 2009](GSoC 2009)
 -   [Cia.vc, log of commits](http://cia.vc/stats/project/clam)
 -   [Ohloh, project and developer stats](http://www.ohloh.net/projects/clam)
 
@@ -17,7 +17,7 @@ Subversion tree contains CLAM libs and applications: NetworkEditor, Annotator, S
 
 `$ svn co `[`http://clam-project.org/clam/trunk`](http://clam-project.org/clam/trunk)` clam`
 
--   Active CLAM developers can also obtain commit access. See [rules for commit access](rules for commit access "wikilink")
+-   Active CLAM developers can also obtain commit access. See [rules for commit access](rules for commit access)
 
 Getting involved
 ----------------
@@ -28,45 +28,45 @@ To get involved with CLAM development:
 -   Contact other CLAM developers at the \#clam channel of the FreeNode IRC network.
 -   Blog (occasionally) about CLAM and syndicate your feed in the [clam planet](http://clam-project.org/planet).
 -   Fill bugs in our [bug tracking tool](http://clam-project.org/bugs).
--   Fix bugs and send a [patch](#Prepare_and_apply_a_patch "wikilink") ;-)
--   Send some good patches and get [svn commit access](Rules_for_commit access "wikilink")
+-   Fix bugs and send a [patch](#Prepare_and_apply_a_patch) ;-)
+-   Send some good patches and get [svn commit access](Rules_for_commit access)
 
 HOWTO's
 -------
 
--   [Devel/Changelog release policy](Devel/Changelog release policy "wikilink")
--   [Devel/Compile and install troubleshooting](Devel/Compile and install troubleshooting "wikilink")
--   [Devel/Mac OSX build](Devel/Mac OSX build "wikilink")
--   [Devel/Linux Gentoo build](Devel/Linux Gentoo build "wikilink")
--   [Devel/Windows build](Devel/Windows build "wikilink") with MS Visual Studio 2005 (obsolete)
--   [Devel/Windows MinGW build](Devel/Windows MinGW build "wikilink") (under development)
--   [Devel/Windows MinGW cross compile](Devel/Windows MinGW cross compile "wikilink") (the one working now for windows)
--   [Devel/Eclipse](Devel/Eclipse "wikilink")
--   [Devel/Testing processing algorithms](Devel/Testing processing algorithms "wikilink")
--   [Devel/CLAM idioms](Devel/CLAM idioms "wikilink") C++ techniques we use over and over.
--   [Devel/Programming with Qt](Devel/Programming with Qt "wikilink") tips and conventions for the CLAM code that uses the Qt framework.
--   [Devel/Faust support](Devel/Faust support "wikilink")
--   [Devel/Blender support](Devel/Blender support "wikilink")
+-   [Devel/Changelog release policy](Devel/Changelog release policy)
+-   [Devel/Compile and install troubleshooting](Devel/Compile and install troubleshooting)
+-   [Devel/Mac OSX build](Devel/Mac OSX build)
+-   [Devel/Linux Gentoo build](Devel/Linux Gentoo build)
+-   [Devel/Windows build](Devel/Windows build) with MS Visual Studio 2005 (obsolete)
+-   [Devel/Windows MinGW build](Devel/Windows MinGW build) (under development)
+-   [Devel/Windows MinGW cross compile](Devel/Windows MinGW cross compile) (the one working now for windows)
+-   [Devel/Eclipse](Devel/Eclipse)
+-   [Devel/Testing processing algorithms](Devel/Testing processing algorithms)
+-   [Devel/CLAM idioms](Devel/CLAM idioms) C++ techniques we use over and over.
+-   [Devel/Programming with Qt](Devel/Programming with Qt) tips and conventions for the CLAM code that uses the Qt framework.
+-   [Devel/Faust support](Devel/Faust support)
+-   [Devel/Blender support](Devel/Blender support)
 
 Tasks
 -----
 
--   [Devel/Release task list](Devel/Release task list "wikilink"): Every release check list.
--   [Devel/Current release TODOs](Devel/Current release TODOs "wikilink") tasks due for the next release.
+-   [Devel/Release task list](Devel/Release task list): Every release check list.
+-   [Devel/Current release TODOs](Devel/Current release TODOs) tasks due for the next release.
 
--   [Devel/Plugins TODOs](Devel/Plugins TODOs "wikilink") short and mid-term tasks.
--   [Devel/Ladspa Plugins TODOs](Devel/Ladspa Plugins TODOs "wikilink") short-term tasks. Mostly taken by Andreas Calvo.
--   [Devel/Faust integration TODOs](Devel/Faust integration TODOs "wikilink") short-term tasks. Mostly taken by Andreas Calvo.
--   [Devel/Web TODOs](Devel/Web TODOs "wikilink").
--   [SoC ideas](SoC ideas "wikilink")
--   [Devel/Annotator TODO's](Devel/Annotator TODO's "wikilink") includes GSoC project tasks taken by Wang Jun
--   [Devel/NetworkEditor TODO's](Devel/NetworkEditor TODO's "wikilink")
--   [Devel/Infrastructure Refactoring TODO's](Devel/Infrastructure Refactoring TODO's "wikilink")
--   [Devel/Spectral Transformations TODOs](Devel/Spectral Transformations TODOs "wikilink") GSoC project tasks. Mostly taken by Hernán Ordiales
--   [Devel/Real-Time Spectral Model Synthesizer](Devel/Real-Time Spectral Model Synthesizer "wikilink") GSoC project tasks. Mostly taken by Greg Kellum
--   [Devel/Chord Extraction TODO's](Devel/Chord Extraction TODO's "wikilink") includes GSoC project tasks taken by Pawel Bartkiewicz
--   [Migration to clam-project.org](Migration to clam-project.org "wikilink") tasks to migrate from iua.upf.edu hosting to community managed clam-project.org (hosted in Dreamhost)
--   [Buffer Ports](Buffer Ports "wikilink") tasks to migrate proccesings from stream port to buffer port
+-   [Devel/Plugins TODOs](Devel/Plugins TODOs) short and mid-term tasks.
+-   [Devel/Ladspa Plugins TODOs](Devel/Ladspa Plugins TODOs) short-term tasks. Mostly taken by Andreas Calvo.
+-   [Devel/Faust integration TODOs](Devel/Faust integration TODOs) short-term tasks. Mostly taken by Andreas Calvo.
+-   [Devel/Web TODOs](Devel/Web TODOs).
+-   [SoC ideas](SoC ideas)
+-   [Devel/Annotator TODO's](Devel/Annotator TODO's) includes GSoC project tasks taken by Wang Jun
+-   [Devel/NetworkEditor TODO's](Devel/NetworkEditor TODO's)
+-   [Devel/Infrastructure Refactoring TODO's](Devel/Infrastructure Refactoring TODO's)
+-   [Devel/Spectral Transformations TODOs](Devel/Spectral Transformations TODOs) GSoC project tasks. Mostly taken by Hernán Ordiales
+-   [Devel/Real-Time Spectral Model Synthesizer](Devel/Real-Time Spectral Model Synthesizer) GSoC project tasks. Mostly taken by Greg Kellum
+-   [Devel/Chord Extraction TODO's](Devel/Chord Extraction TODO's) includes GSoC project tasks taken by Pawel Bartkiewicz
+-   [Migration to clam-project.org](Migration to clam-project.org) tasks to migrate from iua.upf.edu hosting to community managed clam-project.org (hosted in Dreamhost)
+-   [Buffer Ports](Buffer Ports) tasks to migrate proccesings from stream port to buffer port
 
 ### Hot Spots
 

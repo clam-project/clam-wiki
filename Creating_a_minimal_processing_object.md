@@ -79,10 +79,10 @@ TODO: Explain other used metadata (icon...)
 Further reading
 ---------------
 
--   [Processings with controls](Processings with controls "wikilink") If you want the processing to receive or send asynchronous data.
--   [Processings with configuration](Processings with configuration "wikilink") If you want some aspects of the processing to be configurable.
+-   [Processings with controls](Processings with controls) If you want the processing to receive or send asynchronous data.
+-   [Processings with configuration](Processings with configuration) If you want some aspects of the processing to be configurable.
 
--   [Building a processing library](Building a processing library "wikilink") If you want your processing to become part of a CLAM plugin library.
--   [Defining a ProcessingComposite](Defining a ProcessingComposite "wikilink") If you want your processing to be an aggregation of processings.
--   [Using custom data token types](Using custom data token types "wikilink") if you want to set the port color, type name... for your custom data type.
+-   [Building a processing library](Building a processing library) If you want your processing to become part of a CLAM plugin library.
+-   [Defining a ProcessingComposite](Defining a ProcessingComposite) If you want your processing to be an aggregation of processings.
+-   [Using custom data token types](Using custom data token types) if you want to set the port color, type name... for your custom data type.
 

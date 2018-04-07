@@ -1,1 +1,1 @@
-related deprecated doc: [DeprecatedDoc/Usage Tutorial](DeprecatedDoc/Usage Tutorial "wikilink")
+related deprecated doc: [DeprecatedDoc/Usage Tutorial](DeprecatedDoc/Usage Tutorial)

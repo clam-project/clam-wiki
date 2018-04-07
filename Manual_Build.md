@@ -1,1 +1,1 @@
-[Back to Index](DeprecatedDoc/CLAMUserManual "wikilink")
+[Back to Index](DeprecatedDoc/CLAMUserManual)

@@ -1,8 +1,8 @@
 This simple program just plays a file specified by command line to the audio output.
 
-Check the [Network Editor tutorial](Network Editor tutorial "wikilink") to see how to do that with a patching visual interface.
+Check the [Network Editor tutorial](Network Editor tutorial) to see how to do that with a patching visual interface.
 
-To compile this example you can use this [SConstruct file](Minimal SConstruct to build with CLAM and Qt4 "wikilink")
+To compile this example you can use this [SConstruct file](Minimal SConstruct to build with CLAM and Qt4)
 
 main.cxx
 --------

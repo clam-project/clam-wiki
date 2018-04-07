@@ -1,2 +1,2 @@
-1.  REDIRECT [CLAM Wiki](CLAM Wiki "wikilink")
+1.  REDIRECT [CLAM Wiki](CLAM Wiki)
 

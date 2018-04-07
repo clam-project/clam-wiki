@@ -4,7 +4,7 @@ For SMS analysis and synthesis block diagrams, see [1](http://xavier.amatriain.n
 
 For more information on SMS, see [2](http://mtg.upf.edu/node/251)
 
-If you need more information about the signal processing details involved in the process you may want to visit the [ SMS](http://mtg.upf.edu/technologies/sms "wikilink") webpage.
+If you need more information about the signal processing details involved in the process you may want to visit the [ SMS](http://mtg.upf.edu/technologies/sms) webpage.
 
 Introduction
 ------------
@@ -31,7 +31,7 @@ The following picture illustrates the main blocks of the application:
 Building the application
 ------------------------
 
-At this point you might be able to checkout the latest SMSTools binary version from the [CLAM webpage](http://www.clam.iua.upf.edu "wikilink"). Building the application might still be necessary in some cases but that will be handled [elsewhere](Manual_CompilingApps "wikilink").
+At this point you might be able to checkout the latest SMSTools binary version from the [CLAM webpage](http://www.clam.iua.upf.edu). Building the application might still be necessary in some cases but that will be handled [elsewhere](Manual_CompilingApps).
 
 An SMSTools walkthrough
 -----------------------

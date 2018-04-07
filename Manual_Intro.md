@@ -1,2 +1,2 @@
-1.  redirect [Deprecated/Manual Intro](Deprecated/Manual Intro "wikilink")
+1.  redirect [Deprecated/Manual Intro](Deprecated/Manual Intro)
 

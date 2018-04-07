@@ -6,7 +6,7 @@ The [CLAM](http://clam.iua.upf.edu) Music Annotator is a GPL tool that can be us
 -   Supervise and correct the results of automated audio feature extraction algorithms.
 -   Generate manually edited annotations of audio as training examples or ground truth for those algorithms.
 
-Check out the official [Music Annotator](Music Annotator "wikilink") wiki page for more information on the features, screenshots and videos.
+Check out the official [Music Annotator](Music Annotator) wiki page for more information on the features, screenshots and videos.
 
 A guided tour
 =============
@@ -19,11 +19,11 @@ Using the provided Chord example
 -   Open <image:Annotator-IconOpenProject.png> the **Chords.pro** project from the Music Annotator examples. If your are running on Windows, your browser should be pointing to the right folder, in Linux please drive to /usr/share/annotator/example-data.
 -   Go to the **Song descriptors** tab and select a song. Debaser's Wooden House, for example.
 
-[400px|Songs level descriptors and the list of songs](image:Annotator-SongLevel.png "wikilink")
+[400px|Songs level descriptors and the list of songs](image:Annotator-SongLevel.png)
 
 -   Go to the **intra-song descriptors** tab. Click the Play <image:AnnotatorIcon-Play.png> button and you should see the animated key-space and tonnetz views flashing.
 
-[400px|Songs level descriptors and the list of songs](image:Annotator-Tonnetz-Keyspace.png "wikilink")
+[400px|Songs level descriptors and the list of songs](image:Annotator-Tonnetz-Keyspace.png)
 
 -   How to interpret those views
     -   The upper one displays some numbers extracted along the chords for each instant. Not that interesting if you are not developing an extractor.

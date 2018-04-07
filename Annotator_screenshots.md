@@ -1,4 +1,4 @@
-Learn more about this application in the [Music Annotator](Music Annotator "wikilink") page or check the [Music Annotator videos](Music Annotator videos "wikilink").
+Learn more about this application in the [Music Annotator](Music Annotator) page or check the [Music Annotator videos](Music Annotator videos).
 
 Screenshots: Annotator 0.3
 --------------------------

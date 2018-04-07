@@ -1,2 +1,2 @@
-1.  redirect [MusicAnnotatorChangelog](MusicAnnotatorChangelog "wikilink")
+1.  redirect [MusicAnnotatorChangelog](MusicAnnotatorChangelog)
 
