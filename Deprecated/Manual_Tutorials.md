@@ -1,2 +1,2 @@
-1.  redirect [DepracatedDoc/Manual Tutorials](DepracatedDoc/Manual Tutorials "wikilink")
+1.  redirect [DeprecatedDoc/Manual Tutorials](DepracatedDoc/Manual Tutorials "wikilink")
 

@@ -1,2 +1,2 @@
-1.  redirect [DepracatedDoc/CLAMUserManual](DepracatedDoc/CLAMUserManual "wikilink")
+1.  redirect [DeprecatedDoc/CLAMUserManual](DeprecatedDoc/CLAMUserManual "wikilink")
 

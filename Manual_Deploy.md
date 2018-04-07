@@ -1,2 +1,2 @@
-1.  redirect [DepracatedDoc/Manual Deploy](DepracatedDoc/Manual Deploy "wikilink")
+1.  redirect [DeprecatedDoc/Manual Deploy](DeprecatedDoc/Manual Deploy "wikilink")
 
